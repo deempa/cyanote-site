@@ -56,8 +56,16 @@
 
   <section class="rel">
     <div class="relhead">
-      <h2 id="v1.24.0">1.24.0</h2>
+      <h2 id="v1.25.0">1.25.0</h2>
       <span class="date">25 July 2026</span><span class="latest">Latest</span>
+    </div>
+      <p>Right-click a note to lock or export it.</p>
+      <ul><li>Right-clicking a note in the sidebar now offers <strong>Lock with a password</strong>, <strong>Export as Markdown</strong> and <strong>Export as PDF</strong>, alongside the existing actions. They work on the note you clicked, not the one you happen to be viewing.</li><li>Export as Markdown writes a real <code>.md</code> file: headings, bold and italic, links, bullet, numbered and task lists with their tick boxes, nested lists, tables, quotes, code blocks and images all come across. Links to other notes are kept as <code>[[Note title]]</code>.</li><li>Export as PDF opens the print dialog with the app&#x27;s chrome hidden, so what you get is the note on a clean page. On macOS, choose &quot;Save as PDF&quot;.</li><li>Locked notes refuse to export rather than writing out something unreadable — unlock the note first.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.24.0">1.24.0</h2>
+      <span class="date">25 July 2026</span>
     </div>
       <p>The licence prompt now asks on every launch.</p>
       <ul><li>The card asking for your licence key now appears each time Cyanote opens, until a key is stored. Previously it appeared once and never returned, which meant skipping it left you quietly cut off from updates with nothing to explain why.</li><li>Skip becomes available after 15 seconds; the button shows the time remaining rather than sitting there greyed out.</li><li>Entering a valid key retires the prompt for good. Nothing else dismisses it permanently, and nothing in the app is locked while it is on screen — Cyanote stays fully usable, with no account and no network required.</li></ul>
