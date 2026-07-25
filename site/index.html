@@ -131,7 +131,7 @@
   .cliprow .pin{ margin-left:auto; color:var(--accent); font-size:.8rem; flex-shrink:0 }
 
   /* screenshots gallery */
-  .shots{ display:grid; grid-template-columns:1fr 1fr; gap:18px }
+  .shots{ display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:900px; margin:0 auto }
   @media(max-width:640px){ .shots{ grid-template-columns:1fr } }
   .shots img{ width:100%; height:auto; border-radius:14px; border:1px solid var(--border); box-shadow:var(--shadow); display:block }
   .shots img.wide{ grid-column:1 / -1 }
@@ -271,8 +271,8 @@
   <h2>A look inside</h2>
   <p class="lead">Real screenshots — your day in the To-Do list, and the note editor with its <strong>/ slash menu</strong> open.</p>
   <div class="shots">
-    <img class="wide" src="images/todo.webp" width="1500" height="938" alt="Cyanote To-Do list with colored priorities, due dates and a progress ring" loading="lazy" />
-    <img class="wide" src="images/note.webp" width="1500" height="938" alt="Cyanote note editor with the slash command menu open — insert headings, lists, tables and code" loading="lazy" />
+    <img src="images/todo.webp" width="1500" height="938" alt="Cyanote To-Do list with colored priorities, due dates and a progress ring" loading="lazy" />
+    <img src="images/note.webp" width="1500" height="938" alt="Cyanote note editor with the slash command menu open — insert headings, lists, tables and code" loading="lazy" />
   </div>
 </div></section>
 
