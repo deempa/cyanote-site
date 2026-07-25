@@ -56,8 +56,21 @@
 
   <section class="rel">
     <div class="relhead">
-      <h2 id="v1.25.0">1.25.0</h2>
+      <h2 id="v1.26.0">1.26.0</h2>
       <span class="date">25 July 2026</span><span class="latest">Latest</span>
+    </div>
+      <p>Resize images by dragging, and per-note settings for code notes.</p>
+      <h3>Images</h3>
+      <ul><li>Drag the handle on either side of an image to size it exactly, the way you would in Keynote or PowerPoint. The width is shown while you drag and saved with the note, so it survives reopening, undo and copy-paste.</li><li>The aspect ratio is always kept — an image can be made wider or narrower, never squashed.</li><li>The S / M / Full buttons still work and now clear a dragged width, so a preset always takes effect.</li><li>A note opened in a narrower window shrinks its images to fit rather than letting them spill past the text.</li></ul>
+      <h3>Code notes</h3>
+      <ul><li>Code notes now have the same per-note settings menu as rich notes, which they previously had no access to at all. Set a font size and a monospace typeface for one note without touching the global default.</li><li>The font list shows the monospace faces rather than the prose ones, and the width control is hidden — a code editor always fills the pane.</li></ul>
+      <h3>Updates</h3>
+      <ul><li>Settings → Updates now shows at a glance whether a licence key is stored: green when updates will work, red when they won&#x27;t. It updates the moment a key is added or removed.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.25.0">1.25.0</h2>
+      <span class="date">25 July 2026</span>
     </div>
       <p>Right-click a note to lock or export it.</p>
       <ul><li>Right-clicking a note in the sidebar now offers <strong>Lock with a password</strong>, <strong>Export as Markdown</strong> and <strong>Export as PDF</strong>, alongside the existing actions. They work on the note you clicked, not the one you happen to be viewing.</li><li>Export as Markdown writes a real <code>.md</code> file: headings, bold and italic, links, bullet, numbered and task lists with their tick boxes, nested lists, tables, quotes, code blocks and images all come across. Links to other notes are kept as <code>[[Note title]]</code>.</li><li>Export as PDF opens the print dialog with the app&#x27;s chrome hidden, so what you get is the note on a clean page. On macOS, choose &quot;Save as PDF&quot;.</li><li>Locked notes refuse to export rather than writing out something unreadable — unlock the note first.</li></ul>
