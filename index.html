@@ -9,7 +9,8 @@
 <meta name="theme-color" content="#0e7cc4" />
 <link rel="canonical" href="https://cyanote.app/" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-<link rel="apple-touch-icon" href="favicon.svg" />
+<!-- Safari/iOS ignores SVG for the home-screen icon, so this one has to be a PNG. -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <!-- Open Graph (social share cards) -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Cyanote" />
@@ -61,9 +62,8 @@
     background:color-mix(in srgb, var(--bg) 78%, transparent); border-bottom:1px solid var(--border) }
   nav .wrap{ display:flex; align-items:center; gap:16px; height:64px }
   .logo{ display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem }
-  .logo .mark{ width:32px; height:32px; border-radius:9px; display:grid; place-items:center;
-    background:linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, #7c3aed));
-    color:#fff; font-weight:800 }
+  /* The app icon itself — same mark as the favicon, the Dock and the store. */
+  .logo .mark{ width:32px; height:32px; display:block; border-radius:9px }
   nav .links{ margin-left:auto; display:flex; align-items:center; gap:22px; font-size:.94rem; color:var(--muted) }
   nav .links a:hover{ color:var(--text) }
   @media(max-width:680px){ nav .links a:not(.btn){ display:none } }
@@ -196,7 +196,7 @@
 </head>
 <body>
 <nav><div class="wrap">
-  <a class="logo" href="#"><span class="mark">C</span> Cyanote</a>
+  <a class="logo" href="#"><img class="mark" src="favicon.svg" alt="" width="32" height="32" /> Cyanote</a>
   <div class="links">
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
@@ -244,7 +244,7 @@
   <!-- Shows a 15 KB still instantly; the animation (animated WebP — ~240 KB, an
        eighth of the old GIF and smooth at 14fps) is preloaded and swapped in only
        once fully downloaded, so slow connections never see a half-loaded frame. -->
-  <img id="demo-gif" src="demo-poster.webp" data-gif="demo.webp" width="960" height="602"
+  <img id="demo-gif" src="demo-poster.webp" data-gif="demo.webp" width="900" height="564"
     alt="Cyanote demo: ticking to-dos off the list, then typing in a note and opening the slash menu" loading="lazy"
     style="display:block;width:100%;max-width:920px;height:auto;margin:0 auto;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow)" />
 </div></section>
@@ -268,10 +268,12 @@
 <section id="screenshots"><div class="wrap">
   <p class="eyebrow">See it in action</p>
   <h2>A look inside</h2>
-  <p class="lead">Real screenshots — your day in the To-Do list, and the note editor with its <strong>/ slash menu</strong> open.</p>
+  <p class="lead">Real screenshots — your day in the To-Do list, the note editor with its <strong>/ slash menu</strong> open, habit streaks, and the theme picker.</p>
   <div class="shots">
     <img src="images/todo.webp" width="1500" height="938" alt="Cyanote To-Do list with colored priorities, due dates and a progress ring" loading="lazy" />
     <img src="images/note.webp" width="1500" height="938" alt="Cyanote note editor with the slash command menu open — insert headings, lists, tables and code" loading="lazy" />
+    <img src="images/habits.webp" width="1500" height="938" alt="Cyanote habit tracker showing daily routines with streaks and completion rings" loading="lazy" />
+    <img src="images/themes.webp" width="1500" height="938" alt="Cyanote theme picker — eight built-in themes plus a custom palette editor" loading="lazy" />
   </div>
 </div></section>
 
@@ -352,8 +354,9 @@
 </main>
 
 <footer><div class="wrap">
-  <div class="logo"><span class="mark">C</span> Cyanote</div>
+  <div class="logo"><img class="mark" src="favicon.svg" alt="" width="32" height="32" /> Cyanote</div>
   <div style="display:flex;gap:22px;flex-wrap:wrap">
+    <a href="changelog.html">Changelog</a>
     <a href="mailto:support@cyanote.app">Support</a>
     <a href="privacy.html">Privacy</a>
   </div>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Changelog — Cyanote</title>
+<meta name="description" content="Every Cyanote release and what changed in it. Updates are free forever — buy once and keep getting them." />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://cyanote.app/changelog.html" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Changelog — Cyanote" />
+<meta property="og:description" content="Every Cyanote release and what changed in it." />
+<meta property="og:url" content="https://cyanote.app/changelog.html" />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<style>
+  :root{ --bg:#fbfcfe; --elevated:#fff; --border:#e0e7ef; --text:#132137; --muted:#546478; --accent:#0e7cc4 }
+  @media (prefers-color-scheme: dark){ :root{ --bg:#0f1620; --elevated:#1b2942; --border:#243653; --text:#c7d6e6; --muted:#7e93ac; --accent:#38b6e8 } }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  body{ font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.7 }
+  .wrap{ max-width:760px; margin:0 auto; padding:48px 24px 80px }
+  a{ color:var(--accent) }
+  .back{ font-size:.9rem; color:var(--muted); text-decoration:none; display:inline-block; margin-bottom:28px }
+  .back:hover{ color:var(--text) }
+  h1{ font-size:2rem; letter-spacing:-.02em; margin-bottom:6px }
+  .updated{ color:var(--muted); font-size:.9rem; margin-bottom:32px }
+  .box{ border:1px solid var(--border); background:var(--elevated); border-radius:12px; padding:18px 20px; margin:18px 0 32px }
+  .rel{ border-top:1px solid var(--border); padding-top:26px; margin-top:26px }
+  .rel:first-of-type{ border-top:none; padding-top:0; margin-top:0 }
+  .relhead{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:10px }
+  h2{ font-size:1.25rem; letter-spacing:-.01em }
+  .date{ color:var(--muted); font-size:.85rem }
+  .latest{ font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--accent); border:1px solid var(--accent); border-radius:999px; padding:1px 8px }
+  h3{ font-size:.95rem; margin:16px 0 4px }
+  p,li{ color:var(--text); margin-bottom:10px }
+  ul{ padding-left:20px }
+  code{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em;
+    background:var(--elevated); border:1px solid var(--border); border-radius:5px; padding:1px 5px }
+  .muted{ color:var(--muted) }
+  hr{ border:none; border-top:1px solid var(--border); margin:36px 0 }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Back to Cyanote</a>
+  <h1>Changelog</h1>
+  <p class="updated">Every release, and what changed in it.</p>
+
+  <div class="box">
+    <strong>Updates are free, forever.</strong> Buy Cyanote once and every version below — and
+    everything after it — is included. The app checks for new releases on its own and updates
+    itself; nothing to re-purchase, no subscription.
+  </div>
+
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.21.0">1.21.0</h2>
+      <span class="date">25 July 2026</span><span class="latest">Latest</span>
+    </div>
+      <p>Updates now come from a private channel.</p>
+      <ul><li>Cyanote no longer downloads updates from a public location. New versions are fetched from a private channel that checks your licence key first, so the app can&#x27;t be downloaded for free by anyone who finds the link.</li><li>Settings → Check for updates now asks for your licence key the first time, and remembers it. Your key is in the receipt email from your purchase.</li><li>Nothing else is gated. Cyanote itself works exactly as before without a key — every note, task and setting stays available. The key is only needed to download a new version.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.20.0">1.20.0</h2>
+      <span class="date">25 July 2026</span>
+    </div>
+      <p>Four new developer tools, and the sidebar stops flickering.</p>
+      <h3>Fixed</h3>
+      <ul><li>Switching between To-Do, Board, Habits, Calendar and Today made the note list in the sidebar visibly re-animate, as though it were reloading. The list was being thrown away and rebuilt on every switch, replaying its entrance animation — even though those pages don&#x27;t change what the list shows. It now stays put, and only re-reads the notes when the contents can actually differ (a different folder or tag, trash, or a search).</li></ul>
+      <h3>Developer tools</h3>
+      <ul><li>URL inspector — break a URL into scheme, host, port, path, fragment and a table of query parameters. Paste a bare <code>example.com/x</code> and it assumes https rather than complaining.</li><li>IP / CIDR — network and broadcast addresses, netmask and wildcard, usable host range and count, RFC 1918 detection, and the mask in binary. Handles /31 point-to-point links and /0 correctly.</li><li>Regex — live matches highlighted in the test string, with capture groups and named groups listed per match, and the error message when the pattern doesn&#x27;t compile.</li><li>Cron — a plain-English reading of a 5-field expression plus its next five run times, with presets for the common ones.</li></ul>
+      <h3>Updates</h3>
+      <ul><li>The update prompt now tells you what&#x27;s in the release before you install it. The notification shows the headline change, with the full notes one click away, and Settings → Check for updates shows them in full.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.19.0">1.19.0</h2>
+      <span class="date">25 July 2026</span>
+    </div>
+      <p>Two fixes.</p>
+      <ul><li>The column menu was being painted over by the &quot;+ Row&quot; strip below the table, so the two overlapped. The menu now sits above it.</li><li>Arrowing down the slash (/) menu wrapped around at the last item, which yanked the list back to the top and read as a glitch. It now stops at the last item, and stops at the first going up. Hovering no longer steals the selection while the list scrolls under a stationary cursor.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.18.0">1.18.0</h2>
+      <span class="date">25 July 2026</span>
+    </div>
+      <p>Table column controls, reworked.</p>
+      <ul><li>Every column header now has its own menu, titled with that column&#x27;s name. Set the column type (Text, Yes/No, Number) or insert/delete a column, and it applies to the column you clicked — the previous version had a single toolbar button that silently acted on whichever column the cursor happened to be in.</li><li>Insert column left / right added to that menu.</li><li>Fixed the table overlays measuring against the wrong container, which left the controls floating above the table instead of sitting in the header row.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.17.0">1.17.0</h2>
+      <span class="date">25 July 2026</span>
+    </div>
+      <p>Table editing, and opening files from Finder now actually works on macOS.</p>
+      <h3>Tables</h3>
+      <ul><li>A toolbar appears when the cursor is in a table: add/remove rows and columns, and delete the table (previously there was no table UI at all)</li><li>Per-column input types — Text, Yes/No (a real tick box) and Number (right-aligned, tabular figures). Switching a type converts the existing cells; typing &quot;yes&quot; in a column you then mark Yes/No becomes a ticked box</li><li>Tab in the last cell adds a row, plus a &quot;+ Row&quot; strip under the table</li></ul>
+      <h3>Fixed</h3>
+      <ul><li>Opening a .txt/.md/code file from Finder did nothing on macOS. The app only read files passed in argv, but macOS delivers a double-clicked file as an Apple Event — now handled, so &quot;Open With → Cyanote&quot; opens the file and ⌘S saves it back</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.16.0">1.16.0</h2>
+      <span class="date">25 July 2026</span>
+    </div>
+      <p>Modes (All-in-one / Developer / Creator), Collections templates with tick-box columns, a rebuilt table UI, custom data location, a real reminder picker, and a round of privacy hardening.</p>
+      <h3>Privacy</h3>
+      <ul><li>Clipboard history now skips items a password manager marks as concealed — passwords are no longer recorded</li><li>SQLite secure_delete so a locked note leaves no readable residue</li><li>Locked notes: PBKDF2 raised to 600k iterations for new locks (existing notes keep opening)</li><li>Content-Security-Policy added</li></ul>
+      <h3>Fixes</h3>
+      <ul><li>Reminders could be saved as an invalid time and silently never fire</li><li>Week view collapsed into unreadable strips on a narrow window</li><li>Note list could fail to render from a single corrupt note</li></ul>
+      <p>Note: the bundle identifier changed to app.cyanote.desktop. Your notes are migrated automatically on first launch. macOS may ask again for notification and shortcut permissions.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.15.0">1.15.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>New interactive guided tour: on first launch (and anytime from Settings → General → Replay the tour) it walks you through creating notes, tasks, habits, the clipboard manager and themes — highlighting each part of the UI. Replaces the old static intro.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.14.0">1.14.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>More production cleanup: removed remaining dead code (markdown/TagBar modules, unused helpers) and the orphaned markdown-it/dompurify deps; refactored the main view routing into a data-driven registry so adding a page is a one-line change.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.13.0">1.13.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>Production cleanup: removed the dead Azure DevOps code (frontend components, store, Rust proxy commands, and the reqwest dependency), consolidated the view guards for easier extension, and cleaned stray files. No behavior change.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.12.0">1.12.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>Removed the Azure DevOps integration. To-Do rows now have a solid full-height priority color bar (matches the website look).</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.11.0">1.11.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>Fixed the ugly double-border on focused inputs. Redesigned the To-Do list: card-style tasks with colored priority bars, a circular progress ring + gradient icon, segmented filter pills, colorful due/reminder chips, an inline Add button, and smooth hover/entrance motion.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.10.0">1.10.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>Auto update prompt: Cyanote now checks for updates on launch (and every 6h) and shows a toast when a new version is available — click &#x27;Update now&#x27; to download and relaunch instantly.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.9.0">1.9.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>Colorful action buttons across the app (calendar=blue, reminder=amber, delete=red, add=green, favorite=amber…). Sub-page/page links redesigned Notion-style: the note&#x27;s icon (emoji or page glyph) + an underlined title.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.8.0">1.8.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>Creating a sub-page now drops a linked page chip into the parent note. Note-link chips also show the linked note&#x27;s live title (no more stale &#x27;Untitled&#x27;) and got a nicer look.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.7.0">1.7.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>Typography: 7 new bundled fonts (Lora, Literata, Newsreader, Source Serif, IBM Plex Sans/Mono, Atkinson Hyperlegible), a dedicated code font, one-click font pairings, ligatures + numeral styles, smart punctuation, drop cap, and small-caps headings.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.6.0">1.6.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>More motion: theme/light-dark cross-fade, toast slide-in, todo strikethrough-draw, sliding active nav indicator, staggered list entrances (todos/board/habits), and a reminder-bell ring. All respect the Animations toggle.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.5.0">1.5.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>Editor: spellcheck toggle, heading font, default reading width, paragraph spacing. Plus a custom theme builder — pick colors for your own light &amp; dark palette.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.4.0">1.4.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>Redesigned Settings: category sidebar (Appearance, Editor, Clipboard, Integrations, Shortcuts, General), theme picker as cards, and shortcuts/Azure/licenses inlined (no more nested pop-ups).</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.3.0">1.3.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>Compare texts and Developer tools are now full in-app pages (no longer pop-up modals). Plus the 1.2.0 UI additions.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.2.0">1.2.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>macOS sidebar vibrancy, richer completion celebration (confetti + shockwave, now on habits &amp; routines), 3 new themes (Evergreen, Indigo, Graphite), and smoother slash-menu scrolling.</p>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.1.0">1.1.0</h2>
+      <span class="date">24 July 2026</span>
+    </div>
+      <p>Auto-update test release. Adds in-app updates, undo toasts for delete/trash, accent-tinted selection, input focus rings, and dynamic version display.</p>
+  </section>
+
+  <hr />
+  <p class="muted" style="font-size:.9rem">Dates are when each version shipped. Cyanote follows
+  <a href="https://semver.org" target="_blank" rel="noopener">semantic versioning</a>.</p>
+</div>
+</body>
+</html>

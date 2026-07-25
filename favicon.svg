@@ -1,12 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Vector twin of the macOS app icon (desktop/src-tauri/icons/icon.icns).
+       Geometry and colours were measured off the 1024px icns render, so the tab
+       icon, the Dock icon and the Lemon Squeezy store logo are all one mark. -->
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0e7cc4"/>
-      <stop offset="1" stop-color="#7c3aed"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3ea5e1"/>
+      <stop offset="1" stop-color="#0d3f6f"/>
+    </linearGradient>
+    <linearGradient id="page" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdfeff"/>
+      <stop offset="1" stop-color="#eff5fa"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="15" fill="url(#g)"/>
-  <text x="50%" y="50%" dy="0.02em" text-anchor="middle" dominant-baseline="central"
-        font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif"
-        font-size="40" font-weight="800" fill="#ffffff">C</text>
+
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <ellipse cx="20" cy="10" rx="26" ry="16" fill="#ffffff" opacity=".10"/>
+
+  <!-- Sheet, with the top-right corner turned down. Scaled up ~18% from the
+       app-icon proportions: a Dock icon is read at 64px+, a tab favicon at 16px,
+       so the glyph needs to be optically bigger to survive the small size. -->
+  <g transform="translate(32 32) scale(1.18) translate(-32 -32)">
+  <path fill="url(#page)" d="M21.3 15.4
+    H38.7 L44.4 21.1 V46.7
+    a1.8 1.8 0 0 1 -1.8 1.8 H21.3
+    a1.8 1.8 0 0 1 -1.8 -1.8 V17.2
+    a1.8 1.8 0 0 1 1.8 -1.8 Z"/>
+  <path fill="#c8ddec" d="M38.7 15.4 L44.4 21.1 H38.7 Z"/>
+
+  <!-- text lines: one accent heading, three body -->
+  <rect x="23.3" y="26.9" width="12.9" height="2.5" rx="1.25" fill="#1e73b6"/>
+  <rect x="23.5" y="31.9" width="16.1" height="1.6" rx=".8" fill="#c2d1e1"/>
+  <rect x="23.5" y="35.4" width="16.1" height="1.6" rx=".8" fill="#c2d1e1"/>
+  <rect x="23.5" y="38.9" width="10.3" height="1.7" rx=".85" fill="#c2d1e1"/>
+  </g>
 </svg>
