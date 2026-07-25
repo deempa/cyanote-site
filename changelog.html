@@ -43,7 +43,7 @@
 </style>
 </head>
 <body>
-<div class="wrap">
+<main class="wrap">
   <a class="back" href="index.html">← Back to Cyanote</a>
   <h1>Changelog</h1>
   <p class="updated">Every release, and what changed in it.</p>
@@ -56,8 +56,35 @@
 
   <section class="rel">
     <div class="relhead">
+      <h2 id="v1.28.0">1.28.0</h2>
+      <span class="date">26 July 2026</span><span class="latest">Latest</span>
+    </div>
+      <p>Write in Hebrew or Arabic, and set any editor setting per note.</p>
+      <h3>Right-to-left writing</h3>
+      <ul><li>Notes now lay themselves out correctly in Hebrew, Arabic and other right-to-left languages. Previously the words came out right-to-left but the paragraph stayed left-aligned, and a sentence ending in a full stop showed the stop on the wrong side.</li><li>Direction is decided per paragraph, so one note can hold Hebrew and English side by side and each paragraph is laid out for the language it&#x27;s written in. Bullets, numbered markers and quote stripes move to the correct side with the text.</li><li>Code blocks stay left-to-right in a right-to-left note, and an identifier inside a Hebrew sentence no longer reorders the words around it.</li><li>A note&#x27;s ⋯ menu has a <strong>Text direction</strong> control — Auto, LTR or RTL — for the cases automatic detection can&#x27;t get right, like a Hebrew note that opens with an English quotation.</li><li>Hebrew note titles read correctly in the sidebar, the tabs and the breadcrumb.</li></ul>
+      <h3>Per-note editor settings</h3>
+      <ul><li>Everything in Settings → Editor is now the default for every note, and any note can override any of it: body font, size, heading font, line spacing, paragraph spacing, width, numerals, ligatures, drop cap, small-caps headings and spellcheck.</li><li>Anything left on <strong>Default</strong> keeps following the global setting — change the app&#x27;s font size later and every note that didn&#x27;t choose its own moves with it. Only the settings you deliberately change are stored on the note.</li><li>The toggles have three states rather than two: on, off, or following the app. A note that deliberately turns spellcheck off is no longer indistinguishable from one that never chose.</li><li><strong>Reset all</strong> in the ⋯ menu puts a note back under the global settings.</li><li>New notes now use the reading width from Settings → Editor. They were previously created at full width regardless of that setting.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.27.0">1.27.0</h2>
+      <span class="date">25 July 2026</span>
+    </div>
+      <p>Search is much faster, the sidebar copes with thousands of notes, and the whole</p>
+      <p>app can now be driven from the keyboard.</p>
+      <h3>Search</h3>
+      <ul><li>Searching every note now goes through a real full-text index rather than reading each note in turn. On a large library results appear as you type instead of after it, and the best matches come first — a hit in the title outranks one buried in the body.</li><li>Words are matched separately, so &quot;meeting notes&quot; finds a note that says &quot;notes from the meeting&quot;. The last word matches as you type it: &quot;mee&quot; already finds &quot;meeting&quot;.</li><li>Accents are ignored, so &quot;cafe&quot; finds &quot;café&quot;.</li><li>Queries containing punctuation no longer come back empty. &quot;re-run&quot;, &quot;title:&quot;, &quot;f(x)&quot; and a bare &quot;not&quot; are searched for literally instead of being read as search operators.</li><li>Every matching word is highlighted in the results, not just an exact copy of what was typed.</li></ul>
+      <h3>A sidebar that scales</h3>
+      <ul><li>The note list now renders only the rows on screen. With a few thousand notes the sidebar no longer stalls when typing in the search box or renaming a note.</li><li>The clipboard history opens instantly at its largest setting.</li></ul>
+      <h3>Keyboard and screen readers</h3>
+      <ul><li>The note list can be used entirely from the keyboard. Tab into it and use the arrow keys to move, Right/Left to open and close sub-pages, Enter to open a note, Delete to send one to the trash, and Shift+F10 for the context menu. It is a single stop on Tab, so getting to the editor no longer means tabbing past every note.</li><li>Dialogs behave like dialogs: focus moves into them when they open, Tab stays inside instead of wandering into the window behind, Escape closes them, and focus returns to whatever opened them.</li><li>Notes, search results and the command palette announce themselves properly to VoiceOver, including position (&quot;3 of 240&quot;), nesting depth and which item is highlighted.</li><li>Toasts are announced, so a confirmation is not something you have to see to receive.</li><li>A &quot;Skip to content&quot; link appears on the first Tab, jumping straight past the sidebar to the note.</li><li>Every icon-only button now has a spoken label rather than relying on its tooltip.</li></ul>
+      <h3>Removed</h3>
+      <ul><li>Export as PDF. It went through the system print dialog and the results were not good enough to keep — page breaks landed mid-block and long notes came out badly. Export as Markdown is unchanged.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
       <h2 id="v1.26.1">1.26.1</h2>
-      <span class="date">25 July 2026</span><span class="latest">Latest</span>
+      <span class="date">25 July 2026</span>
     </div>
       <p>Two fixes for yesterday&#x27;s release.</p>
       <ul><li>Export as PDF did nothing. The webview ignores a print request made from the page itself, so the menu item silently went nowhere; it now asks the window to print, which opens the normal macOS print dialog with &quot;Save as PDF&quot; in it.</li><li>The right-hand resize handle on an image could sit well away from the edge it belonged to, especially on tall photos. The image and its frame were being sized by two different rules and drifted apart; the frame now follows the image exactly, so both handles stay on the edges at every size.</li></ul>
@@ -283,6 +310,6 @@
   <hr />
   <p class="muted" style="font-size:.9rem">Dates are when each version shipped. Cyanote follows
   <a href="https://semver.org" target="_blank" rel="noopener">semantic versioning</a>.</p>
-</div>
+</main>
 </body>
 </html>
