@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
 
-Sitemap: https://deempa.github.io/cyanote-site/sitemap.xml
+Sitemap: https://cyanote.app/sitemap.xml
