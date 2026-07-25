@@ -56,8 +56,23 @@
 
   <section class="rel">
     <div class="relhead">
-      <h2 id="v1.21.0">1.21.0</h2>
+      <h2 id="v1.22.0">1.22.0</h2>
       <span class="date">25 July 2026</span><span class="latest">Latest</span>
+    </div>
+      <p>Backups, image sizes, and a fix for edits lost on quit.</p>
+      <h3>Fixed</h3>
+      <ul><li>Quitting within about half a second of typing could silently discard your last edit. Edits are written to the database on a short delay so it isn&#x27;t hit on every keystroke, but nothing forced that write to finish before the app exited. Cyanote now flushes any pending edit before it is allowed to quit, and also when the window is hidden to the tray — where an unsaved edit could previously sit indefinitely.</li></ul>
+      <h3>Backup and restore</h3>
+      <ul><li>Settings → General → Backup writes everything you have — notes, to-dos, habits, calendar, clipboard history, tags and links — to a single readable JSON file.</li><li>Restoring shows you what is in the file before it touches anything: how many notes, which version made it, and when. It then replaces your current data, after saving a rescue copy of it next to the backup you picked. If that rescue copy can&#x27;t be written, the restore is cancelled rather than left to chance.</li><li>Backups that are truncated, edited, or from a newer version of Cyanote are refused instead of half-restored.</li></ul>
+      <h3>Images in notes</h3>
+      <ul><li>A photo dropped into a note no longer fills the whole column. Images now have three sizes — small, medium and full width — and arrive at medium.</li><li>Select an image to switch size or delete it. Images in existing notes keep the size they were.</li></ul>
+      <h3>Also</h3>
+      <ul><li>The window remembers its size and position between launches.</li><li>Removed five unused dependencies, including one that was pulling in a security advisory. The download is smaller as a result.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.21.0">1.21.0</h2>
+      <span class="date">25 July 2026</span>
     </div>
       <p>Updates now come from a private channel.</p>
       <ul><li>Cyanote no longer downloads updates from a public location. New versions are fetched from a private channel that checks your licence key first, so the app can&#x27;t be downloaded for free by anyone who finds the link.</li><li>Settings → Check for updates now asks for your licence key the first time, and remembers it. Your key is in the receipt email from your purchase.</li><li>Nothing else is gated. Cyanote itself works exactly as before without a key — every note, task and setting stays available. The key is only needed to download a new version.</li></ul>
