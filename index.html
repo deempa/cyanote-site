@@ -79,25 +79,6 @@
   .cta{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:32px }
   .cta small{ display:block; color:var(--muted); font-size:.82rem; margin-top:14px; width:100% }
 
-  /* app window mockup */
-  .mock{ margin:56px auto 0; max-width:940px; border-radius:16px; overflow:hidden;
-    border:1px solid var(--border); box-shadow:var(--shadow); background:var(--elevated) }
-  .mock .bar{ display:flex; align-items:center; gap:8px; padding:12px 14px; background:var(--surface); border-bottom:1px solid var(--border) }
-  .dot{ width:12px; height:12px; border-radius:50% }
-  .mock .body{ display:grid; grid-template-columns:200px 1fr; min-height:340px }
-  .mock .side{ border-right:1px solid var(--border); padding:16px 12px; background:var(--surface) }
-  .navrow{ display:flex; align-items:center; gap:9px; padding:8px 10px; border-radius:9px; color:var(--muted); font-size:.9rem }
-  .navrow.on{ background:color-mix(in srgb, var(--accent) 14%, transparent); color:var(--text); font-weight:600 }
-  .navrow i{ width:16px; height:16px; border-radius:5px; display:inline-block }
-  .mock .main{ padding:26px 30px }
-  .mock .main h3{ font-size:1.4rem; margin-bottom:14px }
-  .task{ display:flex; align-items:center; gap:12px; padding:11px 14px; border:1px solid var(--border); border-radius:12px; margin-bottom:10px; background:var(--bg) }
-  .task .box{ width:18px; height:18px; border-radius:6px; border:2px solid var(--muted) }
-  .task.done .box{ background:#10b981; border-color:#10b981 }
-  .task.done span{ color:var(--muted); text-decoration:line-through }
-  .task .chip{ margin-left:auto; font-size:.72rem; font-weight:700; padding:.2rem .5rem; border-radius:7px }
-  .bar-priority{ width:4px; align-self:stretch; border-radius:4px }
-
   /* sections */
   section{ padding:64px 0 }
   .eyebrow{ text-align:center; color:var(--accent); font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-size:.78rem }
@@ -216,25 +197,6 @@
     <small>One-time payment · Free lifetime updates · Apple Silicon · macOS 12+</small>
   </div>
 
-  <div class="mock" aria-hidden="true">
-    <div class="bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span></div>
-    <div class="body">
-      <div class="side">
-        <div class="navrow"><i style="background:#f59e0b"></i> Today</div>
-        <div class="navrow on"><i style="background:#10b981"></i> To-Do</div>
-        <div class="navrow"><i style="background:#ec4899"></i> Calendar</div>
-        <div class="navrow"><i style="background:#8b5cf6"></i> Board</div>
-        <div class="navrow"><i style="background:#a855f7"></i> Habits</div>
-      </div>
-      <div class="main">
-        <h3>To-Do</h3>
-        <div class="task"><span class="bar-priority" style="background:#f43f5e"></span><span class="box"></span><span>Book flights for the Lisbon trip</span><span class="chip" style="background:#f43f5e22;color:#f43f5e">Today</span></div>
-        <div class="task"><span class="bar-priority" style="background:#e69110"></span><span class="box"></span><span>Pick up the dry cleaning</span><span class="chip" style="background:#3b82f622;color:#3b82f6">Tue</span></div>
-        <div class="task done"><span class="box"></span><span>Pay the electricity bill</span></div>
-        <div class="task done"><span class="box"></span><span>Call the dentist</span></div>
-      </div>
-    </div>
-  </div>
 </div></header>
 
 <section id="demo"><div class="wrap">
