@@ -56,8 +56,100 @@
 
   <section class="rel">
     <div class="relhead">
+      <h2 id="v1.34.0">1.34.0</h2>
+      <span class="date">27 July 2026</span><span class="latest">Latest</span>
+    </div>
+      <p>Cyanote is now signed by Apple and runs on every Mac, and the clipboard is much quicker to open.</p>
+      <h3>Please re-allow paste</h3>
+      <ul><li>macOS ties the &quot;control your computer&quot; permission to the app&#x27;s signature, and this release is signed with a new Apple-issued one. <strong>The clipboard&#x27;s paste-back will stop working until you allow Cyanote again</strong> in System Settings → Privacy &amp; Security → Accessibility. It is a one-off, and copying and pasting by hand keeps working in the meantime.</li></ul>
+      <h3>Runs everywhere, no warning</h3>
+      <ul><li>Cyanote is now notarized by Apple. It opens normally on first launch instead of warning that it is damaged or from an unidentified developer, and there is no need to right-click → Open any more.</li><li>Builds are universal, so Cyanote runs natively on both Apple Silicon and Intel Macs. Until now the download and the updates were Apple Silicon only — if you are on an Intel Mac, this is the first version you can install.</li></ul>
+      <h3>A faster clipboard</h3>
+      <ul><li>The app no longer loads your whole clipboard history at launch. It reads it when you open the clipboard, a page at a time as you scroll, which takes a noticeable chunk off startup — especially if your history holds screenshots.</li><li>Opening the clipboard always starts at the top of the list again. It used to reopen wherever you had last scrolled to, with the newest item somewhere off-screen above.</li><li>Searching the clipboard now searches your whole history rather than only the part already loaded.</li><li>Copying is quicker too: a history full of large images no longer has to be scanned end to end on every copy to spot duplicates.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.33.0">1.33.0</h2>
+      <span class="date">27 July 2026</span>
+    </div>
+      <p>A Pomodoro timer, clocks that read the way you want them to, and a long list of repairs to the things that could quietly lose work.</p>
+      <h3>Pomodoro</h3>
+      <ul><li>A new Pomodoro page: a focus timer with short and long breaks, a ring that counts down, and a note of how many sessions you have finished today. Session lengths, rounds and auto-starting breaks are all adjustable on the page itself.</li><li>While a session runs, a small pill follows you around the app so the timer stays visible when you are writing. Click it to go back to the page.</li><li>Start, pause, reset and skip are in the command palette.</li><li>The timer keeps real time. Sending the app to the tray, closing the window or letting the Mac sleep no longer makes it drift.</li></ul>
+      <h3>12-hour and 24-hour time</h3>
+      <ul><li>Settings → General now has a time format choice, and everything that shows a clock time follows it: the calendar, reminders, routines, habits and backups. New installs use 24-hour.</li></ul>
+      <h3>Nothing gets lost</h3>
+      <ul><li>A locked note still called &quot;Untitled&quot; could be deleted by the app&#x27;s own tidy-up. Locking deliberately blanks the text so it is not readable at rest, and the tidy-up read that as an empty note. Locked notes are now left alone.</li><li>Restoring a backup could, if it ran into a problem part-way, leave you with nothing: the old notes already cleared and the new ones not yet written. A restore is now all-or-nothing — if anything goes wrong, or the app is force-quit mid-restore, your existing notes are untouched.</li><li>A restore that could not use any of a backup&#x27;s contents used to report success over an emptied app. It now refuses, and says what it could not read.</li><li>Writing a backup, exporting a note or saving to a linked file could leave a half-written file behind if the app stopped mid-write — including on top of a good backup. These are now written whole or not at all.</li><li>Editing one note and quickly switching to another could drop the first note&#x27;s last edit.</li><li>When a save failed, nothing said so. Saves now retry on their own, and if they still cannot land you get a message with a Retry button. Your unsaved text is held on to rather than being replaced by the older copy on disk. A full disk says so plainly.</li><li>A note whose formatting the editor could not read opened blank, and the next key you pressed saved that blank over your content. Such a note now opens read-only, shows its text, and offers to export it.</li></ul>
+      <h3>Fixes</h3>
+      <ul><li>The app leaked memory the whole time an image sat on the clipboard, and grew until it ran out. Copying a screenshot made this fast.</li><li>In a note with more than one table, the column buttons acted on the first table on the page instead of the one you were pointing at.</li><li>A routine&#x27;s timer lost its progress when you closed the runner, and started the step again from the top.</li><li>Large code notes were slow to type in, and their highlighting quietly gave up past the first few thousand characters. Both are fixed; a several-megabyte file now types at full speed.</li><li>The code font setting had no effect on code notes.</li><li>In a confirmation dialog, moving to Cancel and pressing Return ran the action you were trying to refuse.</li><li>Option and the arrow keys jumped through history instead of moving the cursor a word at a time inside text.</li><li>A routine step given an invalid length silently became untimed. It now says so and will not save until it is fixed.</li><li>Attachments and pasted images are capped at 10 MB, with a clear message, instead of being accepted and slowing the note down.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.32.0">1.32.0</h2>
+      <span class="date">27 July 2026</span>
+    </div>
+      <p>A tighter habits list, and a calmer app all round.</p>
+      <h3>Habits</h3>
+      <ul><li>Habit rows are about a third the height they were: one line each, with the icon doubling as the button that marks today done.</li><li>The ten-week history grid now sits in the row itself rather than only appearing when a card is opened — and its squares are still clickable, so filling in a missed day takes one click.</li><li>Categories have moved out of the rows and become headings: the list is grouped by category, which says it once instead of on every row.</li><li>The stats — best streak, hit rate, total — and the full three-month history are behind the grid button.</li></ul>
+      <h3>Everywhere</h3>
+      <ul><li>Pages no longer flash &quot;nothing here yet&quot; for a moment before their content arrives. While a list is loading it shows a placeholder instead of an empty state that isn&#x27;t true.</li><li>The small coloured labels used for due dates, reminders, priorities and habits had drifted into four slightly different styles. They are one style now.</li><li>Every page keeps its main action in the same place — top right. The board and the calendar have gained one; the to-do list keeps its add box.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.31.0">1.31.0</h2>
+      <span class="date">27 July 2026</span>
+    </div>
+      <p>Run a routine with a timer, plan a day at a time, and save your own templates.</p>
+      <h3>Routines you can run</h3>
+      <ul><li>Each step can be given a length in minutes, and a <strong>Start</strong> button on the routine runs it step by step: one step on screen at a time, with a countdown, <strong>Skip</strong>, <strong>Pause</strong> and <strong>Done</strong>.</li><li>A timed step moves on by itself when the time is up; a step with no time set simply waits for you. Leaving part-way and coming back picks up where you left off.</li><li>Cards show each step&#x27;s length and what the whole routine costs.</li></ul>
+      <h3>To-Do, a day at a time</h3>
+      <ul><li>The list now has a week strip: pick a day to see what is due on it, step between weeks, and switch to <strong>All</strong> for everything undated.</li><li>The habits due on that day appear alongside the tasks, ready to tick off — so &quot;what do I have to do today&quot; is one screen instead of two pages.</li><li>Today also gathers anything overdue, and undated tasks sit in a tray at the bottom where one click schedules them.</li><li>A task&#x27;s due date and reminder are now a single chip and a single picker, since a reminder is nearly always &quot;on the day it&#x27;s due&quot;. Priority is always visible rather than appearing on hover.</li></ul>
+      <h3>Right-click, everywhere</h3>
+      <ul><li>Right-click a day in the calendar for <strong>New event</strong>, <strong>Add a task due this day</strong>, <strong>Open the daily note</strong> and <strong>Go to this week</strong>.</li><li>Right-click <strong>Trash</strong> in the sidebar to empty it, and a board column to add a task or mark everything in it done.</li></ul>
+      <h3>Your own templates</h3>
+      <ul><li><strong>Save as template…</strong> in a note&#x27;s ⋯ menu turns whatever you have written into a starting point, which then appears under <strong>My templates</strong> whenever you create a note.</li></ul>
+      <h3>Elsewhere</h3>
+      <ul><li>Creating a habit or a routine now opens with a live preview of the card you are describing, updating as you type.</li><li>The guided tour explains the clipboard manager properly — how to open it from any app, search it, and pin what you reuse.</li><li>The board&#x27;s &quot;Notes by tag&quot; mode has been removed; the board is tasks.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.30.0">1.30.0</h2>
+      <span class="date">26 July 2026</span>
+    </div>
+      <p>Routines get their own page, tasks get a clearer shape, and habits can be categorised.</p>
+      <h3>Routines</h3>
+      <ul><li>Routines have moved out of the Habits page and onto one of their own, in the sidebar just below Habits.</li><li>The page is now a timeline of your day: the time on the left, a coloured marker on a rail, and the routine&#x27;s card beside it. Routines are ordered by when they actually happen — their reminder, or the hour their slot sits at — so reading top to bottom gives you the shape of the day.</li><li>A routine&#x27;s marker fills in and turns to a tick once every step is done.</li></ul>
+      <h3>Habit categories</h3>
+      <ul><li>A habit can now be tagged with one of eight categories — Health, Fitness, Mind, Focus, Learning, Money, Home and Social — each with its own colour and icon.</li><li>The category shows as a chip on the habit&#x27;s card, and the categories you use appear as filters above the list.</li></ul>
+      <h3>To-Do</h3>
+      <ul><li>Task rows have been rebuilt: the task on its own line, with its due date, reminder and priority as chips beneath it.</li><li>Setting a due date or a reminder is far easier. A task without one shows a dashed <strong>Add due date</strong> / <strong>Remind me</strong> chip instead of hiding the controls until you hover, and the due-date picker now opens beside the chip led by Today, Tomorrow, This weekend and Next week.</li><li>Priority is a labelled chip that cycles when clicked, rather than a coloured flag you had to know how to read.</li></ul>
+      <h3>Board</h3>
+      <ul><li>Columns now carry a coloured dot, their name and a total, with a full-width <strong>Add New Task</strong> button in the column&#x27;s own colour — adding to a specific column no longer means adding anywhere and dragging afterwards.</li><li>Cards show the column&#x27;s label as a chip, the task in bold, and its due date and reminder underneath.</li></ul>
+      <h3>Calendar</h3>
+      <ul><li>Each day is now split into events, tasks and habits, each with its own colour down the left edge.</li><li>Habits appear by name — &quot;drink water&quot; rather than &quot;0/1&quot; — and fill with their own colour, struck through, once done.</li></ul>
+      <h3>Elsewhere</h3>
+      <ul><li>The Mode setting is gone. Everything Cyanote can do is simply available; nothing is hidden behind a mode any more.</li><li>The clipboard history keeps 500 entries by default, up from 200, and can be raised to 1000 in Settings.</li><li>The habit history grid is open by default and shows three months at a glance rather than six.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.29.0">1.29.0</h2>
+      <span class="date">26 July 2026</span>
+    </div>
+      <p>Notes fill the window, files you open stay real files, and habits keep their history.</p>
+      <h3>Full-width notes</h3>
+      <ul><li>Notes now use the full width of the window by default, instead of a narrow centred column. Settings → Editor still offers Narrow, Medium, Wide and Full, and any single note can override it from its ⋯ menu.</li></ul>
+      <h3>Files opened from your computer</h3>
+      <ul><li>A note opened from a file on disk now says so: a <strong>File on disk</strong> bar under the title shows the full path, with the folder greyed and the file name in full — so you always know which file you are about to overwrite.</li><li>The bar has buttons to show the file in Finder, copy its path, and unlink the note from the file (the file itself is left alone).</li><li>The notes list marks these notes with a small disk icon, so you can tell them apart before opening them.</li><li><strong>Save as…</strong> writes a code note to a different file and follows the new file from then on. Any code note can be put on disk this way and edited as the real file afterwards; both actions are in the command palette now.</li></ul>
+      <h3>Habits</h3>
+      <ul><li>Each habit card opens a <strong>history grid</strong> — half a year of days, filled in the habit&#x27;s own colour, in the style of a contribution chart. Past days are clickable, so a missed day can be filled in from there.</li><li>Alongside it: best streak, how often you actually hit it over the last 90 days, and total completions. All counted from the day the habit was created.</li></ul>
+      <h3>Calendar</h3>
+      <ul><li>Habits now appear in the calendar. The month view shows a badge per day — how many are still to do, turning green with a tick once the day is complete — plus a dot per habit.</li><li>The week view lists each habit as a chip you can tick off in place, and the agenda shows the coming week&#x27;s habits even on days with nothing else on.</li></ul>
+      <h3>Notes list</h3>
+      <ul><li>The list header is now a small navigation strip for <strong>All notes</strong>, <strong>Favorites</strong> and <strong>Recent</strong>, each with its own colour. Sorting moved into a compact menu beside it.</li><li>A note that contains other notes now shows a document icon with a second page behind it, rather than a folder — it is still a note.</li><li>Long lists get a pager at the bottom, 50 notes to a page, so a large library or a full trash can be moved through a page at a time.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
       <h2 id="v1.28.0">1.28.0</h2>
-      <span class="date">26 July 2026</span><span class="latest">Latest</span>
+      <span class="date">26 July 2026</span>
     </div>
       <p>Write in Hebrew or Arabic, and set any editor setting per note.</p>
       <h3>Right-to-left writing</h3>
