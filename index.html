@@ -101,23 +101,29 @@
     outline:2px solid currentColor }
   .card p{ color:var(--muted); font-size:.95rem }
 
-  /* "What it doesn't do" — flat and quiet on purpose. The section argues by
-     subtraction, so a wall of gradients would undercut it. The hairlines are a
-     1px grid gap over a border-coloured backdrop rather than per-cell borders:
-     no doubled lines where cells meet, and the six read as one panel instead of
-     six floating cards. */
-  .nots{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
-    background:var(--border); border:1px solid var(--border);
-    border-radius:var(--r); overflow:hidden }
-  @media(max-width:860px){ .nots{ grid-template-columns:repeat(2,1fr) } }
-  @media(max-width:560px){ .nots{ grid-template-columns:1fr } }
-  .not{ background:var(--elevated); padding:26px 24px }
-  .not h3{ display:flex; align-items:center; gap:10px; font-size:1rem;
-    letter-spacing:-.01em; margin-bottom:8px }
-  .not h3 i{ flex:none; width:22px; height:22px; border-radius:50%; display:grid;
-    place-items:center; font-style:normal; font-size:.85rem; font-weight:700;
-    color:var(--muted); background:var(--surface); border:1px solid var(--border) }
-  .not p{ color:var(--muted); font-size:.9rem; line-height:1.55 }
+  /* Feature tiles — one colour family rather than a rainbow, and a fixed count
+     per row. Seven tiles used to leave an orphan on the last row at every
+     breakpoint; eight divides cleanly by four, by two and by one, so the grid
+     is even at every width. Uniform size throughout: the old tall/wide spans
+     meant one tile always had far more box than content. */
+  .feat{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px }
+  @media(max-width:880px){ .feat{ grid-template-columns:repeat(2,1fr) } }
+  @media(max-width:540px){ .feat{ grid-template-columns:1fr } }
+  .ft{ border-radius:var(--r); padding:18px; color:#fff; display:flex; flex-direction:column;
+    justify-content:center; box-shadow:0 16px 34px -22px rgb(19 33 55 / .55);
+    transition:transform .15s ease }
+  .ft:hover{ transform:translateY(-3px) }
+  .ft .em{ font-size:1.3rem; line-height:1; margin-bottom:9px }
+  .ft b{ display:block; font-size:.95rem; letter-spacing:-.01em; margin-bottom:3px }
+  .ft p{ font-size:.83rem; line-height:1.45; opacity:.92; text-wrap:pretty }
+  .f1{ background:linear-gradient(150deg,#0e7cc4,#2b7fb8) }
+  .f2{ background:linear-gradient(150deg,#1a8fbe,#1668a8) }
+  .f3{ background:linear-gradient(150deg,#1f9fb5,#2a93c9) }
+  .f4{ background:linear-gradient(150deg,#2b7fb8,#15859f) }
+  .f5{ background:linear-gradient(150deg,#1668a8,#3070b4) }
+  .f6{ background:linear-gradient(150deg,#2a93c9,#0e7cc4) }
+  .f7{ background:linear-gradient(150deg,#15859f,#1a8fbe) }
+  .f8{ background:linear-gradient(150deg,#3070b4,#1f9fb5) }
 
   /* trust strip — the three reasons to buy, kept visually quieter than the
      feature cards so it reads as reassurance rather than more features */
@@ -303,33 +309,24 @@
 </div>
 
 <section id="features"><div class="wrap">
-  <p class="eyebrow">By design</p>
-  <h2>What it doesn't do</h2>
-  <p class="lead">Most of what makes an app tiring is something a person chose to add. These are the choices we didn't make.</p>
-
-  <!-- Deliberately flat and quiet, against the colour everywhere else on the page:
-       the argument here is subtraction, and a wall of gradients would contradict it.
-       Hairline dividers come from a 1px grid gap over a border-coloured backdrop, so
-       the whole block reads as one object rather than six floating cards. -->
-  <div class="nots">
-    <div class="not"><h3><i aria-hidden="true">&times;</i>No account</h3>
-      <p>Nothing to sign up for and nothing to verify. Open it and start writing.</p></div>
-    <div class="not"><h3><i aria-hidden="true">&times;</i>No cloud</h3>
-      <p>Your notes are one database file on your own Mac. You can find it, copy it and back it up yourself.</p></div>
-    <div class="not"><h3><i aria-hidden="true">&times;</i>No subscription</h3>
-      <p>$10, once. There is no tier above this one and nothing else to buy later.</p></div>
-    <div class="not"><h3><i aria-hidden="true">&times;</i>No telemetry</h3>
-      <p>No analytics, no crash reporter, no usage pings. The app talks to exactly one address, and only to ask whether there is a new version.</p></div>
-    <div class="not"><h3><i aria-hidden="true">&times;</i>No AI in your notes</h3>
-      <p>Nothing rewrites your sentences, and nothing reads them to suggest something better.</p></div>
-    <div class="not"><h3><i aria-hidden="true">&times;</i>No sync to go wrong</h3>
-      <p>Nothing syncs, so nothing conflicts, duplicates, or asks you which copy to keep.</p></div>
+  <p class="eyebrow">Everything in one place</p>
+  <h2>One app instead of five</h2>
+  <p class="lead">Five subscriptions, five windows, five places your week ends up. This is one — and it opens instantly.</p>
+  <div class="feat">
+    <div class="ft f1"><span class="em" aria-hidden="true">📝</span><b>Notes &amp; code notes</b><p>Slash commands, tables, sub-pages, wiki-links.</p></div>
+    <div class="ft f2"><span class="em" aria-hidden="true">✅</span><b>To-dos &amp; board</b><p>Priorities, due dates, reminders, Kanban.</p></div>
+    <div class="ft f3"><span class="em" aria-hidden="true">📅</span><b>Calendar</b><p>What's due, what's next.</p></div>
+    <div class="ft f4"><span class="em" aria-hidden="true">🔥</span><b>Habits</b><p>Streaks that stick.</p></div>
+    <div class="ft f5"><span class="em" aria-hidden="true">🔁</span><b>Routines &amp; Pomodoro</b><p>Timed checklists and a focus timer.</p></div>
+    <div class="ft f6"><span class="em" aria-hidden="true">📋</span><b>Clipboard manager</b><p>Every copy kept, a hotkey away.</p></div>
+    <div class="ft f7"><span class="em" aria-hidden="true">🎨</span><b>Themes &amp; typography</b><p>Eight themes and a palette builder.</p></div>
+    <div class="ft f8"><span class="em" aria-hidden="true">🔎</span><b>Instant search</b><p>Full-text across every note, ranked.</p></div>
   </div>
 
   <!-- The three reasons people actually buy, as a strip rather than a third
        full-height card grid saying much the same thing as the one above. -->
   <ul class="trust">
-    <li><span aria-hidden="true">🔒</span><div><b>Locked notes</b>Seal any note with a password. The text is encrypted on disk, not just hidden from view.</div></li>
+    <li><span aria-hidden="true">🔒</span><div><b>Local-first</b>No account, no cloud, no telemetry. Lock any note with a password.</div></li>
     <li><span aria-hidden="true">⚡</span><div><b>Native speed</b>Rust and Tauri rather than bundled Chromium — it launches instantly.</div></li>
     <li><span aria-hidden="true">🔄</span><div><b>Updates forever</b>New versions arrive in-app, free, for as long as it exists.</div></li>
   </ul>
