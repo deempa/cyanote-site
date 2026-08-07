@@ -194,7 +194,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Local-first, Privacy, Offline",
-  "wordCount": 1450
+  "wordCount": 1516
 }
 </script>
 <script type="application/ld+json">
@@ -297,7 +297,7 @@
       <ol><li><strong>Can you create an account-less install?</strong> If signing up is mandatory, the server holds something. That may be fine, but it is not local-first.</li><li><strong>Where is the data, and can you open the folder?</strong> A real answer is a path. If the answer is "in the app", ask again.</li><li><strong>Turn the wifi off and use it for an hour.</strong> Everything should work. Not "most things" — everything.</li></ol>
       <p>A fourth, softer test: what happens when you cancel? If there is nothing to cancel, that tells you where the data was.</p>
       <h2 id="where-cyanote-sits">Where Cyanote sits</h2>
-      <p>Cyanote stores everything in a SQLite database on your own Mac. There is no account, no server, no telemetry, and no licence key — after you buy it, the app never contacts me about anything except checking for a new version. Individual notes can be locked with a password on top of that.</p>
+      <p>Cyanote stores everything in a SQLite database on your own Mac. There is no account, no server holding your notes, and no telemetry. The app makes two network requests of its own and no others. A new install sends the licence key from your purchase email to Lemon Squeezy, once, to confirm the purchase — that is the only moment the app needs a network at all, and there is nothing to sign in to. After that it checks for a new version, about every six hours while it is open, carrying no key, no account and no identifier. Neither request carries a word you have written. Individual notes can be locked with a password on top of that.</p>
       <figure><img src="https://cyanote.app/images/note.webp" alt="Cyanote&#x27;s note editor with the slash command menu open, showing headings, lists, tables and code blocks" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Everything here is a row in a database file on your own disk.</figcaption></figure>
       <p>It takes the trade-offs above rather than dodging them. There is no sync and no iOS app. What it offers in exchange is that the whole thing — notes, tasks, calendar, habits, clipboard history — opens instantly, works in a basement, and cannot be read by me or anyone else. Backup and restore is a single JSON file you can write anywhere you like, and a restore always takes a rescue snapshot of what it is about to replace before it does anything.</p>
       <p>Optional network features exist and are opt-in: you can subscribe to a Google Calendar so events appear alongside your tasks. That is a deliberate exception, and it is a read of a calendar you already publish — nothing goes the other way.</p>
