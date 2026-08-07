@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>I replaced five subscriptions with one $10 app | Cyanote</title>
+<meta name="description" content="Five productivity subscriptions cost me about $260 a year, and I still lost things in the gaps between them. Here is what I built instead, and what it costs." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#0e7cc4" />
+<link rel="canonical" href="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/" />
+<meta property="og:title" content="I replaced five subscriptions with one $10 app | Cyanote" />
+<meta property="og:description" content="Five productivity subscriptions cost me about $260 a year, and I still lost things in the gaps between them. Here is what I built instead, and what it costs." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="I replaced five subscriptions with one $10 app | Cyanote" />
+<meta name="twitter:description" content="Five productivity subscriptions cost me about $260 a year, and I still lost things in the gaps between them. Here is what I built instead, and what it costs." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<style>
+  :root{
+    --bg:#fbfcfe; --surface:#eef3fa; --elevated:#ffffff; --border:#e0e7ef;
+    --text:#132137; --muted:#546478; --accent:#0e7cc4; --accent-fg:#fff;
+    --r:14px; --shadow:0 10px 40px -12px rgb(19 33 55 / .18);
+    /* Narrower than the landing page's 1080 on purpose: it lines the nav and
+       footer up with the 720px reading column instead of leaving the logo
+       floating 150px to the left of the first line of text. */
+    --maxw:768px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0f1620; --surface:#16233b; --elevated:#1b2942; --border:#243653;
+      --text:#c7d6e6; --muted:#7e93ac; --accent:#38b6e8; --accent-fg:#0a141f;
+      --shadow:0 10px 44px -12px rgb(0 0 0 / .55); }
+  }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    background:
+      radial-gradient(900px 520px at 100% -8%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 62%),
+      radial-gradient(820px 500px at -5% 108%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
+      var(--bg);
+    color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px }
+  .btn{ display:inline-flex; align-items:center; gap:.5rem; font-weight:600; border-radius:12px;
+    padding:.8rem 1.3rem; transition:transform .12s ease, opacity .15s ease, background .15s ease; }
+  .btn:active{ transform:scale(.97) }
+  .btn-primary{ background:var(--accent); color:var(--accent-fg); box-shadow:var(--shadow) }
+  .btn-primary:hover{ opacity:.92 }
+  .btn-ghost{ border:1px solid var(--border); background:var(--elevated) }
+  .btn-ghost:hover{ border-color:var(--accent) }
+  /* Near-opaque rather than the landing page's 78%: with a long article running
+     underneath it, a see-through bar left body text legible through the nav. */
+  nav{ position:sticky; top:0; z-index:20; backdrop-filter:blur(10px);
+    background:color-mix(in srgb, var(--bg) 96%, transparent); border-bottom:1px solid var(--border) }
+  nav .wrap{ display:flex; align-items:center; gap:16px; height:64px }
+  .logo{ display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem }
+  .logo .mark{ width:32px; height:32px; display:block; border-radius:9px }
+  nav .links{ margin-left:auto; display:flex; align-items:center; gap:22px; font-size:.94rem; color:var(--muted) }
+  nav .links a:hover{ color:var(--text) }
+  nav .links a[aria-current]{ color:var(--text); font-weight:600 }
+  @media(max-width:680px){ nav .links a:not(.btn){ display:none } }
+  .skip{ position:absolute; left:-9999px; top:0; z-index:100 }
+  .skip:focus{ left:12px; top:12px; padding:10px 16px; border-radius:10px;
+    background:var(--elevated); color:inherit; box-shadow:0 8px 30px rgba(0,0,0,.18);
+    outline:2px solid currentColor }
+  footer{ border-top:1px solid var(--border); padding:36px 0; margin-top:72px; color:var(--muted); font-size:.9rem }
+  footer .wrap{ display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between }
+  footer a:hover{ color:var(--text) }
+
+  /* ── Blog ────────────────────────────────────────────────────────────────
+     Everything above is the landing page's own vocabulary, repeated so a blog
+     page is self-contained (the site ships no shared stylesheet — index.html
+     and changelog.html each carry their own). Below is the part that only the
+     blog needs: a reading column, and the article typography. */
+  .blogwrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px }
+  .crumbs{ font-size:.85rem; color:var(--muted); padding:34px 0 0 }
+  .crumbs a:hover{ color:var(--text); text-decoration:underline }
+  .crumbs span{ opacity:.6; padding:0 6px }
+
+  .blog-head{ padding:26px 0 8px; border-bottom:1px solid var(--border); margin-bottom:34px }
+  .blog-head h1{ font-size:clamp(2rem,4.2vw,2.7rem); line-height:1.12; letter-spacing:-.025em;
+    font-weight:800; text-wrap:balance }
+  .blog-head p{ color:var(--muted); margin:14px 0 26px; font-size:1.05rem; max-width:44rem }
+
+  .meta{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; color:var(--muted);
+    font-size:.88rem; margin:18px 0 0 }
+  .meta .dot{ opacity:.5 }
+  .tags{ display:flex; flex-wrap:wrap; gap:7px; list-style:none; margin:18px 0 0 }
+  .tags li{ font-size:.74rem; font-weight:600; letter-spacing:.02em; color:var(--accent);
+    background:color-mix(in srgb, var(--accent) 11%, transparent);
+    border:1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+    padding:.2rem .62rem; border-radius:999px }
+
+  /* index list */
+  .postlist{ list-style:none; display:grid; gap:14px; padding-bottom:8px }
+  .postlist article{ border:1px solid var(--border); background:var(--elevated); border-radius:var(--r);
+    padding:24px 26px; transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease }
+  .postlist article:hover{ transform:translateY(-2px);
+    border-color:color-mix(in srgb,var(--accent) 40%,var(--border)); box-shadow:var(--shadow) }
+  .postlist h2{ font-size:1.28rem; letter-spacing:-.015em; line-height:1.3 }
+  .postlist h2 a:hover{ color:var(--accent) }
+  .postlist p{ color:var(--muted); font-size:.97rem; margin-top:9px }
+  .postlist time{ color:var(--muted); font-size:.83rem }
+  .more{ color:var(--accent); font-weight:600; font-size:.92rem; display:inline-block; margin-top:12px }
+  .more:hover{ text-decoration:underline }
+
+  /* article body */
+  .post{ font-size:1.06rem; line-height:1.75 }
+  .post h2{ font-size:1.5rem; letter-spacing:-.015em; margin:44px 0 12px; line-height:1.25 }
+  .post h3{ font-size:1.15rem; margin:32px 0 8px }
+  .post h4{ font-size:1rem; margin:24px 0 6px }
+  .post p{ margin-bottom:18px; text-wrap:pretty }
+  .post ul,.post ol{ margin:0 0 20px 1.3rem }
+  .post li{ margin-bottom:9px }
+  .post a{ color:var(--accent); text-decoration:underline; text-underline-offset:2px }
+  .post a:hover{ text-decoration-thickness:2px }
+  .post strong{ font-weight:700 }
+  .post blockquote{ border-left:3px solid color-mix(in srgb,var(--accent) 45%,var(--border));
+    padding:2px 0 2px 18px; margin:24px 0; color:var(--muted) }
+  .post blockquote p{ margin:0 }
+  .post code{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em;
+    background:var(--elevated); border:1px solid var(--border); border-radius:5px; padding:1px 5px }
+  .post pre{ background:var(--elevated); border:1px solid var(--border); border-radius:12px;
+    padding:16px 18px; overflow-x:auto; margin:0 0 22px }
+  .post pre code{ background:none; border:0; padding:0; font-size:.86rem; line-height:1.6 }
+  .post figure{ margin:28px 0 }
+  .post figure img{ width:100%; height:auto; display:block; border-radius:14px;
+    border:1px solid var(--border); box-shadow:var(--shadow) }
+  .post figcaption{ color:var(--muted); font-size:.85rem; margin-top:10px; text-align:center }
+  .post hr{ border:0; border-top:1px solid var(--border); margin:38px 0 }
+
+  /* end-of-post cards */
+  .endcta{ border:1px solid color-mix(in srgb,var(--accent) 38%,var(--border)); background:var(--elevated);
+    border-radius:var(--r); padding:26px 28px; margin:48px 0 0; box-shadow:var(--shadow) }
+  .endcta h2{ font-size:1.2rem; margin:0 0 8px }
+  .endcta p{ color:var(--muted); font-size:.96rem; margin-bottom:18px }
+  .related{ margin-top:44px; border-top:1px solid var(--border); padding-top:26px }
+  .related h2{ font-size:1rem; letter-spacing:.04em; text-transform:uppercase; color:var(--muted);
+    font-weight:700; margin-bottom:14px }
+  .related ul{ list-style:none; display:grid; gap:10px }
+  .related a{ color:var(--accent); font-weight:600 }
+  .related a:hover{ text-decoration:underline }
+  .related span{ display:block; color:var(--muted); font-size:.9rem; font-weight:400 }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "I replaced five subscriptions with one $10 app",
+  "description": "Five productivity subscriptions cost me about $260 a year, and I still lost things in the gaps between them. Here is what I built instead, and what it costs.",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": {
+    "@type": "Person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/"
+  },
+  "url": "https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://cyanote.app/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "One-time purchase, Subscriptions, Mac",
+  "wordCount": 1370
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "I replaced five subscriptions with one $10 app",
+      "item": "https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-07-15" />
+<meta property="article:modified_time" content="2026-07-15" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="One-time purchase" />
+<meta property="article:tag" content="Subscriptions" />
+<meta property="article:tag" content="Mac" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="logo" href="https://cyanote.app/"><img class="mark" src="https://cyanote.app/favicon.svg" alt="" width="32" height="32" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+    <a class="btn btn-primary" data-cta="nav" href="https://cyanote.app/#pricing">Get Cyanote — $10</a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>I replaced five subscriptions with one $10 app</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-07-15">15 July 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>One-time purchase</li><li>Subscriptions</li><li>Mac</li></ul>
+    </header>
+
+    <div class="post">
+      <p>In January 2025 I sat down to cancel one subscription and ended up cancelling five.</p>
+      <p>I had gone looking for a single charge I did not recognise. What I found instead was a small, quiet stack of them: a notes app, a to-do app, a calendar, a habit tracker, and a clipboard manager. None of them was expensive. Two were under five dollars a month. That is exactly why I had never looked at them together.</p>
+      <p>Added up, they came to roughly $260 a year. For software I had already decided I wanted, years ago, and had been re-buying every month since without ever making the decision again.</p>
+      <h2 id="the-bit-that-annoyed-me-was-not-the-money">The bit that annoyed me was not the money</h2>
+      <p>$260 is a real number but it is not a crisis. What actually bothered me was what I got for it.</p>
+      <p>A Tuesday looked like this. A thought arrives during a meeting, so it goes in the notes app. It turns out to have a deadline, so a task goes in the to-do app. The deadline is a Thursday, so I put a block in the calendar. Later I want the meeting link I had copied twenty minutes earlier, so I open the clipboard manager. That evening the habit tracker asks whether I did the thing I said I would do daily, and I have no idea, because the evidence is spread across four other apps.</p>
+      <p>Five apps, five windows, five search boxes. Nothing was lost inside any one of them. Things were lost <em>between</em> them — in the seams, where the note about the project and the task for the project and the hour set aside for the project all existed, separately, and none of them knew about the others.</p>
+      <p>Every one of those apps was well made. That is the strange part. The failure was not in the software; it was in the shape of the arrangement. Five good apps do not add up to one good system, because the connective tissue is you, doing it by hand, several times a day, forever.</p>
+      <h2 id="two-things-i-noticed-about-how-they-were-priced">Two things I noticed about how they were priced</h2>
+      <p>The first: I had never re-decided. A subscription is a decision you make once and then stop making. The bank makes it for you every month after that. I had chosen a habit tracker in 2022 based on what I needed in 2022, and I was still paying for that choice three years later, having never once asked whether it was still true.</p>
+      <p>The second is subtler, and it took me longer to see. When the money arrives monthly whether or not anything ships, the pressure on the software changes. It has to keep looking like it is worth the recurring charge. So features arrive — a team space, an AI assistant, an integrations directory, a web clipper — and the app gets bigger and slower and a little further from the thing you originally opened it for.</p>
+      <p>I do not think anyone is being cynical. It is just what the shape of the business rewards. But my notes app took four seconds to open a note, and I was paying every month for the privilege.</p>
+      <h2 id="what-i-actually-needed">What I actually needed</h2>
+      <p>So I wrote it down, honestly, rather than aspirationally. Not the features I might one day want — the ones I had actually used in the previous month:</p>
+      <ul><li>somewhere to write things down that opened instantly</li><li>a list of what is due, with dates and priorities</li><li>a calendar showing what is due next to what is scheduled</li><li>a light way to track a handful of daily habits</li><li>clipboard history, because I copy things and then need them again ten minutes later</li></ul>
+      <p>That is a modest list. It is nowhere near the union of what those five apps offered. It is close to the intersection of what I used.</p>
+      <p>The gap between those two things — everything the apps could do, and the small part I actually touched — is roughly the whole story of why productivity software feels heavy.</p>
+      <h2 id="so-i-built-it">So I built it</h2>
+      <p>Cyanote is what came out. Notes, to-dos and a board, a calendar, habits, routines and a Pomodoro timer, and a system-wide clipboard manager, in one window, with one search box that looks across all of it.</p>
+      <figure><img src="https://cyanote.app/images/today.webp" alt="Cyanote&#x27;s Today view: the day&#x27;s schedule, what is due, and habits still to tick, on one screen" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>One window, one search box — the day in one place rather than in five.</figcaption></figure>
+      <p>The unification is not decorative. A task with a due date shows up in the calendar because it is the same task, not a copy synced across a boundary. A note can link to another note, and the note being linked to says so. When you finish a focus session against a task, the app can tell you later where the day actually went. None of that is clever engineering. It is just what stops being hard once the data is not living in five separate accounts.</p>
+      <p>It costs $10. Once. There is no subscription, no account, no licence key to type in, and no upsell later. Updates are free for as long as the app exists — the <a href="https://cyanote.app/changelog.html">changelog</a> is the whole record of what that has meant so far.</p>
+      <h2 id="the-honest-economics-of-10-once">The honest economics of $10, once</h2>
+      <p>I want to be straight about this, because "pay once" is often sold as pure virtue and it is really a trade.</p>
+      <p>What you get: no recurring charge, and an app with no structural reason to grow features you did not ask for. My income does not depend on this month looking busy. It depends on the app being good enough that someone recommends it. Those pressures point in a much better direction.</p>
+      <p>What I give up: predictable revenue. That means Cyanote will never have a large team, a support desk with shift rotas, or a five-year roadmap underwritten by investors. It is one person, shipping steadily. If you need enterprise SSO and a service-level agreement, this is honestly not the software for you, and I would rather say so on a blog post than in a refund email.</p>
+      <h2 id="what-you-give-up-specifically">What you give up, specifically</h2>
+      <p>There are three real costs and I would rather you know them now.</p>
+      <p><strong>No sync between machines.</strong> Your data lives on your Mac and stays there. Two Macs means two separate sets of notes. This follows directly from the local-first design and I have written about the whole trade in <a href="https://cyanote.app/blog/what-local-first-means-for-your-notes/">what local-first actually means for your notes</a> — it is a genuine cost, not a feature in disguise.</p>
+      <p><strong>No mobile app.</strong> If capturing a thought on your phone at a bus stop is central to how you work, Cyanote covers the desk half of your life and something else covers the other half.</p>
+      <p><strong>No collaboration.</strong> No shared documents, no comments, no team spaces. This is a tool for one person's own thinking.</p>
+      <p><strong>Backups are yours.</strong> With no server, nobody is quietly keeping a copy for you. Cyanote exports everything to a single JSON file and Time Machine covers the rest, but the responsibility moved to your side of the line.</p>
+      <h2 id="was-it-worth-it">Was it worth it?</h2>
+      <p>For me, obviously — I have been using it every day for a year and I no longer pay $260 for the privilege of copying things between windows.</p>
+      <p>The more useful answer is the general one. Most people do not need five productivity subscriptions. They need one place that opens fast, holds the week, and does not ask anything of them again. If that is you, the audit is worth doing even if you never install anything I made: open your bank statement, find every recurring software charge under ten dollars, and ask which ones you would buy again today.</p>
+      <p>You will cancel at least one. Possibly five.</p>
+      <p>If you want somewhere for it all to land afterwards, <a href="https://cyanote.app/#pricing">Cyanote is $10</a> and that is the last time it asks you for anything. If you want to see the routine I use to keep a week from drifting, that is <a href="https://cyanote.app/blog/weekly-review-in-20-minutes/">the weekly review, in 20 minutes</a>.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">Get Cyanote — $10</a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/what-local-first-means-for-your-notes/">What local-first actually means for your notes</a><span>Local-first means your notes live on your computer and the app reads them directly. Here is what that buys you, what it really costs, and who should avoid it.</span></li><li><a href="https://cyanote.app/blog/weekly-review-in-20-minutes/">The weekly review, in 20 minutes</a><span>A weekly review that fits in twenty minutes, with the checklist and the timings. Four passes, a timer, and the three mistakes that make people quit early.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="logo"><img class="mark" src="https://cyanote.app/favicon.svg" alt="" width="32" height="32" /> Cyanote</div>
+  <div style="display:flex;gap:22px;flex-wrap:wrap">
+    <a href="https://cyanote.app/blog/">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+    <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+    <a href="https://cyanote.app/privacy.html">Privacy</a>
+    <a href="https://cyanote.app/refund.html">Refunds</a>
+  </div>
+  <div>© 2026 Cyanote. Made with care.</div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

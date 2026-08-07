@@ -259,10 +259,9 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Is it really a one-time payment?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pay $10 once and Cyanote is yours forever, including all future updates. No subscription, no upsells." } },
-    { "@type": "Question", "name": "How do I get it after paying?", "acceptedAnswer": { "@type": "Answer", "text": "You'll get a download link straight after checkout, and by email. Drag Cyanote to your Applications folder and open it. The app needs no licence key and no account — there is nothing to activate. Updates are built in and free forever." } },
-    { "@type": "Question", "name": "Where is my data stored?", "acceptedAnswer": { "@type": "Answer", "text": "Entirely on your own computer. Cyanote is local-first — there's no account and nothing is uploaded to a server. You can even password-lock individual notes." } },
-    { "@type": "Question", "name": "Which computers is it for?", "acceptedAnswer": { "@type": "Answer", "text": "Macs running macOS 12 Monterey or newer — both Apple Silicon and Intel, since Cyanote ships as a universal binary, signed and notarized by Apple. A Windows version is on the way, and your purchase covers it when it arrives." } }
+    { "@type": "Question", "name": "How do I get it after paying?", "acceptedAnswer": { "@type": "Answer", "text": "A download link right after checkout, and by email. Drag it to Applications and open it — no licence key, no account, nothing to activate." } },
+    { "@type": "Question", "name": "Where is my data stored?", "acceptedAnswer": { "@type": "Answer", "text": "On your own computer, in a local database. No account, nothing uploaded. Any note can be password-locked." } },
+    { "@type": "Question", "name": "Which computers is it for?", "acceptedAnswer": { "@type": "Answer", "text": "macOS 12 (Monterey) or newer. Universal binary — Apple Silicon and Intel — notarized by Apple. Windows is on the way; the same $10 covers it." } }
   ]
 }
 </script>
@@ -277,15 +276,16 @@
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
+    <a href="/blog/">Blog</a>
     <a class="btn btn-primary" data-cta="nav" href="#pricing">Get Cyanote — $10</a>
   </div>
 </div></nav>
 
 <header class="hero"><div class="wrap hero-grid">
   <div>
-    <span class="pill">✦ Local-first · No account · One-time $10</span>
+    <span class="pill">✦ Local-first · No account · No subscription</span>
     <h1>Everything you're juggling, in one quiet&nbsp;app.</h1>
-    <p class="sub">Notes, to-dos, a calendar, habits — and a system-wide clipboard manager. On your Mac, and it all stays there, not on someone's server.</p>
+    <p class="sub">Notes, to-dos, calendar, habits, and a system-wide clipboard manager. It all stays on your Mac.</p>
     <div class="cta">
       <a class="btn btn-primary" data-cta="hero" href="#pricing">Get Cyanote — $10</a>
       <a class="btn btn-ghost" href="#features">See what it does</a>
@@ -313,24 +313,24 @@
 <section id="features"><div class="wrap">
   <p class="eyebrow">Everything in one place</p>
   <h2>One app instead of five</h2>
-  <p class="lead">Five subscriptions, five windows, five places your week ends up. This is one — and it opens instantly.</p>
+  <p class="lead">Five subscriptions, five windows, five places your week ends up.</p>
   <div class="feat">
     <div class="ft f1"><span class="em" aria-hidden="true">📝</span><b>Notes &amp; code notes</b><p>Slash commands, tables, sub-pages, wiki-links.</p></div>
     <div class="ft f2"><span class="em" aria-hidden="true">✅</span><b>To-dos &amp; board</b><p>Priorities, due dates, reminders, Kanban.</p></div>
     <div class="ft f3"><span class="em" aria-hidden="true">📅</span><b>Calendar</b><p>What's due, what's next.</p></div>
     <div class="ft f4"><span class="em" aria-hidden="true">🔥</span><b>Habits</b><p>Streaks that stick.</p></div>
-    <div class="ft f5"><span class="em" aria-hidden="true">🔁</span><b>Routines &amp; Pomodoro</b><p>Timed checklists and a focus timer.</p></div>
+    <div class="ft f5"><span class="em" aria-hidden="true">🔁</span><b>Routines &amp; Pomodoro</b><p>Timed checklists, focus timer.</p></div>
     <div class="ft f6"><span class="em" aria-hidden="true">📋</span><b>Clipboard manager</b><p>Every copy kept, a hotkey away.</p></div>
-    <div class="ft f7"><span class="em" aria-hidden="true">🎨</span><b>Themes &amp; typography</b><p>Eight themes and a palette builder.</p></div>
+    <div class="ft f7"><span class="em" aria-hidden="true">🎨</span><b>Themes &amp; typography</b><p>Eight themes, plus your own.</p></div>
     <div class="ft f8"><span class="em" aria-hidden="true">🔎</span><b>Instant search</b><p>Full-text across every note, ranked.</p></div>
   </div>
 
   <!-- The three reasons people actually buy, as a strip rather than a third
        full-height card grid saying much the same thing as the one above. -->
   <ul class="trust">
-    <li><span aria-hidden="true">🔒</span><div><b>Local-first</b>No account, no cloud, no telemetry. Lock any note with a password.</div></li>
-    <li><span aria-hidden="true">⚡</span><div><b>Native speed</b>Rust and Tauri rather than bundled Chromium — it launches instantly.</div></li>
-    <li><span aria-hidden="true">🔄</span><div><b>Updates forever</b>New versions arrive in-app, free, for as long as it exists.</div></li>
+    <li><span aria-hidden="true">🔒</span><div><b>Local-first</b>No account, no cloud, no telemetry. Password-lock any note.</div></li>
+    <li><span aria-hidden="true">⚡</span><div><b>Native speed</b>Rust and Tauri, not Chromium. Opens instantly.</div></li>
+    <li><span aria-hidden="true">🔄</span><div><b>Updates forever</b>New versions arrive in-app, free.</div></li>
   </ul>
 </div></section>
 
@@ -339,8 +339,8 @@
     <div>
       <p class="eyebrow">The one you didn't know you needed</p>
       <h2>A clipboard that remembers</h2>
-      <p class="body">Every copy is saved to a searchable history you can open from <strong>any app</strong> with a global hotkey. Pin what you reuse, paste straight back into whatever you were doing.</p>
-      <p style="color:var(--muted);font-size:.92rem;margin-top:14px">Unlimited history · pinned snippets · quick-paste popup · never leaves your computer</p>
+      <p class="body">Every copy kept in a searchable history, open from <strong>any app</strong> with a global hotkey.</p>
+      <p style="color:var(--muted);font-size:.92rem;margin-top:14px">Unlimited history · pinned snippets · quick-paste popup · never leaves your Mac</p>
     </div>
     <img src="images/clipboard.webp" width="1400" height="912" alt="Cyanote clipboard manager showing copy history with smart type icons" loading="lazy"
       style="width:100%;height:auto;border-radius:14px;border:1px solid var(--border);box-shadow:var(--shadow)" />
@@ -365,15 +365,14 @@
 <section id="pricing"><div class="wrap">
   <p class="eyebrow">Simple pricing</p>
   <h2>Pay once. Yours forever.</h2>
-  <p class="lead">No subscription, no trial clock, no upsell. One price for the whole thing.</p>
+  <p class="lead">No subscription, no trial clock, no upsell.</p>
   <div class="price">
     <div class="amt">$10<span> / lifetime</span></div>
     <ul>
       <li><b>✓</b> Every feature — notes, tasks, board, calendar, habits, routines, Pomodoro, clipboard</li>
       <li><b>✓</b> Free updates for life</li>
       <li><b>✓</b> Works offline, stays on your computer</li>
-      <li><b>✓</b> Mac now, Windows when it's ready — one purchase covers both</li>
-      <li><b>✓</b> Download straight after checkout</li>
+      <li><b>✓</b> Mac now, Windows when ready — one purchase covers both</li>
     </ul>
     <a class="btn btn-primary" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">Get Cyanote — $10</a>
     <p style="color:var(--muted);font-size:.82rem;margin-top:14px">Secure checkout via Lemon Squeezy · macOS 12+ (Apple Silicon &amp; Intel), notarized by Apple</p>
@@ -384,18 +383,17 @@
        mailto builds the list to tell when it ships. Deliberately quiet — a
        ghost button, so it never competes with Buy above. -->
   <div style="max-width:440px;margin:20px auto 0;text-align:center">
-    <p style="color:var(--muted);font-size:.86rem"><b style="color:var(--text)">Windows: coming soon.</b> The Windows version is built and in testing. It goes on sale once it's properly signed, and your $10 covers it when it lands.</p>
+    <p style="color:var(--muted);font-size:.86rem"><b style="color:var(--text)">Windows: coming soon.</b> Built and in testing. Your $10 covers it.</p>
     <a class="btn btn-ghost" href="mailto:support@cyanote.app?subject=Tell%20me%20when%20Cyanote%20for%20Windows%20is%20ready"
       style="margin-top:14px;font-size:.86rem;padding:.55rem 1.1rem">Tell me when Windows is ready</a>
   </div>
 
   <div id="faq" style="margin-top:56px">
-    <details><summary>Is it really a one-time payment?</summary><p>Yes. $10 once, and every future version is included. There is no subscription and nothing else to buy.</p></details>
-    <details><summary>How do I get it after paying?</summary><p>You'll get a download link straight after checkout, and by email. Drag Cyanote to your Applications folder and open it. The app needs no licence key and no account — there is nothing to activate. Updates are built in and free forever.</p></details>
-    <details><summary>Where is my data stored?</summary><p>Entirely on your own computer, in a local database. There's no account and nothing is uploaded. Individual notes can be password-locked.</p></details>
-    <details><summary>Which computers is it for?</summary><p>Macs running macOS 12 (Monterey) or newer — both Apple Silicon and Intel, since Cyanote is a universal binary that runs natively on either. A Windows version is on the way; the licence isn't tied to a platform, so the same $10 covers it when it ships.</p></details>
+    <details><summary>How do I get it after paying?</summary><p>A download link right after checkout, and by email. Drag it to Applications and open it — no licence key, no account, nothing to activate.</p></details>
+    <details><summary>Where is my data stored?</summary><p>On your own computer, in a local database. No account, nothing uploaded. Any note can be password-locked.</p></details>
+    <details><summary>Which computers is it for?</summary><p>macOS 12 (Monterey) or newer. Universal binary — Apple Silicon and Intel — notarized by Apple. Windows is on the way; the same $10 covers it.</p></details>
     <p style="text-align:center;color:var(--muted);font-size:.92rem;margin-top:22px">
-      Still wondering something? Email <a href="mailto:support@cyanote.app" style="color:var(--accent);font-weight:600">support@cyanote.app</a> — a real person answers.
+      Still wondering something? Email <a href="mailto:support@cyanote.app" style="color:var(--accent);font-weight:600">support@cyanote.app</a>.
     </p>
   </div>
 </div></section>
@@ -403,7 +401,7 @@
 <section style="text-align:center;padding-top:0"><div class="wrap">
   <div class="card" style="padding:48px 24px">
     <h2 style="margin-bottom:8px">Get your week into one app</h2>
-    <p class="lead" style="margin-bottom:24px">Ten dollars, once. Everything after that is free.</p>
+    <p class="lead" style="margin-bottom:24px">$10 once. Everything after that is free.</p>
     <a class="btn btn-primary" data-cta="final" href="#pricing" style="font-size:1.05rem;padding:1rem 1.6rem">Get Cyanote — $10</a>
   </div>
 </div></section>
@@ -413,6 +411,7 @@
 <footer><div class="wrap">
   <div class="logo"><img class="mark" src="favicon.svg" alt="" width="32" height="32" /> Cyanote</div>
   <div style="display:flex;gap:22px;flex-wrap:wrap">
+    <a href="/blog/">Blog</a>
     <a href="changelog.html">Changelog</a>
     <a href="mailto:support@cyanote.app">support@cyanote.app</a>
     <a href="privacy.html">Privacy</a>

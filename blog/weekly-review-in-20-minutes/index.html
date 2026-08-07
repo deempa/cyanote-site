@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The weekly review, in 20 minutes: the actual checklist</title>
+<meta name="description" content="A weekly review that fits in twenty minutes, with the checklist and the timings. Four passes, a timer, and the three mistakes that make people quit early." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#0e7cc4" />
+<link rel="canonical" href="https://cyanote.app/blog/weekly-review-in-20-minutes/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/weekly-review-in-20-minutes/" />
+<meta property="og:title" content="The weekly review, in 20 minutes: the actual checklist" />
+<meta property="og:description" content="A weekly review that fits in twenty minutes, with the checklist and the timings. Four passes, a timer, and the three mistakes that make people quit early." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The weekly review, in 20 minutes: the actual checklist" />
+<meta name="twitter:description" content="A weekly review that fits in twenty minutes, with the checklist and the timings. Four passes, a timer, and the three mistakes that make people quit early." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<style>
+  :root{
+    --bg:#fbfcfe; --surface:#eef3fa; --elevated:#ffffff; --border:#e0e7ef;
+    --text:#132137; --muted:#546478; --accent:#0e7cc4; --accent-fg:#fff;
+    --r:14px; --shadow:0 10px 40px -12px rgb(19 33 55 / .18);
+    /* Narrower than the landing page's 1080 on purpose: it lines the nav and
+       footer up with the 720px reading column instead of leaving the logo
+       floating 150px to the left of the first line of text. */
+    --maxw:768px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0f1620; --surface:#16233b; --elevated:#1b2942; --border:#243653;
+      --text:#c7d6e6; --muted:#7e93ac; --accent:#38b6e8; --accent-fg:#0a141f;
+      --shadow:0 10px 44px -12px rgb(0 0 0 / .55); }
+  }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    background:
+      radial-gradient(900px 520px at 100% -8%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 62%),
+      radial-gradient(820px 500px at -5% 108%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
+      var(--bg);
+    color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px }
+  .btn{ display:inline-flex; align-items:center; gap:.5rem; font-weight:600; border-radius:12px;
+    padding:.8rem 1.3rem; transition:transform .12s ease, opacity .15s ease, background .15s ease; }
+  .btn:active{ transform:scale(.97) }
+  .btn-primary{ background:var(--accent); color:var(--accent-fg); box-shadow:var(--shadow) }
+  .btn-primary:hover{ opacity:.92 }
+  .btn-ghost{ border:1px solid var(--border); background:var(--elevated) }
+  .btn-ghost:hover{ border-color:var(--accent) }
+  /* Near-opaque rather than the landing page's 78%: with a long article running
+     underneath it, a see-through bar left body text legible through the nav. */
+  nav{ position:sticky; top:0; z-index:20; backdrop-filter:blur(10px);
+    background:color-mix(in srgb, var(--bg) 96%, transparent); border-bottom:1px solid var(--border) }
+  nav .wrap{ display:flex; align-items:center; gap:16px; height:64px }
+  .logo{ display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem }
+  .logo .mark{ width:32px; height:32px; display:block; border-radius:9px }
+  nav .links{ margin-left:auto; display:flex; align-items:center; gap:22px; font-size:.94rem; color:var(--muted) }
+  nav .links a:hover{ color:var(--text) }
+  nav .links a[aria-current]{ color:var(--text); font-weight:600 }
+  @media(max-width:680px){ nav .links a:not(.btn){ display:none } }
+  .skip{ position:absolute; left:-9999px; top:0; z-index:100 }
+  .skip:focus{ left:12px; top:12px; padding:10px 16px; border-radius:10px;
+    background:var(--elevated); color:inherit; box-shadow:0 8px 30px rgba(0,0,0,.18);
+    outline:2px solid currentColor }
+  footer{ border-top:1px solid var(--border); padding:36px 0; margin-top:72px; color:var(--muted); font-size:.9rem }
+  footer .wrap{ display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between }
+  footer a:hover{ color:var(--text) }
+
+  /* ── Blog ────────────────────────────────────────────────────────────────
+     Everything above is the landing page's own vocabulary, repeated so a blog
+     page is self-contained (the site ships no shared stylesheet — index.html
+     and changelog.html each carry their own). Below is the part that only the
+     blog needs: a reading column, and the article typography. */
+  .blogwrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px }
+  .crumbs{ font-size:.85rem; color:var(--muted); padding:34px 0 0 }
+  .crumbs a:hover{ color:var(--text); text-decoration:underline }
+  .crumbs span{ opacity:.6; padding:0 6px }
+
+  .blog-head{ padding:26px 0 8px; border-bottom:1px solid var(--border); margin-bottom:34px }
+  .blog-head h1{ font-size:clamp(2rem,4.2vw,2.7rem); line-height:1.12; letter-spacing:-.025em;
+    font-weight:800; text-wrap:balance }
+  .blog-head p{ color:var(--muted); margin:14px 0 26px; font-size:1.05rem; max-width:44rem }
+
+  .meta{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; color:var(--muted);
+    font-size:.88rem; margin:18px 0 0 }
+  .meta .dot{ opacity:.5 }
+  .tags{ display:flex; flex-wrap:wrap; gap:7px; list-style:none; margin:18px 0 0 }
+  .tags li{ font-size:.74rem; font-weight:600; letter-spacing:.02em; color:var(--accent);
+    background:color-mix(in srgb, var(--accent) 11%, transparent);
+    border:1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+    padding:.2rem .62rem; border-radius:999px }
+
+  /* index list */
+  .postlist{ list-style:none; display:grid; gap:14px; padding-bottom:8px }
+  .postlist article{ border:1px solid var(--border); background:var(--elevated); border-radius:var(--r);
+    padding:24px 26px; transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease }
+  .postlist article:hover{ transform:translateY(-2px);
+    border-color:color-mix(in srgb,var(--accent) 40%,var(--border)); box-shadow:var(--shadow) }
+  .postlist h2{ font-size:1.28rem; letter-spacing:-.015em; line-height:1.3 }
+  .postlist h2 a:hover{ color:var(--accent) }
+  .postlist p{ color:var(--muted); font-size:.97rem; margin-top:9px }
+  .postlist time{ color:var(--muted); font-size:.83rem }
+  .more{ color:var(--accent); font-weight:600; font-size:.92rem; display:inline-block; margin-top:12px }
+  .more:hover{ text-decoration:underline }
+
+  /* article body */
+  .post{ font-size:1.06rem; line-height:1.75 }
+  .post h2{ font-size:1.5rem; letter-spacing:-.015em; margin:44px 0 12px; line-height:1.25 }
+  .post h3{ font-size:1.15rem; margin:32px 0 8px }
+  .post h4{ font-size:1rem; margin:24px 0 6px }
+  .post p{ margin-bottom:18px; text-wrap:pretty }
+  .post ul,.post ol{ margin:0 0 20px 1.3rem }
+  .post li{ margin-bottom:9px }
+  .post a{ color:var(--accent); text-decoration:underline; text-underline-offset:2px }
+  .post a:hover{ text-decoration-thickness:2px }
+  .post strong{ font-weight:700 }
+  .post blockquote{ border-left:3px solid color-mix(in srgb,var(--accent) 45%,var(--border));
+    padding:2px 0 2px 18px; margin:24px 0; color:var(--muted) }
+  .post blockquote p{ margin:0 }
+  .post code{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em;
+    background:var(--elevated); border:1px solid var(--border); border-radius:5px; padding:1px 5px }
+  .post pre{ background:var(--elevated); border:1px solid var(--border); border-radius:12px;
+    padding:16px 18px; overflow-x:auto; margin:0 0 22px }
+  .post pre code{ background:none; border:0; padding:0; font-size:.86rem; line-height:1.6 }
+  .post figure{ margin:28px 0 }
+  .post figure img{ width:100%; height:auto; display:block; border-radius:14px;
+    border:1px solid var(--border); box-shadow:var(--shadow) }
+  .post figcaption{ color:var(--muted); font-size:.85rem; margin-top:10px; text-align:center }
+  .post hr{ border:0; border-top:1px solid var(--border); margin:38px 0 }
+
+  /* end-of-post cards */
+  .endcta{ border:1px solid color-mix(in srgb,var(--accent) 38%,var(--border)); background:var(--elevated);
+    border-radius:var(--r); padding:26px 28px; margin:48px 0 0; box-shadow:var(--shadow) }
+  .endcta h2{ font-size:1.2rem; margin:0 0 8px }
+  .endcta p{ color:var(--muted); font-size:.96rem; margin-bottom:18px }
+  .related{ margin-top:44px; border-top:1px solid var(--border); padding-top:26px }
+  .related h2{ font-size:1rem; letter-spacing:.04em; text-transform:uppercase; color:var(--muted);
+    font-weight:700; margin-bottom:14px }
+  .related ul{ list-style:none; display:grid; gap:10px }
+  .related a{ color:var(--accent); font-weight:600 }
+  .related a:hover{ text-decoration:underline }
+  .related span{ display:block; color:var(--muted); font-size:.9rem; font-weight:400 }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The weekly review, in 20 minutes",
+  "description": "A weekly review that fits in twenty minutes, with the checklist and the timings. Four passes, a timer, and the three mistakes that make people quit early.",
+  "datePublished": "2026-07-24",
+  "dateModified": "2026-07-24",
+  "author": {
+    "@type": "Person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/weekly-review-in-20-minutes/"
+  },
+  "url": "https://cyanote.app/blog/weekly-review-in-20-minutes/",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://cyanote.app/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Weekly review, GTD, Method",
+  "wordCount": 1334
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The weekly review, in 20 minutes",
+      "item": "https://cyanote.app/blog/weekly-review-in-20-minutes/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-07-24" />
+<meta property="article:modified_time" content="2026-07-24" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Weekly review" />
+<meta property="article:tag" content="GTD" />
+<meta property="article:tag" content="Method" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="logo" href="https://cyanote.app/"><img class="mark" src="https://cyanote.app/favicon.svg" alt="" width="32" height="32" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+    <a class="btn btn-primary" data-cta="nav" href="https://cyanote.app/#pricing">Get Cyanote — $10</a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>The weekly review, in 20 minutes</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-07-24">24 July 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Weekly review</li><li>GTD</li><li>Method</li></ul>
+    </header>
+
+    <div class="post">
+      <p>The weekly review is the most recommended and least performed habit in personal productivity. Almost everyone who reads about it agrees it is a good idea. Almost nobody is still doing it six weeks later.</p>
+      <p>The reason is not discipline. It is that the version people are taught takes ninety minutes, requires you to be calm and unhurried, and asks you to face every loose end in your life at once. That is a wonderful thing to do occasionally and an impossible thing to do weekly.</p>
+      <p>What follows is the short version. Twenty minutes, four passes, a timer running the whole way. It is deliberately less thorough than the full ritual, and it is the one that survives contact with an ordinary Friday.</p>
+      <h2 id="why-twenty-minutes-is-the-point">Why twenty minutes is the point</h2>
+      <p>Two things go wrong with the long review.</p>
+      <p>It gets scheduled at a time when you are tired, because ninety minutes only fits at the end of the week, which is when you have least left. And it is open-ended, so it expands: you start reviewing tasks and finish reorganising your entire folder structure at 7pm on a Friday, feeling productive and having decided nothing.</p>
+      <p>A timer fixes both. Twenty minutes fits in the gap before a meeting. And a hard stop forces the review to do the thing it is for — deciding — rather than the thing that feels like it — tidying.</p>
+      <p>The bar is not "my system is perfect". The bar is "I know what is true and I know what I am doing on Monday."</p>
+      <h2 id="the-four-passes">The four passes</h2>
+      <p>Set a timer for each one. When it goes off, move on even if you are not finished, because unfinished is the normal state and the next review will catch it.</p>
+      <h3 id="1-clear-5-minutes">1. Clear — 5 minutes</h3>
+      <p>Empty every place things land, without doing any of the work you find.</p>
+      <ul><li>Your inbox, down to whatever counts as empty for you. Reply only to anything under two minutes; everything else becomes a task and gets archived.</li><li>The notes app you scribble into during meetings. Every scrap either becomes a task, gets filed into a real note, or gets deleted. Most of them get deleted, and that is the point.</li><li>Physical: the pile on the desk, the receipts in your bag, the notebook.</li><li>Your camera roll, if you photograph whiteboards and posters. Half a weekly review's worth of loose ends lives there.</li></ul>
+      <p>The rule that makes this pass work: <strong>capture, do not act</strong>. The moment you start actually doing one of the things you find, the five minutes are gone and you have reviewed nothing. Write it down. Move on.</p>
+      <h3 id="2-read-5-minutes">2. Read — 5 minutes</h3>
+      <p>Now look at the week that just happened, honestly.</p>
+      <ul><li>Last week's calendar, day by day. Not for nostalgia — for the meetings that produced a commitment you never wrote down. There is almost always one.</li><li>Anything you marked done. Read it. This sounds sentimental and is not; it is calibration data for how much you can actually get through in a week, which is nearly always less than you plan for.</li><li>Anything that was due and is not done. Do not fix it yet. Just notice it.</li></ul>
+      <p>This is the pass people skip, and skipping it is why plans stay unrealistic. You cannot plan a week accurately if you never look at what happened to the last one.</p>
+      <h3 id="3-decide-7-minutes">3. Decide — 7 minutes</h3>
+      <p>The longest pass, and the only one that matters. Go through everything outstanding and give each item one of four verdicts:</p>
+      <ol><li><strong>Do it this week.</strong> It gets a date, not just a tick box. A task with no date is a wish.</li><li><strong>Do it later.</strong> It goes on a someday list you genuinely never look at except in this pass.</li><li><strong>Delegate it.</strong> Write down who and when you will chase.</li><li><strong>Drop it.</strong> Delete it, without ceremony.</li></ol>
+      <p>The fourth verdict is the one that keeps the system alive. If nothing was dropped, you were not deciding, you were re-reading. Aim to delete something every single week. An item you have carried forward four weeks running is not a task; it is a decision you keep declining to make, and the honest move is either to schedule it now or to admit it is never happening.</p>
+      <h3 id="4-set-3-minutes">4. Set — 3 minutes</h3>
+      <p>Pick the shape of the week ahead.</p>
+      <ul><li>Name <strong>three</strong> outcomes for the week. Not thirty. Three. Written as things that will be true by Friday, not as activities: "the pricing page is live", not "work on pricing page".</li><li>Put them in the calendar as actual blocks of time. An outcome without a slot is competing with everything else in your week and will lose.</li><li>Look at what is already scheduled. If Wednesday has six hours of meetings, your three outcomes are not landing on Wednesday, and knowing that on Friday is worth more than discovering it on Wednesday morning.</li></ul>
+      <p>Then stop. The timer went off. You are done.</p>
+      <h2 id="the-three-mistakes">The three mistakes</h2>
+      <p><strong>Doing the work during the review.</strong> It feels productive and it destroys the review. The review is for deciding what the work is. Keep a scratch list of the small things you are tempted to do, and do them after the timer.</p>
+      <p><strong>Reviewing everything.</strong> Every project, every note, every reference folder. That is a quarterly job, not a weekly one. The weekly review only touches things that are live.</p>
+      <p><strong>Missing one and quitting.</strong> You will miss weeks. A review done every second week is worth roughly ten times one done never. There is no streak to protect and nothing to catch up on — the next review just has a slightly fuller inbox.</p>
+      <h2 id="the-checklist-as-one-block">The checklist, as one block</h2>
+      <pre><code>CLEAR (5 min)
+  [ ] email inbox to zero-ish
+  [ ] meeting notes / scratch pad emptied
+  [ ] desk, bag, notebook
+  [ ] camera roll
+CAPTURE ONLY — do not do the work
+
+READ (5 min)
+  [ ] last week's calendar, day by day
+  [ ] what got done
+  [ ] what was due and did not
+
+DECIDE (7 min)
+  [ ] every open item: do / later / delegate / drop
+  [ ] anything this-week gets a date
+  [ ] delete at least one thing
+
+SET (3 min)
+  [ ] three outcomes for the week
+  [ ] each one blocked in the calendar
+  [ ] sanity-check against what is already booked</code></pre>
+      <p>Copy it wherever you keep things. It does not matter where, as long as it is somewhere you will meet it again on Friday.</p>
+      <h2 id="doing-it-in-cyanote">Doing it in Cyanote</h2>
+      <p>I built this into the app I use, because a checklist you have to rebuild every week does not survive either.</p>
+      <p>Cyanote ships a <strong>Weekly review</strong> note template — it opens dated, with sections for Wins, Didn't get to, Lessons and Next week, so the Read and Set passes have somewhere to land. The Decide pass happens in the task list itself, where due dates and priorities live. And because tasks, calendar and notes are the same data rather than three synced copies, "what was due and did not get done" is something you look at rather than something you reconstruct.</p>
+      <figure><img src="https://cyanote.app/images/routines.webp" alt="Cyanote&#x27;s routines view: a timed checklist laid out on a daily timeline, one step at a time" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The four passes as a routine, each step with its own timer.</figcaption></figure>
+      <p>If you prefer the timer to run itself, the four passes also work as a <strong>routine</strong>: a timed checklist that moves you along, which is the version I use, because I cannot be trusted to leave the Decide pass after seven minutes on my own.</p>
+      <p>None of that is necessary. The method is the method; a pen and a Friday afternoon will do. But if you are already looking for one place to keep the week, <a href="https://cyanote.app/#pricing">Cyanote is a $10 one-time purchase</a> that runs entirely on your own Mac — I wrote about why it exists at all in <a href="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/">I replaced five subscriptions with one $10 app</a>.</p>
+      <h2 id="start-with-a-bad-one">Start with a bad one</h2>
+      <p>Your first weekly review will be poor. The inbox will take fifteen minutes on its own, you will not get to the Set pass, and you will finish it feeling like it did not work.</p>
+      <p>Do it anyway, and then do the next one. By the third or fourth, Clear takes four minutes because there is less to clear, Read is quick because you remember the week, and the whole thing lands inside twenty minutes with room to spare. The review gets shorter precisely because you keep doing it, which is a rare and pleasant property in a habit.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">Get Cyanote — $10</a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/what-local-first-means-for-your-notes/">What local-first actually means for your notes</a><span>Local-first means your notes live on your computer and the app reads them directly. Here is what that buys you, what it really costs, and who should avoid it.</span></li><li><a href="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/">I replaced five subscriptions with one $10 app</a><span>Five productivity subscriptions cost me about $260 a year, and I still lost things in the gaps between them. Here is what I built instead, and what it costs.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="logo"><img class="mark" src="https://cyanote.app/favicon.svg" alt="" width="32" height="32" /> Cyanote</div>
+  <div style="display:flex;gap:22px;flex-wrap:wrap">
+    <a href="https://cyanote.app/blog/">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+    <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+    <a href="https://cyanote.app/privacy.html">Privacy</a>
+    <a href="https://cyanote.app/refund.html">Refunds</a>
+  </div>
+  <div>© 2026 Cyanote. Made with care.</div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

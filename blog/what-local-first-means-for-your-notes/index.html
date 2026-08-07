@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What local-first actually means for your notes | Cyanote</title>
+<meta name="description" content="Local-first means your notes live on your computer and the app reads them directly. Here is what that buys you, what it really costs, and who should avoid it." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#0e7cc4" />
+<link rel="canonical" href="https://cyanote.app/blog/what-local-first-means-for-your-notes/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/what-local-first-means-for-your-notes/" />
+<meta property="og:title" content="What local-first actually means for your notes | Cyanote" />
+<meta property="og:description" content="Local-first means your notes live on your computer and the app reads them directly. Here is what that buys you, what it really costs, and who should avoid it." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What local-first actually means for your notes | Cyanote" />
+<meta name="twitter:description" content="Local-first means your notes live on your computer and the app reads them directly. Here is what that buys you, what it really costs, and who should avoid it." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<style>
+  :root{
+    --bg:#fbfcfe; --surface:#eef3fa; --elevated:#ffffff; --border:#e0e7ef;
+    --text:#132137; --muted:#546478; --accent:#0e7cc4; --accent-fg:#fff;
+    --r:14px; --shadow:0 10px 40px -12px rgb(19 33 55 / .18);
+    /* Narrower than the landing page's 1080 on purpose: it lines the nav and
+       footer up with the 720px reading column instead of leaving the logo
+       floating 150px to the left of the first line of text. */
+    --maxw:768px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0f1620; --surface:#16233b; --elevated:#1b2942; --border:#243653;
+      --text:#c7d6e6; --muted:#7e93ac; --accent:#38b6e8; --accent-fg:#0a141f;
+      --shadow:0 10px 44px -12px rgb(0 0 0 / .55); }
+  }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    background:
+      radial-gradient(900px 520px at 100% -8%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 62%),
+      radial-gradient(820px 500px at -5% 108%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
+      var(--bg);
+    color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px }
+  .btn{ display:inline-flex; align-items:center; gap:.5rem; font-weight:600; border-radius:12px;
+    padding:.8rem 1.3rem; transition:transform .12s ease, opacity .15s ease, background .15s ease; }
+  .btn:active{ transform:scale(.97) }
+  .btn-primary{ background:var(--accent); color:var(--accent-fg); box-shadow:var(--shadow) }
+  .btn-primary:hover{ opacity:.92 }
+  .btn-ghost{ border:1px solid var(--border); background:var(--elevated) }
+  .btn-ghost:hover{ border-color:var(--accent) }
+  /* Near-opaque rather than the landing page's 78%: with a long article running
+     underneath it, a see-through bar left body text legible through the nav. */
+  nav{ position:sticky; top:0; z-index:20; backdrop-filter:blur(10px);
+    background:color-mix(in srgb, var(--bg) 96%, transparent); border-bottom:1px solid var(--border) }
+  nav .wrap{ display:flex; align-items:center; gap:16px; height:64px }
+  .logo{ display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem }
+  .logo .mark{ width:32px; height:32px; display:block; border-radius:9px }
+  nav .links{ margin-left:auto; display:flex; align-items:center; gap:22px; font-size:.94rem; color:var(--muted) }
+  nav .links a:hover{ color:var(--text) }
+  nav .links a[aria-current]{ color:var(--text); font-weight:600 }
+  @media(max-width:680px){ nav .links a:not(.btn){ display:none } }
+  .skip{ position:absolute; left:-9999px; top:0; z-index:100 }
+  .skip:focus{ left:12px; top:12px; padding:10px 16px; border-radius:10px;
+    background:var(--elevated); color:inherit; box-shadow:0 8px 30px rgba(0,0,0,.18);
+    outline:2px solid currentColor }
+  footer{ border-top:1px solid var(--border); padding:36px 0; margin-top:72px; color:var(--muted); font-size:.9rem }
+  footer .wrap{ display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between }
+  footer a:hover{ color:var(--text) }
+
+  /* ── Blog ────────────────────────────────────────────────────────────────
+     Everything above is the landing page's own vocabulary, repeated so a blog
+     page is self-contained (the site ships no shared stylesheet — index.html
+     and changelog.html each carry their own). Below is the part that only the
+     blog needs: a reading column, and the article typography. */
+  .blogwrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px }
+  .crumbs{ font-size:.85rem; color:var(--muted); padding:34px 0 0 }
+  .crumbs a:hover{ color:var(--text); text-decoration:underline }
+  .crumbs span{ opacity:.6; padding:0 6px }
+
+  .blog-head{ padding:26px 0 8px; border-bottom:1px solid var(--border); margin-bottom:34px }
+  .blog-head h1{ font-size:clamp(2rem,4.2vw,2.7rem); line-height:1.12; letter-spacing:-.025em;
+    font-weight:800; text-wrap:balance }
+  .blog-head p{ color:var(--muted); margin:14px 0 26px; font-size:1.05rem; max-width:44rem }
+
+  .meta{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; color:var(--muted);
+    font-size:.88rem; margin:18px 0 0 }
+  .meta .dot{ opacity:.5 }
+  .tags{ display:flex; flex-wrap:wrap; gap:7px; list-style:none; margin:18px 0 0 }
+  .tags li{ font-size:.74rem; font-weight:600; letter-spacing:.02em; color:var(--accent);
+    background:color-mix(in srgb, var(--accent) 11%, transparent);
+    border:1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+    padding:.2rem .62rem; border-radius:999px }
+
+  /* index list */
+  .postlist{ list-style:none; display:grid; gap:14px; padding-bottom:8px }
+  .postlist article{ border:1px solid var(--border); background:var(--elevated); border-radius:var(--r);
+    padding:24px 26px; transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease }
+  .postlist article:hover{ transform:translateY(-2px);
+    border-color:color-mix(in srgb,var(--accent) 40%,var(--border)); box-shadow:var(--shadow) }
+  .postlist h2{ font-size:1.28rem; letter-spacing:-.015em; line-height:1.3 }
+  .postlist h2 a:hover{ color:var(--accent) }
+  .postlist p{ color:var(--muted); font-size:.97rem; margin-top:9px }
+  .postlist time{ color:var(--muted); font-size:.83rem }
+  .more{ color:var(--accent); font-weight:600; font-size:.92rem; display:inline-block; margin-top:12px }
+  .more:hover{ text-decoration:underline }
+
+  /* article body */
+  .post{ font-size:1.06rem; line-height:1.75 }
+  .post h2{ font-size:1.5rem; letter-spacing:-.015em; margin:44px 0 12px; line-height:1.25 }
+  .post h3{ font-size:1.15rem; margin:32px 0 8px }
+  .post h4{ font-size:1rem; margin:24px 0 6px }
+  .post p{ margin-bottom:18px; text-wrap:pretty }
+  .post ul,.post ol{ margin:0 0 20px 1.3rem }
+  .post li{ margin-bottom:9px }
+  .post a{ color:var(--accent); text-decoration:underline; text-underline-offset:2px }
+  .post a:hover{ text-decoration-thickness:2px }
+  .post strong{ font-weight:700 }
+  .post blockquote{ border-left:3px solid color-mix(in srgb,var(--accent) 45%,var(--border));
+    padding:2px 0 2px 18px; margin:24px 0; color:var(--muted) }
+  .post blockquote p{ margin:0 }
+  .post code{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em;
+    background:var(--elevated); border:1px solid var(--border); border-radius:5px; padding:1px 5px }
+  .post pre{ background:var(--elevated); border:1px solid var(--border); border-radius:12px;
+    padding:16px 18px; overflow-x:auto; margin:0 0 22px }
+  .post pre code{ background:none; border:0; padding:0; font-size:.86rem; line-height:1.6 }
+  .post figure{ margin:28px 0 }
+  .post figure img{ width:100%; height:auto; display:block; border-radius:14px;
+    border:1px solid var(--border); box-shadow:var(--shadow) }
+  .post figcaption{ color:var(--muted); font-size:.85rem; margin-top:10px; text-align:center }
+  .post hr{ border:0; border-top:1px solid var(--border); margin:38px 0 }
+
+  /* end-of-post cards */
+  .endcta{ border:1px solid color-mix(in srgb,var(--accent) 38%,var(--border)); background:var(--elevated);
+    border-radius:var(--r); padding:26px 28px; margin:48px 0 0; box-shadow:var(--shadow) }
+  .endcta h2{ font-size:1.2rem; margin:0 0 8px }
+  .endcta p{ color:var(--muted); font-size:.96rem; margin-bottom:18px }
+  .related{ margin-top:44px; border-top:1px solid var(--border); padding-top:26px }
+  .related h2{ font-size:1rem; letter-spacing:.04em; text-transform:uppercase; color:var(--muted);
+    font-weight:700; margin-bottom:14px }
+  .related ul{ list-style:none; display:grid; gap:10px }
+  .related a{ color:var(--accent); font-weight:600 }
+  .related a:hover{ text-decoration:underline }
+  .related span{ display:block; color:var(--muted); font-size:.9rem; font-weight:400 }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What local-first actually means for your notes",
+  "description": "Local-first means your notes live on your computer and the app reads them directly. Here is what that buys you, what it really costs, and who should avoid it.",
+  "datePublished": "2026-08-04",
+  "dateModified": "2026-08-04",
+  "author": {
+    "@type": "Person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/what-local-first-means-for-your-notes/"
+  },
+  "url": "https://cyanote.app/blog/what-local-first-means-for-your-notes/",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://cyanote.app/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Local-first, Privacy, Offline",
+  "wordCount": 1450
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "What local-first actually means for your notes",
+      "item": "https://cyanote.app/blog/what-local-first-means-for-your-notes/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-04" />
+<meta property="article:modified_time" content="2026-08-04" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Local-first" />
+<meta property="article:tag" content="Privacy" />
+<meta property="article:tag" content="Offline" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="logo" href="https://cyanote.app/"><img class="mark" src="https://cyanote.app/favicon.svg" alt="" width="32" height="32" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+    <a class="btn btn-primary" data-cta="nav" href="https://cyanote.app/#pricing">Get Cyanote — $10</a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>What local-first actually means for your notes</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-04">4 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>7 min read</span>
+      </div>
+    <ul class="tags"><li>Local-first</li><li>Privacy</li><li>Offline</li></ul>
+    </header>
+
+    <div class="post">
+      <p>"Local-first" has become a marketing word, which is a shame, because underneath it is a genuinely useful distinction — and one with real costs that the marketing tends to skip.</p>
+      <p>Here is the plain version. In a cloud app, the server holds the truth. Your device holds a cache of it. When you type, the change is sent somewhere, accepted, and sent back. In a local-first app, your computer holds the truth. The app reads and writes it directly. The network, if there is one at all, is a convenience layered on top.</p>
+      <p>That sounds like an implementation detail. It is not. It changes how the app behaves on a bad train, what happens when the company folds, who can read what you wrote, and whether your notes still exist in ten years. It also takes some things away, and I will get to those, because a post that only lists the upsides is an advert.</p>
+      <h2 id="what-it-changes-concretely">What it changes, concretely</h2>
+      <h3 id="the-app-is-fast-in-a-way-that-is-hard-to-fake">The app is fast in a way that is hard to fake</h3>
+      <p>When you press a key in a cloud-first editor, something has to go over a network eventually. Good apps hide this well — optimistic updates, local caches, careful loading states. But the seams show under load: a long note that takes a second to open, a search that spins, a list that arrives a beat after the window does.</p>
+      <p>A local-first app reading a file on your own disk has no network to hide. Opening a note is a disk read measured in single-digit milliseconds. Search across everything you have written is a local index query. There is no clever engineering here — the latency is simply not there to begin with.</p>
+      <h3 id="offline-is-not-a-mode">Offline is not a mode</h3>
+      <p>Cloud apps have an offline mode, which is a set of behaviours that switch on when the network goes. It works, mostly, and then you find the edge: the note that will not open because it was never cached, the sync conflict when you land, the file that quietly reverted.</p>
+      <p>For a local-first app, offline is not a mode. It is the normal condition. A plane, a basement, a hotel with a captive-portal wifi that never quite lets you through — none of these are events. Nothing behaves differently because nothing was depending on the network in the first place.</p>
+      <h3 id="nobody-else-has-a-copy">Nobody else has a copy</h3>
+      <p>This is the part people care about most and describe least precisely. It is not really about trusting or distrusting a particular company. It is about the number of places your writing exists.</p>
+      <p>If your notes are on a server, then your notes are readable by: the company, anyone the company is legally compelled to answer, anyone who breaches the company, and any future owner of the company after an acquisition you were not consulted about. None of those require bad intent. They are just what having a copy means.</p>
+      <p>If your notes are on your disk, that list is: you, and anyone with your computer.</p>
+      <h3 id="it-outlives-the-company">It outlives the company</h3>
+      <p>Cloud apps die badly. The service shuts down, you get ninety days' notice and a zip file export in a format nothing else reads, and the structure — the links, the nesting, the dates — arrives as mush.</p>
+      <p>A local-first app that shuts down leaves you exactly where you were. The files are still on your disk, in whatever format they were in yesterday. The app stops getting updates; your notes do not stop existing. This is the least discussed advantage and, on a ten-year horizon, probably the largest.</p>
+      <h2 id="the-costs-honestly">The costs, honestly</h2>
+      <p>Here is what you are actually giving up. I would rather you read this now than discover it a week after buying something.</p>
+      <h3 id="no-sync-between-machines">No sync between machines</h3>
+      <p>This is the big one and it is not a small inconvenience.</p>
+      <p>If your notes are on your MacBook, they are on your MacBook. Sit down at a desktop and they are not there. There is no "log in and everything appears", because there is no account and nothing to appear from.</p>
+      <p>Some local-first apps solve this with peer-to-peer sync or by putting the data folder in iCloud Drive or Dropbox, which works but reintroduces a cloud service and, with it, conflicts when two machines edit the same thing. Others, <a href="https://cyanote.app/">Cyanote</a> included, do not solve it at all yet: one computer, one set of notes.</p>
+      <p>If you genuinely work across two machines all day, this is disqualifying, and you should choose a cloud app with a clear conscience. Being honest about that is more useful to both of us than pretending single-device is a lifestyle choice.</p>
+      <h3 id="no-phone">No phone</h3>
+      <p>Related, and equally real. Local-first on a Mac means the thought you have on a bus does not go into the same place as everything else. Plenty of people run a small capture app on their phone and move things over weekly — that works, and it is an extra step you did not previously have.</p>
+      <h3 id="backups-become-your-job">Backups become your job</h3>
+      <p>With no server there is nobody keeping a spare copy for you. A cloud app's genuine advantage is that a stolen laptop is an inconvenience rather than a loss.</p>
+      <p>Local-first moves that responsibility across the line to you. This is manageable — Time Machine, or an occasional export to an external disk, covers it entirely — but it only works if you actually do it. Set it up on day one, not after the first scare.</p>
+      <h3 id="no-collaboration">No collaboration</h3>
+      <p>Shared documents, comments, someone else's cursor in your paragraph: these need a server, because they need a shared truth that two people can both reach. Local-first apps are for one person's own thinking. That is a genuine limitation and not a philosophy.</p>
+      <h2 id="how-to-tell-whether-an-app-is-actually-local-first">How to tell whether an app is actually local-first</h2>
+      <p>The label is easy to claim. Three questions settle it:</p>
+      <ol><li><strong>Can you create an account-less install?</strong> If signing up is mandatory, the server holds something. That may be fine, but it is not local-first.</li><li><strong>Where is the data, and can you open the folder?</strong> A real answer is a path. If the answer is "in the app", ask again.</li><li><strong>Turn the wifi off and use it for an hour.</strong> Everything should work. Not "most things" — everything.</li></ol>
+      <p>A fourth, softer test: what happens when you cancel? If there is nothing to cancel, that tells you where the data was.</p>
+      <h2 id="where-cyanote-sits">Where Cyanote sits</h2>
+      <p>Cyanote stores everything in a SQLite database on your own Mac. There is no account, no server, no telemetry, and no licence key — after you buy it, the app never contacts me about anything except checking for a new version. Individual notes can be locked with a password on top of that.</p>
+      <figure><img src="https://cyanote.app/images/note.webp" alt="Cyanote&#x27;s note editor with the slash command menu open, showing headings, lists, tables and code blocks" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Everything here is a row in a database file on your own disk.</figcaption></figure>
+      <p>It takes the trade-offs above rather than dodging them. There is no sync and no iOS app. What it offers in exchange is that the whole thing — notes, tasks, calendar, habits, clipboard history — opens instantly, works in a basement, and cannot be read by me or anyone else. Backup and restore is a single JSON file you can write anywhere you like, and a restore always takes a rescue snapshot of what it is about to replace before it does anything.</p>
+      <p>Optional network features exist and are opt-in: you can subscribe to a Google Calendar so events appear alongside your tasks. That is a deliberate exception, and it is a read of a calendar you already publish — nothing goes the other way.</p>
+      <h2 id="who-should-choose-it">Who should choose it</h2>
+      <p>Choose local-first if you work mostly at one machine, if you write things you would rather not have on someone else's server, and if you would like the tool you learn this year to still be there in five.</p>
+      <p>Do not choose it if you move between machines constantly, if capture on a phone is central to how you think, or if you would rather someone else be responsible for your backups. Those are real requirements and cloud apps meet them properly.</p>
+      <p>If the first description fits, <a href="https://cyanote.app/#pricing">Cyanote is a $10 one-time purchase</a> with no subscription behind it — I wrote about why it exists in <a href="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/">I replaced five subscriptions with one $10 app</a>, and about the routine I use to keep a week in order in <a href="https://cyanote.app/blog/weekly-review-in-20-minutes/">the weekly review, in 20 minutes</a>.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">Get Cyanote — $10</a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/weekly-review-in-20-minutes/">The weekly review, in 20 minutes</a><span>A weekly review that fits in twenty minutes, with the checklist and the timings. Four passes, a timer, and the three mistakes that make people quit early.</span></li><li><a href="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/">I replaced five subscriptions with one $10 app</a><span>Five productivity subscriptions cost me about $260 a year, and I still lost things in the gaps between them. Here is what I built instead, and what it costs.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="logo"><img class="mark" src="https://cyanote.app/favicon.svg" alt="" width="32" height="32" /> Cyanote</div>
+  <div style="display:flex;gap:22px;flex-wrap:wrap">
+    <a href="https://cyanote.app/blog/">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+    <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+    <a href="https://cyanote.app/privacy.html">Privacy</a>
+    <a href="https://cyanote.app/refund.html">Refunds</a>
+  </div>
+  <div>© 2026 Cyanote. Made with care.</div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>
