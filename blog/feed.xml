@@ -7,12 +7,126 @@
     <atom:link href="https://cyanote.app/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Plain writing about keeping notes, running a week and owning your own data — from the person who builds Cyanote, a local-first Mac app you pay for once.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 09:00:00 +0000</lastBuildDate>
     <image>
       <url>https://cyanote.app/og-image.png</url>
       <title>The Cyanote blog — notes, tasks and calmer software</title>
       <link>https://cyanote.app/blog/</link>
     </image>
+    <item>
+      <title>How to password-protect a note on your Mac</title>
+      <link>https://cyanote.app/blog/password-protect-notes-on-mac/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/password-protect-notes-on-mac/</guid>
+      <pubDate>Tue, 11 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Locking a note, encrypting a disk and using a login password protect against three different things. Here is which one stops what, and where each of them stops.</description>
+      <content:encoded><![CDATA[<p>"Password-protect a note" sounds like one feature. It is at least three, they defend against different threats, and having one of them does not give you the others. People generally discover this in the wrong order.</p>
+<p>Here is what each layer actually does on a Mac, in the order they stop working.</p>
+<h2 id="the-three-layers-and-what-each-one-stops">The three layers, and what each one stops</h2>
+<p><strong>Your login password</strong> stops someone who walks up to your Mac while it is asleep. It does nothing at all once you are logged in — every app you have is sitting there open, including whatever your notes are in. Useful, and the weakest of the three.</p>
+<p><strong>FileVault</strong> encrypts the whole disk. It stops someone who has your Mac in their hands and it is powered off — a thief, a lost laptop, a machine sent for repair. Without it, pulling the drive out and reading it on another computer is genuinely trivial. With it, the contents are unreadable without the key.</p>
+<p>Its limit is the one people miss: <strong>FileVault protects a Mac that is off.</strong> Once you have logged in, the disk is decrypted and everything on it is readable by anything running as you. FileVault is not protecting your notes from your own running Mac.</p>
+<p><strong>A locked note</strong> is the only one of the three that still means something while you are sitting there logged in. It is per-note encryption, and the note stays unreadable until you supply the password — including from someone borrowing your unlocked laptop for five minutes, or looking over your shoulder while you have the app open.</p>
+<p>You want all three. They are not alternatives.</p>
+<h2 id="locking-a-note-in-apple-notes">Locking a note in Apple Notes</h2>
+<p>Apple Notes has built-in locking, and for a lot of people it is enough.</p>
+<p>Select a note, then <strong>File → Lock Note</strong>, or right-click the note in the list and choose Lock Note. macOS will ask you to set things up the first time. Recent versions let you use your Mac's login password rather than a separate Notes password, which is a meaningful improvement — a separate Notes password was the single biggest cause of permanently lost notes in that app.</p>
+<p>Two things about it are worth knowing before you rely on it:</p>
+<p><strong>If you forget the password, the note is gone.</strong> This is not Apple being unhelpful; it is what encryption means. There is no reset that recovers the contents, and support cannot open it for you. If you set a Notes-specific password, put it in your password manager the same minute you create it.</p>
+<p><strong>Locking is per-note and you have to remember to do it.</strong> The sensitive thing usually gets written first and locked later, if at all. The note that needed protecting is often the quick one you typed in a hurry.</p>
+<h2 id="what-encrypted-should-mean-when-an-app-claims-it">What "encrypted" should mean when an app claims it</h2>
+<p>Any note app can put a password prompt in front of a note. That is a UI, and on its own it protects against nothing — if the text is still sitting in plain form in the app's database, anybody who opens that file with the right tool reads it without ever seeing your prompt.</p>
+<p>The question to ask is whether the note is <strong>encrypted at rest</strong>: unreadable in storage, decrypted only when you supply the key. The tell is the one described above — if the app can show you a preview of a locked note, or search inside it while locked, then it is not encrypted, it is hidden.</p>
+<p>A quick, genuinely useful check for any app that claims per-note locking:</p>
+<ul><li>Lock a note containing a distinctive phrase.</li><li>Quit the app.</li><li>Search the app's data folder for that phrase from the Terminal.</li></ul>
+<p>If the phrase turns up, the lock is decoration. If it does not, the encryption is real.</p>
+<h2 id="where-your-notes-actually-live">Where your notes actually live</h2>
+<p>This part is worth knowing regardless of which app you use, because it determines who else can read them.</p>
+<p>A note in a cloud-synced app exists in at least three places: your Mac, the provider's servers, and every other device signed in. Locking on your Mac does not necessarily mean the copy on the server is locked, and the provider's privacy policy — not your password — is what governs that copy. Apple encrypts locked Notes end-to-end, so the server copy is genuinely unreadable to Apple; not every provider does the same, and most are vague about it.</p>
+<p>A note in a local-first app exists in one place: a database on your own disk. There is no server copy to reason about, which removes an entire category of question. The trade is that there is also no server copy to restore from, which makes backups your job rather than someone else's.</p>
+<p>Neither is automatically safer. They fail differently, and the failure you should plan for is the one you can actually imagine happening to you.</p>
+<h2 id="a-reasonable-setup">A reasonable setup</h2>
+<p>If you want a short version:</p>
+<ol><li><strong>Turn on FileVault.</strong> System Settings → Privacy &amp; Security → FileVault. Store the recovery key somewhere that is not the Mac. This is the highest-value fifteen minutes of security work available on a Mac and most people have never opened that screen.</li><li><strong>Set the screen to lock quickly.</strong> A screen that locks after an hour is a screen that does not lock.</li><li><strong>Lock the handful of notes that genuinely warrant it</strong> — recovery codes, medical details, anything about other people who did not choose to be in your notes app.</li><li><strong>Put the password in your password manager</strong>, immediately, before you close the dialog.</li><li><strong>Back up.</strong> Encryption increases the number of ways you can lose things permanently. Time Machine, or an export somewhere else, is what makes that recoverable.</li></ol>
+<p>The point of locking a note is not that your notes are a secret. It is that a few of them are somebody else's secret, and those deserve better than being one open laptop away.</p>]]></content:encoded>
+      <category>Privacy</category>
+      <category>Security</category>
+      <category>macOS</category>
+    </item>
+    <item>
+      <title>Note apps without a subscription</title>
+      <link>https://cyanote.app/blog/note-apps-without-a-subscription/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/note-apps-without-a-subscription/</guid>
+      <pubDate>Tue, 11 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Almost every note app is rented now. Here is why that happened, what a one-time purchase should actually include, and the questions to ask before you pay for either.</description>
+      <content:encoded><![CDATA[<p>Somewhere in the last decade, note-taking became a rental. The apps most people use now bill monthly, and the ones that don't are increasingly the exception rather than the default. If you have gone looking for a note app you can simply buy, you will have noticed how short the list has become.</p>
+<p>This is not a post about subscriptions being a scam. Some of them are entirely fair, and I will make that case below before making the other one. It is a post about what you are actually paying for in each model, and what a one-time purchase has to include before it means anything.</p>
+<h2 id="why-note-apps-went-to-subscriptions">Why note apps went to subscriptions</h2>
+<p>The honest reason is that most of them run servers.</p>
+<p>If an app syncs your notes between devices, somebody is paying for storage, for bandwidth, and for the engineers who keep it all running at 3am. That cost recurs every month you keep using it, whether or not the app gained a single feature. A one-time payment cannot fund an ongoing cost — the maths simply doesn't work, and an app that tried would either degrade or disappear.</p>
+<p>There is a second reason, less often stated: subscriptions produce predictable revenue, and predictable revenue is what lets a company plan. A one-time-purchase app has to keep finding new customers forever to pay yesterday's salaries. That pressure is real, and it is why so many apps that started as a purchase ended up as a rental.</p>
+<p>So if an app genuinely runs infrastructure for you, a subscription is the honest price of it. The question worth asking is whether it runs infrastructure for you.</p>
+<h2 id="what-you-are-renting">What you are renting</h2>
+<p>The uncomfortable part of the model is what happens when you stop paying.</p>
+<p>With most subscription note apps, the answer is that you lose access to the app but your notes are still "yours" in the sense that you can export them. That is better than nothing. It is also less reassuring than it sounds, because export quality varies enormously — a folder of Markdown files with your structure intact is a real escape route, and a single JSON blob with proprietary block references in it is a hostage note.</p>
+<p>Worth knowing before you commit, not after:</p>
+<ul><li>Can you export everything, including attachments, in a format something else can open?</li><li>Does the export keep your links between notes working, or does it flatten them?</li><li>If you stop paying, is the app read-only, or does it lock you out entirely?</li><li>Is the export a feature of the free tier, or does cancelling remove the tool you need to leave?</li></ul>
+<p>An app that answers all four well is one you can leave, which is the only thing that makes staying a choice.</p>
+<h2 id="what-buy-once-has-to-include-to-mean-anything">What "buy once" has to include to mean anything</h2>
+<p>The one-time purchase has its own failure modes, and they are worth naming, because "pay once" on a pricing page can hide several different deals.</p>
+<p><strong>Free updates, not just free patches.</strong> The oldest trick in the category is selling version 1, then selling version 2 eighteen months later to the same people. That is a subscription with extra steps and worse communication. The version that means something is the one where updates keep coming and keep being included.</p>
+<p><strong>No feature gates.</strong> If the purchase unlocks the app but the interesting parts are separate purchases, you did not buy the app. Check whether the price on the page is the price of everything.</p>
+<p><strong>It keeps working if the company stops.</strong> This is the one that actually matters, and it is a question about architecture rather than intent. An app that stores your notes on your own machine and does not check in with a server keeps working the day after its developer walks away. An app that phones home to validate your licence every launch stops working the day that endpoint goes dark, no matter how sincerely the developer promised otherwise.</p>
+<p>Ask specifically: does it need the internet to start? Does it check my licence more than once? Where exactly are my notes on this disk?</p>
+<p><strong>A plain data format underneath.</strong> Your notes will outlive the app you write them in — that is true of every app, including good ones. The thing that determines whether that is a migration or a loss is whether the format underneath is something another program can read.</p>
+<h2 id="the-case-for-buying-when-the-app-is-local">The case for buying, when the app is local</h2>
+<p>Here is where the two halves of this join up.</p>
+<p>An app that keeps everything on your own computer has no servers to pay for. There is no per-user monthly cost to recover, because there is no per-user monthly cost. The development work is real and ongoing, but that is funded by new customers, not by charging the existing ones rent for storage that doesn't exist.</p>
+<p>That is why the local-first corner of the market still sells one-time licences while the cloud corner mostly cannot. It is not a moral difference between the developers. It is a difference in what the software actually costs to run.</p>
+<p>Which suggests a useful test when you are comparing two apps and one is $8 a month and the other is a single payment: ask what the monthly one is doing with a server. If the answer is "syncing across my devices, sharing with my team, and running search across ten years of notes", the subscription is buying you something. If the answer is "not much, really", you are paying rent on software that lives on your laptop.</p>
+<p>Both models can be honest. Only one of them should be the default, and it isn't the one that became one.</p>]]></content:encoded>
+      <category>Pricing</category>
+      <category>Local-first</category>
+      <category>Buying advice</category>
+    </item>
+    <item>
+      <title>How to see clipboard history on a Mac</title>
+      <link>https://cyanote.app/blog/clipboard-history-on-mac/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/clipboard-history-on-mac/</guid>
+      <pubDate>Tue, 11 Aug 2026 09:00:00 +0000</pubDate>
+      <description>macOS keeps exactly one thing on the clipboard and forgets the rest. Here is what the system really offers, why nothing brings back what you copied, and what does.</description>
+      <content:encoded><![CDATA[<p>The short answer is the one nobody wants: macOS has no clipboard history. There is no key combination that shows you the last ten things you copied, because the last ten things you copied no longer exist. The Mac clipboard holds one item. Copy something else and the previous one is gone — not archived, not recoverable, gone.</p>
+<p>If you came here from Windows this is genuinely surprising. Windows has had <code>Win</code> + <code>V</code> since 2018, and it shows a scrollable list of recent copies. There is no macOS equivalent, and there never has been.</p>
+<p>What follows is what the system actually gives you, why the gap exists, and what to do about it.</p>
+<h2 id="what-macos-really-offers">What macOS really offers</h2>
+<p>There are three things people mistake for clipboard history. None of them is.</p>
+<p><strong>Finder's clipboard viewer.</strong> Open Finder, then <strong>Edit → Show Clipboard</strong>. A small window appears showing what is on the clipboard right now. That is the whole feature. It is a window onto the single current item, useful for checking whether a copy worked and useless for getting back anything older.</p>
+<p><strong>Universal Clipboard.</strong> Copy on your Mac, paste on your iPhone. It is genuinely good and it is not history — it moves the one current item between your devices and expires it after a short while. There is no list, and nothing is stored.</p>
+<p><strong>Undo.</strong> <code>Cmd</code> + <code>Z</code> will bring back text you deleted in a document. It has nothing to do with the clipboard and will not help you recover something you copied over.</p>
+<h2 id="why-the-gap-exists">Why the gap exists</h2>
+<p>The clipboard is a system-wide scratch space that every app can read. That is what makes it useful, and it is also why keeping a history of it is a genuinely uncomfortable feature to ship by default.</p>
+<p>Think about what passes through your clipboard in an ordinary week. Passwords, on the way from a password manager to a login form. A two-factor code. Your address. A card number. An API key. A private link that grants access to whoever holds it. All of it, sitting in the same buffer as the URL you copied to send to a friend.</p>
+<p>A clipboard history turns that stream into a record. That is exactly what makes it useful and exactly what makes it a liability, and how a given tool handles that distinction is the thing worth paying attention to.</p>
+<h2 id="the-moments-where-it-actually-bites">The moments where it actually bites</h2>
+<p>Nobody wants clipboard history in the abstract. People want it because of specific, recurring, small disasters:</p>
+<ul><li>You copy a paragraph, then copy something else to look it up, and the paragraph is gone.</li><li>You paste the same three snippets — an address, a bank reference, a boilerplate reply — thirty times a week, and each one means going and finding it again.</li><li>You copy a code from a text message, get distracted, copy a link, and now you need the code again and it has expired.</li><li>You are moving content between two documents and every single trip is one copy and one paste, because you cannot carry more than one thing at a time.</li></ul>
+<p>None of these is a crisis. Together they are one of those small frictions that is invisible until it stops.</p>
+<h2 id="what-a-clipboard-manager-does">What a clipboard manager does</h2>
+<p>A clipboard manager is a small background app that watches the clipboard and keeps what passes through it. When you want something back, you open it with a hotkey, find the item, and it goes back on the clipboard ready to paste.</p>
+<p>That is the whole idea. The differences between them are the things worth checking:</p>
+<p><strong>Where the history is stored.</strong> This is the first question, not the last. A clipboard manager sees everything you copy. If it syncs that to a server, everything you copy is now on somebody else's computer. If it keeps the history in a local database on your own machine, it isn't. Both designs exist and the marketing rarely leads with which one you are getting.</p>
+<p><strong>Whether it is searchable.</strong> A list of the last few items is a convenience. A searchable history of everything is a different tool — you stop thinking of it as "undo for copying" and start using it as a place things can be found later.</p>
+<p><strong>What it does with sensitive copies.</strong> Good behaviour: recognising when a password manager put something on the clipboard and declining to keep it. Also good: letting you delete an individual item, and clear the lot in one action.</p>
+<p><strong>Pinned items.</strong> The three snippets you paste constantly should not scroll away under a week of ordinary copying. Pinning is what turns a history into a set of shortcuts.</p>
+<p><strong>Whether it holds more than text.</strong> Images, files and colours all travel through the clipboard. A manager that keeps only text quietly drops the rest.</p>
+<h2 id="before-you-install-one">Before you install one</h2>
+<p>Two things are worth doing regardless of which tool you choose.</p>
+<p>Check what it wants access to. A clipboard manager needs to read the clipboard, and that is a reasonable thing for it to ask. It does not need an account, and it does not need to send anything anywhere. If it wants both, ask what for.</p>
+<p>And decide what you want it to forget. The most useful setting in any clipboard manager is the one that stops it keeping the things you would rather it didn't — whether that is a password-manager exclusion, an app blocklist, or a history that expires.</p>
+<p>The gap in macOS is real and it is not closing. But it is one of the few missing features where the fix is genuinely small, sits out of the way, and pays you back the first afternoon you use it.</p>]]></content:encoded>
+      <category>Clipboard</category>
+      <category>macOS</category>
+      <category>How-to</category>
+    </item>
     <item>
       <title>What local-first actually means for your notes</title>
       <link>https://cyanote.app/blog/what-local-first-means-for-your-notes/</link>
