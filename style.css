@@ -1,0 +1,343 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Cyanote — the whole site's stylesheet.
+
+   Until now every page carried its own copy of the same tokens, and they had
+   already drifted apart (the blog's nav was 96% opaque, the landing page's
+   78%; the blog set --maxw to 768 and index.html to 1080). One file, linked
+   from every page, is what keeps the changelog looking like the landing page
+   a year from now.
+
+   Sections: font · tokens · base · nav · buttons · landing · documents ·
+   changelog · blog · footer
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── font ─────────────────────────────────────────────────────────────────
+   Space Grotesk, SIL Open Font Licence 1.1 (see fonts/OFL.txt). Self-hosted
+   rather than loaded from Google: a page selling a local-first, no-telemetry
+   app has no business announcing every visitor to a third party. One variable
+   file covers 300–700, so the whole site costs 22 KB of font.
+
+   The URLs are relative to this stylesheet, which always sits at the site
+   root — so they resolve the same from /blog/a-post/ as from /index.html. */
+@font-face{
+  font-family:'Space Grotesk'; font-style:normal; font-weight:300 700; font-display:swap;
+  src:url('fonts/space-grotesk-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:'Space Grotesk'; font-style:normal; font-weight:300 700; font-display:swap;
+  src:url('fonts/space-grotesk-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* ── tokens ───────────────────────────────────────────────────────────────
+   Light, always. There is deliberately no prefers-color-scheme block on this
+   site: the paper white is the design, and a dark variant of it was a second
+   palette to keep in step for no gain. `color-scheme: light` is what stops
+   macOS drawing dark scrollbars and form controls against it. */
+:root{
+  color-scheme:light;
+  --paper:#fafafa; --panel:#ffffff; --line:#e6e6e9; --line-soft:#efeff1;
+  --ink:#0a0a0b; --ink-2:#3d3f45; --muted:#71757e;
+  --accent:#0e7cc4; --accent-ink:#ffffff;
+  --maxw:1120px; --readw:768px; --gutter:28px;
+  --shot-shadow:0 34px 70px -30px rgb(10 20 35 / .3), 0 2px 6px -2px rgb(10 20 35 / .1);
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+/* ── base ─────────────────────────────────────────────────────────────── */
+*{ box-sizing:border-box; margin:0; padding:0 }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100% }
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto }
+  *,*::before,*::after{ animation-duration:.01ms !important; transition-duration:.01ms !important }
+}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased; line-height:1.55;
+}
+a{ color:inherit; text-decoration:none }
+img{ max-width:100% }
+:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:4px }
+
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 var(--gutter) }
+.rule{ height:1px; background:var(--line); max-width:calc(var(--maxw) - 60px); margin:0 auto }
+
+/* Space Grotesk is drawn tight, so its headlines need less tracking pulled
+   out of them than a system font would. */
+h1{ font-size:clamp(2.5rem,6vw,4.7rem); line-height:1.02; letter-spacing:-.035em; font-weight:700; text-wrap:balance }
+h2{ font-size:clamp(1.95rem,4.2vw,3.1rem); line-height:1.06; letter-spacing:-.03em; font-weight:700; text-wrap:balance }
+h3{ font-size:1.02rem; letter-spacing:-.01em; font-weight:600 }
+.lede{ font-size:clamp(1.05rem,1.6vw,1.25rem); color:var(--muted); letter-spacing:-.005em; font-weight:400; text-wrap:balance }
+.muted{ color:var(--muted) }
+
+/* Off-screen until it takes keyboard focus, so the first Tab offers a way past
+   the nav instead of walking through every link. */
+.skip{ position:absolute; left:-9999px; top:0; z-index:100 }
+.skip:focus{ left:12px; top:12px; padding:10px 16px; border-radius:10px;
+  background:var(--panel); color:inherit; box-shadow:0 8px 30px rgb(0 0 0 / .18); outline:2px solid currentColor }
+
+/* ── nav ──────────────────────────────────────────────────────────────── */
+nav{ position:sticky; top:0; z-index:30; background:rgb(250 250 250 / .8);
+  backdrop-filter:saturate(180%) blur(18px); border-bottom:1px solid var(--line-soft) }
+nav .wrap{ display:flex; align-items:center; height:66px; gap:20px }
+.brand{ display:flex; align-items:center; gap:9px; font-weight:600; letter-spacing:-.02em; font-size:1.05rem }
+.brand img{ width:26px; height:26px; border-radius:7px; display:block }
+nav .links{ position:absolute; left:50%; transform:translateX(-50%); display:flex; gap:30px;
+  font-size:.96rem; color:var(--ink-2) }
+nav .links a:hover{ color:var(--ink) }
+nav .links a[aria-current]{ color:var(--ink); font-weight:600 }
+nav .right{ margin-left:auto }
+@media(max-width:940px){ nav .links{ display:none } }
+
+/* ── buttons ──────────────────────────────────────────────────────────────
+   Every button carries a glyph at 17px — Apple's proportion, never taller
+   than the cap height, with an optical rather than a metric gap.
+
+   .btn-label wraps the words on purpose. build.sh rewrites button text in
+   pre-launch mode, and an anchor whose only child was a text node used to be
+   the thing it keyed off; adding an icon would have silently broken it. The
+   span gives it something stable to aim at. */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+  font-family:inherit; font-size:1rem; font-weight:500; letter-spacing:-.01em; border-radius:999px;
+  padding:.8rem 1.55rem; border:1px solid transparent; cursor:pointer;
+  transition:transform .14s cubic-bezier(.2,.8,.3,1), background .16s ease, border-color .16s ease, filter .16s ease }
+.btn:active{ transform:scale(.975) }
+.btn svg{ width:17px; height:17px; flex:none; fill:none; stroke:currentColor;
+  stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round }
+.btn-primary{ background:var(--accent); color:var(--accent-ink) }
+.btn-primary:hover{ filter:brightness(1.08) }
+.btn-ghost{ background:var(--panel); border-color:var(--line); color:var(--ink) }
+.btn-ghost:hover{ border-color:var(--muted) }
+.btn-sm{ padding:.55rem 1.2rem; font-size:.92rem }
+.btn-sm svg{ width:15px; height:15px }
+
+/* ── platform variants ────────────────────────────────────────────────────
+   A visitor on Windows is offered the waiting list, not a Mac download, and a
+   visitor on a phone is told plainly that this is a desktop app.
+
+   These are hide rules only — never `display:block` to reveal something. The
+   variants are a flex row in one place and an inline-flex button in another,
+   and a reveal rule would have to know which; a hide rule doesn't. Whatever
+   stays visible keeps the display its own class gave it.
+
+   The last pair is the no-JavaScript path: with no class on <html> nothing
+   matches the three above, so the page falls back to the Mac layout it had
+   before any of this existed. */
+html.plat-mac [data-plat="windows"],
+html.plat-mac [data-plat="mobile"],
+html.plat-windows [data-plat="mac"],
+html.plat-windows [data-plat="mobile"],
+html.plat-mobile [data-plat="mac"],
+html.plat-mobile [data-plat="windows"],
+html:not(.plat-windows):not(.plat-mobile) [data-plat="windows"],
+html:not(.plat-windows):not(.plat-mobile) [data-plat="mobile"]{ display:none }
+
+/* A button that isn't one. On a phone there is nothing to download, but a
+   paragraph of prose where the eye expects a button reads as a page that
+   failed to load. This keeps the shape and states the requirement, while
+   being plainly inert: a <span>, so there is no href to follow, no hover, no
+   press, and nothing for the keyboard to stop on. */
+.btn-inert{ background:var(--panel); border-color:var(--line); color:var(--muted); cursor:default }
+.btn-inert:active{ transform:none }
+.btn-inert svg{ opacity:.75 }
+
+/* ═══ landing page ═══════════════════════════════════════════════════════ */
+.hero{ text-align:center; padding:clamp(60px,9vw,120px) 0 0 }
+.hero .lede{ margin:22px auto 0; max-width:36ch }
+.hero-cta{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:34px }
+.fineprint{ margin-top:20px; font-size:.85rem; color:var(--muted) }
+
+/* ── the MacBook ──────────────────────────────────────────────────────────
+   Drawn rather than photographed: two divs and a pseudo-element, so it stays
+   sharp on any display and costs nothing to download. The lid's inner area is
+   the real 16:10 of a MacBook screen, so a 1500×938 capture out of capture/
+   drops in without letterboxing. */
+.mac{ width:min(920px, calc(100% - 2 * var(--gutter))); margin:clamp(52px,7vw,88px) auto 0; position:relative }
+.mac-lid{ background:linear-gradient(170deg,#43454a,#212226 60%,#17181b);
+  border-radius:18px; padding:13px 12px 14px;
+  box-shadow:0 44px 80px -34px rgb(6 14 26 / .55), 0 3px 10px -4px rgb(6 14 26 / .3) }
+.mac-cam{ display:block; width:5px; height:5px; border-radius:50%; margin:0 auto 8px;
+  background:#0e0f11; box-shadow:inset 0 0 0 1px rgb(255 255 255 / .07) }
+.mac-screen{ border-radius:6px; overflow:hidden; background:#000; display:block }
+.mac-screen img{ display:block; width:100%; height:auto }
+/* Base: wider than the lid, with the thumb groove cut into its front edge. */
+.mac-base{ position:relative; width:114%; margin:0 0 0 -7%; height:14px;
+  background:linear-gradient(180deg,#e4e6ea 0%,#c2c6cd 46%,#9ba0a8 100%);
+  border-radius:2px 2px 13px 13px; box-shadow:0 16px 26px -16px rgb(6 14 26 / .55) }
+.mac-base::after{ content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:15%; height:6px; background:linear-gradient(180deg,#a5aab2,#cdd1d7); border-radius:0 0 9px 9px }
+@media(max-width:640px){ .mac-lid{ border-radius:12px; padding:9px 8px 10px } .mac-base{ height:10px } }
+
+section{ padding:clamp(72px,9vw,116px) 0 }
+.section-head{ text-align:center; max-width:640px; margin:0 auto clamp(44px,5vw,64px) }
+.section-head .lede{ margin-top:16px }
+
+/* Feature grid: hairlines and monochrome glyphs. The eight tiles divide
+   cleanly by four, by two and by one, so no row is ever left with an orphan. */
+.feat{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line);
+  border:1px solid var(--line); border-radius:20px; overflow:hidden }
+@media(max-width:900px){ .feat{ grid-template-columns:repeat(2,1fr) } }
+@media(max-width:560px){ .feat{ grid-template-columns:1fr } }
+.feat > div{ background:var(--paper); padding:26px 22px 28px; transition:background .18s ease }
+.feat > div:hover{ background:var(--panel) }
+.feat svg{ width:20px; height:20px; stroke:var(--accent); fill:none; stroke-width:1.6;
+  stroke-linecap:round; stroke-linejoin:round; margin-bottom:16px; display:block }
+.feat h3{ margin-bottom:5px }
+.feat p{ font-size:.92rem; color:var(--muted); line-height:1.5; text-wrap:pretty }
+
+.split{ display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(36px,5vw,72px); align-items:center }
+@media(max-width:860px){ .split{ grid-template-columns:1fr; text-align:center } }
+.split h2{ font-size:clamp(1.8rem,3.2vw,2.5rem) }
+.split .lede{ margin-top:16px; font-size:1.05rem }
+.split img{ width:100%; height:auto; border-radius:14px; border:1px solid var(--line); box-shadow:var(--shot-shadow) }
+.kv{ display:flex; gap:24px; margin-top:26px; flex-wrap:wrap; font-size:.88rem; color:var(--muted) }
+@media(max-width:860px){ .kv{ justify-content:center } }
+.kv b{ display:block; color:var(--ink); font-size:.98rem; font-weight:600; letter-spacing:-.01em }
+
+.shots{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(16px,2.4vw,28px) }
+@media(max-width:680px){ .shots{ grid-template-columns:1fr } }
+.shots figure{ margin:0 }
+.shots img{ width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line); box-shadow:var(--shot-shadow) }
+.shots figcaption{ margin-top:12px; font-size:.87rem; color:var(--muted) }
+
+.price{ max-width:430px; margin:0 auto; text-align:center; background:var(--panel);
+  border:1px solid var(--line); border-radius:24px; padding:44px 34px }
+.amt{ font-size:4.2rem; font-weight:700; letter-spacing:-.04em; line-height:1 }
+.amt span{ font-size:1rem; font-weight:400; color:var(--muted); letter-spacing:-.01em }
+.price ul{ list-style:none; text-align:left; display:grid; gap:12px; margin:30px 0 32px }
+.price li{ display:flex; gap:11px; font-size:.95rem; color:var(--ink-2); line-height:1.45 }
+.price li svg{ width:16px; height:16px; margin-top:4px; flex:none; stroke:var(--accent); fill:none;
+  stroke-width:2; stroke-linecap:round; stroke-linejoin:round }
+.price .btn{ width:100% }
+
+/* Windows is built but not on sale. It stays on the page on purpose — people
+   searching for a Windows app should still find Cyanote — but deliberately
+   quiet, so it never competes with Buy above. */
+.windows{ max-width:460px; margin:26px auto 0; text-align:center; font-size:.9rem; color:var(--muted) }
+.windows .row{ display:flex; align-items:center; justify-content:center; gap:9px }
+.windows svg{ width:16px; height:16px; flex:none; stroke:var(--muted); fill:none; stroke-width:1.6; stroke-linejoin:round }
+.windows b{ color:var(--ink); font-weight:600 }
+.windows .btn{ margin-top:14px; font-size:.88rem; padding:.55rem 1.15rem }
+
+.faq{ max-width:720px; margin:0 auto; border-top:1px solid var(--line) }
+details{ border-bottom:1px solid var(--line) }
+summary{ cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;
+  gap:20px; padding:22px 2px; font-weight:500; letter-spacing:-.015em; font-size:1.05rem }
+summary::-webkit-details-marker{ display:none }
+summary::after{ content:''; width:11px; height:11px; flex:none; border-right:1.5px solid var(--muted);
+  border-bottom:1.5px solid var(--muted); transform:rotate(45deg) translate(-3px,-3px); transition:transform .2s ease }
+details[open] summary::after{ transform:rotate(225deg) translate(-2px,-2px) }
+details p{ color:var(--muted); font-size:.97rem; padding:0 0 24px; max-width:62ch }
+
+.closer{ text-align:center; padding:clamp(84px,11vw,150px) 0 }
+.closer .lede{ margin:18px auto 0; max-width:32ch }
+
+/* ═══ documents — privacy, refunds, changelog ════════════════════════════ */
+.doc{ max-width:var(--readw); margin:0 auto; padding:clamp(48px,7vw,86px) var(--gutter) 90px; line-height:1.7 }
+.doc h1{ font-size:clamp(2.1rem,4.6vw,3rem); margin-bottom:8px }
+.doc .updated{ color:var(--muted); font-size:.92rem; margin-bottom:36px }
+.doc h2{ font-size:1.28rem; letter-spacing:-.02em; margin:38px 0 10px }
+.doc h3{ font-size:1.02rem; margin:24px 0 6px }
+.doc p,.doc li{ color:var(--ink-2); margin-bottom:13px }
+.doc ul,.doc ol{ padding-left:20px }
+.doc a{ color:var(--accent); text-decoration:underline; text-underline-offset:2px }
+.doc strong{ color:var(--ink); font-weight:600 }
+.doc code{ font-family:var(--mono); font-size:.88em; background:var(--panel);
+  border:1px solid var(--line); border-radius:5px; padding:1px 5px }
+.doc hr{ border:none; border-top:1px solid var(--line); margin:40px 0 }
+/* The lede box every document opens with — the short version, before the
+   detail. */
+.box{ border:1px solid var(--line); background:var(--panel); border-radius:16px;
+  padding:22px 24px; margin:20px 0 32px }
+.box p:last-child,.box strong + br + span{ margin-bottom:0 }
+
+/* ═══ changelog ══════════════════════════════════════════════════════════ */
+.rel{ border-top:1px solid var(--line); padding-top:30px; margin-top:30px }
+.rel:first-of-type{ border-top:none; padding-top:0; margin-top:0 }
+.relhead{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:10px }
+.rel h2{ font-size:1.4rem; letter-spacing:-.025em; margin:0 }
+.date{ color:var(--muted); font-size:.87rem }
+.latest{ font-size:.68rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--accent); border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));
+  border-radius:999px; padding:2px 9px }
+
+/* ═══ blog ═══════════════════════════════════════════════════════════════ */
+.blogwrap{ max-width:var(--readw); margin:0 auto; padding:0 var(--gutter) }
+.crumbs{ font-size:.87rem; color:var(--muted); padding:38px 0 0 }
+.crumbs a:hover{ color:var(--ink); text-decoration:underline }
+.crumbs span{ opacity:.6; padding:0 6px }
+
+.blog-head{ padding:26px 0 30px; border-bottom:1px solid var(--line); margin-bottom:38px }
+.blog-head h1{ font-size:clamp(2.1rem,4.6vw,3.1rem); line-height:1.06 }
+.blog-head p{ color:var(--muted); margin:16px 0 0; font-size:1.1rem; max-width:44rem; text-wrap:balance }
+.meta{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; color:var(--muted);
+  font-size:.88rem; margin:20px 0 0 }
+.meta .dot{ opacity:.5 }
+.tags{ display:flex; flex-wrap:wrap; gap:7px; list-style:none; margin:18px 0 0 }
+.tags li{ font-size:.75rem; font-weight:500; color:var(--muted);
+  border:1px solid var(--line); background:var(--panel); padding:.2rem .7rem; border-radius:999px }
+
+.postlist{ list-style:none; display:grid; gap:1px; background:var(--line);
+  border:1px solid var(--line); border-radius:20px; overflow:hidden; margin-bottom:8px }
+.postlist article{ background:var(--paper); padding:28px 30px; transition:background .18s ease }
+.postlist article:hover{ background:var(--panel) }
+.postlist h2{ font-size:1.35rem; letter-spacing:-.025em; line-height:1.25 }
+.postlist h2 a:hover{ color:var(--accent) }
+.postlist p{ color:var(--muted); font-size:.99rem; margin-top:10px }
+.postlist time{ color:var(--muted); font-size:.85rem }
+.more{ display:inline-flex; align-items:center; gap:6px; color:var(--accent); font-weight:500;
+  font-size:.93rem; margin-top:14px }
+.more svg{ width:14px; height:14px; fill:none; stroke:currentColor; stroke-width:1.8;
+  stroke-linecap:round; stroke-linejoin:round; transition:transform .16s ease }
+.more:hover svg{ transform:translateX(3px) }
+
+.post{ font-size:1.09rem; line-height:1.75 }
+.post h2{ font-size:1.6rem; letter-spacing:-.025em; margin:46px 0 12px; line-height:1.22 }
+.post h3{ font-size:1.2rem; margin:34px 0 8px }
+.post h4{ font-size:1.02rem; margin:24px 0 6px }
+.post p{ margin-bottom:19px; color:var(--ink-2); text-wrap:pretty }
+.post ul,.post ol{ margin:0 0 20px 1.3rem }
+.post li{ margin-bottom:9px; color:var(--ink-2) }
+.post a{ color:var(--accent); text-decoration:underline; text-underline-offset:2px }
+.post a:hover{ text-decoration-thickness:2px }
+.post strong{ font-weight:600; color:var(--ink) }
+.post blockquote{ border-left:2px solid var(--line); padding:2px 0 2px 20px; margin:26px 0; color:var(--muted) }
+.post blockquote p{ margin:0 }
+.post code{ font-family:var(--mono); font-size:.88em; background:var(--panel);
+  border:1px solid var(--line); border-radius:5px; padding:1px 5px }
+.post pre{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+  padding:18px 20px; overflow-x:auto; margin:0 0 22px }
+.post pre code{ background:none; border:0; padding:0; font-size:.86rem; line-height:1.6 }
+.post figure{ margin:30px 0 }
+.post figure img{ width:100%; height:auto; display:block; border-radius:14px;
+  border:1px solid var(--line); box-shadow:var(--shot-shadow) }
+.post figcaption{ color:var(--muted); font-size:.86rem; margin-top:11px; text-align:center }
+.post hr{ border:0; border-top:1px solid var(--line); margin:40px 0 }
+
+.endcta{ border:1px solid var(--line); background:var(--panel); border-radius:20px;
+  padding:30px 32px; margin:52px 0 0; text-align:center }
+.endcta h2{ font-size:1.45rem; margin:0 0 8px }
+.endcta p{ color:var(--muted); font-size:.98rem; margin-bottom:20px }
+.related{ margin-top:48px; border-top:1px solid var(--line); padding-top:28px }
+.related h2{ font-size:.78rem; letter-spacing:.09em; text-transform:uppercase; color:var(--ink);
+  font-weight:600; margin-bottom:16px }
+.related ul{ list-style:none; display:grid; gap:12px }
+.related a{ color:var(--ink); font-weight:600 }
+.related a:hover{ color:var(--accent) }
+.related span{ display:block; color:var(--muted); font-size:.92rem; font-weight:400 }
+
+/* ═══ footer ═════════════════════════════════════════════════════════════ */
+footer{ border-top:1px solid var(--line); margin-top:auto; padding:56px 0 44px; font-size:.92rem; color:var(--muted) }
+.fcols{ display:grid; grid-template-columns:1.6fr repeat(3,1fr); gap:32px }
+@media(max-width:760px){ .fcols{ grid-template-columns:1fr 1fr; gap:28px } }
+.fcols h4{ font-size:.78rem; text-transform:uppercase; letter-spacing:.09em; color:var(--ink);
+  font-weight:600; margin-bottom:14px }
+.fcols ul{ list-style:none; display:grid; gap:9px }
+.fcols li{ display:flex; align-items:center; gap:8px }
+.fcols li svg{ width:14px; height:14px; flex:none; stroke:currentColor; fill:none;
+  stroke-width:1.6; stroke-linejoin:round }
+.fcols a:hover{ color:var(--ink) }
+.fbot{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  margin-top:44px; padding-top:24px; border-top:1px solid var(--line-soft); font-size:.86rem }
