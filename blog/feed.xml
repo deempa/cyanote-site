@@ -14,6 +14,45 @@
       <link>https://cyanote.app/blog/</link>
     </image>
     <item>
+      <title>Personal Kanban: a board for your own to-do list</title>
+      <link>https://cyanote.app/blog/personal-kanban-board/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/personal-kanban-board/</guid>
+      <pubDate>Tue, 11 Aug 2026 09:00:00 +0000</pubDate>
+      <description>A Kanban board built for a team does not survive being handed to one person. Here is which parts translate, which columns to use, and when a plain list wins.</description>
+      <content:encoded><![CDATA[<p>Kanban started on a factory floor. Taiichi Ohno's system at Toyota used physical cards — <em>kanban</em> means signboard — to signal that a station was ready for more work. Nothing was produced until something downstream asked for it. Software teams borrowed it in the 2000s, and somewhere after that it arrived on individual to-do lists, mostly in the form of three columns labelled To Do, Doing and Done.</p>
+<p>That last translation loses the thing that made it work. What follows is what survives the trip to one person, and what to do instead of the three columns everyone starts with.</p>
+<h2 id="the-idea-that-actually-transfers">The idea that actually transfers</h2>
+<p>Kanban's core insight is not columns. Columns are how you see it. The insight is <strong>limiting how much is in progress at once.</strong></p>
+<p>On a factory line the reason is inventory: half-finished work sitting between stations is money doing nothing. For a person, the equivalent is more familiar. Eleven things started, none finished, and a nagging sense of being busy without anything shipping. Every one of those started things costs you something to keep in your head, and the cost is charged whether or not you touch it that day.</p>
+<p>A board makes that visible in a way a list cannot. A list of thirty tasks looks the same whether you have started three of them or all thirty. A board with fourteen cards in Doing looks obviously wrong from across the room.</p>
+<p>That is the whole benefit, and it is a real one. If you take nothing else from Kanban, take the limit.</p>
+<h2 id="why-to-do-doing-done-disappoints-one-person">Why To Do / Doing / Done disappoints one person</h2>
+<p>The standard three columns come from team boards, where they answer a genuine question: which stage of a shared process is this in, and who has it now? Design, then build, then review, then ship. The columns are handoffs.</p>
+<p>Working alone, you have no handoffs. Everything is yours at every stage. So the middle column stops describing a stage and starts describing "things I have opened", which is not information — you knew that. Meanwhile "To Do" becomes a single undifferentiated wall of forty cards, which is a list with extra scrolling and less detail per line.</p>
+<p>The columns are answering a question you don't have.</p>
+<h2 id="columns-worth-using-instead">Columns worth using instead</h2>
+<p>For one person, the useful axis is usually <strong>when</strong>, or <strong>how much this matters</strong>, rather than what stage it is in.</p>
+<p><strong>By commitment.</strong> Today · This week · Later · Someday. Cards move leftward as they become real. This is the version most people find sticks, because it maps onto the actual decision you make each morning, which is not "what stage is this in" but "am I doing this today or not".</p>
+<p><strong>By priority.</strong> High · Medium · Low · No priority. Blunter, and genuinely good if your work arrives as a stream of requests from other people and the hard part is triage rather than scheduling.</p>
+<p><strong>By energy.</strong> Deep work · Shallow · Errands · Waiting on someone. Odd-looking, and effective if your days vary a lot. At 4pm on a Thursday you do not need your most important task, you need one you can actually do, and this is the only layout that answers that.</p>
+<p>Whichever you pick, keep <strong>Waiting</strong> as its own column. Work that is blocked on another person is not done and is not yours to do, and it is the single most common thing to lose track of. A column full of them, reviewed weekly, is worth more than most productivity advice.</p>
+<h2 id="set-the-limit-and-make-it-hurt-slightly">Set the limit and make it hurt slightly</h2>
+<p>Pick a number for how many cards may be in your active column at once. Three is a good starting point for most people; five if your work is genuinely interrupt-driven.</p>
+<p>The rule that gives it teeth: <strong>to start something new when you are at the limit, something has to come out.</strong> Not "finish it" necessarily — you can push a card back to This week, or to Waiting if it is blocked. But you have to make the swap deliberately and see yourself do it.</p>
+<p>This is uncomfortable at first, which is the point. The discomfort is information you were previously ignoring. Almost everyone who tries this discovers their real number of simultaneous commitments was somewhere near eleven and that it had been that way for months.</p>
+<h2 id="small-things-that-make-a-board-work">Small things that make a board work</h2>
+<ul><li><strong>One card, one outcome.</strong> "Website" is not a card; it is a column pretending to be one. If you cannot say what "done" looks like in a sentence, it is a project and its next action is the card.</li><li><strong>Done is not a graveyard.</strong> Keep the last week or two visible, then archive. Seeing a fortnight of finished work is one of the few honest counterweights to the feeling of never getting anywhere. Keeping eight months of it is just a slow list.</li><li><strong>A due date is a promise, not a wish.</strong> If most cards have dates and most dates pass unremarked, the dates have stopped meaning anything and you have lost the ability to see the ones that are real.</li><li><strong>Review the board weekly.</strong> Boards rot faster than lists, because a stale card looks identical to a live one. Ten minutes a week to move things back and delete what you were never going to do.</li></ul>
+<h2 id="when-a-list-is-simply-better">When a list is simply better</h2>
+<p>Boards are not universally superior, and the honest limits are worth stating.</p>
+<p>If your work is a long, flat queue of similar items — a hundred small edits, a reading list, invoices to send — a list wins. It shows more per screen, sorts instantly, and the spatial layout of a board buys you nothing when every item is the same shape.</p>
+<p>If most of your commitments are appointments, a calendar wins. Kanban has no opinion about time and no way to show that two things collide at 3pm on Thursday.</p>
+<p>And if you have fewer than about ten live tasks, a board is ceremony. The visualisation earns its keep when there is enough work that you cannot hold the shape of it in your head. Below that, you can, and the cards are just something else to maintain.</p>
+<p>The best answer for most people is not one of these. It is the same tasks seen as a list when you are working through them and as a board when you are deciding what to work on — which is a question about the view, not about the tool.</p>]]></content:encoded>
+      <category>Kanban</category>
+      <category>Method</category>
+      <category>Tasks</category>
+    </item>
+    <item>
       <title>How to password-protect a note on your Mac</title>
       <link>https://cyanote.app/blog/password-protect-notes-on-mac/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/password-protect-notes-on-mac/</guid>
@@ -89,6 +128,47 @@
       <category>Buying advice</category>
     </item>
     <item>
+      <title>Folders, tags, or search: how to organise notes</title>
+      <link>https://cyanote.app/blog/how-to-organise-notes/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/how-to-organise-notes/</guid>
+      <pubDate>Tue, 11 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Folders, tags and search solve three different problems, and most note systems collapse because they use the wrong one. Here is what each is actually good at.</description>
+      <content:encoded><![CDATA[<p>Reorganising your notes is the most satisfying way to avoid writing any. It produces visible progress, it feels like care, and at the end of an afternoon of it you have exactly as many ideas as you started with, arranged more neatly.</p>
+<p>That is worth saying up front, because most advice about organising notes assumes the goal is a tidy structure. It isn't. The goal is that in eight months, when you half-remember something, you can find it in under a minute. Every system below should be judged against that and nothing else.</p>
+<p>There are three tools, and they are not competing versions of the same thing.</p>
+<h2 id="folders-one-home-one-decision">Folders: one home, one decision</h2>
+<p>A folder puts each note in exactly one place. That constraint is the entire feature — it is what makes a folder tree navigable, and it is what makes it painful.</p>
+<p>Folders are genuinely good when a note belongs to something with a beginning and an end. A client, a trip, a house move, a course. The project starts, notes accumulate, the project finishes and the whole folder goes quiet. You will never wonder whether the plumber's quote belongs under "House" — that is not a hard call.</p>
+<p>Folders go wrong the moment a note honestly belongs in two places. A note about pricing your freelance work is both "Freelance" and "Money". You will file it in one, look for it in the other, and conclude the system is broken. It isn't; you asked a filing cabinet to hold something in two drawers.</p>
+<p>The failure mode to watch for: a folder tree more than about three levels deep. Deep trees are a sign you are encoding facets — status, topic, year — as nesting, and facets are what tags are for.</p>
+<h2 id="tags-many-labels-one-note">Tags: many labels, one note</h2>
+<p>Tags invert the constraint. A note can carry as many as you like, so the two-places problem goes away.</p>
+<p>The cost is that tags require you to be consistent with yourself over years, which is a genuinely hard thing to be. You tag something <code>#finance</code> in March and <code>#money</code> in September. Neither is wrong, and now half your notes are invisible to each search. Tag lists sprawl, and a tag list with two hundred entries is not an index, it is a second problem.</p>
+<p>Tags work best when you keep the vocabulary small enough to hold in your head — somewhere under about fifteen. That usually means using them for one axis and one only. Status is the classic good use: <code>#waiting</code>, <code>#someday</code>, <code>#reference</code>. These are things a note <em>is</em> right now, they change over time, and there are only a few of them.</p>
+<p>Using tags for topic is where people drown, because topics are unbounded. Every new subject you encounter is a candidate tag, and nothing ever tells you to stop.</p>
+<h2 id="search-the-one-that-changed-the-maths">Search: the one that changed the maths</h2>
+<p>Full-text search across everything you have ever written is the reason all of this is less important than it used to be. If you can type a distinctive phrase and land on the note, the folder it sits in stops mattering very much.</p>
+<p>This genuinely changes the correct answer. Most of the elaborate systems people inherit were designed for tools where finding things was expensive. When retrieval is nearly free, the effort belongs at the moment of writing, not the moment of filing.</p>
+<p>The limit of search is precise: it only finds words you actually wrote. If you search for "the thing the accountant said about the car" and the note says "vehicle expense, business use proportion", you will not find it. Search does not know what you meant.</p>
+<p>Which points at the highest-leverage habit in this entire post, and it has nothing to do with structure.</p>
+<h2 id="name-notes-the-way-you-will-search-for-them">Name notes the way you will search for them</h2>
+<p>The title is the one piece of metadata you fill in every single time, without deciding to. It is free. And most people waste it.</p>
+<p>A note called <code>Meeting</code> is unfindable. <code>Notes</code> is worse. <code>Untitled 47</code> is a small future tax you have chosen to pay.</p>
+<p>Write the title as the sentence you would say to someone describing the note eight months from now. Not "Insurance" but "Why we switched car insurers and what it cost". Not "Ideas" but "Ideas for the workshop, from the walk in February". The second version contains the distinctive words you will actually type into a search box, because they are the words your memory kept.</p>
+<p>This one change does more for retrieval than any folder structure, and it costs four extra seconds.</p>
+<h2 id="links-the-option-people-forget">Links: the option people forget</h2>
+<p>The fourth tool is pointing one note at another. Where folders and tags describe categories, links describe relationships — this note came out of that meeting, this decision replaced that one.</p>
+<p>Links are strongest for material that grows over time: an ongoing topic where notes refer back to each other, a decision log, anything where the connection between two notes is more informative than the category both sit in. They are overkill for a receipt.</p>
+<p>A word of caution, since this is where note-taking gets faddish: an elaborate web of links is the most enjoyable form of the procrastination this post opened with. Link things when the connection is real and you would want to follow it. Do not link things to build a graph.</p>
+<h2 id="a-setup-that-survives-contact-with-real-life">A setup that survives contact with real life</h2>
+<p>If you want something concrete:</p>
+<ul><li><strong>Search is the primary way you find things.</strong> Assume it, and write titles accordingly.</li><li><strong>A shallow folder for each live project</strong>, plus one for reference and one for archive. Two levels. When a project ends, move the folder to archive rather than tidying it.</li><li><strong>Tags for status only</strong> — the handful of states a note can be in. Not topics.</li><li><strong>Links where a relationship genuinely exists</strong>, and nowhere else.</li><li><strong>Archive rather than delete.</strong> Search makes an archive cheap; a note you cannot find is already effectively deleted, and one you deleted is not coming back.</li></ul>
+<p>The test for any of this is not whether it looks organised. It is whether, in eight months, you find the thing. Everything that does not serve that is a hobby, and it is fine to have hobbies — just don't confuse one with a system.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>Organisation</category>
+      <category>How-to</category>
+    </item>
+    <item>
       <title>How to see clipboard history on a Mac</title>
       <link>https://cyanote.app/blog/clipboard-history-on-mac/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/clipboard-history-on-mac/</guid>
@@ -125,6 +205,50 @@
 <p>The gap in macOS is real and it is not closing. But it is one of the few missing features where the fix is genuinely small, sits out of the way, and pays you back the first afternoon you use it.</p>]]></content:encoded>
       <category>Clipboard</category>
       <category>macOS</category>
+      <category>How-to</category>
+    </item>
+    <item>
+      <title>How to back up notes that live on your own computer</title>
+      <link>https://cyanote.app/blog/backing-up-local-notes/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/backing-up-local-notes/</guid>
+      <pubDate>Tue, 11 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Cloud apps hand you backup as a side effect. Local notes do not, and sync is not a substitute. Here is what actually protects them, and how to know it works.</description>
+      <content:encoded><![CDATA[<p>Keeping your notes on your own computer buys you a lot: they work offline, nobody else can read them, and no company can lose them, price you out, or shut down. It also hands you back a job the cloud was quietly doing on your behalf, and most people do not notice until the day it matters.</p>
+<p>This is that job, and it is smaller than it sounds.</p>
+<h2 id="sync-is-not-backup">Sync is not backup</h2>
+<p>Worth getting out of the way first, because it is the single most common mistake in this area, and it catches people who thought they were being careful.</p>
+<p>Sync propagates changes. That is its purpose and it is very good at it. Which means when you delete a note, sync faithfully deletes it everywhere, immediately. When a file is corrupted, sync distributes the corruption. When you paste over three paragraphs and quit, sync ensures all your devices agree on the wrong version.</p>
+<p>A backup is different in one specific way: it can give you back a state from <em>before</em> the thing you regret. If a system has no notion of "yesterday", it is not a backup, whatever it is called.</p>
+<p>Cloud note apps blur this because most of them do keep version history, which is a backup — of the note contents, on their servers, subject to their retention policy. Useful. Just not the same thing as sync, and worth knowing which one you are relying on.</p>
+<h2 id="what-time-machine-covers">What Time Machine covers</h2>
+<p>On a Mac, Time Machine is most of the answer, and it is already built in.</p>
+<p>It keeps hourly snapshots for the last 24 hours, daily for the past month, and weekly beyond that, until the disk fills and it starts dropping the oldest. That's a real answer to "get me the version from before Tuesday". Turn it on, point it at an external disk, and the majority of this problem is solved by a single setting.</p>
+<p>Two limits are worth knowing.</p>
+<p><strong>It is one disk in one building.</strong> A Time Machine drive sitting next to the Mac protects against a dead SSD and a bad afternoon. It does not protect against theft, fire or flood, because it is in the room. That is what the offsite copy below is for.</p>
+<p><strong>It is only as recent as the last time you plugged it in.</strong> A backup drive in a drawer contains a snapshot of whenever you last remembered. If your backup disk is not permanently attached, the honest question is not whether you have a backup but how old it is.</p>
+<h2 id="the-rule-worth-actually-following">The rule worth actually following</h2>
+<p>The 3-2-1 rule has survived decades because it is simple: <strong>three copies of anything you care about, on two different kinds of storage, one of them somewhere else.</strong></p>
+<p>For notes on a Mac that translates to something quite ordinary:</p>
+<ol><li>The working copy on your Mac.</li><li>Time Machine on an external disk.</li><li>Something offsite — a cloud backup service, an encrypted copy in whatever cloud storage you already pay for, or a second drive you keep at work or a relative's house and swap occasionally.</li></ol>
+<p>The third one is the one people skip, and it is the one that covers the scenarios where you lose the building rather than the file.</p>
+<p>If the offsite copy goes to a cloud service and the whole point of keeping notes local was privacy, encrypt it before it leaves. Disk Utility can make an encrypted disk image; several backup tools will do it for you. An encrypted archive in someone else's cloud is a different proposition from your notes in someone else's app.</p>
+<h2 id="export-and-backup-are-not-the-same-thing">Export and backup are not the same thing</h2>
+<p>Any note app worth using can export. It is worth understanding what that gets you, because it is not the same as a snapshot.</p>
+<p><strong>A backup</strong> restores the app to a previous state — structure, links, attachments, the lot. It is what you want after a mistake.</p>
+<p><strong>An export</strong> produces files something else can read. It is what you want when you leave the app, or when the app is no longer available to restore into. It is the difference between recovering and escaping.</p>
+<p>You want both, for different days. A backup is worthless if the software it restores into no longer exists; an export is a poor recovery tool because it usually loses structure.</p>
+<p>So: whatever your app's export produces, run it once, now, and look at the output. Can another program open it? Are the attachments there, or just links to files that live inside the app? Do notes still reference each other, or has the structure been flattened into a folder of text? Ten minutes spent finding this out while everything is fine is worth a great deal more than finding out during a recovery.</p>
+<h2 id="test-the-restore">Test the restore</h2>
+<p>A backup you have never restored is not a backup. It is a hypothesis.</p>
+<p>The failure mode is boringly common: the drive was full, the job silently stopped months ago, the encryption password was never written down, the export was producing empty files the whole time. Every one of these is invisible until you need the thing, at which point it is also unfixable.</p>
+<p>The test does not need to be elaborate:</p>
+<ul><li>Restore a single note from a week ago into a scratch location. Open it. Confirm it is the note.</li><li>Check the date of the most recent backup. If it surprises you, that is the finding.</li><li>Confirm you can actually get <em>in</em> — the recovery key, the encryption password, the account. Store them somewhere that is not the machine being backed up. A recovery key saved only in the notes app you are trying to recover is a joke you only get to hear once.</li></ul>
+<p>Twice a year is plenty. Put it on the calendar, because it is exactly the kind of task nothing will ever remind you to do.</p>
+<h2 id="the-short-version">The short version</h2>
+<p>Turn on Time Machine today; it is fifteen minutes and covers most of it. Add one offsite copy, encrypted if the contents are private. Run your app's export once so you know what it produces before you need it. And restore something, twice a year, so that you know.</p>
+<p>The point of keeping your notes on your own computer is that nobody else can lose them. The corollary is that nobody else can save them either.</p>]]></content:encoded>
+      <category>Backups</category>
+      <category>Local-first</category>
       <category>How-to</category>
     </item>
     <item>

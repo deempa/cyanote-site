@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to back up notes stored on your own computer</title>
+<meta name="description" content="Cloud apps hand you backup as a side effect. Local notes do not, and sync is not a substitute. Here is what actually protects them, and how to know it works." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/backing-up-local-notes/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/backing-up-local-notes/" />
+<meta property="og:title" content="How to back up notes stored on your own computer" />
+<meta property="og:description" content="Cloud apps hand you backup as a side effect. Local notes do not, and sync is not a substitute. Here is what actually protects them, and how to know it works." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to back up notes stored on your own computer" />
+<meta name="twitter:description" content="Cloud apps hand you backup as a side effect. Local notes do not, and sync is not a substitute. Here is what actually protects them, and how to know it works." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to back up notes that live on your own computer",
+  "description": "Cloud apps hand you backup as a side effect. Local notes do not, and sync is not a substitute. Here is what actually protects them, and how to know it works.",
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "author": {
+    "@type": "Person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/backing-up-local-notes/"
+  },
+  "url": "https://cyanote.app/blog/backing-up-local-notes/",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://cyanote.app/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Backups, Local-first, How-to",
+  "wordCount": 1061
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to back up notes that live on your own computer",
+      "item": "https://cyanote.app/blog/backing-up-local-notes/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-11" />
+<meta property="article:modified_time" content="2026-08-11" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Backups" />
+<meta property="article:tag" content="Local-first" />
+<meta property="article:tag" content="How-to" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>How to back up notes that live on your own computer</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-11">11 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>5 min read</span>
+      </div>
+    <ul class="tags"><li>Backups</li><li>Local-first</li><li>How-to</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Keeping your notes on your own computer buys you a lot: they work offline, nobody else can read them, and no company can lose them, price you out, or shut down. It also hands you back a job the cloud was quietly doing on your behalf, and most people do not notice until the day it matters.</p>
+      <p>This is that job, and it is smaller than it sounds.</p>
+      <h2 id="sync-is-not-backup">Sync is not backup</h2>
+      <p>Worth getting out of the way first, because it is the single most common mistake in this area, and it catches people who thought they were being careful.</p>
+      <p>Sync propagates changes. That is its purpose and it is very good at it. Which means when you delete a note, sync faithfully deletes it everywhere, immediately. When a file is corrupted, sync distributes the corruption. When you paste over three paragraphs and quit, sync ensures all your devices agree on the wrong version.</p>
+      <p>A backup is different in one specific way: it can give you back a state from <em>before</em> the thing you regret. If a system has no notion of "yesterday", it is not a backup, whatever it is called.</p>
+      <p>Cloud note apps blur this because most of them do keep version history, which is a backup — of the note contents, on their servers, subject to their retention policy. Useful. Just not the same thing as sync, and worth knowing which one you are relying on.</p>
+      <h2 id="what-time-machine-covers">What Time Machine covers</h2>
+      <p>On a Mac, Time Machine is most of the answer, and it is already built in.</p>
+      <p>It keeps hourly snapshots for the last 24 hours, daily for the past month, and weekly beyond that, until the disk fills and it starts dropping the oldest. That's a real answer to "get me the version from before Tuesday". Turn it on, point it at an external disk, and the majority of this problem is solved by a single setting.</p>
+      <p>Two limits are worth knowing.</p>
+      <p><strong>It is one disk in one building.</strong> A Time Machine drive sitting next to the Mac protects against a dead SSD and a bad afternoon. It does not protect against theft, fire or flood, because it is in the room. That is what the offsite copy below is for.</p>
+      <p><strong>It is only as recent as the last time you plugged it in.</strong> A backup drive in a drawer contains a snapshot of whenever you last remembered. If your backup disk is not permanently attached, the honest question is not whether you have a backup but how old it is.</p>
+      <h2 id="the-rule-worth-actually-following">The rule worth actually following</h2>
+      <p>The 3-2-1 rule has survived decades because it is simple: <strong>three copies of anything you care about, on two different kinds of storage, one of them somewhere else.</strong></p>
+      <p>For notes on a Mac that translates to something quite ordinary:</p>
+      <ol><li>The working copy on your Mac.</li><li>Time Machine on an external disk.</li><li>Something offsite — a cloud backup service, an encrypted copy in whatever cloud storage you already pay for, or a second drive you keep at work or a relative's house and swap occasionally.</li></ol>
+      <p>The third one is the one people skip, and it is the one that covers the scenarios where you lose the building rather than the file.</p>
+      <p>If the offsite copy goes to a cloud service and the whole point of keeping notes local was privacy, encrypt it before it leaves. Disk Utility can make an encrypted disk image; several backup tools will do it for you. An encrypted archive in someone else's cloud is a different proposition from your notes in someone else's app.</p>
+      <h2 id="export-and-backup-are-not-the-same-thing">Export and backup are not the same thing</h2>
+      <p>Any note app worth using can export. It is worth understanding what that gets you, because it is not the same as a snapshot.</p>
+      <p><strong>A backup</strong> restores the app to a previous state — structure, links, attachments, the lot. It is what you want after a mistake.</p>
+      <p><strong>An export</strong> produces files something else can read. It is what you want when you leave the app, or when the app is no longer available to restore into. It is the difference between recovering and escaping.</p>
+      <p>You want both, for different days. A backup is worthless if the software it restores into no longer exists; an export is a poor recovery tool because it usually loses structure.</p>
+      <p>So: whatever your app's export produces, run it once, now, and look at the output. Can another program open it? Are the attachments there, or just links to files that live inside the app? Do notes still reference each other, or has the structure been flattened into a folder of text? Ten minutes spent finding this out while everything is fine is worth a great deal more than finding out during a recovery.</p>
+      <h2 id="test-the-restore">Test the restore</h2>
+      <p>A backup you have never restored is not a backup. It is a hypothesis.</p>
+      <p>The failure mode is boringly common: the drive was full, the job silently stopped months ago, the encryption password was never written down, the export was producing empty files the whole time. Every one of these is invisible until you need the thing, at which point it is also unfixable.</p>
+      <p>The test does not need to be elaborate:</p>
+      <ul><li>Restore a single note from a week ago into a scratch location. Open it. Confirm it is the note.</li><li>Check the date of the most recent backup. If it surprises you, that is the finding.</li><li>Confirm you can actually get <em>in</em> — the recovery key, the encryption password, the account. Store them somewhere that is not the machine being backed up. A recovery key saved only in the notes app you are trying to recover is a joke you only get to hear once.</li></ul>
+      <p>Twice a year is plenty. Put it on the calendar, because it is exactly the kind of task nothing will ever remind you to do.</p>
+      <h2 id="the-short-version">The short version</h2>
+      <p>Turn on Time Machine today; it is fifteen minutes and covers most of it. Add one offsite copy, encrypted if the contents are private. Run your app's export once so you know what it produces before you need it. And restore something, twice a year, so that you know.</p>
+      <p>The point of keeping your notes on your own computer is that nobody else can lose them. The corollary is that nobody else can save them either.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/personal-kanban-board/">Personal Kanban: a board for your own to-do list</a><span>A Kanban board built for a team does not survive being handed to one person. Here is which parts translate, which columns to use, and when a plain list wins.</span></li><li><a href="https://cyanote.app/blog/password-protect-notes-on-mac/">How to password-protect a note on your Mac</a><span>Locking a note, encrypting a disk and using a login password protect against three different things. Here is which one stops what, and where each of them stops.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h4>Product</h4><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h4>Resources</h4><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h4>Download</h4><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>
