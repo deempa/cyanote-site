@@ -386,7 +386,11 @@
       <details><summary>Which computers is it for?</summary><p>Macs running macOS 12 (Monterey) or newer. Cyanote ships as a universal binary, so it runs natively on both Apple Silicon and Intel Macs — no Rosetta, and no choosing between two downloads. It is signed and notarized by Apple, so Gatekeeper opens it without the unidentified-developer warning that unsigned downloads trigger. It is a desktop app: there is no iPhone or iPad version and nothing to log into in a browser. A Windows build exists and is in testing; it is not on sale yet, and when it ships the same $10 licence covers it, so buying today does not mean buying twice. Cyanote is not on the Mac App Store — it is sold directly, which is part of what makes a one-time price and a no-account design possible.</p></details>
     </div>
     <p style="text-align:center;color:var(--muted);font-size:.93rem;margin-top:26px">
-      Still wondering something? Email <a href="mailto:support@cyanote.app" style="color:var(--accent)">support@cyanote.app</a>.
+      <!-- Underlined, not just tinted. This link sits inside muted grey text, and
+           colour alone put only 1.03:1 between the two — invisible as a link to
+           anyone who does not separate those hues. Every other link in running
+           text on this site is underlined; this one was the exception. -->
+      Still wondering something? Email <a href="mailto:support@cyanote.app" style="color:var(--accent);text-decoration:underline;text-underline-offset:2px">support@cyanote.app</a>.
     </p>
   </div>
 </section>
@@ -423,12 +427,12 @@
       <div class="brand" style="margin-bottom:12px"><img src="favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
       <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
     </div>
-    <div><h4>Product</h4><ul>
+    <div><h3>Product</h3><ul>
       <li><a href="#features">Features</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="changelog.html">Changelog</a></li>
     </ul></div>
-    <div><h4>Resources</h4><ul>
+    <div><h3>Resources</h3><ul>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="privacy.html">Privacy</a></li>
@@ -438,7 +442,7 @@
         <a href="mailto:support@cyanote.app">support@cyanote.app</a>
       </li>
     </ul></div>
-    <div><h4>Download</h4><ul>
+    <div><h3>Download</h3><ul>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="#pricing">macOS</a></li>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
     </ul></div>

@@ -38,8 +38,17 @@
 :root{
   color-scheme:light;
   --paper:#fafafa; --panel:#ffffff; --line:#e6e6e9; --line-soft:#efeff1;
-  --ink:#0a0a0b; --ink-2:#3d3f45; --muted:#71757e;
-  --accent:#0e7cc4; --accent-ink:#ffffff;
+  --ink:#0a0a0b; --ink-2:#3d3f45; --muted:#6e727b;
+  --accent:#0d77bd; --accent-ink:#ffffff;
+  /* --muted and --accent are three shades darker than they read as designed.
+     Against --paper they were 4.42:1 and 4.28:1, and WCAG AA asks 4.5:1 for
+     normal text — near-misses, but they applied to every .lede, .fineprint,
+     feature blurb, figcaption and footer link on the site, which is 43 elements
+     failing on two values. Now 4.62 and 4.58 (accent is 4.78 on --panel white).
+     Hue and saturation are untouched, so the greys read the same; only the
+     contrast clears. Anything added here wants checking against --paper, not
+     against white: the page is #fafafa, and the 0.08 that was missing is
+     exactly the sort of gap that hides in that difference. */
   --maxw:1120px; --readw:768px; --gutter:28px;
   --shot-shadow:0 34px 70px -30px rgb(10 20 35 / .3), 0 2px 6px -2px rgb(10 20 35 / .1);
   --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -358,7 +367,10 @@ details p{ color:var(--muted); font-size:.97rem; padding:0 0 24px; max-width:62c
 footer{ border-top:1px solid var(--line); margin-top:auto; padding:56px 0 44px; font-size:.92rem; color:var(--muted) }
 .fcols{ display:grid; grid-template-columns:1.6fr repeat(3,1fr); gap:32px }
 @media(max-width:760px){ .fcols{ grid-template-columns:1fr 1fr; gap:28px } }
-.fcols h4{ font-size:.78rem; text-transform:uppercase; letter-spacing:.09em; color:var(--ink);
+/* h3, not h4. These are the first headings after the closer's <h2>, so h4 was
+   skipping a level — which reads to a screen reader as a missing section rather
+   than a footer. The size is set here anyway, so the level is free to be correct. */
+.fcols h3{ font-size:.78rem; text-transform:uppercase; letter-spacing:.09em; color:var(--ink);
   font-weight:600; margin-bottom:14px }
 .fcols ul{ list-style:none; display:grid; gap:9px }
 .fcols li{ display:flex; align-items:center; gap:8px }
