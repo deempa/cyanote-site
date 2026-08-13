@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-labelledby="sw-title sw-desc">
+  <title id="sw-title">The export window a shutting-down notes service gives you</title>
+  <desc id="sw-desc">When Catch.com announced its closure on 31 July 2013, the service shut down on 30 August 2013 — about thirty days in which users had to notice the announcement, find the export tool, and download a CSV or ZIP archive. Everything depends on reading the email in time.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h   { font-size: 28px; font-weight: 600; fill: #0a0a0b; }
+    .lab { font-size: 24px; font-weight: 600; fill: #0a0a0b; }
+    .sub { font-size: 21px; fill: #71757e; }
+    .win { font-size: 23px; font-weight: 600; fill: #0e7cc4; }
+    .foot{ font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <text class="h" x="40" y="46">Catch.com, 2013: the whole window was about thirty days</text>
+
+  <!-- timeline -->
+  <line x1="90" y1="150" x2="1110" y2="150" stroke="#e6e6e9" stroke-width="4" stroke-linecap="round"/>
+  <rect x="90" y="140" width="1020" height="20" rx="10" fill="#dcecf8"/>
+
+  <circle cx="90" cy="150" r="13" fill="#0e7cc4"/>
+  <circle cx="1110" cy="150" r="13" fill="#0a0a0b"/>
+
+  <text class="lab" x="90" y="118" text-anchor="start">31 July</text>
+  <text class="sub" x="90" y="200">Closure announced.</text>
+  <text class="sub" x="90" y="228">An email you may not open.</text>
+
+  <text class="win" x="600" y="118" text-anchor="middle">~30 days to act</text>
+  <text class="sub" x="600" y="200" text-anchor="middle">Find the export tool, run it,</text>
+  <text class="sub" x="600" y="228" text-anchor="middle">download a CSV or ZIP archive,</text>
+  <text class="sub" x="600" y="256" text-anchor="middle">and find somewhere to put it.</text>
+
+  <text class="lab" x="1110" y="118" text-anchor="end">30 August</text>
+  <text class="sub" x="1110" y="200" text-anchor="end">Service off.</text>
+  <text class="sub" x="1110" y="228" text-anchor="end">Whatever you did not</text>
+  <text class="sub" x="1110" y="256" text-anchor="end">download is gone.</text>
+
+  <line x1="40" y1="312" x2="1160" y2="312" stroke="#efeff1" stroke-width="2"/>
+  <text class="foot" x="40" y="352">This is the good version — a company that gave notice and shipped an export tool.</text>
+  <text class="foot" x="40" y="380">It still required you to read one email during one particular month.</text>
+</svg>

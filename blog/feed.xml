@@ -14,6 +14,85 @@
       <link>https://cyanote.app/blog/</link>
     </image>
     <item>
+      <title>What happens to your notes when the app shuts down</title>
+      <link>https://cyanote.app/blog/what-happens-when-your-notes-app-shuts-down/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/what-happens-when-your-notes-app-shuts-down/</guid>
+      <pubDate>Thu, 13 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Notes apps close. The good ones give you a month and an export file. Here is what that month actually asks of you, and how to be ready before it arrives.</description>
+      <content:encoded><![CDATA[<p>Every notes app you have ever used will stop existing. Most of them will do it politely, with an email and an export tool and a date. That is the good outcome, and it is worth understanding exactly what the good outcome asks of you, because it is more than people expect.</p>
+<p>Here is a real one. On 31 July 2013, Catch.com — then a credible Evernote competitor — <a href="https://techcrunch.com/2013/07/31/evernote-competitor-catch-com-shuts-down-its-note-taking-apps-company-heading-in-different-direction/">announced it was shutting down its note-taking apps</a>. The service went off on 30 August. Users had roughly a month to find the export tool and pull down a CSV or ZIP archive of everything they had written.</p>
+<p>That is a company behaving well. Notice given, tool provided, formats that other apps could read. And it still required every single user to open one particular email during one particular month, understand what it meant, and act.</p>
+<figure><img src="/images/shutdown-window-diagram.svg" alt="A timeline from 31 July to 30 August 2013 showing the roughly thirty-day window Catch.com users had to find the export tool and download their notes before the service switched off" width="1200" height="400" loading="lazy" decoding="async" /><figcaption>Thirty days is generous, as these things go. It is also thirty days in which you have to be paying attention.</figcaption></figure>
+<h2 id="the-three-ways-it-actually-goes">The three ways it actually goes</h2>
+<p><strong>The orderly shutdown.</strong> Notice, an export tool, a readable format, a deadline. Catch.com is the model. You lose nothing if you are paying attention, and everything if you are not.</p>
+<p><strong>The acquisition.</strong> Nobody switches anything off. The app stops getting updates, then stops working on the next macOS release, then one morning will not open at all. There is no email, because from the company's point of view nothing happened. This is more common than a shutdown and much harder to plan for, because there is no date to react to.</p>
+<p><strong>The quiet one.</strong> A small app from a developer who stopped. The website still resolves, the download link still works, and the last release was four years ago. Nothing announces itself. You find out when you upgrade your Mac.</p>
+<p>Only the first of these sends you an email. The other two are the reason "they will let me know" is not a plan.</p>
+<h2 id="what-an-export-actually-gives-you">What an export actually gives you</h2>
+<p>Getting a file out is not the same as keeping your notes, and this is where most people are disappointed.</p>
+<p><strong>The text usually survives.</strong> Plain prose comes through nearly every export intact. If all you have is paragraphs, you are mostly fine.</p>
+<p><strong>The structure usually does not.</strong> Nesting, links between notes, tags, folder hierarchies, and the relationships you built are the first thing lost in translation. <a href="https://www.notion.com/help/export-your-content">Notion, for instance, exports to PDF, HTML, or Markdown and CSV</a> — and a database of linked pages becomes a directory of files with the links rewritten or broken, depending on the format you picked.</p>
+<p><strong>Attachments are a coin toss.</strong> Images and files may come down alongside the text, may come as a separate archive, or may turn out to have been links to a server that is about to stop answering.</p>
+<p><strong>Dates and metadata rarely survive.</strong> Created and modified timestamps, which are how you find anything from four years ago, are commonly flattened to the export date.</p>
+<p>So the honest way to think about an export is not "my notes are safe" but "my sentences are safe, and I will be rebuilding the shape of them by hand".</p>
+<h2 id="the-test-that-tells-you-where-you-stand">The test that tells you where you stand</h2>
+<p>There is one question that sorts every notes app into two piles, and you can answer it in a minute:</p>
+<p><strong>If the company vanished tonight — no notice, no email, no export tool — could you still read what you wrote tomorrow?</strong></p>
+<p>If the answer depends on the company doing something for you, the answer is no.</p>
+<p>Some cloud apps have thought hard about this and engineered around it. Standard Notes, for example, publishes <a href="https://standardnotes.com/help/4/what-happens-to-my-data-if-standard-notes-disappears">an offline decryption script you can download and run in a browser</a> precisely so that its own disappearance is survivable. That is a serious answer to a serious question, and it is rarer than it should be.</p>
+<p>For a <a href="/blog/what-local-first-means-for-your-notes/">local-first app</a>, the question is close to meaningless. The company vanishing changes nothing about the file on your disk. The app stops getting updates — which is a real loss, and worth being honest about — but your notes do not stop existing, because they were never anywhere else.</p>
+<h2 id="what-to-do-this-week-whichever-kind-of-app-you-use">What to do this week, whichever kind of app you use</h2>
+<p><strong>Run the export once, now, while nothing is wrong.</strong> Not to keep the file. To find out what your app's export actually produces, which is a thing you want to learn on a calm Tuesday rather than during a thirty-day countdown. Open the result. Look at whether the structure survived. Apple Notes, for instance, <a href="https://support.apple.com/guide/notes/export-a-copy-of-a-note-apd1f4c5c8b9/mac">exports a copy of a note as a PDF</a> — useful for reading, useless for moving into another app and editing.</p>
+<p><strong>Find out where the data physically is.</strong> For a local app this is a path on your disk. For a cloud app it is somebody's server, and the export is the only door. Either answer is fine. Not knowing which one you have is not.</p>
+<p><strong>Put the export somewhere your <a href="/blog/backing-up-local-notes/">backups</a> already reach.</strong> An export sitting in Downloads is not a copy of anything; it is one failed SSD away from being nothing.</p>
+<p><strong>Repeat it about twice a year.</strong> Not because the format changes often, but because this is the only way you find out that the export quietly broke.</p>
+<h2 id="the-uncomfortable-summary">The uncomfortable summary</h2>
+<p>Software you rent has a shutdown date you do not know yet. Software that runs on your own machine has one too — but it is the date you stop being able to run it, which is years of macOS releases away and entirely visible to you.</p>
+<p>Neither is permanent. Nothing is. The difference is whether the end of the app is also the end of the notes, and whether you find out by reading an email or by choosing.</p>
+<p>Cyanote, the app this blog belongs to, is on the second side of that line: the notes are a database file on your own Mac, and a full export is a single JSON file you can take somewhere else. That does not make it permanent either. It just means nobody else gets to pick the date.</p>]]></content:encoded>
+      <category>Local-first</category>
+      <category>Backups</category>
+      <category>Ownership</category>
+    </item>
+    <item>
+      <title>A notes app that never asks you to sign up</title>
+      <link>https://cyanote.app/blog/notes-app-without-an-account/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/notes-app-without-an-account/</guid>
+      <pubDate>Thu, 13 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Signing up is so normal that nobody asks what the account is for. Here is what it buys, what it costs, and how to check whether an app truly needs one.</description>
+      <content:encoded><![CDATA[<p>Open a new notes app and the first screen is usually a form. Email, password, maybe a verification code. You fill it in without thinking, because that is what software does now.</p>
+<p>It is worth stopping on that screen for a second, because an account is not a formality. It is a decision about where your writing lives and who else has a copy — made before you have typed a single word.</p>
+<h2 id="what-the-account-is-actually-for">What the account is actually for</h2>
+<p>Three things, and they are all genuinely useful:</p>
+<p><strong>Your notes on more than one device.</strong> This is the big one and it is the honest reason most apps ask. Sync needs somewhere in the middle to sync through, and that somewhere needs to know which notes are yours.</p>
+<p><strong>Sharing with other people.</strong> A shared page needs a shared truth that two accounts can both reach.</p>
+<p><strong>Recovery.</strong> Laptop stolen on a Thursday, notes back on the replacement by Friday. That only works if somebody else has a copy.</p>
+<p>If you use any of those three, the account is not overhead. It is the product, and the sign-up form is the price of admission to a thing you actually want.</p>
+<figure><img src="/images/what-an-account-buys.svg" alt="Two panels: what a notes-app account buys you — sync, sharing and recovery — set against what it costs you: an identity attached to your writing, a copy on somebody else&#x27;s server, and a deletion you have to request" width="1200" height="440" loading="lazy" decoding="async" /><figcaption>Both columns are real. The mistake is paying for the right one without getting the left.</figcaption></figure>
+<h2 id="what-it-costs-stated-plainly">What it costs, stated plainly</h2>
+<p><strong>An identity attached to your writing.</strong> Before the account, your notes were text on a disk. After it, they are text on a disk plus a record on a server saying this person wrote these things. That record is what makes sync possible, and it is also a thing that exists.</p>
+<p><strong>A copy you do not control.</strong> Once the notes are on a server, the list of parties who can read them is longer than one: the company, anyone it is legally compelled to answer, anyone who breaches it, and whoever owns it after an acquisition nobody consulted you about. None of that requires bad intent. It is just what having a copy means.</p>
+<p><strong>Deletion becomes a request.</strong> With a local file, deleting is an act you perform. With an account, it is something you ask for and then trust. In Europe <a href="https://gdpr-info.eu/art-17-gdpr/">the GDPR's right to erasure</a> gives that request real legal weight, which is a genuine protection — and it is still a request, with a response time, made to somebody else.</p>
+<p>None of these is a scandal. They are the ordinary mechanics of a service. They are simply not on the pricing page, and they apply whether or not you ever use sync.</p>
+<h2 id="the-apps-that-skip-it">The apps that skip it</h2>
+<p>Plenty of good software has decided the form is optional.</p>
+<p><strong>Apple Notes can run entirely locally.</strong> Most people never find this, because iCloud is on by default — but Notes has an "On My Mac" account you can enable in its settings, and <a href="https://support.apple.com/guide/notes/add-or-remove-notes-accounts-not85d6f7b58/mac">notes stored there stay on your computer</a>, unreachable from your other devices and from iCloud.com. That is the whole trade in one checkbox: no account, no sync.</p>
+<p><strong>Obsidian</strong> works on a folder of Markdown files with <a href="https://obsidian.md/">no account needed to use it</a>, selling sync separately to people who want it. That is the honest shape of this: the account appears when, and only when, you ask for the thing that needs one.</p>
+<p>There is a small, healthy category of Mac apps built the same way — open it, write, no form. The pattern is always the same underneath: no sync, therefore no server, therefore no account.</p>
+<h2 id="four-questions-that-settle-it-in-a-minute">Four questions that settle it in a minute</h2>
+<p>If you are looking at an app and cannot tell:</p>
+<ol><li><strong>Can you get to a blank note without typing an email address?</strong> If not, something is being created on a server before you have written anything.</li><li><strong>Where is the file?</strong> A real answer is a path you can open in Finder. "In the app" means somebody else knows and you do not.</li><li><strong>Turn the wifi off and use it for an hour.</strong> Everything should work — not most things.</li><li><strong>What happens if you stop paying, or stop using it?</strong> With a local file, nothing happens. With an account, find out before you need to know.</li></ol>
+<p>That fourth one is the same question as <a href="/blog/what-happens-when-your-notes-app-shuts-down/">what happens when the app shuts down</a>, asked earlier and more cheaply.</p>
+<h2 id="the-part-people-get-backwards">The part people get backwards</h2>
+<p>The mistake is not choosing an account. It is choosing one by default and then never using what it bought.</p>
+<p>If your notes are on one Mac, you never open them on your phone, you have never shared a page, and your backups are already handled — then the account is doing nothing for you at all. You are carrying the costs of a service you are not consuming, because a sign-up form was the first screen and nobody thinks to close it.</p>
+<p>And if you do work across two machines all day, the opposite holds just as firmly: an account-less app will be a daily irritation, and no amount of privacy argument makes single-device sync appear. Choose the one that matches how you actually work, not the one that matches how you would like to feel about your software.</p>
+<p>Cyanote is on the account-less side — one Mac, a local database, no sign-up, and consequently no sync. That is a real limitation and I would rather say it here than have you discover it on Tuesday. If it is the wrong trade for you, one of the apps above is a better answer, and there is no hard feeling in that.</p>]]></content:encoded>
+      <category>Privacy</category>
+      <category>Local-first</category>
+      <category>Buying advice</category>
+    </item>
+    <item>
       <title>A clipboard manager for Mac without a subscription</title>
       <link>https://cyanote.app/blog/clipboard-manager-mac-without-subscription/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/clipboard-manager-mac-without-subscription/</guid>

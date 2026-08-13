@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-labelledby="ac-title ac-desc">
+  <title id="ac-title">What a notes-app account gives you, and what it costs</title>
+  <desc id="ac-desc">An account buys sync across devices, sharing with other people, and recovery after a lost laptop. It costs an identity tied to your writing, a copy of your notes on somebody else's server, and a deletion that you have to request rather than perform.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 27px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 23px; fill: #3d3f45; }
+    .note { font-size: 21px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <!-- gives -->
+  <rect class="card" x="40" y="30" width="540" height="330" rx="14"/>
+  <rect x="40" y="30" width="540" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="76" y="88">What the account buys you</text>
+
+  <circle cx="86" cy="140" r="5" fill="#0e7cc4"/>
+  <text class="item" x="108" y="148">The same notes on your phone</text>
+  <circle cx="86" cy="192" r="5" fill="#0e7cc4"/>
+  <text class="item" x="108" y="200">Sharing a page with someone else</text>
+  <circle cx="86" cy="244" r="5" fill="#0e7cc4"/>
+  <text class="item" x="108" y="252">Getting everything back after a</text>
+  <text class="item" x="108" y="282">lost or stolen laptop</text>
+
+  <text class="note" x="76" y="332">All three are real. None of them is free to provide.</text>
+
+  <!-- costs -->
+  <rect class="card" x="620" y="30" width="540" height="330" rx="14"/>
+  <rect x="620" y="30" width="540" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="656" y="88">What it costs you</text>
+
+  <circle cx="666" cy="140" r="5" fill="#b8bcc4"/>
+  <text class="item" x="688" y="148">An identity attached to your writing</text>
+  <circle cx="666" cy="192" r="5" fill="#b8bcc4"/>
+  <text class="item" x="688" y="200">A copy on somebody else's server</text>
+  <circle cx="666" cy="244" r="5" fill="#b8bcc4"/>
+  <text class="item" x="688" y="252">A deletion you request rather</text>
+  <text class="item" x="688" y="282">than perform</text>
+
+  <text class="note" x="656" y="332">All three are real too, and rarely listed on the pricing page.</text>
+
+  <text class="foot" x="40" y="410">The question is not which column is bigger. It is whether you are getting the left one at all.</text>
+</svg>
