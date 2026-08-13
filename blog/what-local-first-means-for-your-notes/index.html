@@ -72,7 +72,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Local-first, Privacy, Offline",
-  "wordCount": 1516
+  "wordCount": 1581
 }
 </script>
 <script type="application/ld+json">
@@ -143,9 +143,10 @@
     </header>
 
     <div class="post">
-      <p>"Local-first" has become a marketing word, which is a shame, because underneath it is a genuinely useful distinction — and one with real costs that the marketing tends to skip.</p>
+      <p>"Local-first" — <a href="https://www.inkandswitch.com/local-first/">a term coined in a 2019 essay by Ink &amp; Switch</a> — has become a marketing word, which is a shame, because underneath it is a genuinely useful distinction — and one with real costs that the marketing tends to skip.</p>
       <p>Here is the plain version. In a cloud app, the server holds the truth. Your device holds a cache of it. When you type, the change is sent somewhere, accepted, and sent back. In a local-first app, your computer holds the truth. The app reads and writes it directly. The network, if there is one at all, is a convenience layered on top.</p>
       <p>That sounds like an implementation detail. It is not. It changes how the app behaves on a bad train, what happens when the company folds, who can read what you wrote, and whether your notes still exist in ten years. It also takes some things away, and I will get to those, because a post that only lists the upsides is an advert.</p>
+      <figure><img src="/images/local-first-diagram.svg" alt="Two panels: in a cloud app the server holds the authoritative copy and the device holds a cache; in a local-first app the computer holds the authoritative copy and the network is optional" width="1200" height="520" loading="lazy" decoding="async" /><figcaption>The whole distinction in one picture: which machine holds the real thing.</figcaption></figure>
       <h2 id="what-it-changes-concretely">What it changes, concretely</h2>
       <h3 id="the-app-is-fast-in-a-way-that-is-hard-to-fake">The app is fast in a way that is hard to fake</h3>
       <p>When you press a key in a cloud-first editor, something has to go over a network eventually. Good apps hide this well — optimistic updates, local caches, careful loading states. But the seams show under load: a long note that takes a second to open, a search that spins, a list that arrives a beat after the window does.</p>

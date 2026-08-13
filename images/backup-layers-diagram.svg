@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" role="img" aria-labelledby="bk-title bk-desc">
+  <title id="bk-title">Three backup copies, and what each one survives</title>
+  <desc id="bk-desc">Time Machine on a local disk survives a dead drive and a bad afternoon. An encrypted offsite copy survives theft, fire and flood. An app export survives the app itself going away. Each layer covers a failure the one before it does not.</desc>
+  <style>
+    .h { font: 600 28px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #0a0a0b; }
+    .s { font: 400 22px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #71757e; }
+    .b { font: 400 23px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #3d3f45; }
+    .n { font: 600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #ffffff; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+  </style>
+
+  <text class="h" x="40" y="44">Three copies, three different disasters</text>
+  <text class="s" x="40" y="78">Each layer covers something the one before it cannot.</text>
+
+  <!-- card 1 -->
+  <rect class="card" x="40" y="112" width="356" height="286" rx="14"/>
+  <circle cx="76" cy="156" r="19" fill="#0e7cc4"/>
+  <text class="n" x="76" y="163" text-anchor="middle">1</text>
+  <text class="h" x="108" y="164" style="font:600 25px -apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">Time Machine</text>
+  <text class="s" x="72" y="204">on a disk next to the Mac</text>
+  <line x1="72" y1="228" x2="364" y2="228" stroke="#efeff1" stroke-width="2"/>
+  <text class="b" x="72" y="266">Survives</text>
+  <text class="s" x="72" y="298">a dead SSD</text>
+  <text class="s" x="72" y="328">a file deleted on Tuesday</text>
+  <text class="s" x="72" y="372" fill="#b0b4bb">Not: theft, fire, flood</text>
+
+  <!-- card 2 -->
+  <rect class="card" x="422" y="112" width="356" height="286" rx="14"/>
+  <circle cx="458" cy="156" r="19" fill="#0e7cc4"/>
+  <text class="n" x="458" y="163" text-anchor="middle">2</text>
+  <text class="h" x="490" y="164" style="font:600 25px -apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">Offsite copy</text>
+  <text class="s" x="454" y="204">encrypted, somewhere else</text>
+  <line x1="454" y1="228" x2="746" y2="228" stroke="#efeff1" stroke-width="2"/>
+  <text class="b" x="454" y="266">Survives</text>
+  <text class="s" x="454" y="298">theft, fire, flood</text>
+  <text class="s" x="454" y="328">the whole room going</text>
+  <text class="s" x="454" y="372" fill="#b0b4bb">Not: the app going away</text>
+
+  <!-- card 3 -->
+  <rect class="card" x="804" y="112" width="356" height="286" rx="14"/>
+  <circle cx="840" cy="156" r="19" fill="#0e7cc4"/>
+  <text class="n" x="840" y="163" text-anchor="middle">3</text>
+  <text class="h" x="872" y="164" style="font:600 25px -apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">An export</text>
+  <text class="s" x="836" y="204">a plain file you can read</text>
+  <line x1="836" y1="228" x2="1128" y2="228" stroke="#efeff1" stroke-width="2"/>
+  <text class="b" x="836" y="266">Survives</text>
+  <text class="s" x="836" y="298">the app being abandoned</text>
+  <text class="s" x="836" y="328">you deciding to leave</text>
+  <text class="s" x="836" y="372" fill="#b0b4bb">Not: never being tested</text>
+
+  <text class="s" x="40" y="446" fill="#0e7cc4">A backup you have never restored is not a backup. It is a hypothesis.</text>
+</svg>

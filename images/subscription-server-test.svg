@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-labelledby="ss-title ss-desc">
+  <title id="ss-title">The server test: when a monthly fee is buying something and when it is not</title>
+  <desc id="ss-desc">Ask what the monthly charge is doing with a server. If the answer is syncing across devices, sharing with a team, or running search over years of notes, the subscription is paying for machines that really run. If the answer is not much, the software is running on your own computer and the fee is rent.</desc>
+  <style>
+    .h { font: 600 30px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #0a0a0b; }
+    .q { font: 600 26px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #ffffff; }
+    .lb{ font: 600 25px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #0a0a0b; }
+    .s { font: 400 22px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #71757e; }
+    .b { font: 400 23px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #3d3f45; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+  </style>
+
+  <!-- question -->
+  <rect x="240" y="24" width="720" height="76" rx="14" fill="#0e7cc4"/>
+  <text class="q" x="600" y="72" text-anchor="middle">What is the monthly fee doing with a server?</text>
+
+  <!-- connectors -->
+  <line x1="600" y1="100" x2="600" y2="132" stroke="#c9cdd4" stroke-width="2.5"/>
+  <line x1="300" y1="132" x2="900" y2="132" stroke="#c9cdd4" stroke-width="2.5"/>
+  <line x1="300" y1="132" x2="300" y2="168" stroke="#c9cdd4" stroke-width="2.5"/>
+  <line x1="900" y1="132" x2="900" y2="168" stroke="#c9cdd4" stroke-width="2.5"/>
+  <polygon points="300,168 293,154 307,154" fill="#c9cdd4"/>
+  <polygon points="900,168 893,154 907,154" fill="#c9cdd4"/>
+
+  <!-- left: real work -->
+  <rect class="card" x="40" y="168" width="520" height="270" rx="14"/>
+  <text class="lb" x="76" y="212">&#8220;Quite a lot, actually.&#8221;</text>
+  <line x1="76" y1="236" x2="524" y2="236" stroke="#efeff1" stroke-width="2"/>
+  <text class="b" x="76" y="278">Syncing across my devices</text>
+  <text class="b" x="76" y="316">Sharing with other people</text>
+  <text class="b" x="76" y="354">Search across ten years of notes</text>
+  <text class="s" x="76" y="408">Machines really are running every month.</text>
+  <text class="s" x="76" y="434" style="fill:#0e7cc4">The subscription is buying you something.</text>
+
+  <!-- right: rent -->
+  <rect class="card" x="640" y="168" width="520" height="270" rx="14"/>
+  <text class="lb" x="676" y="212">&#8220;Not much, really.&#8221;</text>
+  <line x1="676" y1="236" x2="1124" y2="236" stroke="#efeff1" stroke-width="2"/>
+  <text class="b" x="676" y="278">It runs on my own computer</text>
+  <text class="b" x="676" y="316">My files never leave the machine</text>
+  <text class="b" x="676" y="354">Nothing is shared with anyone</text>
+  <text class="s" x="676" y="408">There is no per-user monthly cost to recover.</text>
+  <text class="s" x="676" y="434" style="fill:#0e7cc4">You are paying rent on software you have.</text>
+
+  <text class="s" x="40" y="484">Both models can be honest. Only one of them should be the default.</text>
+</svg>

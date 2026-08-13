@@ -72,7 +72,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Clipboard, One-time purchase, Mac",
-  "wordCount": 895
+  "wordCount": 956
 }
 </script>
 <script type="application/ld+json">
@@ -144,8 +144,9 @@
 
     <div class="post">
       <p>There is a particular annoyance in discovering that the utility you want — the one that remembers what you copied — costs four dollars a month, forever, to hold a list of text on your own computer.</p>
-      <p>That is not a complaint about the developers. Some of these apps are excellent and the people who make them deserve to be paid. It is a complaint about the shape of the deal, which has drifted a long way from what the software does. A clipboard manager watches a system pasteboard and writes to a local database. It is one of the few categories where you can look at the running app and struggle to name the server it needs.</p>
+      <p>That is not a complaint about the developers. Some of these apps are excellent and the people who make them deserve to be paid. It is a complaint about the shape of the deal, which has drifted a long way from what the software does. A clipboard manager watches <a href="https://developer.apple.com/documentation/appkit/nspasteboard">a system pasteboard</a> and writes to a local database. It is one of the few categories where you can look at the running app and struggle to name the server it needs.</p>
       <p>So it is worth being precise about when a subscription is buying you something and when it is buying you nothing.</p>
+      <p>If you are still at the earlier question — why the Mac forgets what you copied at all — <a href="/blog/clipboard-history-on-mac/">start there</a>.</p>
       <h2 id="what-the-monthly-fee-is-actually-for">What the monthly fee is actually for</h2>
       <p>There are three honest answers, and they are not the same.</p>
       <p><strong>Sync.</strong> If your clipboard history follows you from a laptop to a desktop to a phone, there is a server in the middle holding it, and somebody pays for that server every month. This is a real cost and a real feature. It is also the one that should give you the longest pause, because it means everything you copy — including the things you copied out of a password manager — is leaving your machine.</p>
@@ -157,6 +158,7 @@
       <p>The app can be abandoned. A developer who has already been paid has no recurring reason to keep going, and plenty of one-time apps have quietly stopped at the last macOS version that worked. A subscription at least aligns somebody's rent with your software continuing to run.</p>
       <p>"Buy once" often means "buy this major version". Paid upgrades every two years are a legitimate model, but they are not the same promise as the one on the marketing page, and the difference tends to surface at version 3.</p>
       <p>And the smaller the developer, the more the whole thing rests on one person staying interested. That is true whichever way they charge you — but with a subscription you find out sooner, because you notice when the charges stop being worth it.</p>
+      <figure><img src="/images/clipboard.webp" alt="A clipboard manager on macOS showing pinned snippets and a searchable copy history" width="1400" height="912" loading="lazy" decoding="async" /><figcaption>Pinning and search are the two features that turn a history into a tool.</figcaption></figure>
       <h2 id="what-to-check-before-you-pay-either-way">What to check before you pay either way</h2>
       <p>Regardless of the pricing model, the same five questions decide whether a clipboard manager is any good:</p>
       <p><strong>Where the history is stored.</strong> Local database, or somebody else's server. This is the first question, not the last.</p>
@@ -170,7 +172,7 @@
       <p>If you want the best clipboard manager on the Mac and nothing else, you should probably buy a dedicated one. Maccy is free and open source and very good. Paste is polished, syncs across devices, and charges a subscription for the servers that make that work — which is the honest version of the trade described above. Raycast bundles clipboard history into a launcher. Any of those will out-feature a clipboard that sits inside a notes app, because that is their whole product and this is one of five.</p>
       <p>What a bundled one gets you is the thing you copied out of a note being one hotkey from the note you copied it from, and one purchase covering both. Whether that is worth more than depth is genuinely a matter of what you are trying to stop doing.</p>
       <h2 id="the-short-version">The short version</h2>
-      <p>If the app syncs, a subscription is paying for something and you should decide whether you want that something on a server at all. If it does not sync, ask what the monthly charge is for, and be unsatisfied with a vague answer.</p>
+      <p>If the app syncs, a subscription is paying for something real, and the question I would ask myself is whether I want that something on a server at all. If it does not sync, ask what the monthly charge is for, and be unsatisfied with a vague answer.</p>
       <p>The clipboard is a small tool that you touch two hundred times a day. It is worth paying for. It is not obviously worth renting.</p>
     </div>
   </article>

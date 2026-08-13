@@ -72,7 +72,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Pricing, Local-first, Buying advice",
-  "wordCount": 1003
+  "wordCount": 1081
 }
 </script>
 <script type="application/ld+json">
@@ -163,11 +163,12 @@
       <p><strong>It keeps working if the company stops.</strong> This is the one that actually matters, and it is a question about architecture rather than intent. An app that stores your notes on your own machine and does not check in with a server keeps working the day after its developer walks away. An app that phones home to validate your licence every launch stops working the day that endpoint goes dark, no matter how sincerely the developer promised otherwise.</p>
       <p>Ask specifically: does it need the internet to start? Does it check my licence more than once? Where exactly are my notes on this disk?</p>
       <p><strong>A plain data format underneath.</strong> Your notes will outlive the app you write them in — that is true of every app, including good ones. The thing that determines whether that is a migration or a loss is whether the format underneath is something another program can read.</p>
+      <figure><img src="/images/subscription-server-test.svg" alt="A decision diagram asking what the monthly fee is doing with a server, branching into real server work versus software that runs on your own computer" width="1200" height="500" loading="lazy" decoding="async" /><figcaption>The one question that separates a subscription that buys something from one that charges rent.</figcaption></figure>
       <h2 id="the-case-for-buying-when-the-app-is-local">The case for buying, when the app is local</h2>
       <p>Here is where the two halves of this join up.</p>
-      <p>An app that keeps everything on your own computer has no servers to pay for. There is no per-user monthly cost to recover, because there is no per-user monthly cost. The development work is real and ongoing, but that is funded by new customers, not by charging the existing ones rent for storage that doesn't exist.</p>
+      <p>An app that keeps everything on your own computer — <a href="https://www.inkandswitch.com/local-first/">the local-first model</a> — has no servers to pay for. There is no per-user monthly cost to recover, because there is no per-user monthly cost. The development work is real and ongoing, but that is funded by new customers, not by charging the existing ones rent for storage that doesn't exist.</p>
       <p>That is why the local-first corner of the market still sells one-time licences while the cloud corner mostly cannot. It is not a moral difference between the developers. It is a difference in what the software actually costs to run.</p>
-      <p>Which suggests a useful test when you are comparing two apps and one is $8 a month and the other is a single payment: ask what the monthly one is doing with a server. If the answer is "syncing across my devices, sharing with my team, and running search across ten years of notes", the subscription is buying you something. If the answer is "not much, really", you are paying rent on software that lives on your laptop.</p>
+      <p>So here is the test I apply when I am comparing two apps and one is $8 a month and the other is a single payment: ask what the monthly one is doing with a server. (<a href="/blog/what-local-first-means-for-your-notes/">What it means for an app to not need one</a> is worth understanding before you decide.) If the answer is "syncing across my devices, sharing with my team, and running search across ten years of notes", the subscription is buying you something. If the answer is "not much, really", you are paying rent on software that lives on your laptop.</p>
       <p>For the sake of declaring it: Cyanote, the app this blog belongs to, is one of the one-time ones — $10, local, no account, no server to pay for. That is the argument above applied to itself, and you should hold it to the same test.</p>
       <p>Both models can be honest. Only one of them should be the default, and it isn't the one that became one.</p>
     </div>

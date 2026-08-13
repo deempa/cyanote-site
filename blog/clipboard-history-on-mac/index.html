@@ -72,7 +72,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Clipboard, macOS, How-to",
-  "wordCount": 1007
+  "wordCount": 1079
 }
 </script>
 <script type="application/ld+json">
@@ -143,7 +143,7 @@
     </header>
 
     <div class="post">
-      <p>The short answer is the one nobody wants: macOS has no clipboard history. There is no key combination that shows you the last ten things you copied, because the last ten things you copied no longer exist. The Mac clipboard holds one item. Copy something else and the previous one is gone — not archived, not recoverable, gone.</p>
+      <p>The short answer is the one nobody wants: macOS has no clipboard history. There is no key combination that shows you the last ten things you copied, because the last ten things you copied no longer exist. The Mac clipboard holds one item — <a href="https://developer.apple.com/documentation/appkit/nspasteboard">the general pasteboard</a>, in Apple's own terms. Copy something else and the previous one is gone — not archived, not recoverable, gone.</p>
       <p>If you came here from Windows this is genuinely surprising. Windows has had <code>Win</code> + <code>V</code> since 2018, and it shows a scrollable list of recent copies. There is no macOS equivalent, and there never has been.</p>
       <p>What follows is what the system actually gives you, why the gap exists, and what to do about it.</p>
       <h2 id="what-macos-really-offers">What macOS really offers</h2>
@@ -159,6 +159,7 @@
       <p>Nobody wants clipboard history in the abstract. People want it because of specific, recurring, small disasters:</p>
       <ul><li>You copy a paragraph, then copy something else to look it up, and the paragraph is gone.</li><li>You paste the same three snippets — an address, a bank reference, a boilerplate reply — thirty times a week, and each one means going and finding it again.</li><li>You copy a code from a text message, get distracted, copy a link, and now you need the code again and it has expired.</li><li>You are moving content between two documents and every single trip is one copy and one paste, because you cannot carry more than one thing at a time.</li></ul>
       <p>None of these is a crisis. Together they are one of those small frictions that is invisible until it stops.</p>
+      <figure><img src="/images/clipboard.webp" alt="Cyanote&#x27;s clipboard history: every copy kept in a searchable list, with a type icon per item" width="1400" height="912" loading="lazy" decoding="async" /><figcaption>A clipboard history is just a list — the design questions are where it is kept and what it refuses to keep.</figcaption></figure>
       <h2 id="what-a-clipboard-manager-does">What a clipboard manager does</h2>
       <p>A clipboard manager is a small background app that watches the clipboard and keeps what passes through it. When you want something back, you open it with a hotkey, find the item, and it goes back on the clipboard ready to paste.</p>
       <p>That is the whole idea. The differences between them are the things worth checking:</p>
@@ -168,8 +169,9 @@
       <p><strong>Pinned items.</strong> The three snippets you paste constantly should not scroll away under a week of ordinary copying. Pinning is what turns a history into a set of shortcuts.</p>
       <p><strong>Whether it holds more than text.</strong> Images, files and colours all travel through the clipboard. A manager that keeps only text quietly drops the rest.</p>
       <p>Disclosure, since this blog belongs to one: Cyanote keeps its clipboard history in a local database on your Mac, searchable, with pinning for the snippets you paste constantly. It is one of five things it does rather than the only one — which is either the point or the drawback, depending on what you came for.</p>
+      <p>If the subscription question is what is actually holding you up, that is <a href="/blog/clipboard-manager-mac-without-subscription/">its own decision</a>.</p>
       <h2 id="before-you-install-one">Before you install one</h2>
-      <p>Two things are worth doing regardless of which tool you choose.</p>
+      <p>Two things I would do regardless of which tool you choose.</p>
       <p>Check what it wants access to. A clipboard manager needs to read the clipboard, and that is a reasonable thing for it to ask. It does not need an account, and it does not need to send anything anywhere. If it wants both, ask what for.</p>
       <p>And decide what you want it to forget. The most useful setting in any clipboard manager is the one that stops it keeping the things you would rather it didn't — whether that is a password-manager exclusion, an app blocklist, or a history that expires.</p>
       <p>The gap in macOS is real and it is not closing. But it is one of the few missing features where the fix is genuinely small, sits out of the way, and pays you back the first afternoon you use it.</p>
@@ -187,7 +189,7 @@
 
   <section class="related">
     <h2>Read next</h2>
-    <ul><li><a href="https://cyanote.app/blog/backing-up-local-notes/">How to back up notes that live on your own computer</a><span>Cloud apps hand you backup as a side effect. Local notes do not, and sync is not a substitute. Here is what actually protects them, and how to know it works.</span></li><li><a href="https://cyanote.app/blog/clipboard-manager-mac-without-subscription/">A clipboard manager for Mac without a subscription</a><span>Most Mac clipboard managers now rent themselves to you monthly. Here is what the subscription is actually paying for, and what the one-time options give up.</span></li></ul>
+    <ul><li><a href="https://cyanote.app/blog/backing-up-local-notes/">How to back up notes that live on your own computer</a><span>Cloud apps hand you backup as a side effect. Local notes do not, and sync is not a substitute. Here is what actually protects them, and how to know it works.</span></li><li><a href="https://cyanote.app/blog/password-protect-notes-on-mac/">How to password-protect a note on your Mac</a><span>Locking a note, encrypting a disk and using a login password protect against three different things. Here is which one stops what, and where each of them stops.</span></li></ul>
   </section>
 </div>
 

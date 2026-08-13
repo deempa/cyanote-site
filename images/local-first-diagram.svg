@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="lf-title lf-desc">
+  <title id="lf-title">Where the truth lives: a cloud app versus a local-first app</title>
+  <desc id="lf-desc">In a cloud app the server holds the authoritative copy and the device holds a cache, so the network sits between you and your own notes. In a local-first app your computer holds the authoritative copy and the network is optional.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 30px; font-weight: 600; fill: #0a0a0b; }
+    .name { font-size: 25px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 22px; fill: #71757e; }
+    .onacc      { font-size: 25px; font-weight: 600; fill: #ffffff; }
+    .onacc-sub  { font-size: 21px; fill: #d7ecfa; }
+    .plain { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .accent{ fill: #0e7cc4; stroke: #0e7cc4; stroke-width: 2; }
+    .ghost-name { font-size: 25px; font-weight: 600; fill: #8b9099; }
+    .ghost { fill: #ffffff; stroke: #d3d6dc; stroke-width: 2; stroke-dasharray: 6 6; }
+  </style>
+
+  <!-- LEFT: cloud app -->
+  <text class="h" x="40" y="46">A cloud app</text>
+  <text class="sub" x="40" y="80">the server holds the truth</text>
+
+  <rect class="accent" x="40" y="108" width="480" height="104" rx="12"/>
+  <text class="onacc" x="66" y="152">Server</text>
+  <text class="onacc-sub" x="66" y="184">the authoritative copy of your notes</text>
+
+  <line x1="280" y1="212" x2="280" y2="300" stroke="#0e7cc4" stroke-width="2.5"/>
+  <polygon points="280,302 272,286 288,286" fill="#0e7cc4"/>
+  <polygon points="280,210 272,226 288,226" fill="#0e7cc4"/>
+  <rect x="212" y="238" width="136" height="36" rx="8" fill="#fafafa" stroke="#e6e6e9" stroke-width="1.5"/>
+  <text class="sub" x="280" y="263" text-anchor="middle">network</text>
+
+  <rect class="plain" x="40" y="300" width="480" height="104" rx="12"/>
+  <text class="name" x="66" y="344">Your Mac</text>
+  <text class="sub" x="66" y="376">holds a cache of it</text>
+
+  <text class="sub" x="40" y="452">No network, no truth — only whatever</text>
+  <text class="sub" x="40" y="482">the cache happened to keep.</text>
+
+  <line x1="600" y1="30" x2="600" y2="490" stroke="#efeff1" stroke-width="2"/>
+
+  <!-- RIGHT: local-first -->
+  <text class="h" x="680" y="46">A local-first app</text>
+  <text class="sub" x="680" y="80">your computer holds the truth</text>
+
+  <rect class="ghost" x="680" y="108" width="480" height="104" rx="12"/>
+  <text class="ghost-name" x="706" y="152">Server</text>
+  <text class="sub" x="706" y="184">optional, and not where the truth is</text>
+
+  <line x1="920" y1="212" x2="920" y2="300" stroke="#d3d6dc" stroke-width="2.5" stroke-dasharray="6 6"/>
+  <rect x="852" y="238" width="136" height="36" rx="8" fill="#fafafa" stroke="#e6e6e9" stroke-width="1.5"/>
+  <text class="sub" x="920" y="263" text-anchor="middle">optional</text>
+
+  <rect class="accent" x="680" y="300" width="480" height="104" rx="12"/>
+  <text class="onacc" x="706" y="344">Your Mac</text>
+  <text class="onacc-sub" x="706" y="376">the authoritative copy of your notes</text>
+
+  <text class="sub" x="680" y="452">No network, no problem. The app reads</text>
+  <text class="sub" x="680" y="482">and writes the real thing directly.</text>
+</svg>

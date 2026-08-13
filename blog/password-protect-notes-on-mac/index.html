@@ -72,7 +72,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Privacy, Security, macOS",
-  "wordCount": 1047
+  "wordCount": 1113
 }
 </script>
 <script type="application/ld+json">
@@ -147,12 +147,13 @@
       <p>Here is what each layer actually does on a Mac, in the order they stop working.</p>
       <h2 id="the-three-layers-and-what-each-one-stops">The three layers, and what each one stops</h2>
       <p><strong>Your login password</strong> stops someone who walks up to your Mac while it is asleep. It does nothing at all once you are logged in — every app you have is sitting there open, including whatever your notes are in. Useful, and the weakest of the three.</p>
-      <p><strong>FileVault</strong> encrypts the whole disk. It stops someone who has your Mac in their hands and it is powered off — a thief, a lost laptop, a machine sent for repair. Without it, pulling the drive out and reading it on another computer is genuinely trivial. With it, the contents are unreadable without the key.</p>
+      <p><a href="https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac"><strong>FileVault</strong></a> encrypts the whole disk. It stops someone who has your Mac in their hands and it is powered off — a thief, a lost laptop, a machine sent for repair. Without it, pulling the drive out and reading it on another computer is genuinely trivial. With it, the contents are unreadable without the key.</p>
       <p>Its limit is the one people miss: <strong>FileVault protects a Mac that is off.</strong> Once you have logged in, the disk is decrypted and everything on it is readable by anything running as you. FileVault is not protecting your notes from your own running Mac.</p>
       <p><strong>A locked note</strong> is the only one of the three that still means something while you are sitting there logged in. It is per-note encryption, and the note stays unreadable until you supply the password — including from someone borrowing your unlocked laptop for five minutes, or looking over your shoulder while you have the app open.</p>
       <p>You want all three. They are not alternatives.</p>
+      <figure><img src="/images/note-protection-layers.svg" alt="Three stacked layers: FileVault stops someone holding a powered-off Mac, the screen lock stops someone at an unattended Mac, a locked note stops someone already using your unlocked Mac" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>Three layers, three different intruders. They stack; none replaces another.</figcaption></figure>
       <h2 id="locking-a-note-in-apple-notes">Locking a note in Apple Notes</h2>
-      <p>Apple Notes has built-in locking, and for a lot of people it is enough.</p>
+      <p>Apple Notes has <a href="https://support.apple.com/guide/notes/lock-your-notes-not28c5f5468/mac">built-in locking</a>, and for a lot of people it is enough.</p>
       <p>Select a note, then <strong>File → Lock Note</strong>, or right-click the note in the list and choose Lock Note. macOS will ask you to set things up the first time. Recent versions let you use your Mac's login password rather than a separate Notes password, which is a meaningful improvement — a separate Notes password was the single biggest cause of permanently lost notes in that app.</p>
       <p>Two things about it are worth knowing before you rely on it:</p>
       <p><strong>If you forget the password, the note is gone.</strong> This is not Apple being unhelpful; it is what encryption means. There is no reset that recovers the contents, and support cannot open it for you. If you set a Notes-specific password, put it in your password manager the same minute you create it.</p>
@@ -168,9 +169,9 @@
       <p>A note in a cloud-synced app exists in at least three places: your Mac, the provider's servers, and every other device signed in. Locking on your Mac does not necessarily mean the copy on the server is locked, and the provider's privacy policy — not your password — is what governs that copy. Apple encrypts locked Notes end-to-end, so the server copy is genuinely unreadable to Apple; not every provider does the same, and most are vague about it.</p>
       <p>A note in a local-first app exists in one place: a database on your own disk. There is no server copy to reason about, which removes an entire category of question. The trade is that there is also no server copy to restore from, which makes backups your job rather than someone else's.</p>
       <p>Neither is automatically safer. They fail differently, and the failure you should plan for is the one you can actually imagine happening to you.</p>
-      <h2 id="a-reasonable-setup">A reasonable setup</h2>
+      <h2 id="the-setup-i-would-actually-use">The setup I would actually use</h2>
       <p>If you want a short version:</p>
-      <ol><li><strong>Turn on FileVault.</strong> System Settings → Privacy &amp; Security → FileVault. Store the recovery key somewhere that is not the Mac. This is the highest-value fifteen minutes of security work available on a Mac and most people have never opened that screen.</li><li><strong>Set the screen to lock quickly.</strong> A screen that locks after an hour is a screen that does not lock.</li><li><strong>Lock the handful of notes that genuinely warrant it</strong> — recovery codes, medical details, anything about other people who did not choose to be in your notes app.</li><li><strong>Put the password in your password manager</strong>, immediately, before you close the dialog.</li><li><strong>Back up.</strong> Encryption increases the number of ways you can lose things permanently. Time Machine, or an export somewhere else, is what makes that recoverable.</li></ol>
+      <ol><li><strong>Turn on FileVault.</strong> System Settings → Privacy &amp; Security → FileVault. Store the recovery key somewhere that is not the Mac. This is the highest-value fifteen minutes of security work available on a Mac and most people have never opened that screen.</li><li><strong>Set the screen to lock quickly.</strong> A screen that locks after an hour is a screen that does not lock.</li><li><strong>Lock the handful of notes that genuinely warrant it</strong> — recovery codes, medical details, anything about other people who did not choose to be in your notes app.</li><li><strong>Put the password in your password manager</strong>, immediately, before you close the dialog.</li><li><strong><a href="/blog/backing-up-local-notes/">Back up</a>.</strong> Encryption increases the number of ways you can lose things permanently. Time Machine, or an export somewhere else, is what makes that recoverable.</li></ol>
       <p>If you are choosing an app for this rather than staying with Apple Notes: Cyanote can lock any individual note behind a password, on top of FileVault rather than instead of it — the layers in the first section are not alternatives.</p>
       <p>The point of locking a note is not that your notes are a secret. It is that a few of them are somebody else's secret, and those deserve better than being one open laptop away.</p>
     </div>
