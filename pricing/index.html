@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light" />
+<title>Pricing — $10 once, no subscription — Cyanote</title>
+<meta name="description" content="Cyanote costs $10 once. Every feature, free updates for life, no subscription and no account. macOS 12 or later; when Windows ships the same $10 covers it. Fourteen-day refund, no reason needed." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<link rel="canonical" href="https://cyanote.app/pricing/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="preload" href="https://cyanote.app/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="https://cyanote.app/style.css" />
+<script>
+  // Same platform check the homepage does, and for the same reason: this page
+  // carries a Buy button, and a Windows machine should never be offered a .dmg.
+  // Inline because an external file would be a round trip before first paint.
+  // If it does not run, no class is set and the Mac layout stands — which is
+  // what the CSS falls back to anyway.
+  (function () {
+    var n = navigator, ua = n.userAgent, uad = n.userAgentData;
+    var platform = (uad && uad.platform) || n.platform || '';
+    var tablet = /iPad/.test(ua) || (/Mac/i.test(platform) && n.maxTouchPoints > 1);
+    var phone = (uad && uad.mobile === true) || /iPhone|iPod|Android/i.test(ua);
+    var plat = (phone || tablet) ? 'mobile'
+             : (/Win/i.test(platform) || /Windows/i.test(ua)) ? 'windows' : 'mac';
+    document.documentElement.classList.add('plat-' + plat);
+  })();
+</script>
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:url" content="https://cyanote.app/pricing/" />
+<meta property="og:title" content="Cyanote pricing — $10 once, no subscription" />
+<meta property="og:description" content="Every feature, free updates for life, no account. $10 once. Windows covered by the same purchase when it ships." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cyanote pricing — $10 once, no subscription" />
+<meta name="twitter:description" content="Every feature, free updates for life, no account. $10 once." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+
+<!-- The same SoftwareApplication as the homepage, by `@id`, carrying the offer.
+     Same id means one entity with two mentions, which is the point — a second
+     SoftwareApplication block with a different id would tell a machine there are
+     two products. Price is stated here and on the homepage; if one ever changes,
+     both have to. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://cyanote.app/#app",
+  "name": "Cyanote",
+  "operatingSystem": "macOS 12.0 or later (Apple Silicon and Intel)",
+  "applicationCategory": "ProductivityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "10.00",
+    "priceCurrency": "USD",
+    "url": "https://cyanote.app/pricing/",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@id": "https://cyanote.app/#organization" }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://cyanote.app/pricing/#page",
+  "url": "https://cyanote.app/pricing/",
+  "name": "Pricing — $10 once, no subscription",
+  "description": "What Cyanote costs and what the price includes: $10 once, every feature, free updates for life, no subscription and no account.",
+  "inLanguage": "en",
+  "isPartOf": { "@id": "https://cyanote.app/#website" },
+  "about": { "@id": "https://cyanote.app/#app" },
+  "publisher": { "@id": "https://cyanote.app/#organization" },
+  "dateModified": "2026-08-13"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Cyanote", "item": "https://cyanote.app/" },
+    { "@type": "ListItem", "position": 2, "name": "Pricing" }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#post">Skip to the content</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/pricing/" aria-current="page">Pricing</a>
+    <a href="https://cyanote.app/blog/">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="#buy">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>$10 once</h1>
+      <p>Every feature, free updates for life, no subscription and no account. That is the entire pricing model, and this page exists mostly to say so without a table of tiers.</p>
+    </header>
+
+    <div class="post">
+      <p><strong>Cyanote costs a single payment of $10 (USD). There is no subscription, no free trial that expires, no paid tier, and no account to create. It runs on macOS 12 or later, on Apple Silicon and Intel. When the Windows version ships, the same $10 covers it.</strong></p>
+
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>&nbsp;</th><th>Cyanote</th></tr></thead>
+        <tbody>
+          <tr><td>Price</td><td>$10, one time</td></tr>
+          <tr><td>Renewals</td><td>None</td></tr>
+          <tr><td>Updates</td><td>Free, for life</td></tr>
+          <tr><td>Account</td><td>Not required</td></tr>
+          <tr><td>Feature tiers</td><td>None — one version, everything in it</td></tr>
+          <tr><td>Requires</td><td>macOS 12 or later (Apple Silicon and Intel)</td></tr>
+          <tr><td>Windows</td><td>Not yet on sale; covered by the same purchase</td></tr>
+          <tr><td>Refund</td><td>14 days, no reason needed</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="whats-included">What the $10 includes</h2>
+
+      <p>All of it. There is no version of Cyanote with fewer features:</p>
+
+      <ul>
+        <li>Notes and code notes with syntax highlighting</li>
+        <li>To-dos and a kanban board</li>
+        <li>Calendar</li>
+        <li>Habit tracking</li>
+        <li>Routines and a Pomodoro timer</li>
+        <li>A <a href="https://cyanote.app/clipboard-manager-mac/">system-wide clipboard manager</a> with unlimited searchable history</li>
+        <li>Themes and typography controls</li>
+        <li>Instant search across everything</li>
+        <li>Markdown import, and export of everything to a single JSON file</li>
+      </ul>
+
+      <div id="buy" class="price" style="margin-top:34px">
+        <div class="amt">$10<span> once</span></div>
+        <div data-plat="mac">
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
+            <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+            <span class="btn-label">Download for Mac — $10</span></a>
+          <p class="fineprint">Secure checkout via Lemon Squeezy · macOS 12+ (Apple Silicon &amp; Intel), notarized by Apple</p>
+        </div>
+        <div data-plat="windows">
+          <a class="btn btn-ghost" href="mailto:support@cyanote.app?subject=Tell%20me%20when%20Cyanote%20for%20Windows%20is%20ready">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg>
+            <span class="btn-label">Tell me when Windows is ready</span></a>
+          <p class="fineprint">The Mac version is on sale now. When Windows ships, the same $10 covers it — nothing more to pay.</p>
+        </div>
+        <div data-plat="mobile">
+          <span class="btn btn-inert">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+            <span class="btn-label">Available on Mac only</span></span>
+          <p class="fineprint">Open this page on your Mac to buy — a licence key is no use without a Mac to run it on.</p>
+        </div>
+      </div>
+
+      <h2 id="why-ten-dollars">Why $10, and why only once</h2>
+
+      <p>Your notes, tasks and habits live in a database on your own Mac. Nothing is uploaded, there is no account, and there is no server holding your content — so there is no monthly cost to recover from you. Charging rent for storage that sits on your own laptop never made sense to me, so Cyanote is sold the way software used to be: you buy it, you own that, and updates are free.</p>
+
+      <p>The honest consequence is the one worth stating on a pricing page: <strong>because there is no server, there is no sync.</strong> Cyanote does not copy your notes to another machine or to a phone. You cannot have the $10 and the sync — the first is a direct result of not building the second.</p>
+
+      <p>If the arithmetic is what brought you here, I wrote up <a href="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/">the five subscriptions this replaced for me</a>, which came to about $260 a year.</p>
+
+      <h2 id="what-its-not">What the price does not buy</h2>
+
+      <ul>
+        <li><strong>Sync between machines.</strong> None, by design.</li>
+        <li><strong>An iPhone or iPad app.</strong> There isn't one.</li>
+        <li><strong>Collaboration.</strong> No shared notes, boards or comments.</li>
+        <li><strong>A support department.</strong> Cyanote is <a href="https://cyanote.app/about.html">one person</a>. Email reaches the person who wrote the code, which cuts both ways.</li>
+      </ul>
+
+      <h2 id="refunds">Refunds and updates</h2>
+
+      <p>If it is not for you, <a href="https://cyanote.app/refund.html">the refund is fourteen days and needs no reason</a> — no form, no questions about why.</p>
+
+      <p>Updates are free forever and there is no upgrade pricing: version 2 will not be a new purchase. What has shipped so far is in the <a href="https://cyanote.app/changelog.html">changelog</a>.</p>
+
+      <p>Not sure yet? <a href="https://cyanote.app/compare/">How Cyanote compares</a> to Paste, Notion, NotePlan, Obsidian and the rest — including the cases where one of them is the better buy.</p>
+    </div>
+
+    <section class="related">
+      <h2>Read next</h2>
+      <ul>
+        <li><a href="https://cyanote.app/compare/">How Cyanote compares</a><span>Where each of the alternatives wins, with current prices.</span></li>
+        <li><a href="https://cyanote.app/clipboard-manager-mac/">The clipboard manager</a><span>The feature most people arrive for, and how it lines up against Paste, Maccy and Raycast.</span></li>
+        <li><a href="https://cyanote.app/about.html">Who makes Cyanote</a><span>One person, no team, and why it costs $10 once.</span></li>
+      </ul>
+    </section>
+  </article>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/pricing/">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/compare/">Compare</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/pricing/">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Cyanote. All rights reserved.</span>
+  </div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

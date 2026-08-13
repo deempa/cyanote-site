@@ -130,7 +130,8 @@
 <p>That last one matters more for a one-time purchase than a subscription, because a one-time purchase is the one you expect to still be using in five years.</p>
 <h2 id="the-honest-version-of-this-page">The honest version of this page</h2>
 <p>This blog belongs to Cyanote, which has a clipboard manager in it and costs $10 once. So take the following as an interested party's summary rather than a neutral roundup.</p>
-<p>If you want the best clipboard manager on the Mac and nothing else, you should probably buy a dedicated one. Maccy is free and open source and very good. Paste is polished, syncs across devices, and charges a subscription for the servers that make that work — which is the honest version of the trade described above. Raycast bundles clipboard history into a launcher. Any of those will out-feature a clipboard that sits inside a notes app, because that is their whole product and this is one of five.</p>
+<p>If you want the best clipboard manager on the Mac and nothing else, you should probably buy a dedicated one. Maccy is free and open source and very good. Paste is polished and syncs across devices, and it charges for the servers that make that work — a subscription, or $89.99 once if you would rather not rent it, which is the honest version of the trade described above. Raycast bundles clipboard history into a launcher. Any of those will out-feature a clipboard that sits inside a notes app, because that is their whole product and this is one of five.</p>
+<p>Paste is the one people ask about most, so it has <a href="https://cyanote.app/compare/paste-alternative/">a page of its own</a> working through the prices and the cases where it is the better buy.</p>
 <p>What a bundled one gets you is the thing you copied out of a note being one hotkey from the note you copied it from, and one purchase covering both. Whether that is worth more than depth is genuinely a matter of what you are trying to stop doing.</p>
 <h2 id="the-short-version">The short version</h2>
 <p>If the app syncs, a subscription is paying for something real, and the question I would ask myself is whether I want that something on a server at all. If it does not sync, ask what the monthly charge is for, and be unsatisfied with a vague answer.</p>
@@ -351,7 +352,7 @@
 <h3 id="whether-it-holds-more-than-text">Whether it holds more than text</h3>
 <p>Images, files and colours all travel through the clipboard. A manager that keeps only text quietly drops the rest.</p>
 <p>Disclosure, since this blog belongs to one: Cyanote keeps its clipboard history in a local database on your Mac, searchable, with pinning for the snippets you paste constantly. It is one of five things it does rather than the only one — which is either the point or the drawback, depending on what you came for.</p>
-<p>If the subscription question is what is actually holding you up, that is <a href="/blog/clipboard-manager-mac-without-subscription/">its own decision</a>.</p>
+<p>If the subscription question is what is actually holding you up, that is <a href="/blog/clipboard-manager-mac-without-subscription/">its own decision</a>. And if you are weighing this against Paste specifically, <a href="/compare/paste-alternative/">the two are compared here</a>, prices included.</p>
 <h2 id="before-you-install-one">Before you install one</h2>
 <p>Two things I would do regardless of which tool you choose.</p>
 <p>Check what it wants access to. A clipboard manager needs to read the clipboard, and that is a reasonable thing for it to ask. It does not need an account, and it does not need to send anything anywhere. If it wants both, ask what for.</p>
@@ -581,7 +582,8 @@ SET (3 min)
 <p>For me, obviously — I have been using it every day for a year and I no longer pay $260 for the privilege of copying things between windows.</p>
 <p>The more useful answer is the general one. Most people do not need five productivity subscriptions. They need one place that opens fast, holds the week, and does not ask anything of them again. If that is you, the audit is worth doing even if you never install anything I made: open your bank statement, find every recurring software charge under ten dollars, and ask which ones you would buy again today.</p>
 <p>You will cancel at least one. Possibly five.</p>
-<p>If you want somewhere for it all to land afterwards, <a href="https://cyanote.app/#pricing">Cyanote is $10</a> and that is the last time it asks you for money. If you want to see the routine I use to keep a week from drifting, that is <a href="https://cyanote.app/blog/weekly-review-in-20-minutes/">the weekly review, in 20 minutes</a>.</p>]]></content:encoded>
+<p>If you want somewhere for it all to land afterwards, <a href="https://cyanote.app/#pricing">Cyanote is $10</a> and that is the last time it asks you for money. If you want to see the routine I use to keep a week from drifting, that is <a href="https://cyanote.app/blog/weekly-review-in-20-minutes/">the weekly review, in 20 minutes</a>.</p>
+<p>Two of the five have pages of their own, weighed properly rather than in passing: <a href="https://cyanote.app/compare/notion-alternative/">Notion</a>, which is free for one person and so is not really a money argument at all, and <a href="https://cyanote.app/compare/paste-alternative/">Paste</a>, which is the better clipboard manager.</p>]]></content:encoded>
       <category>One-time purchase</category>
       <category>Subscriptions</category>
       <category>Mac</category>

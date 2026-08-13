@@ -138,6 +138,25 @@
   ]
 }
 </script>
+
+<!-- The site itself, as distinct from the company that publishes it and the app
+     it sells. Without this the graph is three unconnected islands: an
+     Organization, a SoftwareApplication, and a set of BlogPostings on other
+     pages that name a publisher nothing here resolves. `publisher` is the join.
+     No SearchAction: the sitelinks searchbox it used to earn was retired, and
+     declaring a search endpoint this site does not have would be a lie. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://cyanote.app/#website",
+  "name": "Cyanote",
+  "url": "https://cyanote.app/",
+  "description": "Cyanote is a macOS app that combines notes, to-dos, a board, a calendar, habit tracking, routines and a system-wide clipboard manager in one app, for a single $10 payment with no subscription and no account.",
+  "publisher": { "@id": "https://cyanote.app/#organization" },
+  "inLanguage": "en"
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -280,6 +299,7 @@
         <div><b>Pinned</b>snippets</div>
         <div><b>Never</b>leaves your Mac</div>
       </div>
+      <p class="fineprint"><a href="/clipboard-manager-mac/">More about the clipboard manager</a>, including how it compares to Paste, Maccy and Raycast.</p>
     </div>
     <img src="images/clipboard.webp" width="1400" height="912" loading="lazy"
       alt="Cyanote clipboard manager showing copy history with smart type icons" />
@@ -373,6 +393,8 @@
         <span><b>Windows coming soon</b></span>
       </p>
     </div>
+
+    <p class="fineprint" style="text-align:center"><a href="/pricing/">Everything the $10 includes</a> — and what it does not.</p>
   </div>
 </section>
 
@@ -440,11 +462,12 @@
     </div>
     <div><h3>Product</h3><ul>
       <li><a href="#features">Features</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
       <li><a href="changelog.html">Changelog</a></li>
     </ul></div>
     <div><h3>Resources</h3><ul>
       <li><a href="/blog/">Blog</a></li>
+      <li><a href="/compare/">Compare</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="privacy.html">Privacy</a></li>
       <li><a href="terms.html">Terms</a></li>
