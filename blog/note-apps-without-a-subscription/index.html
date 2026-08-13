@@ -40,11 +40,13 @@
   "dateModified": "2026-08-11",
   "author": {
     "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
     "name": "Lior Rabanian",
     "url": "https://cyanote.app/about.html"
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
     "name": "Cyanote",
     "url": "https://cyanote.app/",
     "logo": {
@@ -59,12 +61,20 @@
     "@id": "https://cyanote.app/blog/note-apps-without-a-subscription/"
   },
   "url": "https://cyanote.app/blog/note-apps-without-a-subscription/",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://cyanote.app/og-image.png",
-    "width": 1200,
-    "height": 630
-  },
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/subscription-server-test.svg",
+      "width": 1200,
+      "height": 500
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Blog",
@@ -72,7 +82,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Pricing, Local-first, Buying advice",
-  "wordCount": 1081
+  "wordCount": 1332
 }
 </script>
 <script type="application/ld+json">
@@ -137,7 +147,7 @@
         <span class="dot">·</span>
         <span><time datetime="2026-08-11">11 August 2026</time></span>
         <span class="dot">·</span>
-        <span>5 min read</span>
+        <span>6 min read</span>
       </div>
     <ul class="tags"><li>Pricing</li><li>Local-first</li><li>Buying advice</li></ul>
     </header>
@@ -158,11 +168,19 @@
       <p>An app that answers all four well is one you can leave, which is the only thing that makes staying a choice.</p>
       <h2 id="what-buy-once-has-to-include-to-mean-anything">What "buy once" has to include to mean anything</h2>
       <p>The one-time purchase has its own failure modes, and they are worth naming, because "pay once" on a pricing page can hide several different deals.</p>
-      <p><strong>Free updates, not just free patches.</strong> The oldest trick in the category is selling version 1, then selling version 2 eighteen months later to the same people. That is a subscription with extra steps and worse communication. The version that means something is the one where updates keep coming and keep being included.</p>
-      <p><strong>No feature gates.</strong> If the purchase unlocks the app but the interesting parts are separate purchases, you did not buy the app. Check whether the price on the page is the price of everything.</p>
-      <p><strong>It keeps working if the company stops.</strong> This is the one that actually matters, and it is a question about architecture rather than intent. An app that stores your notes on your own machine and does not check in with a server keeps working the day after its developer walks away. An app that phones home to validate your licence every launch stops working the day that endpoint goes dark, no matter how sincerely the developer promised otherwise.</p>
+      <h3 id="free-updates-not-just-free-patches">Free updates, not just free patches</h3>
+      <p>The oldest trick in the category is selling version 1, then selling version 2 eighteen months later to the same people. That is a subscription with extra steps and worse communication. The version that means something is the one where updates keep coming and keep being included.</p>
+      <h3 id="no-feature-gates">No feature gates</h3>
+      <p>If the purchase unlocks the app but the interesting parts are separate purchases, you did not buy the app. Check whether the price on the page is the price of everything.</p>
+      <h3 id="it-keeps-working-if-the-company-stops">It keeps working if the company stops</h3>
+      <p>This is the one that actually matters, and it is a question about architecture rather than intent. An app that stores your notes on your own machine and does not check in with a server keeps working the day after its developer walks away. An app that phones home to validate your licence every launch stops working the day that endpoint goes dark, no matter how sincerely the developer promised otherwise.</p>
       <p>Ask specifically: does it need the internet to start? Does it check my licence more than once? Where exactly are my notes on this disk?</p>
-      <p><strong>A plain data format underneath.</strong> Your notes will outlive the app you write them in — that is true of every app, including good ones. The thing that determines whether that is a migration or a loss is whether the format underneath is something another program can read.</p>
+      <h3 id="a-plain-data-format-underneath">A plain data format underneath</h3>
+      <p>Your notes will outlive the app you write them in — that is true of every app, including good ones. The thing that determines whether that is a migration or a loss is whether the format underneath is something another program can read.</p>
+      <h3 id="the-two-models-side-by-side">The two models, side by side</h3>
+      <p>Set out together, they differ in ways that have nothing to do with which one is better:</p>
+      <div class="table-scroll"><table><thead><tr><th scope="col">What differs</th><th scope="col">Subscription, in the cloud</th><th scope="col">One-time purchase, on your machine</th></tr></thead><tbody><tr><td>What the money pays for</td><td>Servers, sync, storage, and the people who keep them up</td><td>Development, once</td></tr><tr><td>When you stop paying</td><td>The app locks, or drops to read-only. Export before you cancel, not after</td><td>Nothing happens. It keeps working</td></tr><tr><td>If the company closes</td><td>The service ends with it; you have whatever you exported</td><td>The copy on your disk keeps running</td></tr><tr><td>Working offline</td><td>Partly. Sync needs the network, and some apps need it just to sign in</td><td>Entirely</td></tr><tr><td>Where the notes are</td><td>On someone else's servers, in their format</td><td>On your own disk, in a file you can point at</td></tr><tr><td>Sync between devices</td><td>Yes — this is the thing you are paying for</td><td>No, unless you arrange it yourself</td></tr><tr><td>Cost over five years</td><td>Recurring, and it can be raised</td><td>Fixed at whatever you paid on day one</td></tr></tbody></table></div>
+      <p>Neither column is the winning one. The top row is the whole argument: if the money is buying servers you actually use, the left column is a fair deal. If it isn't, you are paying rent on software that runs on your laptop.</p>
       <figure><img src="/images/subscription-server-test.svg" alt="A decision diagram asking what the monthly fee is doing with a server, branching into real server work versus software that runs on your own computer" width="1200" height="500" loading="lazy" decoding="async" /><figcaption>The one question that separates a subscription that buys something from one that charges rent.</figcaption></figure>
       <h2 id="the-case-for-buying-when-the-app-is-local">The case for buying, when the app is local</h2>
       <p>Here is where the two halves of this join up.</p>

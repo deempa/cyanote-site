@@ -59,6 +59,7 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": "https://cyanote.app/#app",
   "name": "Cyanote",
   "operatingSystem": "macOS 12.0 or later (Apple Silicon and Intel)",
   "applicationCategory": "ProductivityApplication",
@@ -66,12 +67,32 @@
   "url": "https://cyanote.app/",
   "image": "https://cyanote.app/og-image.png",
   "softwareVersion": "1.0.2",
+  "datePublished": "2026-08-11",
+  "releaseNotes": "https://cyanote.app/changelog.html",
+  "featureList": [
+    "Notes and code notes with syntax highlighting",
+    "To-dos and a kanban board",
+    "Calendar",
+    "Habit tracking",
+    "Routines and a Pomodoro timer",
+    "System-wide clipboard manager with history",
+    "Themes and typography controls",
+    "Instant search across everything"
+  ],
+  "screenshot": [
+    "https://cyanote.app/images/note.webp",
+    "https://cyanote.app/images/board.webp",
+    "https://cyanote.app/images/calendar.webp",
+    "https://cyanote.app/images/clipboard.webp"
+  ],
+  "publisher": { "@id": "https://cyanote.app/#organization" },
   "offers": {
     "@type": "Offer",
     "price": "10.00",
     "priceCurrency": "USD",
     "url": "https://cyanote.app/#pricing",
-    "availability": "https://schema.org/InStock"
+    "availability": "https://schema.org/InStock",
+    "seller": { "@id": "https://cyanote.app/#organization" }
   }
 }
 </script>
@@ -80,23 +101,41 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How do I get it after paying?", "acceptedAnswer": { "@type": "Answer", "text": "A download link right after checkout, and by email, together with your licence key. Drag the app to Applications, open it, and paste the key once when it asks. There is no account to create, and the key is not checked again after that." } },
-    { "@type": "Question", "name": "Where is my data stored?", "acceptedAnswer": { "@type": "Answer", "text": "On your own computer, in a local database. No account, nothing uploaded. Any note can be password-locked." } },
-    { "@type": "Question", "name": "Which computers is it for?", "acceptedAnswer": { "@type": "Answer", "text": "macOS 12 (Monterey) or newer. Universal binary — Apple Silicon and Intel — notarized by Apple. Windows is on the way; the same $10 covers it." } }
+    { "@type": "Question", "name": "How do I get it after paying?", "acceptedAnswer": { "@type": "Answer", "text": "A download link appears as soon as checkout completes, and the same link arrives by email along with your licence key. Open the disk image, drag Cyanote to your Applications folder, launch it, and paste the key once when it asks. That is the whole setup: there is no account to create, no email address to verify, and no password to choose. The key is checked on that first launch and never again, so the app keeps working on a machine that is offline, on a machine that never sees the internet again, and on the day this website stops existing. If you lose the key it is still in your checkout email, and if you lose the email, one message to support gets it back. The same $10 licence covers every future update." } },
+    { "@type": "Question", "name": "Where is my data stored?", "acceptedAnswer": { "@type": "Answer", "text": "On your own Mac, in a single SQLite database file kept under ~/Library/Application Support/. There is nowhere else for it to go: Cyanote has no account system, no sync service, no analytics and no telemetry, so nothing you write is uploaded anywhere. The only time the app talks to the network at all is when it checks whether a new version exists. You can move that database file to any folder you like — an external drive, or a folder your own backup tool already watches — and Cyanote will keep using it there. Individual notes can be locked with a password, and a locked note's plaintext is not left behind in freed database pages. Because it is one ordinary file in an ordinary folder, Time Machine already backs your notes up without being told to." } },
+    { "@type": "Question", "name": "Which computers is it for?", "acceptedAnswer": { "@type": "Answer", "text": "Macs running macOS 12 (Monterey) or newer. Cyanote ships as a universal binary, so it runs natively on both Apple Silicon and Intel Macs — no Rosetta, and no choosing between two downloads. It is signed and notarized by Apple, so Gatekeeper opens it without the unidentified-developer warning that unsigned downloads trigger. It is a desktop app: there is no iPhone or iPad version and nothing to log into in a browser. A Windows build exists and is in testing; it is not on sale yet, and when it ships the same $10 licence covers it, so buying today does not mean buying twice. Cyanote is not on the Mac App Store — it is sold directly, which is part of what makes a one-time price and a no-account design possible." } }
   ]
 }
 </script>
 
-<!-- The entity the other two blocks belong to. Nothing in `sameAs` yet: it takes
-     real profiles that exist elsewhere, and listing ones that don't would be the
-     same lie as a made-up rating. -->
+<!-- The entity the other two blocks belong to, and the reason they all carry an
+     `@id`: without one, every page states a name and leaves a machine to guess
+     that the four mentions of "Cyanote" are one thing. They resolve to this.
+     `sameAs` lists only profiles that exist and are public — the storefront that
+     actually sells the app, and the repository this site is published from.
+     Nothing aspirational goes in this array: a `sameAs` pointing at a page that
+     isn't there is the same lie as a made-up rating, and it fails louder. When
+     Product Hunt / YouTube / LinkedIn go live, they belong here too. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://cyanote.app/#organization",
   "name": "Cyanote",
+  "description": "Cyanote is a one-time-purchase Mac app combining notes, to-dos, a calendar, habit tracking and a system-wide clipboard manager, with all data stored locally on the user's own machine.",
   "url": "https://cyanote.app/",
-  "logo": "https://cyanote.app/apple-touch-icon.png"
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://cyanote.app/apple-touch-icon.png",
+    "width": 180,
+    "height": 180
+  },
+  "foundingDate": "2026",
+  "founder": { "@id": "https://cyanote.app/about.html#person" },
+  "sameAs": [
+    "https://cyanote.lemonsqueezy.com/",
+    "https://github.com/deempa/cyanote-site"
+  ]
 }
 </script>
 </head>
@@ -192,6 +231,16 @@
     <div class="section-head">
       <h2>One app instead of five.</h2>
       <p class="lede">Five subscriptions, five windows, five places your week ends up.</p>
+      <!-- The one sentence on the page that says plainly what this is, rather
+           than what it feels like. The hero above is written to be read; this is
+           written to be quoted — by a search result, an AI answer, or a person
+           explaining the app to someone else. It survives being lifted out of
+           the page with no surrounding context, which is the whole job. Keep it
+           literal, keep it first-sentence-of-the-body, and keep it true. -->
+      <p class="definition"><b>Cyanote is a one-time-purchase Mac app</b> that combines notes,
+        to-dos, a calendar, habit tracking and a system-wide clipboard manager in a single
+        window. Everything is stored locally on your own Mac: there is no account to create,
+        no sync service, and no subscription. It costs $10 once and runs on macOS 12 or later.</p>
     </div>
     <div class="feat">
       <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h11l5 5v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/><path d="M14 4v6h6M7 13h9M7 17h6"/></svg>
@@ -324,9 +373,17 @@
   <div class="wrap">
     <div class="section-head"><h2>Questions.</h2></div>
     <div class="faq">
-      <details open><summary>How do I get it after paying?</summary><p>A download link right after checkout, and by email, together with your licence key. Drag the app to Applications, open it, and paste the key once when it asks. There is no account to create, and the key is not checked again after that.</p></details>
-      <details><summary>Where is my data stored?</summary><p>On your own computer, in a local database. No account, nothing uploaded. Any note can be password-locked.</p></details>
-      <details><summary>Which computers is it for?</summary><p>macOS 12 (Monterey) or newer. Universal binary — Apple Silicon and Intel — notarized by Apple. Windows is on the way; the same $10 covers it.</p></details>
+      <!-- These answer at length on purpose. Three sentences was enough for
+           someone already on the page with a card in their hand, and no use at
+           all to someone whose question was answered somewhere else — a search
+           result, an AI answer, a forum reply — because there was nothing here
+           substantial enough to quote. Each answer is now written to stand on
+           its own if it is lifted out of the page whole.
+           The FAQPage block in <head> repeats these word for word; the two are
+           only allowed to disagree by being wrong. -->
+      <details open><summary>How do I get it after paying?</summary><p>A download link appears as soon as checkout completes, and the same link arrives by email along with your licence key. Open the disk image, drag Cyanote to your Applications folder, launch it, and paste the key once when it asks. That is the whole setup: there is no account to create, no email address to verify, and no password to choose. The key is checked on that first launch and never again, so the app keeps working on a machine that is offline, on a machine that never sees the internet again, and on the day this website stops existing. If you lose the key it is still in your checkout email, and if you lose the email, one message to support gets it back. The same $10 licence covers every future update.</p></details>
+      <details><summary>Where is my data stored?</summary><p>On your own Mac, in a single SQLite database file kept under <code>~/Library/Application Support/</code>. There is nowhere else for it to go: Cyanote has no account system, no sync service, no analytics and no telemetry, so nothing you write is uploaded anywhere. The only time the app talks to the network at all is when it checks whether a new version exists. You can move that database file to any folder you like — an external drive, or a folder your own backup tool already watches — and Cyanote will keep using it there. Individual notes can be locked with a password, and a locked note's plaintext is not left behind in freed database pages. Because it is one ordinary file in an ordinary folder, Time Machine already backs your notes up without being told to.</p></details>
+      <details><summary>Which computers is it for?</summary><p>Macs running macOS 12 (Monterey) or newer. Cyanote ships as a universal binary, so it runs natively on both Apple Silicon and Intel Macs — no Rosetta, and no choosing between two downloads. It is signed and notarized by Apple, so Gatekeeper opens it without the unidentified-developer warning that unsigned downloads trigger. It is a desktop app: there is no iPhone or iPad version and nothing to log into in a browser. A Windows build exists and is in testing; it is not on sale yet, and when it ships the same $10 licence covers it, so buying today does not mean buying twice. Cyanote is not on the Mac App Store — it is sold directly, which is part of what makes a one-time price and a no-account design possible.</p></details>
     </div>
     <p style="text-align:center;color:var(--muted);font-size:.93rem;margin-top:26px">
       Still wondering something? Email <a href="mailto:support@cyanote.app" style="color:var(--accent)">support@cyanote.app</a>.

@@ -40,11 +40,13 @@
   "dateModified": "2026-08-11",
   "author": {
     "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
     "name": "Lior Rabanian",
     "url": "https://cyanote.app/about.html"
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
     "name": "Cyanote",
     "url": "https://cyanote.app/",
     "logo": {
@@ -59,12 +61,20 @@
     "@id": "https://cyanote.app/blog/backing-up-local-notes/"
   },
   "url": "https://cyanote.app/blog/backing-up-local-notes/",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://cyanote.app/og-image.png",
-    "width": 1200,
-    "height": 630
-  },
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/backup-layers-diagram.svg",
+      "width": 1200,
+      "height": 470
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Blog",
@@ -72,7 +82,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Backups, Local-first, How-to",
-  "wordCount": 1167
+  "wordCount": 1174
 }
 </script>
 <script type="application/ld+json">
@@ -145,12 +155,12 @@
     <div class="post">
       <p>Keeping your notes on your own computer buys you a lot: they work offline, nobody else can read them, and no company can lose them, price you out, or shut down. It also hands you back a job the cloud was quietly doing on your behalf, and most people do not notice until the day it matters.</p>
       <p>This is that job, and it is smaller than it sounds.</p>
-      <h2 id="sync-is-not-backup">Sync is not backup</h2>
+      <h2 id="is-sync-the-same-thing-as-a-backup">Is sync the same thing as a backup?</h2>
       <p>Worth getting out of the way first, because it is the single most common mistake in this area, and it catches people who thought they were being careful.</p>
       <p>Sync propagates changes. That is its purpose and it is very good at it. Which means when you delete a note, sync faithfully deletes it everywhere, immediately. When a file is corrupted, sync distributes the corruption. When you paste over three paragraphs and quit, sync ensures all your devices agree on the wrong version.</p>
       <p>A backup is different in one specific way: it can give you back a state from <em>before</em> the thing you regret. If a system has no notion of "yesterday", it is not a backup, whatever it is called.</p>
       <p>Cloud note apps blur this because most of them do keep version history, which is a backup — of the note contents, on their servers, subject to their retention policy. Useful. Just not the same thing as sync, and worth knowing which one you are relying on.</p>
-      <h2 id="what-time-machine-covers">What Time Machine covers</h2>
+      <h2 id="does-time-machine-back-up-my-notes">Does Time Machine back up my notes?</h2>
       <p>On a Mac, <a href="https://support.apple.com/guide/mac-help/back-up-your-files-with-time-machine-mh35860/mac">Time Machine</a> is most of the answer, and it is already built in.</p>
       <p>It keeps hourly snapshots for the last 24 hours, daily for the past month, and weekly beyond that, until the disk fills and it starts dropping the oldest. That's a real answer to "get me the version from before Tuesday". Turn it on, point it at an external disk, and the majority of this problem is solved by a single setting.</p>
       <p>Two limits are worth knowing.</p>

@@ -40,11 +40,13 @@
   "dateModified": "2026-08-11",
   "author": {
     "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
     "name": "Lior Rabanian",
     "url": "https://cyanote.app/about.html"
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
     "name": "Cyanote",
     "url": "https://cyanote.app/",
     "logo": {
@@ -59,12 +61,20 @@
     "@id": "https://cyanote.app/blog/how-to-organise-notes/"
   },
   "url": "https://cyanote.app/blog/how-to-organise-notes/",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://cyanote.app/og-image.png",
-    "width": 1200,
-    "height": 630
-  },
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/note.webp",
+      "width": 1500,
+      "height": 938
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Blog",
@@ -72,7 +82,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Method, Organisation, How-to",
-  "wordCount": 1156
+  "wordCount": 1289
 }
 </script>
 <script type="application/ld+json">
@@ -137,7 +147,7 @@
         <span class="dot">·</span>
         <span><time datetime="2026-08-11">11 August 2026</time></span>
         <span class="dot">·</span>
-        <span>5 min read</span>
+        <span>6 min read</span>
       </div>
     <ul class="tags"><li>Method</li><li>Organisation</li><li>How-to</li></ul>
     </header>
@@ -156,14 +166,15 @@
       <p>The cost is that tags require you to be consistent with yourself over years, which is a genuinely hard thing to be. You tag something <code>#finance</code> in March and <code>#money</code> in September. Neither is wrong, and now half your notes are invisible to each search. Tag lists sprawl, and a tag list with two hundred entries is not an index, it is a second problem.</p>
       <p>Tags work best when you keep the vocabulary small enough to hold in your head — somewhere under about fifteen. That usually means using them for one axis and one only. Status is the classic good use: <code>#waiting</code>, <code>#someday</code>, <code>#reference</code>. These are things a note <em>is</em> right now, they change over time, and there are only a few of them.</p>
       <p>Using tags for topic is where people drown, because topics are unbounded. Every new subject you encounter is a candidate tag, and nothing ever tells you to stop.</p>
-      <h2 id="search-the-one-that-changed-the-maths">Search: the one that changed the maths</h2>
+      <h2 id="is-search-on-its-own-enough">Is search on its own enough?</h2>
       <p>Full-text search across everything you have ever written is the reason all of this is less important than it used to be. If you can type a distinctive phrase and land on the note, the folder it sits in stops mattering very much.</p>
       <p>This genuinely changes the correct answer. Most of the elaborate systems people inherit were designed for tools where finding things was expensive. When retrieval is nearly free, the effort belongs at the moment of writing, not the moment of filing.</p>
       <p>The limit of search is precise: it only finds words you actually wrote. If you search for "the thing the accountant said about the car" and the note says "vehicle expense, business use proportion", you will not find it. Search does not know what you meant.</p>
+      <p>There is also a stubborn human limit, and it is worth knowing before you throw your folders away. Researchers studying how people retrieve their own files have found repeatedly that, even when the search engine is good, people navigate to a known location first and search only as a last resort — and that when they do search, it takes them longer and fails more often. One <a href="https://www.nature.com/articles/srep14719">neuroimaging study</a> found that moving through a folder tree recruits the same brain structures used for navigating physical space, which is a fair explanation for why the habit outlives every improvement to search. So the honest version of this section is not "search replaced folders". It is that search removed the <em>penalty</em> for filing badly, while most people still reach for a place before they reach for a query.</p>
       <p>Which points at the highest-leverage habit in this entire post, and it has nothing to do with structure.</p>
       <p>The reason this blog's app leads with full-text search across every note rather than a folder tree is the same one: Cyanote assumes you will search, and treats folders as somewhere to put things afterwards.</p>
       <figure><img src="/images/note.webp" alt="A notes app sidebar with a search field above the note list, beside an open note" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Search sits above the list, not behind a folder tree — which is the whole argument in one screenshot.</figcaption></figure>
-      <h2 id="name-notes-the-way-you-will-search-for-them">Name notes the way you will search for them</h2>
+      <h2 id="what-should-you-name-a-note">What should you name a note?</h2>
       <p>The title is the one piece of metadata you fill in every single time, without deciding to. It is free. And most people waste it.</p>
       <p>A note called <code>Meeting</code> is unfindable. <code>Notes</code> is worse. <code>Untitled 47</code> is a small future tax you have chosen to pay.</p>
       <p>Write the title as the sentence you would say to someone describing the note eight months from now. Not "Insurance" but "Why we switched car insurers and what it cost". Not "Ideas" but "Ideas for the workshop, from the walk in February". The second version contains the distinctive words you will actually type into a search box, because they are the words your memory kept.</p>

@@ -40,11 +40,13 @@
   "dateModified": "2026-08-11",
   "author": {
     "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
     "name": "Lior Rabanian",
     "url": "https://cyanote.app/about.html"
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
     "name": "Cyanote",
     "url": "https://cyanote.app/",
     "logo": {
@@ -59,12 +61,20 @@
     "@id": "https://cyanote.app/blog/clipboard-history-on-mac/"
   },
   "url": "https://cyanote.app/blog/clipboard-history-on-mac/",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://cyanote.app/og-image.png",
-    "width": 1200,
-    "height": 630
-  },
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/clipboard.webp",
+      "width": 1400,
+      "height": 912
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Blog",
@@ -72,7 +82,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Clipboard, macOS, How-to",
-  "wordCount": 1079
+  "wordCount": 1083
 }
 </script>
 <script type="application/ld+json">
@@ -146,11 +156,14 @@
       <p>The short answer is the one nobody wants: macOS has no clipboard history. There is no key combination that shows you the last ten things you copied, because the last ten things you copied no longer exist. The Mac clipboard holds one item — <a href="https://developer.apple.com/documentation/appkit/nspasteboard">the general pasteboard</a>, in Apple's own terms. Copy something else and the previous one is gone — not archived, not recoverable, gone.</p>
       <p>If you came here from Windows this is genuinely surprising. Windows has had <code>Win</code> + <code>V</code> since 2018, and it shows a scrollable list of recent copies. There is no macOS equivalent, and there never has been.</p>
       <p>What follows is what the system actually gives you, why the gap exists, and what to do about it.</p>
-      <h2 id="what-macos-really-offers">What macOS really offers</h2>
+      <h2 id="does-macos-have-a-clipboard-history">Does macOS have a clipboard history?</h2>
       <p>There are three things people mistake for clipboard history. None of them is.</p>
-      <p><strong>Finder's clipboard viewer.</strong> Open Finder, then <strong>Edit → Show Clipboard</strong>. A small window appears showing what is on the clipboard right now. That is the whole feature. It is a window onto the single current item, useful for checking whether a copy worked and useless for getting back anything older.</p>
-      <p><strong>Universal Clipboard.</strong> Copy on your Mac, paste on your iPhone. It is genuinely good and it is not history — it moves the one current item between your devices and expires it after a short while. There is no list, and nothing is stored.</p>
-      <p><strong>Undo.</strong> <code>Cmd</code> + <code>Z</code> will bring back text you deleted in a document. It has nothing to do with the clipboard and will not help you recover something you copied over.</p>
+      <h3 id="finder-s-clipboard-viewer">Finder's clipboard viewer</h3>
+      <p>Open Finder, then <strong>Edit → Show Clipboard</strong>. A small window appears showing what is on the clipboard right now. That is the whole feature. It is a window onto the single current item, useful for checking whether a copy worked and useless for getting back anything older.</p>
+      <h3 id="universal-clipboard">Universal Clipboard</h3>
+      <p>Copy on your Mac, paste on your iPhone. It is genuinely good and it is not history — it moves the one current item between your devices and expires it after a short while. There is no list, and nothing is stored.</p>
+      <h3 id="undo">Undo</h3>
+      <p><code>Cmd</code> + <code>Z</code> will bring back text you deleted in a document. It has nothing to do with the clipboard and will not help you recover something you copied over.</p>
       <h2 id="why-the-gap-exists">Why the gap exists</h2>
       <p>The clipboard is a system-wide scratch space that every app can read. That is what makes it useful, and it is also why keeping a history of it is a genuinely uncomfortable feature to ship by default.</p>
       <p>Think about what passes through your clipboard in an ordinary week. Passwords, on the way from a password manager to a login form. A two-factor code. Your address. A card number. An API key. A private link that grants access to whoever holds it. All of it, sitting in the same buffer as the URL you copied to send to a friend.</p>
@@ -160,14 +173,19 @@
       <ul><li>You copy a paragraph, then copy something else to look it up, and the paragraph is gone.</li><li>You paste the same three snippets — an address, a bank reference, a boilerplate reply — thirty times a week, and each one means going and finding it again.</li><li>You copy a code from a text message, get distracted, copy a link, and now you need the code again and it has expired.</li><li>You are moving content between two documents and every single trip is one copy and one paste, because you cannot carry more than one thing at a time.</li></ul>
       <p>None of these is a crisis. Together they are one of those small frictions that is invisible until it stops.</p>
       <figure><img src="/images/clipboard.webp" alt="Cyanote&#x27;s clipboard history: every copy kept in a searchable list, with a type icon per item" width="1400" height="912" loading="lazy" decoding="async" /><figcaption>A clipboard history is just a list — the design questions are where it is kept and what it refuses to keep.</figcaption></figure>
-      <h2 id="what-a-clipboard-manager-does">What a clipboard manager does</h2>
+      <h2 id="what-does-a-clipboard-manager-actually-do">What does a clipboard manager actually do?</h2>
       <p>A clipboard manager is a small background app that watches the clipboard and keeps what passes through it. When you want something back, you open it with a hotkey, find the item, and it goes back on the clipboard ready to paste.</p>
       <p>That is the whole idea. The differences between them are the things worth checking:</p>
-      <p><strong>Where the history is stored.</strong> This is the first question, not the last. A clipboard manager sees everything you copy. If it syncs that to a server, everything you copy is now on somebody else's computer. If it keeps the history in a local database on your own machine, it isn't. Both designs exist and the marketing rarely leads with which one you are getting.</p>
-      <p><strong>Whether it is searchable.</strong> A list of the last few items is a convenience. A searchable history of everything is a different tool — you stop thinking of it as "undo for copying" and start using it as a place things can be found later.</p>
-      <p><strong>What it does with sensitive copies.</strong> Good behaviour: recognising when a password manager put something on the clipboard and declining to keep it. Also good: letting you delete an individual item, and clear the lot in one action.</p>
-      <p><strong>Pinned items.</strong> The three snippets you paste constantly should not scroll away under a week of ordinary copying. Pinning is what turns a history into a set of shortcuts.</p>
-      <p><strong>Whether it holds more than text.</strong> Images, files and colours all travel through the clipboard. A manager that keeps only text quietly drops the rest.</p>
+      <h3 id="where-the-history-is-stored">Where the history is stored</h3>
+      <p>This is the first question, not the last. A clipboard manager sees everything you copy. If it syncs that to a server, everything you copy is now on somebody else's computer. If it keeps the history in a local database on your own machine, it isn't. Both designs exist and the marketing rarely leads with which one you are getting.</p>
+      <h3 id="whether-it-is-searchable">Whether it is searchable</h3>
+      <p>A list of the last few items is a convenience. A searchable history of everything is a different tool — you stop thinking of it as "undo for copying" and start using it as a place things can be found later.</p>
+      <h3 id="what-it-does-with-sensitive-copies">What it does with sensitive copies</h3>
+      <p>Good behaviour: recognising when a password manager put something on the clipboard and declining to keep it. Also good: letting you delete an individual item, and clear the lot in one action.</p>
+      <h3 id="pinned-items">Pinned items</h3>
+      <p>The three snippets you paste constantly should not scroll away under a week of ordinary copying. Pinning is what turns a history into a set of shortcuts.</p>
+      <h3 id="whether-it-holds-more-than-text">Whether it holds more than text</h3>
+      <p>Images, files and colours all travel through the clipboard. A manager that keeps only text quietly drops the rest.</p>
       <p>Disclosure, since this blog belongs to one: Cyanote keeps its clipboard history in a local database on your Mac, searchable, with pinning for the snippets you paste constantly. It is one of five things it does rather than the only one — which is either the point or the drawback, depending on what you came for.</p>
       <p>If the subscription question is what is actually holding you up, that is <a href="/blog/clipboard-manager-mac-without-subscription/">its own decision</a>.</p>
       <h2 id="before-you-install-one">Before you install one</h2>

@@ -40,11 +40,13 @@
   "dateModified": "2026-08-13",
   "author": {
     "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
     "name": "Lior Rabanian",
     "url": "https://cyanote.app/about.html"
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
     "name": "Cyanote",
     "url": "https://cyanote.app/",
     "logo": {
@@ -59,12 +61,20 @@
     "@id": "https://cyanote.app/blog/what-happens-when-your-notes-app-shuts-down/"
   },
   "url": "https://cyanote.app/blog/what-happens-when-your-notes-app-shuts-down/",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://cyanote.app/og-image.png",
-    "width": 1200,
-    "height": 630
-  },
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/shutdown-window-diagram.svg",
+      "width": 1200,
+      "height": 400
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Blog",
@@ -72,7 +82,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Local-first, Backups, Ownership",
-  "wordCount": 1108
+  "wordCount": 1110
 }
 </script>
 <script type="application/ld+json">
@@ -152,14 +162,14 @@
       <p><strong>The acquisition.</strong> Nobody switches anything off. The app stops getting updates, then stops working on the next macOS release, then one morning will not open at all. There is no email, because from the company's point of view nothing happened. This is more common than a shutdown and much harder to plan for, because there is no date to react to.</p>
       <p><strong>The quiet one.</strong> A small app from a developer who stopped. The website still resolves, the download link still works, and the last release was four years ago. Nothing announces itself. You find out when you upgrade your Mac.</p>
       <p>Only the first of these sends you an email. The other two are the reason "they will let me know" is not a plan.</p>
-      <h2 id="what-an-export-actually-gives-you">What an export actually gives you</h2>
+      <h2 id="what-does-an-export-actually-give-you">What does an export actually give you?</h2>
       <p>Getting a file out is not the same as keeping your notes, and this is where most people are disappointed.</p>
       <p><strong>The text usually survives.</strong> Plain prose comes through nearly every export intact. If all you have is paragraphs, you are mostly fine.</p>
       <p><strong>The structure usually does not.</strong> Nesting, links between notes, tags, folder hierarchies, and the relationships you built are the first thing lost in translation. <a href="https://www.notion.com/help/export-your-content">Notion, for instance, exports to PDF, HTML, or Markdown and CSV</a> — and a database of linked pages becomes a directory of files with the links rewritten or broken, depending on the format you picked.</p>
       <p><strong>Attachments are a coin toss.</strong> Images and files may come down alongside the text, may come as a separate archive, or may turn out to have been links to a server that is about to stop answering.</p>
       <p><strong>Dates and metadata rarely survive.</strong> Created and modified timestamps, which are how you find anything from four years ago, are commonly flattened to the export date.</p>
       <p>So the honest way to think about an export is not "my notes are safe" but "my sentences are safe, and I will be rebuilding the shape of them by hand".</p>
-      <h2 id="the-test-that-tells-you-where-you-stand">The test that tells you where you stand</h2>
+      <h2 id="how-do-you-know-whether-you-could-actually-leave">How do you know whether you could actually leave?</h2>
       <p>There is one question that sorts every notes app into two piles, and you can answer it in a minute:</p>
       <p><strong>If the company vanished tonight — no notice, no email, no export tool — could you still read what you wrote tomorrow?</strong></p>
       <p>If the answer depends on the company doing something for you, the answer is no.</p>

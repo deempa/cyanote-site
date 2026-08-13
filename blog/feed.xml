@@ -28,14 +28,14 @@
 <p><strong>The acquisition.</strong> Nobody switches anything off. The app stops getting updates, then stops working on the next macOS release, then one morning will not open at all. There is no email, because from the company's point of view nothing happened. This is more common than a shutdown and much harder to plan for, because there is no date to react to.</p>
 <p><strong>The quiet one.</strong> A small app from a developer who stopped. The website still resolves, the download link still works, and the last release was four years ago. Nothing announces itself. You find out when you upgrade your Mac.</p>
 <p>Only the first of these sends you an email. The other two are the reason "they will let me know" is not a plan.</p>
-<h2 id="what-an-export-actually-gives-you">What an export actually gives you</h2>
+<h2 id="what-does-an-export-actually-give-you">What does an export actually give you?</h2>
 <p>Getting a file out is not the same as keeping your notes, and this is where most people are disappointed.</p>
 <p><strong>The text usually survives.</strong> Plain prose comes through nearly every export intact. If all you have is paragraphs, you are mostly fine.</p>
 <p><strong>The structure usually does not.</strong> Nesting, links between notes, tags, folder hierarchies, and the relationships you built are the first thing lost in translation. <a href="https://www.notion.com/help/export-your-content">Notion, for instance, exports to PDF, HTML, or Markdown and CSV</a> — and a database of linked pages becomes a directory of files with the links rewritten or broken, depending on the format you picked.</p>
 <p><strong>Attachments are a coin toss.</strong> Images and files may come down alongside the text, may come as a separate archive, or may turn out to have been links to a server that is about to stop answering.</p>
 <p><strong>Dates and metadata rarely survive.</strong> Created and modified timestamps, which are how you find anything from four years ago, are commonly flattened to the export date.</p>
 <p>So the honest way to think about an export is not "my notes are safe" but "my sentences are safe, and I will be rebuilding the shape of them by hand".</p>
-<h2 id="the-test-that-tells-you-where-you-stand">The test that tells you where you stand</h2>
+<h2 id="how-do-you-know-whether-you-could-actually-leave">How do you know whether you could actually leave?</h2>
 <p>There is one question that sorts every notes app into two piles, and you can answer it in a minute:</p>
 <p><strong>If the company vanished tonight — no notice, no email, no export tool — could you still read what you wrote tomorrow?</strong></p>
 <p>If the answer depends on the company doing something for you, the answer is no.</p>
@@ -64,15 +64,21 @@
 <p>It is worth stopping on that screen for a second, because an account is not a formality. It is a decision about where your writing lives and who else has a copy — made before you have typed a single word.</p>
 <h2 id="what-the-account-is-actually-for">What the account is actually for</h2>
 <p>Three things, and they are all genuinely useful:</p>
-<p><strong>Your notes on more than one device.</strong> This is the big one and it is the honest reason most apps ask. Sync needs somewhere in the middle to sync through, and that somewhere needs to know which notes are yours.</p>
-<p><strong>Sharing with other people.</strong> A shared page needs a shared truth that two accounts can both reach.</p>
-<p><strong>Recovery.</strong> Laptop stolen on a Thursday, notes back on the replacement by Friday. That only works if somebody else has a copy.</p>
+<h3 id="your-notes-on-more-than-one-device">Your notes on more than one device</h3>
+<p>This is the big one and it is the honest reason most apps ask. Sync needs somewhere in the middle to sync through, and that somewhere needs to know which notes are yours.</p>
+<h3 id="sharing-with-other-people">Sharing with other people</h3>
+<p>A shared page needs a shared truth that two accounts can both reach.</p>
+<h3 id="recovery">Recovery</h3>
+<p>Laptop stolen on a Thursday, notes back on the replacement by Friday. That only works if somebody else has a copy.</p>
 <p>If you use any of those three, the account is not overhead. It is the product, and the sign-up form is the price of admission to a thing you actually want.</p>
 <figure><img src="/images/what-an-account-buys.svg" alt="Two panels: what a notes-app account buys you — sync, sharing and recovery — set against what it costs you: an identity attached to your writing, a copy on somebody else&#x27;s server, and a deletion you have to request" width="1200" height="440" loading="lazy" decoding="async" /><figcaption>Both columns are real. The mistake is paying for the right one without getting the left.</figcaption></figure>
 <h2 id="what-it-costs-stated-plainly">What it costs, stated plainly</h2>
-<p><strong>An identity attached to your writing.</strong> Before the account, your notes were text on a disk. After it, they are text on a disk plus a record on a server saying this person wrote these things. That record is what makes sync possible, and it is also a thing that exists.</p>
-<p><strong>A copy you do not control.</strong> Once the notes are on a server, the list of parties who can read them is longer than one: the company, anyone it is legally compelled to answer, anyone who breaches it, and whoever owns it after an acquisition nobody consulted you about. None of that requires bad intent. It is just what having a copy means.</p>
-<p><strong>Deletion becomes a request.</strong> With a local file, deleting is an act you perform. With an account, it is something you ask for and then trust. In Europe <a href="https://gdpr-info.eu/art-17-gdpr/">the GDPR's right to erasure</a> gives that request real legal weight, which is a genuine protection — and it is still a request, with a response time, made to somebody else.</p>
+<h3 id="an-identity-attached-to-your-writing">An identity attached to your writing</h3>
+<p>Before the account, your notes were text on a disk. After it, they are text on a disk plus a record on a server saying this person wrote these things. That record is what makes sync possible, and it is also a thing that exists.</p>
+<h3 id="a-copy-you-do-not-control">A copy you do not control</h3>
+<p>Once the notes are on a server, the list of parties who can read them is longer than one: the company, anyone it is legally compelled to answer, anyone who breaches it, and whoever owns it after an acquisition nobody consulted you about. None of that requires bad intent. It is just what having a copy means.</p>
+<h3 id="deletion-becomes-a-request">Deletion becomes a request</h3>
+<p>With a local file, deleting is an act you perform. With an account, it is something you ask for and then trust. In Europe <a href="https://gdpr-info.eu/art-17-gdpr/">the GDPR's right to erasure</a> gives that request real legal weight, which is a genuine protection — and it is still a request, with a response time, made to somebody else.</p>
 <p>None of these is a scandal. They are the ordinary mechanics of a service. They are simply not on the pricing page, and they apply whether or not you ever use sync.</p>
 <h2 id="the-apps-that-skip-it">The apps that skip it</h2>
 <p>Plenty of good software has decided the form is optional.</p>
@@ -189,7 +195,7 @@
 <p><strong>A locked note</strong> is the only one of the three that still means something while you are sitting there logged in. It is per-note encryption, and the note stays unreadable until you supply the password — including from someone borrowing your unlocked laptop for five minutes, or looking over your shoulder while you have the app open.</p>
 <p>You want all three. They are not alternatives.</p>
 <figure><img src="/images/note-protection-layers.svg" alt="Three stacked layers: FileVault stops someone holding a powered-off Mac, the screen lock stops someone at an unattended Mac, a locked note stops someone already using your unlocked Mac" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>Three layers, three different intruders. They stack; none replaces another.</figcaption></figure>
-<h2 id="locking-a-note-in-apple-notes">Locking a note in Apple Notes</h2>
+<h2 id="how-do-you-lock-a-note-in-apple-notes">How do you lock a note in Apple Notes?</h2>
 <p>Apple Notes has <a href="https://support.apple.com/guide/notes/lock-your-notes-not28c5f5468/mac">built-in locking</a>, and for a lot of people it is enough.</p>
 <p>Select a note, then <strong>File → Lock Note</strong>, or right-click the note in the list and choose Lock Note. macOS will ask you to set things up the first time. Recent versions let you use your Mac's login password rather than a separate Notes password, which is a meaningful improvement — a separate Notes password was the single biggest cause of permanently lost notes in that app.</p>
 <p>Two things about it are worth knowing before you rely on it:</p>
@@ -201,7 +207,7 @@
 <p>A quick, genuinely useful check for any app that claims per-note locking:</p>
 <ul><li>Lock a note containing a distinctive phrase.</li><li>Quit the app.</li><li>Search the app's data folder for that phrase from the Terminal.</li></ul>
 <p>If the phrase turns up, the lock is decoration. If it does not, the encryption is real.</p>
-<h2 id="where-your-notes-actually-live">Where your notes actually live</h2>
+<h2 id="where-are-your-notes-actually-stored">Where are your notes actually stored?</h2>
 <p>This part is worth knowing regardless of which app you use, because it determines who else can read them.</p>
 <p>A note in a cloud-synced app exists in at least three places: your Mac, the provider's servers, and every other device signed in. Locking on your Mac does not necessarily mean the copy on the server is locked, and the provider's privacy policy — not your password — is what governs that copy. Apple encrypts locked Notes end-to-end, so the server copy is genuinely unreadable to Apple; not every provider does the same, and most are vague about it.</p>
 <p>A note in a local-first app exists in one place: a database on your own disk. There is no server copy to reason about, which removes an entire category of question. The trade is that there is also no server copy to restore from, which makes backups your job rather than someone else's.</p>
@@ -236,11 +242,19 @@
 <p>An app that answers all four well is one you can leave, which is the only thing that makes staying a choice.</p>
 <h2 id="what-buy-once-has-to-include-to-mean-anything">What "buy once" has to include to mean anything</h2>
 <p>The one-time purchase has its own failure modes, and they are worth naming, because "pay once" on a pricing page can hide several different deals.</p>
-<p><strong>Free updates, not just free patches.</strong> The oldest trick in the category is selling version 1, then selling version 2 eighteen months later to the same people. That is a subscription with extra steps and worse communication. The version that means something is the one where updates keep coming and keep being included.</p>
-<p><strong>No feature gates.</strong> If the purchase unlocks the app but the interesting parts are separate purchases, you did not buy the app. Check whether the price on the page is the price of everything.</p>
-<p><strong>It keeps working if the company stops.</strong> This is the one that actually matters, and it is a question about architecture rather than intent. An app that stores your notes on your own machine and does not check in with a server keeps working the day after its developer walks away. An app that phones home to validate your licence every launch stops working the day that endpoint goes dark, no matter how sincerely the developer promised otherwise.</p>
+<h3 id="free-updates-not-just-free-patches">Free updates, not just free patches</h3>
+<p>The oldest trick in the category is selling version 1, then selling version 2 eighteen months later to the same people. That is a subscription with extra steps and worse communication. The version that means something is the one where updates keep coming and keep being included.</p>
+<h3 id="no-feature-gates">No feature gates</h3>
+<p>If the purchase unlocks the app but the interesting parts are separate purchases, you did not buy the app. Check whether the price on the page is the price of everything.</p>
+<h3 id="it-keeps-working-if-the-company-stops">It keeps working if the company stops</h3>
+<p>This is the one that actually matters, and it is a question about architecture rather than intent. An app that stores your notes on your own machine and does not check in with a server keeps working the day after its developer walks away. An app that phones home to validate your licence every launch stops working the day that endpoint goes dark, no matter how sincerely the developer promised otherwise.</p>
 <p>Ask specifically: does it need the internet to start? Does it check my licence more than once? Where exactly are my notes on this disk?</p>
-<p><strong>A plain data format underneath.</strong> Your notes will outlive the app you write them in — that is true of every app, including good ones. The thing that determines whether that is a migration or a loss is whether the format underneath is something another program can read.</p>
+<h3 id="a-plain-data-format-underneath">A plain data format underneath</h3>
+<p>Your notes will outlive the app you write them in — that is true of every app, including good ones. The thing that determines whether that is a migration or a loss is whether the format underneath is something another program can read.</p>
+<h3 id="the-two-models-side-by-side">The two models, side by side</h3>
+<p>Set out together, they differ in ways that have nothing to do with which one is better:</p>
+<div class="table-scroll"><table><thead><tr><th scope="col">What differs</th><th scope="col">Subscription, in the cloud</th><th scope="col">One-time purchase, on your machine</th></tr></thead><tbody><tr><td>What the money pays for</td><td>Servers, sync, storage, and the people who keep them up</td><td>Development, once</td></tr><tr><td>When you stop paying</td><td>The app locks, or drops to read-only. Export before you cancel, not after</td><td>Nothing happens. It keeps working</td></tr><tr><td>If the company closes</td><td>The service ends with it; you have whatever you exported</td><td>The copy on your disk keeps running</td></tr><tr><td>Working offline</td><td>Partly. Sync needs the network, and some apps need it just to sign in</td><td>Entirely</td></tr><tr><td>Where the notes are</td><td>On someone else's servers, in their format</td><td>On your own disk, in a file you can point at</td></tr><tr><td>Sync between devices</td><td>Yes — this is the thing you are paying for</td><td>No, unless you arrange it yourself</td></tr><tr><td>Cost over five years</td><td>Recurring, and it can be raised</td><td>Fixed at whatever you paid on day one</td></tr></tbody></table></div>
+<p>Neither column is the winning one. The top row is the whole argument: if the money is buying servers you actually use, the left column is a fair deal. If it isn't, you are paying rent on software that runs on your laptop.</p>
 <figure><img src="/images/subscription-server-test.svg" alt="A decision diagram asking what the monthly fee is doing with a server, branching into real server work versus software that runs on your own computer" width="1200" height="500" loading="lazy" decoding="async" /><figcaption>The one question that separates a subscription that buys something from one that charges rent.</figcaption></figure>
 <h2 id="the-case-for-buying-when-the-app-is-local">The case for buying, when the app is local</h2>
 <p>Here is where the two halves of this join up.</p>
@@ -272,14 +286,15 @@
 <p>The cost is that tags require you to be consistent with yourself over years, which is a genuinely hard thing to be. You tag something <code>#finance</code> in March and <code>#money</code> in September. Neither is wrong, and now half your notes are invisible to each search. Tag lists sprawl, and a tag list with two hundred entries is not an index, it is a second problem.</p>
 <p>Tags work best when you keep the vocabulary small enough to hold in your head — somewhere under about fifteen. That usually means using them for one axis and one only. Status is the classic good use: <code>#waiting</code>, <code>#someday</code>, <code>#reference</code>. These are things a note <em>is</em> right now, they change over time, and there are only a few of them.</p>
 <p>Using tags for topic is where people drown, because topics are unbounded. Every new subject you encounter is a candidate tag, and nothing ever tells you to stop.</p>
-<h2 id="search-the-one-that-changed-the-maths">Search: the one that changed the maths</h2>
+<h2 id="is-search-on-its-own-enough">Is search on its own enough?</h2>
 <p>Full-text search across everything you have ever written is the reason all of this is less important than it used to be. If you can type a distinctive phrase and land on the note, the folder it sits in stops mattering very much.</p>
 <p>This genuinely changes the correct answer. Most of the elaborate systems people inherit were designed for tools where finding things was expensive. When retrieval is nearly free, the effort belongs at the moment of writing, not the moment of filing.</p>
 <p>The limit of search is precise: it only finds words you actually wrote. If you search for "the thing the accountant said about the car" and the note says "vehicle expense, business use proportion", you will not find it. Search does not know what you meant.</p>
+<p>There is also a stubborn human limit, and it is worth knowing before you throw your folders away. Researchers studying how people retrieve their own files have found repeatedly that, even when the search engine is good, people navigate to a known location first and search only as a last resort — and that when they do search, it takes them longer and fails more often. One <a href="https://www.nature.com/articles/srep14719">neuroimaging study</a> found that moving through a folder tree recruits the same brain structures used for navigating physical space, which is a fair explanation for why the habit outlives every improvement to search. So the honest version of this section is not "search replaced folders". It is that search removed the <em>penalty</em> for filing badly, while most people still reach for a place before they reach for a query.</p>
 <p>Which points at the highest-leverage habit in this entire post, and it has nothing to do with structure.</p>
 <p>The reason this blog's app leads with full-text search across every note rather than a folder tree is the same one: Cyanote assumes you will search, and treats folders as somewhere to put things afterwards.</p>
 <figure><img src="/images/note.webp" alt="A notes app sidebar with a search field above the note list, beside an open note" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Search sits above the list, not behind a folder tree — which is the whole argument in one screenshot.</figcaption></figure>
-<h2 id="name-notes-the-way-you-will-search-for-them">Name notes the way you will search for them</h2>
+<h2 id="what-should-you-name-a-note">What should you name a note?</h2>
 <p>The title is the one piece of metadata you fill in every single time, without deciding to. It is free. And most people waste it.</p>
 <p>A note called <code>Meeting</code> is unfindable. <code>Notes</code> is worse. <code>Untitled 47</code> is a small future tax you have chosen to pay.</p>
 <p>Write the title as the sentence you would say to someone describing the note eight months from now. Not "Insurance" but "Why we switched car insurers and what it cost". Not "Ideas" but "Ideas for the workshop, from the walk in February". The second version contains the distinctive words you will actually type into a search box, because they are the words your memory kept.</p>
@@ -305,11 +320,14 @@
       <content:encoded><![CDATA[<p>The short answer is the one nobody wants: macOS has no clipboard history. There is no key combination that shows you the last ten things you copied, because the last ten things you copied no longer exist. The Mac clipboard holds one item — <a href="https://developer.apple.com/documentation/appkit/nspasteboard">the general pasteboard</a>, in Apple's own terms. Copy something else and the previous one is gone — not archived, not recoverable, gone.</p>
 <p>If you came here from Windows this is genuinely surprising. Windows has had <code>Win</code> + <code>V</code> since 2018, and it shows a scrollable list of recent copies. There is no macOS equivalent, and there never has been.</p>
 <p>What follows is what the system actually gives you, why the gap exists, and what to do about it.</p>
-<h2 id="what-macos-really-offers">What macOS really offers</h2>
+<h2 id="does-macos-have-a-clipboard-history">Does macOS have a clipboard history?</h2>
 <p>There are three things people mistake for clipboard history. None of them is.</p>
-<p><strong>Finder's clipboard viewer.</strong> Open Finder, then <strong>Edit → Show Clipboard</strong>. A small window appears showing what is on the clipboard right now. That is the whole feature. It is a window onto the single current item, useful for checking whether a copy worked and useless for getting back anything older.</p>
-<p><strong>Universal Clipboard.</strong> Copy on your Mac, paste on your iPhone. It is genuinely good and it is not history — it moves the one current item between your devices and expires it after a short while. There is no list, and nothing is stored.</p>
-<p><strong>Undo.</strong> <code>Cmd</code> + <code>Z</code> will bring back text you deleted in a document. It has nothing to do with the clipboard and will not help you recover something you copied over.</p>
+<h3 id="finder-s-clipboard-viewer">Finder's clipboard viewer</h3>
+<p>Open Finder, then <strong>Edit → Show Clipboard</strong>. A small window appears showing what is on the clipboard right now. That is the whole feature. It is a window onto the single current item, useful for checking whether a copy worked and useless for getting back anything older.</p>
+<h3 id="universal-clipboard">Universal Clipboard</h3>
+<p>Copy on your Mac, paste on your iPhone. It is genuinely good and it is not history — it moves the one current item between your devices and expires it after a short while. There is no list, and nothing is stored.</p>
+<h3 id="undo">Undo</h3>
+<p><code>Cmd</code> + <code>Z</code> will bring back text you deleted in a document. It has nothing to do with the clipboard and will not help you recover something you copied over.</p>
 <h2 id="why-the-gap-exists">Why the gap exists</h2>
 <p>The clipboard is a system-wide scratch space that every app can read. That is what makes it useful, and it is also why keeping a history of it is a genuinely uncomfortable feature to ship by default.</p>
 <p>Think about what passes through your clipboard in an ordinary week. Passwords, on the way from a password manager to a login form. A two-factor code. Your address. A card number. An API key. A private link that grants access to whoever holds it. All of it, sitting in the same buffer as the URL you copied to send to a friend.</p>
@@ -319,14 +337,19 @@
 <ul><li>You copy a paragraph, then copy something else to look it up, and the paragraph is gone.</li><li>You paste the same three snippets — an address, a bank reference, a boilerplate reply — thirty times a week, and each one means going and finding it again.</li><li>You copy a code from a text message, get distracted, copy a link, and now you need the code again and it has expired.</li><li>You are moving content between two documents and every single trip is one copy and one paste, because you cannot carry more than one thing at a time.</li></ul>
 <p>None of these is a crisis. Together they are one of those small frictions that is invisible until it stops.</p>
 <figure><img src="/images/clipboard.webp" alt="Cyanote&#x27;s clipboard history: every copy kept in a searchable list, with a type icon per item" width="1400" height="912" loading="lazy" decoding="async" /><figcaption>A clipboard history is just a list — the design questions are where it is kept and what it refuses to keep.</figcaption></figure>
-<h2 id="what-a-clipboard-manager-does">What a clipboard manager does</h2>
+<h2 id="what-does-a-clipboard-manager-actually-do">What does a clipboard manager actually do?</h2>
 <p>A clipboard manager is a small background app that watches the clipboard and keeps what passes through it. When you want something back, you open it with a hotkey, find the item, and it goes back on the clipboard ready to paste.</p>
 <p>That is the whole idea. The differences between them are the things worth checking:</p>
-<p><strong>Where the history is stored.</strong> This is the first question, not the last. A clipboard manager sees everything you copy. If it syncs that to a server, everything you copy is now on somebody else's computer. If it keeps the history in a local database on your own machine, it isn't. Both designs exist and the marketing rarely leads with which one you are getting.</p>
-<p><strong>Whether it is searchable.</strong> A list of the last few items is a convenience. A searchable history of everything is a different tool — you stop thinking of it as "undo for copying" and start using it as a place things can be found later.</p>
-<p><strong>What it does with sensitive copies.</strong> Good behaviour: recognising when a password manager put something on the clipboard and declining to keep it. Also good: letting you delete an individual item, and clear the lot in one action.</p>
-<p><strong>Pinned items.</strong> The three snippets you paste constantly should not scroll away under a week of ordinary copying. Pinning is what turns a history into a set of shortcuts.</p>
-<p><strong>Whether it holds more than text.</strong> Images, files and colours all travel through the clipboard. A manager that keeps only text quietly drops the rest.</p>
+<h3 id="where-the-history-is-stored">Where the history is stored</h3>
+<p>This is the first question, not the last. A clipboard manager sees everything you copy. If it syncs that to a server, everything you copy is now on somebody else's computer. If it keeps the history in a local database on your own machine, it isn't. Both designs exist and the marketing rarely leads with which one you are getting.</p>
+<h3 id="whether-it-is-searchable">Whether it is searchable</h3>
+<p>A list of the last few items is a convenience. A searchable history of everything is a different tool — you stop thinking of it as "undo for copying" and start using it as a place things can be found later.</p>
+<h3 id="what-it-does-with-sensitive-copies">What it does with sensitive copies</h3>
+<p>Good behaviour: recognising when a password manager put something on the clipboard and declining to keep it. Also good: letting you delete an individual item, and clear the lot in one action.</p>
+<h3 id="pinned-items">Pinned items</h3>
+<p>The three snippets you paste constantly should not scroll away under a week of ordinary copying. Pinning is what turns a history into a set of shortcuts.</p>
+<h3 id="whether-it-holds-more-than-text">Whether it holds more than text</h3>
+<p>Images, files and colours all travel through the clipboard. A manager that keeps only text quietly drops the rest.</p>
 <p>Disclosure, since this blog belongs to one: Cyanote keeps its clipboard history in a local database on your Mac, searchable, with pinning for the snippets you paste constantly. It is one of five things it does rather than the only one — which is either the point or the drawback, depending on what you came for.</p>
 <p>If the subscription question is what is actually holding you up, that is <a href="/blog/clipboard-manager-mac-without-subscription/">its own decision</a>.</p>
 <h2 id="before-you-install-one">Before you install one</h2>
@@ -346,12 +369,12 @@
       <description>Cloud apps hand you backup as a side effect. Local notes do not, and sync is not a substitute. Here is what actually protects them, and how to know it works.</description>
       <content:encoded><![CDATA[<p>Keeping your notes on your own computer buys you a lot: they work offline, nobody else can read them, and no company can lose them, price you out, or shut down. It also hands you back a job the cloud was quietly doing on your behalf, and most people do not notice until the day it matters.</p>
 <p>This is that job, and it is smaller than it sounds.</p>
-<h2 id="sync-is-not-backup">Sync is not backup</h2>
+<h2 id="is-sync-the-same-thing-as-a-backup">Is sync the same thing as a backup?</h2>
 <p>Worth getting out of the way first, because it is the single most common mistake in this area, and it catches people who thought they were being careful.</p>
 <p>Sync propagates changes. That is its purpose and it is very good at it. Which means when you delete a note, sync faithfully deletes it everywhere, immediately. When a file is corrupted, sync distributes the corruption. When you paste over three paragraphs and quit, sync ensures all your devices agree on the wrong version.</p>
 <p>A backup is different in one specific way: it can give you back a state from <em>before</em> the thing you regret. If a system has no notion of "yesterday", it is not a backup, whatever it is called.</p>
 <p>Cloud note apps blur this because most of them do keep version history, which is a backup — of the note contents, on their servers, subject to their retention policy. Useful. Just not the same thing as sync, and worth knowing which one you are relying on.</p>
-<h2 id="what-time-machine-covers">What Time Machine covers</h2>
+<h2 id="does-time-machine-back-up-my-notes">Does Time Machine back up my notes?</h2>
 <p>On a Mac, <a href="https://support.apple.com/guide/mac-help/back-up-your-files-with-time-machine-mh35860/mac">Time Machine</a> is most of the answer, and it is already built in.</p>
 <p>It keeps hourly snapshots for the last 24 hours, daily for the past month, and weekly beyond that, until the disk fills and it starts dropping the oldest. That's a real answer to "get me the version from before Tuesday". Turn it on, point it at an external disk, and the majority of this problem is solved by a single setting.</p>
 <p>Two limits are worth knowing.</p>
@@ -422,7 +445,7 @@
 <p>Local-first moves that responsibility across the line to you. This is manageable — Time Machine, or an occasional export to an external disk, covers it entirely — but it only works if you actually do it. Set it up on day one, not after the first scare.</p>
 <h3 id="no-collaboration">No collaboration</h3>
 <p>Shared documents, comments, someone else's cursor in your paragraph: these need a server, because they need a shared truth that two people can both reach. Local-first apps are for one person's own thinking. That is a genuine limitation and not a philosophy.</p>
-<h2 id="how-to-tell-whether-an-app-is-actually-local-first">How to tell whether an app is actually local-first</h2>
+<h2 id="how-can-you-tell-whether-an-app-is-actually-local-first">How can you tell whether an app is actually local-first?</h2>
 <p>The label is easy to claim. Three questions settle it:</p>
 <ol><li><strong>Can you create an account-less install?</strong> If signing up is mandatory, the server holds something. That may be fine, but it is not local-first.</li><li><strong>Where is the data, and can you open the folder?</strong> A real answer is a path. If the answer is "in the app", ask again.</li><li><strong>Turn the wifi off and use it for an hour.</strong> Everything should work. Not "most things" — everything.</li></ol>
 <p>A fourth, softer test: what happens when you cancel? If there is nothing to cancel, that tells you where the data was.</p>
@@ -431,7 +454,7 @@
 <figure><img src="https://cyanote.app/images/note.webp" alt="Cyanote&#x27;s note editor with the slash command menu open, showing headings, lists, tables and code blocks" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Everything here is a row in a database file on your own disk.</figcaption></figure>
 <p>It takes the trade-offs above rather than dodging them. There is no sync and no iOS app. What it offers in exchange is that the whole thing — notes, tasks, calendar, habits, clipboard history — opens instantly, works in a basement, and cannot be read by me or anyone else. Backup and restore is a single JSON file you can write anywhere you like, and a restore always takes a rescue snapshot of what it is about to replace before it does anything.</p>
 <p>Optional network features exist and are opt-in: you can subscribe to a Google Calendar so events appear alongside your tasks. That is a deliberate exception, and it is a read of a calendar you already publish — nothing goes the other way.</p>
-<h2 id="who-should-choose-it">Who should choose it</h2>
+<h2 id="who-should-choose-a-local-first-app">Who should choose a local-first app?</h2>
 <p>Choose local-first if you work mostly at one machine, if you write things you would rather not have on someone else's server, and if you would like the tool you learn this year to still be there in five.</p>
 <p>Do not choose it if you move between machines constantly, if capture on a phone is central to how you think, or if you would rather someone else be responsible for your backups. Those are real requirements and cloud apps meet them properly.</p>
 <p>If the first description fits, <a href="https://cyanote.app/#pricing">Cyanote is a $10 one-time purchase</a> with no subscription behind it — I wrote about why it exists in <a href="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/">I replaced five subscriptions with one $10 app</a>, and about the routine I use to keep a week in order in <a href="https://cyanote.app/blog/weekly-review-in-20-minutes/">the weekly review, in 20 minutes</a>.</p>]]></content:encoded>
@@ -521,6 +544,9 @@ SET (3 min)
       <content:encoded><![CDATA[<p>In January 2025 I sat down to cancel one subscription and ended up cancelling five.</p>
 <p>I had gone looking for a single charge I did not recognise. What I found instead was a small, quiet stack of them: Notion for notes, Todoist for tasks, Fantastical for the calendar, Streaks for habits, and Paste for the clipboard. None of them was expensive. Two were under five dollars a month. That is exactly why I had never looked at them together.</p>
 <p>Added up, they came to roughly $260 a year. For software I had already decided I wanted, years ago, and had been re-buying every month since without ever making the decision again.</p>
+<p>Written out, the stack was this:</p>
+<div class="table-scroll"><table><thead><tr><th scope="col">The job</th><th scope="col">What I was paying for it</th><th scope="col">What does it now</th></tr></thead><tbody><tr><td>Writing things down</td><td>Notion</td><td>Notes, and code notes</td></tr><tr><td>What is due</td><td>Todoist</td><td>To-dos and a board</td></tr><tr><td>What is scheduled</td><td>Fantastical</td><td>Calendar</td></tr><tr><td>Daily habits</td><td>Streaks</td><td>Habits</td></tr><tr><td>What I copied earlier</td><td>Paste</td><td>Clipboard manager</td></tr></tbody></table></div>
+<p>Five line items, about $260 a year between them, against $10 once. The money is the least interesting column, though — the next section is about the other one.</p>
 <h2 id="the-bit-that-annoyed-me-was-not-the-money">The bit that annoyed me was not the money</h2>
 <p>$260 is a real number but it is not a crisis. What actually bothered me was what I got for it.</p>
 <p>A Tuesday looked like this. A thought arrives during a meeting, so it goes in Notion. It turns out to have a deadline, so a task goes in Todoist. The deadline is a Thursday, so I put a block in Fantastical. Later I want the meeting link I had copied twenty minutes earlier, so I open Paste. That evening Streaks asks whether I did the thing I said I would do daily, and I have no idea, because the evidence is spread across four other apps.</p>

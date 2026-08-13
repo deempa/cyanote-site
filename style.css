@@ -174,6 +174,14 @@ section{ padding:clamp(72px,9vw,116px) 0 }
 .section-head{ text-align:center; max-width:640px; margin:0 auto clamp(44px,5vw,64px) }
 .section-head .lede{ margin-top:16px }
 
+/* The plain-language definition under the features lede. Deliberately quieter
+   than the lede it follows — it is there to be read once and quoted, not to
+   compete with the heading. Slightly wider measure than .section-head allows,
+   because a definition that wraps every four words reads like a poem. */
+.definition{ margin:18px auto 0; max-width:58ch; font-size:.95rem; line-height:1.65;
+  color:var(--muted) }
+.definition b{ color:var(--ink); font-weight:600 }
+
 /* Feature grid: hairlines and monochrome glyphs. The eight tiles divide
    cleanly by four, by two and by one, so no row is ever left with an orphan. */
 .feat{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line);
@@ -315,6 +323,24 @@ details p{ color:var(--muted); font-size:.97rem; padding:0 0 24px; max-width:62c
   border:1px solid var(--line); box-shadow:var(--shot-shadow) }
 .post figcaption{ color:var(--muted); font-size:.86rem; margin-top:11px; text-align:center }
 .post hr{ border:0; border-top:1px solid var(--line); margin:40px 0 }
+
+/* Tables. The wrapper scrolls, not the page: a wide table on a phone otherwise
+   drags the whole document sideways, which breaks every other line of text on
+   it to fix one. Hairlines only, matching the feature grid — a table here is a
+   piece of prose set in columns, not a spreadsheet. */
+.table-scroll{ overflow-x:auto; margin:30px 0; -webkit-overflow-scrolling:touch }
+.post table{ border-collapse:collapse; width:100%; min-width:34rem; font-size:.94rem }
+.post thead th{ text-align:left; font-weight:600; color:var(--ink); white-space:nowrap;
+  border-bottom:1px solid var(--ink-2); padding:0 16px 10px 0 }
+.post tbody td{ color:var(--ink-2); vertical-align:top; padding:12px 16px 12px 0;
+  border-bottom:1px solid var(--line) }
+.post tbody tr:last-child td{ border-bottom:0 }
+.post thead th:last-child, .post tbody td:last-child{ padding-right:0 }
+/* The row-label column holds the shortest text, so the browser's automatic
+   layout starves it and wraps three-word labels onto three lines. A floor on
+   its width costs the wider columns almost nothing and makes the labels
+   readable at a glance, which is the only reason the column is there. */
+.post thead th:first-child, .post tbody td:first-child{ min-width:8.5rem }
 
 .endcta{ border:1px solid var(--line); background:var(--panel); border-radius:20px;
   padding:30px 32px; margin:52px 0 0; text-align:center }

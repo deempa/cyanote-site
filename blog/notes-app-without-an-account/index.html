@@ -40,11 +40,13 @@
   "dateModified": "2026-08-13",
   "author": {
     "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
     "name": "Lior Rabanian",
     "url": "https://cyanote.app/about.html"
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
     "name": "Cyanote",
     "url": "https://cyanote.app/",
     "logo": {
@@ -59,12 +61,20 @@
     "@id": "https://cyanote.app/blog/notes-app-without-an-account/"
   },
   "url": "https://cyanote.app/blog/notes-app-without-an-account/",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://cyanote.app/og-image.png",
-    "width": 1200,
-    "height": 630
-  },
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/what-an-account-buys.svg",
+      "width": 1200,
+      "height": 440
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Blog",
@@ -147,15 +157,21 @@
       <p>It is worth stopping on that screen for a second, because an account is not a formality. It is a decision about where your writing lives and who else has a copy — made before you have typed a single word.</p>
       <h2 id="what-the-account-is-actually-for">What the account is actually for</h2>
       <p>Three things, and they are all genuinely useful:</p>
-      <p><strong>Your notes on more than one device.</strong> This is the big one and it is the honest reason most apps ask. Sync needs somewhere in the middle to sync through, and that somewhere needs to know which notes are yours.</p>
-      <p><strong>Sharing with other people.</strong> A shared page needs a shared truth that two accounts can both reach.</p>
-      <p><strong>Recovery.</strong> Laptop stolen on a Thursday, notes back on the replacement by Friday. That only works if somebody else has a copy.</p>
+      <h3 id="your-notes-on-more-than-one-device">Your notes on more than one device</h3>
+      <p>This is the big one and it is the honest reason most apps ask. Sync needs somewhere in the middle to sync through, and that somewhere needs to know which notes are yours.</p>
+      <h3 id="sharing-with-other-people">Sharing with other people</h3>
+      <p>A shared page needs a shared truth that two accounts can both reach.</p>
+      <h3 id="recovery">Recovery</h3>
+      <p>Laptop stolen on a Thursday, notes back on the replacement by Friday. That only works if somebody else has a copy.</p>
       <p>If you use any of those three, the account is not overhead. It is the product, and the sign-up form is the price of admission to a thing you actually want.</p>
       <figure><img src="/images/what-an-account-buys.svg" alt="Two panels: what a notes-app account buys you — sync, sharing and recovery — set against what it costs you: an identity attached to your writing, a copy on somebody else&#x27;s server, and a deletion you have to request" width="1200" height="440" loading="lazy" decoding="async" /><figcaption>Both columns are real. The mistake is paying for the right one without getting the left.</figcaption></figure>
       <h2 id="what-it-costs-stated-plainly">What it costs, stated plainly</h2>
-      <p><strong>An identity attached to your writing.</strong> Before the account, your notes were text on a disk. After it, they are text on a disk plus a record on a server saying this person wrote these things. That record is what makes sync possible, and it is also a thing that exists.</p>
-      <p><strong>A copy you do not control.</strong> Once the notes are on a server, the list of parties who can read them is longer than one: the company, anyone it is legally compelled to answer, anyone who breaches it, and whoever owns it after an acquisition nobody consulted you about. None of that requires bad intent. It is just what having a copy means.</p>
-      <p><strong>Deletion becomes a request.</strong> With a local file, deleting is an act you perform. With an account, it is something you ask for and then trust. In Europe <a href="https://gdpr-info.eu/art-17-gdpr/">the GDPR's right to erasure</a> gives that request real legal weight, which is a genuine protection — and it is still a request, with a response time, made to somebody else.</p>
+      <h3 id="an-identity-attached-to-your-writing">An identity attached to your writing</h3>
+      <p>Before the account, your notes were text on a disk. After it, they are text on a disk plus a record on a server saying this person wrote these things. That record is what makes sync possible, and it is also a thing that exists.</p>
+      <h3 id="a-copy-you-do-not-control">A copy you do not control</h3>
+      <p>Once the notes are on a server, the list of parties who can read them is longer than one: the company, anyone it is legally compelled to answer, anyone who breaches it, and whoever owns it after an acquisition nobody consulted you about. None of that requires bad intent. It is just what having a copy means.</p>
+      <h3 id="deletion-becomes-a-request">Deletion becomes a request</h3>
+      <p>With a local file, deleting is an act you perform. With an account, it is something you ask for and then trust. In Europe <a href="https://gdpr-info.eu/art-17-gdpr/">the GDPR's right to erasure</a> gives that request real legal weight, which is a genuine protection — and it is still a request, with a response time, made to somebody else.</p>
       <p>None of these is a scandal. They are the ordinary mechanics of a service. They are simply not on the pricing page, and they apply whether or not you ever use sync.</p>
       <h2 id="the-apps-that-skip-it">The apps that skip it</h2>
       <p>Plenty of good software has decided the form is optional.</p>
