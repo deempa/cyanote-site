@@ -115,6 +115,9 @@ nav .right{ margin-left:auto }
 .btn:active{ transform:scale(.975) }
 .btn svg{ width:17px; height:17px; flex:none; fill:none; stroke:currentColor;
   stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round }
+/* Solid glyphs — the Apple mark on the download button is a filled silhouette,
+   not a line drawing, so it needs the opposite of everything above it. */
+.btn svg.glyph-solid{ fill:currentColor; stroke:none }
 .btn-primary{ background:var(--accent); color:var(--accent-ink) }
 .btn-primary:hover{ filter:brightness(1.08) }
 .btn-ghost{ background:var(--panel); border-color:var(--line); color:var(--ink) }
