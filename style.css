@@ -161,7 +161,7 @@ html:not(.plat-windows):not(.plat-mobile) [data-plat="mobile"]{ display:none }
 .mac-cam{ display:block; width:5px; height:5px; border-radius:50%; margin:0 auto 8px;
   background:#0e0f11; box-shadow:inset 0 0 0 1px rgb(255 255 255 / .07) }
 .mac-screen{ border-radius:6px; overflow:hidden; background:#000; display:block }
-.mac-screen img{ display:block; width:100%; height:auto }
+.mac-screen img,.mac-screen video{ display:block; width:100%; height:auto }
 /* Base: wider than the lid, with the thumb groove cut into its front edge. */
 .mac-base{ position:relative; width:114%; margin:0 0 0 -7%; height:14px;
   background:linear-gradient(180deg,#e4e6ea 0%,#c2c6cd 46%,#9ba0a8 100%);

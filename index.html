@@ -86,6 +86,19 @@
   ]
 }
 </script>
+
+<!-- The entity the other two blocks belong to. Nothing in `sameAs` yet: it takes
+     real profiles that exist elsewhere, and listing ones that don't would be the
+     same lie as a made-up rating. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Cyanote",
+  "url": "https://cyanote.app/",
+  "logo": "https://cyanote.app/apple-touch-icon.png"
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -153,11 +166,19 @@
   <div class="mac">
     <div class="mac-lid">
       <span class="mac-cam"></span>
-      <!-- Shows a 15 KB still instantly; the animation (animated WebP — ~240 KB, an
-           eighth of the old GIF and smooth at 14fps) is preloaded and swapped in only
-           once fully downloaded, so slow connections never see a half-loaded frame. -->
-      <span class="mac-screen"><img id="demo-gif" src="demo-poster.webp" data-gif="demo.webp" width="900" height="564"
-        alt="Cyanote: ticking to-dos off the list, then typing in a note and opening the slash menu" /></span>
+      <!-- This was an <img> showing a 17 KB still that swapped itself for a 710 KB
+           animated WebP. The swap was the problem: changing the src of the largest
+           image above the fold moves Largest Contentful Paint onto whatever it
+           settles on, so the big file was being timed instead of the still.
+           A video has no such trouble — the browser credits LCP to the poster
+           frame and never to the frames that follow. The same animation is also
+           a third of the size once a real video codec encodes it (~180 KB). -->
+      <span class="mac-screen"><video id="demo-gif" poster="demo-poster.webp" width="900" height="564"
+        muted loop playsinline preload="none"
+        aria-label="Cyanote: ticking to-dos off the list, then typing in a note and opening the slash menu">
+        <source src="demo.webm" type="video/webm" />
+        <source src="demo.mp4" type="video/mp4" />
+      </video></span>
     </div>
     <div class="mac-base"></div>
   </div>
@@ -349,6 +370,7 @@
     </ul></div>
     <div><h4>Resources</h4><ul>
       <li><a href="/blog/">Blog</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="privacy.html">Privacy</a></li>
       <li><a href="terms.html">Terms</a></li>
       <li><a href="refund.html">Refunds</a></li>
@@ -368,13 +390,39 @@
   // Screenshots that haven't been added yet remove themselves; if none load,
   // the whole "See it in action" section is hidden so the page never shows a
   // broken image. Regenerate them with capture/ (see capture/README.md).
-  // Swap the demo poster → the animation once it is fully downloaded.
+  // Start the demo video once the page has settled.
+  //
+  // The markup deliberately carries no `autoplay`: that would start the download
+  // during load, which is the whole thing this is trying to avoid. `preload` is
+  // "none", so until this runs the hero costs nothing but its 17 KB poster —
+  // and the poster is what the browser credits Largest Contentful Paint to.
+  //
+  // Two cases never start it, rather than spend the download on someone who did
+  // not want it: a reader who asked for reduced motion, and a connection that
+  // says it is metered or slow. If this script does not run at all, the poster
+  // simply stays — a still picture of the app, which is what the section is for.
   (function () {
     var el = document.getElementById('demo-gif');
-    if (!el) return;
-    function swap() { var g = new Image(); g.onload = function () { el.src = el.dataset.gif; }; g.src = el.dataset.gif; }
-    if (el.complete && el.naturalWidth > 0) swap();
-    else el.addEventListener('load', swap, { once: true });
+    if (!el || !el.play) return;
+
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var c = navigator.connection || {};
+    if (c.saveData === true || /^([23]g|slow-2g)$/.test(c.effectiveType || '')) return;
+
+    function start() {
+      el.preload = 'auto';
+      el.load();
+      // Autoplay can still be refused (low power mode, a browser policy). The
+      // poster stays put if it is, so there is nothing to handle.
+      var p = el.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+    function later() {
+      if (window.requestIdleCallback) requestIdleCallback(start, { timeout: 2000 });
+      else setTimeout(start, 300);
+    }
+    if (document.readyState === 'complete') later();
+    else addEventListener('load', later, { once: true });
   })();
 
   document.querySelectorAll('#screenshots .shots img').forEach(function (img) {

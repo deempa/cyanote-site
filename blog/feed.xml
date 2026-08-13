@@ -47,7 +47,8 @@
 <p>If your work is a long, flat queue of similar items — a hundred small edits, a reading list, invoices to send — a list wins. It shows more per screen, sorts instantly, and the spatial layout of a board buys you nothing when every item is the same shape.</p>
 <p>If most of your commitments are appointments, a calendar wins. Kanban has no opinion about time and no way to show that two things collide at 3pm on Thursday.</p>
 <p>And if you have fewer than about ten live tasks, a board is ceremony. The visualisation earns its keep when there is enough work that you cannot hold the shape of it in your head. Below that, you can, and the cards are just something else to maintain.</p>
-<p>The best answer for most people is not one of these. It is the same tasks seen as a list when you are working through them and as a board when you are deciding what to work on — which is a question about the view, not about the tool.</p>]]></content:encoded>
+<p>The best answer for most people is not one of these. It is the same tasks seen as a list when you are working through them and as a board when you are deciding what to work on — which is a question about the view, not about the tool.</p>
+<p>That is the bet Cyanote makes with its to-dos: one set of tasks, a list when you are working through them and a board when you are deciding what to work on, with priorities and due dates carried between the two.</p>]]></content:encoded>
       <category>Kanban</category>
       <category>Method</category>
       <category>Tasks</category>
@@ -86,6 +87,7 @@
 <h2 id="a-reasonable-setup">A reasonable setup</h2>
 <p>If you want a short version:</p>
 <ol><li><strong>Turn on FileVault.</strong> System Settings → Privacy &amp; Security → FileVault. Store the recovery key somewhere that is not the Mac. This is the highest-value fifteen minutes of security work available on a Mac and most people have never opened that screen.</li><li><strong>Set the screen to lock quickly.</strong> A screen that locks after an hour is a screen that does not lock.</li><li><strong>Lock the handful of notes that genuinely warrant it</strong> — recovery codes, medical details, anything about other people who did not choose to be in your notes app.</li><li><strong>Put the password in your password manager</strong>, immediately, before you close the dialog.</li><li><strong>Back up.</strong> Encryption increases the number of ways you can lose things permanently. Time Machine, or an export somewhere else, is what makes that recoverable.</li></ol>
+<p>If you are choosing an app for this rather than staying with Apple Notes: Cyanote can lock any individual note behind a password, on top of FileVault rather than instead of it — the layers in the first section are not alternatives.</p>
 <p>The point of locking a note is not that your notes are a secret. It is that a few of them are somebody else's secret, and those deserve better than being one open laptop away.</p>]]></content:encoded>
       <category>Privacy</category>
       <category>Security</category>
@@ -122,6 +124,7 @@
 <p>An app that keeps everything on your own computer has no servers to pay for. There is no per-user monthly cost to recover, because there is no per-user monthly cost. The development work is real and ongoing, but that is funded by new customers, not by charging the existing ones rent for storage that doesn't exist.</p>
 <p>That is why the local-first corner of the market still sells one-time licences while the cloud corner mostly cannot. It is not a moral difference between the developers. It is a difference in what the software actually costs to run.</p>
 <p>Which suggests a useful test when you are comparing two apps and one is $8 a month and the other is a single payment: ask what the monthly one is doing with a server. If the answer is "syncing across my devices, sharing with my team, and running search across ten years of notes", the subscription is buying you something. If the answer is "not much, really", you are paying rent on software that lives on your laptop.</p>
+<p>For the sake of declaring it: Cyanote, the app this blog belongs to, is one of the one-time ones — $10, local, no account, no server to pay for. That is the argument above applied to itself, and you should hold it to the same test.</p>
 <p>Both models can be honest. Only one of them should be the default, and it isn't the one that became one.</p>]]></content:encoded>
       <category>Pricing</category>
       <category>Local-first</category>
@@ -151,6 +154,7 @@
 <p>This genuinely changes the correct answer. Most of the elaborate systems people inherit were designed for tools where finding things was expensive. When retrieval is nearly free, the effort belongs at the moment of writing, not the moment of filing.</p>
 <p>The limit of search is precise: it only finds words you actually wrote. If you search for "the thing the accountant said about the car" and the note says "vehicle expense, business use proportion", you will not find it. Search does not know what you meant.</p>
 <p>Which points at the highest-leverage habit in this entire post, and it has nothing to do with structure.</p>
+<p>The reason this blog's app leads with full-text search across every note rather than a folder tree is the same one: Cyanote assumes you will search, and treats folders as somewhere to put things afterwards.</p>
 <h2 id="name-notes-the-way-you-will-search-for-them">Name notes the way you will search for them</h2>
 <p>The title is the one piece of metadata you fill in every single time, without deciding to. It is free. And most people waste it.</p>
 <p>A note called <code>Meeting</code> is unfindable. <code>Notes</code> is worse. <code>Untitled 47</code> is a small future tax you have chosen to pay.</p>
@@ -198,6 +202,7 @@
 <p><strong>What it does with sensitive copies.</strong> Good behaviour: recognising when a password manager put something on the clipboard and declining to keep it. Also good: letting you delete an individual item, and clear the lot in one action.</p>
 <p><strong>Pinned items.</strong> The three snippets you paste constantly should not scroll away under a week of ordinary copying. Pinning is what turns a history into a set of shortcuts.</p>
 <p><strong>Whether it holds more than text.</strong> Images, files and colours all travel through the clipboard. A manager that keeps only text quietly drops the rest.</p>
+<p>Disclosure, since this blog belongs to one: Cyanote keeps its clipboard history in a local database on your Mac, searchable, with pinning for the snippets you paste constantly. It is one of five things it does rather than the only one — which is either the point or the drawback, depending on what you came for.</p>
 <h2 id="before-you-install-one">Before you install one</h2>
 <p>Two things are worth doing regardless of which tool you choose.</p>
 <p>Check what it wants access to. A clipboard manager needs to read the clipboard, and that is a reasonable thing for it to ask. It does not need an account, and it does not need to send anything anywhere. If it wants both, ask what for.</p>
@@ -246,6 +251,7 @@
 <p>Twice a year is plenty. Put it on the calendar, because it is exactly the kind of task nothing will ever remind you to do.</p>
 <h2 id="the-short-version">The short version</h2>
 <p>Turn on Time Machine today; it is fifteen minutes and covers most of it. Add one offsite copy, encrypted if the contents are private. Run your app's export once so you know what it produces before you need it. And restore something, twice a year, so that you know.</p>
+<p>Cyanote, the app this blog belongs to, exports to a single JSON file, and a restore replaces what is there rather than merging into it, after writing a rescue snapshot first. Worth knowing which of those two your own app does before the day you need it.</p>
 <p>The point of keeping your notes on your own computer is that nobody else can lose them. The corollary is that nobody else can save them either.</p>]]></content:encoded>
       <category>Backups</category>
       <category>Local-first</category>
