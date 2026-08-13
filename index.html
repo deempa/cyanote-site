@@ -173,12 +173,15 @@
            A video has no such trouble — the browser credits LCP to the poster
            frame and never to the frames that follow. The same animation is also
            a third of the size once a real video codec encodes it (~180 KB). -->
-      <span class="mac-screen"><video id="demo-gif" poster="demo-poster.webp" width="900" height="564"
-        muted loop playsinline preload="none"
-        aria-label="Cyanote: ticking to-dos off the list, then typing in a note and opening the slash menu">
-        <source src="demo.webm" type="video/webm" />
-        <source src="demo.mp4" type="video/mp4" />
-      </video></span>
+      <!-- One source, not a <source> list. Offering both WebM and MP4 made
+           PageSpeed fetch *both* — 383 KB for a 184 KB animation — and no
+           amount of poking at the play path stopped it. A single src cannot
+           have that problem. MP4/H.264 is the one to keep: every Safari plays
+           it, which matters for a Mac-only product, and this encode is smaller
+           than the WebM was anyway. -->
+      <span class="mac-screen"><video id="demo-gif" src="demo.mp4" poster="demo-poster.webp"
+        width="900" height="564" muted loop playsinline preload="none"
+        aria-label="Cyanote: ticking to-dos off the list, then typing in a note and opening the slash menu"></video></span>
     </div>
     <div class="mac-base"></div>
   </div>
