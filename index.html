@@ -410,8 +410,12 @@
     if (c.saveData === true || /^([23]g|slow-2g)$/.test(c.effectiveType || '')) return;
 
     function start() {
+      // Deliberately no el.load() here. It resets the element and re-runs source
+      // selection from the top, and PageSpeed caught the consequence: under heavy
+      // throttling the restarted WebM fetch stalls, the element falls through to
+      // the next <source>, and the page ends up paying for both files. play() on
+      // its own starts the fetch, which is all this needed.
       el.preload = 'auto';
-      el.load();
       // Autoplay can still be refused (low power mode, a browser policy). The
       // poster stays put if it is, so there is nothing to handle.
       var p = el.play();
