@@ -7,12 +7,51 @@
     <atom:link href="https://cyanote.app/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Plain writing about keeping notes, running a week and owning your own data — from the person who builds Cyanote, a local-first Mac app you pay for once.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Aug 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 09:00:00 +0000</lastBuildDate>
     <image>
       <url>https://cyanote.app/og-image.png</url>
       <title>The Cyanote blog — notes, tasks and calmer software</title>
       <link>https://cyanote.app/blog/</link>
     </image>
+    <item>
+      <title>A clipboard manager for Mac without a subscription</title>
+      <link>https://cyanote.app/blog/clipboard-manager-mac-without-subscription/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/clipboard-manager-mac-without-subscription/</guid>
+      <pubDate>Thu, 13 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Most Mac clipboard managers now rent themselves to you monthly. Here is what the subscription is actually paying for, and what the one-time options give up.</description>
+      <content:encoded><![CDATA[<p>There is a particular annoyance in discovering that the utility you want — the one that remembers what you copied — costs four dollars a month, forever, to hold a list of text on your own computer.</p>
+<p>That is not a complaint about the developers. Some of these apps are excellent and the people who make them deserve to be paid. It is a complaint about the shape of the deal, which has drifted a long way from what the software does. A clipboard manager watches a system pasteboard and writes to a local database. It is one of the few categories where you can look at the running app and struggle to name the server it needs.</p>
+<p>So it is worth being precise about when a subscription is buying you something and when it is buying you nothing.</p>
+<h2 id="what-the-monthly-fee-is-actually-for">What the monthly fee is actually for</h2>
+<p>There are three honest answers, and they are not the same.</p>
+<p><strong>Sync.</strong> If your clipboard history follows you from a laptop to a desktop to a phone, there is a server in the middle holding it, and somebody pays for that server every month. This is a real cost and a real feature. It is also the one that should give you the longest pause, because it means everything you copy — including the things you copied out of a password manager — is leaving your machine.</p>
+<p><strong>Ongoing development.</strong> macOS changes every year and breaks things. Somebody has to fix them. This is real work, but it is worth noticing that it argues for charging <em>new</em> customers, not for charging the same customer rent in perpetuity for a version that already works.</p>
+<p><strong>Because it worked for everyone else.</strong> The least satisfying answer, and frequently the true one. Subscriptions became the default pricing model across all software, and a category that did not need one adopted it anyway.</p>
+<p>The first is a genuine trade. The third is not.</p>
+<h2 id="what-you-give-up-buying-once">What you give up buying once</h2>
+<p>Being fair to the other side: one-time purchases have failure modes, and pretending otherwise is how people end up disappointed.</p>
+<p>The app can be abandoned. A developer who has already been paid has no recurring reason to keep going, and plenty of one-time apps have quietly stopped at the last macOS version that worked. A subscription at least aligns somebody's rent with your software continuing to run.</p>
+<p>"Buy once" often means "buy this major version". Paid upgrades every two years are a legitimate model, but they are not the same promise as the one on the marketing page, and the difference tends to surface at version 3.</p>
+<p>And the smaller the developer, the more the whole thing rests on one person staying interested. That is true whichever way they charge you — but with a subscription you find out sooner, because you notice when the charges stop being worth it.</p>
+<h2 id="what-to-check-before-you-pay-either-way">What to check before you pay either way</h2>
+<p>Regardless of the pricing model, the same five questions decide whether a clipboard manager is any good:</p>
+<p><strong>Where the history is stored.</strong> Local database, or somebody else's server. This is the first question, not the last.</p>
+<p><strong>Whether it is searchable.</strong> A list of the last ten items is a convenience. A searchable history of everything is a different tool.</p>
+<p><strong>What it does with sensitive copies.</strong> Recognising a password-manager copy and declining to keep it is the mark of an app that has thought about this.</p>
+<p><strong>Whether it holds more than text.</strong> Images, files and colours all travel through the clipboard.</p>
+<p><strong>What happens on the day it stops.</strong> Can you get the history out? For a local app: where is the file, and can you read it without the app?</p>
+<p>That last one matters more for a one-time purchase than a subscription, because a one-time purchase is the one you expect to still be using in five years.</p>
+<h2 id="the-honest-version-of-this-page">The honest version of this page</h2>
+<p>This blog belongs to Cyanote, which has a clipboard manager in it and costs $10 once. So take the following as an interested party's summary rather than a neutral roundup.</p>
+<p>If you want the best clipboard manager on the Mac and nothing else, you should probably buy a dedicated one. Maccy is free and open source and very good. Paste is polished, syncs across devices, and charges a subscription for the servers that make that work — which is the honest version of the trade described above. Raycast bundles clipboard history into a launcher. Any of those will out-feature a clipboard that sits inside a notes app, because that is their whole product and this is one of five.</p>
+<p>What a bundled one gets you is the thing you copied out of a note being one hotkey from the note you copied it from, and one purchase covering both. Whether that is worth more than depth is genuinely a matter of what you are trying to stop doing.</p>
+<h2 id="the-short-version">The short version</h2>
+<p>If the app syncs, a subscription is paying for something and you should decide whether you want that something on a server at all. If it does not sync, ask what the monthly charge is for, and be unsatisfied with a vague answer.</p>
+<p>The clipboard is a small tool that you touch two hundred times a day. It is worth paying for. It is not obviously worth renting.</p>]]></content:encoded>
+      <category>Clipboard</category>
+      <category>One-time purchase</category>
+      <category>Mac</category>
+    </item>
     <item>
       <title>Personal Kanban: a board for your own to-do list</title>
       <link>https://cyanote.app/blog/personal-kanban-board/</link>
@@ -388,15 +427,15 @@ SET (3 min)
       <link>https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/</guid>
       <pubDate>Wed, 15 Jul 2026 09:00:00 +0000</pubDate>
-      <description>Five productivity subscriptions cost me about $260 a year, and I still lost things in the gaps between them. Here is what I built instead, and what it costs.</description>
+      <description>Notion, Todoist, Fantastical, Streaks and Paste cost me about $260 a year, and I still lost things in the gaps between them. Here is what I built instead.</description>
       <content:encoded><![CDATA[<p>In January 2025 I sat down to cancel one subscription and ended up cancelling five.</p>
-<p>I had gone looking for a single charge I did not recognise. What I found instead was a small, quiet stack of them: a notes app, a to-do app, a calendar, a habit tracker, and a clipboard manager. None of them was expensive. Two were under five dollars a month. That is exactly why I had never looked at them together.</p>
+<p>I had gone looking for a single charge I did not recognise. What I found instead was a small, quiet stack of them: Notion for notes, Todoist for tasks, Fantastical for the calendar, Streaks for habits, and Paste for the clipboard. None of them was expensive. Two were under five dollars a month. That is exactly why I had never looked at them together.</p>
 <p>Added up, they came to roughly $260 a year. For software I had already decided I wanted, years ago, and had been re-buying every month since without ever making the decision again.</p>
 <h2 id="the-bit-that-annoyed-me-was-not-the-money">The bit that annoyed me was not the money</h2>
 <p>$260 is a real number but it is not a crisis. What actually bothered me was what I got for it.</p>
-<p>A Tuesday looked like this. A thought arrives during a meeting, so it goes in the notes app. It turns out to have a deadline, so a task goes in the to-do app. The deadline is a Thursday, so I put a block in the calendar. Later I want the meeting link I had copied twenty minutes earlier, so I open the clipboard manager. That evening the habit tracker asks whether I did the thing I said I would do daily, and I have no idea, because the evidence is spread across four other apps.</p>
+<p>A Tuesday looked like this. A thought arrives during a meeting, so it goes in Notion. It turns out to have a deadline, so a task goes in Todoist. The deadline is a Thursday, so I put a block in Fantastical. Later I want the meeting link I had copied twenty minutes earlier, so I open Paste. That evening Streaks asks whether I did the thing I said I would do daily, and I have no idea, because the evidence is spread across four other apps.</p>
 <p>Five apps, five windows, five search boxes. Nothing was lost inside any one of them. Things were lost <em>between</em> them — in the seams, where the note about the project and the task for the project and the hour set aside for the project all existed, separately, and none of them knew about the others.</p>
-<p>Every one of those apps was well made. That is the strange part. The failure was not in the software; it was in the shape of the arrangement. Five good apps do not add up to one good system, because the connective tissue is you, doing it by hand, several times a day, forever.</p>
+<p>Every one of those apps was well made — Fantastical in particular is better at calendars than anything I have built or will build. That is the strange part. The failure was not in the software; it was in the shape of the arrangement. Five good apps do not add up to one good system, because the connective tissue is you, doing it by hand, several times a day, forever.</p>
 <h2 id="two-things-i-noticed-about-how-they-were-priced">Two things I noticed about how they were priced</h2>
 <p>The first: I had never re-decided. A subscription is a decision you make once and then stop making. The bank makes it for you every month after that. I had chosen a habit tracker in 2022 based on what I needed in 2022, and I was still paying for that choice three years later, having never once asked whether it was still true.</p>
 <p>The second is subtler, and it took me longer to see. When the money arrives monthly whether or not anything ships, the pressure on the software changes. It has to keep looking like it is worth the recurring charge. So features arrive — a team space, an AI assistant, an integrations directory, a web clipper — and the app gets bigger and slower and a little further from the thing you originally opened it for.</p>
