@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A customisable notes app: themes, fonts, per-note type</title>
+<meta name="description" content="Most customisation is procrastination wearing a colour picker. Four settings are not, and they change how much of your own writing you actually read." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/customising-a-notes-app/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/customising-a-notes-app/" />
+<meta property="og:title" content="A customisable notes app: themes, fonts, per-note type" />
+<meta property="og:description" content="Most customisation is procrastination wearing a colour picker. Four settings are not, and they change how much of your own writing you actually read." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="A customisable notes app: themes, fonts, per-note type" />
+<meta name="twitter:description" content="Most customisation is procrastination wearing a colour picker. Four settings are not, and they change how much of your own writing you actually read." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Making a notes app fit your eyes",
+  "description": "Most customisation is procrastination wearing a colour picker. Four settings are not, and they change how much of your own writing you actually read.",
+  "datePublished": "2026-08-16",
+  "dateModified": "2026-08-16",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/customising-a-notes-app/"
+  },
+  "url": "https://cyanote.app/blog/customising-a-notes-app/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/themes.webp",
+      "width": 1500,
+      "height": 938
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Customisation, Typography, Design",
+  "wordCount": 1322
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Making a notes app fit your eyes",
+      "item": "https://cyanote.app/blog/customising-a-notes-app/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-16" />
+<meta property="article:modified_time" content="2026-08-16" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Customisation" />
+<meta property="article:tag" content="Typography" />
+<meta property="article:tag" content="Design" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Making a notes app fit your eyes</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-16">16 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Customisation</li><li>Typography</li><li>Design</li></ul>
+    </header>
+
+    <div class="post">
+      <p>You will look at your notes app more than you look at most people you know. A few hours a day, for years, at the same handful of pixels. It is a strange thing to leave entirely at the factory setting, and a stranger thing to spend a Sunday on.</p>
+      <p>Both mistakes are common. This is about telling them apart.</p>
+      <h2 id="most-customisation-is-procrastination">Most customisation is procrastination</h2>
+      <p>Let me get this out of the way, because a page selling a customisable app has an obvious incentive not to.</p>
+      <p>Choosing a theme feels like work. It produces visible change, it is pleasant, it is reversible, and at the end of it you have written nothing. It belongs to the same family as reorganising your folders — an activity that borrows the <em>feeling</em> of getting your house in order without any of the effect, and I have written about <a href="/blog/how-to-organise-notes/">that particular trap already</a>.</p>
+      <p>If you are deciding between two accent colours, the honest answer is that neither will affect your life and you should pick the one you like and close the settings window.</p>
+      <h2 id="four-settings-that-are-not-decoration">Four settings that are not decoration</h2>
+      <p>The exception is narrow, and it is about reading rather than looking.</p>
+      <p><strong>Type size.</strong> Most software ships at a size chosen for a screenshot rather than for your desk. If you have ever enlarged the text on your phone, you have already decided this matters, and the same reasoning applies to the app you read for hours.</p>
+      <p><strong>Line spacing.</strong> This is the one people never touch and feel immediately. Text set too tight is harder to come back to — your eye loses its place returning to the start of each line, which is why the effect shows up most on the notes you re-read rather than the ones you write once.</p>
+      <p><strong>Line length.</strong> The third is not a font setting at all: it is how wide the text is allowed to run. A note stretched across a 27-inch monitor is a genuinely difficult read, and the fix is a narrower column rather than a bigger font.</p>
+      <p><strong>Contrast.</strong> Not "dark mode versus light mode" but the actual distance between the text and the page behind it. Too little and you squint at midday. Too much, on a black background at night, and the letters glare and smear at the edges.</p>
+      <p>Get those four right and you will read your own notes more. That is the whole return, and it is bigger than it sounds — most notes systems fail at the reading end, not the writing end.</p>
+      <h2 id="a-theme-is-two-palettes-not-one">A theme is two palettes, not one</h2>
+      <p>Here is the part that is genuinely harder than it looks, and where a lot of custom themes fall over.</p>
+      <p>Your Mac switches between light and dark on its own, at sunset or on a schedule, and a theme that has only been checked in one of them will be unreadable in the other about twelve hours from when you built it. Grey-on-grey that is elegant at 2pm becomes invisible at 11pm.</p>
+      <p>So a theme worth shipping is two full palettes that have both been checked for contrast, not one palette with the brightness inverted. Cyanote has fifteen of them on that basis. A few are there for specific conditions rather than for taste:</p>
+      <ul><li><strong>Newsprint</strong> — broadsheet paper and pure black ink. The highest-contrast light theme, for a bright room or a screen you are fighting with.</li><li><strong>Sepia</strong> — warm, low-contrast reading paper. The opposite errand: easiest on the eyes in a dim room, and the one to reach for when you are reading rather than typing.</li><li><strong>Phosphor</strong> — amber on warm carbon. A terminal throwback that turns out to be a genuinely good theme for looking at code.</li><li><strong>Midnight</strong> — true black, for OLED screens. On a Mac the point is not battery, it is that a black page in a dark room stops the whole window acting as a lamp.</li></ul>
+      <p>The rest are ordinary and that is fine. Ordinary is what you want for eight hours.</p>
+      <figure><img src="/images/themes.webp" alt="A themes gallery showing light and dark palettes side by side" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Fifteen themes, each checked in both palettes. The dark half is where most themes quietly fail.</figcaption></figure>
+      <h2 id="per-note-settings-which-is-the-actual-argument">Per-note settings, which is the actual argument</h2>
+      <p>Global settings assume everything you write is the same kind of thing. It is not.</p>
+      <p>A journal entry you will re-read wants a serif, generous line spacing and a narrow column. A meeting note you will scan for one decision wants tighter spacing and a size you can take in at a glance. A snippet wants monospace and nothing else, because in code the shape of the characters carries meaning — a zero has to be distinguishable from an O, and a serif will not help you find a missing bracket.</p>
+      <p>So in Cyanote the body, heading and code typefaces are set separately, the size and line spacing with them, and the column width per note — globally <em>or</em> on a single note. The per-note version is the one that earns its keep, because it means the format can follow the material instead of the material being flattened to fit one setting.</p>
+      <p>It also does something quieter: it makes the kind of note visible before you have read a word of it. Open something set in monospace and you already know what you are looking at. That is worth more than any colour scheme, and it is most of why <a href="/blog/notes-and-code-in-one-app/">writing and code end up wanting different treatment in the same app</a>.</p>
+      <h2 id="building-your-own-and-the-way-it-goes-wrong">Building your own, and the way it goes wrong</h2>
+      <p>If none of the fifteen fits, the whole app is drawn from seven colours and you can set all seven. That is enough to build something genuinely your own.</p>
+      <p>It is also enough to build something you cannot read, and the failure is not obvious on the day you build it. Two mistakes account for nearly all of it:</p>
+      <p>Contrast that only works in one mode. You will pick your colours in the light and discover the result at night, when your accent colour has become a dark smear on a dark background.</p>
+      <p>Contrast that only works on your screen. A palette tuned on a bright display in a bright room can be unusable on the same laptop outdoors, or on an external monitor with different colour handling.</p>
+      <p>The shipped themes have been checked in both palettes. A theme you build has been checked by you, on one screen, on one afternoon. That is not an argument against building one — it is an argument for living with it for a week before deciding it is finished.</p>
+      <h2 id="when-the-defaults-are-the-right-answer">When the defaults are the right answer</h2>
+      <p>If you are undecided, use the default. It was chosen by someone who had to make it work for everybody, which is a decent proxy for making it work for you.</p>
+      <p>Change the size if the text is too small. Change the line spacing if you lose your place. Change the theme if the room is dark. Those are responses to an actual complaint, and a setting changed in response to a complaint almost always sticks. A setting changed out of curiosity almost always gets changed again next month.</p>
+      <p>The point of customisation is not self-expression in an app only you will see. It is that the software should stop being noticeable, so that what you wrote is the thing in front of you.</p>
+      <p>Cyanote does this the way it does everything else: locally, in <a href="/blog/what-local-first-means-for-your-notes/">a database on your own disk</a>, with no account, for $10 once. The settings live with your notes, which means they survive a restore and do not follow you to a second machine — because there is no sync, which is a real limitation and not a philosophical position.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/notes-and-code-in-one-app/">Notes and code, in the same app</a><span>Most people keep their writing in one app and their snippets in another. There is a real reason for the split — and a real cost to it. Here is both.</span></li><li><a href="https://cyanote.app/blog/writing-and-code-two-modes/">Writing and code are two different kinds of attention</a><span>Prose forgives you and code does not. Moving between the two costs more than the two seconds it looks like — here is how to make the switch smaller.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

@@ -7,12 +7,148 @@
     <atom:link href="https://cyanote.app/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Plain writing about keeping notes, running a week and owning your own data — from the person who builds Cyanote, a local-first Mac app you pay for once.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 15 Aug 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Aug 2026 09:00:00 +0000</lastBuildDate>
     <image>
       <url>https://cyanote.app/og-image.png</url>
       <title>The Cyanote blog — notes, tasks and calmer software</title>
       <link>https://cyanote.app/blog/</link>
     </image>
+    <item>
+      <title>Writing and code are two different kinds of attention</title>
+      <link>https://cyanote.app/blog/writing-and-code-two-modes/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/writing-and-code-two-modes/</guid>
+      <pubDate>Sun, 16 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Prose forgives you and code does not. Moving between the two costs more than the two seconds it looks like — here is how to make the switch smaller.</description>
+      <content:encoded><![CDATA[<p>Prose forgives you. You can write a sentence that is roughly right, keep going, and fix it later — in fact that is the only way anyone finishes anything. Getting it approximately down and improving it on the second pass is the method.</p>
+<p>Code does not work like that. A command is right or it is not, and "roughly right" is the failure mode that costs you an hour, because it looks correct and does something else.</p>
+<p>These are two different postures. Most of us hold both in the same working day, often within the same task, and the moving between them is where the day quietly leaks.</p>
+<h2 id="the-switch-is-not-the-two-seconds-it-looks-like">The switch is not the two seconds it looks like</h2>
+<p>Say you are writing up a process and you need the exact command. You switch to the editor to get it.</p>
+<p>The two seconds are not the cost. The cost is that the editor is full of other things — a file you had open, a diff you had not finished reading, an error in the terminal below it. You went in with one narrow errand and arrived somewhere with its own agenda. Twenty minutes later you are doing something legitimate and it is not what you were doing.</p>
+<p>The other half of the cost runs the opposite way, and it is subtler. Because getting the snippet is annoying, you do not get it. You write "run the usual deploy command" and move on. The document survives; the useful part of it does not. Then the version of you who reads it in March has to reconstruct what "usual" meant.</p>
+<h2 id="why-the-mode-shows-up-in-the-typing-itself">Why the mode shows up in the typing itself</h2>
+<p>The two modes are not just a state of mind — they disagree about what should happen when you press a key.</p>
+<p>In prose mode you want the software helping. Straight quotes becoming curly ones, a list continuing itself, a heading formatting as you type. This is invisible and correct, and you would miss it immediately if it stopped.</p>
+<p>In code mode every one of those is sabotage. The curly quote breaks the command. The list continuation mangles the indentation. A "helpful" capital at the start of a line changes what a case-sensitive flag means. Exactness needs an editor that does nothing you did not type.</p>
+<p>This is why the two live in different applications for most people — not because anyone chose that, but because one text box cannot do both. If you want the underlying argument for why one app can hold both anyway, <a href="/blog/notes-and-code-in-one-app/">that is a separate piece</a>. What follows assumes you have somewhere for both and is about how to arrange them.</p>
+<h2 id="keep-the-artefact-next-to-its-explanation">Keep the artefact next to its explanation</h2>
+<p>The single most useful arrangement is also the least clever: whatever you write about the thing should sit next to the thing itself.</p>
+<p>A runbook is a prose note. Each command it depends on is its own code note, linked from the runbook with <code>[[</code>. The runbook explains and links; the code note is the exact text and nothing else. Because the link shows up from both ends, the snippet knows which document it belongs to — so when you find it in six months, it comes with its reason attached.</p>
+<p>That solves the failure mode where the explanation and the artefact drift apart. They can still drift, but the moment you notice, they are one click from each other rather than two apps apart.</p>
+<p>Practically, in Cyanote, that is <code>⌘N</code> for the prose note and <code>⇧⌘N</code> for the code note, <code>[[</code> to link them, and <code>⌘S</code> in a code note to save it back to a real file on disk if the text is also live configuration somewhere. <code>⌘K</code> reaches any note by name and <code>⇧⌘F</code> searches inside all of them at once, so the retrieval end does not depend on your having filed anything correctly.</p>
+<h2 id="make-the-mode-visible-before-you-read-a-word">Make the mode visible before you read a word</h2>
+<p>A small thing with a return out of proportion to the effort: set the code notes in monospace and leave the prose notes in whatever you write in. Typeface, size and line spacing are per-note settings, so this costs nothing after the first time.</p>
+<p>The point is not aesthetics. It is that you can see which mode a note is in before you have read a word of it — and so you arrive already in the right posture instead of adjusting halfway down the page. <a href="/blog/customising-a-notes-app/">The rest of what is worth setting</a> is mostly about reading comfort; this one is about attention.</p>
+<h2 id="batch-the-modes-when-you-can">Batch the modes when you can</h2>
+<p>The cheapest switch is the one you do not make. Two habits do most of the work here.</p>
+<p><strong>Write first, verify second.</strong> Draft the whole document in prose mode, leaving a marker wherever an exact value goes. Then do one pass collecting every exact value at once. One switch instead of nine, and the writing keeps its momentum, because it was never interrupted to go and fetch a flag.</p>
+<p><strong>Capture snippets when you are already in code mode.</strong> The moment to save a command is the moment it finally works — not later, when you are writing the document, because by then you are in the wrong mode and you will paraphrase it instead. A working command and a sentence about what it does, saved at the moment of relief. That sentence takes eight seconds and is the entire difference between an archive and a junk drawer.</p>
+<p>If you keep a lot of things this way, the clipboard is the other half of that story: the <a href="/blog/mac-app-notes-and-clipboard/">pinned snippet and the copy history</a> catch things you have not decided to keep yet.</p>
+<h2 id="when-you-should-absolutely-switch-apps">When you should absolutely switch apps</h2>
+<p>Do not take any of this as an argument for working in one window.</p>
+<p>When you are actually building — running things, reading errors, moving between files, using git — go to a real editor and stay there. That is code mode at full depth and a notes app has no business in it. There is no debugger here, no terminal, nothing to run, and pretending otherwise would waste your afternoon.</p>
+<p>The arrangement above is for the <em>other</em> thing: the writing that surrounds the work. Runbooks, decisions, how the thing is configured and why, the fragments you will need again in a context you cannot predict. That work is mostly prose with exact bits embedded in it, and it is the work that gets abandoned when the two halves live in different buildings.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>If your working day is entirely one mode, this is not a problem you have. A writer with no snippets and an engineer who never writes anything down are both well served by one good app and no thought about it at all.</p>
+<p>The switching cost is worth attention when the two are genuinely interleaved — when the document you are writing is about a system, and half of what makes it useful is text that has to be exact.</p>
+<p>Cyanote holds both kinds in one window, on one Mac, in <a href="/blog/what-local-first-means-for-your-notes/">one local database</a>, for $10 once. It has no sync and no mobile app, so if the runbook needs to be readable from a phone at 3am, this is the wrong tool and you should know that before you pay rather than after.</p>]]></content:encoded>
+      <category>Workflow</category>
+      <category>Focus</category>
+      <category>Method</category>
+    </item>
+    <item>
+      <title>Notes and code, in the same app</title>
+      <link>https://cyanote.app/blog/notes-and-code-in-one-app/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/notes-and-code-in-one-app/</guid>
+      <pubDate>Sun, 16 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Most people keep their writing in one app and their snippets in another. There is a real reason for the split — and a real cost to it. Here is both.</description>
+      <content:encoded><![CDATA[<p>You are writing up how the deployment works. Three paragraphs in, you need the command — the actual one, with the flags, the one that took an afternoon to get right. It is not in this app. It is in a scratch file in a text editor, or in terminal scrollback, or in a message you sent yourself.</p>
+<p>So you go and get it. And on the way back, if you are honest, about a third of the time you do not come back.</p>
+<p>That round trip is so normal that it reads as the cost of doing business. It is worth asking why it exists, because the answer is more interesting than "I never got organised".</p>
+<h2 id="you-keep-two-kinds-of-text-and-they-want-opposite-things">You keep two kinds of text, and they want opposite things</h2>
+<p>The first kind is written to be read. Sentences, headings, a list of what you decided and why. It tolerates a typo. It benefits from being tidied up as you type — a straight quote turned into a curly one, a dash lengthened, a stray double space collapsed.</p>
+<p>The second kind is written to be re-run. A command, a config block, a regex, a query, the four lines that fix the thing that breaks every March. It does not tolerate a typo, and the tidying that helps the first kind is actively destructive to the second. A smart quote in a shell command is not a nicer-looking quote. It is a syntax error that takes ten minutes to see, because it looks correct.</p>
+<p>That is the whole reason for the split. It is not laziness or a failure to consolidate. Your prose editor is helpful, your snippets need an editor that refuses to help, and one text box cannot be both at once.</p>
+<h2 id="why-just-use-a-code-block-is-not-quite-the-answer">Why "just use a code block" is not quite the answer</h2>
+<p>Every serious notes app has code blocks now. Fence some text in backticks, get a monospace font and syntax colouring, done.</p>
+<p>That solves the smallest part of the problem. A code block inside a prose document is still living in a prose document: it is a paragraph that happens to be wearing a different typeface. It has no file on disk, so nothing can run it and nothing else can read it. It cannot be opened on its own. When you copy it out, you are as likely to bring along an invisible character as not.</p>
+<p>It is a fine way to <em>show</em> code inside an explanation. It is a poor way to <em>keep</em> code you intend to use.</p>
+<h2 id="what-the-split-actually-costs">What the split actually costs</h2>
+<p>Not much on any given occasion, which is exactly why it lasts for years.</p>
+<p><strong>The explanation and the artefact drift apart.</strong> The snippet is in one place, and the paragraph explaining what it is for is in another, and only one of them gets updated. Usually the snippet. Six months later you have a command that works and no memory of what it does to the database, which is a worse position than having neither.</p>
+<p><strong>Two search boxes, and neither one is complete.</strong> You half-remember something. Was it a thing you wrote down or a thing you saved? You look in both apps, in order, every time. The answer to that question should never have been load-bearing.</p>
+<p><strong>Snippets end up wherever was closest at the time.</strong> A Gist, a message to yourself, an untitled file called <code>test2.sh</code>, the desktop. None of these is a bad place on the day. Collectively they are not a system, and the only index is your memory.</p>
+<figure><img src="/images/note.webp" alt="A note editor with the slash-command menu open, showing headings, lists, tables and code blocks" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>A prose editor doing prose things. The snippet needs the opposite of all of this.</figcaption></figure>
+<h2 id="what-changes-when-both-live-in-one-app">What changes when both live in one app</h2>
+<p>The useful version of "one app" is not a prose editor with better code blocks. It is two editors, each honest about what it is for, in the same window and the same database.</p>
+<p>A code note in Cyanote is its own kind of note. It opens in a code editor rather than the block editor — monospace, syntax highlighting, language detected from what you paste, and none of the typing help that turns a working command into a broken one. <code>⇧⌘N</code> makes one; <code>⌘N</code> makes an ordinary note.</p>
+<p>Three things follow from that, and they are the actual argument.</p>
+<p><strong>A code note can be a file.</strong> <code>⌘S</code> saves it straight back to a real path on disk. So the config you keep and the config the machine reads can be the same text rather than two copies that agree for a while. That is the difference between a note about your setup and your setup.</p>
+<p><strong>The prose can point at the code.</strong> <code>[[</code> links one note to another, and the note being linked to shows what links back. The runbook links to the snippet. Open the snippet in six months and it tells you which runbook it belongs to. Neither one can quietly become an orphan.</p>
+<p><strong>One search box covers both.</strong> Full-text search across everything you have written, prose and code alike, so "did I write it down or save it" stops being a question you have to answer before you start looking.</p>
+<p>None of this is exotic. It is what you would build if you accepted that the two kinds of text belong together and that they need different editors — which most apps do not, because they have picked a side.</p>
+<h2 id="where-a-real-editor-still-wins-and-it-is-not-close">Where a real editor still wins, and it is not close</h2>
+<p>This is the part a product page would skip, so let me be plain about it.</p>
+<p>Cyanote is not an IDE and is not trying to become one. There is no language server, no refactoring, no debugger, no test runner, no git integration, no extension ecosystem, and no way to run anything. It cannot open a project. It opens notes.</p>
+<p>If you are building software, that work belongs in a real editor — free ones included, and they are extremely good. Notepad++ has done the exact-text job on Windows for two decades without asking anybody for a subscription. VS Code is free and does everything listed in the paragraph above.</p>
+<p>The distinction that matters is between the code you are <em>writing</em> and the code you are <em>keeping</em>. The first belongs in a project, under version control, in a proper editor. The second — the loose, reusable, hard-won fragments that never justified a repository of their own — is the part that has no home, and that is the part this is for.</p>
+<h2 id="when-two-apps-is-the-right-answer">When two apps is the right answer</h2>
+<p>If everything you touch lives in a repository, and you have never once lost a command, the split is not costing you anything and this is a solved problem you do not have.</p>
+<p>If your notes are already Markdown files in a folder, you are most of the way there by a different route: your editor can open them, and your notes are text your tools can read. That is a legitimately good setup and I am not going to pretend otherwise.</p>
+<p>And if you work on more than one machine, stop here. Cyanote keeps everything in one SQLite database on one disk and has no sync of any kind, which for anyone moving between a laptop and a desktop is disqualifying on its own — not a caveat, a disqualification.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>The case for one app is narrow and specific. It applies when you keep prose and you keep snippets, when the two constantly refer to each other, and when you are tired of paying a context switch to move six inches between them.</p>
+<p>Cyanote sits on that side: notes and code notes in one window, one local database, one search box, <a href="/blog/notes-app-without-an-account/">no account and no server</a>, for $10 once. If the fiddling itself is what you enjoy, <a href="/blog/customising-a-notes-app/">what is actually worth customising</a> covers the settings that change how the text reads rather than how it looks, and <a href="/blog/writing-and-code-two-modes/">two kinds of attention</a> is about arranging the work rather than the app. And if what you want is Notion with fewer moving parts, the <a href="/compare/notion-alternative/">comparison page</a> is the more useful thing to read next.</p>]]></content:encoded>
+      <category>Notes</category>
+      <category>Code</category>
+      <category>Workflow</category>
+    </item>
+    <item>
+      <title>Making a notes app fit your eyes</title>
+      <link>https://cyanote.app/blog/customising-a-notes-app/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/customising-a-notes-app/</guid>
+      <pubDate>Sun, 16 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Most customisation is procrastination wearing a colour picker. Four settings are not, and they change how much of your own writing you actually read.</description>
+      <content:encoded><![CDATA[<p>You will look at your notes app more than you look at most people you know. A few hours a day, for years, at the same handful of pixels. It is a strange thing to leave entirely at the factory setting, and a stranger thing to spend a Sunday on.</p>
+<p>Both mistakes are common. This is about telling them apart.</p>
+<h2 id="most-customisation-is-procrastination">Most customisation is procrastination</h2>
+<p>Let me get this out of the way, because a page selling a customisable app has an obvious incentive not to.</p>
+<p>Choosing a theme feels like work. It produces visible change, it is pleasant, it is reversible, and at the end of it you have written nothing. It belongs to the same family as reorganising your folders — an activity that borrows the <em>feeling</em> of getting your house in order without any of the effect, and I have written about <a href="/blog/how-to-organise-notes/">that particular trap already</a>.</p>
+<p>If you are deciding between two accent colours, the honest answer is that neither will affect your life and you should pick the one you like and close the settings window.</p>
+<h2 id="four-settings-that-are-not-decoration">Four settings that are not decoration</h2>
+<p>The exception is narrow, and it is about reading rather than looking.</p>
+<p><strong>Type size.</strong> Most software ships at a size chosen for a screenshot rather than for your desk. If you have ever enlarged the text on your phone, you have already decided this matters, and the same reasoning applies to the app you read for hours.</p>
+<p><strong>Line spacing.</strong> This is the one people never touch and feel immediately. Text set too tight is harder to come back to — your eye loses its place returning to the start of each line, which is why the effect shows up most on the notes you re-read rather than the ones you write once.</p>
+<p><strong>Line length.</strong> The third is not a font setting at all: it is how wide the text is allowed to run. A note stretched across a 27-inch monitor is a genuinely difficult read, and the fix is a narrower column rather than a bigger font.</p>
+<p><strong>Contrast.</strong> Not "dark mode versus light mode" but the actual distance between the text and the page behind it. Too little and you squint at midday. Too much, on a black background at night, and the letters glare and smear at the edges.</p>
+<p>Get those four right and you will read your own notes more. That is the whole return, and it is bigger than it sounds — most notes systems fail at the reading end, not the writing end.</p>
+<h2 id="a-theme-is-two-palettes-not-one">A theme is two palettes, not one</h2>
+<p>Here is the part that is genuinely harder than it looks, and where a lot of custom themes fall over.</p>
+<p>Your Mac switches between light and dark on its own, at sunset or on a schedule, and a theme that has only been checked in one of them will be unreadable in the other about twelve hours from when you built it. Grey-on-grey that is elegant at 2pm becomes invisible at 11pm.</p>
+<p>So a theme worth shipping is two full palettes that have both been checked for contrast, not one palette with the brightness inverted. Cyanote has fifteen of them on that basis. A few are there for specific conditions rather than for taste:</p>
+<ul><li><strong>Newsprint</strong> — broadsheet paper and pure black ink. The highest-contrast light theme, for a bright room or a screen you are fighting with.</li><li><strong>Sepia</strong> — warm, low-contrast reading paper. The opposite errand: easiest on the eyes in a dim room, and the one to reach for when you are reading rather than typing.</li><li><strong>Phosphor</strong> — amber on warm carbon. A terminal throwback that turns out to be a genuinely good theme for looking at code.</li><li><strong>Midnight</strong> — true black, for OLED screens. On a Mac the point is not battery, it is that a black page in a dark room stops the whole window acting as a lamp.</li></ul>
+<p>The rest are ordinary and that is fine. Ordinary is what you want for eight hours.</p>
+<figure><img src="/images/themes.webp" alt="A themes gallery showing light and dark palettes side by side" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Fifteen themes, each checked in both palettes. The dark half is where most themes quietly fail.</figcaption></figure>
+<h2 id="per-note-settings-which-is-the-actual-argument">Per-note settings, which is the actual argument</h2>
+<p>Global settings assume everything you write is the same kind of thing. It is not.</p>
+<p>A journal entry you will re-read wants a serif, generous line spacing and a narrow column. A meeting note you will scan for one decision wants tighter spacing and a size you can take in at a glance. A snippet wants monospace and nothing else, because in code the shape of the characters carries meaning — a zero has to be distinguishable from an O, and a serif will not help you find a missing bracket.</p>
+<p>So in Cyanote the body, heading and code typefaces are set separately, the size and line spacing with them, and the column width per note — globally <em>or</em> on a single note. The per-note version is the one that earns its keep, because it means the format can follow the material instead of the material being flattened to fit one setting.</p>
+<p>It also does something quieter: it makes the kind of note visible before you have read a word of it. Open something set in monospace and you already know what you are looking at. That is worth more than any colour scheme, and it is most of why <a href="/blog/notes-and-code-in-one-app/">writing and code end up wanting different treatment in the same app</a>.</p>
+<h2 id="building-your-own-and-the-way-it-goes-wrong">Building your own, and the way it goes wrong</h2>
+<p>If none of the fifteen fits, the whole app is drawn from seven colours and you can set all seven. That is enough to build something genuinely your own.</p>
+<p>It is also enough to build something you cannot read, and the failure is not obvious on the day you build it. Two mistakes account for nearly all of it:</p>
+<p>Contrast that only works in one mode. You will pick your colours in the light and discover the result at night, when your accent colour has become a dark smear on a dark background.</p>
+<p>Contrast that only works on your screen. A palette tuned on a bright display in a bright room can be unusable on the same laptop outdoors, or on an external monitor with different colour handling.</p>
+<p>The shipped themes have been checked in both palettes. A theme you build has been checked by you, on one screen, on one afternoon. That is not an argument against building one — it is an argument for living with it for a week before deciding it is finished.</p>
+<h2 id="when-the-defaults-are-the-right-answer">When the defaults are the right answer</h2>
+<p>If you are undecided, use the default. It was chosen by someone who had to make it work for everybody, which is a decent proxy for making it work for you.</p>
+<p>Change the size if the text is too small. Change the line spacing if you lose your place. Change the theme if the room is dark. Those are responses to an actual complaint, and a setting changed in response to a complaint almost always sticks. A setting changed out of curiosity almost always gets changed again next month.</p>
+<p>The point of customisation is not self-expression in an app only you will see. It is that the software should stop being noticeable, so that what you wrote is the thing in front of you.</p>
+<p>Cyanote does this the way it does everything else: locally, in <a href="/blog/what-local-first-means-for-your-notes/">a database on your own disk</a>, with no account, for $10 once. The settings live with your notes, which means they survive a restore and do not follow you to a second machine — because there is no sync, which is a real limitation and not a philosophical position.</p>]]></content:encoded>
+      <category>Customisation</category>
+      <category>Typography</category>
+      <category>Design</category>
+    </item>
     <item>
       <title>When a free clipboard manager stops being enough</title>
       <link>https://cyanote.app/blog/when-a-free-clipboard-manager-stops-being-enough/</link>
