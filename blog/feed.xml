@@ -57,6 +57,82 @@
       <category>Method</category>
     </item>
     <item>
+      <title>Tracking habits without a separate app for it</title>
+      <link>https://cyanote.app/blog/tracking-habits-without-a-separate-app/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/tracking-habits-without-a-separate-app/</guid>
+      <pubDate>Sun, 16 Aug 2026 09:00:00 +0000</pubDate>
+      <description>A habit tracker works by being seen daily. A fifth dock icon is least likely to get that. What changes when the streak lives next to the rest of your day.</description>
+      <content:encoded><![CDATA[<p>A habit tracker has exactly one mechanism: you see it, and seeing it either continues a streak or breaks one. That's the entire product. There's no clever algorithm underneath a habit app — the whole design problem is getting a small piece of information in front of you at the right moment, reliably, for months.</p>
+<p>Which makes it a strange category to put behind its own app icon, its own launch, its own moment of remembering it exists.</p>
+<h2 id="the-mechanism-is-visibility-not-features">The mechanism is visibility, not features</h2>
+<p>Most habit-tracking apps compete on what happens around the checkmark — streak graphics, charts, badges, social accountability, reminders tuned by machine learning. Some of that helps some people. None of it is the mechanism.</p>
+<p>The mechanism is: you open something, you see today's habits, you mark them or you don't. Everything else is decoration on top of a single daily glance. Which means the question that actually matters isn't "which app has the best streak visualisation" — it's "which app am I actually going to open every day without being asked."</p>
+<h2 id="why-a-dedicated-habit-app-struggles-with-its-own-job">Why a dedicated habit app struggles with its own job</h2>
+<p>This is the part that's a little unfair to habit apps, because it's not a quality problem. It's a category problem.</p>
+<p>A habit tracker is, almost by definition, an app you don't need for anything else. You don't check it to write something down, look something up, or get something done — you check it to check it. That makes it the easiest app on your Mac to simply stop opening, because nothing else pulls you toward it. A notes app gets opened because you need to write a note. A habit tracker gets opened because you remembered to open the habit tracker, which is precisely the kind of remembering a habit tracker exists to replace.</p>
+<p>The apps that work around this lean hard on notifications — a push reminder every evening, sometimes several. That's a real solution, and it's also the reason people delete habit-tracking apps: the badge count and the reminders become their own small source of guilt, decoupled from whatever the habit actually was.</p>
+<figure><img src="/images/habits.webp" alt="Cyanote&#x27;s habit tracker, shown as part of the same daily view as notes and to-dos" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The checkmark is the whole mechanism. The question is only ever whether you see it.</figcaption></figure>
+<h2 id="what-changes-when-it-s-not-a-separate-app">What changes when it's not a separate app</h2>
+<p>Not a redesign of the mechanism — the same glance, the same checkmark. What changes is where that glance happens.</p>
+<p>If your habits live in the same window as the notes you're already writing and the to-dos you're already checking, the habit tracker stops needing its own reason to be opened. You see today's habits because you were already there for something else, the same way a kitchen calendar gets glanced at while you're getting coffee rather than because you scheduled time to look at a calendar. The visibility the whole category depends on gets inherited from an app you were opening anyway, instead of manufactured by a notification.</p>
+<p>This is the same argument I made about <a href="/blog/weekly-review-in-20-minutes/">the weekly review</a> fitting into twenty minutes rather than becoming its own ceremony — the systems that survive are usually the ones that attach to something you were already doing, not the ones that ask for a new standalone ritual. A habit tracker you have to remember to open is asking for a ritual. One sitting inside your daily notes is attaching to one you already have.</p>
+<h2 id="a-dedicated-habit-app-is-a-perfectly-good-answer">A dedicated habit app is a perfectly good answer</h2>
+<p>Worth saying plainly, because a page selling the bundled version has an obvious reason not to.</p>
+<p>If you want serious analytics on your habits — correlation between habits, long-range charts, a gamified system that genuinely works for you — a dedicated tracker will do more than a habit list bolted onto a notes app ever will. As of 16 August 2026, Streaks is a one-time $5.99 purchase on the App Store and has been one of the more respected habit trackers on Apple platforms for years; Habitica turns the whole thing into an RPG with a free tier, for people who are honestly motivated by that. Both have spent years refining exactly this one thing, and if what's currently stopping you is that your habit tracker isn't good enough at being a habit tracker, switching to a plainer, less-featured one won't fix that.</p>
+<p>The bundled version isn't trying to out-feature them. It's solving a different, more common failure: not "my habit tracker's charts aren't detailed enough" but "I stopped opening my habit tracker in February and didn't notice until April."</p>
+<h2 id="what-actually-breaks-a-habit-tracking-streak">What actually breaks a habit-tracking streak</h2>
+<p>Worth naming, because it's rarely the habit itself.</p>
+<p><strong>Too many habits at once.</strong> A list of eleven things to check every day is a chore, not a habit tracker, and the eleventh item is the one that quietly stops getting checked first — followed, a few weeks later, by all of them.</p>
+<p><strong>No room for a miss.</strong> A single missed day that resets a 40-day streak to zero teaches exactly one lesson: stop looking at the app. The trackers that hold up long-term usually let a streak bend without breaking outright.</p>
+<p><strong>The tracker itself becoming the thing you avoid.</strong> If checking in has started to feel like a small guilt trip rather than a small win, the app has started working against its own mechanism.</p>
+<p>None of these is fixed by more features. They're fixed by fewer habits, more forgiveness, and — the part this post is actually about — a lower cost to glancing at the thing in the first place.</p>
+<h2 id="the-honest-version-of-the-choice">The honest version of the choice</h2>
+<p>If you're deep into habit tracking as its own discipline — chains, correlations, a system you've tuned over years — a dedicated app that's spent that long on the one feature will serve you better than a habit list living inside a bigger app.</p>
+<p>For the more ordinary case — a handful of habits you want to keep half an eye on without giving them their own icon, their own notifications, and their own moment of remembering to open it — the bundled version's whole argument is that it doesn't need a mechanism of its own. It borrows the one you already have, from the app you were opening anyway.</p>
+<p>Cyanote's habit tracker sits in the same window as the notes and the to-dos, in a local database on your Mac, with no account and no streak data leaving your machine. It is one part of five, not the deepest habit tracker available — and if the depth is what you're after, Streaks or Habitica will out-feature it honestly.</p>]]></content:encoded>
+      <category>Habits</category>
+      <category>Workflow</category>
+      <category>Buying advice</category>
+    </item>
+    <item>
+      <title>A Pomodoro timer that&#x27;s already in the app you&#x27;re working in</title>
+      <link>https://cyanote.app/blog/pomodoro-timer-mac-app/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/pomodoro-timer-mac-app/</guid>
+      <pubDate>Sun, 16 Aug 2026 09:00:00 +0000</pubDate>
+      <description>A focus timer works until switching to it is its own distraction. What that costs when the timer lives in a separate app, and what changes when it doesn&#x27;t.</description>
+      <content:encoded><![CDATA[<p>The Pomodoro Technique is close to the simplest productivity method that exists: 25 minutes of work, a 5-minute break, repeat, with a longer break every fourth round. <a href="https://www.francescocirillo.com/pages/pomodoro-technique">Francesco Cirillo developed it in the late 1980s</a>, named for the tomato-shaped kitchen timer he used at the time. There is nothing to configure and nothing to learn. Which makes it a strange method to have accumulated so many dedicated apps to run it.</p>
+<h2 id="the-technique-doesn-t-need-an-app">The technique doesn't need an app</h2>
+<p>You could run a Pomodoro session with a kitchen timer, and for the first decade or so people mostly did. The method's entire value is the boundary — a fixed block where you've pre-committed to one task and a fixed break where you've pre-committed to stopping. Nothing about that requires software.</p>
+<p>What software adds is the parts around the boundary: a sound when the block ends, a count of how many rounds you've done today, a way to see the streak. Useful, but worth naming as decoration on a method that works without any of it — the same relationship a habit tracker's charts have to the actual checkmark.</p>
+<h2 id="where-a-separate-timer-app-costs-you-something">Where a separate timer app costs you something</h2>
+<p>The problem isn't that dedicated Pomodoro apps are bad at the timer. They're usually good at it. The problem is where they sit relative to the work.</p>
+<p>You're writing, or coding, or working through a task list, and you switch to the timer app to start a session. Twenty-five minutes later it makes a sound, and you switch to it again to start the break, then switch back again to resume. None of those switches is expensive on its own. Multiplied by six or eight rounds a day, it's a small tax paid entirely in the currency the technique exists to protect — your attention, spent on the tool that's supposed to be protecting it.</p>
+<p>There's a sharper version of this if the timer app has its own notifications, its own badge, its own reason to check in on you. At that point the tool meant to reduce context-switching has become a second source of it.</p>
+<figure><img src="/images/routines.webp" alt="Cyanote&#x27;s routines and Pomodoro timer, running alongside the day&#x27;s notes and to-do list" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The timer's whole job is a boundary. It doesn't need its own window to draw one.</figcaption></figure>
+<h2 id="what-changes-when-the-timer-is-where-the-work-is">What changes when the timer is where the work is</h2>
+<p>The mechanism doesn't change — still 25 minutes, still a break, still the same countdown. What changes is that starting it doesn't cost an app switch, because it's a control inside the window you were already using to do the work. You start a round from your task list, keep working in the same place, and the timer runs alongside rather than requiring its own visit.</p>
+<p>That matters more for the break than the work block. The moment a 25-minute timer ends is exactly the moment you're most likely to open something distracting "for a second" — and if the timer itself lives inside the app that also holds your to-do list, the natural next glance is at the list, not at whatever's one tab over in a browser. A five-minute break inside a focus tool tends to stay five minutes. A five-minute break that starts by opening a browser tab rarely does.</p>
+<p>This is the same logic behind <a href="/blog/weekly-review-in-20-minutes/">running a weekly review in twenty minutes</a> rather than letting it sprawl — a bounded block only holds its boundary if the tool running it isn't itself an invitation to wander.</p>
+<h2 id="routines-are-the-same-idea-run-longer">Routines are the same idea, run longer</h2>
+<p>A single Pomodoro round is a 25-minute boundary around one task. A routine is the same idea stretched across a morning, an evening, or a weekly reset — a fixed sequence of steps you run without re-deciding the order each time.</p>
+<p>The value of both is identical: deciding the shape of the block once, in advance, so you're not negotiating with yourself in the moment about what comes next or how long it should take. A routine that lives next to your to-do list can pull directly from it — the same way a Pomodoro session started from your task list already knows what you're working on, a morning routine sitting next to your notes can open straight into the day's first task instead of ending in "okay, now what."</p>
+<h2 id="a-dedicated-pomodoro-app-is-a-perfectly-good-answer">A dedicated Pomodoro app is a perfectly good answer</h2>
+<p>As with the rest of this app, worth saying plainly rather than around.</p>
+<p>If you want serious analytics on your focus time — long-range charts of deep work, integrations with a calendar or a task manager you already use, a genuinely well-designed standalone experience — a dedicated timer will do more than a Pomodoro control tucked into a bigger app. As of 16 August 2026, Session is $4.99 a month or $39.99 a year and is built specifically around deep-work tracking; Be Focused is a one-time $4.99 on the Mac App Store and covers the core technique cleanly without a subscription; Forest gamifies the block by growing a virtual tree, with Forest Plus from $5.99 a month for the extras, though its Mac presence is a browser extension rather than a native app. Years of attention have gone into each of those, in a way a timer that's one feature among five isn't trying to match.</p>
+<p>What the bundled version is solving is narrower: not "make the best possible Pomodoro app," but "don't make starting a 25-minute focus block cost an app switch in the first place."</p>
+<h2 id="what-to-check-before-you-rely-on-either">What to check before you rely on either</h2>
+<p>If a timer's alerts are the thing that pulls you out of focus — a notification banner, a sound that cuts through headphones at the wrong volume — check what you can turn off before you commit to a method that depends on the boundary being quiet rather than loud.</p>
+<p>Check whether the break is actually enforced or just suggested. A timer that lets you skip the break with one click is teaching you to skip the break.</p>
+<p>And ask whether the routine or timer data needs an account to work. A 25-minute countdown has no reason to touch a server, and neither does a checklist of morning steps.</p>
+<h2 id="the-honest-version-of-the-choice">The honest version of the choice</h2>
+<p>If focus tracking is a discipline you're serious about — data across weeks, integration with a bigger deep-work practice — a dedicated app built entirely around that will outperform a timer that's one part of a larger tool.</p>
+<p>For the far more common case — you want the boundary the Pomodoro Technique provides without paying an app-switch tax to get it, and a routine that doesn't require its own launch to run — the value is in the timer not needing a reason of its own to be open. It borrows the one your task list already gives you.</p>
+<p>Cyanote's timer and routines sit in the same window as the notes, the to-dos and the calendar, running locally with no account and nothing sent anywhere. It's one part of five, and if deep-work analytics or a gamified tree is what actually keeps you consistent, Session, Be Focused or Forest will serve that specific need better than a bundled timer ever will.</p>]]></content:encoded>
+      <category>Focus</category>
+      <category>Routines</category>
+      <category>How-to</category>
+    </item>
+    <item>
       <title>Notes and code, in the same app</title>
       <link>https://cyanote.app/blog/notes-and-code-in-one-app/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/notes-and-code-in-one-app/</guid>
@@ -102,6 +178,49 @@
       <category>Notes</category>
       <category>Code</category>
       <category>Workflow</category>
+    </item>
+    <item>
+      <title>A calendar that lives next to your notes and your to-dos</title>
+      <link>https://cyanote.app/blog/mac-app-notes-tasks-calendar/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/mac-app-notes-tasks-calendar/</guid>
+      <pubDate>Sun, 16 Aug 2026 09:00:00 +0000</pubDate>
+      <description>A calendar tells you what is happening. It cannot tell you why, or what you meant to bring. Here is what changes when it sits next to the notes that explain it.</description>
+      <content:encoded><![CDATA[<p>Open your calendar app right now and look at tomorrow's first meeting. You will see a time, a title, and maybe a video-call link. What you will not see is the paragraph of context you had in your head when you booked it — what you actually need to say, the number you were going to check first, the follow-up from last time. That lives somewhere else, if it lives anywhere at all.</p>
+<p>That gap is the whole subject here.</p>
+<h2 id="a-calendar-answers-one-question">A calendar answers one question</h2>
+<p>A calendar is built to answer "when." It is extremely good at that one job — recurring events, time zones, invitations, the free/busy grid that makes scheduling with other people possible at all. None of that is in question.</p>
+<p>What it was never built to answer is "why," or "with what." The event is a box with a start time. Anything you needed to prepare, remember, or bring to it has to live somewhere else, and "somewhere else" is doing a lot of quiet work in that sentence.</p>
+<h2 id="where-the-missing-half-actually-goes">Where the missing half actually goes</h2>
+<p>In practice it goes in one of three places, and each has its own failure mode.</p>
+<p><strong>A separate notes app.</strong> You open the calendar, see the meeting, then switch apps and search for notes about it — if you remembered to title them in a way you'd recognise later. Two apps, two windows, and the connection between "this meeting" and "these notes" exists only in your memory, not in either tool.</p>
+<p><strong>The event description field.</strong> Better than nothing, and worse than it looks. Most calendar apps give that field no formatting, no links between entries, and a search that treats it as an afterthought. It becomes a place things go to be typed once and never read again.</p>
+<p><strong>Nowhere.</strong> The most common answer, and the reason meetings open with "sorry, can you remind me what this was about."</p>
+<p>None of these is a character flaw. They are what happens when the tool that shows you <em>when</em> and the tool that holds <em>why</em> are not the same tool, and moving information between them is a chore you have to remember to do under time pressure — the exact conditions under which people don't.</p>
+<figure><img src="/images/calendar.webp" alt="Cyanote&#x27;s calendar, shown next to the day&#x27;s notes and to-dos in the same window" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The calendar answers when. Everything next to it answers what you actually needed to know.</figcaption></figure>
+<h2 id="what-changes-when-they-share-a-window">What changes when they share a window</h2>
+<p>Less than the pitch usually implies, and something specific: the trip disappears.</p>
+<p>When the calendar sits in the same app as your notes and your to-dos, an event on Thursday and the note about Thursday's meeting are one click apart instead of one app-switch and one search apart. You don't have to remember to link them, because there was never a wall to cross in the first place — you write the note the same place you see the date.</p>
+<p>The other half is the to-do side. A task with a real deadline is a calendar problem wearing a to-do list's clothes. Keeping tasks and events in the same app means "when is this actually due" and "what does my Thursday look like" are one glance, not two tools reconciled by hand. If your task list is currently a kanban board, <a href="/blog/personal-kanban-board/">how a personal Kanban board holds up against a real weekly to-do list</a> is worth reading before you decide whether the board or the calendar should own a given deadline — they answer different questions and a lot of task lists try to make one column do both jobs.</p>
+<h2 id="a-dedicated-calendar-app-is-a-perfectly-good-answer">A dedicated calendar app is a perfectly good answer</h2>
+<p>I'd rather say this plainly than bury it, the same as I would for any of the other pieces of this app.</p>
+<p>If your calendar life is genuinely just scheduling — you manage several shared calendars, you're coordinating meeting times across a team, you live and die by natural-language event entry — a dedicated calendar app will beat a bundled one on the thing it specialises in. As of 16 August 2026, Fantastical's Individual Premium plan is $6.99 a month or $56.99 a year, with a real free tier underneath it for people who don't need the extras; BusyCal is a one-time purchase in the same space, aimed at people who want the polish without a subscription. Both have had years to get scheduling exactly right, in ways a smaller calendar view inside a bigger app is not trying to compete with.</p>
+<p>The combined calendar is not for that job. It's for the much larger number of days where the interesting question isn't "schedule this meeting with four people across three time zones" — it's "what am I doing today, and what do I need to remember about it."</p>
+<h2 id="where-the-intersection-actually-sits">Where the intersection actually sits</h2>
+<p>This is the same shape of gap I found writing about <a href="/blog/mac-app-notes-and-clipboard/">the clipboard manager next to the notes app</a>: as of 16 August 2026, none of the dedicated Mac calendar apps do notes, to-dos and a clipboard history, and none of the all-in-one productivity apps has a calendar that holds up against a purpose-built one on its own terms.</p>
+<p>So the honest framing isn't "an all-in-one calendar beats Fantastical." It doesn't try to. It's that a calendar view sitting in the same window as the rest of your day removes the specific friction of context that lives on the wrong side of an app switch — and that most days don't need what a specialist calendar is optimised for anyway.</p>
+<h2 id="what-to-check-before-you-rely-on-one">What to check before you rely on one</h2>
+<p>If you're weighing a bundled calendar against a dedicated one, the questions worth asking are about what it can't do rather than what it can.</p>
+<p>Does it handle recurring events properly, including the edge cases — a meeting that moves for one week only, an event that repeats on the last weekday of the month? This is where thin calendar implementations show their seams first.</p>
+<p>Can it show more than one day at a time when you need to plan a week rather than react to today? A calendar that only does "today" is a to-do list wearing a date.</p>
+<p>Does it sync with the calendars you don't control — a shared family calendar, a work calendar someone else manages? A calendar that only knows about events created inside it is a smaller tool than it looks like on the pricing page.</p>
+<p>And the same storage question that applies everywhere in this app: is the calendar data local, or does using it mean handing your schedule to a server you don't control?</p>
+<h2 id="the-honest-version-of-the-choice">The honest version of the choice</h2>
+<p>If scheduling across other people's calendars is the actual job — team meetings, shared availability, invitations that need to go somewhere real — a dedicated calendar app is doing work a bundled one isn't built for, and no amount of window-proximity fixes that.</p>
+<p>The combined view earns its place on the much more common day: the one where you're not scheduling anything, you're just trying to see what's happening and what you need to know about it, without a trip across two apps to reassemble the two halves of the same fact.</p>
+<p>Cyanote's calendar sits in the same window as the notes, the to-dos and the board, in a local database on your Mac, with no account and no sync to a second device. That last part means it will lose to Fantastical or BusyCal the moment you need your calendar on more than one machine — worth knowing before you switch, not after.</p>]]></content:encoded>
+      <category>Calendar</category>
+      <category>Workflow</category>
+      <category>Buying advice</category>
     </item>
     <item>
       <title>Making a notes app fit your eyes</title>
