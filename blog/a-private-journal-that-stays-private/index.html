@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Private journaling on a Mac: an app nobody else can read</title>
+<meta name="description" content="You will not write honestly in a document that might be read. Which makes where a journal lives a writing question first, and a security question second." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/a-private-journal-that-stays-private/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/a-private-journal-that-stays-private/" />
+<meta property="og:title" content="Private journaling on a Mac: an app nobody else can read" />
+<meta property="og:description" content="You will not write honestly in a document that might be read. Which makes where a journal lives a writing question first, and a security question second." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Private journaling on a Mac: an app nobody else can read" />
+<meta name="twitter:description" content="You will not write honestly in a document that might be read. Which makes where a journal lives a writing question first, and a security question second." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A journal that stays private",
+  "description": "You will not write honestly in a document that might be read. Which makes where a journal lives a writing question first, and a security question second.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/a-private-journal-that-stays-private/"
+  },
+  "url": "https://cyanote.app/blog/a-private-journal-that-stays-private/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/note.webp",
+      "width": 1500,
+      "height": 938
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Privacy, Writing, Local-first",
+  "wordCount": 1175
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "A journal that stays private",
+      "item": "https://cyanote.app/blog/a-private-journal-that-stays-private/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Privacy" />
+<meta property="article:tag" content="Writing" />
+<meta property="article:tag" content="Local-first" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>A journal that stays private</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-17">17 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>5 min read</span>
+      </div>
+    <ul class="tags"><li>Privacy</li><li>Writing</li><li>Local-first</li></ul>
+    </header>
+
+    <div class="post">
+      <p>The entire value of a journal is that it is the one place you do not perform.</p>
+      <p>Which means the question of where it lives is not primarily a security question. It is a <em>writing</em> question — because if some part of you suspects the words could be read, you will write a slightly managed version of what you think, and the managed version is worthless. It is the same as the unmanaged one with the useful part removed.</p>
+      <p>People often discover this the wrong way round: they journal in a shared workspace for a month, produce nothing but bland entries, and conclude they are not a journalling sort of person.</p>
+      <h2 id="the-three-things-that-make-you-self-censor">The three things that make you self-censor</h2>
+      <p><strong>A shared or work account.</strong> Anything administered by an employer. Whether or not anyone would look, you know that someone could, and knowing is enough.</p>
+      <p><strong>A device other people use.</strong> A family iPad, a laptop left open, a machine with a session that does not lock. The risk is not a breach; it is somebody walking past.</p>
+      <p><strong>A service that reads your content.</strong> Anything doing automatic summarising, tagging or semantic indexing has, by construction, transmitted what you wrote. That is <a href="/blog/ai-features-and-private-notes/">a real property of those features</a>, not a suspicion, and it is worth knowing which side of it your app is on before you write down something you have told nobody.</p>
+      <p>The fix for all three is the same and it is architectural rather than behavioural: put the journal somewhere that has no route out.</p>
+      <h2 id="what-a-private-by-construction-arrangement-looks-like">What a private-by-construction arrangement looks like</h2>
+      <p><strong>A local file, on a machine you control.</strong> No account to breach, no server holding a copy, no support person with database access. The threat model becomes: someone with your unlocked laptop. Which is a threat you can actually reason about.</p>
+      <p><strong>Encrypted where it sits.</strong> Full-disk encryption at minimum. Per-note locking on top, if the app offers it, so a shoulder does not read it and neither does anyone who gets past the disk.</p>
+      <p><strong>No AI, or AI that provably runs locally.</strong> Not because the feature is bad, but because "summarise my journal" and "nothing leaves the machine" are mutually exclusive unless the model is on your disk.</p>
+      <p><strong>An export you control.</strong> Journals are the notes people most want to still have in twenty years. That means a readable format and a backup, which is the one place this gets complicated — see below.</p>
+      <h2 id="the-one-that-actually-needs-thinking-about-backups">The one that actually needs thinking about: backups</h2>
+      <p>Here is the tension nobody resolves cleanly.</p>
+      <p>A journal is the single hardest thing to lose and the single worst thing to have copied. Those pull in opposite directions, and most advice picks one and pretends the other does not exist.</p>
+      <p>The arrangement that handles both: <strong>an encrypted backup you control the key to.</strong> An external drive, encrypted, kept somewhere else. Or an encrypted archive of the export, in cloud storage — the storage provider holds a blob they cannot read, which is a genuinely different arrangement from them holding your text.</p>
+      <p>What does not work: putting the journal in a sync service for safety. That is a copy on someone else's infrastructure in readable form, and it undoes the entire arrangement in exchange for convenience.</p>
+      <p>If that sounds like too much, the honest minimum is: full-disk encryption on, one encrypted copy on an external drive, updated occasionally. That covers the fire and the theft, which are the realistic losses.</p>
+      <figure><img src="/images/note.webp" alt="Any note can be locked with a password and encrypted where it sits — so the private layer and the practical layer can share one app" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The journal can be locked and the shopping list not. Per-note is the granularity that makes one app workable.</figcaption></figure>
+      <h2 id="what-actually-goes-in-one">What actually goes in one</h2>
+      <p>Since the question of what to write stops most people faster than where to put it.</p>
+      <p><strong>No obligation to write daily.</strong> The daily streak is the most common reason people abandon journals, because a missed day becomes a small failure and three missed days become a stopped habit. Write when there is something.</p>
+      <p><strong>The uncomfortable version.</strong> If the entry could be shown to a colleague without difficulty, it is probably not doing the job. The value is in what you are not saying out loud.</p>
+      <p><strong>What you are actually worried about</strong>, not the tidy version. The tidy version is the one you have already told people, and you did not need to write it down.</p>
+      <p><strong>Occasionally, what happened.</strong> Plain events with dates. Not for the writing — for the reading. In five years the emotional entries will be strange to you and the factual ones will be the ones you are glad exist.</p>
+      <h2 id="reading-it-back">Reading it back</h2>
+      <p>The part that makes it worth having done, and the part almost nobody does.</p>
+      <p>Once or twice a year, read a year old. Two things happen reliably. Things you were certain about turn out to have been wrong, in ways that are useful and slightly humbling — the same mechanism as <a href="/blog/keeping-a-decision-journal/">a decision journal</a>, applied to your life rather than your choices. And things that felt enormous turn out to have been survivable, which is the most useful information a journal ever provides, and it is only available in your own handwriting about your own crisis.</p>
+      <p>Expect to find some of it embarrassing. That is what an honest record looks like, and the entries that are not embarrassing are usually the performed ones.</p>
+      <h2 id="paper-briefly">Paper, briefly</h2>
+      <p>Worth mentioning honestly: paper is genuinely private, needs no threat model, and cannot be indexed by anything.</p>
+      <p>It also cannot be searched, is difficult to back up, and is readable by anyone who opens the drawer — which for a lot of living situations is a worse privacy property than an encrypted file, not a better one.</p>
+      <p>The reasonable answer is: paper if you like writing by hand and nobody goes in your drawer; an encrypted local file if you want to search it in ten years. Both are defensible. What is not defensible is a journal in a work account.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>If you have tried journalling and produced nothing but bland entries, the diagnosis is usually not discipline. It is that some part of you did not believe the document was private, and that belief is not something you can override by deciding to be honest.</p>
+      <p>Fix the arrangement first. The writing tends to follow.</p>
+      <p>Cyanote is private by construction rather than by policy: one SQLite database on your own Mac, no account, no sync, no analytics, no crash reporter, no AI reading anything. Any note can be locked with a password and is encrypted where it sits, so the journal can be locked while the shopping list is not. <code>⇧⌘D</code> opens today's daily note when you do want a dated habit, and everything exports to one readable file — which, encrypted and kept on a drive somewhere else, is the version of a backup this particular material deserves.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/ai-features-and-private-notes/">AI features in a notes app, and what they cost</a><span>Ask-your-notes-anything means sending your notes somewhere. What each kind of AI feature actually transmits, and which ones can run on your machine.</span></li><li><a href="https://cyanote.app/blog/inheriting-someone-elses-notes/">When you inherit somebody else&#x27;s notes</a><span>A colleague left, or a relative died, and now you have their files. The first decision is not how to organise them. It is whether to read them at all.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

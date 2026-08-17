@@ -14,6 +14,51 @@
       <link>https://cyanote.app/blog/</link>
     </image>
     <item>
+      <title>Write it down the first time you work it out</title>
+      <link>https://cyanote.app/blog/writing-your-own-runbooks/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/writing-your-own-runbooks/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>You have solved the same problem three times. Each time it took forty minutes. The note that would have made it four takes ninety seconds to write.</description>
+      <content:encoded><![CDATA[<p>Renewing the certificate. Restoring the database from a backup. Getting the printer to talk to the network again. Resetting the thing after the update breaks it. The specific sequence of clicks that makes the tax portal accept the file.</p>
+<p>Each of these took you forty minutes the first time, mostly spent finding the answer. Each of them takes about forty minutes every subsequent time, because you did not write the answer down, and the reason you did not is always the same: at the moment you solved it, you were relieved and late and moving on.</p>
+<h2 id="the-shape-of-the-loss">The shape of the loss</h2>
+<p>The tell is a specific feeling. You start a task and think <em>I have done this before</em> — and then discover you remember having done it, and not how.</p>
+<p>Partial memory is worse than none, because it makes you confident enough to start without looking it up, and then you spend twenty minutes retracing your own steps to reach the point where you concede you have forgotten. The knowledge decayed into an index entry with no page behind it.</p>
+<p>This happens with anything you do more than once and less than monthly. More often than monthly and you retain it; less often than yearly and you accept looking it up. The band in between is where a personal runbook pays, and it is a wide band.</p>
+<h2 id="the-ninety-seconds">The ninety seconds</h2>
+<p>Immediately after it works, before you move on. Not later.</p>
+<p><strong>The exact commands or clicks, in order.</strong> Copied, not paraphrased. The real flags, the real menu names. A paraphrase is a description of the solution; the literal steps are the solution.</p>
+<p><strong>What did not work.</strong> One line. The obvious approach that failed, so next time you skip it — this frequently saves more time than the working steps, because next time you will have the same wrong instinct.</p>
+<p><strong>The thing that was not obvious.</strong> There is always one. The setting in a different menu, the order that matters, the fact that it has to be done twice. This is the line that took you thirty of the forty minutes.</p>
+<p><strong>Where you found the answer</strong>, if it came from somewhere. A link, an issue number, a person's name.</p>
+<p>Ninety seconds while it is fresh. The same window as <a href="/blog/writing-an-incident-review/">an incident timeline</a> and for the same reason: understanding starts unloading the moment the pressure comes off.</p>
+<figure><img src="/images/note.webp" alt="A code note with the actual commands, the flags, and the line explaining the part that was not obvious" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Copied, not paraphrased. A paraphrase is a description of the solution. The literal steps are the solution.</figcaption></figure>
+<h2 id="write-it-for-a-stranger">Write it for a stranger</h2>
+<p>The mistake that makes runbooks useless is writing them for the person you are right now, who has all the context.</p>
+<p>"Restart the service" is a note by someone holding the whole picture. In eight months you will not know which service, on which machine, or how one restarts it here. Write the machine, the exact command, and the check that tells you it worked.</p>
+<p>The test: could you follow this at 2am, tired, having forgotten everything? That standard sounds excessive for a personal note and it is exactly right, because 2am and having forgotten everything is the realistic condition of use. Nobody consults a runbook on a calm afternoon when they remember how it works.</p>
+<p>Length is not the fix — most good runbooks are eight lines. Specificity is.</p>
+<h2 id="what-deserves-one">What deserves one</h2>
+<p><strong>Anything you have now done twice.</strong> Twice is the threshold, and it is worth being mechanical about it. The second time you solve something, you have proof it recurs, and you are holding the answer.</p>
+<p><strong>Anything that only happens once a year.</strong> Tax filings, renewals, the annual report, the certificate. You will forget completely, guaranteed, and there is no possibility of retaining it.</p>
+<p><strong>Anything you do under pressure.</strong> When something is broken and people are waiting, working from a written sequence is dramatically better than improvising from partial memory — that is the whole reason runbooks exist in operations.</p>
+<p><strong>Anything involving a system with a bad interface.</strong> Government portals, banking, enterprise software, anything where the correct sequence is arbitrary and undiscoverable. These are pure runbook material, because nothing about the interface will remind you.</p>
+<h2 id="where-they-belong">Where they belong</h2>
+<p><strong>Personal ones in your own notes.</strong> Findable by search, because you will not remember what you called it — you will search for the error message or the tool name. That means <a href="/blog/searching-your-own-notes/">search has to reach inside code blocks</a>, which is where the commands are.</p>
+<p><strong>Shared ones in the shared place.</strong> If a colleague could need it, it belongs in the team's documentation. Keeping operational knowledge in a personal file makes you a bottleneck, and being a bottleneck feels like job security and is actually just being interrupted a lot — the thing <a href="/blog/handing-over-your-work/">a handover document</a> exists to unwind.</p>
+<h2 id="when-you-use-it-fix-it">When you use it, fix it</h2>
+<p>The maintenance rule, and it is the only one.</p>
+<p>Follow your own runbook and something will be slightly wrong — a menu renamed, a flag deprecated, a step no longer needed. Fix it <em>then</em>, in the two minutes you are already there. Not later.</p>
+<p>A runbook corrected on each use stays accurate indefinitely. One never revisited rots, and a rotted runbook is worse than none: you follow it, it fails halfway, and now you are debugging both the problem and the instructions.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Nobody writes these at the moment of relief. That is the entire difficulty and no amount of agreeing with the principle changes it.</p>
+<p>The one intervention that works is making the writing take ninety seconds instead of ten minutes. Paste the commands, add two lines, done. Any attempt at a proper document — a title, a structure, an explanation of the system — is a ten-minute job, and ten-minute jobs do not happen at the moment you have just fixed something and are already late.</p>
+<p>Cyanote is a reasonable home for these: code notes with syntax highlighting and language detection for the commands, prose notes with code blocks inline when you need explanation around them, and <code>⇧⌘F</code> searching the body of everything including the code — so the error message you paste today is what finds this note in eighteen months. It is one local database on your own Mac, which for the set of instructions that make your own machines and accounts work is where it should be.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>How-to</category>
+      <category>Workflow</category>
+    </item>
+    <item>
       <title>Writing an incident review people will read</title>
       <link>https://cyanote.app/blog/writing-an-incident-review/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/writing-an-incident-review/</guid>
@@ -820,6 +865,54 @@
       <category>Reading</category>
     </item>
     <item>
+      <title>Staying informed without drowning in it</title>
+      <link>https://cyanote.app/blog/staying-informed-without-drowning/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/staying-informed-without-drowning/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>You read four hours a week and could not summarise any of it. The problem is not the volume of what you read. It is that none of it was written down.</description>
+      <content:encoded><![CDATA[<p>Think about what you read last week — news, feeds, posts, whatever your version is. Now try to say what you learned.</p>
+<p>Most people can produce almost nothing, from several hours of reading. Not because the material was worthless, but because reading without writing produces a sensation of being informed and very little retention, and the sensation is convincing enough that nobody investigates it.</p>
+<p>The problem is not volume, and reading less does not by itself fix it. Reading four hours and retaining nothing and reading one hour and retaining nothing differ only in the hours.</p>
+<h2 id="the-three-failure-modes">The three failure modes</h2>
+<p><strong>The scroll.</strong> Continuous partial reading, mostly headlines and openings, producing a general awareness that things are happening and no specific knowledge of any of it. The most common by a wide margin.</p>
+<p><strong>The saved pile.</strong> Read-later services and a folder of tabs. Saving feels like reading and it is a substitute for it — the pile grows, occasionally gets declared bankrupt, and produces roughly nothing over its lifetime. <a href="/blog/a-someday-list-that-is-not-a-graveyard/">The same failure as an unpruned someday list</a>.</p>
+<p><strong>Following without accumulating.</strong> You genuinely read about a topic, regularly, over years, and cannot say what your view is — because each piece was consumed in isolation and nothing ever built.</p>
+<p>All three are the same missing step. Nothing is written down, so nothing accumulates.</p>
+<h2 id="one-note-per-topic-not-per-article">One note per topic, not per article</h2>
+<p>The change that fixes it.</p>
+<p>Do not save articles. Keep a note per <em>thing you care about</em> — three or four of them, not thirty — and add to it when you read something worth adding.</p>
+<p>Two or three lines: what this piece claimed, whether it changed your view, and the source. Over a year that note is a genuinely informed position, assembled from a hundred small readings, in your own words. It is the thing you wanted when you started reading about the subject, and no reading list ever produces it.</p>
+<p>The reason it works is that adding to a topic note forces the step reading skips: deciding what this piece actually said and whether you believe it. That decision is the whole of the value, and it takes about forty seconds.</p>
+<figure><img src="/images/note.webp" alt="One note per topic, added to over months, rather than a folder of articles nobody opens" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>A hundred small readings become a position. A hundred saved articles become a folder.</figcaption></figure>
+<h2 id="what-is-worth-writing-down">What is worth writing down</h2>
+<p>Not summaries of the article — the article summarises itself and you can find it again.</p>
+<p><strong>Anything that changed your mind.</strong> The most valuable and the rarest. Note what you thought before, which is the part that evaporates.</p>
+<p><strong>A number worth remembering</strong>, with its source and date. Numbers without sources are how people end up confidently wrong.</p>
+<p><strong>A claim you want to check.</strong> Rather than accepting it or dismissing it, park it. This is the single best defence against absorbing something because it was stated confidently.</p>
+<p><strong>A connection to something else you know.</strong> Where understanding actually comes from — <a href="/blog/an-idea-bank-for-writing/">the same material an idea bank collects</a>.</p>
+<p><strong>What you now think.</strong> One line, occasionally. Your view, dated. Rereading your own view from two years ago is unusually informative, and unavailable any other way.</p>
+<h2 id="the-three-day-rule">The three-day rule</h2>
+<p>Practical filter for anything that is news rather than knowledge.</p>
+<p><strong>If it is genuinely important, it will still be there in three days</strong>, better reported, with the corrections already made. The first version of a breaking story is routinely wrong in details and sometimes in substance, and reading it costs attention and then costs it again when the accurate version appears.</p>
+<p>Deliberately waiting produces a strictly better version of the same information at lower cost. It also removes most of the emotional weight, which is largely a function of immediacy rather than importance.</p>
+<p>This is the single change with the biggest effect on how much reading feels like drowning.</p>
+<h2 id="sources-briefly">Sources, briefly</h2>
+<p>Two observations, both unfashionable.</p>
+<p><strong>A small number of good sources beats a large number of any.</strong> Three or four things you actually read beats forty subscriptions you skim. The marginal source adds volume, not information, because sources overlap enormously.</p>
+<p><strong>Pull beats push, here as elsewhere.</strong> A feed reader you open is better than notifications that arrive, for the same reason <a href="/blog/reminders-you-do-not-start-ignoring/">it is true of reminders</a>: pushed information arrives when you cannot think about it, and gets processed with the reflex rather than the attention.</p>
+<h2 id="the-quarterly-read-back">The quarterly read-back</h2>
+<p>Fifteen minutes, and it is what turns notes into knowledge.</p>
+<p>Read your topic notes. Three things happen: you find you know more than you thought, which is genuinely encouraging; you find predictions you made that were wrong, which is instructive and slightly uncomfortable; and you find the topics you have stopped adding to, which is a signal you have stopped caring about them and can stop reading about them.</p>
+<p>That last one is how the list of things you follow stays small. Topics you no longer add to are topics you can drop, and dropping them is what makes room.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Some reading is for pleasure and should not be processed at all. A novel, a good essay, something interesting for its own sake — writing notes about that is a way of turning enjoyment into homework, and it is why some people ruin reading for themselves.</p>
+<p>This applies to the reading you do because you want to <em>know</em> something, and the test is simple: if you would be annoyed to have retained nothing, write something down. If you would not, do not.</p>
+<p>Cyanote holds the topic notes: one per thing you follow, growing over months, searchable by any word in them years later with <code>⇧⌘F</code>, and <code>[[</code> links tying a topic to whatever else it turns out to touch. It has no reader, no feed and no clipper — the article stays where it is, and what you write about it is the part worth keeping. One local database on your own Mac, so a decade of your own views on things you cared about stays yours.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>Reading</category>
+      <category>Notes</category>
+    </item>
+    <item>
       <title>Software for a Mac that is a few years old</title>
       <link>https://cyanote.app/blog/software-for-an-older-mac/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/software-for-an-older-mac/</guid>
@@ -1135,6 +1228,61 @@
       <category>Workflow</category>
     </item>
     <item>
+      <title>Planning something with a fixed date and many suppliers</title>
+      <link>https://cyanote.app/blog/planning-a-big-event/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/planning-a-big-event/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>A wedding, a conference, a milestone party. One immovable date, a dozen suppliers, and the same three failures every time — none of which is the budget.</description>
+      <content:encoded><![CDATA[<p>A big event is an unusual project. The date cannot move, most of the work happens in the last fortnight, you are coordinating a dozen suppliers you have never worked with, and you are doing it around a life that continues.</p>
+<p>Wedding planning software exists and mostly consists of a checklist somebody else wrote, a budget spreadsheet, and a guest list. Two of those three you can do better yourself, and the third is not where things go wrong.</p>
+<h2 id="the-three-failures">The three failures</h2>
+<p><strong>A deadline nobody was tracking.</strong> Final numbers to the caterer. The deposit that secures the date. The point after which the deposit is non-refundable. Every supplier has one and they are stated once, early, in an email or on a call.</p>
+<p><strong>A detail agreed and not recorded.</strong> What the price includes. Whether they set up. What time they arrive. Whether the corkage was waived. These are agreed verbally, in a friendly conversation, and remembered differently by both parties four months later.</p>
+<p><strong>Everything landing in the last two weeks.</strong> Because most of the work genuinely can only be done then — final numbers, seating, timings, confirmations — and if the earlier work slipped, it lands there too, on top of a fortnight that was already full.</p>
+<p>None of these is a budget problem. Budgets go over, and everyone survives that.</p>
+<h2 id="one-note-per-supplier">One note per supplier</h2>
+<p>Venue, caterer, photographer, music, flowers, transport, cake, hire company. One note each.</p>
+<p>At the top: contact name and direct number, the reference, what has been paid and what remains, what is included, and <strong>their deadline</strong> — the date they need something from you. That last one is the most important line in the note and it is the thing suppliers state once and assume you have absorbed.</p>
+<p>Below: dated entries after every conversation. What was discussed, what was agreed, what they committed to.</p>
+<p>Same shape as <a href="/blog/keeping-client-work-straight/">a client note</a>, because an event is a project with a dozen suppliers and one immovable date.</p>
+<h2 id="write-up-every-call-in-four-lines">Write up every call, in four lines</h2>
+<p>The one discipline that carries the whole thing.</p>
+<p>"Spoke to Anna, 14 August: confirmed 6pm arrival, setup included, final numbers by the 2nd, corkage waived for our own wine."</p>
+<p>That sentence is worth more than the rest of your planning, because it converts a friendly verbal understanding into a dated record. Almost every event dispute is an honest difference in recollection between two people who both remember the conversation and remember it differently. A dated note settles it in ten seconds and without any unpleasantness — you are not producing evidence, you are checking your own memory out loud.</p>
+<p>Email confirmation of anything significant is the belt to that braces: "just to confirm what we agreed". Suppliers are used to it and it costs one line.</p>
+<figure><img src="/images/calendar.webp" alt="Every supplier deadline and every payment date in the calendar, with a reminder well ahead" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Their deadline, not yours. Suppliers state it once and assume you absorbed it.</figcaption></figure>
+<h2 id="every-supplier-deadline-in-the-calendar">Every supplier deadline in the calendar</h2>
+<p>The moment you learn it, as an event, with a reminder two weeks ahead.</p>
+<p>Final numbers. Deposit dates. Balance-due dates. The point where the cancellation terms change. Anything the supplier needs from you, with their name on it.</p>
+<p>Two weeks rather than a few days, because the response to most of these is not instant — final numbers need chasing the last four people, and the balance needs money to be moved. Notice you cannot act on is not notice.</p>
+<h2 id="the-board-three-columns">The board, three columns</h2>
+<p>Waiting on me, waiting on them, done.</p>
+<p>The point is the middle column. Events stall because a supplier has not come back and nobody is counting the days — the photographer was going to send the contract, three weeks ago. A board makes that visible in ten seconds, and a polite chase at day seven costs nothing and moves everything.</p>
+<p>Keep everything on it, including the small things. The small things are what land in the last fortnight.</p>
+<h2 id="the-timeline-document">The timeline document</h2>
+<p>The single most useful artefact for the event itself, and the one people write last or not at all.</p>
+<p>A minute-by-minute schedule for the day: who arrives when, who sets up what, when things start, who is responsible for each transition. Written in advance, sent to every supplier and to the two or three people helping.</p>
+<p>The reason it matters is what it does to <em>you</em>. On the day, you cannot be the coordinator — you will be occupied, or getting married, or hosting. The timeline is what lets someone else answer questions without finding you, and the difference between an event where the host is repeatedly pulled aside and one where they are not is entirely this document.</p>
+<p>Include phone numbers for every supplier on it. Whoever is holding it will need them and will not have them.</p>
+<h2 id="the-last-fortnight">The last fortnight</h2>
+<p>Since this is where it concentrates, plan for it deliberately.</p>
+<p><strong>Write the final-fortnight list in advance</strong>, when you are calm, around the two-month mark. What has to happen in those two weeks, in order. Following a list you wrote calmly is much better than generating one under pressure — <a href="/blog/checklists-for-things-you-do-every-week/">a routine rather than a memory task</a>.</p>
+<p><strong>Confirm everything, in writing, ten days out.</strong> Every supplier, a short message restating date, time, place and what they are bringing. This is where you find the one who has you down for the wrong Saturday, and finding it at ten days is entirely recoverable.</p>
+<p><strong>Decide who is answering questions on the day</strong>, and tell the suppliers that name.</p>
+<h2 id="afterwards">Afterwards</h2>
+<p>Twenty minutes, within the week, while it is fresh.</p>
+<p><strong>Who was good and who was not</strong>, with specifics. Friends will ask, and you will have forgotten by the time they do.</p>
+<p><strong>What it actually cost</strong>, all in. Nobody writes this down and everyone wishes they had.</p>
+<p><strong>What you would do differently.</strong> Vivid for about a fortnight and gone by the second month.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Event-planning software is not bad, and if a checklist somebody else wrote reduces your anxiety, use one — that is a real benefit and worth something on its own.</p>
+<p>What it does not do is hold the specific facts about your specific suppliers, which is where things go wrong. That is notes, a calendar and one board.</p>
+<p>Cyanote covers those three in one window: a note per supplier with references and their deadlines at the top, a calendar with reminders a day or a week ahead for every deposit and cut-off, tasks that take their date out of a typed sentence, and a board with three columns for the chasing. Full-text search finds "what did the caterer say about corkage" in four seconds, six months later. It is one local database on your own Mac, which for a project involving your contracts, your payments and your guest list is where it should be.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>Workflow</category>
+      <category>How-to</category>
+    </item>
+    <item>
       <title>The small text tools you keep pasting work data into</title>
       <link>https://cyanote.app/blog/pasting-work-data-into-random-websites/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/pasting-work-data-into-random-websites/</guid>
@@ -1315,6 +1463,152 @@
 <p>Cyanote handles the mixed shape: prose notes with syntax-highlighted code blocks inline, and separate code notes with language detection that can be saved straight back to a file on disk. <code>⇧⌘F</code> searches the body of everything including code blocks, <code>[[</code> links a note to the one it relates to, and notes nest into sub-pages so a codebase can have a page with children rather than fourteen loose notes. One local database, so the map you built of a system you were paid to understand stays yours.</p>]]></content:encoded>
       <category>Code</category>
       <category>Notes</category>
+      <category>Workflow</category>
+    </item>
+    <item>
+      <title>The notes that help when you are learning a language</title>
+      <link>https://cyanote.app/blog/notes-for-learning-a-language/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/notes-for-learning-a-language/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>The app handles vocabulary. What it cannot handle is the sentence you wanted to say and could not, which is the most useful thing you produce all week.</description>
+      <content:encoded><![CDATA[<p>Language apps are good at the part that is easy to make software for: vocabulary, drilling, spaced repetition. That part works, and if you are learning words, use one — <a href="/blog/revising-without-a-flashcard-app/">Anki and its relatives</a> will out-do anything you improvise.</p>
+<p>What no app catches is the thing that happens in a real conversation: you wanted to say something and could not. That gap is the single most valuable piece of information your week produces, and it disappears within about four hours.</p>
+<h2 id="the-gap-log">The gap log</h2>
+<p>One line, as soon as possible after the conversation.</p>
+<p><strong>What I wanted to say, in English.</strong> Exactly. "I would have picked it up but I was already late."</p>
+<p><strong>What I said instead</strong>, if anything. Usually something clumsy that worked.</p>
+<p><strong>What I actually needed</strong> — filled in later, when you look it up or ask someone.</p>
+<p>That is it. Two lines in the moment, one filled in afterwards.</p>
+<p>It works because it is <em>your</em> gap. A textbook chapter on the conditional is somebody's guess at what learners need. A list of eleven sentences you personally tried to say and could not is a curriculum built exactly to the shape of your life, in your register, about the things you actually talk about. Nothing bought can match it, and it costs a line a day.</p>
+<h2 id="what-else-is-worth-writing-down">What else is worth writing down</h2>
+<p><strong>Corrections, verbatim.</strong> When someone corrects you — a teacher, a friend, a stranger — write down what you said and what they said, in their words. Do not paraphrase into the rule; the rule you infer is often wrong, and the raw correction stays useful.</p>
+<p><strong>Things you heard that surprised you.</strong> A phrasing that was not what you would have constructed. An idiom. The word that turned out not to mean what you assumed. These are the entries you will reread with most benefit.</p>
+<p><strong>Your own mistakes, with the pattern.</strong> Everyone has three or four errors they make constantly. Written down over a month, they become visible and therefore fixable; unwritten, they are simply how you speak.</p>
+<p><strong>The word you looked up twice.</strong> Looking something up twice means it did not stick and it recurs, which is precisely the definition of something worth learning deliberately. Mark it the second time.</p>
+<figure><img src="/images/habits.webp" alt="A grid of days you did something in the language — the only quantity that matters, next to the notes that hold what happened" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The streak measures turning up. The gap log measures what you actually could not say.</figcaption></figure>
+<h2 id="sentences-not-words">Sentences, not words</h2>
+<p>The single most useful change most learners can make to what they write down.</p>
+<p>A word in isolation is close to unusable. You learn a noun and still cannot deploy it, because you do not know its gender, which preposition it takes, what register it belongs to, or which verb goes with it. All of that is carried by a sentence and none of it by a dictionary entry.</p>
+<p>So record the whole sentence you heard or needed, and mark the part you were learning. Three sentences with a word in context beat twenty isolated definitions, and if you do run flashcards, sentence cards outperform word cards for exactly this reason.</p>
+<h2 id="the-grid-for-the-one-thing-that-matters">The grid, for the one thing that matters</h2>
+<p>Consistency is the only variable in language learning that is not in dispute. Twenty minutes daily beats three hours on Sunday, reliably, and everyone knows this and does it anyway.</p>
+<p>A grid of the last four weeks — did I do something in the language today, yes or no — is the right shape for that one question, and it is worth keeping separate from everything else. Not hours, not words learned, not app streaks. Did I turn up.</p>
+<p>The reason a grid works better than a streak counter: a streak resets to zero and teaches you to stop looking after a missed day. A grid shows one gap on the 3rd and five ticks around it, which is an accurate picture of a good fortnight rather than a failure.</p>
+<h2 id="reading-it-back">Reading it back</h2>
+<p>The part that turns a log into learning.</p>
+<p><strong>The gap log, weekly.</strong> Look up the three or four you have not filled in, and use them deliberately in the next conversation. That is the loop, and it closes in a week.</p>
+<p><strong>The mistakes, monthly.</strong> Patterns appear across entries that are invisible within one. Two months in, most people find one grammatical thing they get wrong constantly, and fixing that one thing produces more improvement than a month of vocabulary.</p>
+<p><strong>Everything, at six months.</strong> Read what you were struggling with in month one. This is the single best antidote to the plateau feeling, which is the main reason adults quit — progress in a language is genuinely invisible from inside, and the only reliable measure is your own record of what used to be hard.</p>
+<h2 id="where-it-should-live">Where it should live</h2>
+<p>Somewhere it survives the app you are currently using.</p>
+<p>Language learning happens over years and across tools — an app, then a class, then a tutor, then a period of just reading. Notes kept inside any one of those are notes you lose at the transition, and the transitions are frequent. A general notes collection that exports to a readable file is the thing still standing in year three, when the gap log from year one is genuinely interesting.</p>
+<p>The practical requirements are small: it has to handle the script and any accented characters without fighting you, and search has to find them. Both are worth checking for a language that is not written in the alphabet you type in daily.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Notes are not how you learn a language. Talking to people is, and everything here is a support structure for that.</p>
+<p>But the gap log specifically is worth more than its size suggests, because it is the only artefact that records what you personally cannot yet do — and every other resource in the field is built around what learners in general cannot do. If you keep one thing, keep that.</p>
+<p>Cyanote holds the parts that are notes and the part that is a grid: habits show the last four weeks as rows and columns, so a missed Tuesday is one click and a gap is visible straight down the page; notes hold the gap log and the corrections, searchable years later by any word in them, including in whatever script you write in. It is one local database on your own Mac with a readable export — which for a record you want to still have when you are finally fluent is the part that matters.</p>]]></content:encoded>
+      <category>Learning</category>
+      <category>Method</category>
+      <category>Notes</category>
+    </item>
+    <item>
+      <title>Notes for the third time you explain something</title>
+      <link>https://cyanote.app/blog/notes-for-explaining-things/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/notes-for-explaining-things/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>The explanation that finally worked was invented on the spot and forgotten by Friday. Writing it down is the highest-return note nobody takes.</description>
+      <content:encoded><![CDATA[<p>You explain the thing. It does not land. You try again from a different direction. Still not quite. Then you say something — an analogy, a reframing, an example — and you see it arrive.</p>
+<p>That third explanation is the valuable one. It took two failures to find, it is genuinely better than the one in the documentation, and by Friday it is gone. Next time you will start from the first explanation again, because that is the one that comes to mind.</p>
+<p>Nobody writes these down, and they are among the cheapest and most reusable things anyone produces.</p>
+<h2 id="what-to-capture">What to capture</h2>
+<p>Not the explanation — the <em>third</em> explanation, plus the two that failed.</p>
+<p><strong>The version that worked.</strong> In the words you used, not tidied up. The rough spoken version is the one that works; the written-up version is usually the documentation you already had.</p>
+<p><strong>What they misunderstood first.</strong> This is more valuable than the explanation itself, because it is a fact about how people encounter the topic. If three people make the same wrong assumption, the assumption is predictable and your explanation should start there.</p>
+<p><strong>The question they asked that you had not anticipated.</strong> Every subject has a small set of questions that arise reliably and appear in no documentation, because whoever wrote it had forgotten the question was askable.</p>
+<p><strong>The analogy, if there was one.</strong> Analogies are expensive to invent and cheap to reuse, and a good one is often the entire explanation.</p>
+<figure><img src="/images/note.webp" alt="One note per thing you explain, growing each time you explain it" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The version that worked, in the words you used. Tidying it up is usually how it stops working.</figcaption></figure>
+<h2 id="the-curse-you-are-trying-to-work-around">The curse you are trying to work around</h2>
+<p>There is a specific reason this is hard, and knowing it helps.</p>
+<p>Once you understand something, you lose reliable access to what it was like not to. The gap that needed bridging becomes invisible; the explanation that seems natural to you is one that only works for someone who already has most of the picture. This is why experts routinely explain things badly and are surprised by it.</p>
+<p>You cannot fix that by trying harder to remember what confusion felt like. You can fix it by writing down, at the moment you observe it, what a specific person actually misunderstood. That record survives your own forgetting, and it is the only thing that does.</p>
+<p>Which means the notes are most valuable when written by someone who has just learned it — the same window that makes <a href="/blog/notes-for-the-first-ninety-days/">the first ninety days at a job</a> worth documenting, for exactly the same reason.</p>
+<h2 id="one-note-per-thing-you-explain">One note per thing you explain</h2>
+<p>Growing over time. Not a document you write, a note you add to.</p>
+<p>Each time you explain the topic, add a line: who, what they misunderstood, what worked. After six or seven, the note contains something no first-draft document ever does — a map of how people actually get lost, ordered by frequency.</p>
+<p>That is the point at which it is worth turning into real documentation, and the resulting document is dramatically better than one written from scratch, because it is organised around the misunderstandings rather than around the structure of the subject. Most bad documentation is bad because it is organised the second way.</p>
+<h2 id="where-teaching-and-onboarding-are-the-same-job">Where teaching and onboarding are the same job</h2>
+<p>The pattern is identical whether you are teaching a class, onboarding a colleague, supporting customers, or answering the same question in a forum for the fourth time.</p>
+<p><strong>Something recurs.</strong> The same topic, the same confusion, more than twice.</p>
+<p><strong>The explanation improves with iteration</strong>, and the improvement is lost without a record.</p>
+<p><strong>The audience does not know what they do not know</strong>, so their questions are the only reliable signal about where the gaps are.</p>
+<p>If you support people, the support queue is the best documentation backlog in existence and almost nobody treats it as one. The questions asked most often are the topics your documentation covers worst, in exactly that order, and that ranking is free.</p>
+<h2 id="note-the-wrong-answers-too">Note the wrong answers too</h2>
+<p>An under-used move: write down the plausible-but-wrong understanding.</p>
+<p>If everyone assumes the setting applies globally when it applies per-document, that specific wrong belief is worth recording, because your explanation should address it directly rather than describing the correct behaviour and hoping the contradiction is noticed. "It looks like it applies to everything — it does not, it is per document" corrects an existing model. "It applies per document" gets read straight past by someone who already believes otherwise.</p>
+<p>Correcting a wrong model is a different job from describing a right one, and only the notes tell you which model people arrive with.</p>
+<h2 id="the-reuse-is-the-payoff">The reuse is the payoff</h2>
+<p>Where this pays back, concretely.</p>
+<p><strong>The written version.</strong> When you finally write the documentation, the note is the outline and the hard part is done.</p>
+<p><strong>The next person.</strong> Onboarding someone means re-explaining everything you explained last year, and the note is the difference between doing it well and doing it from scratch.</p>
+<p><strong>Your own understanding.</strong> Teaching something is the standard test of whether you understand it, and the record of your explanations is a record of your understanding improving — visible in a way that is otherwise entirely internal.</p>
+<p><strong>A talk, a post, a course.</strong> Almost all good explanatory writing is downstream of having explained the thing out loud several times to people who did not get it. The notes are the raw material and they accumulate whether or not you ever use them.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>This is a habit with no payoff for months. The first three notes feel pointless because there is no pattern yet, and the value is entirely in the sixth reading, which is a long way off.</p>
+<p>If you explain the same things repeatedly — teaching, support, onboarding, management — it is one of the highest-return notes available, and it costs a line after a conversation you were having anyway.</p>
+<p>Cyanote suits it because the note grows rather than being written: one note per topic, appended to each time, nesting into sub-pages when a topic gets big, <code>[[</code> links tying an explanation to the system it is about, and <code>⇧⌘F</code> finding "what was the analogy I used for this" a year later. It is one local database on your own Mac — which for explanations you developed and will take to the next job is where they should be, rather than in a wiki you lose access to.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>Notes</category>
+      <category>Work</category>
+    </item>
+    <item>
+      <title>Surviving a house move on notes</title>
+      <link>https://cyanote.app/blog/notes-for-a-house-move/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/notes-for-a-house-move/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>A move is four months of small facts arriving from eleven organisations. The failures are always the same three, and none of them is the packing.</description>
+      <content:encoded><![CDATA[<p>Moving house is not a hard project. It is a long one, made of several hundred small facts arriving from eleven organisations over four months, most of them by phone or email, none of them in one place.</p>
+<p>The packing is the part everyone dreads and the part that always gets done, because it is physical and it has a deadline. The failures are elsewhere, and they are the same three every time.</p>
+<h2 id="the-three-failures">The three failures</h2>
+<p><strong>A date passed and nobody knew.</strong> The notice period on your current place. The date the mortgage offer expires. The last day to cancel the broadband without a fee. Every one of these is a date somebody told you once, in passing, three months before it mattered.</p>
+<p><strong>Nobody could find the fact.</strong> The reference number, the meter reading, the name of the person who said the thing, the exact wording of what the agent promised about the fridge. Somewhere in an email, or a call you did not write up.</p>
+<p><strong>Nobody knows who is waiting on whom.</strong> The solicitor is waiting on the survey, you think, or possibly on you. Chains stall for weeks because nobody is tracking whose move it is, and the person best placed to notice is you.</p>
+<p>None of the three is a packing problem, and none of them is fixed by a checklist from the internet.</p>
+<h2 id="one-note-per-organisation">One note per organisation</h2>
+<p>Not one note called "Moving". Eleven notes, one per party: the estate agent, the solicitor, the mortgage lender, the surveyor, the removal company, each utility, the council, the broadband provider.</p>
+<p>At the top of each: who they are, the reference number, the named contact and their direct line, and what they are responsible for. Below: dated entries, after every call.</p>
+<p>The reason for the split is the moment it is used. You are on hold, they have asked for your reference, and someone is about to tell you something. You need one note open, containing that organisation's reference and what they said last time. A single "Moving" note means scrolling through four months of everything to find the utility bit while somebody waits on the line.</p>
+<p>It is the same shape as <a href="/blog/keeping-client-work-straight/">a client note</a>, and a move is genuinely a project with eleven suppliers.</p>
+<figure><img src="/images/todo.webp" alt="One note per organisation, dated entries, references at the top — and every date with money attached in the calendar" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The reference number and what they said last time, in one note, before you pick up the phone.</figcaption></figure>
+<h2 id="write-up-every-call-immediately">Write up every call, immediately</h2>
+<p>The one discipline, and it is worth more than everything else here combined.</p>
+<p>Four lines within two minutes of hanging up: who you spoke to, what they said, what they committed to, and by when. Especially the name. "I spoke to someone last week who said it was fine" carries no weight; "I spoke to Daniel on the 14th, who confirmed the completion date was still the 30th" carries a great deal.</p>
+<p>Property transactions run on verbal assurances that nobody records, and the person with a dated note of who said what has a substantial advantage in every subsequent disagreement. This is not adversarial — most of the time it just resolves an honest confusion in ten seconds instead of a fortnight.</p>
+<h2 id="every-date-with-money-on-it-in-the-calendar">Every date with money on it, in the calendar</h2>
+<p>The moment you learn it, as an event, with a reminder well ahead.</p>
+<p>Notice period on your current place. Mortgage offer expiry. Fixed-rate end date. Insurance start — buildings insurance normally needs to be live from exchange rather than completion, and that is the classic expensive gap. Cancellation deadlines for services. Council tax notification. The final meter readings.</p>
+<p>A month's notice for anything with a fee attached, because a week's notice is notice that it is happening, and a month is enough to do something about it. Same principle as <a href="/blog/life-admin-in-one-place/">life admin generally</a>, compressed into four months where the consequences are larger.</p>
+<h2 id="a-board-for-the-chain">A board for the chain</h2>
+<p>The third failure — nobody knows who is waiting on whom — is what a board is for.</p>
+<p>Three columns: waiting on me, waiting on them, done. Every outstanding item as a card. Ten seconds, once a day, and you know whether it has been eleven days since anyone touched the searches.</p>
+<p>This matters more than it sounds because chains stall silently. Nobody tells you nothing is happening; things simply do not move, and by the time it is obvious you have lost three weeks. A board makes stalling visible, and the polite chase on day four costs nothing and moves things.</p>
+<h2 id="the-specific-things-people-forget">The specific things people forget</h2>
+<p>Collected from the way these go wrong.</p>
+<p><strong>Photograph every meter, on the day, with the whole meter and the serial number in frame.</strong> Both properties. Disputed readings are the single most common post-move billing problem and a photograph settles them instantly.</p>
+<p><strong>Photograph the condition of things on the day</strong>, if you rent. Both ends. It is the deposit.</p>
+<p><strong>Write down what is included in the sale</strong>, in the exact words used. Fixtures, appliances, curtains, the shed. This is where the small bitter arguments happen, and they are entirely preventable with one dated line.</p>
+<p><strong>Keep the completion statement and the paperwork.</strong> Some of it is needed years later for tax.</p>
+<p><strong>Write down where you put the important box.</strong> Genuinely. The one with the documents, the chargers and the kettle.</p>
+<h2 id="the-week-after">The week after</h2>
+<p>Ten minutes, once you have moved, while it is fresh.</p>
+<p><strong>What went wrong, and what you would do differently.</strong> Not for this move — for the next one, or for the friend who asks. It is remarkable how completely this evaporates within a month.</p>
+<p><strong>What it actually cost</strong>, in total, including the things nobody counts: the removal, the fees, the two weeks of eating out, the things that had to be replaced. This is the number you will want the next time you are deciding whether to move, and it is not recoverable later.</p>
+<p><strong>Anything still outstanding.</strong> There is always something — a refund, a final bill, a thing the seller was supposed to send. It goes on the task list with a date, because the relief of having moved is exactly when unfinished things get dropped.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>A move is four months of admin and there is no system that makes it enjoyable. What notes do is remove the specific failures that turn an expensive stressful process into a more expensive one — a missed cancellation, an assurance nobody recorded, three weeks lost to a stalled chain.</p>
+<p>If you do one thing: <strong>write up every phone call, with the name and the date, within two minutes.</strong> That single habit prevents most of what goes wrong.</p>
+<p>Cyanote holds all three parts in one window: a note per organisation with the references at the top, a calendar with reminders a day, an hour or thirty minutes ahead for every date with money attached, tasks that take their date out of the sentence you type, and a board for the chain. Photographs of meters and paperwork go in the notes rather than in a URL somewhere. It is one local database on your own Mac — which for a file containing your reference numbers, your solicitor's correspondence and photographs of your documents is where it should be.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>How-to</category>
       <category>Workflow</category>
     </item>
     <item>
@@ -1546,6 +1840,57 @@
       <category>Notes</category>
     </item>
     <item>
+      <title>Keeping your own health notes</title>
+      <link>https://cyanote.app/blog/keeping-your-own-health-notes/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/keeping-your-own-health-notes/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Ten minutes with a doctor goes better when you arrive with dates and specifics rather than impressions. Here is what to write, and where it should not go.</description>
+      <content:encoded><![CDATA[<p>You have ten minutes. You have been meaning to mention three things and you remember two. Asked when it started, you say "a few months ago", which is what everyone says and is almost always wrong by a factor of two. Asked whether the last medication helped, you say "I think so".</p>
+<p>None of that is a failure of memory. Symptoms are noticed rather than recorded, they change gradually, and the version you present in a consulting room is heavily coloured by how you feel that morning.</p>
+<p>A page of notes changes the appointment substantially, and it takes very little.</p>
+<h2 id="what-to-write-and-why-each-part">What to write, and why each part</h2>
+<p><strong>When it started, with an actual date.</strong> The most useful single item. "Since around 4 June" is clinically different information from "a few months", and you will only have it if you wrote it down near the time.</p>
+<p><strong>Frequency and pattern, in numbers.</strong> Twice a week, worse in the mornings, three bad days in the last fortnight. Counting is unglamorous and it converts an impression into something someone can work with.</p>
+<p><strong>What makes it better or worse.</strong> Noticed over weeks, invisible in a single day.</p>
+<p><strong>What you have already tried, and what happened.</strong> Including things that did not work, with rough dates. This prevents the loop where you are prescribed something you tried in March.</p>
+<p><strong>Every medication and supplement, with doses.</strong> Written down, because reciting from memory under mild stress is where errors happen.</p>
+<p><strong>Your three questions, written before you go.</strong> This is the one that changes the appointment most. Ten minutes goes fast, the conversation follows whatever the clinician opens with, and the thing you most wanted to ask is regularly the thing you walk out without asking.</p>
+<h2 id="afterwards-five-lines">Afterwards, five lines</h2>
+<p>Immediately, before you have left the building or straight after the call.</p>
+<p><strong>What they said, in their words.</strong> Not your interpretation. You will re-interpret it three times over the following week and end up with something that was never said.</p>
+<p><strong>The name of anything they named</strong> — a condition, a test, a medication, a referral. Spelled as best you can. This is what makes the rest of it searchable later.</p>
+<p><strong>What happens next, and who is doing it.</strong> The referral, the test, the follow-up in six weeks.</p>
+<p><strong>What you are supposed to watch for.</strong> The "come back if" list, which is the single most safety-relevant thing said in most appointments and the most commonly forgotten.</p>
+<p><strong>What you did not ask.</strong> For next time.</p>
+<p>Five lines. It is the same discipline as <a href="/blog/a-transcript-is-not-a-note/">writing up a meeting immediately</a>, applied where the stakes are higher and the recall is worse, because appointments are mildly stressful and stress degrades memory precisely when you most need it.</p>
+<h2 id="why-the-record-beats-the-impression">Why the record beats the impression</h2>
+<p>A pattern you have written down is a fact. A pattern you have noticed is a feeling, and feelings about your own body are systematically distorted in a specific direction: whatever is true today feels like what has been true generally.</p>
+<p>That matters in both directions. Something that has quietly worsened over eight months feels normal, because each week resembled the last. And a bad week after four good ones feels like a relapse when the record shows it is the first bad week since April — which is genuinely reassuring, and unavailable without a record.</p>
+<p>Neither of these is available from memory. Both are available from a dated line a week.</p>
+<h2 id="where-these-notes-should-not-go">Where these notes should not go</h2>
+<p>This is the part worth being deliberate about, because health notes are among the most sensitive text most people ever write.</p>
+<p><strong>Not in a shared workspace.</strong> Not in a work account, a team tool, or anywhere your employer administers. This should be obvious and it happens constantly, because the work app is the one people have open.</p>
+<p><strong>Not in a health app whose business model you have not read.</strong> The consumer health app category has a poor record on data sharing, and "anonymised" is doing a great deal of work in most of those policies. This is your medical history; treat the choice of where it lives as a decision rather than a default.</p>
+<p><strong>Not where a shared device will show it.</strong> A family iPad with your account signed in is a shared device.</p>
+<p><strong>Somewhere encrypted, ideally.</strong> Full-disk encryption at minimum, and per-note locking if your app offers it — the same reasoning as <a href="/blog/password-protect-notes-on-mac/">locking any note that would matter</a>, applied to the clearest case there is.</p>
+<p>The arrangement that matches the material is a local file on a machine you control, encrypted, with no account and no service in the middle. Not because companies are malicious, but because <a href="/blog/apps-that-do-not-phone-home/">the safest data is data that was never transmitted</a>, and this is the category where that principle is least worth compromising.</p>
+<h2 id="what-this-is-not">What this is not</h2>
+<p><strong>Not diagnosis.</strong> A record of symptoms is input to a clinician, not a substitute for one. Searching your own notes for a pattern and concluding what it is has a worse track record than almost any other use of writing things down.</p>
+<p><strong>Not a substitute for your medical record.</strong> Your clinicians hold that, it is authoritative, and in many countries you can request a copy. Your notes are a parallel record of what you experienced and what you were told, which is a different and complementary thing.</p>
+<p><strong>Not a project.</strong> Five lines around an appointment, and a dated line when something changes. Anything more elaborate becomes a way of paying more attention to symptoms, which is not always helpful and is occasionally the opposite.</p>
+<h2 id="for-someone-else">For someone else</h2>
+<p>Worth mentioning, because it is where this matters most and where it is hardest.</p>
+<p>If you are managing appointments for a parent, a child or a partner, the same notes are more valuable and more difficult — the person in the room is not the person who remembers, and you are frequently coordinating between clinicians who are not talking to each other. One note per person, dated entries, medication list at the top, questions written before.</p>
+<p>The same privacy considerations apply and are sharper, because this is somebody else's medical information and they did not choose where you keep it.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Most people will not keep a health log, and for most people, most of the time, that is fine.</p>
+<p>The version that is worth doing regardless is much smaller: <strong>write the date when something starts, and write down what you were told straight after an appointment.</strong> Two habits, thirty seconds each, and between them they cover the two things that reliably go wrong.</p>
+<p>Cyanote is a reasonable place for it for one structural reason: everything is in a single SQLite database on your own Mac, with no account and nothing transmitted, and any note can be locked with a password and is encrypted where it sits. There are no AI features reading your notes and no sync service holding a copy. For a record of your own health, "nobody else has this" is not a feature claim — it is the requirement.</p>]]></content:encoded>
+      <category>Privacy</category>
+      <category>Method</category>
+      <category>How-to</category>
+    </item>
+    <item>
       <title>Keeping track of a job search without a spreadsheet</title>
       <link>https://cyanote.app/blog/keeping-track-of-a-job-search/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/keeping-track-of-a-job-search/</guid>
@@ -1735,6 +2080,54 @@
       <category>Decisions</category>
     </item>
     <item>
+      <title>When you inherit somebody else&#x27;s notes</title>
+      <link>https://cyanote.app/blog/inheriting-someone-elses-notes/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/inheriting-someone-elses-notes/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>A colleague left, or a relative died, and now you have their files. The first decision is not how to organise them. It is whether to read them at all.</description>
+      <content:encoded><![CDATA[<p>Somebody leaves and you are handed their work. Or a relative dies and there is a laptop, and on it a decade of writing that nobody has ever read.</p>
+<p>Both situations produce the same paralysis, and it is not a technical one. The technical part — opening files, searching them — is easy. The difficulty is that you are holding a document that was written by someone who did not expect you to read it, and there is no obvious rule for what to do with that.</p>
+<h2 id="first-the-question-about-reading">First, the question about reading</h2>
+<p>Before any organising, one decision: <strong>is this material you should be reading at all?</strong></p>
+<p><strong>Work notes, handed over deliberately.</strong> Yes. That is what a handover is, and the person wrote it expecting exactly this.</p>
+<p><strong>Work notes found on a machine, not handed over.</strong> More care. A departed colleague's personal file may contain their own frustrations, their salary conversations, their private assessment of you. Look for what you need to do the job and stop when you have it. There is no obligation to read someone's diary because it happened to be on a work laptop.</p>
+<p><strong>A relative's private writing.</strong> The hard one, and it deserves a real answer rather than a technical one.</p>
+<h2 id="about-a-relative-s-journals">About a relative's journals</h2>
+<p>There is no rule here and anyone offering one is overreaching. What can be offered is the set of considerations people find useful.</p>
+<p><strong>Look for a stated wish first.</strong> In a will, a letter, a note at the front. People sometimes leave one and it is frequently missed, because nobody thinks to look for it before opening the files.</p>
+<p><strong>Consider that they knew they would die and did not destroy it.</strong> That is not consent. It is also not nothing — for a lot of people the journal was left because it was theirs and they were not going to spend their last months curating, and they would not have wanted it read.</p>
+<p><strong>Slower is better.</strong> There is no deadline. Deciding not to read something now does not prevent reading it in five years; reading it now cannot be undone, and things read in grief land differently than the same words read later.</p>
+<p><strong>A journal is not a message to you.</strong> This is the observation people find most useful afterwards. Journals are where people put the worst version of a bad week, because they had nowhere else. Reading a difficult passage as a considered summary of what they thought — of you, of themselves, of anything — is almost always a misreading. It was Tuesday, and they were angry, and they wrote it down instead of saying it.</p>
+<p>Whatever you decide, back it up first. That decision does not have to be made under time pressure and it certainly should not be made irreversibly.</p>
+<h2 id="the-practical-part-making-it-searchable">The practical part: making it searchable</h2>
+<p>Once you have decided what to engage with, the technical problem is straightforward.</p>
+<p><strong>Copy everything before touching anything.</strong> One copy on a separate disk, untouched. Everything else happens on a working copy. This is the whole insurance policy and it takes ten minutes.</p>
+<p><strong>Establish what format it is in.</strong> Plain files are trivial. An app's database is workable — <a href="/blog/where-your-notes-actually-live/">SQLite is an open format</a> and readable by free tools if the original app is gone. A proprietary blob may need the original software, which is a reason to try installing it before anything expires.</p>
+<p><strong>Get it into text if you can.</strong> Whatever the source, an export to Markdown or plain text into a folder means Spotlight indexes it and <code>grep</code> finds anything Spotlight misses. That is a working search over somebody's entire collection for about an hour of effort.</p>
+<p><strong>Do not reorganise.</strong> Strong recommendation. Their structure encodes their thinking, and imposing yours destroys information you do not yet know you need — most obviously the order in which they wrote things, which is often the most informative property of the whole collection. Search, do not sort.</p>
+<h2 id="what-to-look-for-in-work-notes">What to look for in work notes</h2>
+<p>If this is a professional handover, the useful material is narrower than the volume suggests.</p>
+<p><strong>The undocumented facts.</strong> The reason something is done a strange way. The client who needs a phone call. The system that fails in a particular manner. These are what a <a href="/blog/handing-over-your-work/">handover document</a> is supposed to capture and frequently does not.</p>
+<p><strong>Who they talked to.</strong> Their notes name people, and those people know things. Often the most valuable output of reading somebody's notes is a list of six names to go and ask.</p>
+<p><strong>What was in flight, and its real state.</strong> Distinct from its reported state, which is what the shared tracker has.</p>
+<p><strong>Their judgement.</strong> What they thought was actually wrong. Worth reading and worth weighing — they had context you do not, and they also had frustrations that may have coloured it.</p>
+<p>You can usually extract all of this in an afternoon with search, without reading the collection front to back.</p>
+<h2 id="then-write-down-what-you-learned">Then write down what you learned</h2>
+<p>The step everybody skips, and the reason the same loss happens again in two years.</p>
+<p>Reading somebody's notes produces understanding that exists nowhere in writing. Put it somewhere: a short document of what you found, where the material is, and what the six important facts turned out to be.</p>
+<p>Because the material itself is not the deliverable. Nobody will read a colleague's decade of notes twice, and if you do not extract the useful part now, the collection reverts to an archive nobody opens — and the fact that you once understood it is lost the same way theirs was.</p>
+<h2 id="for-your-own-collection">For your own collection</h2>
+<p>The obvious corollary, and it is a two-minute job.</p>
+<p>Whoever inherits your notes will face the same decisions with the same lack of guidance. You can remove that entirely by leaving one line somewhere findable: what should be kept, what should be read, what should not, and what should be destroyed. It costs nothing to write and it converts an impossible decision into an instruction.</p>
+<p>That plus where the material is and how to get into it is the whole of a digital estate for notes, and it is <a href="/blog/what-happens-to-your-notes-when-you-die/">worth doing while it is easy</a>.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>The technical half of this is an afternoon. The other half is not a technical problem and there is no correct answer — only the observation that reading cannot be undone, backing up can always be done first, and nothing here has a deadline.</p>
+<p>Cyanote is on the easy side of the technical question by construction: everything is in one SQLite database on the machine, in an open, documented format that outlives any particular app, and it exports to one readable JSON file. There is no account to recover and nobody here to ask, which is the guarantee working as intended — and the reason to leave a line about what you want done, while you can.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>Privacy</category>
+      <category>Local-first</category>
+    </item>
+    <item>
       <title>Handing over your work before you leave</title>
       <link>https://cyanote.app/blog/handing-over-your-work/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/handing-over-your-work/</guid>
@@ -1861,6 +2254,51 @@
       <category>Routines</category>
       <category>Method</category>
       <category>Workflow</category>
+    </item>
+    <item>
+      <title>When remembering to write it down is the hard part</title>
+      <link>https://cyanote.app/blog/capture-when-remembering-is-the-hard-part/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/capture-when-remembering-is-the-hard-part/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Advice about note-taking assumes you will remember to take the note. For some people that assumption is the entire problem, and the fix is structural.</description>
+      <content:encoded><![CDATA[<p>Nearly all advice about organisation assumes a working memory that holds an intention until you are somewhere you can act on it. Write it down later. Process your inbox at the end of the day. Remember to check the list.</p>
+<p>For a lot of people that assumption does not hold, and the result is a persistent, unfair sense of being bad at systems — when what has actually happened is that every system on offer was designed around a capability that varies enormously between people, and nobody said so.</p>
+<p>If your experience is that the intention evaporates between having it and reaching somewhere to record it, none of the standard advice is addressing your problem. This is about the version that does.</p>
+<h2 id="the-principle-never-depend-on-a-second-step">The principle: never depend on a second step</h2>
+<p>Every gap between the thought and the record is a place it can disappear. Standard advice puts several of them in a row: have the thought, hold it, get to the app, decide where it goes, write it, later process it into the right place.</p>
+<p>That is five opportunities to lose it, and the advice implicitly assumes the loss rate at each is near zero.</p>
+<p>Design instead so that a thought recorded once is <em>done</em>. No processing step, no filing decision, no "I will sort that later" — because later is exactly the thing that does not reliably arrive.</p>
+<h2 id="what-that-means-concretely">What that means concretely</h2>
+<p><strong>One destination, no decision.</strong> Everything goes to the same place. A daily note, an inbox note, one list. Not because it is tidy, but because a choice about where is a step, and steps are where things are lost. Search will find it later; that is what search is for, and it is <a href="/blog/how-to-organise-notes/">why filing matters less than people think</a>.</p>
+<p><strong>Capture reachable from anywhere.</strong> A global shortcut, not an app you switch to. If recording something requires finding a window, the window is a step.</p>
+<p><strong>Instant.</strong> <a href="/blog/why-a-notes-app-should-open-instantly/">Under a second</a>. A loading spinner is long enough for the thought to go, and this is not hyperbole — it is the actual failure.</p>
+<p><strong>Nothing to process.</strong> Systems requiring an inbox to be emptied on a schedule fail here specifically, because the processing session is a recurring appointment with your future attention and it is the first thing to be missed. A system that works without processing is worth more than a better-organised one that requires it.</p>
+<p><strong>No decisions at capture time.</strong> No category, no priority, no project, no tags. Type the sentence, press return. Anything the app can extract from the sentence itself — <a href="/blog/typing-a-task-the-way-you-say-it/">a date, a time, a priority</a> — is free; anything requiring a separate choice is a step.</p>
+<h2 id="pull-not-push-for-retrieval">Pull, not push, for retrieval</h2>
+<p>The other half, and it is where most systems fail people quietly.</p>
+<p>Notifications are the standard answer to "how will you remember", and they work poorly here: they arrive when you cannot act, get dismissed reflexively, and the dismissal is complete — no trace, no queue, nothing to come back to. A reminder that fires while you are driving has not reminded you of anything.</p>
+<p>What works better is one place you go, containing everything currently relevant, so that arriving is enough and no interruption has to survive. Today's list, checked at a moment that already exists in your day — after coffee, when you sit down, before you leave. Attaching it to something that already happens is the whole trick, because <a href="/blog/tracking-habits-without-a-separate-app/">an attached habit survives and a new ritual does not</a>.</p>
+<h2 id="externalise-the-sequence-too">Externalise the sequence too</h2>
+<p>If holding a multi-step task in your head while performing it is unreliable, the fix is not to try harder. It is to write the steps down and read them.</p>
+<p>That is <a href="/blog/checklists-for-things-you-do-every-week/">what a routine is</a> — six items in order, read rather than recalled. It is not a compensation for a deficiency; it is what aviation and surgery do, for the same reason, with people whose memory is fine.</p>
+<p>The list of things you do every time you leave the house. The sequence for the recurring job that always loses a step. The morning order that gets scrambled when something interrupts it. Writing them down converts a memory task into a reading task, and reading is much more robust to interruption.</p>
+<h2 id="redundancy-is-not-untidy">Redundancy is not untidy</h2>
+<p>A rule from standard advice that is worth dropping: everything in exactly one place.</p>
+<p>If writing it twice makes it more likely to be found, write it twice. If the important date is in the calendar <em>and</em> the task list <em>and</em> on a note stuck to the monitor, that is three chances, and three chances is the point. The cost of duplication is mild untidiness; the cost of a single point of failure is a missed thing.</p>
+<p>Optimise for the thing being found, not for the system being elegant.</p>
+<h2 id="what-tends-not-to-work">What tends not to work</h2>
+<p>Said plainly, so it can be stopped rather than repeated.</p>
+<p><strong>Elaborate systems.</strong> Anything with more than about two rules. Every rule is a thing to remember about the system, on top of the things you were trying to remember with it.</p>
+<p><strong>Inbox processing.</strong> Any design where capture is provisional and a later session makes it real.</p>
+<p><strong>Reminder escalation.</strong> More alerts, louder, more often. Produces <a href="/blog/reminders-you-do-not-start-ignoring/">dismissal reflex</a> faster than it produces action.</p>
+<p><strong>Blaming yourself for the last one failing.</strong> Six abandoned systems is information about the systems. It is very commonly read as information about the person, and that reading is what makes people stop trying.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>I am describing a design pattern, not giving anyone advice about their brain, and there is no software that fixes this. What software can do is remove steps — and since the number of steps is the whole variable, that is not a small contribution.</p>
+<p>The two changes that do the most: <strong>one destination with no decision at capture</strong>, and <strong>one place you go, rather than notifications that come to you.</strong> Almost everything else is optional.</p>
+<p>Cyanote is shaped that way, though not deliberately for this: <code>⌘N</code> and <code>⇧⌘D</code> reach a note in one keystroke, tasks take their date and priority out of the sentence so there is nothing else to fill in, <code>⌥⇧C</code> brings the window up from any app, and Today is one view holding what is scheduled, what is due, which habits are outstanding and which routines have not been run. There is no inbox to process and no filing required — full-text search across everything is what makes that viable. It opens in under a second from a local database, which is the part that actually decides whether a thought survives the trip.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>Workflow</category>
+      <category>Accessibility</category>
     </item>
     <item>
       <title>Seeing your calendar without signing into it</title>
@@ -2183,6 +2621,54 @@
       <category>Method</category>
       <category>GTD</category>
       <category>Tasks</category>
+    </item>
+    <item>
+      <title>A journal that stays private</title>
+      <link>https://cyanote.app/blog/a-private-journal-that-stays-private/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/a-private-journal-that-stays-private/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>You will not write honestly in a document that might be read. Which makes where a journal lives a writing question first, and a security question second.</description>
+      <content:encoded><![CDATA[<p>The entire value of a journal is that it is the one place you do not perform.</p>
+<p>Which means the question of where it lives is not primarily a security question. It is a <em>writing</em> question — because if some part of you suspects the words could be read, you will write a slightly managed version of what you think, and the managed version is worthless. It is the same as the unmanaged one with the useful part removed.</p>
+<p>People often discover this the wrong way round: they journal in a shared workspace for a month, produce nothing but bland entries, and conclude they are not a journalling sort of person.</p>
+<h2 id="the-three-things-that-make-you-self-censor">The three things that make you self-censor</h2>
+<p><strong>A shared or work account.</strong> Anything administered by an employer. Whether or not anyone would look, you know that someone could, and knowing is enough.</p>
+<p><strong>A device other people use.</strong> A family iPad, a laptop left open, a machine with a session that does not lock. The risk is not a breach; it is somebody walking past.</p>
+<p><strong>A service that reads your content.</strong> Anything doing automatic summarising, tagging or semantic indexing has, by construction, transmitted what you wrote. That is <a href="/blog/ai-features-and-private-notes/">a real property of those features</a>, not a suspicion, and it is worth knowing which side of it your app is on before you write down something you have told nobody.</p>
+<p>The fix for all three is the same and it is architectural rather than behavioural: put the journal somewhere that has no route out.</p>
+<h2 id="what-a-private-by-construction-arrangement-looks-like">What a private-by-construction arrangement looks like</h2>
+<p><strong>A local file, on a machine you control.</strong> No account to breach, no server holding a copy, no support person with database access. The threat model becomes: someone with your unlocked laptop. Which is a threat you can actually reason about.</p>
+<p><strong>Encrypted where it sits.</strong> Full-disk encryption at minimum. Per-note locking on top, if the app offers it, so a shoulder does not read it and neither does anyone who gets past the disk.</p>
+<p><strong>No AI, or AI that provably runs locally.</strong> Not because the feature is bad, but because "summarise my journal" and "nothing leaves the machine" are mutually exclusive unless the model is on your disk.</p>
+<p><strong>An export you control.</strong> Journals are the notes people most want to still have in twenty years. That means a readable format and a backup, which is the one place this gets complicated — see below.</p>
+<h2 id="the-one-that-actually-needs-thinking-about-backups">The one that actually needs thinking about: backups</h2>
+<p>Here is the tension nobody resolves cleanly.</p>
+<p>A journal is the single hardest thing to lose and the single worst thing to have copied. Those pull in opposite directions, and most advice picks one and pretends the other does not exist.</p>
+<p>The arrangement that handles both: <strong>an encrypted backup you control the key to.</strong> An external drive, encrypted, kept somewhere else. Or an encrypted archive of the export, in cloud storage — the storage provider holds a blob they cannot read, which is a genuinely different arrangement from them holding your text.</p>
+<p>What does not work: putting the journal in a sync service for safety. That is a copy on someone else's infrastructure in readable form, and it undoes the entire arrangement in exchange for convenience.</p>
+<p>If that sounds like too much, the honest minimum is: full-disk encryption on, one encrypted copy on an external drive, updated occasionally. That covers the fire and the theft, which are the realistic losses.</p>
+<figure><img src="/images/note.webp" alt="Any note can be locked with a password and encrypted where it sits — so the private layer and the practical layer can share one app" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The journal can be locked and the shopping list not. Per-note is the granularity that makes one app workable.</figcaption></figure>
+<h2 id="what-actually-goes-in-one">What actually goes in one</h2>
+<p>Since the question of what to write stops most people faster than where to put it.</p>
+<p><strong>No obligation to write daily.</strong> The daily streak is the most common reason people abandon journals, because a missed day becomes a small failure and three missed days become a stopped habit. Write when there is something.</p>
+<p><strong>The uncomfortable version.</strong> If the entry could be shown to a colleague without difficulty, it is probably not doing the job. The value is in what you are not saying out loud.</p>
+<p><strong>What you are actually worried about</strong>, not the tidy version. The tidy version is the one you have already told people, and you did not need to write it down.</p>
+<p><strong>Occasionally, what happened.</strong> Plain events with dates. Not for the writing — for the reading. In five years the emotional entries will be strange to you and the factual ones will be the ones you are glad exist.</p>
+<h2 id="reading-it-back">Reading it back</h2>
+<p>The part that makes it worth having done, and the part almost nobody does.</p>
+<p>Once or twice a year, read a year old. Two things happen reliably. Things you were certain about turn out to have been wrong, in ways that are useful and slightly humbling — the same mechanism as <a href="/blog/keeping-a-decision-journal/">a decision journal</a>, applied to your life rather than your choices. And things that felt enormous turn out to have been survivable, which is the most useful information a journal ever provides, and it is only available in your own handwriting about your own crisis.</p>
+<p>Expect to find some of it embarrassing. That is what an honest record looks like, and the entries that are not embarrassing are usually the performed ones.</p>
+<h2 id="paper-briefly">Paper, briefly</h2>
+<p>Worth mentioning honestly: paper is genuinely private, needs no threat model, and cannot be indexed by anything.</p>
+<p>It also cannot be searched, is difficult to back up, and is readable by anyone who opens the drawer — which for a lot of living situations is a worse privacy property than an encrypted file, not a better one.</p>
+<p>The reasonable answer is: paper if you like writing by hand and nobody goes in your drawer; an encrypted local file if you want to search it in ten years. Both are defensible. What is not defensible is a journal in a work account.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>If you have tried journalling and produced nothing but bland entries, the diagnosis is usually not discipline. It is that some part of you did not believe the document was private, and that belief is not something you can override by deciding to be honest.</p>
+<p>Fix the arrangement first. The writing tends to follow.</p>
+<p>Cyanote is private by construction rather than by policy: one SQLite database on your own Mac, no account, no sync, no analytics, no crash reporter, no AI reading anything. Any note can be locked with a password and is encrypted where it sits, so the journal can be locked while the shopping list is not. <code>⇧⌘D</code> opens today's daily note when you do want a dated habit, and everything exports to one readable file — which, encrypted and kept on a drive somewhere else, is the version of a backup this particular material deserves.</p>]]></content:encoded>
+      <category>Privacy</category>
+      <category>Writing</category>
+      <category>Local-first</category>
     </item>
     <item>
       <title>Keeping in touch, without a personal CRM</title>

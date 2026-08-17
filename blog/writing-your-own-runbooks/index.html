@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Personal runbooks: writing down how you did it the first time</title>
+<meta name="description" content="You have solved the same problem three times. Each time it took forty minutes. The note that would have made it four takes ninety seconds to write." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/writing-your-own-runbooks/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/writing-your-own-runbooks/" />
+<meta property="og:title" content="Personal runbooks: writing down how you did it the first time" />
+<meta property="og:description" content="You have solved the same problem three times. Each time it took forty minutes. The note that would have made it four takes ninety seconds to write." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Personal runbooks: writing down how you did it the first time" />
+<meta name="twitter:description" content="You have solved the same problem three times. Each time it took forty minutes. The note that would have made it four takes ninety seconds to write." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Write it down the first time you work it out",
+  "description": "You have solved the same problem three times. Each time it took forty minutes. The note that would have made it four takes ninety seconds to write.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/writing-your-own-runbooks/"
+  },
+  "url": "https://cyanote.app/blog/writing-your-own-runbooks/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/note.webp",
+      "width": 1500,
+      "height": 938
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Method, How-to, Workflow",
+  "wordCount": 1083
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Write it down the first time you work it out",
+      "item": "https://cyanote.app/blog/writing-your-own-runbooks/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Method" />
+<meta property="article:tag" content="How-to" />
+<meta property="article:tag" content="Workflow" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Write it down the first time you work it out</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-17">17 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>5 min read</span>
+      </div>
+    <ul class="tags"><li>Method</li><li>How-to</li><li>Workflow</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Renewing the certificate. Restoring the database from a backup. Getting the printer to talk to the network again. Resetting the thing after the update breaks it. The specific sequence of clicks that makes the tax portal accept the file.</p>
+      <p>Each of these took you forty minutes the first time, mostly spent finding the answer. Each of them takes about forty minutes every subsequent time, because you did not write the answer down, and the reason you did not is always the same: at the moment you solved it, you were relieved and late and moving on.</p>
+      <h2 id="the-shape-of-the-loss">The shape of the loss</h2>
+      <p>The tell is a specific feeling. You start a task and think <em>I have done this before</em> — and then discover you remember having done it, and not how.</p>
+      <p>Partial memory is worse than none, because it makes you confident enough to start without looking it up, and then you spend twenty minutes retracing your own steps to reach the point where you concede you have forgotten. The knowledge decayed into an index entry with no page behind it.</p>
+      <p>This happens with anything you do more than once and less than monthly. More often than monthly and you retain it; less often than yearly and you accept looking it up. The band in between is where a personal runbook pays, and it is a wide band.</p>
+      <h2 id="the-ninety-seconds">The ninety seconds</h2>
+      <p>Immediately after it works, before you move on. Not later.</p>
+      <p><strong>The exact commands or clicks, in order.</strong> Copied, not paraphrased. The real flags, the real menu names. A paraphrase is a description of the solution; the literal steps are the solution.</p>
+      <p><strong>What did not work.</strong> One line. The obvious approach that failed, so next time you skip it — this frequently saves more time than the working steps, because next time you will have the same wrong instinct.</p>
+      <p><strong>The thing that was not obvious.</strong> There is always one. The setting in a different menu, the order that matters, the fact that it has to be done twice. This is the line that took you thirty of the forty minutes.</p>
+      <p><strong>Where you found the answer</strong>, if it came from somewhere. A link, an issue number, a person's name.</p>
+      <p>Ninety seconds while it is fresh. The same window as <a href="/blog/writing-an-incident-review/">an incident timeline</a> and for the same reason: understanding starts unloading the moment the pressure comes off.</p>
+      <figure><img src="/images/note.webp" alt="A code note with the actual commands, the flags, and the line explaining the part that was not obvious" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Copied, not paraphrased. A paraphrase is a description of the solution. The literal steps are the solution.</figcaption></figure>
+      <h2 id="write-it-for-a-stranger">Write it for a stranger</h2>
+      <p>The mistake that makes runbooks useless is writing them for the person you are right now, who has all the context.</p>
+      <p>"Restart the service" is a note by someone holding the whole picture. In eight months you will not know which service, on which machine, or how one restarts it here. Write the machine, the exact command, and the check that tells you it worked.</p>
+      <p>The test: could you follow this at 2am, tired, having forgotten everything? That standard sounds excessive for a personal note and it is exactly right, because 2am and having forgotten everything is the realistic condition of use. Nobody consults a runbook on a calm afternoon when they remember how it works.</p>
+      <p>Length is not the fix — most good runbooks are eight lines. Specificity is.</p>
+      <h2 id="what-deserves-one">What deserves one</h2>
+      <p><strong>Anything you have now done twice.</strong> Twice is the threshold, and it is worth being mechanical about it. The second time you solve something, you have proof it recurs, and you are holding the answer.</p>
+      <p><strong>Anything that only happens once a year.</strong> Tax filings, renewals, the annual report, the certificate. You will forget completely, guaranteed, and there is no possibility of retaining it.</p>
+      <p><strong>Anything you do under pressure.</strong> When something is broken and people are waiting, working from a written sequence is dramatically better than improvising from partial memory — that is the whole reason runbooks exist in operations.</p>
+      <p><strong>Anything involving a system with a bad interface.</strong> Government portals, banking, enterprise software, anything where the correct sequence is arbitrary and undiscoverable. These are pure runbook material, because nothing about the interface will remind you.</p>
+      <h2 id="where-they-belong">Where they belong</h2>
+      <p><strong>Personal ones in your own notes.</strong> Findable by search, because you will not remember what you called it — you will search for the error message or the tool name. That means <a href="/blog/searching-your-own-notes/">search has to reach inside code blocks</a>, which is where the commands are.</p>
+      <p><strong>Shared ones in the shared place.</strong> If a colleague could need it, it belongs in the team's documentation. Keeping operational knowledge in a personal file makes you a bottleneck, and being a bottleneck feels like job security and is actually just being interrupted a lot — the thing <a href="/blog/handing-over-your-work/">a handover document</a> exists to unwind.</p>
+      <h2 id="when-you-use-it-fix-it">When you use it, fix it</h2>
+      <p>The maintenance rule, and it is the only one.</p>
+      <p>Follow your own runbook and something will be slightly wrong — a menu renamed, a flag deprecated, a step no longer needed. Fix it <em>then</em>, in the two minutes you are already there. Not later.</p>
+      <p>A runbook corrected on each use stays accurate indefinitely. One never revisited rots, and a rotted runbook is worse than none: you follow it, it fails halfway, and now you are debugging both the problem and the instructions.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>Nobody writes these at the moment of relief. That is the entire difficulty and no amount of agreeing with the principle changes it.</p>
+      <p>The one intervention that works is making the writing take ninety seconds instead of ten minutes. Paste the commands, add two lines, done. Any attempt at a proper document — a title, a structure, an explanation of the system — is a ten-minute job, and ten-minute jobs do not happen at the moment you have just fixed something and are already late.</p>
+      <p>Cyanote is a reasonable home for these: code notes with syntax highlighting and language detection for the commands, prose notes with code blocks inline when you need explanation around them, and <code>⇧⌘F</code> searching the body of everything including the code — so the error message you paste today is what finds this note in eighteen months. It is one local database on your own Mac, which for the set of instructions that make your own machines and accounts work is where it should be.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/life-admin-in-one-place/">Life admin, in one place you will actually check</a><span>The renewal you missed, the warranty you could not find, the reference number in a 2023 email. Life admin fails in three ways, and all three are fixable.</span></li><li><a href="https://cyanote.app/blog/notes-for-a-house-move/">Surviving a house move on notes</a><span>A move is four months of small facts arriving from eleven organisations. The failures are always the same three, and none of them is the packing.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>
