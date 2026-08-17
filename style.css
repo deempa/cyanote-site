@@ -31,10 +31,23 @@
 }
 
 /* ── tokens ───────────────────────────────────────────────────────────────
-   Light, always. There is deliberately no prefers-color-scheme block on this
-   site: the paper white is the design, and a dark variant of it was a second
-   palette to keep in step for no gain. `color-scheme: light` is what stops
-   macOS drawing dark scrollbars and form controls against it. */
+   Light by default, dark on request. This used to say "light, always", and the
+   reasoning then was that a dark variant is a second palette to keep in step
+   for no gain. What changed the answer is the blog: 81 posts is a lot of long
+   prose to read on paper white at eleven at night, and the whole product is
+   built around the idea that you should be able to set how your own reading
+   surface looks.
+
+   Note what is deliberately NOT here: a prefers-color-scheme block. Dark is
+   opt-in via the nav toggle and nothing else, so a visitor on a dark-mode Mac
+   still meets the paper white the site was designed in, and only leaves it by
+   choosing to. That decision lives in one place — the head script build.sh
+   injects — and everything below is a straight token swap.
+
+   Every colour on this site is a token. The only literals left are the MacBook
+   drawing further down (a physical object, the same in both themes) and one
+   focus shadow. Anything added here needs BOTH blocks, or it will look right in
+   whichever theme you happened to be in while writing it. */
 :root{
   color-scheme:light;
   --paper:#fafafa; --panel:#ffffff; --line:#e6e6e9; --line-soft:#efeff1;
@@ -52,6 +65,39 @@
   --maxw:1120px; --readw:768px; --gutter:28px;
   --shot-shadow:0 34px 70px -30px rgb(10 20 35 / .3), 0 2px 6px -2px rgb(10 20 35 / .1);
   --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+  /* The nav's translucent backing. A literal until dark mode needed a second
+     one; it has to be a colour rather than a token reference because the alpha
+     is the point — the blur only reads if what is behind it partly shows. */
+  --nav-bg:rgb(250 250 250 / .8);
+  /* Diagrams are SVGs drawn on transparency with near-black labels outside the
+     cards. On paper white that is invisible by design; on a dark page it would
+     be invisible in the other sense. Dark mode sets this to a plate colour and
+     figures sit on it. */
+  --figure-plate:transparent; --figure-pad:0;
+}
+
+/* Inverted paper, not black: the same cloth the light theme is cut from, at
+   night. Checked against --paper — --muted lands at 5.83:1 and --accent at
+   6.81:1, both comfortably past the 4.5 AA asks for and both better than their
+   light counterparts, which sit at 4.62 and 4.58.
+
+   The two structural greys go the other way round from light. There, --line-soft
+   is *lighter* than --line; here it has to be *darker*, because a hairline on a
+   dark ground recedes by getting closer to the ground rather than further from
+   it. Copying the light relationship is the mistake that makes dark borders
+   look like a mistake. */
+[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#17181b; --panel:#1e2024; --line:#2c2e33; --line-soft:#232529;
+  --ink:#f1f1f2; --ink-2:#c6c8ce; --muted:#8f949e;
+  --accent:#4aa8e8; --accent-ink:#0d0f12;
+  --nav-bg:rgb(23 24 27 / .82);
+  /* A 70px drop shadow under a screenshot works on paper because the shadow is
+     darker than the page. Nothing is darker than this page, so the depth has to
+     come from a light edge instead — a hairline lift, and a shadow kept only
+     deep enough to seat the image. */
+  --shot-shadow:0 0 0 1px rgb(255 255 255 / .06), 0 26px 50px -28px rgb(0 0 0 / .85);
+  --figure-plate:#f4f4f5; --figure-pad:14px;
 }
 
 /* ── base ─────────────────────────────────────────────────────────────── */
@@ -88,7 +134,7 @@ h3{ font-size:1.02rem; letter-spacing:-.01em; font-weight:600 }
   background:var(--panel); color:inherit; box-shadow:0 8px 30px rgb(0 0 0 / .18); outline:2px solid currentColor }
 
 /* ── nav ──────────────────────────────────────────────────────────────── */
-nav{ position:sticky; top:0; z-index:30; background:rgb(250 250 250 / .8);
+nav{ position:sticky; top:0; z-index:30; background:var(--nav-bg);
   backdrop-filter:saturate(180%) blur(18px); border-bottom:1px solid var(--line-soft) }
 nav .wrap{ display:flex; align-items:center; height:66px; gap:20px }
 .brand{ display:flex; align-items:center; gap:9px; font-weight:600; letter-spacing:-.02em; font-size:1.05rem }
@@ -99,6 +145,34 @@ nav .links a:hover{ color:var(--ink) }
 nav .links a[aria-current]{ color:var(--ink); font-weight:600 }
 nav .right{ margin-left:auto }
 @media(max-width:940px){ nav .links{ display:none } }
+
+/* The theme toggle.
+
+   Hidden until the head script sets data-theme-ready on <html>, which means a
+   visitor with JavaScript off never meets a control that cannot work. The
+   script runs in <head>, before the nav is parsed, so this costs no layout
+   shift for everyone else — the button is either there from first paint or
+   never.
+
+   It sits after .right, so the order along the bar is brand · links · buy ·
+   toggle. Deliberately last and deliberately quiet: the CTA is the thing on
+   this bar anyone came for. The icon shows the mode you are switching TO,
+   which is the convention people already read without thinking, and the
+   accessible name says the action rather than the state. */
+.theme-toggle{ display:none; flex:0 0 auto; width:34px; height:34px; align-items:center;
+  justify-content:center; border:1px solid var(--line); border-radius:9px;
+  background:transparent; color:var(--ink-2); cursor:pointer; padding:0;
+  transition:color .15s, border-color .15s, background-color .15s }
+html[data-theme-ready] .theme-toggle{ display:inline-flex }
+.theme-toggle:hover{ color:var(--ink); border-color:var(--muted) }
+.theme-toggle svg{ width:17px; height:17px; fill:none; stroke:currentColor;
+  stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; display:block }
+.theme-toggle .i-sun{ display:none }
+[data-theme="dark"] .theme-toggle .i-moon{ display:none }
+[data-theme="dark"] .theme-toggle .i-sun{ display:block }
+/* 940px is where the centre links go; below that the bar is brand + buy +
+   toggle, which still fits comfortably on a phone. */
+@media(max-width:420px){ html[data-theme-ready] .theme-toggle{ display:none } }
 
 /* ── buttons ──────────────────────────────────────────────────────────────
    Every button carries a glyph at 17px — Apple's proportion, never taller
@@ -341,6 +415,19 @@ details p{ color:var(--muted); font-size:.97rem; padding:0 0 24px; max-width:62c
 .post figure{ margin:30px 0 }
 .post figure img{ width:100%; height:auto; display:block; border-radius:14px;
   border:1px solid var(--line); box-shadow:var(--shot-shadow) }
+
+/* The diagrams are SVGs drawn on transparency: white cards, near-black labels,
+   and — the part that matters here — caption lines *outside* the cards at
+   --ink-2 of the light palette. Those are hardcoded into 12 hand-authored
+   files, so on a dark page they would be near-black text on near-black ground.
+
+   Targeting the extension rather than adding a class is what keeps this working
+   for diagrams written later by someone who has not read this comment. The
+   screenshots are .webp, are opaque, and have their own dark captures, so they
+   are correctly left out. */
+[data-theme="dark"] .post figure img[src$=".svg"],
+[data-theme="dark"] .shots img[src$=".svg"]{
+  background:var(--figure-plate); padding:var(--figure-pad); border-color:transparent }
 .post figcaption{ color:var(--muted); font-size:.86rem; margin-top:11px; text-align:center }
 .post hr{ border:0; border-top:1px solid var(--line); margin:40px 0 }
 

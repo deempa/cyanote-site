@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Changelog — Cyanote</title>
@@ -41,6 +42,10 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
       <span class="btn-label">Get Cyanote — $10</span></a>
   </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
 </div></nav>
 
 <main id="main" class="doc">
@@ -55,8 +60,24 @@
 
   <section class="rel">
     <div class="relhead">
+      <h2 id="v1.0.4">1.0.4</h2>
+      <span class="date">16 August 2026</span><span class="latest">Latest</span>
+    </div>
+      <p>Bug fixes and improvements.</p>
+      <ul><li><strong>Pasting from the clipboard history now always lands in the app you were working in</strong>, including when you pick an entry with the mouse.</li><li><strong>A paste that needs macOS Accessibility permission now says so</strong>, and offers to open the right settings pane, instead of quietly doing nothing.</li><li><strong>Choosing or dismissing a clipboard entry puts you back where you were</strong>, without the Cyanote window coming forward.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
+      <h2 id="v1.0.3">1.0.3</h2>
+      <span class="date">14 August 2026</span>
+    </div>
+      <p>Bug fixes and improvements.</p>
+      <ul><li><strong>Locking a note now keeps everything you just typed</strong>, including the words written in the moments right before you locked it.</li><li><strong>The clipboard manager takes up far less space</strong>, and its list opens faster when it holds screenshots.</li><li><strong>A copied image too large to keep is still listed</strong>, rather than quietly going missing.</li></ul>
+  </section>
+  <section class="rel">
+    <div class="relhead">
       <h2 id="v1.0.2">1.0.2</h2>
-      <span class="date">13 August 2026</span><span class="latest">Latest</span>
+      <span class="date">13 August 2026</span>
     </div>
       <p>Bug fixes and improvements.</p>
       <ul><li><strong>The clipboard manager can now be switched off</strong> in Settings → Clipboard, which also clears what it has already saved.</li><li><strong>A clearer introduction the first time you open Cyanote</strong>, and a walkthrough you can replay whenever you like from Settings → General.</li><li><strong>Updates now ask before restarting</strong>, so one never interrupts you mid-sentence.</li></ul>
@@ -110,7 +131,6 @@
     </ul></div>
     <div><h3>Resources</h3><ul>
       <li><a href="/blog/">Blog</a></li>
-      <li><a href="about.html">About</a></li>
       <li><a href="privacy.html">Privacy</a></li>
       <li><a href="terms.html">Terms</a></li>
       <li><a href="refund.html">Refunds</a></li>
@@ -125,5 +145,6 @@
   </div>
   <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
 </div></footer>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
 </body>
 </html>
