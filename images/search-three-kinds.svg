@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="s3-title s3-desc">
+  <title id="s3-title">Three things note apps call search</title>
+  <desc id="s3-desc">Title matching finds notes whose name contains what you typed and misses everything written inside a note called Tuesday. Substring matching scans the body but returns results in creation order with no sense of which matters. Ranked full-text search knows which notes contain each word and how well, so two-word queries work and the best match comes first.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 26px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 21px; fill: #3d3f45; }
+    .note { font-size: 20px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 20px; fill: #3d3f45; }
+  </style>
+
+  <!-- title matching -->
+  <rect class="card" x="30" y="30" width="360" height="320" rx="14"/>
+  <rect x="30" y="30" width="360" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="62" y="86">Title matching</text>
+  <text class="note" x="62" y="120">Looks at note names only</text>
+
+  <text class="mono" x="62" y="172">deploy staging</text>
+  <line x1="62" y1="188" x2="358" y2="188" stroke="#e6e6e9" stroke-width="2"/>
+
+  <text class="item" x="62" y="228">No results</text>
+  <text class="note" x="62" y="264">The note was called</text>
+  <text class="note" x="62" y="290">&#8220;Tuesday&#8221;, so nothing</text>
+  <text class="note" x="62" y="316">in it can be reached.</text>
+
+  <!-- substring -->
+  <rect class="card" x="420" y="30" width="360" height="320" rx="14"/>
+  <rect x="420" y="30" width="360" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="452" y="86">Substring scan</text>
+  <text class="note" x="452" y="120">Scans body text for letters</text>
+
+  <text class="mono" x="452" y="172">deploy staging</text>
+  <line x1="452" y1="188" x2="748" y2="188" stroke="#e6e6e9" stroke-width="2"/>
+
+  <text class="item" x="452" y="228">No results</text>
+  <text class="note" x="452" y="264">Two words are one</text>
+  <text class="note" x="452" y="290">phrase to it. One word</text>
+  <text class="note" x="452" y="316">returns sixty, unranked.</text>
+
+  <!-- full text -->
+  <rect class="card" x="810" y="30" width="360" height="320" rx="14"/>
+  <rect x="810" y="30" width="360" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="842" y="86">Ranked full text</text>
+  <text class="note" x="842" y="120">An index of every word</text>
+
+  <text class="mono" x="842" y="172">deploy staging</text>
+  <line x1="842" y1="188" x2="1138" y2="188" stroke="#e6e6e9" stroke-width="2"/>
+
+  <circle cx="852" cy="221" r="5" fill="#0e7cc4"/>
+  <text class="item" x="874" y="228">Tuesday</text>
+  <circle cx="852" cy="257" r="5" fill="#b8bcc4"/>
+  <text class="item" x="874" y="264">Runbook</text>
+  <circle cx="852" cy="293" r="5" fill="#b8bcc4"/>
+  <text class="item" x="874" y="300">Standup, 4 Aug</text>
+  <text class="note" x="842" y="332">Both words. Best first.</text>
+
+  <text class="foot" x="30" y="405">All three feel identical for the first hundred notes.</text>
+  <text class="foot" x="30" y="437">Only the third one still answers the question at a thousand.</text>
+</svg>

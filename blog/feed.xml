@@ -7,12 +7,444 @@
     <atom:link href="https://cyanote.app/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Plain writing about keeping notes, running a week and owning your own data — from the person who builds Cyanote, a local-first Mac app you pay for once.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 16 Aug 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 09:00:00 +0000</lastBuildDate>
     <image>
       <url>https://cyanote.app/og-image.png</url>
       <title>The Cyanote blog — notes, tasks and calmer software</title>
       <link>https://cyanote.app/blog/</link>
     </image>
+    <item>
+      <title>Why a notes app should open instantly</title>
+      <link>https://cyanote.app/blog/why-a-notes-app-should-open-instantly/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/why-a-notes-app-should-open-instantly/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Two seconds is not a performance problem, it is a behaviour problem. What a slow launch actually costs, and the four things that make one slow.</description>
+      <content:encoded><![CDATA[<p>A notes app that takes two seconds to open is not slow. Two seconds is nothing; you have waited longer for a kettle without resenting it.</p>
+<p>What two seconds is, is <em>long enough to notice</em>. And the thing you do when you notice is decide — quickly, without articulating it — whether the note is worth the wait. Most of the time it is. Some of the time you were only going to write down four words, and four words are not worth a spinner, so you keep them in your head instead and they are gone by lunchtime.</p>
+<p>That is the actual cost of a slow launch. Not the seconds. The notes that never got written because opening the app was a decision.</p>
+<h2 id="the-four-second-thought">The four-second thought</h2>
+<p>Capture has a shelf life. Something occurs to you — a name, a thing you owe someone, a fix you just worked out — and you have a few seconds of willingness before your attention is somewhere else.</p>
+<p>Everything that happens in those seconds is competing for the same budget: reaching for the machine, finding the app, waiting for it, finding where to type. A launch that costs two of the four is not taking half your time. It is taking half your <em>willingness</em>, and willingness is the scarce thing.</p>
+<p>You can watch this in how people behave rather than what they say. The app that ends up holding the scraps is almost never the most capable one. It is whichever one is already open, or opens fast enough that using it never felt like a decision. Fast is not a nice-to-have in this category; it is most of the product.</p>
+<h2 id="what-makes-a-launch-slow">What makes a launch slow</h2>
+<p>Four things, roughly in order of how much they cost.</p>
+<p><strong>A network request on the critical path.</strong> The app opens, then asks a server something — is this session valid, is the licence current, what changed since last time — and will not draw your notes until it has an answer. On good wifi this is a few hundred milliseconds and nobody notices. On hotel wifi it is a spinner, and on no wifi it is a spinner that eventually times out, which is the worst launch in software: slower when there is <em>nothing to fetch</em>.</p>
+<p><strong>Loading everything before showing anything.</strong> Some apps read the whole collection into memory at startup. Fine at 50 notes. Not fine at 5,000, and it degrades exactly as your investment in the app grows, so the app gets worse the more you have used it.</p>
+<p><strong>Rendering the world before the window.</strong> Building every sidebar, every list and every panel before painting anything. The fix is boring and known — draw the window, then fill it — but it takes deliberate work that nobody does unless somebody measures.</p>
+<p><strong>A runtime that has to start first.</strong> If the app ships its own browser engine, that engine boots before your notes exist. This is the one people argue about, and the honest position is that it is real but smaller than the internet thinks: a well-built Electron app can start fast, and a badly built native one can be slow. It is a handicap, not a verdict.</p>
+<figure><img src="/images/startup-path.svg" alt="The steps between clicking an icon and being able to type, with and without a server in the path" width="1200" height="430" loading="lazy" decoding="async" /><figcaption>The first two boxes on the top row are the ones that get slower when the network is bad — which is to say, slower when there is nothing to fetch.</figcaption></figure>
+<h2 id="cold-warm-and-the-number-that-matters">Cold, warm, and the number that matters</h2>
+<p>If you measure this yourself, measure the right thing.</p>
+<p><strong>Cold start</strong> is after a reboot, or after the app has been closed long enough to fall out of the file cache. It is the slowest number and the least frequent.</p>
+<p><strong>Warm start</strong> is the one you live with: quitting and reopening in the same session, everything still cached. This is what "open the app to write four words" actually costs, and it is usually a fraction of the cold number.</p>
+<p><strong>Time to first useful keystroke</strong> is the only measure that matters, and almost nobody publishes it. Not when the window appears — when you can type and the characters land in the right place and are being saved. Plenty of apps show a window quickly and then swallow the first half-second of typing, which is worse than a longer honest wait, because you have to check whether your words survived.</p>
+<p>Test it the way you use it. Quit the app, open it, and start typing immediately. Did every character arrive?</p>
+<h2 id="memory-and-why-it-shows-up-as-speed">Memory, and why it shows up as speed</h2>
+<p>Idle memory footprint gets discussed as if it were a virtue in itself, and mostly it is not — unused RAM is wasted RAM, and a browser tab you left open probably costs more than any of this.</p>
+<p>It matters at the edges, and the edges are where people live. If you keep an app open all day alongside a browser, a chat client, a design tool and a couple of editors, a laptop with 8 or 16 GB starts swapping, and swapping is felt as <em>everything</em> being slow. The app that quietly holds several hundred megabytes to show you a list of notes is not committing a crime; it is spending a shared budget you did not know it was spending.</p>
+<p>The mechanism worth understanding is where the browser engine comes from. Apps built on Electron ship their own copy of Chromium, so every such app on your machine is a separate browser. Apps built on the system webview — which is what Tauri does, using WebKit on macOS — use the engine that is already running as part of the OS. It is the same rendering technology either way; the difference is how many copies of it are resident.</p>
+<h2 id="what-instant-is-worth-as-a-target">What "instant" is worth as a target</h2>
+<p>Under a second to a usable window, on the machine you actually own rather than the developer's.</p>
+<p>The reason to hold that line is not benchmark pride. It is that under a second, the app stops being something you <em>open</em> and becomes something that is simply there — the same way a text field on a page you are already looking at is there. Above a second or two, some fraction of your thoughts stop making the journey, and you will never know which ones, because unwritten notes leave no trace.</p>
+<p>It is the same argument as <a href="/blog/tracking-habits-without-a-separate-app/">the habit tracker that needs its own icon</a> and the <a href="/blog/mac-app-notes-and-clipboard/">clipboard popup that comes to you</a>: every unit of friction between the impulse and the writing costs you some of the writing, and the losses are invisible.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Startup time is not the most important thing about a notes app. It is a hygiene property, and plenty of excellent apps take a beat to open because they are doing something worth doing — indexing a large library, restoring a real session, rendering a document that deserves it. If an app is slow and you love it, that is a completely defensible trade and I would not switch either.</p>
+<p>What is not defensible is being slow <em>because of a server</em>, on a machine that already has all your notes on it. That is a launch delay you are paying for architecture you did not ask for.</p>
+<p>Cyanote's startup budget is under a second to a usable window, and it holds because there is nothing to wait for: no session check, no sync handshake, no server in the path. Everything is read from one SQLite database on your own disk, and the app is built with Tauri, so it draws through the WebView macOS already has rather than shipping a browser of its own. With the wifi off it opens in the same time, because the wifi was never part of opening it.</p>]]></content:encoded>
+      <category>Performance</category>
+      <category>macOS</category>
+      <category>Design</category>
+    </item>
+    <item>
+      <title>When it is actually worth moving off Apple Notes</title>
+      <link>https://cyanote.app/blog/when-to-move-off-apple-notes/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/when-to-move-off-apple-notes/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Apple Notes is free, fast and already installed, and most people should keep it. Here are the four reasons that genuinely justify leaving — and one that does not.</description>
+      <content:encoded><![CDATA[<p>Let me start where most posts in this genre will not: Apple Notes is good, and if it is working for you, the correct move is to keep using it.</p>
+<p>It is free. It is already installed. It launches instantly, syncs to your phone without you configuring anything, locks individual notes behind Touch ID, scans documents through the camera, and has quietly grown folders, tags, smart folders, tables, checklists and note-to-note linking over the last few years. For the enormous number of people whose requirement is "somewhere to put things", it is the answer, and switching to something else because a blog told you to is how you end up with two half-populated notes apps.</p>
+<p>So this post is about the specific cases where leaving is justified — and I am going to be strict about it, because most reasons people give are not.</p>
+<h2 id="the-reason-that-is-not-good-enough">The reason that is not good enough</h2>
+<p><strong>"I want a better writing experience."</strong></p>
+<p>You do not, usually. What you want is to have written, and a nicer editor is the most pleasant available substitute for doing it. Switching apps for aesthetics produces a genuine two-week productivity boost, followed by exactly the same output as before, in a different typeface.</p>
+<p>If your notes are fine and you are just bored of looking at them, changing the app is an expensive way to fix that. Changing the theme is a cheap one, and worth trying first.</p>
+<p>Now the four that hold up.</p>
+<h2 id="one-you-need-it-to-leave">One: you need it to leave</h2>
+<p>This is the strongest reason, and it is structural rather than aesthetic.</p>
+<p>As of August 2026, Notes on macOS can export a single note to PDF or Markdown from the File menu. There is still no built-in way to take the whole collection out at once — bulk export means a third-party tool, AppleScript, or clicking through a few hundred notes one at a time.</p>
+<p>For most people that is a non-issue right up until the day it is the only issue: moving to a Windows machine, handing a project archive to a client, or simply wanting your own words in files you can grep. The cost is not visible while you are inside the system, which is exactly what makes it worth counting in advance. It is the same question as <a href="/blog/what-happens-when-your-notes-app-shuts-down/">what happens when your notes app shuts down</a>, asked of an app that is not going anywhere — Apple will still be here, and your notes will still be inside a format that only leaves one at a time.</p>
+<p>If you are two hundred notes in and thinking about a move, that is the moment it is cheapest. It never gets cheaper again.</p>
+<h2 id="two-your-notes-contain-things-icloud-should-not">Two: your notes contain things iCloud should not</h2>
+<p>Notes syncs through iCloud by default, and iCloud is well-run infrastructure. Advanced Data Protection makes it end-to-end encrypted if you turn it on, and locked notes are encrypted regardless. This is a better privacy story than most of the industry offers.</p>
+<p>It is still a copy on somebody else's servers, tied to an identity, subject to an account that can be locked, and reachable by a legal process directed at Apple rather than at you. For a large share of note-taking, none of that matters. For a therapist's session notes, a lawyer's case notes, a journalist's sources, an HR investigation, or a diary you would genuinely rather not have restored to a future device — it matters, and no amount of "they are a good company" changes the shape of the arrangement.</p>
+<p>The alternative is not "trust a different company more". It is not involving one: a database on your own disk, where the recovery story is a backup you control and the legal story is a warrant served on you. Whether that trade is worth it depends entirely on what is in the notes.</p>
+<h2 id="three-what-you-write-does-not-fit-the-editor">Three: what you write does not fit the editor</h2>
+<p>Notes is built for prose, lists and pictures, and it is genuinely good at those. It is not built for a few specific shapes.</p>
+<p><strong>Code.</strong> No code blocks with syntax highlighting. Paste a shell command into Notes and smart quotes and autocorrect are actively working against you. This is the single most common reason developers leave, and it is a real one — I have written separately about <a href="/blog/notes-and-code-in-one-app/">keeping notes and code in one app</a>.</p>
+<p><strong>Deeply nested structure.</strong> Folders and one level of sub-folders is not the same as notes that nest into sub-pages arbitrarily. If you think in outlines, you will feel the ceiling.</p>
+<p><strong>Typography you control.</strong> Font, size and line spacing are largely Apple's decision. If you read for hours and have opinions about measure and leading, <a href="/blog/customising-a-notes-app/">that ceiling is low</a>.</p>
+<p>If none of these describes what you write, this reason does not apply to you, and it is fine to say so.</p>
+<figure><img src="/images/note.webp" alt="A note in Cyanote with headings, a table and a code block in the same document" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The shapes that do not fit are specific: code, deep nesting, and typography you control. Everything else Notes already does well.</figcaption></figure>
+<h2 id="four-the-notes-are-only-one-of-five-things">Four: the notes are only one of five things</h2>
+<p>This is the honest reason most people switch, and it has nothing to do with Notes being deficient at notes.</p>
+<p>Your week is not made of notes. It is made of notes, a to-do list, a calendar, a couple of habits you are trying to keep, and a clipboard full of things you copied. Notes covers one of those, plus checklists. The rest live in Reminders, Calendar, some habit app, and whatever clipboard manager you installed in 2021 — five icons, five windows, five places to look for the thing you wrote down.</p>
+<p>Apple's apps are individually good and deliberately separate, which is the right call for a platform vendor and the wrong shape for some people's day. If you keep losing things in the gaps between five apps, that is not a notes problem and no notes app will fix it. It is the argument for <a href="/blog/replaced-five-subscriptions-with-one-app/">one window instead of five</a>.</p>
+<h2 id="what-you-give-up-by-leaving">What you give up by leaving</h2>
+<p>Being straight about the cost, since it is substantial.</p>
+<p><strong>Your phone.</strong> Notes on iPhone is excellent and syncs for free with nothing to set up. Almost any alternative is worse at this, and several — including mine — do not have a phone app at all. If you write notes on your phone daily, this is close to disqualifying, and you should weigh it above everything above.</p>
+<p><strong>Free.</strong> Notes costs nothing, forever, with no licence to keep track of.</p>
+<p><strong>Integration.</strong> Share sheets, Siri, Quick Note from the corner of the screen, scanning with the camera, handwriting on an iPad. Third-party apps get some of this; none get all of it.</p>
+<p><strong>Collaboration.</strong> Sharing a note with a family member and both editing it. Local-first apps categorically cannot do this, and pretending otherwise would be dishonest.</p>
+<p>If more than one of those matters to you, stay. That is not a consolation prize; it is the right decision.</p>
+<h2 id="how-to-leave-if-you-are-leaving">How to leave, if you are leaving</h2>
+<p>Do it in a way that does not depend on the new app working out.</p>
+<p><strong>Get the text out first, on its own.</strong> Export to Markdown or PDF into a folder before importing anywhere. If the new app disappoints you in a month, you still have your notes in a format nothing owns.</p>
+<p><strong>Do not migrate everything.</strong> Move the last six months and the twenty notes you actually reference. The rest is an archive; leave it in Notes, which is not going anywhere, and search it there on the rare occasion you need it. Wholesale migration is how people spend a weekend and end up with two apps and no system.</p>
+<p><strong>Keep Notes installed.</strong> For the phone, for scanning, for shared notes. Leaving an app does not have to mean deleting it, and the shared-with-family grocery list is genuinely better where it is.</p>
+<p><strong>Run the four-second test on the new one</strong> before you commit: turn the wifi off and see <a href="/blog/what-still-works-with-the-wifi-off/">what still works</a>.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Most people reading this should stay on Apple Notes, and I would rather say that than sell you something. The four reasons above are narrow on purpose: exit cost, the sensitivity of what you write, editors that do not fit the shape of it, and a week that is more than notes.</p>
+<p>Cyanote answers the last three and the first: a block editor with code blocks and syntax highlighting, notes that nest into sub-pages, typography set per note, tasks and a board and a calendar and habits and a clipboard history in the same window, everything in one SQLite database on your own Mac with no account — and a one-file JSON export of the whole collection whenever you want it. It has no iPhone app, no collaboration and no share sheet, and it costs $10 once where Notes costs nothing. Those are the actual terms of the trade.</p>]]></content:encoded>
+      <category>Buying advice</category>
+      <category>macOS</category>
+      <category>Notes</category>
+    </item>
+    <item>
+      <title>What still works with the wifi off</title>
+      <link>https://cyanote.app/blog/what-still-works-with-the-wifi-off/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/what-still-works-with-the-wifi-off/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Most apps that call themselves offline just queue your changes until the connection returns. That is a different promise. Here is how to tell in advance.</description>
+      <content:encoded><![CDATA[<p>The test takes four seconds and almost nobody runs it before they need it: turn the wifi off, and open the app you keep your week in.</p>
+<p>You find out three things immediately. Whether it opens at all. Whether your notes are there. And whether the app tells you honestly that it is offline, or just quietly stops saving.</p>
+<p>I would run that test on a Tuesday afternoon rather than at thirty thousand feet.</p>
+<h2 id="offline-support-means-at-least-three-different-things">"Offline support" means at least three different things</h2>
+<p>They are sold with the same word and they behave nothing alike.</p>
+<p><strong>Offline-tolerant.</strong> The app needs the network but degrades politely. It caches what you looked at recently, lets you read it, and queues edits. Works fine on a train with patchy signal. Falls apart on a two-week trip, or the moment the cache expires, or when you want something you have not opened in a month.</p>
+<p><strong>Offline-capable with sync.</strong> There is a real local copy of your data and a real local database. You can work fully offline for as long as you like, and changes reconcile when you reconnect. This is the good version of cloud software, and it is expensive to build, which is why it is rarer than the marketing suggests.</p>
+<p><strong>Local-first.</strong> There is no server in the loop at all. The database on your disk is not a cache of the truth; it <em>is</em> the truth. Offline is not a supported mode, because there is no other mode — the network was never involved.</p>
+<p>The difference only shows up under pressure. All three feel identical on a good connection, which is precisely why people find out which one they bought at the worst possible moment.</p>
+<figure><img src="/images/offline-still-works.svg" alt="What is still there when the network is not: the local database, and everything drawn from it" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The question is not whether the app opens. It is whether the thing you need was ever on the machine.</figcaption></figure>
+<h2 id="the-four-second-test-done-properly">The four-second test, done properly</h2>
+<p>Turn off wifi. Then, in order:</p>
+<p><strong>Open the app cold.</strong> Quit it first — an app that is already running may be showing you memory, not disk. If the launch hangs on a spinner, you have learned the most important thing there is to learn about it.</p>
+<p><strong>Open something you have not touched in months.</strong> This is the real test, and the one people skip. Recent notes are cached almost everywhere; the note from March is what separates a local copy from a local cache.</p>
+<p><strong>Search for a word inside a note, not in its title.</strong> Full-text search is often the first thing to go, because in a lot of apps the index lives on the server. An app that can show you a note but cannot find it offline has given you a filing cabinet with the drawers welded shut.</p>
+<p><strong>Write something, then quit and reopen.</strong> Did it survive? Some apps accept typing while offline and lose it on relaunch, which is worse than refusing the edit, because you were told nothing.</p>
+<p><strong>Check the small things.</strong> Search, attachments, images in notes, the calendar, the clipboard history, whatever else you rely on. Attachments are the usual casualty: the text is local, the image is a URL.</p>
+<p>Five minutes, once. It tells you more about an app than a fortnight of using it well-connected.</p>
+<h2 id="why-this-is-not-really-about-planes">Why this is not really about planes</h2>
+<p>Everybody frames offline as a travel feature and that undersells it badly. Flights are the least common case.</p>
+<p>The common cases are ordinary. A hotel captive portal that wants a room number you do not have. A conference wifi that authenticates for eleven minutes at a time. A train through a valley. The morning your home connection is out and you need the note with the account number in it, on the machine in front of you, to make the call about the connection being out. A café network so bad that the app is technically connected and therefore refuses to admit it is offline — which is the worst state of all, because a connected-but-useless app usually has no offline mode to fall into.</p>
+<p>There is also the version with no network involved at all: a company that goes under, an account locked by an automated system, a service that decides your region is no longer supported. Those look nothing like a flight and produce exactly the same screen. I have written about <a href="/blog/what-happens-when-your-notes-app-shuts-down/">what happens when the app itself shuts down</a> — offline capability is the same property, tested by a different failure.</p>
+<h2 id="what-working-offline-should-feel-like">What working offline should feel like</h2>
+<p>Not "a limited mode". Nothing at all.</p>
+<p>If offline is genuinely handled, turning the wifi off changes nothing you can see. No banner, no reduced feature set, no read-only state, no queue counter. You do not find out the connection dropped, because the app was never asking.</p>
+<p>That is the actual bar. Any visible offline experience — however well designed — is telling you that the app's normal state involves a server, and that you are currently in the fallback. Sometimes that is a fine trade for sync and sharing, and <a href="/blog/notes-app-without-an-account/">an account genuinely buys you things</a>. But it should be a trade you made knowingly, not one you discover in an airport.</p>
+<h2 id="the-trade-you-are-making">The trade you are making</h2>
+<p>Being honest about the other side, since a page arguing for local-first has an obvious incentive not to be.</p>
+<p>No network means no sync. Your notes are on this machine, and if you want them on your phone you need to do something deliberate about it — an export, a file in a folder you sync yourself, or accepting that the phone is not part of the system. It means no collaboration: nobody else can see or edit anything. And it means backups are entirely your job, because there is no server quietly keeping a copy of everything for you. That last one is the real cost, and it is why <a href="/blog/backing-up-local-notes/">backups deserve their own five minutes</a>.</p>
+<p>If your life genuinely runs across three devices and two other people, offline-capable-with-sync is the shape you want, and paying for it is reasonable. The mistake is paying for offline-<em>tolerant</em> while believing you bought one of the other two.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Run the test. Whatever you use, and especially if it is something you have trusted for years without checking. It costs five minutes, and the answer is a fact about your own setup rather than a claim from a marketing page.</p>
+<p>Cyanote is the third kind. Everything — notes, tasks, the board, the calendar, habits, routines, the clipboard history — lives in one SQLite database on your own disk, and the app draws every screen from it. Exactly three requests ever leave the machine: a one-time licence check when you first install, an anonymous update check, and a calendar feed if you subscribe to one. None of them carries a word you have written, and none of them is needed to open the app, search it, or write in it. With the wifi off, nothing changes and nothing tells you it has.</p>]]></content:encoded>
+      <category>Offline</category>
+      <category>Local-first</category>
+      <category>Travel</category>
+    </item>
+    <item>
+      <title>Typing a task the way you would say it</title>
+      <link>https://cyanote.app/blog/typing-a-task-the-way-you-say-it/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/typing-a-task-the-way-you-say-it/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Pay rent tomorrow 9am !high&quot; should become a task with a date, a time and a priority. Why that one detail decides whether a to-do list survives a month.</description>
+      <content:encoded><![CDATA[<p>Here is the whole problem with to-do apps, in one moment.</p>
+<p>Something occurs to you. You have about four seconds of willingness before the thought is gone and you are doing something else. In those four seconds a good app takes a sentence. A bad one takes a sentence, a date picker, a dropdown for priority, a project selector and a save button.</p>
+<p>The four seconds are not negotiable. Everything else in the design has to fit inside them.</p>
+<h2 id="what-natural-language-entry-actually-is">What natural-language entry actually is</h2>
+<p>You type <code>pay rent tomorrow 9am !high</code> into one field. The app reads the words, pulls out the date, the time and the priority, and creates a task called "Pay rent" due at nine tomorrow morning, marked high.</p>
+<p>That is the entire feature, and it sounds like a convenience. It is not. It is the difference between a to-do list that gets used and one that gets abandoned, because it collapses five interactions into one and lands the whole thing inside the four seconds.</p>
+<p>The alternative is not "slightly slower". The alternative is that you skip the date, because the date is another two clicks, and a task with no date is a task that does not appear on any day, which means the list becomes a graveyard of undated intentions and you stop trusting it. Undated tasks are how to-do lists die.</p>
+<figure><img src="/images/todo.webp" alt="Tasks in Cyanote, grouped by when they are due, with the parsed date and priority shown as chips on the task" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The date came out of the sentence. The chip is there so you can see what it decided, and dismiss it if it guessed wrong.</figcaption></figure>
+<h2 id="why-it-also-breaks-things">Why it also breaks things</h2>
+<p>Every parser is a guess, and the guesses fail in a specific, annoying way.</p>
+<p>You type <code>call Mark about the May figures</code> and the app helpfully schedules it for 1 May. You type <code>read the March report</code> and it does the same. The word was part of the thing, not part of the schedule, and the app cannot tell — English does not mark the difference.</p>
+<p>This is the failure that makes people turn natural-language entry off, and the fix is not a better parser. It is <strong>visible, reversible parsing</strong>. The app shows you what it extracted, as something you can see and dismiss — a chip, a highlight, a token in the field — before or right after the task is created. Then a wrong guess costs one click to undo instead of a task that silently shows up on the wrong day in six weeks.</p>
+<p>Compare that with the invisible version, which quietly rewrites the title and tells you nothing. That app is not faster. It is faster <em>and occasionally wrong in a way you will find out about later</em>, which is worse than slow.</p>
+<h2 id="the-grammar-worth-learning">The grammar worth learning</h2>
+<p>There is a small vocabulary that most apps agree on, and it is worth ten minutes because it covers nearly everything.</p>
+<div class="table-scroll"><table><thead><tr><th scope="col">You type</th><th scope="col">What it should become</th></tr></thead><tbody><tr><td><code>tomorrow</code>, <code>friday</code>, <code>next tuesday</code></td><td>a due date</td></tr><tr><td><code>9am</code>, <code>at 14:30</code>, <code>tonight</code></td><td>a time on that date</td></tr><tr><td><code>!high</code>, <code>!!</code>, <code>p1</code></td><td>a priority</td></tr><tr><td><code>every monday</code>, <code>daily</code></td><td>a repeat</td></tr></tbody></table></div>
+<p>Two habits make the difference in practice. <strong>Put the schedule at the end</strong> — parsers are most reliable on trailing date phrases, and it keeps the words at the start as the actual title. And <strong>write the title as a verb phrase</strong>: "Pay rent", not "Rent". A list of nouns is a list of topics; a list of verbs is a list of things you can start.</p>
+<h2 id="where-the-task-goes-afterwards-matters-as-much">Where the task goes afterwards matters as much</h2>
+<p>Fast capture into a bad list is just a faster way to build a pile.</p>
+<p>What makes the pile navigable is grouping by <em>when</em>, not by project. Overdue, today, this week, later. That ordering answers the only question you have when you open a to-do list on a Tuesday morning, which is "what is actually mine today". Project grouping answers a question you ask once a week, at most, and it is the wrong default for the other six days.</p>
+<p>The same tasks seen a different way is a separate and legitimate need — that is what a board is for, and I have written about <a href="/blog/personal-kanban-board/">running a personal kanban board</a> without turning it into project management. The point is that both views should be the same tasks, not two lists you maintain.</p>
+<h2 id="what-to-check-before-you-commit">What to check before you commit</h2>
+<ul><li><strong>Does it show you what it parsed?</strong> The single most important question. Invisible parsing is a slow-motion trust problem.</li><li><strong>Can you dismiss one part and keep the rest?</strong> Wrong date, right priority, should be one click — not "clear and retype".</li><li><strong>What happens with no schedule at all?</strong> Typing a bare sentence and pressing return should produce a plain undated task, not an error and not a form.</li><li><strong>Does the reminder follow the task, or is it separate?</strong> In some apps a due date and a reminder are two different fields, which means every genuinely time-sensitive task takes two passes.</li><li><strong>Is capture reachable from anywhere?</strong> A capture box that requires the app to be in front of you is capture that will not happen during the four seconds.</li></ul>
+<h2 id="the-honest-version">The honest version</h2>
+<p>If you run serious project management — dependencies, delegation, cross-project rollups, other people's tasks — a general app's to-do list is not the tool, and pretending otherwise wastes your month. Things and OmniFocus have spent well over a decade on exactly this on Apple platforms, and their parsers, their review flows and their project models are deeper than anything bundled into a notes app will be.</p>
+<p>What the bundled version is for is the far more common case: a few dozen personal tasks, most of them small, most of them attached to something you were already writing down. In that case the deciding feature is not the project model. It is whether typing one sentence produces a task on the right day.</p>
+<p>Cyanote parses the sentence as you type it — date, time and priority lifted out of the words and shown as chips you can dismiss — and drops the task into a list grouped by when things are due, with the same tasks available as cards on a board. Reminders sit on the task rather than beside it. It all lives in one SQLite database on your own Mac, with no account, which means the four seconds never include waiting for a server.</p>]]></content:encoded>
+      <category>Tasks</category>
+      <category>Workflow</category>
+      <category>How-to</category>
+    </item>
+    <item>
+      <title>What makes a notes app&#x27;s search actually good</title>
+      <link>https://cyanote.app/blog/searching-your-own-notes/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/searching-your-own-notes/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Search is the most-used feature in a notes app and the least designed. Three different things get called search, and only one survives a thousand notes.</description>
+      <content:encoded><![CDATA[<p>Nobody chooses a notes app for its search. You choose it for the editor, the price, the way it looks at eleven at night. Then you use it for two years, and by the end you are pressing the search shortcut forty times a week and opening the editor to write maybe six new things.</p>
+<p>Search is the feature that quietly becomes the app. It is also, in most apps, the least designed part of it — a text field bolted to whatever the database happened to make easy.</p>
+<h2 id="three-different-things-get-called-search">Three different things get called "search"</h2>
+<p>They feel similar for the first hundred notes and diverge completely after that.</p>
+<p><strong>Title matching.</strong> You type "invo" and it shows every note with "invo" in its name. Fast, cheap to build, and useless the moment the thing you want was written inside a note called "Tuesday".</p>
+<p><strong>Substring matching.</strong> It scans the body text for the letters you typed. Better — it finds things — but it has no idea which result matters. Type "api" and you get sixty notes in the order they were created, including every one that happens to contain "rapidly" or "capital".</p>
+<p><strong>Ranked full-text search.</strong> The app has built an index of the words in every note, so it knows which notes contain your term, how often, and where. Results come back ordered by how well they match rather than by when you happened to write them. This is the one that still works at a thousand notes, and it is the one that costs real engineering to build.</p>
+<p>The tell is what happens with two words. Type <code>deploy staging</code> into title matching and you get nothing. Into substring matching and you get everything containing that exact phrase, which is usually also nothing. Into a real full-text index and you get the notes containing both words, best first.</p>
+<figure><img src="/images/search-three-kinds.svg" alt="The three things note apps call search, and what each one can and cannot find" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>The first two feel identical to the third until the day you have more notes than you can remember writing.</figcaption></figure>
+<h2 id="why-local-search-feels-different-from-cloud-search">Why local search feels different from cloud search</h2>
+<p>This is not about which is technically superior. It is about latency, and latency changes behaviour.</p>
+<p>When search runs on your own machine, the results can update between keystrokes, because there is nothing to wait for — no request, no round trip, no server deciding whether your session is still valid. You type three letters, glance, type a fourth, glance again. Search becomes something you <em>do while thinking</em>, and a search you can do while thinking gets used for questions you would never bother submitting a query for.</p>
+<p>When the index lives on a server, every keystroke either costs a network round trip or the app waits for you to stop typing and press return. Neither is slow in the sense of being broken. Both make search a deliberate act — you have to decide it is worth it before you start. And a search you have to decide about is a search you often skip in favour of scrolling, or of just writing the thing down again.</p>
+<p>That is the actual cost of a slow search box: not the seconds, but the notes you rewrite because finding the old one felt like more work than retyping it.</p>
+<h2 id="what-you-should-be-able-to-find">What you should be able to find</h2>
+<p>Worth checking before you commit two years of writing to something. In a lot of apps the answer to several of these is no, and you will not discover which ones until you need them.</p>
+<ul><li><strong>Words inside code blocks.</strong> Plenty of editors exclude them from the index, which is precisely backwards — a command with flags is the single most searchable-for thing anyone writes down.</li><li><strong>Text inside tick boxes and list items.</strong> Structured content sometimes lives outside the searchable body.</li><li><strong>Text in tables.</strong> Same problem, more often.</li><li><strong>Notes nested inside other notes.</strong> If sub-pages are their own documents, do they show up, and can you tell where they live?</li><li><strong>Notes you have locked.</strong> An encrypted note cannot be indexed in plain text without defeating the point. Most apps take the honest route — the content is not searchable while it is locked — but you should know that before you lock the note with the thing you will need to find.</li></ul>
+<h2 id="the-command-palette-is-a-different-tool-and-you-want-both">The command palette is a different tool, and you want both</h2>
+<p>They get confused because they are both a text field that appears over the app.</p>
+<p>A <strong>command palette</strong> — usually <code>⌘K</code> — is for going somewhere you already know exists. You know the note is called "Rent", you press the shortcut, you type <code>ren</code>, you press return. It is navigation, and it should be judged on how few keystrokes get you there.</p>
+<p><strong>Search</strong> — usually <code>⇧⌘F</code> — is for finding something whose location you have forgotten, using words that were in it. It is retrieval, and it should be judged on whether the right note is in the top three.</p>
+<p>Apps that only ship one of these end up bending it into the other job, and it is always the palette that gets bent — you start typing half-remembered content into a box designed for names, and it politely returns nothing. If you are evaluating an app, try both questions: "take me to the note called X" and "find the note that mentioned X". Different questions. They want different boxes.</p>
+<h2 id="when-search-fails-it-is-usually-not-the-search">When search fails, it is usually not the search</h2>
+<p>The uncomfortable half of this. Once an app has real ranked full-text search, most remaining failures are notes that were written in a way nothing could find.</p>
+<p>A note titled "Notes" containing "sorted it out, was the config thing" is unfindable by any technology, because it contains no word you will ever think to search for. The fix is not a better index. It is writing down the noun — the service name, the person, the error string, the invoice number — somewhere in the note, once. That is the whole discipline, and it takes about four extra words per note.</p>
+<p>This is the same argument as <a href="/blog/how-to-organise-notes/">folders, tags, or search</a>: the structure you spend an afternoon building is worth less than the specific word you spend four seconds typing. Search rewards concrete nouns. Filing rewards nothing much.</p>
+<h2 id="what-search-still-cannot-do">What search still cannot do</h2>
+<p>Search matches words. It does not know what you meant.</p>
+<p>If you are looking for "that thing about the thing" — you remember the shape of an idea but not one word that was in it — search will not save you. Neither will tags, honestly. What actually works is a different move: go to the date, or go to the note you know linked to it. Which is one of the better arguments for linking notes to each other rather than only filing them, and for keeping any kind of daily note at all.</p>
+<p>Semantic search — where the app finds notes about the same idea in different words — solves some of this, and it is genuinely useful. It also, in every implementation I know of, involves sending your notes somewhere to be turned into embeddings, or running a model locally that adds a few hundred megabytes to the app. That is a real trade, not a free feature, and it is worth knowing which side of it an app has chosen before you assume the clever search is local.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>If your notes number in the low hundreds and you write them into folders you remember, title matching will not fail you and none of this matters. Apps with weak search are not badly made; they are made for a size of collection you may never exceed.</p>
+<p>The moment it starts to matter is the moment you cannot remember whether you wrote something down at all. That is the question search is for, and it is the one that separates the three implementations above.</p>
+<p>Cyanote indexes every note with SQLite's full-text engine, so <code>⇧⌘F</code> searches the body of everything — prose, code blocks, tables, tick boxes, sub-pages — and ranks the results rather than listing them by date. <code>⌘K</code> is the other box: it jumps to any page or note by name. Both run against a database on your own disk, which is why the results move while you are still typing, and why they still do it with the wifi off.</p>]]></content:encoded>
+      <category>Search</category>
+      <category>Notes</category>
+      <category>How-to</category>
+    </item>
+    <item>
+      <title>Reminders you do not start ignoring</title>
+      <link>https://cyanote.app/blog/reminders-you-do-not-start-ignoring/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/reminders-you-do-not-start-ignoring/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>A reminder you swipe away has not failed to fire. It has trained you to swipe. Here is why notification systems decay, and the smaller setup that survives.</description>
+      <content:encoded><![CDATA[<p>There is a moment, a few months into any reminder system, where you notice you have swiped one away without reading it.</p>
+<p>Not ignored it deliberately. Read the shape of the banner, recognised the category, dismissed it — all before the words registered. Your hand did it. And once your hand can do it, the reminder is no longer a reminder. It is a small ambient tax you pay several times a day for nothing.</p>
+<p>Nothing broke. It fired exactly as configured. That is the problem.</p>
+<h2 id="why-the-decay-is-structural">Why the decay is structural</h2>
+<p>Every notification you receive teaches you something about the next one. If the last twenty were things you already knew, did not need, or could not act on where you were standing, the twenty-first arrives pre-discounted.</p>
+<p>The trap is that the systems decay in the direction of <em>more</em>. When something gets missed, the obvious fix is another reminder — earlier, or louder, or repeated. That works for about a week, and then the new reminders join the baseline and get discounted too. Now you have twice the volume and the same hit rate, and the only remaining move is another escalation.</p>
+<p>Meanwhile every alert has a cost that does not show up anywhere. It arrives while you are doing something, and the interruption is paid whether or not the reminder was useful. A banner you dismiss in half a second costs considerably more than half a second of attention, and the ones for things you were never going to act on cost the same as the ones that matter.</p>
+<h2 id="the-three-questions-that-kill-most-of-them">The three questions that kill most of them</h2>
+<p>For every recurring alert you get, in order:</p>
+<p><strong>Could I act on this, here, when it arrives?</strong> If a reminder fires while you are on a train and the action requires a laptop, it is not a reminder. It is an anxiety generator with a schedule. Either move it to a time when you are at the laptop, or delete it — those are the only two honest options.</p>
+<p><strong>Did I already know?</strong> The reminder for the thing you think about every day is pure noise. It fires, you think "yes, I know", you dismiss. That loop is where the swipe reflex gets trained, and it is trained by the harmless ones.</p>
+<p><strong>What happens if this one never fires?</strong> Sometimes the answer is genuinely nothing. A habit you have kept for eight months does not need a nudge; it has become the thing the nudge was for. Reminders for established habits are the most-swiped category there is.</p>
+<p>Most people's setups lose half their alerts to those three questions and get <em>more</em> reliable, because the survivors stop arriving in a crowd.</p>
+<figure><img src="/images/today.webp" alt="The Today view: what is scheduled, what is due, and what is still outstanding, in one place you go to rather than one that comes to you" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Pull beats push for anything that is not time-critical. The list is there when you look; it does not need to interrupt you to exist.</figcaption></figure>
+<h2 id="push-and-pull-are-different-tools">Push and pull are different tools</h2>
+<p>This is the distinction that fixes most of it, and almost no app makes it for you.</p>
+<p><strong>Push</strong> — a banner, a sound, a badge — is for things where the <em>moment</em> is the point. A call at four. A train at 18:12. Something in the oven. The defining feature is that being told later is worthless, which is what justifies the interruption.</p>
+<p><strong>Pull</strong> — a list you go and look at — is for everything else. What is due today. What is left this week. The three things you said you would do. None of that needs to interrupt you, because you will look at the list at a natural boundary anyway: starting the day, finishing a task, coming back from lunch.</p>
+<p>The mistake nearly everyone makes is pushing pull-shaped information. "You have 6 tasks due today" as a banner at 9am does not help; you were going to open the list at 9am regardless. All it does is add one more thing to the pile your hand has learned to swipe.</p>
+<p>Move everything that is not time-critical from push to pull and the remaining pushes start getting read again. That is the whole mechanism.</p>
+<h2 id="the-lead-time-nobody-tunes">The lead time nobody tunes</h2>
+<p>Default reminder timing is usually fifteen minutes before, and fifteen minutes is wrong for almost everything.</p>
+<p>The right lead time is however long it takes to <em>do the thing that makes the event possible</em>. For a video call, that is two minutes: open the link. For a meeting across town, it is however long the journey takes plus a margin. For something you need to have prepared for, the useful reminder is the night before, when you can still prepare — the one fifteen minutes beforehand only tells you it is too late.</p>
+<p>Apps offer 5, 10, 30 minutes, an hour, a day. Those exist because they are the actual useful shapes: two of them are "get to the thing", two are "wrap up what you are doing first", and the day-ahead is "you need to prepare". Picking deliberately instead of accepting the default is a two-second decision that decides whether the alert is worth anything.</p>
+<p>And for repeating events, check that the reminder repeats with it. A weekly meeting whose reminder only fired for the first occurrence is a specific and very common disappointment.</p>
+<h2 id="what-to-do-with-the-ones-you-cannot-act-on">What to do with the ones you cannot act on</h2>
+<p>There is a category left over: reminders that fire at the right time about a real thing, which you nonetheless cannot do anything about right now.</p>
+<p>The answer is not snooze. Snooze is how a task becomes a thing you dismiss six times, and by the sixth the app has taught you the item is optional.</p>
+<p>The answer is a place to put it that you trust — one list, checked at a known moment. That is what makes the difference between deferring something and losing it, and it is the entire reason a <a href="/blog/weekly-review-in-20-minutes/">weekly review</a> is worth twenty minutes. If you have a reliable moment where everything deferred gets looked at again, you can dismiss an alert honestly rather than snoozing it dishonestly.</p>
+<h2 id="what-a-good-setup-looks-like">What a good setup looks like</h2>
+<p>Small enough to describe in five lines.</p>
+<ul><li><strong>Push, only for the clock.</strong> Events with a time, with a lead that matches what the event needs.</li><li><strong>Pull, for everything else.</strong> One view of today: what is scheduled, what is due, what is outstanding. You go to it.</li><li><strong>No reminders for established habits.</strong> If it is holding, the alert is noise. If it is not holding, the alert is not what was missing.</li><li><strong>No badges you have stopped reading.</strong> A number you have not acted on in a fortnight is decoration with anxiety attached.</li><li><strong>One place deferred things land</strong>, looked at on a schedule you actually keep.</li></ul>
+<p>That is a system that stays credible, and credibility is the only property that matters. A reminder is worth exactly as much as your willingness to read the next one.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>If your work genuinely is time-critical — on-call, clinical, operational, anything where the cost of missing something is high — you want more alerting, not less, and you want it escalating and redundant. This post is not for that. Escalation exists because sometimes the cost of interruption is the cheap side of the trade.</p>
+<p>For an ordinary week, the failure is almost never a reminder that did not fire. It is thirty that did, of which four mattered.</p>
+<p>Cyanote's version leans toward pull. Today shows the day's schedule, what is due, the habits still outstanding and the routines not yet run, with the next event counting down beside it — one place you look rather than a stream that arrives. Events remind at 5, 10 or 30 minutes, an hour or a day ahead, and a repeating event carries its reminder to every occurrence. Tasks take a due date and a reminder in the same sentence you type them in. All of it runs from a local database on your own Mac, which means the notifications come from your machine and nothing about your schedule is sitting on a server to be alerted from.</p>]]></content:encoded>
+      <category>Reminders</category>
+      <category>Focus</category>
+      <category>Method</category>
+    </item>
+    <item>
+      <title>The small text tools you keep pasting work data into</title>
+      <link>https://cyanote.app/blog/pasting-work-data-into-random-websites/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/pasting-work-data-into-random-websites/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Everyone has a bookmark for a JSON formatter and a JWT decoder. Few of us think about where that paste goes. Here is the real risk, and the boring fix.</description>
+      <content:encoded><![CDATA[<p>You have a response body that is one long line and you need to read it. So you do what everyone does: search "json formatter", click the first result, paste, read.</p>
+<p>I have done this a thousand times. Almost all of those times it was fine. The problem is that "almost all" is doing real work in that sentence, and the paste is never the thing you were paying attention to — you were debugging, the object was in the way, and the tool was a means of getting past it in four seconds.</p>
+<h2 id="what-you-are-actually-pasting">What you are actually pasting</h2>
+<p>Take an honest inventory of what tends to end up in those boxes.</p>
+<p>A JSON response with a customer's email, address and order history in it. A JWT — which is to say, a live credential, decoded on a page whose only claim is that it does it in the browser. A stack trace containing internal hostnames and file paths. A config file with the connection string still in it. A CSV a colleague sent you. Someone's phone number, because you were checking a regex against real data rather than making one up.</p>
+<p>Nobody sets out to paste a customer record into a stranger's website. It happens because the tool is a text box and the thing in your clipboard is what you happen to be debugging.</p>
+<figure><img src="/images/paste-into-a-website.svg" alt="The path a paste takes when the tool is a web page you found in a search result" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>Everything up to the paste is a decision you made. Everything after it is a decision someone else made.</figcaption></figure>
+<h2 id="it-all-happens-in-your-browser-and-the-three-ways-that-fails">"It all happens in your browser" — and the three ways that fails</h2>
+<p>Most of these sites say the processing is client-side, and most of them are telling the truth. It is a real and meaningful protection. It is also a promise you cannot verify at paste time, and it does not cover several things people assume it covers.</p>
+<p><strong>You cannot check it, and it can change.</strong> You could open the network tab and read the source — once, today. The site can ship different JavaScript tomorrow, to you specifically, and nothing about the page will look different. You are trusting a claim about code you are not reading, on every visit.</p>
+<p><strong>The page is not one party.</strong> A tool page pulling in analytics, an ad network, a tag manager and a font is running four other companies' code in the same document as your paste. Client-side processing says the <em>tool</em> does not send your data anywhere. It does not say the ad script in the same page cannot read the DOM, because it can.</p>
+<p><strong>Autosave and history.</strong> Plenty of these tools save your last input to local storage so it is there when you come back. Convenient, and it means the JWT is still sitting in the browser profile on a laptop that gets shared, imaged, or resold. Some have "share this" buttons that upload on click, one misclick away from a paste becoming a URL.</p>
+<p>None of this makes the sites malicious. It makes the arrangement unverifiable, which for anything under an NDA or a data-protection policy is the same practical answer.</p>
+<h2 id="the-part-your-employer-s-policy-already-says">The part your employer's policy already says</h2>
+<p>Worth checking your own rules before assuming this is paranoia. Most organisations that handle personal data have a written line about not putting it into third-party services that have not been reviewed. A JSON formatter is a third-party service. It just does not feel like one, because it has no logo, no login and no invoice.</p>
+<p>The same policy that would stop you emailing a customer export to a personal address is the one that covers pasting it into a page you found in a search result. The intent is identical. The friction is not, which is exactly why one happens constantly and the other does not.</p>
+<h2 id="the-fix-is-boring">The fix is boring</h2>
+<p>Do the operation on your own machine.</p>
+<p>For a lot of these there is a command already installed. <code>jq .</code> formats and validates JSON. <code>base64 -d</code> decodes. <code>pbpaste | ...</code> reads the clipboard directly. If you live in a terminal, that is the whole answer and you can stop reading.</p>
+<p>The reason people use websites anyway is not ignorance of <code>jq</code>. It is that the terminal version requires remembering the flag, and the website requires remembering nothing. For a four-second task, "remembering nothing" wins every time — which is a UI problem, not a security problem, and it is why telling people to just use the CLI has been failing for fifteen years.</p>
+<p>The version that actually sticks is a local tool with a text box in it. Same shape as the website, same four seconds, same nothing-to-remember — but the text never leaves the machine, so there is no claim to verify.</p>
+<h2 id="the-list-worth-having-locally">The list worth having locally</h2>
+<p>The tools that come up over and over, in roughly the order people reach for them:</p>
+<ul><li><strong>JSON format and validate.</strong> The single most-pasted thing on the internet.</li><li><strong>Base64 encode and decode.</strong> Often on something that came out of a header.</li><li><strong>JWT decode.</strong> The one that should worry you most, because a JWT is a bearer credential and pasting it is handing over the credential, not a description of it.</li><li><strong>URL encode and decode</strong>, and a <strong>URL inspector</strong> for pulling a query string apart.</li><li><strong>A regex tester.</strong> Where real data gets pasted more than anywhere else, because made-up test data never has the edge case in it.</li><li><strong>Text compare.</strong> Two versions of a config, side by side.</li><li><strong>Case and line operations</strong> — sort, dedupe, join, split, trim.</li><li><strong>Invisible-character stripping.</strong> The fix for text copied out of a PDF or a chat client that looks identical and breaks a comparison.</li><li><strong>A timestamp converter.</strong> Because nobody reads epoch seconds on sight.</li></ul>
+<p>That is nine things. None of them is hard. Collectively they account for a startling share of what gets typed into a search bar during a workday.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>If you are formatting a JSON blob you generated yourself with no real data in it, a website is fine and the risk is genuinely zero. This is not an argument that those sites are dangerous; it is an argument that the <em>habit</em> is indiscriminate, and the habit does not check what is in the clipboard before it fires.</p>
+<p>There are good local answers at every price. DevUtils and Boop are both well-liked Mac apps built for exactly this. If a dedicated one fits how you work, use it — this is a category where several people have done the job properly.</p>
+<p>Cyanote has these on a Tools page, next to the notes: case and line operations, invisible-character stripping, text compare, Base64, URL and JWT encode and decode, JSON format and validate, a regex tester, a URL inspector and a timestamp converter. They are there because the paste usually happens two seconds after something got copied — which is also why the <a href="/blog/clipboard-history-on-mac/">clipboard history</a> sits in the same window. Nothing you type into them is sent anywhere, because the app has no server to send it to.</p>]]></content:encoded>
+      <category>Tools</category>
+      <category>Privacy</category>
+      <category>Developers</category>
+    </item>
+    <item>
+      <title>Note templates people actually keep using</title>
+      <link>https://cyanote.app/blog/note-templates-that-get-used/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/note-templates-that-get-used/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Most note templates are abandoned within a fortnight, and it is nearly always the same three design mistakes. What separates a template you use from one you delete.</description>
+      <content:encoded><![CDATA[<p>There is a particular kind of Sunday afternoon where you build a note template. It has sections. It has a metadata block at the top with fields for status and energy level. It has a place for everything, and looking at it produces a small, genuine satisfaction.</p>
+<p>You will use it four times.</p>
+<p>I have done this more than once, and the failure is not laziness. Templates fail for structural reasons, and the reasons are consistent enough to design around.</p>
+<h2 id="why-the-elaborate-ones-die">Why the elaborate ones die</h2>
+<p><strong>They ask for information at the wrong moment.</strong> A meeting template with a "decisions made" section is asking you to have already sorted the meeting into categories while the meeting is still happening. What actually happens in a meeting is that things arrive in the order people say them. Any template that requires sorting-while-capturing loses to a blank page, because the blank page lets you keep up.</p>
+<p><strong>They have more sections than the average instance needs.</strong> If two thirds of your meetings have no action items, an Action items heading appears empty in two thirds of your notes. Empty headings are worse than no headings: they read as something forgotten rather than something absent, and after a while you start deleting them, which is friction you invented for yourself.</p>
+<p><strong>They encode a workflow you were hoping to have rather than the one you have.</strong> This is the big one. The template is aspirational — it describes the version of you who reviews the previous meeting's actions before writing the new note. That person does not attend the meeting. The person who attends is late and typing.</p>
+<h2 id="what-the-ones-that-survive-have-in-common">What the ones that survive have in common</h2>
+<p>They are shorter than you think is respectable, and every line in them does one of two jobs.</p>
+<p><strong>A prompt you would otherwise forget.</strong> Not a section header — an actual question sitting there in the note. "What did we decide?" pulls something out of you at the end of a meeting. "Decisions" does not; it is a filing label, and you will file nothing under it.</p>
+<p><strong>A field that makes the note findable later.</strong> The date, the people, the project name. Four words that cost nothing at capture time and are the entire reason you will find this note in November. If you link names, this is also where the link goes, which is where a <a href="/blog/linking-notes-without-a-second-brain/">backlink list</a> quietly builds itself out of meetings nobody filed.</p>
+<p>Everything else — status fields, tags, energy ratings, a summary section you fill in afterwards — is optional at best and a tax at worst. Cut it, use the template for a month, and add back only the thing you genuinely missed.</p>
+<figure><img src="/images/note.webp" alt="A note in Cyanote, opened from a template with its prompts and metadata already in place" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>A template's job is to remove the first thirty seconds of a note, not to describe your ideal process.</figcaption></figure>
+<h2 id="the-four-templates-that-earn-their-place">The four templates that earn their place</h2>
+<p>Almost everyone converges on some version of these.</p>
+<p><strong>A daily note.</strong> One note per day, created without asking you anything. Its real function is not journalling; it is having a default place to put things so that capture never involves a decision about where. Whatever ends up in it can be sorted later or never.</p>
+<p><strong>Meeting notes.</strong> Date, who was there, a blank space, and one prompt at the bottom — "what did we agree, and who has it". The blank space in the middle is deliberate. It is where the meeting goes.</p>
+<p><strong>A one-to-one.</strong> The one template where structure genuinely helps, because the value is in continuity: what we discussed last time, what has changed, what they raised, what I owe them. It is the same four things every fortnight, and having them written down is what stops a 1:1 becoming a status update.</p>
+<p><strong>A weekly review.</strong> The one place a longer template is justified, because you are sitting down on purpose with time set aside — which is exactly the condition the other templates cannot assume. I have written about <a href="/blog/weekly-review-in-20-minutes/">the twenty-minute version</a> separately; the template for it is mostly a list of questions in a fixed order, so you do not have to remember what reviewing consists of.</p>
+<p>For a lot of people the list stops there. If yours includes a decision journal, reading notes, retros or incident reviews, those are real and well-established formats — but they are the second wave, added after the first four have proved they get used.</p>
+<h2 id="where-the-template-should-come-from">Where the template should come from</h2>
+<p>Two schools, and they fail differently.</p>
+<p><strong>Write your own.</strong> Correct in principle: your meetings are not mine. In practice, writing your own is when the Sunday-afternoon problem happens, because a blank template editor invites completeness. If you write your own, write it <em>during</em> the third meeting where you wished you had one, not in advance.</p>
+<p><strong>Start from a stock one and delete.</strong> Faster, and the deleting is the useful part. A stock template gives you a shape to react to, and reacting to a shape is much easier than inventing one. Whatever you delete in the first fortnight was never yours.</p>
+<p>The failure mode worth naming: a template gallery with sixty entries. Sixty options is not sixty times as useful as four; it is a browsing session, and browsing is not writing. Ten or twelve good ones covering the common formats is about the size where you can hold them all in your head.</p>
+<h2 id="what-to-check-in-the-app">What to check in the app</h2>
+<p>Small mechanics, disproportionate effect on whether templates survive.</p>
+<ul><li><strong>How many keystrokes to start a note from one?</strong> If it is more than about three, the template loses to a blank note and always will.</li><li><strong>Can you edit the template, or only use it?</strong> A stock template you cannot cut down is a stock template you will stop using in week two.</li><li><strong>Does the daily note create itself, or do you create it?</strong> These are very different products. "It is already there" removes a decision; "make today's note" adds one.</li><li><strong>Is it a template or a database?</strong> Some apps make templates the front end to a structured database with required properties. That is powerful and genuinely useful for tracking things — and it is also the thing that turns a two-second capture into a small form-filling exercise. Know which you are buying.</li></ul>
+<h2 id="the-honest-version">The honest version</h2>
+<p>If your notes are mostly one kind of thing — a research log, a book manuscript, a set of client files — you may need one template and nothing else, and a gallery is dead weight. If your work has no repeating shapes at all, templates are solving a problem you do not have, and the honest recommendation is a blank page and a good search box.</p>
+<p>Templates pay off exactly when the same kind of note recurs and you keep re-deciding what should be in it. That is the whole condition.</p>
+<p>Cyanote ships a set of them — daily notes, meeting and standup notes, 1:1s, project briefs, Cornell and reading notes, decision journals, weekly reviews, retros and incident reviews — reachable from the <code>/</code> menu without leaving the keyboard. They are meant as starting shapes to cut down, not a system to adopt. Every note lives in a single database on your own disk, so a template is a local convenience rather than a schema on somebody's server.</p>]]></content:encoded>
+      <category>Templates</category>
+      <category>Method</category>
+      <category>Notes</category>
+    </item>
+    <item>
+      <title>Linking notes without building a second brain</title>
+      <link>https://cyanote.app/blog/linking-notes-without-a-second-brain/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/linking-notes-without-a-second-brain/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Wiki links and backlinks are a genuinely good idea buried under a genuinely exhausting methodology. Here is the small version that pays for itself in a week.</description>
+      <content:encoded><![CDATA[<p>The idea is about thirty years old and it is a good one: let a note point at another note by name, and let the note being pointed at show you who pointed. That is it. Two sentences.</p>
+<p>What grew on top of it is the reason most people bounce off. Somewhere in the last decade, linking notes stopped being a text feature and became a <em>practice</em>, with a vocabulary — atomic notes, evergreen notes, maps of content, zettelkasten, second brain — and a genre of YouTube video about the graph view of somebody's vault, which is beautiful and tells you nothing.</p>
+<p>You can have the feature without the practice. It is worth having.</p>
+<h2 id="what-a-link-actually-buys-you">What a link actually buys you</h2>
+<p>Search finds a note when you remember a word that was in it. Links find a note when you remember a <em>different note</em> that mentioned it.</p>
+<p>That second case is more common than it sounds. You cannot remember what the contractor was called, but you know you wrote about the kitchen. You cannot remember the name of the library, but you know it came up when you were setting up the project. In both cases you have a handle on something adjacent, and a link turns that adjacency into a route.</p>
+<p>Backlinks — the note showing you what points at it — are the same trick pointed the other way. Open the note about a person and you see every meeting they were in, without having filed a single one of those meetings under their name. That is a filing system that builds itself as a side effect of writing normally, which is the only kind anybody sustains.</p>
+<figure><img src="/images/backlinks-diagram.svg" alt="A note linked from three others, with the backlinks listed at the bottom of the note being pointed at" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>Nobody filed anything. The list at the bottom assembled itself out of ordinary writing.</figcaption></figure>
+<h2 id="the-small-version-in-three-rules">The small version, in three rules</h2>
+<p>This is the entire method as I actually use it. It takes no setup and no vocabulary.</p>
+<p><strong>One, link a name the first time you write it in a note.</strong> People, projects, clients, recurring problems. Not concepts — names. <code>[[Priya]]</code>, <code>[[Kitchen rewire]]</code>, <code>[[Invoicing]]</code>. If the note does not exist yet, most apps create it empty when you follow the link, and an empty note that already has three things pointing at it is more useful than a full one nobody links to.</p>
+<p><strong>Two, do not link things you would never look up.</strong> A link to <code>[[Tuesday]]</code> or <code>[[email]]</code> is noise. The test is whether you can imagine opening that note on purpose. If you cannot, leave the words as words.</p>
+<p><strong>Three, never reorganise the links.</strong> They are not a structure you maintain. They are a residue of writing. The moment you start tidying them you have joined the practice, and the practice is where people stop.</p>
+<p>That is the whole thing. Three rules, no software beyond an editor that supports <code>[[</code>.</p>
+<h2 id="what-the-graph-view-is-for">What the graph view is for</h2>
+<p>Honest answer: mostly nothing.</p>
+<p>The force-directed picture of every note connected to every other note is one of the most screenshotted features in this category and one of the least used after week two. It is genuinely lovely, and it will occasionally show you a cluster you did not know you had. But it does not answer questions. "Which notes mention this client" is a question. "What does the shape of my knowledge look like" is a screensaver.</p>
+<p>If an app has a graph view, enjoy it. If choosing between apps comes down to whether one has it, choose on something else.</p>
+<h2 id="where-the-methodology-goes-wrong">Where the methodology goes wrong</h2>
+<p>Not because the ideas are bad — several of them are good — but because of what they ask for up front.</p>
+<p>The heavy note-linking systems ask you to decide, at the moment of writing, what a note <em>is</em>: whether it is atomic, whether it is permanent or fleeting, which index it belongs to, whether it has earned a place in the permanent collection. That is a lot of classification work applied to the thing you were doing to avoid work. The overhead lands entirely on capture, which is the exact point in the process that has to stay cheap or the system dies.</p>
+<p>You can watch this happen in the wild. Someone sets up a beautiful vault in January, writes forty carefully processed notes, and by March is writing into the phone's default notes app because it does not ask any questions. The methodology did not fail on the merits. It failed on friction, at the only moment where friction is fatal.</p>
+<p>The small version has no capture cost. You type two brackets in the middle of a sentence you were writing anyway.</p>
+<h2 id="what-to-check-before-you-rely-on-it">What to check before you rely on it</h2>
+<p>Links are only worth building if they survive.</p>
+<p><strong>Do links break when you rename a note?</strong> Some apps rewrite every reference automatically. Some leave you with dead text. This matters more than it sounds, because notes get renamed constantly in the first month.</p>
+<p><strong>Are backlinks shown, or only forward links?</strong> Forward links alone are half the feature. The assembling-itself part is the backlink list.</p>
+<p><strong>What happens on export?</strong> If you leave, do the links come out as something a person or another app can follow, or as <code>[[Priya]]</code> sitting in a text file pointing at nothing? Ask this before you have two years of them. It is the same question as <a href="/blog/what-happens-when-your-notes-app-shuts-down/">what happens when your notes app shuts down</a>, applied to the one feature that is hardest to reconstruct by hand.</p>
+<p><strong>Can you link to a sub-page, not just a top-level note?</strong> If notes nest, links that only reach the top level will start failing you around the time the collection gets deep enough to need them.</p>
+<h2 id="the-honest-version-of-the-choice">The honest version of the choice</h2>
+<p>If you genuinely want the full practice — a system you tend, with indexes and structure notes and a defensible taxonomy — <a href="https://obsidian.md/">Obsidian</a> is the app for it and has been for years. As of 17 August 2026 the core app is free for personal use, your notes are Markdown files in a folder you own, and the plugin ecosystem is where every idea in this space gets tried first. Nothing bundled into a general-purpose app will out-depth it, and I would not pretend otherwise.</p>
+<p>What a general app can offer is the part most people actually use: <code>[[</code> works, backlinks appear at the bottom, and nobody asks you to have a philosophy. If you have tried the full version twice and stopped twice, that is not a discipline problem. It is a sign you wanted the feature and were sold the practice.</p>
+<p>Cyanote's version is deliberately the small one. Type <code>[[</code> in any note to link to another, and the note you linked to lists what points at it. Notes nest into sub-pages, and the links reach them. Everything sits in a single SQLite database on your own disk, and the whole collection — links included — exports to a JSON file you can read. There is no graph view. There is also nothing to set up.</p>]]></content:encoded>
+      <category>Notes</category>
+      <category>Linking</category>
+      <category>Method</category>
+    </item>
+    <item>
+      <title>Seeing your calendar without signing into it</title>
+      <link>https://cyanote.app/blog/calendar-without-signing-in/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/calendar-without-signing-in/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <description>There is a middle option between typing everything twice and handing an app your Google account. It is called an ICS subscription, and it is read-only.</description>
+      <content:encoded><![CDATA[<p>Every calendar app asks the same thing on first run: sign in with Google. And it makes sense from their side — the calendar is on Google's servers, so reading it means asking Google.</p>
+<p>What that button actually grants is worth reading before you press it. OAuth scopes for calendar access are not "show me what is on Thursday". They are, typically, read <em>and</em> write access to every calendar on the account, held by a third party, valid until you go and revoke it — and, depending on the app, a copy of your events sitting on that third party's server so their sync can work while your laptop is closed.</p>
+<p>For a calendar app you have chosen deliberately, that may be a fine trade. For a notes app that also happens to show your week, it is a lot to hand over so that Thursday has three lines on it.</p>
+<p>There is a middle option. It has existed since the late nineties, it is boring, and almost nobody mentions it.</p>
+<h2 id="subscribing-instead-of-signing-in">Subscribing instead of signing in</h2>
+<p>Every major calendar service can hand out a <strong>secret address</strong>: a long URL that returns your calendar as an ICS file, the plain-text format calendars have used for decades. Any app that can fetch a URL can then show your events.</p>
+<p>In Google Calendar it sits in an individual calendar's settings under "Integrate calendar", named the Secret address in iCal format — and Google's own <a href="https://support.google.com/calendar/answer/37648">help page for it</a> files it under getting a view-only copy, with the instruction that only you should know the address and it should not be shared. Apple's iCloud calendars can be made public and produce a comparable link. Outlook has its own version. Most work calendars, university timetables, sports fixtures and bin collections publish one too.</p>
+<p>What you get:</p>
+<ul><li><strong>Read-only.</strong> The app can display your events. It cannot create, move or delete anything, because the format has no way to write back. For seeing your week next to your notes, read-only is the entire requirement.</li><li><strong>No account, no token, no scope.</strong> Nothing is authorised. There is no session to revoke and no app sitting in your Google security settings.</li><li><strong>Per calendar, not per account.</strong> Subscribe to your personal calendar and leave work alone, or the other way round. Signing in is all-or-nothing at the account level; a link is one calendar.</li><li><strong>Revocable in one click.</strong> Regenerate the address in your calendar's settings and every copy of the old URL stops working immediately.</li></ul>
+<figure><img src="/images/calendar.webp" alt="A month view in Cyanote, showing subscribed events alongside things created locally" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Read-only is not a limitation here. Nothing about seeing Thursday requires the ability to rewrite it.</figcaption></figure>
+<h2 id="the-honest-caveats">The honest caveats</h2>
+<p>This is where most write-ups of this trick stop, so: three things you should know.</p>
+<p><strong>The URL is the password.</strong> Anyone who has it can read that calendar, forever, without logging in as you. Do not paste it into a shared document, a support ticket, or a chat with your team. If you think it has leaked, regenerate it — that is what the button is for.</p>
+<p><strong>It still makes a network request.</strong> Your app fetches that URL from Google, so Google sees a request from your IP on some schedule. This is not local and it is not private <em>from Google</em>. It is only private from everyone else: no third-party app holds a token, and no third-party server holds a copy of your events.</p>
+<p><strong>It refreshes on a delay.</strong> Subscribed calendars are polled, not pushed: your app asks for the file every so often, and the publisher decides how current the file it hands back is. In practice an event you add on your phone can take hours to appear in a subscribed view, and neither end promises otherwise. For a week you are looking at rather than editing, that is fine. If you need something you just accepted to show up within seconds, subscription is the wrong mechanism and you want a real sync.</p>
+<h2 id="the-other-option-import-the-file-once">The other option: import the file once</h2>
+<p>If even one request is more than you want, download the <code>.ics</code> file and import it. Your calendar app can export one; so can most event pages and every conference that sends you a booking.</p>
+<p>This makes literally zero network requests. It also does not update, ever — it is a snapshot. Which sounds useless until you notice how many calendars never change: a term timetable, a fixture list, the twelve dates of a course. Importing those once is not a downgrade. It is the correct shape for the data.</p>
+<p>The two mechanisms cover different things, and most people want both: subscribe to the calendar that moves, import the ones that do not.</p>
+<h2 id="what-this-cannot-do">What this cannot do</h2>
+<p>Worth being plain, because a subscription genuinely gives up capability.</p>
+<p>You cannot create an event and have it appear on your phone. You cannot accept an invitation. You cannot see whether a room is free, or free/busy for a colleague. You cannot move a meeting and have anyone else find out. All of that needs write access, and write access means signing in.</p>
+<p>So the real question is what you want the calendar <em>in this app</em> for. If it is scheduling with other people, use the app your organisation already runs on and sign into it properly. If it is knowing what today looks like while you are writing your notes and picking what to work on — the <a href="/blog/mac-app-notes-tasks-calendar/">what does my day look like</a> question — then read-only covers it entirely, and paying for it with a permanent OAuth grant is a bad exchange.</p>
+<h2 id="events-you-create-locally-are-a-separate-thing">Events you create locally are a separate thing</h2>
+<p>There is no rule that every event has to come from a server.</p>
+<p>Personal things — a deadline you set yourself, a repeating block for focused work, the day the car needs its service — do not involve anyone else and gain nothing from living in the cloud. Created locally, they stay on your machine, work with the wifi off, and are not one account recovery away from being someone else's problem.</p>
+<p>Most people end up with a mix: work events arriving read-only by subscription, personal ones created in place. That is not a compromise between two systems. It is the shape the information already had.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>If your day is meetings, a real calendar client is the right tool and Fantastical or Apple's Calendar will serve you far better than anything bundled into another app. Nothing here competes with them, and the moment you need to reply to an invitation you will want one open anyway.</p>
+<p>For everyone else, the useful realisation is that the sign-in button is not the only door. A read-only address does about ninety percent of what looking at a calendar involves, at none of the cost.</p>
+<p>Cyanote takes both routes and neither requires an account: paste a calendar's ICS address to subscribe, or import an <code>.ics</code> file and make no requests at all. Events you create yourself carry a time, a place and notes, repeat daily, weekly or monthly, and can remind you 5, 10 or 30 minutes, an hour or a day ahead — with the reminder following a repeating event between occurrences. All of it sits in one local database with the notes, tasks and habits, and the only calendar request that ever leaves the machine is the one for a feed you asked for.</p>]]></content:encoded>
+      <category>Calendar</category>
+      <category>Privacy</category>
+      <category>How-to</category>
+    </item>
     <item>
       <title>Writing and code are two different kinds of attention</title>
       <link>https://cyanote.app/blog/writing-and-code-two-modes/</link>

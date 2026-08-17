@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-labelledby="pw-title pw-desc">
+  <title id="pw-title">Where a paste goes when the tool is a web page</title>
+  <desc id="pw-desc">A copied response body travels from your clipboard into a browser tab you found in a search result. In that tab it sits alongside an analytics script, an ad network, a tag manager and browser local storage, none of which you chose and none of which the client-side promise covers. The alternative is a tool on your own disk: the same text box, the same four seconds, and nothing to verify.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 20px; fill: #3d3f45; }
+    .note { font-size: 19px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+    .or   { font-size: 19px; fill: #a3a7af; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 18px; fill: #3d3f45; }
+  </style>
+
+  <!-- clipboard -->
+  <rect class="card" x="24" y="120" width="270" height="150" rx="12"/>
+  <text class="h" x="52" y="164">Your clipboard</text>
+  <text class="mono" x="52" y="204">{"email":"…",</text>
+  <text class="mono" x="52" y="230"> "token":"eyJhb…"}</text>
+  <text class="note" x="52" y="258">A live credential, usually</text>
+
+  <g stroke="#b8bcc4" stroke-width="2.5" fill="none"><path d="M300 195 h 56"/></g>
+  <path d="M368 195 l -14 -7 l 0 14 z" fill="#b8bcc4"/>
+
+  <!-- the tab -->
+  <rect class="card" x="380" y="30" width="410" height="380" rx="12"/>
+  <rect x="380" y="30" width="410" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="410" y="86">A tab from a search result</text>
+  <text class="note" x="410" y="118">&#8220;Everything happens in your browser&#8221;</text>
+  <line x1="410" y1="146" x2="760" y2="146" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="note" x="410" y="180">Also running in the same page:</text>
+
+  <circle cx="420" cy="215" r="5" fill="#b8bcc4"/>
+  <text class="item" x="442" y="222">an analytics script</text>
+  <circle cx="420" cy="255" r="5" fill="#b8bcc4"/>
+  <text class="item" x="442" y="262">an ad network</text>
+  <circle cx="420" cy="295" r="5" fill="#b8bcc4"/>
+  <text class="item" x="442" y="302">a tag manager</text>
+  <circle cx="420" cy="335" r="5" fill="#b8bcc4"/>
+  <text class="item" x="442" y="342">local storage, keeping your input</text>
+  <text class="note" x="410" y="386">Different code tomorrow. Same page.</text>
+
+  <!-- or -->
+  <line x1="836" y1="60" x2="836" y2="170" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="or" x="820" y="203">or</text>
+  <line x1="836" y1="230" x2="836" y2="380" stroke="#e6e6e9" stroke-width="2"/>
+
+  <!-- local -->
+  <rect class="card" x="882" y="30" width="288" height="380" rx="12"/>
+  <rect x="882" y="30" width="288" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="912" y="86">A tool on your disk</text>
+  <text class="note" x="912" y="118">No claim to verify, ever</text>
+  <line x1="912" y1="146" x2="1140" y2="146" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="note" x="912" y="180">What is running:</text>
+
+  <circle cx="922" cy="215" r="5" fill="#0e7cc4"/>
+  <text class="item" x="944" y="222">the tool</text>
+  <text class="note" x="912" y="278">Same text box. Same four</text>
+  <text class="note" x="912" y="304">seconds. Nothing leaves</text>
+  <text class="note" x="912" y="330">the machine.</text>
+
+  <text class="foot" x="24" y="456">Everything before the paste is your decision. Everything after it is somebody else's.</text>
+</svg>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>App startup time: why a Mac notes app should open instantly</title>
+<meta name="description" content="Two seconds is not a performance problem, it is a behaviour problem. What a slow launch actually costs, and the four things that make one slow." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/why-a-notes-app-should-open-instantly/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/why-a-notes-app-should-open-instantly/" />
+<meta property="og:title" content="App startup time: why a Mac notes app should open instantly" />
+<meta property="og:description" content="Two seconds is not a performance problem, it is a behaviour problem. What a slow launch actually costs, and the four things that make one slow." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="App startup time: why a Mac notes app should open instantly" />
+<meta name="twitter:description" content="Two seconds is not a performance problem, it is a behaviour problem. What a slow launch actually costs, and the four things that make one slow." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why a notes app should open instantly",
+  "description": "Two seconds is not a performance problem, it is a behaviour problem. What a slow launch actually costs, and the four things that make one slow.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/why-a-notes-app-should-open-instantly/"
+  },
+  "url": "https://cyanote.app/blog/why-a-notes-app-should-open-instantly/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/startup-path.svg",
+      "width": 1200,
+      "height": 430
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Performance, macOS, Design",
+  "wordCount": 1330
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Why a notes app should open instantly",
+      "item": "https://cyanote.app/blog/why-a-notes-app-should-open-instantly/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Performance" />
+<meta property="article:tag" content="macOS" />
+<meta property="article:tag" content="Design" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Why a notes app should open instantly</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-17">17 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Performance</li><li>macOS</li><li>Design</li></ul>
+    </header>
+
+    <div class="post">
+      <p>A notes app that takes two seconds to open is not slow. Two seconds is nothing; you have waited longer for a kettle without resenting it.</p>
+      <p>What two seconds is, is <em>long enough to notice</em>. And the thing you do when you notice is decide — quickly, without articulating it — whether the note is worth the wait. Most of the time it is. Some of the time you were only going to write down four words, and four words are not worth a spinner, so you keep them in your head instead and they are gone by lunchtime.</p>
+      <p>That is the actual cost of a slow launch. Not the seconds. The notes that never got written because opening the app was a decision.</p>
+      <h2 id="the-four-second-thought">The four-second thought</h2>
+      <p>Capture has a shelf life. Something occurs to you — a name, a thing you owe someone, a fix you just worked out — and you have a few seconds of willingness before your attention is somewhere else.</p>
+      <p>Everything that happens in those seconds is competing for the same budget: reaching for the machine, finding the app, waiting for it, finding where to type. A launch that costs two of the four is not taking half your time. It is taking half your <em>willingness</em>, and willingness is the scarce thing.</p>
+      <p>You can watch this in how people behave rather than what they say. The app that ends up holding the scraps is almost never the most capable one. It is whichever one is already open, or opens fast enough that using it never felt like a decision. Fast is not a nice-to-have in this category; it is most of the product.</p>
+      <h2 id="what-makes-a-launch-slow">What makes a launch slow</h2>
+      <p>Four things, roughly in order of how much they cost.</p>
+      <p><strong>A network request on the critical path.</strong> The app opens, then asks a server something — is this session valid, is the licence current, what changed since last time — and will not draw your notes until it has an answer. On good wifi this is a few hundred milliseconds and nobody notices. On hotel wifi it is a spinner, and on no wifi it is a spinner that eventually times out, which is the worst launch in software: slower when there is <em>nothing to fetch</em>.</p>
+      <p><strong>Loading everything before showing anything.</strong> Some apps read the whole collection into memory at startup. Fine at 50 notes. Not fine at 5,000, and it degrades exactly as your investment in the app grows, so the app gets worse the more you have used it.</p>
+      <p><strong>Rendering the world before the window.</strong> Building every sidebar, every list and every panel before painting anything. The fix is boring and known — draw the window, then fill it — but it takes deliberate work that nobody does unless somebody measures.</p>
+      <p><strong>A runtime that has to start first.</strong> If the app ships its own browser engine, that engine boots before your notes exist. This is the one people argue about, and the honest position is that it is real but smaller than the internet thinks: a well-built Electron app can start fast, and a badly built native one can be slow. It is a handicap, not a verdict.</p>
+      <figure><img src="/images/startup-path.svg" alt="The steps between clicking an icon and being able to type, with and without a server in the path" width="1200" height="430" loading="lazy" decoding="async" /><figcaption>The first two boxes on the top row are the ones that get slower when the network is bad — which is to say, slower when there is nothing to fetch.</figcaption></figure>
+      <h2 id="cold-warm-and-the-number-that-matters">Cold, warm, and the number that matters</h2>
+      <p>If you measure this yourself, measure the right thing.</p>
+      <p><strong>Cold start</strong> is after a reboot, or after the app has been closed long enough to fall out of the file cache. It is the slowest number and the least frequent.</p>
+      <p><strong>Warm start</strong> is the one you live with: quitting and reopening in the same session, everything still cached. This is what "open the app to write four words" actually costs, and it is usually a fraction of the cold number.</p>
+      <p><strong>Time to first useful keystroke</strong> is the only measure that matters, and almost nobody publishes it. Not when the window appears — when you can type and the characters land in the right place and are being saved. Plenty of apps show a window quickly and then swallow the first half-second of typing, which is worse than a longer honest wait, because you have to check whether your words survived.</p>
+      <p>Test it the way you use it. Quit the app, open it, and start typing immediately. Did every character arrive?</p>
+      <h2 id="memory-and-why-it-shows-up-as-speed">Memory, and why it shows up as speed</h2>
+      <p>Idle memory footprint gets discussed as if it were a virtue in itself, and mostly it is not — unused RAM is wasted RAM, and a browser tab you left open probably costs more than any of this.</p>
+      <p>It matters at the edges, and the edges are where people live. If you keep an app open all day alongside a browser, a chat client, a design tool and a couple of editors, a laptop with 8 or 16 GB starts swapping, and swapping is felt as <em>everything</em> being slow. The app that quietly holds several hundred megabytes to show you a list of notes is not committing a crime; it is spending a shared budget you did not know it was spending.</p>
+      <p>The mechanism worth understanding is where the browser engine comes from. Apps built on Electron ship their own copy of Chromium, so every such app on your machine is a separate browser. Apps built on the system webview — which is what Tauri does, using WebKit on macOS — use the engine that is already running as part of the OS. It is the same rendering technology either way; the difference is how many copies of it are resident.</p>
+      <h2 id="what-instant-is-worth-as-a-target">What "instant" is worth as a target</h2>
+      <p>Under a second to a usable window, on the machine you actually own rather than the developer's.</p>
+      <p>The reason to hold that line is not benchmark pride. It is that under a second, the app stops being something you <em>open</em> and becomes something that is simply there — the same way a text field on a page you are already looking at is there. Above a second or two, some fraction of your thoughts stop making the journey, and you will never know which ones, because unwritten notes leave no trace.</p>
+      <p>It is the same argument as <a href="/blog/tracking-habits-without-a-separate-app/">the habit tracker that needs its own icon</a> and the <a href="/blog/mac-app-notes-and-clipboard/">clipboard popup that comes to you</a>: every unit of friction between the impulse and the writing costs you some of the writing, and the losses are invisible.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>Startup time is not the most important thing about a notes app. It is a hygiene property, and plenty of excellent apps take a beat to open because they are doing something worth doing — indexing a large library, restoring a real session, rendering a document that deserves it. If an app is slow and you love it, that is a completely defensible trade and I would not switch either.</p>
+      <p>What is not defensible is being slow <em>because of a server</em>, on a machine that already has all your notes on it. That is a launch delay you are paying for architecture you did not ask for.</p>
+      <p>Cyanote's startup budget is under a second to a usable window, and it holds because there is nothing to wait for: no session check, no sync handshake, no server in the path. Everything is read from one SQLite database on your own disk, and the app is built with Tauri, so it draws through the WebView macOS already has rather than shipping a browser of its own. With the wifi off it opens in the same time, because the wifi was never part of opening it.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/when-to-move-off-apple-notes/">When it is actually worth moving off Apple Notes</a><span>Apple Notes is free, fast and already installed, and most people should keep it. Here are the four reasons that genuinely justify leaving — and one that does not.</span></li><li><a href="https://cyanote.app/blog/customising-a-notes-app/">Making a notes app fit your eyes</a><span>Most customisation is procrastination wearing a colour picker. Four settings are not, and they change how much of your own writing you actually read.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

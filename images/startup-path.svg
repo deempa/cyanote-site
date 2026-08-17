@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" width="1200" height="430" role="img" aria-labelledby="sp-title sp-desc">
+  <title id="sp-title">What happens between the click and the first keystroke</title>
+  <desc id="sp-desc">A server-backed app spends its launch checking a session, waiting for a sync handshake and loading a collection before the window is usable, and gets slower when there is no network. A local-first app opens the database on disk, draws the window and accepts typing, taking the same time with the wifi off.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 24px; font-weight: 600; fill: #0a0a0b; }
+    .step { font-size: 19px; fill: #3d3f45; }
+    .note { font-size: 20px; fill: #71757e; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <!-- server-backed -->
+  <text class="h" x="30" y="58">Waiting on a server</text>
+  <rect x="30" y="80" width="220" height="58" rx="10" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="step" x="52" y="116">Check the session</text>
+  <rect x="278" y="80" width="220" height="58" rx="10" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="step" x="300" y="116">Sync handshake</text>
+  <rect x="526" y="80" width="220" height="58" rx="10" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="step" x="548" y="116">Load the collection</text>
+  <rect x="774" y="80" width="220" height="58" rx="10" fill="#f4f4f6" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="step" x="796" y="116">Draw the window</text>
+  <g stroke="#b8bcc4" stroke-width="2.5" fill="none">
+    <path d="M254 109 h 6"/><path d="M502 109 h 6"/><path d="M750 109 h 6"/>
+  </g>
+  <g fill="#b8bcc4">
+    <path d="M272 109 l -14 -7 l 0 14 z"/>
+    <path d="M520 109 l -14 -7 l 0 14 z"/>
+    <path d="M768 109 l -14 -7 l 0 14 z"/>
+  </g>
+  <text class="note" x="30" y="176">With no network, the first two get slower, not faster.</text>
+
+  <line x1="30" y1="212" x2="1170" y2="212" stroke="#e6e6e9" stroke-width="2"/>
+
+  <!-- local first -->
+  <text class="h" x="30" y="262">Reading your own disk</text>
+  <rect x="30" y="284" width="290" height="58" rx="10" fill="#ffffff" stroke="#0e7cc4" stroke-width="2"/>
+  <text class="step" x="52" y="320">Open the local database</text>
+  <rect x="348" y="284" width="290" height="58" rx="10" fill="#ffffff" stroke="#0e7cc4" stroke-width="2"/>
+  <text class="step" x="370" y="320">Draw the window</text>
+  <rect x="666" y="284" width="290" height="58" rx="10" fill="#ffffff" stroke="#0e7cc4" stroke-width="2"/>
+  <text class="step" x="688" y="320">Accept the first keystroke</text>
+  <g stroke="#0e7cc4" stroke-width="2.5" fill="none">
+    <path d="M324 313 h 6"/><path d="M642 313 h 6"/>
+  </g>
+  <g fill="#0e7cc4">
+    <path d="M342 313 l -14 -7 l 0 14 z"/>
+    <path d="M660 313 l -14 -7 l 0 14 z"/>
+  </g>
+
+  <text class="foot" x="30" y="400">The measure that matters is not when the window appears. It is when your typing lands.</text>
+</svg>

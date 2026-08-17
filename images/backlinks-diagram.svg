@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" role="img" aria-labelledby="bl-title bl-desc">
+  <title id="bl-title">How backlinks assemble a list nobody filed</title>
+  <desc id="bl-desc">Three ordinary notes — a standup, a call log and a project brief — each mention a person by name using a wiki link. The note for that person shows all three at the bottom under Linked from, without anyone having filed a single meeting under her name.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .big  { font-size: 27px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 20px; fill: #3d3f45; }
+    .note { font-size: 19px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 19px; fill: #0e7cc4; }
+  </style>
+
+  <!-- three ordinary notes -->
+  <rect class="card" x="30" y="30" width="368" height="106" rx="12"/>
+  <text class="h" x="58" y="70">Standup, 4 Aug</text>
+  <text class="note" x="58" y="104">handing the migration to <tspan class="mono">[[Priya]]</tspan></text>
+
+  <rect class="card" x="30" y="182" width="368" height="106" rx="12"/>
+  <text class="h" x="58" y="222">Call with the client</text>
+  <text class="note" x="58" y="256"><tspan class="mono">[[Priya]]</tspan> has the contract draft</text>
+
+  <rect class="card" x="30" y="334" width="368" height="106" rx="12"/>
+  <text class="h" x="58" y="374">Q4 brief</text>
+  <text class="note" x="58" y="408">owner: <tspan class="mono">[[Priya]]</tspan></text>
+
+  <!-- arrows -->
+  <g stroke="#0e7cc4" stroke-width="2.5" fill="none">
+    <path d="M404 83 C 470 83, 470 180, 556 205"/>
+    <path d="M404 235 C 470 235, 480 232, 556 232"/>
+    <path d="M404 387 C 470 387, 470 288, 556 259"/>
+  </g>
+  <g fill="#0e7cc4">
+    <path d="M556 205 l -16 -3 l 3 11 z"/>
+    <path d="M556 232 l -14 -6 l 0 12 z"/>
+    <path d="M556 259 l -13 -9 l -6 10 z"/>
+  </g>
+
+  <!-- the note being pointed at -->
+  <rect class="card" x="570" y="30" width="600" height="380" rx="14"/>
+  <rect x="570" y="30" width="600" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="big" x="606" y="90">Priya</text>
+  <text class="note" x="606" y="128">Contract signed March. Prefers Thursdays.</text>
+  <line x1="606" y1="164" x2="1134" y2="164" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="h" x="606" y="204">Linked from</text>
+
+  <circle cx="616" cy="243" r="5" fill="#0e7cc4"/>
+  <text class="item" x="638" y="250">Standup, 4 Aug</text>
+  <circle cx="616" cy="285" r="5" fill="#0e7cc4"/>
+  <text class="item" x="638" y="292">Call with the client</text>
+  <circle cx="616" cy="327" r="5" fill="#0e7cc4"/>
+  <text class="item" x="638" y="334">Q4 brief</text>
+
+  <text class="note" x="606" y="382">Assembled from ordinary writing. Nothing was filed.</text>
+
+  <text class="foot" x="30" y="458">Search finds a note by a word in it. A backlink finds it by the note next door.</text>
+</svg>
