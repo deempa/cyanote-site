@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="gk-title gk-desc">
+  <title id="gk-title">What Gatekeeper checked before showing the warning</title>
+  <desc id="gk-desc">Gatekeeper checks two things: a Developer ID signature, which attaches a real identity and proves the binary has not been altered, and notarisation, which is an automated Apple malware scan tied to that identity. Neither says the app is good or well made. The warning means nobody is on the hook, or nobody scanned it.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 19px; fill: #3d3f45; }
+    .gone { font-size: 19px; fill: #a3a7af; }
+    .note { font-size: 18px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <!-- check 1 -->
+  <rect class="card" x="24" y="30" width="360" height="330" rx="12"/>
+  <rect x="24" y="30" width="360" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="54" y="88">Developer ID signature</text>
+  <text class="note" x="54" y="120">A name on the binary</text>
+  <line x1="54" y1="150" x2="354" y2="150" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="54" y="190">✓  A real identity, on file</text>
+  <text class="item" x="54" y="226">✓  Unaltered since signing</text>
+  <text class="gone" x="54" y="272">✕  Says nothing about quality</text>
+  <text class="note" x="54" y="322">Missing &#8594; &#8220;unidentified developer&#8221;</text>
+
+  <!-- check 2 -->
+  <rect class="card" x="414" y="30" width="360" height="330" rx="12"/>
+  <rect x="414" y="30" width="360" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="444" y="88">Notarisation</text>
+  <text class="note" x="444" y="120">An automated scan</text>
+  <line x1="444" y1="150" x2="744" y2="150" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="444" y="190">✓  Checked for known malware</text>
+  <text class="item" x="444" y="226">✓  Tied to that identity</text>
+  <text class="gone" x="444" y="272">✕  Not a review of behaviour</text>
+  <text class="note" x="444" y="322">Missing &#8594; &#8220;cannot verify&#8221;</text>
+
+  <!-- what it means -->
+  <rect class="card" x="804" y="30" width="372" height="330" rx="12"/>
+  <rect x="804" y="30" width="372" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="834" y="88">So the warning means</text>
+  <line x1="834" y1="120" x2="1146" y2="120" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="834" y="164">Nobody is on the hook</text>
+  <text class="item" x="834" y="196">for this, or nobody</text>
+  <text class="item" x="834" y="228">scanned it.</text>
+  <text class="note" x="834" y="284">Decide on where you got</text>
+  <text class="note" x="834" y="310">it and who made it — not</text>
+  <text class="note" x="834" y="336">on the dialog.</text>
+
+  <text class="foot" x="24" y="424">Plenty of excellent Mac software is unsigned. It is an accountability signal, not a quality one.</text>
+</svg>

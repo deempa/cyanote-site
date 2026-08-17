@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Learning a new codebase: the notes that actually help</title>
+<meta name="description" content="You will trace the same call path three times in your first month. Writing it down once is the difference, and it is a specific kind of note." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/notes-for-learning-a-new-codebase/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/notes-for-learning-a-new-codebase/" />
+<meta property="og:title" content="Learning a new codebase: the notes that actually help" />
+<meta property="og:description" content="You will trace the same call path three times in your first month. Writing it down once is the difference, and it is a specific kind of note." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Learning a new codebase: the notes that actually help" />
+<meta name="twitter:description" content="You will trace the same call path three times in your first month. Writing it down once is the difference, and it is a specific kind of note." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Taking notes while learning a new codebase",
+  "description": "You will trace the same call path three times in your first month. Writing it down once is the difference, and it is a specific kind of note.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/notes-for-learning-a-new-codebase/"
+  },
+  "url": "https://cyanote.app/blog/notes-for-learning-a-new-codebase/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/note.webp",
+      "width": 1500,
+      "height": 938
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Code, Notes, Workflow",
+  "wordCount": 1294
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Taking notes while learning a new codebase",
+      "item": "https://cyanote.app/blog/notes-for-learning-a-new-codebase/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Code" />
+<meta property="article:tag" content="Notes" />
+<meta property="article:tag" content="Workflow" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Taking notes while learning a new codebase</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-17">17 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Code</li><li>Notes</li><li>Workflow</li></ul>
+    </header>
+
+    <div class="post">
+      <p>You are four levels into a call stack trying to work out where the value comes from. You find it, you fix the thing, you move on.</p>
+      <p>Three weeks later you are in the same place, tracing the same path, having the same small realisation. You have done this before. You remember doing it. You do not remember the answer.</p>
+      <p>This is the defining experience of learning a large codebase, and it is not a memory problem. It is that the understanding you built was never written down, and understanding that is not written down decays at roughly the rate of a phone number.</p>
+      <h2 id="what-is-worth-writing-and-what-is-not">What is worth writing, and what is not</h2>
+      <p>The instinct is to document the code. Resist it — the code documents itself better than you can, it changes underneath your notes, and a note describing what a function does is stale within a month and misleading thereafter.</p>
+      <p>What decays badly and is not in the repository is different.</p>
+      <p><strong>Call paths.</strong> "A request to /export goes through the controller, the serialiser, and the job queue, and the timeout is set in the middleware, not the job." Four lines, and it saves you the twenty minutes it took to establish. This is the single highest-value kind of note there is.</p>
+      <p><strong>Why, when why is not obvious.</strong> Every codebase has a section that looks wrong and is not. Somebody explained it to you, or you worked it out from the history. That explanation exists nowhere in the code, and it is what will stop you or someone else from "fixing" it later.</p>
+      <p><strong>Where things live.</strong> Not the directory structure — the answers to "where does X happen". Where is auth actually enforced. Where do the emails come from. Where is the thing that runs at midnight. A dozen of these is an enormous head start.</p>
+      <p><strong>The gap between how it looks and how it behaves.</strong> The naming that lies, the config that is overridden somewhere else, the abstraction that has one real implementation. Every codebase has a handful and they are the source of most wasted afternoons.</p>
+      <p><strong>The environment incantations.</strong> The commands with the flags. How to run one test. How to reset the local database when it wedges. These are trivial, they are looked up constantly, and they belong somewhere you can find them in two seconds.</p>
+      <figure><img src="/images/note.webp" alt="A code note with the command, the call path and the explanation in the same document as the prose" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Not documentation. A record of things that took twenty minutes to establish and will take twenty minutes again.</figcaption></figure>
+      <h2 id="the-rule-that-makes-it-work">The rule that makes it work</h2>
+      <p><strong>Write it down the moment you have understood it, before you fix the thing.</strong></p>
+      <p>The window is narrow. While you are tracing, you are holding the whole path in your head and writing it costs almost nothing. Once you have made the fix, the understanding has done its job and starts unloading immediately — and half an hour later, writing the same note means reconstructing it.</p>
+      <p>The second half of the rule: <strong>stop before you write documentation.</strong> Four lines about a call path is a note. Two pages about the architecture is a document, and a document is a commitment to maintain something that will drift. The value is in the small, specific, expensive-to-rederive facts.</p>
+      <h2 id="where-these-notes-should-live">Where these notes should live</h2>
+      <p>Split by lifespan, and this is the practical decision.</p>
+      <p><strong>In the repo:</strong> anything true about the code that the team should share and that should change when the code changes. Setup instructions, architecture decision records, the reasons behind a design. If it lives next to the code, it moves with it and gets reviewed with it.</p>
+      <p><strong>In your own notes:</strong> your working understanding. Half-formed, occasionally wrong, containing "I think this is because" and "ask someone about this". That is exactly the material that should not go into shared documentation — nobody wants a wiki full of somebody's provisional guesses — and it is also the material that makes you effective in month two.</p>
+      <p>The mistake is trying to put the second category in the first. It makes you slow, because you edit yourself, and it degrades the shared docs with uncertainty.</p>
+      <h2 id="the-one-page-map">The one-page map</h2>
+      <p>After a fortnight, write one page and keep it updated.</p>
+      <p>Not the architecture — the <em>territory</em>. Six or eight lines: what the main pieces are called, roughly what each does, and where the seams are. Where does a request enter. Where does data get written. What is the one part everybody is afraid of.</p>
+      <p>Every codebase has an implicit version of this that the long-serving people hold in their heads, and none of them have ever written it down because it is too obvious to them to be worth stating. It is the single most useful document for the next person, and you can only write it during the window where you have just learned it and have not yet forgotten what it was like not to know.</p>
+      <h2 id="code-prose-and-the-same-window">Code, prose and the same window</h2>
+      <p>A practical note, because this is the friction that stops people.</p>
+      <p>These notes are inherently mixed: a paragraph of explanation, a command with flags, a stack trace, a path, a snippet. If your notes app mangles code — smart quotes, autocorrect, no monospace, no syntax highlighting — you will not paste the command, and the command was the useful part. If your code lives in a scratch file and the explanation lives in a notes app, you will keep one and lose the other.</p>
+      <p>That is the whole argument for <a href="/blog/notes-and-code-in-one-app/">keeping notes and code in one app</a>: not elegance, but that a mixed note is the natural shape of this material and splitting it in half loses whichever half is more inconvenient.</p>
+      <p>The other mechanic that matters is search. You will not remember which note has the thing; you will remember a word from it — a function name, an error string, a flag. That means <a href="/blog/searching-your-own-notes/">search has to reach inside code blocks</a>, which is not universal and is worth checking before you rely on it.</p>
+      <h2 id="a-month-in">A month in</h2>
+      <p>Reread what you wrote in week one. Two things happen.</p>
+      <p>Some of it is wrong. Fix it — the wrongness is informative, because it shows you what the codebase misleads people about, which is exactly what the one-page map should warn about.</p>
+      <p>Some of it is now obvious and you cannot remember needing it. Leave it alone. It is not for you any more; it is for the next person, and the fact that it looks trivial to you is precisely why nobody else was ever going to write it.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>Nobody is going to keep this up for years, and they should not. The intensity of note-taking should fall off as the codebase becomes familiar, and by month six you will be writing almost nothing, which is correct.</p>
+      <p>The window that matters is the first six to eight weeks — the period where everything is expensive to establish and cheap to record. After that the value drops sharply, and continuing to document out of discipline is just a slower way to work.</p>
+      <p>Cyanote handles the mixed shape: prose notes with syntax-highlighted code blocks inline, and separate code notes with language detection that can be saved straight back to a file on disk. <code>⇧⌘F</code> searches the body of everything including code blocks, <code>[[</code> links a note to the one it relates to, and notes nest into sub-pages so a codebase can have a page with children rather than fourteen loose notes. One local database, so the map you built of a system you were paid to understand stays yours.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/notes-and-code-in-one-app/">Notes and code, in the same app</a><span>Most people keep their writing in one app and their snippets in another. There is a real reason for the split — and a real cost to it. Here is both.</span></li><li><a href="https://cyanote.app/blog/a-personal-crm-that-is-just-notes/">Keeping in touch, without a personal CRM</a><span>The apps for this fail because they turn friendship into a pipeline. One note per person and one honest rule does the useful part without the queasiness.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

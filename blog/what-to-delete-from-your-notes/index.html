@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pruning notes: what to delete and what to keep forever</title>
+<meta name="description" content="Nobody deletes notes, because storage is free and deletion feels like loss. The cost is not disk space — it is that search starts returning things you do not want." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/what-to-delete-from-your-notes/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/what-to-delete-from-your-notes/" />
+<meta property="og:title" content="Pruning notes: what to delete and what to keep forever" />
+<meta property="og:description" content="Nobody deletes notes, because storage is free and deletion feels like loss. The cost is not disk space — it is that search starts returning things you do not want." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Pruning notes: what to delete and what to keep forever" />
+<meta name="twitter:description" content="Nobody deletes notes, because storage is free and deletion feels like loss. The cost is not disk space — it is that search starts returning things you do not want." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What to delete from your notes",
+  "description": "Nobody deletes notes, because storage is free and deletion feels like loss. The cost is not disk space — it is that search starts returning things you do not want.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/what-to-delete-from-your-notes/"
+  },
+  "url": "https://cyanote.app/blog/what-to-delete-from-your-notes/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/note.webp",
+      "width": 1500,
+      "height": 938
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Organisation, Method, Notes",
+  "wordCount": 1139
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "What to delete from your notes",
+      "item": "https://cyanote.app/blog/what-to-delete-from-your-notes/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Organisation" />
+<meta property="article:tag" content="Method" />
+<meta property="article:tag" content="Notes" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>What to delete from your notes</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-17">17 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>5 min read</span>
+      </div>
+    <ul class="tags"><li>Organisation</li><li>Method</li><li>Notes</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Nothing in a notes app ever gets deleted. Storage is free, deletion takes effort, and every note feels like it might be needed — so the collection only grows, and after five years it contains a large quantity of material that is not merely useless but actively in the way.</p>
+      <p>The cost is not disk space. It is that your search results fill up with things you do not want, that browsing shows you a decade of abandoned starts, and that a collection you cannot face opening stops being a system.</p>
+      <p>Deletion is maintenance, and it is the only part of note-keeping nobody does.</p>
+      <h2 id="the-four-things-safe-to-delete">The four things safe to delete</h2>
+      <p><strong>Duplicates of things that exist elsewhere.</strong> Recipes copied from a site, documentation pasted from a manual, an article you saved wholesale. If it is public and still online, you have not saved it, you have cached it — and badly, without the updates. Keep a line saying what it was and why it mattered to you. That line is the part that was yours.</p>
+      <p><strong>Notes from tools you no longer use.</strong> Configuration for a service you left, a workflow for software you have replaced, meeting notes from a job three roles ago. There is a real emotional weight to deleting the record of a job you cared about, and it is worth being honest that the value is sentimental rather than practical. If it is sentimental, keep it deliberately — that is a fine reason. Just do not pretend you will consult it.</p>
+      <p><strong>Abandoned starts.</strong> Twelve notes that are a title and two lines, from projects that never happened. These are the most cluttering category by count and the easiest to delete, because there is genuinely nothing in them. If one had an idea in it, <a href="/blog/an-idea-bank-for-writing/">move the idea to the idea bank</a> and delete the note.</p>
+      <p><strong>Anything superseded.</strong> The old version of a document, the outdated process, the plan you replaced. Superseded material is worse than absent material, because it will be found by search and read as current. This is the category where deletion is not tidying but correctness.</p>
+      <figure><img src="/images/note.webp" alt="One collection, and the results you get back from it — which is the thing pruning is actually for" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The cost of never deleting is not storage. It is that search returns the superseded version alongside the current one.</figcaption></figure>
+      <h2 id="the-four-things-to-keep-forever">The four things to keep forever</h2>
+      <p><strong>Anything you wrote in your own words.</strong> Summaries, arguments, explanations, reading notes, journal entries. This is the whole product of note-keeping and it does not become obsolete — a reading note from 2019 is exactly as good as it was.</p>
+      <p><strong>Decisions and their reasons.</strong> Why you chose this, what you thought at the time. These become more valuable with age, not less, and they are irreplaceable — <a href="/blog/keeping-a-decision-journal/">nobody can reconstruct their own past reasoning</a>.</p>
+      <p><strong>Anything about people.</strong> What they told you, what you agreed, what they were working on. Contact history is cheap to keep and impossible to rebuild.</p>
+      <p><strong>Records with numbers in them.</strong> What things cost, how long they took, what the reference was. Your own historical figures are the basis of every future estimate you make.</p>
+      <p>The pattern: <strong>delete what is reproducible, keep what is not.</strong> A pasted article is reproducible. Your reaction to it is not.</p>
+      <h2 id="the-two-pass-method">The two-pass method</h2>
+      <p>Once a year, an hour, and it is much easier if you go in two passes.</p>
+      <p><strong>Pass one: sort by date, oldest first, and skim titles only.</strong> Do not open anything. You can tell from a title that a note is an abandoned start or a stale config. This pass deletes a surprising proportion in about twenty minutes, and it works because you are not reading — reading is what makes every note feel worth keeping.</p>
+      <p><strong>Pass two: search for the things you know are duplicated.</strong> The tools you left, the projects that ended, the things you pasted. Targeted rather than exhaustive.</p>
+      <p>Then stop. An hour, once a year, and do not attempt to be thorough — a collection that is 80% pruned is entirely fine, and attempting completeness is why the annual prune becomes a thing that never happens.</p>
+      <h2 id="archive-rather-than-delete-if-it-helps">Archive rather than delete, if it helps</h2>
+      <p>For anyone who finds deletion genuinely difficult — and plenty of people do — there is a middle path that gets most of the benefit.</p>
+      <p>Export the material you are unsure about to a file, put it somewhere out of the way, and remove it from the live collection. It still exists. It is no longer in your search results, and search results are the thing you were actually fixing.</p>
+      <p>The honest caveat: an archive you never open is functionally deleted, just with extra steps and a small ongoing cost in backup size. That is not an argument against it — the psychological difference is real and worth something. Just be aware that "archived" and "deleted" converge after about a year.</p>
+      <h2 id="what-deletion-is-not-for">What deletion is not for</h2>
+      <p><strong>Not for privacy.</strong> If a note should not exist, deleting it from the app is not sufficient — it is in your backups, in your <a href="/blog/backing-up-local-notes/">daily automatic backups</a>, possibly in a Time Machine snapshot, and possibly in an export. Deleting something properly means dealing with the copies, which is a different task requiring a different amount of care.</p>
+      <p><strong>Not to make an app faster.</strong> Modern software handles tens of thousands of notes without difficulty, and if yours is slow at 2,000 the problem is the app, not the count.</p>
+      <p><strong>Not for tidiness alone.</strong> A note that is doing no harm and takes no attention can stay. This is only worth doing where the clutter has a cost — in what search returns and in whether you can face opening the collection.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>Most people will never do this, and the world will not end. A cluttered notes collection is a mild inefficiency, not a crisis, and the annual prune is the most skippable habit in this whole area.</p>
+      <p>The version that is genuinely worth it is much narrower: <strong>delete superseded documents when you supersede them.</strong> That one is not tidying, it is accuracy — the old process being findable is how someone follows it next year, and the someone is usually you.</p>
+      <p>Cyanote makes both halves plain. Everything is in one SQLite database on your own Mac, so you can see the size of what you are carrying, and it exports to one readable JSON file, which is the archive route for anything you would rather not delete outright. Full-text search is what makes pruning worth doing at all: the reason to remove the stale material is that <code>⇧⌘F</code> should return the note you meant, and every superseded document is a result competing with it.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/a-personal-crm-that-is-just-notes/">Keeping in touch, without a personal CRM</a><span>The apps for this fail because they turn friendship into a pipeline. One note per person and one honest rule does the useful part without the queasiness.</span></li><li><a href="https://cyanote.app/blog/how-to-organise-notes/">Folders, tags, or search: how to organise notes</a><span>Folders, tags and search solve three different problems, and most note systems collapse because they use the wrong one. Here is what each is actually good at.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

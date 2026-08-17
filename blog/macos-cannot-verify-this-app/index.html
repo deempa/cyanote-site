@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>macOS cannot verify this app — what the warning means</title>
+<meta name="description" content="The warning is not a virus alert and it is not nothing. Here is what Gatekeeper actually checked, what changed in recent macOS, and when to walk away." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/macos-cannot-verify-this-app/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/macos-cannot-verify-this-app/" />
+<meta property="og:title" content="macOS cannot verify this app — what the warning means" />
+<meta property="og:description" content="The warning is not a virus alert and it is not nothing. Here is what Gatekeeper actually checked, what changed in recent macOS, and when to walk away." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="macOS cannot verify this app — what the warning means" />
+<meta name="twitter:description" content="The warning is not a virus alert and it is not nothing. Here is what Gatekeeper actually checked, what changed in recent macOS, and when to walk away." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "When macOS says it cannot verify an app",
+  "description": "The warning is not a virus alert and it is not nothing. Here is what Gatekeeper actually checked, what changed in recent macOS, and when to walk away.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/macos-cannot-verify-this-app/"
+  },
+  "url": "https://cyanote.app/blog/macos-cannot-verify-this-app/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/gatekeeper-flow.svg",
+      "width": 1200,
+      "height": 460
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "macOS, Security, Buying advice",
+  "wordCount": 1171
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "When macOS says it cannot verify an app",
+      "item": "https://cyanote.app/blog/macos-cannot-verify-this-app/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="macOS" />
+<meta property="article:tag" content="Security" />
+<meta property="article:tag" content="Buying advice" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>When macOS says it cannot verify an app</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-17">17 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>5 min read</span>
+      </div>
+    <ul class="tags"><li>macOS</li><li>Security</li><li>Buying advice</li></ul>
+    </header>
+
+    <div class="post">
+      <p>You download something, double-click, and macOS says it cannot be opened because it is from an unidentified developer, or that it cannot verify the app is free of malware.</p>
+      <p>Two wrong readings follow. Some people conclude the app has a virus and delete it. Others conclude macOS is being annoying and reach for the bypass. Neither is right, and the actual meaning is narrow enough to state precisely.</p>
+      <h2 id="what-gatekeeper-checked">What Gatekeeper checked</h2>
+      <p>macOS looked for two things, and the warning tells you which one failed.</p>
+      <p><strong>A Developer ID signature.</strong> The developer enrolled in Apple's programme, has a real identity on file with Apple, and used their certificate to sign the app. The signature also proves the app has not been altered since. If this is missing, macOS calls it an unidentified developer — meaning literally that: nobody's name is attached.</p>
+      <p><strong>Notarisation.</strong> The developer uploaded the finished build to Apple, which scanned it automatically for known malicious content and issued a ticket. This is not a review of quality or behaviour. It is an automated malware scan plus a record that a specific, identifiable developer shipped this specific binary.</p>
+      <p>Neither check says the app is good, safe, or well made. Together they say: a real identity is attached, and an automated scan found nothing known. That is a lower bar than people assume, and a meaningfully higher one than nothing — mainly because accountability raises the cost of shipping something bad.</p>
+      <figure><img src="/images/gatekeeper-flow.svg" alt="What macOS checked before it showed you the warning, and what each check does and does not prove" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>A signature is a name. Notarisation is a scan. Neither is a promise the app is any good.</figcaption></figure>
+      <h2 id="what-changed-and-why-the-old-advice-fails">What changed, and why the old advice fails</h2>
+      <p>For years the standard workaround was Control-click the app, choose Open, and confirm. Half the internet still says this.</p>
+      <p>Apple removed that path in macOS Sequoia. The <a href="https://developer.apple.com/news/?id=saqachfa">developer note announcing it</a> is explicit: users can no longer Control-click to override Gatekeeper for software that is not signed correctly or notarised, and must go to System Settings → Privacy &amp; Security to review the security information before allowing it to run.</p>
+      <p>So the current route, if you have decided to trust something:</p>
+      <ol><li>Try to open it once. It will be refused.</li><li>Open System Settings → Privacy &amp; Security.</li><li>Scroll down. There is a message naming the app that was blocked, with an <strong>Open Anyway</strong> button.</li><li>Confirm, and authenticate.</li></ol>
+      <p>The extra friction is deliberate. It makes the decision explicit, in a settings pane, rather than something you can be talked through on a phone call by someone claiming to be support — which was the attack the old shortcut enabled.</p>
+      <h2 id="what-you-should-never-do">What you should never do</h2>
+      <p><strong>Do not run <code>xattr -d com.apple.quarantine</code> because a forum told you to.</strong> That command strips the flag macOS uses to know the file came from the internet, and it makes the warning disappear for <em>any</em> file, including one that should have triggered it. It is the single most commonly pasted dangerous command in Mac support threads, and the people posting it are usually trying to help.</p>
+      <p><strong>Do not disable Gatekeeper entirely.</strong> <code>spctl --master-disable</code> turns the whole system off for everything, permanently, to solve one download. If you have done this at some point in the past, it is worth checking whether it is still off.</p>
+      <p>The distinction that matters: allowing one specific app you have reasoned about is a decision. Removing the mechanism that would have asked you next time is not.</p>
+      <h2 id="how-to-decide-whether-to-trust-it">How to decide whether to trust it</h2>
+      <p>The warning has told you what macOS does not know. The rest is yours, and these are the questions worth asking.</p>
+      <p><strong>Where did the download come from?</strong> The developer's own site over HTTPS, or a link in a search ad, or a download-portal mirror? Mirrors are where re-bundled installers live, and the app can be legitimate while the copy you got is not.</p>
+      <p><strong>Does the developer have a name and a history?</strong> A site, a changelog, a support address, a track record, people discussing it publicly. Software with no findable author asking you to override a security warning is a bad combination regardless of what it does.</p>
+      <p><strong>Is it open source, and are you getting it from the actual project?</strong> A great deal of good Mac software is unsigned simply because the developer will not pay Apple annually to give it away. That is a legitimate reason and a common one — but it makes provenance everything, since the project's release page and a random mirror carry very different risk.</p>
+      <p><strong>Is the warning proportionate to what you are installing?</strong> A small utility that draws a window is one thing. Something that wants Accessibility permission, a kernel extension or admin rights is another, and an unsigned app that immediately asks for <a href="/blog/why-a-mac-app-asks-for-accessibility/">broad system permissions</a> deserves considerably more scepticism.</p>
+      <h2 id="the-version-of-this-you-should-walk-away-from">The version of this you should walk away from</h2>
+      <p>Some cases are not judgement calls.</p>
+      <ul><li>The download arrived by email or a message, and you did not go looking for it.</li><li>A web page told you your Mac has a problem and offered a fix.</li><li>Someone on a call is asking you to open Privacy &amp; Security and click Open Anyway.</li><li>The app is a "cracked" or "patched" build of paid software. Repackaged installers are one of the most reliable malware vectors on macOS, and the whole point of the repackaging was to modify a binary somebody else signed.</li></ul>
+      <p>In all four, the warning is doing precisely the job it was designed for.</p>
+      <h2 id="the-other-side-what-it-costs-developers">The other side: what it costs developers</h2>
+      <p>Worth knowing, because it explains why so much decent software trips it.</p>
+      <p>Signing requires a paid Apple Developer membership, renewed annually. Notarisation requires uploading each build to Apple and waiting for a result, which adds a step to every release. For a hobbyist giving software away, that is a recurring cost and a recurring chore in exchange for no warning dialog — and plenty of them reasonably decline.</p>
+      <p>Which means the warning is not a quality signal. Some of the best Mac utilities ever written are unsigned, and plenty of mediocre commercial software is signed and notarised. It is an accountability signal, and only that.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>The warning means: nobody is on the hook for this, or nobody checked it. Decide with provenance, not with the dialog.</p>
+      <p>Cyanote's Mac build is a universal binary — Apple Silicon and Intel — signed with a Developer ID certificate and notarised by Apple, so it opens normally and none of the above applies to it. The Windows build is a different story and it is stated plainly on the site: it is not Authenticode-signed yet, Windows shows an unknown publisher on first run, and it is not on sale for exactly that kind of reason. Being able to say which of your builds trips a security warning, and why, seems like the least a download page owes you.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/software-for-an-older-mac/">Software for a Mac that is a few years old</a><span>A 2018 MacBook is not slow. It is running software written for a machine with twice the memory. Here is what to look for, and what to stop installing.</span></li><li><a href="https://cyanote.app/blog/when-to-move-off-apple-notes/">When it is actually worth moving off Apple Notes</a><span>Apple Notes is free, fast and already installed, and most people should keep it. Here are the four reasons that genuinely justify leaving — and one that does not.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

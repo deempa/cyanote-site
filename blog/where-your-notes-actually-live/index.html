@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Where a Mac app keeps your notes, and why you should know</title>
+<meta name="description" content="Your data stays on your device&quot; is a claim with a file path behind it. Here is how to find that path in any app, and what to do once you have it." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/where-your-notes-actually-live/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/where-your-notes-actually-live/" />
+<meta property="og:title" content="Where a Mac app keeps your notes, and why you should know" />
+<meta property="og:description" content="Your data stays on your device&quot; is a claim with a file path behind it. Here is how to find that path in any app, and what to do once you have it." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Where a Mac app keeps your notes, and why you should know" />
+<meta name="twitter:description" content="Your data stays on your device&quot; is a claim with a file path behind it. Here is how to find that path in any app, and what to do once you have it." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Where your notes actually live on a Mac",
+  "description": "Your data stays on your device\" is a claim with a file path behind it. Here is how to find that path in any app, and what to do once you have it.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/where-your-notes-actually-live/"
+  },
+  "url": "https://cyanote.app/blog/where-your-notes-actually-live/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/where-the-data-lives.svg",
+      "width": 1200,
+      "height": 470
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Local-first, Backups, How-to",
+  "wordCount": 1281
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Where your notes actually live on a Mac",
+      "item": "https://cyanote.app/blog/where-your-notes-actually-live/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Local-first" />
+<meta property="article:tag" content="Backups" />
+<meta property="article:tag" content="How-to" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Where your notes actually live on a Mac</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-17">17 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Local-first</li><li>Backups</li><li>How-to</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Every app in this category says some version of "your data stays on your device". It is a good sentence. It is also unfalsifiable until you can point at the file.</p>
+      <p>So point at the file. It takes two minutes, it works for any app you use, and the answer changes what you can do — because a path you can find is a thing you can back up, copy to a new machine, and check the size of. A path you cannot find is a promise.</p>
+      <h2 id="the-three-places-a-mac-app-can-put-your-data">The three places a Mac app can put your data</h2>
+      <p>Nearly everything lives in one of these.</p>
+      <p><strong>Application Support.</strong> <code>~/Library/Application Support/&lt;some identifier&gt;/</code>. This is the correct home for an app's own database, and it is where most well-behaved apps put it. The folder is hidden by default, which is why most people have never seen theirs.</p>
+      <p><strong>A folder you chose.</strong> Some apps write plain files — Markdown, text, whatever — into a directory you pick. This is the most transparent arrangement there is: the notes are files, visible in Finder, greppable from a terminal, and the app is only ever a viewer.</p>
+      <p><strong>A container.</strong> <code>~/Library/Containers/&lt;bundle id&gt;/Data/...</code>, used by apps sandboxed for the App Store. Same idea as Application Support, one layer further in, and more awkward to reach by hand.</p>
+      <p>There is a fourth answer, which is "on a server, with a cache here". That is not a criticism — plenty of good software works that way — but it is a different arrangement, and the tell is that the local file is much smaller than the amount you have written.</p>
+      <figure><img src="/images/where-the-data-lives.svg" alt="Where an app can keep what you write, and what each choice means for backing it up" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The distinction that matters is not tidy versus messy. It is whether you can point at it.</figcaption></figure>
+      <h2 id="how-to-find-yours-in-any-app">How to find yours, in any app</h2>
+      <p>Two routes. Try them in order.</p>
+      <p><strong>Look in the app's settings.</strong> Well-made apps show you. Look for a data or storage section, often with a "reveal in Finder" button next to a path. If an app tells you where its database is without being asked, that is a good sign about the rest of it.</p>
+      <p><strong>Otherwise, look yourself.</strong> In Finder, press <code>⇧⌘G</code> and type <code>~/Library/Application Support/</code> — that shortcut is the whole trick, since the Library folder is hidden. Sort by date modified and the folder that changed while you were writing is the one. If it is not there, try <code>~/Library/Containers/</code>.</p>
+      <p>Once you have it: open the folder and look at the sizes. A single file of a few megabytes named something like <code>.sqlite</code> or <code>.db</code> is the normal, healthy shape for an app that stores structured content. Thousands of small text files is the other normal shape. Almost nothing there is the shape that should make you ask what the app is actually a client for.</p>
+      <h2 id="what-to-do-with-the-path-once-you-have-it">What to do with the path once you have it</h2>
+      <p>This is why it was worth two minutes.</p>
+      <p><strong>Point your backup at it.</strong> Time Machine already covers your home folder, so if it is running, this is done — but knowing the path is what lets you <em>verify</em> that, by browsing a Time Machine snapshot and finding the file. An untested backup is a hypothesis. I have written about <a href="/blog/backing-up-local-notes/">the wider version of this</a>, and it starts here.</p>
+      <p><strong>Copy it before you do anything drastic.</strong> New Mac, major OS upgrade, app version you are unsure about: copy the folder somewhere first. It costs seconds and it is the difference between a bad afternoon and a lost year.</p>
+      <p><strong>Check its size occasionally.</strong> A database that is 40 MB and stops growing while you keep writing is telling you something. A database that has doubled in a month is also telling you something — usually that you have been pasting images.</p>
+      <p><strong>Know it for when the app is gone.</strong> If the developer disappears, the file is what you have. Whether that is a recovery or a dead end depends entirely on the format, which is the next question.</p>
+      <h2 id="the-format-matters-more-than-the-path">The format matters more than the path</h2>
+      <p>A file you can find is not the same as a file you can read.</p>
+      <p><strong>Plain files</strong> — Markdown or text in a folder — are the maximum-portability answer. Any editor opens them, <code>grep</code> searches them, and the app is genuinely optional. The cost is that things which are not text (links between notes, tick-box state, images, tables) have to be encoded in conventions each app invents, so a folder of Markdown is portable prose plus a proprietary sprinkling.</p>
+      <p><strong>SQLite</strong> is one file containing structured data, and it is the most common answer for anything richer than prose. It is not a lock-in format: it is an open, documented, extremely long-lived format, readable by the <code>sqlite3</code> command that ships with macOS and by free tools on every platform. Your notes are in there as rows, and you can get them out with a query even if the app that wrote them no longer exists.</p>
+      <p><strong>A proprietary binary blob</strong> is the one to be wary of. If the file has an extension you have never seen and the app offers no export, then finding the path has told you where the data is and not much else.</p>
+      <p>The practical test is not "which format is purest". It is: <strong>can I get everything out, today, into something readable, without the app's cooperation being permanent?</strong> An app storing SQLite with a working full export passes. An app storing Markdown files passes trivially. Anything that fails both is a risk you are carrying whether or not you have noticed.</p>
+      <h2 id="two-things-people-get-wrong">Two things people get wrong</h2>
+      <p><strong>Putting the database in a sync folder.</strong> It is tempting: move the app's data into iCloud Drive or Dropbox and you have invented sync. Sometimes this works. What it also does is let two machines write to one database file, and file-sync services resolve that by picking a winner or leaving you a conflicted copy — neither of which is what a database needs. If an app supports moving its storage, moving it to an external disk or a different folder is fine; moving it into a live sync folder used by two Macs at once is how corruption happens.</p>
+      <p><strong>Assuming iCloud Drive is a backup.</strong> It is a sync service. Delete something and the deletion syncs, promptly and everywhere. A backup is a copy that does not change when the original does — that is the entire definition, and it is the reason <a href="/blog/backing-up-local-notes/">a restore should replace rather than merge</a>.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>Knowing the path does not make you safer by itself. What it does is convert a marketing claim into something you can check, and give you the one piece of information every recovery starts with.</p>
+      <p>If you use an app whose settings do not tell you where your writing is, go and find out today. Not because the app is untrustworthy — most are fine — but because the day you need to know is never a calm day.</p>
+      <p>Cyanote keeps everything in one SQLite file at <code>~/Library/Application Support/app.cyanote.desktop/</code>, and Settings shows you that path and lets you move it wherever you want. Notes, tasks, calendar, habits, routines and the clipboard history are all in that one file, so backing it up is one copy. On top of that there is a readable JSON export of everything, and automatic daily backups keeping the last seven — because a path you can find is the floor, not the whole answer.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/backing-up-local-notes/">How to back up notes that live on your own computer</a><span>Cloud apps hand you backup as a side effect. Local notes do not, and sync is not a substitute. Here is what actually protects them, and how to know it works.</span></li><li><a href="https://cyanote.app/blog/getting-a-note-to-your-phone-without-sync/">Getting a note to your phone without sync</a><span>A local-first app has no phone client, and that is the real cost of it. Here are the four honest workarounds, and the one question that decides if they are enough.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Desktop and laptop without sync: making two Macs one system</title>
+<meta name="description" content="A desktop and a laptop is a harder problem than a phone, because you do real work on both. Four arrangements, and the one question that picks between them." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/two-macs-one-system/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/two-macs-one-system/" />
+<meta property="og:title" content="Desktop and laptop without sync: making two Macs one system" />
+<meta property="og:description" content="A desktop and a laptop is a harder problem than a phone, because you do real work on both. Four arrangements, and the one question that picks between them." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Desktop and laptop without sync: making two Macs one system" />
+<meta name="twitter:description" content="A desktop and a laptop is a harder problem than a phone, because you do real work on both. Four arrangements, and the one question that picks between them." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Two Macs, one system, no sync",
+  "description": "A desktop and a laptop is a harder problem than a phone, because you do real work on both. Four arrangements, and the one question that picks between them.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/two-macs-one-system/"
+  },
+  "url": "https://cyanote.app/blog/two-macs-one-system/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/two-macs.svg",
+      "width": 1200,
+      "height": 460
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Local-first, Workflow, macOS",
+  "wordCount": 1166
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Two Macs, one system, no sync",
+      "item": "https://cyanote.app/blog/two-macs-one-system/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Local-first" />
+<meta property="article:tag" content="Workflow" />
+<meta property="article:tag" content="macOS" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Two Macs, one system, no sync</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-17">17 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>5 min read</span>
+      </div>
+    <ul class="tags"><li>Local-first</li><li>Workflow</li><li>macOS</li></ul>
+    </header>
+
+    <div class="post">
+      <p>A phone is a capture device. You write four words on it, standing up, and that is genuinely most of what happens there — which is why <a href="/blog/getting-a-note-to-your-phone-without-sync/">going without sync to a phone</a> turns out to be workable for a lot of people.</p>
+      <p>A second Mac is different. You write on both, you think on both, and a note started on one and needed on the other is not an edge case, it is Tuesday. The workarounds that cover a phone do not cover this, and pretending otherwise wastes your time.</p>
+      <h2 id="first-the-question-that-decides-it">First, the question that decides it</h2>
+      <p><strong>Do you use both machines in the same week, or in different weeks?</strong></p>
+      <p>Same week — desktop at the desk, laptop on the sofa, both most days — and you genuinely need sync. Nothing below is adequate, and buying software that syncs is the right decision. Say so early rather than fighting it for a month.</p>
+      <p>Different weeks — the desktop is where work happens and the laptop comes out when travelling, or a work machine and a personal machine with a hard line between them — and you do not have a sync problem. You have a <em>handover</em> problem, which is much easier, and the arrangements below solve it.</p>
+      <p>Most two-Mac setups are the second kind and are treated as the first, which is where the frustration comes from.</p>
+      <figure><img src="/images/two-macs.svg" alt="One local database, one machine at a time — the arrangement that works when the two Macs are used in different weeks rather than the same one" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Concurrent editing needs sync. Handover does not.</figcaption></figure>
+      <h2 id="the-four-arrangements">The four arrangements</h2>
+      <p><strong>One machine is the home, the other borrows.</strong> The desktop holds everything. Before a trip, export or copy across what you will need; when you get back, bring the new material over. Deliberate, unglamorous, and it fails exactly once — the time you forget, and need the note you did not bring.</p>
+      <p><strong>Split by domain, not by device.</strong> Work on the work machine, personal on the personal one, and no attempt to unify. This is the arrangement most people who have solved it actually use, and its strength is that the split is real rather than administrative: your employment contract and your privacy both point the same way. The rule to hold is that nothing lives in two places, because two half-collections is the worst outcome available.</p>
+      <p><strong>A file you carry.</strong> The whole collection exports to one file; the file lives on a USB stick, an external SSD, or your own server. Copy it over, work, copy it back. This is the arrangement everyone thinks is primitive and it is genuinely fine for handover — a single file, moved deliberately, with no ambiguity about which copy is current.</p>
+      <p><strong>Actual sync, from something built for it.</strong> Obsidian syncs a folder of files. Apple Notes syncs through iCloud. Notion is a browser away. If you are in the same-week case, this is the answer and it is not a compromise.</p>
+      <h2 id="the-one-thing-not-to-do">The one thing not to do</h2>
+      <p>Do not put a live app database in iCloud Drive or Dropbox and call it sync.</p>
+      <p>It is the obvious move and it is the one that corrupts data. A file-sync service copies whole files after they change; a database is written continuously, often in more than one file, with a journal that must stay consistent with the main file. Two machines writing to that arrangement produces either a conflicted copy or a silently chosen winner, and neither preserves a database's internal consistency.</p>
+      <p>The failure is not immediate, which is what makes it dangerous. It works for weeks. Then one day both machines were open, and you have two divergent versions and no way to merge them.</p>
+      <p>If an app lets you relocate its storage, moving it to an external disk is fine — one machine at a time, mounted deliberately. Moving it into a folder that two machines are actively syncing is a different thing entirely.</p>
+      <h2 id="making-handover-reliable">Making handover reliable</h2>
+      <p>If you are in the handover case, three habits make it stop failing.</p>
+      <p><strong>Have one direction at a time.</strong> Decide, out loud, which machine is authoritative right now. Ambiguity about which copy is current is the entire problem, and a rule as crude as "the laptop is authoritative while I am away" resolves it completely.</p>
+      <p><strong>Do the copy at a fixed moment.</strong> Not when you remember — as part of packing, and as part of unpacking. Attaching it to something you already do is the difference between a habit that survives and one that does not, which is the same reason <a href="/blog/checklists-for-things-you-do-every-week/">routines beat intentions</a>.</p>
+      <p><strong>Take the export anyway, on both machines, on a schedule.</strong> The handover copy is not a backup, and the moment you have two machines is the moment you will eventually overwrite the wrong one. <a href="/blog/backing-up-local-notes/">A backup is a copy that does not change when the original does</a> — the handover file changes constantly, which disqualifies it.</p>
+      <h2 id="what-you-gain-by-not-syncing">What you gain by not syncing</h2>
+      <p>Worth stating, since this reads as a list of limitations.</p>
+      <p>There is no sync conflict, ever. Anyone who has used syncing notes software for years has a story about a note that became two notes, or a paragraph that vanished on one device, or a merge that ate an afternoon. That entire category of failure does not exist when there is one copy.</p>
+      <p>There is no account, no server holding your work, and no subscription tied to being able to open your own notes. And every machine opens instantly, because opening does not involve asking anything.</p>
+      <p>Those are real, and they are exactly what you are trading for the convenience of not thinking about which machine you are on. Whether the trade is good depends entirely on the answer to the question at the top.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>If you work on two Macs in the same week, buy software that syncs. That is the whole recommendation and no amount of discipline substitutes for it.</p>
+      <p>If your second machine is occasional — travel, a sofa, a job you keep separate — then handover is a smaller problem than sync, and treating it as a sync problem is what makes it feel unsolvable.</p>
+      <p>Cyanote is a single-machine app and does not pretend otherwise: one SQLite database on your own disk, no account, no sync service. What it gives you for handover is a JSON export of everything — notes, tasks, calendar, habits, routines, clipboard, images — that restores on another Mac, replacing what is there rather than merging into it, and writing a rescue copy of the old data first. Settings will also move the database wherever you want, including an external disk. That is a deliberate handover mechanism, and it is not a substitute for sync. The licence covers installing it on the computers you personally own, so the second Mac costs nothing extra.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/getting-a-note-to-your-phone-without-sync/">Getting a note to your phone without sync</a><span>A local-first app has no phone client, and that is the real cost of it. Here are the four honest workarounds, and the one question that decides if they are enough.</span></li><li><a href="https://cyanote.app/blog/using-a-mac-app-without-the-mouse/">Using a notes app without touching the mouse</a><span>Learning forty shortcuts is not the goal and never works. Four of them carry almost all the value in any notes app, and the rest can stay unlearned forever.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

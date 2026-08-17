@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="tr-title tr-desc">
+  <title id="tr-title">The four kinds of request an app makes, and what each carries</title>
+  <desc id="tr-desc">Analytics reports which screens you opened and usually goes to a third party. Crash reporting sends a stack trace and often a device identifier. An update check asks whether a newer version exists and can be anonymous. A licence check validates a key, and its frequency is the tell. The signature worth reacting to is request volume that scales with what you write.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 19px; fill: #3d3f45; }
+    .note { font-size: 18px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="30" width="276" height="310" rx="12"/>
+  <rect x="24" y="30" width="276" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="52" y="86">Analytics</text>
+  <text class="note" x="52" y="118">Usually a third party</text>
+  <line x1="52" y1="146" x2="272" y2="146" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="52" y="184">Which screens you</text>
+  <text class="item" x="52" y="210">opened, and for how</text>
+  <text class="item" x="52" y="236">long</text>
+  <text class="note" x="52" y="290">&#8220;Anonymous&#8221; carries</text>
+  <text class="note" x="52" y="316">an identifier anyway.</text>
+
+  <rect class="card" x="324" y="30" width="276" height="310" rx="12"/>
+  <rect x="324" y="30" width="276" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="352" y="86">Crash reports</text>
+  <text class="note" x="352" y="118">Genuinely useful</text>
+  <line x1="352" y1="146" x2="572" y2="146" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="352" y="184">A stack trace, a</text>
+  <text class="item" x="352" y="210">device identifier,</text>
+  <text class="item" x="352" y="236">sometimes memory</text>
+  <text class="note" x="352" y="290">Useful and still a</text>
+  <text class="note" x="352" y="316">data transfer.</text>
+
+  <rect class="card" x="624" y="30" width="276" height="310" rx="12"/>
+  <rect x="624" y="30" width="276" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="652" y="86">Update check</text>
+  <text class="note" x="652" y="118">Hard to avoid</text>
+  <line x1="652" y1="146" x2="872" y2="146" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="652" y="184">&#8220;Is there a newer</text>
+  <text class="item" x="652" y="210">version?&#8221; — and your</text>
+  <text class="item" x="652" y="236">IP, unavoidably</text>
+  <text class="note" x="652" y="290">Can be anonymous.</text>
+  <text class="note" x="652" y="316">Ask whether it is.</text>
+
+  <rect class="card" x="924" y="30" width="252" height="310" rx="12"/>
+  <rect x="924" y="30" width="252" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="952" y="86">Licence check</text>
+  <text class="note" x="952" y="118">Frequency is the tell</text>
+  <line x1="952" y1="146" x2="1148" y2="146" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="952" y="184">Once at install is</text>
+  <text class="item" x="952" y="210">one thing. Every</text>
+  <text class="item" x="952" y="236">launch is another.</text>
+  <text class="note" x="952" y="290">Watch for it firing</text>
+  <text class="note" x="952" y="316">per document.</text>
+
+  <text class="foot" x="24" y="404">The signature that matters: request volume that scales with what you write, not with what the app does.</text>
+</svg>

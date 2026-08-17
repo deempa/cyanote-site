@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Digital estate: what happens to your notes when you die</title>
+<meta name="description" content="An encrypted local database with no password written down is unrecoverable, by design. That is a feature until it is a problem for somebody else." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/what-happens-to-your-notes-when-you-die/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/what-happens-to-your-notes-when-you-die/" />
+<meta property="og:title" content="Digital estate: what happens to your notes when you die" />
+<meta property="og:description" content="An encrypted local database with no password written down is unrecoverable, by design. That is a feature until it is a problem for somebody else." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Digital estate: what happens to your notes when you die" />
+<meta name="twitter:description" content="An encrypted local database with no password written down is unrecoverable, by design. That is a feature until it is a problem for somebody else." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What happens to your notes when you die",
+  "description": "An encrypted local database with no password written down is unrecoverable, by design. That is a feature until it is a problem for somebody else.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/what-happens-to-your-notes-when-you-die/"
+  },
+  "url": "https://cyanote.app/blog/what-happens-to-your-notes-when-you-die/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/backup-layers-diagram.svg",
+      "width": 1200,
+      "height": 470
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Local-first, Backups, Privacy",
+  "wordCount": 1149
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "What happens to your notes when you die",
+      "item": "https://cyanote.app/blog/what-happens-to-your-notes-when-you-die/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Local-first" />
+<meta property="article:tag" content="Backups" />
+<meta property="article:tag" content="Privacy" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>What happens to your notes when you die</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-17">17 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>5 min read</span>
+      </div>
+    <ul class="tags"><li>Local-first</li><li>Backups</li><li>Privacy</li></ul>
+    </header>
+
+    <div class="post">
+      <p>This is not a cheerful subject and it is a short, practical one. Nobody writes about it, and everything in this category has the property.</p>
+      <p>If your notes are encrypted, on your own machine, with no account and no password written down anywhere, then when you are gone they are gone. That is not a bug — it is precisely the guarantee you were buying. It just has a second consequence that nobody mentions on the marketing page.</p>
+      <h2 id="two-things-people-usually-want-and-they-conflict">Two things people usually want, and they conflict</h2>
+      <p><strong>Some of it should survive.</strong> Not the diary. The practical layer: where the accounts are, what the passwords protect, the family history you were the only one who knew, the instructions for the boiler, the letter you meant to leave, the work someone else needs to continue.</p>
+      <p><strong>Some of it should not.</strong> The journal. The half-formed opinions about people. The things you wrote to think rather than to communicate. Most people, asked directly, do not want everything they ever privately wrote read by their family in a difficult week.</p>
+      <p>Those pull in opposite directions, which is why "just give someone the password" is not a complete answer, and why the whole question tends to get dropped.</p>
+      <h2 id="the-three-arrangements">The three arrangements</h2>
+      <p><strong>Cloud accounts have a mechanism, of a sort.</strong> Apple has a Legacy Contact, Google has Inactive Account Manager. Both let you nominate someone who can gain access after a process. They are genuinely useful and worth setting up if your material is there. They are also all-or-nothing at the account level, they take time, and the process is a bureaucratic one at the worst possible moment.</p>
+      <p><strong>Local and unencrypted is the accidental default, and it mostly works.</strong> If your notes are a database or a folder of files on a machine at home, whoever has the machine and its password has the notes. That is a real answer, if imperfect — it depends on someone knowing the machine matters, and on the disk password being available.</p>
+      <p><strong>Local and encrypted is the one that needs a decision.</strong> Full-disk encryption, an encrypted database, or locked individual notes. Without the key, the data is unrecoverable by anyone, including you, including a specialist. That is the guarantee. It also means the practical layer above dies with you unless you did something deliberate.</p>
+      <figure><img src="/images/backup-layers-diagram.svg" alt="Layers, and which of them survive you" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The layer that protects your notes from everyone else protects them from the people you would have wanted to have them.</figcaption></figure>
+      <h2 id="what-to-actually-do">What to actually do</h2>
+      <p>Twenty minutes, once, and it is mostly not about notes software.</p>
+      <p><strong>Use a password manager with an emergency access feature.</strong> This is the single most effective step, and it solves the general problem rather than the notes-specific one. Most of the serious password managers offer a recovery contact who can request access, with a waiting period during which you can decline — which handles both the "someone needs in" and "not right now" cases. Your disk password and your notes password go in there.</p>
+      <p><strong>Write a one-page "where things are" document, and print it.</strong> Not encrypted, not in the system it describes. Where the machine is, that there is a password manager, who has emergency access, where the backups are, which accounts matter. It should contain no passwords — it is a map, not a key. Put it with your will, or wherever your important papers live.</p>
+      <p><strong>Decide, explicitly, what you want read.</strong> If there is a journal you would rather nobody read, say so in that document, in a sentence. People overwhelmingly respect a stated wish and are left guessing without one. If you want it destroyed, say that too.</p>
+      <p><strong>Keep the practical layer separate from the private layer.</strong> This is the notes-specific part and it is easy: the household information, the account map, the family history — the things you would want to survive — should be in an unlocked note, or an export, or on paper. The journal can be locked. Encryption is a per-note decision in a lot of software, which means the split costs nothing.</p>
+      <p><strong>Tell one person the machine matters.</strong> A surprising amount of digital material is lost simply because nobody knew to look. "There is stuff on the Mac and there is a note in the file with the will" is enough.</p>
+      <h2 id="the-part-specific-to-local-first-software">The part specific to local-first software</h2>
+      <p>If you have chosen local software for privacy reasons, you have made a real trade and it is worth completing.</p>
+      <p>There is no company to write to. No support process, no legal request, no account recovery. Nobody can be persuaded to help, because there is no one in a position to. Every route runs through the machine, the disk password, and whatever you wrote down.</p>
+      <p>The compensating advantage is that it is entirely in your hands and requires nobody's cooperation. An export sitting on an external drive in a drawer, or printed, is readable forever by whoever finds it — no account, no service, no login. That is a genuinely better inheritance than a subscription somebody has to argue their way into, and it is <a href="/blog/what-happens-when-your-notes-app-shuts-down/">the same property</a> that protects you when a company disappears, applied to the other kind of ending.</p>
+      <h2 id="the-version-for-people-who-will-not-do-any-of-this">The version for people who will not do any of this</h2>
+      <p>Realistically, most people will not do the twenty minutes. So, the one thing:</p>
+      <p><strong>Set up emergency access in your password manager.</strong> That is it. If your disk password is in there, everything else follows — the machine opens, the notes are readable, whoever needs to get in can. Ten minutes, and it covers the general case and not only your notes.</p>
+      <p>If you do a second thing, print the one-page map.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>There is a version of this post that is a sales argument, and it should not be, so plainly: no notes app solves this. It is a password manager question and a piece-of-paper question, and the software you write in is nearly irrelevant to it.</p>
+      <p>What the software determines is only how many routes exist. Cloud accounts have a slow official route. Local and unencrypted has an informal one. Local and encrypted has exactly one route, and it is the one you set up in advance.</p>
+      <p>Cyanote is the third kind: one SQLite database on your own Mac, and any note can be locked with a password and is encrypted where it sits. There is no account to recover, no legacy contact, and nobody here who could help — which is the guarantee working as intended. What it does give you is a readable JSON export of everything, which is the thing to put on an external drive in a drawer, and per-note locking, so the practical layer can stay open while the private one does not.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/ai-features-and-private-notes/">AI features in a notes app, and what they cost</a><span>Ask-your-notes-anything means sending your notes somewhere. What each kind of AI feature actually transmits, and which ones can run on your machine.</span></li><li><a href="https://cyanote.app/blog/what-happens-when-your-notes-app-shuts-down/">What happens to your notes when the app shuts down</a><span>Notes apps close. The good ones give you a month and an export file. Here is what that month actually asks of you, and how to be ready before it arrives.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

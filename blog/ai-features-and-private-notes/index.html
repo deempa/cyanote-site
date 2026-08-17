@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI in notes apps: what it sends, and the local alternatives</title>
+<meta name="description" content="Ask-your-notes-anything means sending your notes somewhere. What each kind of AI feature actually transmits, and which ones can run on your machine." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/ai-features-and-private-notes/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/ai-features-and-private-notes/" />
+<meta property="og:title" content="AI in notes apps: what it sends, and the local alternatives" />
+<meta property="og:description" content="Ask-your-notes-anything means sending your notes somewhere. What each kind of AI feature actually transmits, and which ones can run on your machine." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI in notes apps: what it sends, and the local alternatives" />
+<meta name="twitter:description" content="Ask-your-notes-anything means sending your notes somewhere. What each kind of AI feature actually transmits, and which ones can run on your machine." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI features in a notes app, and what they cost",
+  "description": "Ask-your-notes-anything means sending your notes somewhere. What each kind of AI feature actually transmits, and which ones can run on your machine.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/ai-features-and-private-notes/"
+  },
+  "url": "https://cyanote.app/blog/ai-features-and-private-notes/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/ai-what-leaves.svg",
+      "width": 1200,
+      "height": 470
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Privacy, Local-first, Buying advice",
+  "wordCount": 1333
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI features in a notes app, and what they cost",
+      "item": "https://cyanote.app/blog/ai-features-and-private-notes/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Privacy" />
+<meta property="article:tag" content="Local-first" />
+<meta property="article:tag" content="Buying advice" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>AI features in a notes app, and what they cost</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-17">17 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Privacy</li><li>Local-first</li><li>Buying advice</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Every notes app has AI features now, and most of them are genuinely useful. Summarise this. Find the note about the thing. Turn these bullets into a paragraph. Ask a question and get an answer drawn from what you have written.</p>
+      <p>There is one property they share that is worth stating plainly before you decide how you feel about it: <strong>almost all of them work by sending your notes to somebody else's computer.</strong></p>
+      <p>That is not a scandal and it is not hidden. It is how the technology works at the quality people expect. But it inverts the arrangement for anyone who chose a notes app for privacy reasons, and it is worth understanding at the level of what actually leaves.</p>
+      <h2 id="what-each-feature-transmits">What each feature transmits</h2>
+      <p>The features are sold as one category and they have very different footprints.</p>
+      <p><strong>Summarise this note.</strong> Sends that note. Bounded, and the easiest to reason about — you know exactly what went.</p>
+      <p><strong>Rewrite or continue this paragraph.</strong> Sends the surrounding text. Also bounded, usually small.</p>
+      <p><strong>Semantic search across everything.</strong> Sends <em>all of it</em>, at least once. To search by meaning rather than by word, every note has to be turned into embeddings, and unless that happens on your machine, every note is transmitted. This is the feature people most underestimate, because it feels like search — a local-seeming operation — and it is the one with the largest footprint.</p>
+      <p><strong>"Ask your notes anything."</strong> Sends whichever notes the system judges relevant to your question, on every question. Over months that converges on most of your collection, in fragments, with no record of which fragments went where.</p>
+      <p><strong>Automatic tagging, linking or organising.</strong> Reads everything, on a schedule, whether or not you are using the app.</p>
+      <p>If you are weighing this, that ordering is the useful one. The first two are a transaction you initiate. The last three are standing arrangements.</p>
+      <figure><img src="/images/ai-what-leaves.svg" alt="The two shapes of AI feature: one you initiate, and one that runs on a schedule" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The first column is a decision. The second is a policy, and the difference is what you should be weighing.</figcaption></figure>
+      <h2 id="the-questions-to-ask">The questions to ask</h2>
+      <p>Vendors vary enormously and several are genuinely careful. These are the questions that distinguish them.</p>
+      <p><strong>Is my content used for training?</strong> Most business-focused vendors now say no by default. Check whether that is the default or an opt-out, and whether it differs by plan — free tiers sometimes have different terms.</p>
+      <p><strong>How long is it retained?</strong> Many providers keep API inputs for a period for abuse monitoring, commonly around 30 days. That is reasonable operationally and it means your notes exist on their infrastructure after the request.</p>
+      <p><strong>Who is the third party?</strong> Most apps do not run their own models. Your notes are going to the app vendor <em>and</em> to whichever model provider they use, which is two organisations and two sets of terms.</p>
+      <p><strong>Is it opt-in per action, or always on?</strong> A button you press is a decision. Background indexing is a policy.</p>
+      <p><strong>Can it be turned off completely?</strong> Not "disabled in the UI" — actually not running. Worth checking, because some indexing runs regardless of whether you use the features.</p>
+      <h2 id="what-can-genuinely-run-locally">What can genuinely run locally</h2>
+      <p>This is improving and it is worth knowing what is realistic in 2026.</p>
+      <p><strong>Local embeddings for semantic search: yes, realistically.</strong> Embedding models are small enough to run on any modern Mac, and the quality is good. This is the local AI feature that most makes sense, because it is the one with the worst privacy profile when remote.</p>
+      <p><strong>Local summarisation and rewriting: yes, with caveats.</strong> Small models run on Apple Silicon and produce useful output. They are noticeably worse than the frontier hosted models, and they cost several gigabytes of download plus real memory while running. Whether that trade is good depends on how much better you need the output to be.</p>
+      <p><strong>Local "ask your notes anything": partially.</strong> The retrieval part runs locally. The answering part is where local models are weakest, and it is the part people judge the feature on.</p>
+      <p>The honest summary: local AI is genuinely viable in 2026 and it is not as good. Anyone claiming the gap has closed is selling something, and anyone claiming local models are useless has not tried recently.</p>
+      <h2 id="the-thing-nobody-mentions-about-app-size">The thing nobody mentions about app size</h2>
+      <p>A local model is a few gigabytes. That is a large change to what installing a notes app means — an app that was 15 MB becomes a multi-gigabyte download, holds significant memory while running, and has real implications on <a href="/blog/software-for-an-older-mac/">an older machine</a>.</p>
+      <p>Which is why most apps that offer local AI make it an optional download, and why apps that value being small often decline the feature entirely. It is a real architectural fork, not a checkbox.</p>
+      <h2 id="where-this-leaves-a-local-first-app">Where this leaves a local-first app</h2>
+      <p>Being straight about the position, since this is the part where a page like this usually gets evasive.</p>
+      <p>An app with no server has three options. Call somebody else's API, which contradicts the reason people chose it. Ship a local model, which multiplies the download size and gives worse results. Or not have AI features, and be worse at some genuinely useful things than the competition.</p>
+      <p>There is no fourth option, and anyone telling you their local-first app has frontier-quality AI with nothing leaving the machine is describing something that does not exist.</p>
+      <p>What a local app does have, and it is worth weighing: <strong>very good conventional search</strong>. Ranked full-text search across everything answers a large share of what people use AI search for, instantly, with no model, no transmission and no wait. It fails on the questions where you cannot remember any word from the note — which is exactly where semantic search shines, and that is the honest boundary between them.</p>
+      <h2 id="how-to-decide">How to decide</h2>
+      <p><strong>If the material is ordinary</strong> — work notes, projects, drafts, things you would not mind a colleague reading — hosted AI features are a reasonable trade and the productivity is real. Check the training and retention terms, and get on with it.</p>
+      <p><strong>If some of it is sensitive</strong> — client work under NDA, health, legal, a journal, anything covered by a policy — the useful move is not to refuse AI entirely. It is to keep the sensitive material somewhere without it, and use AI-equipped tools for the rest. Two places with a clear line beats one place with a policy you hope holds.</p>
+      <p><strong>If you cannot tell what is going where</strong>, that is itself the answer. A feature you cannot characterise is one you cannot consent to, and vagueness at this specific point is worth reacting to — the same standard as <a href="/blog/apps-that-do-not-phone-home/">any other claim about what an app transmits</a>.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>AI features in notes apps are useful and I am not going to pretend otherwise. Summarising a long meeting note, finding something by meaning, turning fragments into prose — these save real time.</p>
+      <p>The cost is a copy of your writing on infrastructure you do not control, and whether that matters depends entirely on what you write. For most notes it does not. For some notes it very much does, and the mistake is having one policy for both.</p>
+      <p>Cyanote has no AI features at all. Nothing is summarised, nothing is embedded, nothing is sent — the app makes <a href="/blog/apps-that-do-not-phone-home/">three network requests in total</a> and none carries a word you have written. What it has instead is ranked full-text search across every note, code block and table, running against a local database, returning results while you are still typing. That is a real trade rather than a superior position: if what you want is to ask your notes a question in plain language, this app does not do that, and one that does will serve you better.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/notes-app-without-an-account/">A notes app that never asks you to sign up</a><span>Signing up is so normal that nobody asks what the account is for. Here is what it buys, what it costs, and how to check whether an app truly needs one.</span></li><li><a href="https://cyanote.app/blog/pasting-work-data-into-random-websites/">The small text tools you keep pasting work data into</a><span>Everyone has a bookmark for a JSON formatter and a JWT decoder. Few of us think about where that paste goes. Here is the real risk, and the boring fix.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Does this Mac app phone home? How to check for yourself</title>
+<meta name="description" content="No telemetry&quot; is a claim, and claims are checkable. Here is how to see exactly what an app on your Mac sends, without trusting anybody&#x27;s privacy page." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/apps-that-do-not-phone-home/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/apps-that-do-not-phone-home/" />
+<meta property="og:title" content="Does this Mac app phone home? How to check for yourself" />
+<meta property="og:description" content="No telemetry&quot; is a claim, and claims are checkable. Here is how to see exactly what an app on your Mac sends, without trusting anybody&#x27;s privacy page." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Does this Mac app phone home? How to check for yourself" />
+<meta name="twitter:description" content="No telemetry&quot; is a claim, and claims are checkable. Here is how to see exactly what an app on your Mac sends, without trusting anybody&#x27;s privacy page." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to tell whether an app phones home",
+  "description": "No telemetry\" is a claim, and claims are checkable. Here is how to see exactly what an app on your Mac sends, without trusting anybody's privacy page.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/apps-that-do-not-phone-home/"
+  },
+  "url": "https://cyanote.app/blog/apps-that-do-not-phone-home/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/three-requests.svg",
+      "width": 1200,
+      "height": 460
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Privacy, macOS, How-to",
+  "wordCount": 1257
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to tell whether an app phones home",
+      "item": "https://cyanote.app/blog/apps-that-do-not-phone-home/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Privacy" />
+<meta property="article:tag" content="macOS" />
+<meta property="article:tag" content="How-to" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>How to tell whether an app phones home</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-17">17 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Privacy</li><li>macOS</li><li>How-to</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Every privacy page says the right things. That is what privacy pages are for.</p>
+      <p>The useful move is not reading more of them. It is checking — which is easier than most people assume, takes about ten minutes, and turns a claim into an observation. And it works on any app, including the ones whose pages you have never read.</p>
+      <h2 id="what-telemetry-actually-covers">What "telemetry" actually covers</h2>
+      <p>The word is used loosely enough to hide things, so it is worth separating.</p>
+      <p><strong>Analytics.</strong> An SDK reporting which screens you opened, which features you used, how long you stayed. Usually a third party. Usually described as "anonymous", which is doing more work in that sentence than it can carry — a device identifier plus a usage pattern is not anonymous in any useful sense.</p>
+      <p><strong>Crash reporting.</strong> Sends a stack trace when the app falls over, often with a device identifier and sometimes with surrounding memory. Genuinely useful to developers and genuinely a data transfer.</p>
+      <p><strong>Update checks.</strong> The app asks whether a newer version exists. This one is close to unavoidable for software distributed outside an app store, and it is the most defensible of the four — though it is still a request, still carries your IP, and can carry an identifier if the developer chose to include one.</p>
+      <p><strong>Licence and account calls.</strong> Checking that your key is valid, or your session, or your subscription. Frequency is the tell: once at install is one thing, at every launch is another.</p>
+      <p>An app with none of the first two and one of the last two is a normal, honest arrangement. An app with all four, none of which is disclosed, is a different proposition.</p>
+      <figure><img src="/images/three-requests.svg" alt="The requests an app makes, and what each one can carry" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>The question is never whether an app makes requests. It is how many, how often, and what is in them.</figcaption></figure>
+      <h2 id="how-to-check-in-ten-minutes">How to check, in ten minutes</h2>
+      <p>Three routes, in ascending order of effort and certainty.</p>
+      <p><strong>Read the privacy page for specifics, not adjectives.</strong> A page that says "we respect your privacy" tells you nothing. A page that names the exact endpoints, what each one carries, and how often it fires is making claims you can then verify — and the willingness to be that specific is itself a signal.</p>
+      <p><strong>Watch the connections.</strong> macOS ships with the tools. Open Activity Monitor, go to the Network tab, and watch the app's data figures while you use it. An app that transfers steadily while you type is doing something worth asking about. For detail, <code>nettop -p &lt;pid&gt;</code> in Terminal shows live connections per process, and <code>lsof -i -a -p &lt;pid&gt;</code> lists what it currently has open.</p>
+      <p><strong>Use an outbound firewall.</strong> This is the real answer if you want certainty. Little Snitch and LuLu both intercept outbound connections and ask you to approve each one, by app and destination. You will learn a great deal in the first week — much of it about apps you had never suspected — and you can simply deny the ones you do not want. LuLu is free and open source; Little Snitch is paid and more capable.</p>
+      <p><strong>The blunt test:</strong> turn the wifi off and use the app for ten minutes. Anything that stops working was talking to something. This does not find the quiet stuff, but it is free and takes no setup, and it is the same <a href="/blog/what-still-works-with-the-wifi-off/">wifi-off test</a> that tells you about offline capability.</p>
+      <h2 id="what-you-will-find-and-what-to-make-of-it">What you will find, and what to make of it</h2>
+      <p>Expect more connections than you assumed, and do not treat every one as a betrayal.</p>
+      <p>A request to <code>api.&lt;the developer's domain&gt;</code> once when you first enter a licence key is a licence check. A request to an update endpoint a few seconds after launch is an update check. A font loading from a CDN is a design decision. None of those is telemetry, and finding them is not a scandal.</p>
+      <p>What is worth reacting to: a third-party analytics domain, a crash reporter you were never asked about, a request that fires every time you open a document rather than every time you open the app, and — most of all — anything that scales with <em>what you write</em> rather than with what the app does. Request volume proportional to your content is the signature that matters, because it means content is going somewhere.</p>
+      <h2 id="the-part-that-is-not-about-trust">The part that is not about trust</h2>
+      <p>There is a version of this argument that ends in paranoia, and it is not the useful version. Most developers who collect analytics are trying to find out which features are unused, which is a reasonable thing to want.</p>
+      <p>The point is not that data collection is malicious. It is that it is a <strong>surface</strong>: a copy of something about you, on infrastructure you do not control, subject to a breach at that company, an acquisition, a policy change, or a subpoena. Every one of those has happened to companies with sincere privacy pages. The only reliably safe data is data that was never transmitted, and that is an architectural property rather than a promise about intent.</p>
+      <p>Which is why the strongest version of this is not "we handle your data carefully". It is "there is no data here to handle" — the <a href="/blog/what-local-first-means-for-your-notes/">local-first arrangement</a>, where the absence of a server is the guarantee.</p>
+      <h2 id="what-good-disclosure-looks-like">What good disclosure looks like</h2>
+      <p>If you want a standard to hold apps to, this is a fair one:</p>
+      <ul><li><strong>An exhaustive list of endpoints</strong>, not a summary. "These are the only requests" is a claim that can be falsified by watching the network, which is what makes it worth something.</li><li><strong>What each request carries</strong>, including what is inferable from it. An anonymous request still carries an IP address and a timestamp, and an honest page says so.</li><li><strong>How often it fires</strong>, in real units. "Periodically" is not a unit.</li><li><strong>What is not sent</strong>, stated plainly, so the absence is on the record.</li><li><strong>No third parties</strong>, or a clear statement of which ones and why.</li></ul>
+      <p>An app that publishes all five and is telling the truth is verifiable in ten minutes. An app that publishes none of them may be perfectly fine — you just have no way to know, and no way to find out except by watching.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>You do not need to audit every app on your Mac. That is a hobby, not a security posture.</p>
+      <p>Audit the ones holding things you would not want copied: your notes, your journal, your client files, your passwords. For everything else, a privacy page is probably enough, and the checking is only worth ten minutes for the apps where the content matters.</p>
+      <p>Cyanote makes exactly three requests, and this is the whole list. A one-time licence check to <code>api.lemonsqueezy.com</code> when you first install, carrying your key and a label with the version and OS. An anonymous update check to <code>updates.cyanote.app</code> a few seconds after launch and every six hours the app stays open — no key, no account, no identifier. And a calendar feed, only if you subscribe to one, going to whoever runs that calendar rather than to us. There is no analytics SDK, no crash reporter, no usage pings and no install identifier, and none of the three requests carries a word you have written. All of that is checkable with the tools above, which is the reason to state it that specifically.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/calendar-without-signing-in/">Seeing your calendar without signing into it</a><span>There is a middle option between typing everything twice and handing an app your Google account. It is called an ICS subscription, and it is read-only.</span></li><li><a href="https://cyanote.app/blog/pomodoro-timer-mac-app/">A Pomodoro timer that&#x27;s already in the app you&#x27;re working in</a><span>A focus timer works until switching to it is its own distraction. What that costs when the timer lives in a separate app, and what changes when it doesn&#x27;t.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+</body>
+</html>

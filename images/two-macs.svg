@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="tm-title tm-desc">
+  <title id="tm-title">Same-week use needs sync; different-week use needs handover</title>
+  <desc id="tm-desc">If both Macs are used in the same week, two copies are edited concurrently and only real sync resolves that. If they are used in different weeks — a desk machine and a travel machine, or work and personal — one copy is authoritative at a time and a deliberate handover is enough.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 19px; fill: #3d3f45; }
+    .note { font-size: 18px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <!-- same week -->
+  <rect class="card" x="24" y="30" width="560" height="350" rx="12"/>
+  <rect x="24" y="30" width="560" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="54" y="86">Both, in the same week</text>
+  <text class="note" x="54" y="116">Desk most days, sofa most evenings</text>
+
+  <rect class="box" x="54" y="150" width="200" height="70" rx="10"/>
+  <text class="item" x="80" y="192">Desktop, edited</text>
+  <rect class="box" x="354" y="150" width="200" height="70" rx="10"/>
+  <text class="item" x="380" y="192">Laptop, edited</text>
+  <g stroke="#b8bcc4" stroke-width="2.5" fill="none">
+    <path d="M258 175 h 84"/><path d="M342 199 h -84"/>
+  </g>
+  <g fill="#b8bcc4">
+    <path d="M350 175 l -14 -7 l 0 14 z"/>
+    <path d="M250 199 l 14 -7 l 0 14 z"/>
+  </g>
+
+  <text class="item" x="54" y="272">Two copies diverge. Merging them is a</text>
+  <text class="item" x="54" y="300">real problem with a real solution.</text>
+  <text class="note" x="54" y="348">Buy something that syncs. Nothing below helps.</text>
+
+  <!-- different weeks -->
+  <rect class="card" x="614" y="30" width="560" height="350" rx="12"/>
+  <rect x="614" y="30" width="560" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="644" y="86">Each, in different weeks</text>
+  <text class="note" x="644" y="116">A desk machine and a travel machine</text>
+
+  <rect class="box" x="644" y="150" width="200" height="70" rx="10"/>
+  <text class="item" x="670" y="192">Authoritative</text>
+  <rect class="box" x="944" y="150" width="200" height="70" rx="10"/>
+  <text class="note" x="970" y="192">Idle</text>
+  <g stroke="#0e7cc4" stroke-width="2.5" fill="none"><path d="M848 185 h 84"/></g>
+  <path d="M940 185 l -14 -7 l 0 14 z" fill="#0e7cc4"/>
+
+  <text class="item" x="644" y="272">One copy is current at a time. Move it</text>
+  <text class="item" x="644" y="300">deliberately, at a fixed moment.</text>
+  <text class="note" x="644" y="348">Handover, not sync. Much smaller problem.</text>
+
+  <text class="foot" x="24" y="432">Never put a live database in iCloud Drive or Dropbox. It works for weeks, then it does not.</text>
+</svg>

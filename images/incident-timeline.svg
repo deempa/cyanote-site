@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" width="1200" height="490" role="img" aria-labelledby="it-title it-desc">
+  <title id="it-title">A timeline recorded during an incident versus one reconstructed after</title>
+  <desc id="it-desc">Recorded live, the timeline keeps the wrong theory and shows that twelve minutes went to a deploy hypothesis that turned out to be irrelevant. Reconstructed a week later, the wrong turns are gone and the sequence reads as though it made sense throughout — which is the version containing no lessons.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .note { font-size: 18px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+    .t    { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 17px; fill: #71757e; }
+    .l    { font-size: 18px; fill: #3d3f45; }
+    .wrong{ font-size: 18px; fill: #0e7cc4; }
+  </style>
+
+  <!-- recorded live -->
+  <rect class="card" x="24" y="30" width="560" height="380" rx="12"/>
+  <rect x="24" y="30" width="560" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="54" y="86">Recorded as it happened</text>
+  <text class="note" x="54" y="116">Someone not fixing, writing lines</text>
+  <line x1="54" y1="142" x2="554" y2="142" stroke="#e6e6e9" stroke-width="2"/>
+
+  <text class="t" x="54" y="178">02:04</text><text class="l" x="126" y="178">alerts on checkout latency</text>
+  <text class="t" x="54" y="212">02:09</text><text class="wrong" x="126" y="212">suspect the 01:50 deploy — roll back</text>
+  <text class="t" x="54" y="246">02:14</text><text class="wrong" x="126" y="246">rollback done, no change. not the deploy</text>
+  <text class="t" x="54" y="280">02:20</text><text class="l" x="126" y="280">cache hit rate fell at 01:30</text>
+  <text class="t" x="54" y="314">02:31</text><text class="l" x="126" y="314">restarted cache nodes, recovering</text>
+  <text class="t" x="54" y="348">02:46</text><text class="l" x="126" y="348">green. still unclear why 01:30</text>
+
+  <text class="note" x="54" y="378">The blue lines cost twelve minutes. That is a finding.</text>
+
+  <!-- reconstructed -->
+  <rect class="card" x="614" y="30" width="560" height="380" rx="12"/>
+  <rect x="614" y="30" width="560" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="644" y="86">Reconstructed a week later</text>
+  <text class="note" x="644" y="116">Written from scrollback and memory</text>
+  <line x1="644" y1="142" x2="1144" y2="142" stroke="#e6e6e9" stroke-width="2"/>
+
+  <text class="t" x="644" y="178">02:04</text><text class="l" x="716" y="178">alerts fired</text>
+  <text class="t" x="644" y="212">02:20</text><text class="l" x="716" y="212">identified the cache as the cause</text>
+  <text class="t" x="644" y="246">02:46</text><text class="l" x="716" y="246">service restored</text>
+
+  <text class="note" x="644" y="306">Tidy, accurate, and useless. The twelve</text>
+  <text class="note" x="644" y="332">minutes are gone, and with them the</text>
+  <text class="note" x="644" y="358">question of why the deploy was the</text>
+  <text class="note" x="644" y="384">first thing anybody reached for.</text>
+
+  <text class="foot" x="24" y="462">If the timeline is tidy, it has been laundered — and the wrong turns were the lessons.</text>
+</svg>

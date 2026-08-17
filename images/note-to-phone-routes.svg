@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="np-title np-desc">
+  <title id="np-title">Four routes from a Mac-only notes app to a phone</title>
+  <desc id="np-desc">The Mac holds the writing, the archive and the search. The phone needs two narrow things: capture while standing up, and looking one item up. Four routes cover it — send yourself the one item, keep phone-shaped notes in the phone's own app, read from an export, or reach the Mac by screen sharing.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 19px; fill: #3d3f45; }
+    .note { font-size: 18px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <!-- mac -->
+  <rect class="card" x="24" y="40" width="300" height="290" rx="12"/>
+  <rect x="24" y="40" width="300" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="52" y="96">On the Mac</text>
+  <circle cx="62" cy="139" r="5" fill="#0e7cc4"/>
+  <text class="item" x="84" y="146">The writing</text>
+  <circle cx="62" cy="179" r="5" fill="#0e7cc4"/>
+  <text class="item" x="84" y="186">The archive</text>
+  <circle cx="62" cy="219" r="5" fill="#0e7cc4"/>
+  <text class="item" x="84" y="226">Search across all of it</text>
+  <text class="note" x="52" y="286">Sitting-down work.</text>
+  <text class="note" x="52" y="310">Where it belongs.</text>
+
+  <!-- routes -->
+  <rect class="card" x="374" y="40" width="430" height="290" rx="12"/>
+  <text class="h" x="402" y="96">Four routes across</text>
+  <text class="item" x="402" y="146">1.  Send yourself the one item</text>
+  <text class="item" x="402" y="192">2.  Capture in the phone&#8217;s own app</text>
+  <text class="item" x="402" y="238">3.  Read from an export</text>
+  <text class="item" x="402" y="284">4.  Screen-share to the Mac</text>
+
+  <g stroke="#0e7cc4" stroke-width="2.5" fill="none">
+    <path d="M330 185 h 32"/><path d="M812 185 h 32"/>
+  </g>
+  <g fill="#0e7cc4">
+    <path d="M372 185 l -14 -7 l 0 14 z"/>
+    <path d="M854 185 l -14 -7 l 0 14 z"/>
+  </g>
+
+  <!-- phone -->
+  <rect class="card" x="866" y="40" width="304" height="290" rx="12"/>
+  <rect x="866" y="40" width="304" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="894" y="96">On the phone</text>
+  <circle cx="904" cy="139" r="5" fill="#0e7cc4"/>
+  <text class="item" x="926" y="146">Capture, standing up</text>
+  <circle cx="904" cy="179" r="5" fill="#0e7cc4"/>
+  <text class="item" x="926" y="186">Looking one thing up</text>
+  <text class="note" x="894" y="240">That is the whole list.</text>
+  <text class="note" x="894" y="286">Nobody reorganises</text>
+  <text class="note" x="894" y="310">their notes on a phone.</text>
+
+  <text class="foot" x="24" y="418">Sync also covers the third job — real work on a phone — which almost nobody does.</text>
+</svg>

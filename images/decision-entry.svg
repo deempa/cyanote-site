@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" role="img" aria-labelledby="de-title de-desc">
+  <title id="de-title">A decision journal entry, written before the outcome</title>
+  <desc id="de-desc">Five lines: the decision in one sentence, what you expect to happen stated concretely enough to be wrong, the two or three reasons actually doing the work, what would make this wrong, and the state you were in. A review date is set at the time of writing, because the comparison is where the learning lives.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .big  { font-size: 26px; font-weight: 600; fill: #0a0a0b; }
+    .lab  { font-size: 19px; font-weight: 600; fill: #0e7cc4; }
+    .item { font-size: 19px; fill: #3d3f45; }
+    .note { font-size: 18px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="30" width="740" height="380" rx="14"/>
+  <rect x="24" y="30" width="740" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="big" x="56" y="90">Decision — 17 August</text>
+
+  <text class="lab" x="56" y="140">The decision</text>
+  <text class="item" x="56" y="168">Taking the contract with X instead of Y.</text>
+
+  <text class="lab" x="56" y="212">What I expect</text>
+  <text class="item" x="56" y="240">Six weeks. More work in the spring.</text>
+
+  <text class="lab" x="56" y="284">Why, actually</text>
+  <text class="item" x="56" y="312">I want the money now, and Y felt like a</text>
+  <text class="item" x="56" y="338">longer conversation than I had energy for.</text>
+
+  <text class="lab" x="56" y="382">How I feel</text>
+  <text class="item" x="380" y="382">Rushed.</text>
+
+  <!-- the line everyone skips -->
+  <rect class="card" x="794" y="30" width="382" height="240" rx="14"/>
+  <rect x="794" y="30" width="382" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="lab" x="826" y="86">What would make this wrong</text>
+  <text class="item" x="826" y="128">If it runs past eight weeks,</text>
+  <text class="item" x="826" y="156">or the spring work does not</text>
+  <text class="item" x="826" y="184">appear, this was the money</text>
+  <text class="item" x="826" y="212">talking.</text>
+  <text class="note" x="826" y="250">The line everybody skips.</text>
+
+  <rect class="card" x="794" y="300" width="382" height="110" rx="14"/>
+  <text class="lab" x="826" y="346">Review on</text>
+  <text class="item" x="960" y="346">17 November</text>
+  <text class="note" x="826" y="384">A real dated task, or the loop never closes.</text>
+
+  <text class="foot" x="24" y="452">Written before the outcome — because afterwards there is nothing left to compare against.</text>
+</svg>
