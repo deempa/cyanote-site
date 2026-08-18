@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="sa-title sa-desc">
+  <title id="sa-title">What is known about a user, and where it lives</title>
+  <desc id="sa-desc">There is no server holding an account, a password, settings, session history or error reports, so none of the usual support moves are available. What exists instead is a small bounded diagnostic file on the user's own disk, which is never sent anywhere unless they choose to attach it, and a payment receipt held by the payment processor. Support therefore has to happen inside the app: a failure that names itself is a support ticket that never gets written.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .gone { font-size: 18px; fill: #a3a7af; }
+    .note { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .empty { fill: #efeff1; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <rect class="empty" x="24" y="30" width="380" height="340" rx="12"/>
+  <text class="h" x="54" y="80">On a server</text>
+  <text class="note" x="54" y="110">There is no server</text>
+  <line x1="54" y1="138" x2="374" y2="138" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="gone" x="54" y="178">&#10005;  An account</text>
+  <text class="gone" x="54" y="214">&#10005;  A password to reset</text>
+  <text class="gone" x="54" y="250">&#10005;  Settings, sessions, history</text>
+  <text class="gone" x="54" y="286">&#10005;  Crash reports</text>
+  <text class="gone" x="54" y="322">&#10005;  Your notes</text>
+  <text class="note" x="54" y="358">Nothing to breach, and nothing to look up</text>
+
+  <rect class="card" x="424" y="30" width="380" height="340" rx="12"/>
+  <rect x="424" y="30" width="380" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="454" y="86">On your own disk</text>
+  <text class="note" x="454" y="116">Never sent anywhere</text>
+  <line x1="454" y1="144" x2="774" y2="144" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="454" y="184">A diagnostic file, beside the app&#8217;s</text>
+  <text class="item" x="454" y="210">own settings, that you can read</text>
+  <text class="item" x="454" y="252">Bounded at 32 KB</text>
+  <text class="item" x="454" y="288">Best-effort &#8212; every write may fail</text>
+  <text class="note" x="454" y="326">A diagnostic that can fail a launch</text>
+  <text class="note" x="454" y="350">would be worse than none at all</text>
+
+  <rect class="card" x="824" y="30" width="352" height="340" rx="12"/>
+  <rect x="824" y="30" width="352" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="854" y="86">With the processor</text>
+  <text class="note" x="854" y="116">Not mine, not in the app</text>
+  <line x1="854" y1="144" x2="1146" y2="144" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="854" y="184">A payment receipt</text>
+  <text class="note" x="854" y="216">The only record that a</text>
+  <text class="note" x="854" y="240">particular person exists</text>
+  <text class="item" x="854" y="286">Refund: 14 days, no proof</text>
+  <text class="note" x="854" y="318">An uninstall could not be</text>
+  <text class="note" x="854" y="342">verified anyway &#8212; so it is not asked for</text>
+
+  <text class="foot" x="24" y="426">Which leaves one move: the app has to explain itself at the moment it fails. Every silent failure is a support ticket with a delay on it.</text>
+</svg>

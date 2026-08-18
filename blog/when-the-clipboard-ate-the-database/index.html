@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Why a clipboard history grows, and how to bound it</title>
+<meta name="description" content="On a real install the clipboard was 42.8 MB of a 44.8 MB database, and 80 screenshots were all of it. A row limit does not bound bytes. What replaced it." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/when-the-clipboard-ate-the-database/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/when-the-clipboard-ate-the-database/" />
+<meta property="og:title" content="Why a clipboard history grows, and how to bound it" />
+<meta property="og:description" content="On a real install the clipboard was 42.8 MB of a 44.8 MB database, and 80 screenshots were all of it. A row limit does not bound bytes. What replaced it." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Why a clipboard history grows, and how to bound it" />
+<meta name="twitter:description" content="On a real install the clipboard was 42.8 MB of a 44.8 MB database, and 80 screenshots were all of it. A row limit does not bound bytes. What replaced it." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "When the clipboard ate the database",
+  "description": "On a real install the clipboard was 42.8 MB of a 44.8 MB database, and 80 screenshots were all of it. A row limit does not bound bytes. What replaced it.",
+  "datePublished": "2026-08-18",
+  "dateModified": "2026-08-18",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/when-the-clipboard-ate-the-database/"
+  },
+  "url": "https://cyanote.app/blog/when-the-clipboard-ate-the-database/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/clipboard-budget.svg",
+      "width": 1200,
+      "height": 480
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Builder's log, Clipboard, Performance",
+  "wordCount": 1335
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "When the clipboard ate the database",
+      "item": "https://cyanote.app/blog/when-the-clipboard-ate-the-database/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-18" />
+<meta property="article:modified_time" content="2026-08-18" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Builder&#x27;s log" />
+<meta property="article:tag" content="Clipboard" />
+<meta property="article:tag" content="Performance" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>When the clipboard ate the database</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-18">18 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Builder&#x27;s log</li><li>Clipboard</li><li>Performance</li></ul>
+    </header>
+
+    <div class="post">
+      <p>I opened a real Cyanote database to look at something unrelated and found that the clipboard history was 42.8 MB of a 44.8 MB file.</p>
+      <p>Ninety-five per cent. Not notes, not tasks, not a year of habit ticks. Eighty copied images, averaging 521 KB each, the largest of them 5 MB.</p>
+      <p>The number that actually frightened me came after: the history limit counts <em>rows</em>. Five hundred rows against a 6 MB per-image cap is about three gigabytes, and nothing in the design said otherwise. Nobody had hit it yet. Somebody would.</p>
+      <h2 id="a-row-limit-does-not-bound-bytes">A row limit does not bound bytes</h2>
+      <p>This is the whole bug in one sentence, and it is an easy one to write.</p>
+      <p>"Keep the last 500 clipboard entries" is a completely reasonable rule when you picture a clipboard entry — a URL, a paragraph, a command you copied out of a terminal. Kilobytes. Five hundred of those is a rounding error.</p>
+      <p>Then you support images, because a clipboard manager that forgets your screenshots is not much of a clipboard manager. And on a Retina Mac an ordinary full-screen grab is 2880×1800. The unit of the limit and the unit of the cost have quietly stopped being the same thing, and every subsequent decision inherits that.</p>
+      <p>What made it invisible is that the app worked fine. Nothing was slow in a way anyone would report, nothing crashed, no user wrote in. The database was just steadily becoming a screenshot archive nobody asked for, on machines I would never see, because <a href="/blog/the-features-i-said-no-to/">there is no telemetry in this app</a> to tell me otherwise. It surfaced because I went and looked at a real file. That is not a repeatable process, and it is most of the reason I now open one on purpose every few weeks.</p>
+      <h2 id="the-same-decision-costing-twice">The same decision, costing twice</h2>
+      <p>Storage was the visible half. The popup was paying for it too.</p>
+      <p>Full-resolution image data lived in the same column as text content, base64-encoded. Listing the history selected that column. The popup then drew 36-pixel-tall thumbnails out of it.</p>
+      <p>Roughly 12 MB crossing the bridge between the Rust side and the interface to paint one screenful of a list — and decoded at full resolution on the other side to be drawn a tenth of an inch tall.</p>
+      <p>Both problems have the same root: one representation of an image, at full fidelity, used for every purpose. Storing it, listing it, previewing it and pasting it are four jobs with wildly different fidelity requirements, and they were all being served by the largest possible answer.</p>
+      <figure><img src="/images/clipboard-budget.svg" alt="A 44.8 MB database with 42.8 MB of clipboard history, and the design that replaced it: a small thumbnail read by the list, full-resolution bytes fetched only on paste" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>Four jobs, four fidelities. The list never asks for the megabytes.</figcaption></figure>
+      <h2 id="what-replaced-it">What replaced it</h2>
+      <p><strong>Every image gets a thumbnail, about 384 pixels, stored beside the original.</strong> The list reads only that. Paste and the hover preview fetch the full row by id at the moment they actually need the pixels — which is the moment a user has chosen one specific entry, rather than the moment they opened a list of forty.</p>
+      <p><strong>A byte budget, not a row count.</strong> <code>CLIP_IMAGE_BUDGET</code> caps what the full-resolution copies may occupy between them. Past the cap, the oldest images give up their full-resolution data and keep their thumbnail. That is the part I am happiest with, because of what it does <em>not</em> do: an old screenshot does not disappear. It still appears in the list, and it still pastes. It pastes the thumbnail rather than the original, so it is no longer pixel-exact — a degradation, honestly, but an enormously better one than a gap where your screenshot used to be.</p>
+      <p><strong>A rule that saved every existing user's history.</strong> Rows stored before this change have no thumbnail, and cannot be given one after the fact from the Rust side. Without a special case, the first trim would have looked at those rows, seen an image over budget, dropped the full-resolution data, and left nothing at all — destroying every image already in every user's history, in the update that was meant to fix image handling.</p>
+      <p>So: a row whose thumbnail is NULL is never emptied, whatever the budget says. Those images keep their pixels until the popup gets around to backfilling a thumbnail for them.</p>
+      <p>I did not spot that from reading. I spotted it writing out what the trim would do to a row that predates the column, which is a habit worth having whenever a migration adds something that later code assumes is present. Migration 26 in <a href="/blog/one-sqlite-file-the-whole-data-model/">the schema</a> is that column; the NULL rule is the thing that made shipping it safe.</p>
+      <p><strong>And a check where I had assumed.</strong> Thumbnails encode as WebP, which is dramatically smaller — but only where the webview can genuinely encode WebP. The awkward part is that <code>toDataURL</code> does not fail when it cannot; it hands you back a PNG and says nothing. So the app verifies what it actually got rather than trusting what it asked for, and falls back to JPEG where WebP is unavailable. An API that silently substitutes something else is the most expensive kind to trust.</p>
+      <h2 id="the-one-that-got-away-for-a-while">The one that got away for a while</h2>
+      <p>Related, and found the same week: pasting a screenshot <em>into</em> a note took four seconds.</p>
+      <p>All of it was one call. Handing an image object across the bridge takes a JSON path, and the encoder ran a conversion once per element — 14.7 million calls for a single screenshot. Isolated, the same serialisation was 43ms without that step and 2,672ms with it. It was never bandwidth. The Rust side, at 243ms, was never the bottleneck either.</p>
+      <p>Sending the PNG bytes and letting Rust decode them removed the JavaScript decode, a canvas round trip and a full pixel copy along with it. A 2560×1440 paste went from 3,151ms to 256ms. On a Retina Mac the four-second case was the <em>common</em> one, because a full-screen grab is exactly that size.</p>
+      <p>Correctness got checked at the byte level rather than by eye: a known image round-tripped through the pasteboard came back pixel-identical, and the pasteboard was dumped from outside the app to confirm that what any other application receives on ⌘V is a valid, complete PNG. Looking right is not the same as being right, particularly with images, where an off-by-one in a stride produces something that looks perfect and is subtly wrong.</p>
+      <h2 id="what-i-would-tell-the-version-of-me-who-wrote-the-original">What I would tell the version of me who wrote the original</h2>
+      <p><strong>State the limit in the unit of the cost.</strong> If what you are protecting is disk, the limit is bytes. A row count is a proxy that holds exactly until one row can be a thousand times bigger than another, which — for anything touching user-supplied media — is immediately.</p>
+      <p><strong>Degrade instead of deleting.</strong> The budget could have dropped whole entries. Keeping a lower-fidelity version means the history stays complete and the user never encounters an unexplained hole. People forgive fuzzy. Nobody forgives missing.</p>
+      <p><strong>Check what an API gave you, not what you asked for.</strong> WebP that is silently a PNG. A <code>from_bytes</code> call that returns a stub because a build feature was not enabled. Both were caught by verifying the result; neither would have failed loudly on its own.</p>
+      <p>All of this shipped in 1.0.3, where the public note says the clipboard takes up far less space and its list opens faster when it holds screenshots. Both true. The <a href="/clipboard-manager-mac/">clipboard manager page</a> covers what it does; <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">when a free clipboard manager stops being enough</a> covers why you would want unlimited history in the first place — a promise that is only honest if somebody has done this arithmetic.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/the-paste-that-landed-in-the-wrong-app/">The paste that landed in the wrong app</a><span>The popup synthesised Cmd-V into whatever was frontmost and assumed it was your app. Sometimes it was Cyanote. The race, and how it was made impossible.</span></li><li><a href="https://cyanote.app/blog/the-sidebar-read-every-note-to-draw-a-list/">The sidebar read every note to draw a list of titles</a><span>10,001 database statements and 101 MB to render 140 characters of text, four times a launch. Six measured performance problems, and what each one cost.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

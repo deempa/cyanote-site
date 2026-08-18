@@ -7,12 +7,432 @@
     <atom:link href="https://cyanote.app/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Plain writing about keeping notes, running a week and owning your own data — from the person who builds Cyanote, a local-first Mac app you pay for once.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 17 Aug 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 09:00:00 +0000</lastBuildDate>
     <image>
       <url>https://cyanote.app/og-image.png</url>
       <title>The Cyanote blog — notes, tasks and calmer software</title>
       <link>https://cyanote.app/blog/</link>
     </image>
+    <item>
+      <title>When the clipboard ate the database</title>
+      <link>https://cyanote.app/blog/when-the-clipboard-ate-the-database/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/when-the-clipboard-ate-the-database/</guid>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
+      <description>On a real install the clipboard was 42.8 MB of a 44.8 MB database, and 80 screenshots were all of it. A row limit does not bound bytes. What replaced it.</description>
+      <content:encoded><![CDATA[<p>I opened a real Cyanote database to look at something unrelated and found that the clipboard history was 42.8 MB of a 44.8 MB file.</p>
+<p>Ninety-five per cent. Not notes, not tasks, not a year of habit ticks. Eighty copied images, averaging 521 KB each, the largest of them 5 MB.</p>
+<p>The number that actually frightened me came after: the history limit counts <em>rows</em>. Five hundred rows against a 6 MB per-image cap is about three gigabytes, and nothing in the design said otherwise. Nobody had hit it yet. Somebody would.</p>
+<h2 id="a-row-limit-does-not-bound-bytes">A row limit does not bound bytes</h2>
+<p>This is the whole bug in one sentence, and it is an easy one to write.</p>
+<p>"Keep the last 500 clipboard entries" is a completely reasonable rule when you picture a clipboard entry — a URL, a paragraph, a command you copied out of a terminal. Kilobytes. Five hundred of those is a rounding error.</p>
+<p>Then you support images, because a clipboard manager that forgets your screenshots is not much of a clipboard manager. And on a Retina Mac an ordinary full-screen grab is 2880×1800. The unit of the limit and the unit of the cost have quietly stopped being the same thing, and every subsequent decision inherits that.</p>
+<p>What made it invisible is that the app worked fine. Nothing was slow in a way anyone would report, nothing crashed, no user wrote in. The database was just steadily becoming a screenshot archive nobody asked for, on machines I would never see, because <a href="/blog/the-features-i-said-no-to/">there is no telemetry in this app</a> to tell me otherwise. It surfaced because I went and looked at a real file. That is not a repeatable process, and it is most of the reason I now open one on purpose every few weeks.</p>
+<h2 id="the-same-decision-costing-twice">The same decision, costing twice</h2>
+<p>Storage was the visible half. The popup was paying for it too.</p>
+<p>Full-resolution image data lived in the same column as text content, base64-encoded. Listing the history selected that column. The popup then drew 36-pixel-tall thumbnails out of it.</p>
+<p>Roughly 12 MB crossing the bridge between the Rust side and the interface to paint one screenful of a list — and decoded at full resolution on the other side to be drawn a tenth of an inch tall.</p>
+<p>Both problems have the same root: one representation of an image, at full fidelity, used for every purpose. Storing it, listing it, previewing it and pasting it are four jobs with wildly different fidelity requirements, and they were all being served by the largest possible answer.</p>
+<figure><img src="/images/clipboard-budget.svg" alt="A 44.8 MB database with 42.8 MB of clipboard history, and the design that replaced it: a small thumbnail read by the list, full-resolution bytes fetched only on paste" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>Four jobs, four fidelities. The list never asks for the megabytes.</figcaption></figure>
+<h2 id="what-replaced-it">What replaced it</h2>
+<p><strong>Every image gets a thumbnail, about 384 pixels, stored beside the original.</strong> The list reads only that. Paste and the hover preview fetch the full row by id at the moment they actually need the pixels — which is the moment a user has chosen one specific entry, rather than the moment they opened a list of forty.</p>
+<p><strong>A byte budget, not a row count.</strong> <code>CLIP_IMAGE_BUDGET</code> caps what the full-resolution copies may occupy between them. Past the cap, the oldest images give up their full-resolution data and keep their thumbnail. That is the part I am happiest with, because of what it does <em>not</em> do: an old screenshot does not disappear. It still appears in the list, and it still pastes. It pastes the thumbnail rather than the original, so it is no longer pixel-exact — a degradation, honestly, but an enormously better one than a gap where your screenshot used to be.</p>
+<p><strong>A rule that saved every existing user's history.</strong> Rows stored before this change have no thumbnail, and cannot be given one after the fact from the Rust side. Without a special case, the first trim would have looked at those rows, seen an image over budget, dropped the full-resolution data, and left nothing at all — destroying every image already in every user's history, in the update that was meant to fix image handling.</p>
+<p>So: a row whose thumbnail is NULL is never emptied, whatever the budget says. Those images keep their pixels until the popup gets around to backfilling a thumbnail for them.</p>
+<p>I did not spot that from reading. I spotted it writing out what the trim would do to a row that predates the column, which is a habit worth having whenever a migration adds something that later code assumes is present. Migration 26 in <a href="/blog/one-sqlite-file-the-whole-data-model/">the schema</a> is that column; the NULL rule is the thing that made shipping it safe.</p>
+<p><strong>And a check where I had assumed.</strong> Thumbnails encode as WebP, which is dramatically smaller — but only where the webview can genuinely encode WebP. The awkward part is that <code>toDataURL</code> does not fail when it cannot; it hands you back a PNG and says nothing. So the app verifies what it actually got rather than trusting what it asked for, and falls back to JPEG where WebP is unavailable. An API that silently substitutes something else is the most expensive kind to trust.</p>
+<h2 id="the-one-that-got-away-for-a-while">The one that got away for a while</h2>
+<p>Related, and found the same week: pasting a screenshot <em>into</em> a note took four seconds.</p>
+<p>All of it was one call. Handing an image object across the bridge takes a JSON path, and the encoder ran a conversion once per element — 14.7 million calls for a single screenshot. Isolated, the same serialisation was 43ms without that step and 2,672ms with it. It was never bandwidth. The Rust side, at 243ms, was never the bottleneck either.</p>
+<p>Sending the PNG bytes and letting Rust decode them removed the JavaScript decode, a canvas round trip and a full pixel copy along with it. A 2560×1440 paste went from 3,151ms to 256ms. On a Retina Mac the four-second case was the <em>common</em> one, because a full-screen grab is exactly that size.</p>
+<p>Correctness got checked at the byte level rather than by eye: a known image round-tripped through the pasteboard came back pixel-identical, and the pasteboard was dumped from outside the app to confirm that what any other application receives on ⌘V is a valid, complete PNG. Looking right is not the same as being right, particularly with images, where an off-by-one in a stride produces something that looks perfect and is subtly wrong.</p>
+<h2 id="what-i-would-tell-the-version-of-me-who-wrote-the-original">What I would tell the version of me who wrote the original</h2>
+<p><strong>State the limit in the unit of the cost.</strong> If what you are protecting is disk, the limit is bytes. A row count is a proxy that holds exactly until one row can be a thousand times bigger than another, which — for anything touching user-supplied media — is immediately.</p>
+<p><strong>Degrade instead of deleting.</strong> The budget could have dropped whole entries. Keeping a lower-fidelity version means the history stays complete and the user never encounters an unexplained hole. People forgive fuzzy. Nobody forgives missing.</p>
+<p><strong>Check what an API gave you, not what you asked for.</strong> WebP that is silently a PNG. A <code>from_bytes</code> call that returns a stub because a build feature was not enabled. Both were caught by verifying the result; neither would have failed loudly on its own.</p>
+<p>All of this shipped in 1.0.3, where the public note says the clipboard takes up far less space and its list opens faster when it holds screenshots. Both true. The <a href="/clipboard-manager-mac/">clipboard manager page</a> covers what it does; <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">when a free clipboard manager stops being enough</a> covers why you would want unlimited history in the first place — a promise that is only honest if somebody has done this arithmetic.</p>]]></content:encoded>
+      <category>Builder&#x27;s log</category>
+      <category>Clipboard</category>
+      <category>Performance</category>
+    </item>
+    <item>
+      <title>The sidebar read every note to draw a list of titles</title>
+      <link>https://cyanote.app/blog/the-sidebar-read-every-note-to-draw-a-list/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/the-sidebar-read-every-note-to-draw-a-list/</guid>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
+      <description>10,001 database statements and 101 MB to render 140 characters of text, four times a launch. Six measured performance problems, and what each one cost.</description>
+      <content:encoded><![CDATA[<p>On a database with 10,000 notes, drawing the sidebar took 10,001 statements and moved 101 MB, in order to render about 140 characters of visible text.</p>
+<p>Four times per launch.</p>
+<p>None of that was a mystery once I looked, and looking was the entire trick. What follows is six problems found in one sitting, all of them measured rather than suspected, several of them in code I had written and read a dozen times without noticing anything wrong.</p>
+<h2 id="the-sidebar">The sidebar</h2>
+<p>The list query was <code>SELECT *</code>.</p>
+<p>Every row therefore carried its whole rich-text document — the full note, as JSON — across the bridge from the database to the interface, where it was parsed into an object and thrown away, because a sidebar row needs a title and a short snippet. Then, for each note, a second query fetched that note's tags. Hence 10,001 statements: one list, ten thousand tag lookups.</p>
+<p>The fix has nothing clever in it. Select the four columns a list row actually needs. Let SQLite cut the snippet, rather than shipping 8 KB of document to take 60 characters off the front. Read a code note's file path with <code>json_extract</code> instead of parsing the entire document in JavaScript to reach one field. Fetch every note's tags in one grouped query instead of ten thousand.</p>
+<p>Same database: 2 statements, 1.4 MB, and 527ms became 47ms.</p>
+<p>Backlinks got the same treatment, because that one runs on <em>every note open</em> rather than at launch, and was doing the same thing for the same reason.</p>
+<h2 id="the-idle-costs">The idle costs</h2>
+<p>The sidebar at least happened when something happened. These four ran while the app sat there doing nothing.</p>
+<p><strong>The reminder sweep read everything, every 30 seconds.</strong> Every to-do and every calendar event, in full, twice a minute, forever, to find out whether anything was due. On the test database — 767 events — that is 1.18 GB a day of reading to almost always learn that the answer is no. It asks for armed rows only now: the ones with a reminder set, in the window. Ninety-nine per cent of that traffic was learning nothing.</p>
+<p><strong>The clipboard poll read the clipboard twice a second.</strong> Including, if an image was on the pasteboard, a full owned RGBA copy of it. Every half second. Forever. macOS offers <code>NSPasteboard.changeCount</code> — a single integer that increments when the contents change. The poll reads the integer and touches the actual contents only when it moves. A copied screenshot now costs something once, when you copy it, instead of 172,800 times a day.</p>
+<p><strong>The status bar split the entire note into words on every keystroke.</strong> Word count. On a long document, on every character typed. That is the sort of thing that feels free in a small test note and turns a 5,000-word document into a typing experience people describe as "laggy" without being able to say why.</p>
+<p><strong>And the editor re-rendered on any state change at all</strong>, because it subscribed to the whole state store rather than the parts it uses. Toggle a setting in a modal on the other side of the app and the heaviest subtree in the application rebuilt itself.</p>
+<figure><img src="/images/perf-six-wins.svg" alt="Six measured problems and what each cost: 527ms to 47ms on the sidebar, 1.18 GB a day on reminders, a clipboard poll reading an integer instead of an image" width="1200" height="500" loading="lazy" decoding="async" /><figcaption>Every number here was measured before and after. None of them were where I would have guessed.</figcaption></figure>
+<h2 id="two-more-in-the-writing-path">Two more, in the writing path</h2>
+<p><strong>Saving a note deleted and rewrote its links every time.</strong> Every debounced save issued a DELETE plus one INSERT per link — to usually change nothing at all, because the links in a note are stable across most keystrokes. Compare first, write only on a difference.</p>
+<p><strong>And startup re-read and re-rendered the entire tree after a housekeeping pass that had deleted nothing.</strong> The pass was correct; the unconditional refresh after it was not. If nothing changed, nothing needs redrawing.</p>
+<h2 id="the-indexes-and-the-one-i-did-not-add">The indexes, and the one I did not add</h2>
+<p>Three indexes went in for lookups whose column was not the leading column of any existing key: note nesting, tag lookups, backlink targets. The nesting one took a query from 7.1ms to 0.007ms.</p>
+<p>A fourth looked equally obvious — an index covering the sidebar's own list query — and it was a trap. That query already had a plan SQLite was happy with, and the index would have cost a write on every single save in exchange for a read that was no longer slow. It is not there, and <a href="/blog/one-sqlite-file-the-whole-data-model/">the migration says why, with numbers</a>, because in six months I will look at that query and think the same obvious thought again.</p>
+<h2 id="what-actually-generalises">What actually generalises</h2>
+<p><strong>The bottleneck was never where I thought.</strong> I would have guessed rendering — long lists, virtualisation, React. Every one of these was data access: how much was read, how often, and how much of it was thrown away on arrival. Not one of the six was fixed by making the drawing faster.</p>
+<p><strong>"It feels fine" means your test data is too small.</strong> Every one of these was invisible on the 40-note database I develop against and obvious on a 10,000-note one. Generating a large database and running against it occasionally is the cheapest performance tool there is, and I had not been doing it. <a href="/blog/why-a-notes-app-should-open-instantly/">Why a notes app should open instantly</a> is the promise; a realistic test database is what makes it true for someone with eight years of notes rather than eight.</p>
+<p><strong>Idle cost is invisible and adds up.</strong> Nobody files a bug that says "your app read 1.18 GB today while I wasn't using it". They notice their battery, blame something else, and quit the app that happened to be open. A poll that reads one integer instead of copying an image is not a clever optimisation — it is the difference between a menu-bar app that costs nothing and one that quietly costs you an hour of battery.</p>
+<p><strong>Measure in the running app, not in a benchmark.</strong> The image-paste problem in <a href="/blog/when-the-clipboard-ate-the-database/">the clipboard work</a> looked like bandwidth right up until it was isolated and turned out to be a serialisation step costing 2,672ms against 43ms. Anything you believe about where the time goes, without a number beside it, is a guess with good posture.</p>
+<p>None of this appears in a changelog. The public note for the release that carried it says "bug fixes and improvements", because <a href="/blog/where-your-notes-actually-live/">the notes are deliberately vague</a> and nobody outside can see any of it directly. What they can see is an app that opens in well under a second on a database with ten years in it, which was the entire point.</p>]]></content:encoded>
+      <category>Builder&#x27;s log</category>
+      <category>Performance</category>
+      <category>macOS</category>
+    </item>
+    <item>
+      <title>The paste that landed in the wrong app</title>
+      <link>https://cyanote.app/blog/the-paste-that-landed-in-the-wrong-app/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/the-paste-that-landed-in-the-wrong-app/</guid>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
+      <description>The popup synthesised Cmd-V into whatever was frontmost and assumed it was your app. Sometimes it was Cyanote. The race, and how it was made impossible.</description>
+      <content:encoded><![CDATA[<p>A clipboard manager has one job at the end: put the thing you picked into the app you were working in. Cyanote's got that wrong, occasionally, in a way that could paste a password into a note.</p>
+<p>Here is how, because the shape of the mistake is more useful than the mistake.</p>
+<h2 id="the-design-that-was-wrong">The design that was wrong</h2>
+<p>Picking an entry did two things. It put the content on the system pasteboard, then it synthesised a ⌘V keystroke — posted to the system, delivered to whatever application happened to be frontmost at that instant.</p>
+<p>The assumption baked into that second step: whatever is frontmost is the app the popup opened over. Usually true. It is the app you were in a moment ago, and the popup is a floating panel that deliberately does not take over.</p>
+<p>Usually. A mouse click on the popup could hand Cyanote the foreground first, and then the keystroke went to Cyanote — which pasted the entry into whichever note happened to be open. Keyboard selection mostly won the race. Mouse selection sometimes lost it.</p>
+<p>Read that back with the contents of a clipboard history in mind. The entries most worth protecting are exactly the ones you copy and paste immediately: a password out of a manager, an API key, a card number. The failure landed those in a document, silently, in the app that had just promised to be careful with them.</p>
+<p>Nobody reported it. I found it while chasing something else, which is the ordinary way these are found, and is an argument for reading your own code paths on purpose rather than waiting.</p>
+<h2 id="guarding-versus-making-it-impossible">Guarding versus making it impossible</h2>
+<p>The obvious fix is a guard. Before posting the keystroke, check whether Cyanote is frontmost; if it is, bail out or restore the other app first and try again.</p>
+<p>I had guards. That is what the original design needed to work at all, and one of them had started refusing a legitimate case — pasting into Cyanote itself, which is a completely reasonable thing to want. The guards were accumulating, each one narrowing a broadcast that was wrong in principle.</p>
+<p>Broadcasting a keystroke to "whoever is in front" is a message with no addressee. Every guard is an attempt to reason about who might receive it, from a process that cannot actually know.</p>
+<p><code>CGEvent::post_to_pid</code> takes an addressee. The event goes to one named process, whatever is in front.</p>
+<p>So the popup now captures the process id of the app that was active at the moment it opened, and the paste is delivered to that pid. Where a paste lands stops being a race and becomes a value recorded up front. The wrong-app paste is not guarded against; it is unrepresentable — there is no longer a code path that can express "send this to whoever is in front", so no future refactor can reintroduce it by accident. The guards came out with it, and pasting into Cyanote works again, because it is now just another pid.</p>
+<figure><img src="/images/paste-target-pid.svg" alt="Two designs: a keystroke broadcast to whatever is frontmost, versus one addressed to the process id captured when the popup opened" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>A guard narrows a wrong design. An addressee replaces it.</figcaption></figure>
+<h2 id="what-fell-out-of-the-accessibility-grant">What fell out of the Accessibility grant</h2>
+<p>Synthesising keystrokes on macOS requires the Accessibility permission, and that grant is per-binary — a detail with two consequences the app had never said out loud.</p>
+<p><strong>Restoring the foreground needed the same permission, and used to fail with it.</strong> The old code asked System Events to bring the previous app forward, which is Apple Events, which needs the very grant that was missing. So on a build without it, the paste failed <em>and</em> the restore failed together, and the popup looked simply broken rather than blocked. <code>NSRunningApplication.activate</code> needs no permission at all and does the same job. Restoring the window you came from is now unconditional.</p>
+<p><strong>A paste that cannot happen says so.</strong> If the grant is missing, the popup reports it, offers to open the right settings pane, and points out that the entry is on the clipboard already — so you can press ⌘V yourself and get on with your day. Before, it closed and nothing arrived. Silence is the worst possible response to a permission problem, because the user's only theory is that your software is broken. <a href="/blog/why-a-mac-app-asks-for-accessibility/">Why a Mac app asks for Accessibility</a> is the longer version of that argument.</p>
+<p><strong>And the order of the two final steps matters more than it looks.</strong> The foreground is handed back <em>before</em> the popup's panel is ordered out, not after. When a panel goes away, AppKit has to move key status somewhere, and it picks the app's main window — which raises Cyanote in front of whatever you were doing, one beat after you asked it to get out of the way. Restoring first means that reassignment happens inside an app that is no longer active, so nothing is raised. The same ordering fixes Escape: dismissing the popup without picking anything now puts you back where you were too.</p>
+<p>That last one took an embarrassing while to see. I kept reading the activation code, because that is where the bug obviously was, and the bug was in a line of window teardown two functions away that I had never once suspected.</p>
+<h2 id="what-i-took-from-it">What I took from it</h2>
+<p>The clipboard is the part of the app with the most exposure to the rest of the system — it opens over other applications, reads what they put on the pasteboard, and types into them. Every one of those is a boundary where "usually true" hides.</p>
+<p>Two rules came out of it, and they now apply well beyond the clipboard:</p>
+<p><strong>If the code can express the wrong outcome, it will eventually produce it.</strong> Not through malice or carelessness — through a race, a refactor, or a user doing something reasonable in an order nobody tried. Deleting the expression beats adding a check.</p>
+<p><strong>A silent failure at a permission boundary is worse than a loud one.</strong> The user cannot see the boundary. If the app does not name it, the app is what looks broken.</p>
+<p>All of this shipped in 1.0.4, described in the public notes as pasting "always landing in the app you were working in", which is accurate and considerably less alarming than the paragraph above. The <a href="/clipboard-manager-mac/">clipboard manager page</a> covers what it does day to day; <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">when a free clipboard manager stops being enough</a> covers why you would want history at all.</p>]]></content:encoded>
+      <category>Builder&#x27;s log</category>
+      <category>Clipboard</category>
+      <category>macOS</category>
+    </item>
+    <item>
+      <title>The half-second that left a locked note in the clear</title>
+      <link>https://cyanote.app/blog/the-half-second-that-left-a-locked-note-in-the-clear/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/the-half-second-that-left-a-locked-note-in-the-clear/</guid>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Locking a note took 138 milliseconds. The save it raced was scheduled 500 milliseconds earlier, and the gap wrote the plaintext back to disk underneath it.</description>
+      <content:encoded><![CDATA[<p>You type a password into a note. You lock the note. The app shows the lock screen, asks for your password, and refuses to show the content without it.</p>
+<p>On disk, in the version before 1.0.3, the plaintext was sitting right there beside the encrypted copy. Searchable. Showing as the note's own title in the sidebar.</p>
+<p>It took two numbers to produce, and they are the most instructive pair in the whole codebase.</p>
+<h2 id="500-against-138">500 against 138</h2>
+<p>Typing in a note does not write to the database on every keystroke. It schedules a write 500 milliseconds later, and each new keystroke pushes that out — an ordinary debounce, in every editor ever built.</p>
+<p>The save function decided, at the moment it was <em>scheduled</em>, whether the note was locked. If unlocked, write the plaintext. If locked, encrypt. Sensible-looking code. The decision was captured in a closure, and the closure ran half a second afterwards.</p>
+<p>Locking a note took about 138 milliseconds, measured.</p>
+<p>So: you type. A write is scheduled for 500ms from now, carrying a captured decision that says <em>this note is unlocked, write it in the clear</em>. At 138ms you finish locking. At 500ms the stale closure runs and does exactly what it was told half a second ago.</p>
+<p>The row it left behind: <code>is_locked = 1</code>, a valid encrypted blob, and the plaintext in <code>content_json</code> and <code>content_text</code> beside it. Both true at once.</p>
+<h2 id="why-that-was-worse-than-it-sounds">Why that was worse than it sounds</h2>
+<p>Plaintext on disk under a lock is bad enough. The full-text index is what made it serious.</p>
+<p>Cyanote's search index <a href="/blog/one-sqlite-file-the-whole-data-model/">is kept in step with the notes by triggers</a>. A write to <code>content_text</code> fires the trigger. So the secret was not merely on disk — it was indexed, and a search for a word inside a locked note would find it, without the password, while the note itself still showed the lock gate.</p>
+<p>The sidebar draws a note's title from the same text. Whatever you had typed in those last few seconds became the note's visible title.</p>
+<p>None of that is subtle once you see it, and none of it was visible from inside the app. The interface was completely honest: the lock was on, the gate appeared, the password was required to open it. Every user-facing signal said the note was protected. The disk disagreed.</p>
+<figure><img src="/images/lock-race-timeline.svg" alt="A 500ms debounce window with the lock completing at 138ms, and the stale write landing afterwards to put plaintext beside the encrypted blob" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Both states were true at once: is_locked = 1, and the plaintext beside it.</figcaption></figure>
+<h2 id="the-same-bug-pointing-the-other-way">The same bug, pointing the other way</h2>
+<p>Chasing the leak turned up its mirror image, which lost data instead of exposing it.</p>
+<p>"Lock now" deleted the in-memory session key synchronously. If a write was already queued, it ran a moment later, found no key, and hit the guard that stops a locked note being written in the clear. The guard worked. The edit was dropped — no toast, no retry, gone.</p>
+<p>Unrecoverable, too, and for a deliberate reason: the app keeps an unsaved snapshot to recover from a crash, and that snapshot is withheld for locked notes, because a plaintext recovery file for an encrypted note is the same bug in a different place. The safety mechanism removed the safety net.</p>
+<p>So one race leaked the last words you typed, and one lost them. Both from the same root: <strong>a decision about lock state made at schedule time and acted on at run time.</strong></p>
+<h2 id="the-fix-in-three-parts">The fix, in three parts</h2>
+<p><strong>Locking cancels the pending write rather than flushing it.</strong> This is the part I got wrong in my first attempt. Flushing feels safer — do not lose the edit, write it first, then encrypt. But flushing writes plaintext to disk on the way past, which is precisely the thing being fixed. The newest text is already going into the encrypted blob, because locking reads the live editor content. So the pending write has nothing to contribute and everything to leak. Cancel it.</p>
+<p><strong>Ending a session flushes before the key goes.</strong> The opposite order, for the opposite reason. Here the note stays locked and the key is being dropped from memory; the queued write can still be encrypted, so let it complete first.</p>
+<p><strong>And the write closures now re-read the lock state when they run, instead of trusting the flag they captured.</strong> This is the actual fix; the other two are the specific paths. Any decision that can change during a debounce window must be made inside the window, not before it. That one line also covers the case I would never have thought to test: a write queued while the note was locked, running after the lock was removed.</p>
+<h2 id="what-i-actually-take-from-this">What I actually take from this</h2>
+<p><strong>Two independent representations of one fact will disagree.</strong> <code>is_locked</code> said one thing, the presence of plaintext said another, and nothing in the schema prevented both being true. The lasting fix would be a shape where they cannot both exist — where the encrypted blob and the plaintext columns are not simultaneously expressible. I have that on the list, and I am aware that "check it more carefully" is a weaker answer than "make it impossible", which is <a href="/blog/the-paste-that-landed-in-the-wrong-app/">the lesson from the clipboard</a> arriving again in a different costume.</p>
+<p><strong>A debounce is a promise to act on stale information.</strong> Every scheduled callback in a UI carries a snapshot of the world from before the user's most recent action. That is what it is for. Any security decision inside one is a decision made in the past about a present it cannot see.</p>
+<p><strong>The interface being right is not evidence.</strong> Everything on screen behaved correctly throughout. If I had verified this the way a user would — lock a note, confirm it asks for a password — it passes. It only appears if you look at the row on disk, which is why the check that now guards it queries the database directly and asserts the plaintext columns are empty.</p>
+<p>This shipped in 1.0.3, where the public note reads: <em>locking a note now keeps everything you just typed, including the words written in the moments right before you locked it.</em> True, and about a tenth of the story. <a href="/blog/where-your-notes-actually-live/">The changelog is deliberately vague</a> about which code paths were unreliable, which is the right call for a public release page — and the reason a blog exists is so the full version has somewhere to go.</p>
+<p>If you use locked notes: this was fixed before the app went on sale, in the 1.0.x series, and <a href="/blog/password-protect-notes-on-mac/">the note protection design</a> covers what the lock does and does not claim.</p>]]></content:encoded>
+      <category>Builder&#x27;s log</category>
+      <category>Security</category>
+      <category>Privacy</category>
+    </item>
+    <item>
+      <title>The features I said no to</title>
+      <link>https://cyanote.app/blog/the-features-i-said-no-to/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/the-features-i-said-no-to/</guid>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Sync, an iPhone app, collaboration, AI, plugins and telemetry. Six things people ask for, the reason each one is a no, and what saying no actually costs me.</description>
+      <content:encoded><![CDATA[<p>The most useful sentence in Cyanote's description is a list of things it does not do: no sync, no iPhone app, no collaboration, no AI, no plugins, no telemetry.</p>
+<p>That reads like modesty. It is closer to a budget. Each of those noes is load-bearing, and I would like to go through them one at a time, because "we decided to stay focused" is the kind of thing every product says and almost none of them mean specifically.</p>
+<h2 id="sync">Sync</h2>
+<p>The most requested, by a distance, and the one I am most confident about.</p>
+<p>Sync is not a feature you add. It is a distributed systems problem you adopt. The moment two machines can both edit a note, you own conflict resolution, offline queues, partial failures, clock skew, and a class of bug where the wrong version wins and someone's afternoon disappears. Ask anyone who has shipped it. The demo is a weekend; the correctness is years.</p>
+<p>And it needs a server, permanently, per user. Go back to <a href="/blog/the-arithmetic-of-a-ten-dollar-app/">the arithmetic of a $10 app</a>: a one-time payment against a recurring per-user cost has exactly one ending, and it is a subscription announcement dressed up as a "sustainability update".</p>
+<p>So the no here is not "sync is hard". It is: a synced Cyanote could not be a $10 app you buy once, and if I have to choose between those two things, the pricing is the part people cannot get elsewhere.</p>
+<p>What exists instead: the database is a single file, and Settings will put it wherever you like — including a folder that Dropbox or iCloud Drive already syncs. That works if you are careful about not running both Macs at once, and I say so plainly rather than pretending it is a feature. <a href="/blog/two-macs-one-system/">Two Macs, one system</a> is the honest guide to the trade-offs.</p>
+<h2 id="an-iphone-app">An iPhone app</h2>
+<p>The second most requested, and the answer is arithmetic again, of a different kind.</p>
+<p>A native iOS app is a second codebase. Not a port — a different interface, different interaction model, a review process with its own timeline, and a permanent doubling of every future change. One person maintaining two platforms ships each of them half as well.</p>
+<p>There is a worse version of this that I want to name, because it is the trap. A mobile app that is useful needs to see your notes, which means it needs sync, which means the server, which means the subscription. The iPhone request and the sync request are the same request, and answering it turns Cyanote into a different company.</p>
+<p>If you need your notes in your pocket, Cyanote is the wrong app, and I would rather you learn that from a blog post than from a refund form. <a href="/blog/getting-a-note-to-your-phone-without-sync/">Getting a note to your phone without sync</a> covers what actually works when it is occasional rather than constant.</p>
+<h2 id="collaboration">Collaboration</h2>
+<p>Shared notes need identity: who are you, what may you see, who changed this. Identity means accounts. Accounts mean a user database, a password reset flow, a breach surface, and a server that has to be up for you to open your own notes.</p>
+<p>Cyanote has no account because it has nothing to sign into, and that is the single strongest privacy property it has — not a policy, an absence. <a href="/blog/notes-app-without-an-account/">What an account actually buys you</a> goes through what disappears along with it.</p>
+<p>It is a desktop app for one person on their own machine. If two people need the same document, use something built for that; there are good ones, and this is not one of them.</p>
+<figure><img src="/images/features-said-no.svg" alt="Six requested features, what each one would require, and the property of the app it would consume" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>Every no is a yes to something else. These are the somethings.</figcaption></figure>
+<h2 id="ai-features">AI features</h2>
+<p>The interesting no, because I do not think AI in a notes app is stupid. Summarising a long meeting note is genuinely useful.</p>
+<p>The problem is the direction the data flows. Any model worth using runs on someone else's hardware, which means your notes leave your machine to be useful. The app's whole promise is that they do not. You cannot hold both. "We only send the note you asked about, and we don't train on it" is a policy — revocable, unverifiable from where you sit, and a completely different kind of assurance from <em>the app makes one network request ever, and it is a version check</em>.</p>
+<p>A local model would keep the promise, and someday that may be genuinely good enough on ordinary hardware for a specific job. It is not a no forever. It is a no while the honest version of the feature is "your notes get uploaded". <a href="/blog/ai-features-and-private-notes/">AI features and private notes</a> has the longer argument.</p>
+<h2 id="plugins">Plugins</h2>
+<p>Plugins look free. Other people write the features, users get what they want, nobody is asking me for a Kanban swimlane.</p>
+<p>What a plugin API actually does is turn your internals into a public contract. Every table shape, every state store, every editor node that a plugin can reach is now something you may not change without breaking somebody's setup. Cyanote has <a href="/blog/one-sqlite-file-the-whole-data-model/">26 shipped database migrations</a> and I have edited the data model on a dozen ordinary afternoons. That freedom is what has kept it moving. A plugin ecosystem trades it away permanently, at exactly the stage when I still get the shape wrong regularly.</p>
+<p>There is also the security half: a plugin runs inside an app holding an unencrypted clipboard history. "Install this handy extension" is not a sentence I want anywhere near that.</p>
+<p>Themes were the compromise, and the right one. Fifteen built in, plus <a href="/blog/customising-a-notes-app/">an editor for the seven colours the whole app is drawn from</a> — real customisation, no API surface, nothing executing.</p>
+<h2 id="telemetry">Telemetry</h2>
+<p>No analytics, no crash reporting, no "anonymous usage statistics to help us improve".</p>
+<p>This one costs me the most, and I want to be straight about it rather than noble. I have no idea which features get used. I do not know how many notes a typical database holds, whether anybody opens the board view, or which of the fifteen themes is anyone's favourite. Every product decision is made without the data that every other product team considers a baseline.</p>
+<p>I took that trade because a searchable index of everything you copy sits in this app, and "we collect anonymous usage data" is where the erosion always begins. Not with a scandal. With a reasonable-sounding paragraph in a privacy policy, then a slightly wider one.</p>
+<p>The replacement is worse and slower: people email me. That is a biased sample, it is a fraction of a percent of users, and it is what I have. <a href="/blog/supporting-an-app-that-does-not-know-who-you-are/">Support for an app with no accounts</a> covers what that is actually like.</p>
+<h2 id="what-the-noes-cost">What the noes cost</h2>
+<p>Every one of these loses sales. Sync and mobile lose the most, and they lose them silently — people read the page, see what is missing, and close the tab, and I never learn their names.</p>
+<p>What is left is an app that opens instantly, works with the wifi off, keeps everything in <a href="/blog/where-your-notes-actually-live/">one file you can copy to a USB stick</a>, and costs $10 once. Those four properties are downstream of the six noes. Add sync and you lose the price. Add AI and you lose the privacy. Add plugins and you lose the ability to fix things quickly.</p>
+<p>I would rather be exactly right for a smaller number of people than approximately right for everyone. That is a real position with real costs, and this is the list of them.</p>]]></content:encoded>
+      <category>Builder&#x27;s log</category>
+      <category>Design</category>
+      <category>Local-first</category>
+    </item>
+    <item>
+      <title>The arithmetic of a $10 app</title>
+      <link>https://cyanote.app/blog/the-arithmetic-of-a-ten-dollar-app/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/the-arithmetic-of-a-ten-dollar-app/</guid>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Apple takes $99 a year before a single copy sells. Here is what the ten dollars actually has to pay for, and the obligation that starts the moment someone buys.</description>
+      <content:encoded><![CDATA[<p>Apple charges $99 a year for the right to sign software that opens without a warning on someone else's Mac. That bill arrives whether I sell nothing or sell ten thousand copies, and it arrived before Cyanote had a name.</p>
+<p>At $10 a copy, with the payment processor's cut taken out, that is eleven sales a year to stand still.</p>
+<p>I want to lay out the rest of the numbers, because "one-time purchase" gets discussed almost entirely from the buyer's side — as a nicer line on a bank statement — and almost never as the constraint it puts on the person on the other end. The constraint is the interesting part. It shapes what the app is allowed to be.</p>
+<h2 id="where-the-ten-dollars-goes">Where the ten dollars goes</h2>
+<p>Take one sale. Lemon Squeezy is the merchant of record, which means they handle sales tax in every jurisdiction that wants some, and they charge 5% plus 50¢ for the service. On a $10 sale that is a dollar, near enough, so about $9 lands.</p>
+<p>Against that, the recurring costs:</p>
+<p><strong>Apple Developer Program, $99/year.</strong> Not optional. Without it there is no Developer ID certificate, which means no notarisation, which means every buyer meets <a href="/blog/macos-cannot-verify-this-app/">the warning that macOS cannot verify the app</a> and a meaningful share of them stop right there.</p>
+<p><strong>A domain, about $12/year.</strong> Boring, unavoidable.</p>
+<p><strong>Hosting, near zero.</strong> The site is static and sits on GitHub Pages. The update payload goes to a Cloudflare R2 bucket, which is free until a level of traffic I would be delighted to reach.</p>
+<p>So the floor is roughly $111 a year, or about thirteen copies. That is the whole cash side. It is small enough that I could pay it out of pocket forever and never notice, which tells you immediately that money is not the real cost here.</p>
+<h2 id="the-obligation-the-buyer-never-sees">The obligation the buyer never sees</h2>
+<p>The moment someone pays $10, they get free updates for life. That is on the pricing page, and I meant it when I wrote it.</p>
+<p>Now count what "life" contains. macOS ships a major version every autumn. Each one has, historically, been able to break something: a permission prompt that used to appear once and now appears every launch, a window behaviour that changes, a system API that gets deprecated with two years' notice. None of that generates a single new sale. All of it has to be fixed, for people who paid once, three years ago, and are entirely right to expect the app to keep opening.</p>
+<p>The surface that has to survive those autumns is about 36,000 lines of TypeScript and 3,500 lines of Rust, sitting on a webview that Apple ships and I do not control.</p>
+<p>This is the honest asymmetry of buy-once software, and the reason so many good apps drifted to subscriptions: revenue is a spike at launch and a long tail after, while the maintenance is flat forever. Anyone who tells you the model is simply better for everyone is selling you something. It is better for the buyer, plainly. For the developer it is a bet that enough new people keep arriving to fund work that existing customers have already paid for.</p>
+<figure><img src="/images/ten-dollar-math.svg" alt="One $10 sale against the fixed yearly costs: about $9 net, $111 a year in floor costs, and the maintenance that the price does not scale with" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The cash side is small. The obligation is the part with no ceiling.</figcaption></figure>
+<h2 id="what-the-price-makes-impossible">What the price makes impossible</h2>
+<p>Here is where the arithmetic stops being accounting and starts being product design.</p>
+<p>$10 once cannot fund a server. Not a sync server, not an account system, not a licence server that phones home on every launch. Run the numbers on any of those and you get a per-user, per-month cost against a one-time payment that was already spent — the classic way a buy-once app becomes insolvent about eighteen months in, quietly degrades, and then announces a subscription.</p>
+<p>So the architecture had to make servers unnecessary rather than cheap. Everything lives in <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file on your own disk</a>. There is no account because there is nothing for an account to sign into. The licence key is checked once, on first launch, and never again — <a href="/blog/supporting-an-app-that-does-not-know-who-you-are/">which creates its own support problems</a>, and I would rather have those than the alternative.</p>
+<p>I did not arrive at local-first from an ideology about data ownership, though I have since acquired one. I arrived at it because it is the only shape that a $10 payment can actually sustain. <a href="/blog/what-local-first-means-for-your-notes/">What local-first means for your notes</a> is the buyer-facing version of that argument; this is the ledger underneath it.</p>
+<p>$10 also cannot fund a support team, which is why the app tries hard to explain itself in place — a paste that cannot happen <a href="/blog/why-a-mac-app-asks-for-accessibility/">says what permission is missing</a> rather than failing silently and generating an email.</p>
+<h2 id="the-refund-line">The refund line</h2>
+<p>14 days, no reason required, no proof of uninstall.</p>
+<p>The received wisdom is that a no-questions refund policy on a cheap product invites abuse. Maybe. What it definitely does is remove the reason a person hesitates at a checkout for a $10 app from a developer they have never heard of, with no free trial, that they cannot try before buying. That hesitation costs far more than the refunds will.</p>
+<p>There is also a version of this that is just self-interest: a refund tells me something. A stream of them clustered around one feature is the most direct signal I will ever get, given that there is no telemetry in the app and I have deliberately given up every other way of knowing what people do inside it.</p>
+<h2 id="what-i-would-tell-someone-pricing-their-own">What I would tell someone pricing their own</h2>
+<p>Three things, learned mostly by doing them in the wrong order.</p>
+<p><strong>Price the maintenance, not the build.</strong> The build is finite and mostly already spent by the time you have a price. The maintenance runs until you stop, and the price is the only thing funding it. $10 is defensible for Cyanote because the app has no per-user running cost. If yours does, $10 is a slow way to lose money and no amount of goodwill fixes that.</p>
+<p><strong>Make the promise you can keep, and write it down narrowly.</strong> "Free updates for life" is a promise about updates to this app on this platform. It is not a promise that every future thing I build is free, and the pricing page says so in plain words. Vague generosity at the point of sale becomes a bitter argument in year three.</p>
+<p><strong>Do not pretend the model has no downside.</strong> The <a href="/blog/what-ten-dollars-once-buys/">thing a one-time price genuinely buys</a> is real and worth having — no renewal date, nothing taken away for lapsing, an app that still opens if I disappear. The thing it cannot promise is an infinite runway. Anyone who has watched a beloved buy-once app go quiet knows the failure mode, and pretending otherwise on a pricing page insults the reader.</p>
+<p>The arithmetic is not comfortable and it is not a secret. Eleven sales a year covers Apple. Everything after that funds the autumn when macOS changes something and a few thousand people who paid once, years ago, expect their notes to open exactly as they did the day before.</p>]]></content:encoded>
+      <category>Builder&#x27;s log</category>
+      <category>Pricing</category>
+      <category>One-time purchase</category>
+    </item>
+    <item>
+      <title>Supporting an app that doesn&#x27;t know who you are</title>
+      <link>https://cyanote.app/blog/supporting-an-app-that-does-not-know-who-you-are/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/supporting-an-app-that-does-not-know-who-you-are/</guid>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
+      <description>No account means no password reset, no dashboard and no way to look you up. What support actually looks like when the app knows nothing about its users.</description>
+      <content:encoded><![CDATA[<p>Someone emails to say something is wrong. I open the message and that is everything I will ever have: their words, and whatever they thought to include.</p>
+<p>There is no account to look up. No dashboard showing their version, their settings, their last twelve sessions. No error report that arrived before their email did. No record that this person exists, beyond a payment receipt in a system I do not control.</p>
+<p>This is the direct consequence of the choices on the front of the site — <a href="/blog/notes-app-without-an-account/">no account</a>, <a href="/blog/the-features-i-said-no-to/">no telemetry</a>, everything on your own machine — and I want to describe what it is actually like, because those choices get sold as pure wins and they are not.</p>
+<h2 id="what-disappears-along-with-the-account">What disappears along with the account</h2>
+<p>A user database is not only a privacy liability. It is the substrate half of modern software support runs on.</p>
+<p>Gone with it: password resets, because there is no password. Account recovery, because there is no account. "Let me check your subscription status." "I can see the error in your logs." "I've pushed a fix to your instance." Every one of those sentences requires a server that knows who you are, and there isn't one.</p>
+<p>Some of that absence is straightforwardly good. Nobody can ever email me and ask me to hand over a customer's notes, because I do not have them. There is no breach that exposes what you write, because there is nowhere for it to leak from. A company that cannot be compelled to produce something has a much simpler relationship with the question than one that promises not to look.</p>
+<p>And some of it is just harder. If you lose the file that holds your work, I cannot restore it. There is no copy. That is the same property, read from the other side, and it is why <a href="/blog/backing-up-local-notes/">the backup story</a> gets more attention in this app than it does in one where the cloud quietly holds a version for you.</p>
+<h2 id="the-one-thing-that-replaced-logs">The one thing that replaced logs</h2>
+<p>You cannot print your way out of a problem in a shipped desktop app. A GUI binary has no console attached — the diagnostic line you carefully wrote goes nowhere at all on the platform where the bug actually reproduces.</p>
+<p>So the app writes a small diagnostic file locally. Not analytics; it is never sent anywhere. It is a file on the user's own disk, which the user can read, that says what the app did on launch — so that when someone writes in, there is one thing I can ask them to attach that turns "it did not work" into a sequence of events.</p>
+<p>Three constraints on it, all learned rather than designed:</p>
+<p><strong>Bounded.</strong> 32 KB, capped. An unbounded diagnostic file on a machine you cannot reach is a disk-space bug waiting for the one user who leaves the app running for eleven months.</p>
+<p><strong>Best-effort throughout.</strong> Every write can fail silently. A diagnostic that can fail a launch is strictly worse than no diagnostic at all, and it is very easy to write the version that throws on a read-only directory and takes the app down with it.</p>
+<p><strong>It records the questions, not just the answers.</strong> This is the part I got wrong first. Logging what happened is not enough when the interesting case is a step that <em>never ran</em>. If the record shows the app asked a question and got an answer, the problem is in what it did next. If the line is absent entirely, the problem is that it never asked, which is a different bug in a different place. Without that distinction the two are indistinguishable from the outside, and I spent nine round trips with a tester learning that the hard way.</p>
+<figure><img src="/images/support-without-accounts.svg" alt="What the app knows about a user: nothing on a server, a bounded local diagnostic file, and a payment receipt held by the processor" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>The record lives on the user's machine, and only moves if they choose to send it.</figcaption></figure>
+<h2 id="instrument-first-then-fix">Instrument first, then fix</h2>
+<p>The habit that came out of that: when a bug arrives that I cannot reproduce, the first change I ship is not an attempt at a fix. It is the thing that will tell me which of two explanations is true.</p>
+<p>That feels like a delay. It is faster nearly every time, because the alternative — guessing, shipping a plausible fix, and asking a volunteer to try again — costs a full round trip per guess, and a round trip with a real person is a day, not a minute. Three guesses is a week. One instrument is an afternoon.</p>
+<p>It has a second benefit I did not anticipate. A fix shipped on a guess, which appears to work, leaves you unsure forever whether you fixed the bug or moved it. A fix shipped against a recorded sequence of events is a fix you can prove. When the bug is in a path that touches somebody's data, "it seems fine now" is not a standard I am willing to ship against — <a href="/blog/the-half-second-that-left-a-locked-note-in-the-clear/">the locked-note race</a> is the case that settled that for me permanently.</p>
+<h2 id="support-that-happens-inside-the-app">Support that happens inside the app</h2>
+<p>The cheapest support ticket is the one that never gets written, and with no team to answer them, that stops being a platitude and becomes the design constraint.</p>
+<p>So the app tries to explain itself at the exact moment it fails. The clearest example: pasting from the clipboard history needs the macOS Accessibility permission, and without it the paste simply cannot happen. The old behaviour was to close the popup and do nothing — which is indistinguishable from broken software, and generates an email that begins "your clipboard doesn't work". Now it names the missing permission, offers to open the right settings pane, and points out that the entry is already on your clipboard so you can paste it yourself. <a href="/blog/why-a-mac-app-asks-for-accessibility/">Why a Mac app asks for Accessibility</a> exists for the same reason: the question is predictable, so answer it before it is asked.</p>
+<p>Every silent failure is a support ticket with a delay on it. That is the rule, and it has changed how I write error paths more than any other single idea in the project.</p>
+<h2 id="the-refund-policy-is-an-admission">The refund policy is an admission</h2>
+<p>14 days, no reason needed, no proof of uninstall.</p>
+<p>That last clause is not generosity. It is honesty about capability. I could not verify an uninstall if I wanted to — there is no phone-home, so there is nothing to observe. A policy demanding proof I cannot check would be theatre, and the sort of theatre that makes a person feel accused on their way out the door.</p>
+<p>The same absence shapes what a refund <em>tells</em> me. With no analytics, a cluster of refunds mentioning the same feature is one of the very few real signals I get about what the app is like to use. It is a terrible instrument — tiny sample, self-selected, arriving only from people annoyed enough to act. It is also nearly all of it, along with email, and I would rather work from a biased sample than hold a database of everything everyone does inside their own notes.</p>
+<p>That is the trade, stated plainly. I know less about my users than any product manager would consider acceptable, and in exchange the app can promise something almost nobody else in this category can: it makes one network request, ever, and it is a check for a new version. Everything else stays on your Mac, including the record of what went wrong.</p>]]></content:encoded>
+      <category>Builder&#x27;s log</category>
+      <category>Privacy</category>
+      <category>Support</category>
+    </item>
+    <item>
+      <title>Signing and notarising, from the developer&#x27;s side</title>
+      <link>https://cyanote.app/blog/signing-and-notarising-from-the-developers-side/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/signing-and-notarising-from-the-developers-side/</guid>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Ninety-nine dollars a year, a certificate and an automated malware scan. What Apple actually asks of an independent developer shipping outside the App Store.</description>
+      <content:encoded><![CDATA[<p>Every Mac app you download outside the App Store has been through the same pipeline: signed with a Developer ID certificate, uploaded to Apple, scanned, issued a ticket, and stapled. Skip any of it and macOS greets your users with <a href="/blog/macos-cannot-verify-this-app/">a warning that it cannot verify the app</a>, which is where a good percentage of them stop.</p>
+<p>I have written the buyer's side of that warning already. This is what it looks like from the other end.</p>
+<h2 id="what-the-99-buys">What the $99 buys</h2>
+<p>An identity on file with Apple, and the certificate that proves it.</p>
+<p>Enrolling in the Developer Program is $99 a year. What you get, for the purposes of shipping outside the App Store, is a <strong>Developer ID Application</strong> certificate — the thing that signs a binary such that macOS can say who shipped it and confirm nothing has been altered since.</p>
+<p>That is the whole of it. Not a review, not a listing, not a store. The right to have your name attached to a file in a way the operating system will accept.</p>
+<p>Two consequences people outside this get wrong. It is <strong>not</strong> a quality bar — nobody at Apple looked at Cyanote. And it is <strong>not</strong> free of teeth: a Developer ID can be revoked, and a revoked certificate takes every copy of your app with it, on every machine, immediately. The identity is the point. Your name is the collateral.</p>
+<h2 id="the-four-variables">The four variables</h2>
+<p>A production build here needs four environment values, and the shape of them says a lot about the process:</p>
+<pre><code>APPLE_SIGNING_IDENTITY   Developer ID Application: Name (AB12CD34EF)
+APPLE_ID                 the account email
+APPLE_PASSWORD           an app-specific password
+APPLE_TEAM_ID            ten characters</code></pre>
+<p>The third is the interesting one. You cannot notarise with your actual Apple account password — you generate an <strong>app-specific password</strong> at appleid.apple.com, a one-purpose credential that exists so an automated build is not carrying the keys to your entire Apple identity. Good design. It also means the credential is a string that a script needs and a human generated, which is exactly the kind of thing that ends up pasted into a shell history at midnight.</p>
+<p>Locally, none of this is needed. Development builds are signed with a self-signed certificate called <code>cyanote-dev</code>, which macOS accepts on the machine that made it and nowhere else. Two paths, deliberately: the dev one is fast and offline, the production one is slow and talks to Apple. Conflating them means every test build waits on a network round trip.</p>
+<h2 id="build-sign-notarise-staple-verify">Build, sign, notarise, staple, verify</h2>
+<p>The production script does five things in order, and every one of them can fail in a way worth handling.</p>
+<p><strong>Build universal.</strong> arm64 and x86_64 in one binary, so the app runs natively on Apple Silicon and on the Intel Macs people are still perfectly happy with. No Rosetta, no second download, no "which one do I want" on the download page. It doubles the compile time and I would not trade it — <a href="/blog/software-for-an-older-mac/">an older Mac</a> is a large part of who this app is for.</p>
+<p><strong>Sign</strong> with the Developer ID identity.</p>
+<p><strong>Notarise.</strong> Upload the build to Apple, which runs an automated malware scan and, if it passes, issues a ticket. This takes anywhere from a couple of minutes to considerably longer, entirely outside your control, at whatever hour you decided to cut a release.</p>
+<p><strong>Staple.</strong> Attach the ticket to the file itself, so a Mac can verify it without asking Apple anything. This is the step that matters for the promise the app makes about working offline: an app that had to phone Apple to check its own notarisation on first launch would be a different app. Stapled, the check is local. Skip stapling and everything looks fine on your machine — which has already cached the result — and fails on a fresh one with no network.</p>
+<p><strong>Verify, and refuse to continue if it fails.</strong> <code>spctl</code> has to say <em>accepted, source=Notarized Developer ID</em> for both the DMG and the app inside it. Both, because they are separately notarised objects and it is entirely possible to staple one and not the other. The script exits rather than uploading something that will greet a buyer with a warning.</p>
+<figure><img src="/images/notarise-pipeline.svg" alt="The production release path: build universal, sign with Developer ID, notarise with Apple, staple the ticket, verify with spctl, publish" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The check runs locally on the user's Mac because the ticket is stapled to the file. That is what keeps a first launch offline.</figcaption></figure>
+<h2 id="the-step-that-needed-a-human">The step that needed a human</h2>
+<p>For a while, the release could not run unattended. One step wanted the app-specific password typed at the keyboard.</p>
+<p>That sounds minor. It is the difference between a release being a command and a release being an occasion. A process with a human step in the middle gets run less often, which means fixes sit in <code>main</code> waiting for a big enough batch to justify the ceremony — and batching changes is how a release becomes risky. The bug you shipped is somewhere in eleven commits instead of one.</p>
+<p>Getting the human out of it is now, in my head, a first-class feature rather than tooling housekeeping. The whole thing is one command that builds, notarises, publishes the update payload, cuts the notes-only release, deploys the site, and pushes the tag. It is safe to re-run: every step after the build checks whether it already happened, because the failure mode you actually hit is a release that dies three-quarters of the way through on a network timeout.</p>
+<p>It also refuses to start if <code>CHANGELOG.md</code> has no section for the version being released — the <a href="/blog/where-your-notes-actually-live/">same text the app shows</a> before anyone accepts an update. A release with no notes is not a release anyone should accept.</p>
+<h2 id="a-detail-that-took-an-afternoon">A detail that took an afternoon</h2>
+<p>Building the DMG briefly opens a Finder window. It has to — the disk image's layout is configured by actually mounting it and arranging it.</p>
+<p>Harmless, and deeply irritating when it happens on every dev build while you are working. So it happens only on production builds now, which is a two-line change that meaningfully improved my day and would never appear in any changelog.</p>
+<p>The other one: notarising the DMG and notarising the app inside it are separate operations, and a stapled DMG containing an unstapled app passes a casual check on a machine that has already seen the app. That is the class of bug where the only honest test is a fresh Mac with no network — which is the test I now run, because everything else confirms what you already believe.</p>
+<h2 id="windows-in-comparison">Windows, in comparison</h2>
+<p>The Windows build exists, and is not on sale, and one reason is that the equivalent process there is worse in an instructive way.</p>
+<p>Authenticode signing has no $99 flat rate. It is a certificate from a commercial authority, priced per year, with identity validation attached, and until recently the norm was a physical hardware token that someone posts to you — which makes automated CI signing an interesting problem involving a USB device plugged into something. Cloud signing services have improved this a great deal. It is still several times the friction of Apple's process, and Apple's process involves a mandatory malware scan by a company that can revoke your identity.</p>
+<p>I say that as someone who complains about Gatekeeper regularly. Having now done both, $99 and a stapled ticket is the better arrangement, and the <a href="/pricing/">same $10 licence will cover Windows</a> when it ships.</p>]]></content:encoded>
+      <category>Builder&#x27;s log</category>
+      <category>macOS</category>
+      <category>Security</category>
+    </item>
+    <item>
+      <title>One SQLite file, and the whole data model</title>
+      <link>https://cyanote.app/blog/one-sqlite-file-the-whole-data-model/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/one-sqlite-file-the-whole-data-model/</guid>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
+      <description>Fifteen tables, 26 shipped migrations and a lock file that refuses to let me edit history. A tour of where your work sits, and what keeps it there.</description>
+      <content:encoded><![CDATA[<p>Everything Cyanote holds — every note, task, habit tick, calendar event and clipboard entry — lives in one SQLite file on your disk. Fifteen tables. You can copy it to a USB stick while the app is running and open it on another Mac.</p>
+<p>That is the property the whole app is built around, so it is worth showing what is actually in there.</p>
+<h2 id="the-fifteen-tables">The fifteen tables</h2>
+<p>They group into five areas, which is roughly how the app grew.</p>
+<p><strong>Notes.</strong> <code>folders</code>, <code>notes</code>, <code>tags</code>, <code>note_tags</code>, <code>attachments</code>, <code>note_links</code>. A note holds its document as JSON, plus a plain-text copy for searching. <code>note_links</code> is what makes <code>[[</code> work in both directions — it records that A points at B, so B can show a backlink without anybody scanning every note to find out. <code>notes</code> also points at itself through <code>parent_id</code>, which is how a note nests inside another note rather than sprawling across the sidebar.</p>
+<p><strong>Tasks.</strong> <code>todos</code>. One table. Priority, due date, reminder time as epoch milliseconds. The board view and the list view are the same rows read two ways — there is no <code>board</code> table, because a card and a to-do were never different things and modelling them separately would have created a synchronisation problem out of nothing.</p>
+<p><strong>Time.</strong> <code>calendar_events</code>, <code>note_calendar_links</code>, <code>calendar_sources</code>. The last one holds subscribed iCal URLs, which is how Google Calendar works here without a sign-in: you paste an address, the app fetches it.</p>
+<p><strong>Habits.</strong> <code>habits</code>, <code>habit_logs</code>, <code>routines</code>. A log row per tick, not a counter — so a streak is derived, never stored, and filling in last Tuesday is an insert rather than a repair of some running total that has been wrong since March.</p>
+<p><strong>Clipboard.</strong> <code>clipboard_history</code>, <code>clipboard_pinned</code>. The part that grows fastest, and the part that <a href="/blog/when-the-clipboard-ate-the-database/">taught me the most painful lesson in the project</a>.</p>
+<p>Fifteen tables for an app that covers notes, tasks, a board, a calendar, habits, routines and a clipboard manager. Not because I was being clever — because most of those things are lists of dated rows, and the honest schema for a list of dated rows is a list of dated rows.</p>
+<figure><img src="/images/sqlite-data-model.svg" alt="The fifteen tables grouped into notes, tasks, time, habits and clipboard, with the FTS5 index kept in step by triggers" width="1200" height="500" loading="lazy" decoding="async" /><figcaption>One file. The search index is derived, which is why a backup deliberately leaves it out.</figcaption></figure>
+<h2 id="the-search-index-is-not-data">The search index is not data</h2>
+<p><code>notes_fts</code> arrived in migration 18: an FTS5 virtual table, kept in step with <code>notes</code> by triggers. You type, the trigger fires, the index updates. Search reads the index, not the notes.</p>
+<p>Two rules fall out of that and both were learned the hard way.</p>
+<p><strong>Never back it up.</strong> A backup walks the user tables, and a virtual table's shadow tables look exactly like user tables from a distance. Include them and a restore writes rows into an index that is simultaneously being rebuilt by the triggers, which produces corruption of the particularly annoying kind — the data is fine, the search results are quietly wrong. So the backup filters virtual tables and their shadows out, and a restore lets the triggers rebuild the index from the notes. The index is derived. Derived things are recomputed, not restored. <a href="/blog/backing-up-local-notes/">The backup format</a> has the user-facing side.</p>
+<p><strong>Never hand FTS5 raw user input.</strong> Type <code>C++</code> into a search box and FTS5 sees operators, not text. Ordinary punctuation — a hyphen, a quote, a colon — turns a search into a syntax error or, worse, a different query than the one asked for. Everything goes through a function that builds a MATCH expression properly. The <a href="/blog/searching-your-own-notes/">three kinds of search</a> post covers what that feels like from the outside.</p>
+<h2 id="the-lock-file-that-refuses-to-let-me-lie">The lock file that refuses to let me lie</h2>
+<p>Here is the rule that governs everything else: <strong>a migration runs once per database, forever.</strong></p>
+<p>The plugin records which version a database has reached. Editing a migration that has already shipped does nothing at all for the people who ran it, and everything for the person installing tomorrow. You end up with two populations, both on "version 19", with different schemas. Every bug report after that is unreproducible, and you will not suspect the migration, because it is right there in the source saying what you meant.</p>
+<p>So there is a file, <code>migrations.lock</code>, with one line per shipped migration: version, description, and a SHA-256 of its canonical content — byte-exact, whitespace included. A check runs on every build. Edit a shipped migration and the build fails.</p>
+<pre><code>   1  424a2480…  initial schema
+  14  c46a8c60…  locked notes: is_locked flag
+  18  29ed172d…  full-text search index over notes (FTS5)
+  22  6dfa0592…  index clipboard history for paging and dedup
+  26  6d52f7dd…  clipboard image thumbnails</code></pre>
+<p>Twenty-six shipped, at the time of writing. The file's own comment includes the instruction that matters most: never hand-edit a hash to make the check pass. That is the exact failure this exists to catch, and it is a five-second fix that produces a six-month bug.</p>
+<p>I like this file more than almost anything else in the project. It is thirty lines of tooling that converts a mistake I would definitely make into a build error I cannot ignore.</p>
+<h2 id="indexes-and-one-i-nearly-added">Indexes, and one I nearly added</h2>
+<p>Migration 25 added three indexes: <code>notes(parent_id)</code>, <code>note_tags(tag_id)</code>, <code>note_links(target_note_id)</code>. All three cover lookups whose column was not the leading column of any existing key. The parent lookup went from 7.1ms to 0.007ms on a 10,000-note database — a thousandfold, for one line of SQL, which is the sort of ratio that makes you want to add indexes everywhere.</p>
+<p>Which is the trap. A fourth index looked equally obvious — one covering the sidebar's own list query — and it was wrong, because that query already had a plan SQLite was happy with, and the index would have cost a write on every save to speed up a read that was not slow. The migration carries a comment explaining why it is not there, with the numbers. Comments about what you deliberately did not do age better than comments about what you did.</p>
+<p>The rest of that performance story — where the sidebar was actually spending its time — is <a href="/blog/the-sidebar-read-every-note-to-draw-a-list/">its own post</a>, and it was not the indexes.</p>
+<h2 id="why-it-matters-that-it-is-one-file">Why it matters that it is one file</h2>
+<p>Because you can pick it up.</p>
+<p>A database that is one file, with no server, no proprietary container and no sidecar directory, is a database you can copy, move to an external drive, keep in a synced folder, and back up by any means you already trust — Time Machine included, no plugin required. Settings will move it for you. Nothing about the app cares where it sits.</p>
+<p>It is also the answer to the uncomfortable question every app in this category should be asked: what happens when the developer stops. SQLite is a public format with a thirty-year support commitment and readers in every language there is. If Cyanote vanished tomorrow, your work is a <code>.db</code> file and <code>SELECT * FROM notes</code> gets it out — no export feature required, no cooperation from me needed. <a href="/blog/what-happens-when-your-notes-app-shuts-down/">What happens when your notes app shuts down</a> is the version of that argument written for people who do not care what a table is.</p>
+<p>Fifteen tables and a lock file is not an exciting architecture. It is the one that survives me.</p>]]></content:encoded>
+      <category>Builder&#x27;s log</category>
+      <category>Local-first</category>
+      <category>Backups</category>
+    </item>
+    <item>
+      <title>It worked in dev and was broken in every build</title>
+      <link>https://cyanote.app/blog/it-worked-in-dev-and-was-broken-in-every-build/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/it-worked-in-dev-and-was-broken-in-every-build/</guid>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
+      <description>The Format button failed in every shipped copy and worked perfectly in development. Type checking, linting, the tests and CI all passed. Here is the gap.</description>
+      <content:encoded><![CDATA[<p>The Format button on a code note was broken for six of the seven languages it offers, in every built copy of the app, for weeks.</p>
+<p>It worked perfectly in development. On every machine it was ever tried on. Type checking passed, the linter passed, the test suite passed, CI passed.</p>
+<p>This is my favourite bug in the project, because everything that was supposed to catch it did its job correctly and none of them could have.</p>
+<h2 id="the-failure">The failure</h2>
+<p>Clicking Format on a CSS note produced: <em>Module name, 'prettier/plugins/postcss' does not resolve to a valid URL.</em></p>
+<p>Only JSON worked. And only by accident — that path returns early on the browser's own <code>JSON.parse</code> before it ever reaches the loader that was broken. One of seven working, for a reason unrelated to the six that did not.</p>
+<p>The cause was a single annotation. The formatter's plugin path was assembled as a template literal and marked with a comment telling the bundler not to analyse it. That comment is a real tool with real uses; it means "I know this looks like an import, leave it alone".</p>
+<p>The bundler duly left it alone. It emitted no chunk for any plugin, and the shipped application contained the bare string <code>prettier/plugins/</code> and a request, at runtime, for the webview to resolve that as a URL. Which it cannot. Browsers resolve URLs; they do not resolve npm package names. There is no package directory inside a Mac app.</p>
+<h2 id="why-nothing-caught-it">Why nothing caught it</h2>
+<p>Here is the part worth the post.</p>
+<p><strong>In development, the dev server resolves bare package names itself.</strong> That is one of the main things it is for. So during development the import worked, the formatter loaded, and the button did what it said. There was never a moment where the bug was visible on my machine.</p>
+<p><strong>Type checking cannot see it.</strong> The specifier was a string built at runtime. As far as the type system is concerned, a string is a string.</p>
+<p><strong>The linter cannot see it.</strong> The annotation that caused the problem is the documented way to suppress exactly the analysis that would have flagged it. I had explicitly told the tooling not to look.</p>
+<p><strong>The tests cannot see it.</strong> They run against the source, in the same environment as the dev server, with the same resolution. A test asserting that Format produces formatted CSS passes, because in that environment it does.</p>
+<p><strong>And CI cannot see it</strong>, because CI ran the same three things.</p>
+<p>Every one of those tools examines the source. The bug existed only in the <em>output</em> — in the artefact produced by the build, which nothing in the pipeline ever opened. There was a hole in the shape of "the thing we actually ship", and four layers of quality tooling sat neatly around it.</p>
+<figure><img src="/images/dev-vs-built.svg" alt="Development resolves package names on the fly; the built app must resolve a URL. Type checking, linting and tests all read the source, so none of them see the output" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>Four checks, all reading the same side of the build.</figcaption></figure>
+<h2 id="the-fix-and-the-better-fix">The fix, and the better fix</h2>
+<p>The immediate repair is dull: literal specifiers, one per language, in a map. A typo becomes a type error instead of a runtime one, and each plugin stays a separately loaded chunk so the formatter is still kept off the startup path — <a href="/blog/why-a-notes-app-should-open-instantly/">an app that opens instantly</a> does not load a code formatter to show you a note. That last part got verified rather than assumed: no formatter chunk is reachable from the entry bundle, only from the code editor.</p>
+<p>The fix that matters is the other one. A script now reads the <em>built</em> chunks and fails the build if any dynamic import still carries a bare package name. It is wired into the build command itself, which is the step every path runs through — the dev build, the production release, CI. There is no way to produce something shippable that skips it.</p>
+<p>And it was verified the only way such a thing can be: by restoring the broken code and watching the build refuse it. A check you have never seen fail is a check you are only assuming works. I have shipped a green light attached to nothing before, and it is a considerably worse position than having no light at all.</p>
+<h2 id="the-same-gap-twice-more">The same gap, twice more</h2>
+<p>Once you have the shape — <em>the thing you verify is not the thing you ship</em> — it turns up everywhere.</p>
+<p><strong>Notarisation.</strong> A stapled disk image containing an unstapled app passes every check on the machine that built it, because that machine has already cached the result. It fails on a stranger's Mac with no network. The only honest test is a machine that has never seen the app, which is now <a href="/blog/signing-and-notarising-from-the-developers-side/">part of the release path</a> rather than something I do when I remember.</p>
+<p><strong>An image encoder that substitutes silently.</strong> Asking a canvas for WebP does not fail when WebP is unavailable; it hands back a PNG and says nothing. Everything downstream then believes it has a WebP. <a href="/blog/when-the-clipboard-ate-the-database/">The clipboard work</a> checks what it actually received rather than what it requested, for that reason.</p>
+<p>Both are the same mistake in different clothes: confirming the input to a process instead of the output.</p>
+<h2 id="the-two-backend-design-and-the-risk-i-took-on-purpose">The two-backend design, and the risk I took on purpose</h2>
+<p>There is a deliberate version of this divergence in Cyanote, and it is worth admitting.</p>
+<p>All data access goes through one interface with two implementations: SQLite when running as the real app, and a browser-storage version when running as a plain web page. That means the entire application runs in an ordinary browser tab — which is how <a href="/blog/customising-a-notes-app/">the screenshots on this site are made</a>, why they show real software rather than a mockup, and why a UI change can be tried in a second instead of a rebuild.</p>
+<p>It is also, structurally, exactly the situation that produced the Format bug: a development environment that is not the shipping environment. I keep it because the benefit is large and the risk is manageable, on one condition — every data change has to be implemented in both backends and the rules they follow have to match. Search is the sharpest case: the browser version mirrors the same matching rules in JavaScript that SQLite's full-text index applies, specifically so a search behaves identically in both. When they drift, you get a bug that only exists in the shipped app, and you get it in the part where <a href="/blog/one-sqlite-file-the-whole-data-model/">everything is stored</a>.</p>
+<p>I am not recommending this to everyone. I am saying it is a trade I made with my eyes open, and the mitigation is not discipline — it is that the build now inspects its own output.</p>
+<h2 id="the-rule-i-write-on-things-now">The rule I write on things now</h2>
+<p>Every check in a pipeline should be asked one question: <em>does this look at the artefact, or at the source it came from?</em></p>
+<p>Both are worth having. Only one of them can tell you what your users will get. For a desktop app, where a bad build reaches people through an auto-updater and cannot be rolled back the way a website can, the second sort is the one that matters, and it is almost always the one missing.</p>
+<p>Six of seven languages, in every shipped copy, working flawlessly on my machine. I would have bet money that button was fine.</p>]]></content:encoded>
+      <category>Builder&#x27;s log</category>
+      <category>Testing</category>
+      <category>Development</category>
+    </item>
     <item>
       <title>Write it down the first time you work it out</title>
       <link>https://cyanote.app/blog/writing-your-own-runbooks/</link>

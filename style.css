@@ -435,19 +435,28 @@ details p{ color:var(--muted); font-size:.97rem; padding:0 0 24px; max-width:62c
    drags the whole document sideways, which breaks every other line of text on
    it to fix one. Hairlines only, matching the feature grid — a table here is a
    piece of prose set in columns, not a spreadsheet. */
+/* `.cmp` is the landing page's comparison table. It rides these rules rather
+   than carrying `.post`, which would also inherit that class's prose measure,
+   heading sizes and paragraph spacing — none of which belong in a section
+   built out of a grid. One selector list, one set of hairlines, both places. */
 .table-scroll{ overflow-x:auto; margin:30px 0; -webkit-overflow-scrolling:touch }
-.post table{ border-collapse:collapse; width:100%; min-width:34rem; font-size:.94rem }
-.post thead th{ text-align:left; font-weight:600; color:var(--ink); white-space:nowrap;
+.post table, .cmp table{ border-collapse:collapse; width:100%; min-width:34rem; font-size:.94rem }
+.post thead th, .cmp thead th{ text-align:left; font-weight:600; color:var(--ink); white-space:nowrap;
   border-bottom:1px solid var(--ink-2); padding:0 16px 10px 0 }
-.post tbody td{ color:var(--ink-2); vertical-align:top; padding:12px 16px 12px 0;
+.post tbody td, .cmp tbody td{ color:var(--ink-2); vertical-align:top; padding:12px 16px 12px 0;
   border-bottom:1px solid var(--line) }
-.post tbody tr:last-child td{ border-bottom:0 }
-.post thead th:last-child, .post tbody td:last-child{ padding-right:0 }
+.post tbody tr:last-child td, .cmp tbody tr:last-child td{ border-bottom:0 }
+.post thead th:last-child, .post tbody td:last-child,
+.cmp thead th:last-child, .cmp tbody td:last-child{ padding-right:0 }
+/* The app name is the link and the row's label at once, so it gets the weight
+   the first column would otherwise lack against three columns of grey. */
+.cmp tbody td:first-child a{ color:var(--ink); font-weight:600 }
 /* The row-label column holds the shortest text, so the browser's automatic
    layout starves it and wraps three-word labels onto three lines. A floor on
    its width costs the wider columns almost nothing and makes the labels
    readable at a glance, which is the only reason the column is there. */
-.post thead th:first-child, .post tbody td:first-child{ min-width:8.5rem }
+.post thead th:first-child, .post tbody td:first-child,
+.cmp thead th:first-child, .cmp tbody td:first-child{ min-width:8.5rem }
 
 .endcta{ border:1px solid var(--line); background:var(--panel); border-radius:20px;
   padding:30px 32px; margin:52px 0 0; text-align:center }

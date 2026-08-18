@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A bug that passed every check and shipped broken</title>
+<meta name="description" content="The Format button failed in every shipped copy and worked perfectly in development. Type checking, linting, the tests and CI all passed. Here is the gap." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/it-worked-in-dev-and-was-broken-in-every-build/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/it-worked-in-dev-and-was-broken-in-every-build/" />
+<meta property="og:title" content="A bug that passed every check and shipped broken" />
+<meta property="og:description" content="The Format button failed in every shipped copy and worked perfectly in development. Type checking, linting, the tests and CI all passed. Here is the gap." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="A bug that passed every check and shipped broken" />
+<meta name="twitter:description" content="The Format button failed in every shipped copy and worked perfectly in development. Type checking, linting, the tests and CI all passed. Here is the gap." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "It worked in dev and was broken in every build",
+  "description": "The Format button failed in every shipped copy and worked perfectly in development. Type checking, linting, the tests and CI all passed. Here is the gap.",
+  "datePublished": "2026-08-18",
+  "dateModified": "2026-08-18",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/it-worked-in-dev-and-was-broken-in-every-build/"
+  },
+  "url": "https://cyanote.app/blog/it-worked-in-dev-and-was-broken-in-every-build/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/dev-vs-built.svg",
+      "width": 1200,
+      "height": 470
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Builder's log, Testing, Development",
+  "wordCount": 1269
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "It worked in dev and was broken in every build",
+      "item": "https://cyanote.app/blog/it-worked-in-dev-and-was-broken-in-every-build/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-18" />
+<meta property="article:modified_time" content="2026-08-18" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Builder&#x27;s log" />
+<meta property="article:tag" content="Testing" />
+<meta property="article:tag" content="Development" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>It worked in dev and was broken in every build</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-18">18 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Builder&#x27;s log</li><li>Testing</li><li>Development</li></ul>
+    </header>
+
+    <div class="post">
+      <p>The Format button on a code note was broken for six of the seven languages it offers, in every built copy of the app, for weeks.</p>
+      <p>It worked perfectly in development. On every machine it was ever tried on. Type checking passed, the linter passed, the test suite passed, CI passed.</p>
+      <p>This is my favourite bug in the project, because everything that was supposed to catch it did its job correctly and none of them could have.</p>
+      <h2 id="the-failure">The failure</h2>
+      <p>Clicking Format on a CSS note produced: <em>Module name, 'prettier/plugins/postcss' does not resolve to a valid URL.</em></p>
+      <p>Only JSON worked. And only by accident — that path returns early on the browser's own <code>JSON.parse</code> before it ever reaches the loader that was broken. One of seven working, for a reason unrelated to the six that did not.</p>
+      <p>The cause was a single annotation. The formatter's plugin path was assembled as a template literal and marked with a comment telling the bundler not to analyse it. That comment is a real tool with real uses; it means "I know this looks like an import, leave it alone".</p>
+      <p>The bundler duly left it alone. It emitted no chunk for any plugin, and the shipped application contained the bare string <code>prettier/plugins/</code> and a request, at runtime, for the webview to resolve that as a URL. Which it cannot. Browsers resolve URLs; they do not resolve npm package names. There is no package directory inside a Mac app.</p>
+      <h2 id="why-nothing-caught-it">Why nothing caught it</h2>
+      <p>Here is the part worth the post.</p>
+      <p><strong>In development, the dev server resolves bare package names itself.</strong> That is one of the main things it is for. So during development the import worked, the formatter loaded, and the button did what it said. There was never a moment where the bug was visible on my machine.</p>
+      <p><strong>Type checking cannot see it.</strong> The specifier was a string built at runtime. As far as the type system is concerned, a string is a string.</p>
+      <p><strong>The linter cannot see it.</strong> The annotation that caused the problem is the documented way to suppress exactly the analysis that would have flagged it. I had explicitly told the tooling not to look.</p>
+      <p><strong>The tests cannot see it.</strong> They run against the source, in the same environment as the dev server, with the same resolution. A test asserting that Format produces formatted CSS passes, because in that environment it does.</p>
+      <p><strong>And CI cannot see it</strong>, because CI ran the same three things.</p>
+      <p>Every one of those tools examines the source. The bug existed only in the <em>output</em> — in the artefact produced by the build, which nothing in the pipeline ever opened. There was a hole in the shape of "the thing we actually ship", and four layers of quality tooling sat neatly around it.</p>
+      <figure><img src="/images/dev-vs-built.svg" alt="Development resolves package names on the fly; the built app must resolve a URL. Type checking, linting and tests all read the source, so none of them see the output" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>Four checks, all reading the same side of the build.</figcaption></figure>
+      <h2 id="the-fix-and-the-better-fix">The fix, and the better fix</h2>
+      <p>The immediate repair is dull: literal specifiers, one per language, in a map. A typo becomes a type error instead of a runtime one, and each plugin stays a separately loaded chunk so the formatter is still kept off the startup path — <a href="/blog/why-a-notes-app-should-open-instantly/">an app that opens instantly</a> does not load a code formatter to show you a note. That last part got verified rather than assumed: no formatter chunk is reachable from the entry bundle, only from the code editor.</p>
+      <p>The fix that matters is the other one. A script now reads the <em>built</em> chunks and fails the build if any dynamic import still carries a bare package name. It is wired into the build command itself, which is the step every path runs through — the dev build, the production release, CI. There is no way to produce something shippable that skips it.</p>
+      <p>And it was verified the only way such a thing can be: by restoring the broken code and watching the build refuse it. A check you have never seen fail is a check you are only assuming works. I have shipped a green light attached to nothing before, and it is a considerably worse position than having no light at all.</p>
+      <h2 id="the-same-gap-twice-more">The same gap, twice more</h2>
+      <p>Once you have the shape — <em>the thing you verify is not the thing you ship</em> — it turns up everywhere.</p>
+      <p><strong>Notarisation.</strong> A stapled disk image containing an unstapled app passes every check on the machine that built it, because that machine has already cached the result. It fails on a stranger's Mac with no network. The only honest test is a machine that has never seen the app, which is now <a href="/blog/signing-and-notarising-from-the-developers-side/">part of the release path</a> rather than something I do when I remember.</p>
+      <p><strong>An image encoder that substitutes silently.</strong> Asking a canvas for WebP does not fail when WebP is unavailable; it hands back a PNG and says nothing. Everything downstream then believes it has a WebP. <a href="/blog/when-the-clipboard-ate-the-database/">The clipboard work</a> checks what it actually received rather than what it requested, for that reason.</p>
+      <p>Both are the same mistake in different clothes: confirming the input to a process instead of the output.</p>
+      <h2 id="the-two-backend-design-and-the-risk-i-took-on-purpose">The two-backend design, and the risk I took on purpose</h2>
+      <p>There is a deliberate version of this divergence in Cyanote, and it is worth admitting.</p>
+      <p>All data access goes through one interface with two implementations: SQLite when running as the real app, and a browser-storage version when running as a plain web page. That means the entire application runs in an ordinary browser tab — which is how <a href="/blog/customising-a-notes-app/">the screenshots on this site are made</a>, why they show real software rather than a mockup, and why a UI change can be tried in a second instead of a rebuild.</p>
+      <p>It is also, structurally, exactly the situation that produced the Format bug: a development environment that is not the shipping environment. I keep it because the benefit is large and the risk is manageable, on one condition — every data change has to be implemented in both backends and the rules they follow have to match. Search is the sharpest case: the browser version mirrors the same matching rules in JavaScript that SQLite's full-text index applies, specifically so a search behaves identically in both. When they drift, you get a bug that only exists in the shipped app, and you get it in the part where <a href="/blog/one-sqlite-file-the-whole-data-model/">everything is stored</a>.</p>
+      <p>I am not recommending this to everyone. I am saying it is a trade I made with my eyes open, and the mitigation is not discipline — it is that the build now inspects its own output.</p>
+      <h2 id="the-rule-i-write-on-things-now">The rule I write on things now</h2>
+      <p>Every check in a pipeline should be asked one question: <em>does this look at the artefact, or at the source it came from?</em></p>
+      <p>Both are worth having. Only one of them can tell you what your users will get. For a desktop app, where a bad build reaches people through an auto-updater and cannot be rolled back the way a website can, the second sort is the one that matters, and it is almost always the one missing.</p>
+      <p>Six of seven languages, in every shipped copy, working flawlessly on my machine. I would have bet money that button was fine.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/one-sqlite-file-the-whole-data-model/">One SQLite file, and the whole data model</a><span>Fifteen tables, 26 shipped migrations and a lock file that refuses to let me edit history. A tour of where your work sits, and what keeps it there.</span></li><li><a href="https://cyanote.app/blog/signing-and-notarising-from-the-developers-side/">Signing and notarising, from the developer&#x27;s side</a><span>Ninety-nine dollars a year, a certificate and an automated malware scan. What Apple actually asks of an independent developer shipping outside the App Store.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

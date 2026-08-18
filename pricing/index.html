@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light" />
 <title>Pricing — $10 once, no subscription — Cyanote</title>
-<meta name="description" content="Cyanote costs $10 once. Every feature, free updates for life, no subscription and no account. macOS 12 or later; when Windows ships the same $10 covers it. Fourteen-day refund, no reason needed." />
+<meta name="description" content="Cyanote costs $10 once. Every feature, free updates for life, no subscription and no account. macOS 12 or later. Fourteen-day refund, no reason needed." />
 <meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="theme-color" content="#fafafa" />
 <link rel="canonical" href="https://cyanote.app/pricing/" />
@@ -47,18 +47,29 @@
 <!-- The same SoftwareApplication as the homepage, by `@id`, carrying the offer.
      Same id means one entity with two mentions, which is the point — a second
      SoftwareApplication block with a different id would tell a machine there are
-     two products. Price is stated here and on the homepage; if one ever changes,
-     both have to. -->
+     two products.
+
+     The offer now carries an `@id` too, and both pages give it the same one and
+     the same `url`. Before that the two blocks agreed on the price and disagreed
+     on where to buy — the homepage pointed at its own `#pricing` anchor, this
+     one at this page — which is one entity described two ways, the exact thing
+     the shared `@id` on the app above exists to prevent. `url` and `name` are
+     repeated here rather than left to the homepage: a page's markup has to make
+     sense read on its own, because a crawler that fetched only this URL is the
+     normal case, not the edge one. Price is stated in both places; if it ever
+     changes, both have to. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "@id": "https://cyanote.app/#app",
   "name": "Cyanote",
+  "url": "https://cyanote.app/",
   "operatingSystem": "macOS 12.0 or later (Apple Silicon and Intel)",
   "applicationCategory": "ProductivityApplication",
   "offers": {
     "@type": "Offer",
+    "@id": "https://cyanote.app/#offer",
     "price": "10.00",
     "priceCurrency": "USD",
     "url": "https://cyanote.app/pricing/",

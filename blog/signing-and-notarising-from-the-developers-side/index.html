@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What it takes to ship a notarized Mac app yourself</title>
+<meta name="description" content="Ninety-nine dollars a year, a certificate and an automated malware scan. What Apple actually asks of an independent developer shipping outside the App Store." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/signing-and-notarising-from-the-developers-side/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/signing-and-notarising-from-the-developers-side/" />
+<meta property="og:title" content="What it takes to ship a notarized Mac app yourself" />
+<meta property="og:description" content="Ninety-nine dollars a year, a certificate and an automated malware scan. What Apple actually asks of an independent developer shipping outside the App Store." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What it takes to ship a notarized Mac app yourself" />
+<meta name="twitter:description" content="Ninety-nine dollars a year, a certificate and an automated malware scan. What Apple actually asks of an independent developer shipping outside the App Store." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Signing and notarising, from the developer's side",
+  "description": "Ninety-nine dollars a year, a certificate and an automated malware scan. What Apple actually asks of an independent developer shipping outside the App Store.",
+  "datePublished": "2026-08-18",
+  "dateModified": "2026-08-18",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/signing-and-notarising-from-the-developers-side/"
+  },
+  "url": "https://cyanote.app/blog/signing-and-notarising-from-the-developers-side/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/notarise-pipeline.svg",
+      "width": 1200,
+      "height": 470
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Builder's log, macOS, Security",
+  "wordCount": 1253
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Signing and notarising, from the developer's side",
+      "item": "https://cyanote.app/blog/signing-and-notarising-from-the-developers-side/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-18" />
+<meta property="article:modified_time" content="2026-08-18" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Builder&#x27;s log" />
+<meta property="article:tag" content="macOS" />
+<meta property="article:tag" content="Security" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Signing and notarising, from the developer&#x27;s side</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-18">18 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Builder&#x27;s log</li><li>macOS</li><li>Security</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Every Mac app you download outside the App Store has been through the same pipeline: signed with a Developer ID certificate, uploaded to Apple, scanned, issued a ticket, and stapled. Skip any of it and macOS greets your users with <a href="/blog/macos-cannot-verify-this-app/">a warning that it cannot verify the app</a>, which is where a good percentage of them stop.</p>
+      <p>I have written the buyer's side of that warning already. This is what it looks like from the other end.</p>
+      <h2 id="what-the-99-buys">What the $99 buys</h2>
+      <p>An identity on file with Apple, and the certificate that proves it.</p>
+      <p>Enrolling in the Developer Program is $99 a year. What you get, for the purposes of shipping outside the App Store, is a <strong>Developer ID Application</strong> certificate — the thing that signs a binary such that macOS can say who shipped it and confirm nothing has been altered since.</p>
+      <p>That is the whole of it. Not a review, not a listing, not a store. The right to have your name attached to a file in a way the operating system will accept.</p>
+      <p>Two consequences people outside this get wrong. It is <strong>not</strong> a quality bar — nobody at Apple looked at Cyanote. And it is <strong>not</strong> free of teeth: a Developer ID can be revoked, and a revoked certificate takes every copy of your app with it, on every machine, immediately. The identity is the point. Your name is the collateral.</p>
+      <h2 id="the-four-variables">The four variables</h2>
+      <p>A production build here needs four environment values, and the shape of them says a lot about the process:</p>
+      <pre><code>APPLE_SIGNING_IDENTITY   Developer ID Application: Name (AB12CD34EF)
+APPLE_ID                 the account email
+APPLE_PASSWORD           an app-specific password
+APPLE_TEAM_ID            ten characters</code></pre>
+      <p>The third is the interesting one. You cannot notarise with your actual Apple account password — you generate an <strong>app-specific password</strong> at appleid.apple.com, a one-purpose credential that exists so an automated build is not carrying the keys to your entire Apple identity. Good design. It also means the credential is a string that a script needs and a human generated, which is exactly the kind of thing that ends up pasted into a shell history at midnight.</p>
+      <p>Locally, none of this is needed. Development builds are signed with a self-signed certificate called <code>cyanote-dev</code>, which macOS accepts on the machine that made it and nowhere else. Two paths, deliberately: the dev one is fast and offline, the production one is slow and talks to Apple. Conflating them means every test build waits on a network round trip.</p>
+      <h2 id="build-sign-notarise-staple-verify">Build, sign, notarise, staple, verify</h2>
+      <p>The production script does five things in order, and every one of them can fail in a way worth handling.</p>
+      <p><strong>Build universal.</strong> arm64 and x86_64 in one binary, so the app runs natively on Apple Silicon and on the Intel Macs people are still perfectly happy with. No Rosetta, no second download, no "which one do I want" on the download page. It doubles the compile time and I would not trade it — <a href="/blog/software-for-an-older-mac/">an older Mac</a> is a large part of who this app is for.</p>
+      <p><strong>Sign</strong> with the Developer ID identity.</p>
+      <p><strong>Notarise.</strong> Upload the build to Apple, which runs an automated malware scan and, if it passes, issues a ticket. This takes anywhere from a couple of minutes to considerably longer, entirely outside your control, at whatever hour you decided to cut a release.</p>
+      <p><strong>Staple.</strong> Attach the ticket to the file itself, so a Mac can verify it without asking Apple anything. This is the step that matters for the promise the app makes about working offline: an app that had to phone Apple to check its own notarisation on first launch would be a different app. Stapled, the check is local. Skip stapling and everything looks fine on your machine — which has already cached the result — and fails on a fresh one with no network.</p>
+      <p><strong>Verify, and refuse to continue if it fails.</strong> <code>spctl</code> has to say <em>accepted, source=Notarized Developer ID</em> for both the DMG and the app inside it. Both, because they are separately notarised objects and it is entirely possible to staple one and not the other. The script exits rather than uploading something that will greet a buyer with a warning.</p>
+      <figure><img src="/images/notarise-pipeline.svg" alt="The production release path: build universal, sign with Developer ID, notarise with Apple, staple the ticket, verify with spctl, publish" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The check runs locally on the user's Mac because the ticket is stapled to the file. That is what keeps a first launch offline.</figcaption></figure>
+      <h2 id="the-step-that-needed-a-human">The step that needed a human</h2>
+      <p>For a while, the release could not run unattended. One step wanted the app-specific password typed at the keyboard.</p>
+      <p>That sounds minor. It is the difference between a release being a command and a release being an occasion. A process with a human step in the middle gets run less often, which means fixes sit in <code>main</code> waiting for a big enough batch to justify the ceremony — and batching changes is how a release becomes risky. The bug you shipped is somewhere in eleven commits instead of one.</p>
+      <p>Getting the human out of it is now, in my head, a first-class feature rather than tooling housekeeping. The whole thing is one command that builds, notarises, publishes the update payload, cuts the notes-only release, deploys the site, and pushes the tag. It is safe to re-run: every step after the build checks whether it already happened, because the failure mode you actually hit is a release that dies three-quarters of the way through on a network timeout.</p>
+      <p>It also refuses to start if <code>CHANGELOG.md</code> has no section for the version being released — the <a href="/blog/where-your-notes-actually-live/">same text the app shows</a> before anyone accepts an update. A release with no notes is not a release anyone should accept.</p>
+      <h2 id="a-detail-that-took-an-afternoon">A detail that took an afternoon</h2>
+      <p>Building the DMG briefly opens a Finder window. It has to — the disk image's layout is configured by actually mounting it and arranging it.</p>
+      <p>Harmless, and deeply irritating when it happens on every dev build while you are working. So it happens only on production builds now, which is a two-line change that meaningfully improved my day and would never appear in any changelog.</p>
+      <p>The other one: notarising the DMG and notarising the app inside it are separate operations, and a stapled DMG containing an unstapled app passes a casual check on a machine that has already seen the app. That is the class of bug where the only honest test is a fresh Mac with no network — which is the test I now run, because everything else confirms what you already believe.</p>
+      <h2 id="windows-in-comparison">Windows, in comparison</h2>
+      <p>The Windows build exists, and is not on sale, and one reason is that the equivalent process there is worse in an instructive way.</p>
+      <p>Authenticode signing has no $99 flat rate. It is a certificate from a commercial authority, priced per year, with identity validation attached, and until recently the norm was a physical hardware token that someone posts to you — which makes automated CI signing an interesting problem involving a USB device plugged into something. Cloud signing services have improved this a great deal. It is still several times the friction of Apple's process, and Apple's process involves a mandatory malware scan by a company that can revoke your identity.</p>
+      <p>I say that as someone who complains about Gatekeeper regularly. Having now done both, $99 and a stapled ticket is the better arrangement, and the <a href="/pricing/">same $10 licence will cover Windows</a> when it ships.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/the-half-second-that-left-a-locked-note-in-the-clear/">The half-second that left a locked note in the clear</a><span>Locking a note took 138 milliseconds. The save it raced was scheduled 500 milliseconds earlier, and the gap wrote the plaintext back to disk underneath it.</span></li><li><a href="https://cyanote.app/blog/the-paste-that-landed-in-the-wrong-app/">The paste that landed in the wrong app</a><span>The popup synthesised Cmd-V into whatever was frontmost and assumed it was your app. Sometimes it was Cyanote. The race, and how it was made impossible.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

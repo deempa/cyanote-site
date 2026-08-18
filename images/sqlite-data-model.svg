@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-labelledby="dm-title dm-desc">
+  <title id="dm-title">The fifteen tables in one SQLite file</title>
+  <desc id="dm-desc">Notes, folders, tags, note tags, attachments and note links hold the writing. Todos hold tasks, and the board view reads the same rows. Calendar events, note calendar links and calendar sources hold time. Habits, habit logs and routines hold the record, with streaks derived rather than stored. Clipboard history and pinned snippets hold copies. A full-text search index sits beside all of it, kept in step by triggers, and is deliberately left out of backups because a restore rebuilds it.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 21px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .note { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .derived { fill: #efeff1; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <text class="h" x="24" y="42">cyanote.db &#8212; one file, on your own disk</text>
+
+  <rect class="card" x="24" y="64" width="270" height="230" rx="12"/>
+  <rect x="24" y="64" width="270" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="50" y="112">Notes</text>
+  <text class="item" x="50" y="146">notes</text>
+  <text class="item" x="50" y="174">folders</text>
+  <text class="item" x="50" y="202">tags &#183; note_tags</text>
+  <text class="item" x="50" y="230">attachments</text>
+  <text class="item" x="50" y="258">note_links</text>
+  <text class="note" x="50" y="284">A note nests inside a note</text>
+
+  <rect class="card" x="314" y="64" width="256" height="230" rx="12"/>
+  <rect x="314" y="64" width="256" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="340" y="112">Tasks</text>
+  <text class="item" x="340" y="146">todos</text>
+  <text class="note" x="340" y="180">One table. The board and</text>
+  <text class="note" x="340" y="202">the list are the same rows,</text>
+  <text class="note" x="340" y="224">read two ways &#8212; so there is</text>
+  <text class="note" x="340" y="246">nothing to keep in step.</text>
+
+  <rect class="card" x="590" y="64" width="286" height="230" rx="12"/>
+  <rect x="590" y="64" width="286" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="616" y="112">Time</text>
+  <text class="item" x="616" y="146">calendar_events</text>
+  <text class="item" x="616" y="174">note_calendar_links</text>
+  <text class="item" x="616" y="202">calendar_sources</text>
+  <text class="note" x="616" y="238">Subscribed iCal addresses &#8212;</text>
+  <text class="note" x="616" y="260">how Google Calendar works</text>
+  <text class="note" x="616" y="282">here without a sign-in</text>
+
+  <rect class="card" x="896" y="64" width="280" height="230" rx="12"/>
+  <rect x="896" y="64" width="280" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="922" y="112">Habits</text>
+  <text class="item" x="922" y="146">habits</text>
+  <text class="item" x="922" y="174">habit_logs</text>
+  <text class="item" x="922" y="202">routines</text>
+  <text class="note" x="922" y="238">A row per tick, not a counter.</text>
+  <text class="note" x="922" y="260">A streak is derived, so filling</text>
+  <text class="note" x="922" y="282">in last Tuesday is an insert.</text>
+
+  <rect class="card" x="24" y="314" width="546" height="120" rx="12"/>
+  <rect x="24" y="314" width="546" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="50" y="362">Clipboard</text>
+  <text class="item" x="50" y="396">clipboard_history &#183; clipboard_pinned</text>
+  <text class="note" x="50" y="422">The fastest-growing pair, and the one with a byte budget</text>
+
+  <rect class="derived" x="590" y="314" width="586" height="120" rx="12"/>
+  <text class="h" x="616" y="362">notes_fts &#8212; derived, not data</text>
+  <text class="item" x="616" y="396">Kept in step by triggers. Never backed up.</text>
+  <text class="note" x="616" y="422">A restore rebuilds it through those triggers &#8212; restoring it would corrupt it</text>
+
+  <text class="foot" x="24" y="476">26 shipped migrations, each hashed in a lock file &#8212; because a migration runs once per database, forever.</text>
+</svg>

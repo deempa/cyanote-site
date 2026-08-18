@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-labelledby="fn-title fn-desc">
+  <title id="fn-title">Six requested features, and what each would cost</title>
+  <desc id="fn-desc">Sync, an iPhone app and collaboration all require a server and accounts, which a one-time $10 price cannot fund. AI features require the notes to leave the machine. Plugins turn the internals into a public contract that cannot then be changed. Telemetry costs the promise that nothing is collected. Each row names the property of the app that saying yes would consume.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .col  { font-size: 18px; font-weight: 600; fill: #0e7cc4; }
+    .item { font-size: 19px; fill: #3d3f45; }
+    .gone { font-size: 19px; fill: #a3a7af; }
+    .note { font-size: 18px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="24" width="1152" height="410" rx="12"/>
+  <rect x="24" y="24" width="1152" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="54" y="80">Every no is a yes to something else</text>
+
+  <text class="col" x="54" y="128">Asked for</text>
+  <text class="col" x="404" y="128">What it would require</text>
+  <text class="col" x="800" y="128">What it would consume</text>
+  <line x1="54" y1="148" x2="1146" y2="148" stroke="#e6e6e9" stroke-width="2"/>
+
+  <text class="item" x="54" y="192">Sync between Macs</text>
+  <text class="gone" x="404" y="192">A server, per user, forever</text>
+  <text class="item" x="800" y="192">The $10 one-time price</text>
+  <line x1="54" y1="214" x2="1146" y2="214" stroke="#efeff1" stroke-width="2"/>
+
+  <text class="item" x="54" y="248">An iPhone app</text>
+  <text class="gone" x="404" y="248">A second codebase &#8212; and sync</text>
+  <text class="item" x="800" y="248">Both platforms shipped half as well</text>
+  <line x1="54" y1="270" x2="1146" y2="270" stroke="#efeff1" stroke-width="2"/>
+
+  <text class="item" x="54" y="304">Collaboration</text>
+  <text class="gone" x="404" y="304">Identity, so accounts</text>
+  <text class="item" x="800" y="304">Having nothing to sign in to</text>
+  <line x1="54" y1="326" x2="1146" y2="326" stroke="#efeff1" stroke-width="2"/>
+
+  <text class="item" x="54" y="360">AI features</text>
+  <text class="gone" x="404" y="360">Your notes leaving the machine</text>
+  <text class="item" x="800" y="360">One network request, ever</text>
+  <line x1="54" y1="382" x2="1146" y2="382" stroke="#efeff1" stroke-width="2"/>
+
+  <text class="item" x="54" y="416">Plugins</text>
+  <text class="gone" x="404" y="416">Internals as a public contract</text>
+  <text class="item" x="800" y="416">Changing the data model at all</text>
+
+  <text class="foot" x="24" y="474">And telemetry, which would cost the promise itself. Every decision here is made without that data.</text>
+</svg>

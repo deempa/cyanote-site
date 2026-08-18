@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-labelledby="cb-title cb-desc">
+  <title id="cb-title">A clipboard history that was 95% of the database</title>
+  <desc id="cb-desc">On a real install the database was 44.8 MB, of which clipboard history was 42.8 MB, and 80 copied images accounted for 42.7 MB of that — an average of 521 KB each. Because the history limit counted rows rather than bytes, 500 rows against a 6 MB per-image cap allowed roughly 3 GB. The replacement stores a small thumbnail beside each image for the list to read, fetches full-resolution bytes only when an entry is pasted or previewed, and caps total full-resolution storage with a byte budget under which the oldest images keep their thumbnail rather than disappearing.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .gone { font-size: 18px; fill: #a3a7af; }
+    .note { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="24" width="516" height="400" rx="12"/>
+  <rect x="24" y="24" width="516" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="54" y="74">One real database, measured</text>
+  <text class="note" x="54" y="102">44.8 MB total</text>
+
+  <rect x="54" y="126" width="456" height="52" rx="6" fill="#b8bcc4"/>
+  <rect x="54" y="126" width="435" height="52" rx="6" fill="#8b9099"/>
+  <text class="item" x="70" y="158" fill="#ffffff">80 images &#8212; 42.7 MB</text>
+  <text class="note" x="54" y="202">Everything else &#8212; notes, tasks, habits, a year</text>
+  <text class="note" x="54" y="224">of them &#8212; is the sliver on the right.</text>
+
+  <line x1="54" y1="248" x2="510" y2="248" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="54" y="284">Average image</text>
+  <text class="item" x="490" y="284" text-anchor="end">521 KB</text>
+  <text class="item" x="54" y="316">Largest</text>
+  <text class="item" x="490" y="316" text-anchor="end">5 MB</text>
+  <text class="item" x="54" y="348">Limit counted</text>
+  <text class="item" x="490" y="348" text-anchor="end">rows, not bytes</text>
+  <line x1="54" y1="370" x2="510" y2="370" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="h" x="54" y="406">500 rows &#215; a 6 MB cap &#8776; 3 GB allowed</text>
+
+  <rect class="card" x="570" y="24" width="606" height="400" rx="12"/>
+  <rect x="570" y="24" width="606" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="600" y="74">Four jobs, four fidelities</text>
+  <text class="note" x="600" y="102">One image, stored twice, read according to need</text>
+
+  <line x1="600" y1="126" x2="1146" y2="126" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="600" y="164">Drawing the list</text>
+  <text class="item" x="1146" y="164" text-anchor="end">~384px thumbnail</text>
+  <text class="note" x="600" y="188">36px tall rows never ask for the megabytes</text>
+
+  <text class="item" x="600" y="230">Hover preview</text>
+  <text class="item" x="1146" y="230" text-anchor="end">full row, fetched by id</text>
+  <text class="item" x="600" y="266">Pasting</text>
+  <text class="item" x="1146" y="266" text-anchor="end">full row, fetched by id</text>
+  <text class="note" x="600" y="290">Only once you have chosen one specific entry</text>
+
+  <line x1="600" y1="316" x2="1146" y2="316" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="h" x="600" y="352">A byte budget, not a row count</text>
+  <text class="item" x="600" y="384">Past the cap the oldest images give up their pixels</text>
+  <text class="item" x="600" y="410">and keep the thumbnail &#8212; still listed, still pastes</text>
+
+  <text class="foot" x="24" y="464">People forgive fuzzy. Nobody forgives missing &#8212; so the budget degrades an entry rather than deleting it.</text>
+</svg>

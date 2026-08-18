@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="1200" height="450" role="img" aria-labelledby="np-title np-desc">
+  <title id="np-title">The production release path for a notarized Mac app</title>
+  <desc id="np-desc">A production build compiles universal for Apple Silicon and Intel, signs with a Developer ID certificate, uploads to Apple for an automated malware scan, staples the resulting ticket to the file so the check runs locally on the user's machine, verifies with spctl that both the disk image and the app inside it are accepted as notarized, and only then publishes. The verification step refuses to continue rather than shipping something that will show a warning.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 20px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 17px; fill: #3d3f45; }
+    .note { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .arrow { fill: #b8bcc4; font-size: 22px; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <text class="h" x="24" y="46" style="font-size:23px">One command, five steps, and a refusal at the end</text>
+
+  <rect class="card" x="24" y="74" width="212" height="200" rx="12"/>
+  <rect x="24" y="74" width="212" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="48" y="122">1 &#183; Build</text>
+  <text class="item" x="48" y="156">Universal binary</text>
+  <text class="note" x="48" y="184">arm64 + x86_64</text>
+  <text class="note" x="48" y="208">in one file, so an</text>
+  <text class="note" x="48" y="232">Intel Mac needs no</text>
+  <text class="note" x="48" y="256">second download</text>
+
+  <text class="arrow" x="252" y="170">&#8594;</text>
+
+  <rect class="card" x="286" y="74" width="212" height="200" rx="12"/>
+  <rect x="286" y="74" width="212" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="310" y="122">2 &#183; Sign</text>
+  <text class="item" x="310" y="156">Developer ID</text>
+  <text class="note" x="310" y="184">$99/year. Attaches</text>
+  <text class="note" x="310" y="208">a real identity, and</text>
+  <text class="note" x="310" y="232">proves nothing was</text>
+  <text class="note" x="310" y="256">altered since</text>
+
+  <text class="arrow" x="514" y="170">&#8594;</text>
+
+  <rect class="card" x="548" y="74" width="212" height="200" rx="12"/>
+  <rect x="548" y="74" width="212" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="572" y="122">3 &#183; Notarise</text>
+  <text class="item" x="572" y="156">Apple scans it</text>
+  <text class="note" x="572" y="184">An automated malware</text>
+  <text class="note" x="572" y="208">check, not a review.</text>
+  <text class="note" x="572" y="232">Takes as long as it</text>
+  <text class="note" x="572" y="256">takes</text>
+
+  <text class="arrow" x="776" y="170">&#8594;</text>
+
+  <rect class="card" x="810" y="74" width="212" height="200" rx="12"/>
+  <rect x="810" y="74" width="212" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="834" y="122">4 &#183; Staple</text>
+  <text class="item" x="834" y="156">Ticket on the file</text>
+  <text class="note" x="834" y="184">So the user's Mac</text>
+  <text class="note" x="834" y="208">verifies locally &#8212;</text>
+  <text class="note" x="834" y="232">a first launch with</text>
+  <text class="note" x="834" y="256">no network works</text>
+
+  <text class="arrow" x="1038" y="170">&#8594;</text>
+
+  <rect class="card" x="1072" y="74" width="104" height="200" rx="12"/>
+  <rect x="1072" y="74" width="104" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="1096" y="122">5</text>
+  <text class="item" x="1096" y="156">Verify</text>
+  <text class="note" x="1096" y="184">spctl</text>
+  <text class="note" x="1096" y="208">on both</text>
+  <text class="note" x="1096" y="232">the DMG</text>
+  <text class="note" x="1096" y="256">and app</text>
+
+  <rect class="card" x="24" y="286" width="1152" height="94" rx="12"/>
+  <text class="h" x="54" y="330">If spctl does not say &#8220;accepted, source=Notarized Developer ID&#8221; for both, the release stops here.</text>
+  <text class="note" x="54" y="362">A stapled disk image containing an unstapled app passes every check on the machine that built it, and fails on a stranger&#8217;s.</text>
+
+  <text class="foot" x="24" y="428">Locally, none of this runs &#8212; dev builds use a self-signed certificate that works on one machine and nowhere else.</text>
+</svg>

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A race condition that left a locked note in the clear</title>
+<meta name="description" content="Locking a note took 138 milliseconds. The save it raced was scheduled 500 milliseconds earlier, and the gap wrote the plaintext back to disk underneath it." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/the-half-second-that-left-a-locked-note-in-the-clear/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/the-half-second-that-left-a-locked-note-in-the-clear/" />
+<meta property="og:title" content="A race condition that left a locked note in the clear" />
+<meta property="og:description" content="Locking a note took 138 milliseconds. The save it raced was scheduled 500 milliseconds earlier, and the gap wrote the plaintext back to disk underneath it." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="A race condition that left a locked note in the clear" />
+<meta name="twitter:description" content="Locking a note took 138 milliseconds. The save it raced was scheduled 500 milliseconds earlier, and the gap wrote the plaintext back to disk underneath it." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The half-second that left a locked note in the clear",
+  "description": "Locking a note took 138 milliseconds. The save it raced was scheduled 500 milliseconds earlier, and the gap wrote the plaintext back to disk underneath it.",
+  "datePublished": "2026-08-18",
+  "dateModified": "2026-08-18",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/the-half-second-that-left-a-locked-note-in-the-clear/"
+  },
+  "url": "https://cyanote.app/blog/the-half-second-that-left-a-locked-note-in-the-clear/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/lock-race-timeline.svg",
+      "width": 1200,
+      "height": 460
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Builder's log, Security, Privacy",
+  "wordCount": 1140
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The half-second that left a locked note in the clear",
+      "item": "https://cyanote.app/blog/the-half-second-that-left-a-locked-note-in-the-clear/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-18" />
+<meta property="article:modified_time" content="2026-08-18" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Builder&#x27;s log" />
+<meta property="article:tag" content="Security" />
+<meta property="article:tag" content="Privacy" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $10</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>The half-second that left a locked note in the clear</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-18">18 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>5 min read</span>
+      </div>
+    <ul class="tags"><li>Builder&#x27;s log</li><li>Security</li><li>Privacy</li></ul>
+    </header>
+
+    <div class="post">
+      <p>You type a password into a note. You lock the note. The app shows the lock screen, asks for your password, and refuses to show the content without it.</p>
+      <p>On disk, in the version before 1.0.3, the plaintext was sitting right there beside the encrypted copy. Searchable. Showing as the note's own title in the sidebar.</p>
+      <p>It took two numbers to produce, and they are the most instructive pair in the whole codebase.</p>
+      <h2 id="500-against-138">500 against 138</h2>
+      <p>Typing in a note does not write to the database on every keystroke. It schedules a write 500 milliseconds later, and each new keystroke pushes that out — an ordinary debounce, in every editor ever built.</p>
+      <p>The save function decided, at the moment it was <em>scheduled</em>, whether the note was locked. If unlocked, write the plaintext. If locked, encrypt. Sensible-looking code. The decision was captured in a closure, and the closure ran half a second afterwards.</p>
+      <p>Locking a note took about 138 milliseconds, measured.</p>
+      <p>So: you type. A write is scheduled for 500ms from now, carrying a captured decision that says <em>this note is unlocked, write it in the clear</em>. At 138ms you finish locking. At 500ms the stale closure runs and does exactly what it was told half a second ago.</p>
+      <p>The row it left behind: <code>is_locked = 1</code>, a valid encrypted blob, and the plaintext in <code>content_json</code> and <code>content_text</code> beside it. Both true at once.</p>
+      <h2 id="why-that-was-worse-than-it-sounds">Why that was worse than it sounds</h2>
+      <p>Plaintext on disk under a lock is bad enough. The full-text index is what made it serious.</p>
+      <p>Cyanote's search index <a href="/blog/one-sqlite-file-the-whole-data-model/">is kept in step with the notes by triggers</a>. A write to <code>content_text</code> fires the trigger. So the secret was not merely on disk — it was indexed, and a search for a word inside a locked note would find it, without the password, while the note itself still showed the lock gate.</p>
+      <p>The sidebar draws a note's title from the same text. Whatever you had typed in those last few seconds became the note's visible title.</p>
+      <p>None of that is subtle once you see it, and none of it was visible from inside the app. The interface was completely honest: the lock was on, the gate appeared, the password was required to open it. Every user-facing signal said the note was protected. The disk disagreed.</p>
+      <figure><img src="/images/lock-race-timeline.svg" alt="A 500ms debounce window with the lock completing at 138ms, and the stale write landing afterwards to put plaintext beside the encrypted blob" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Both states were true at once: is_locked = 1, and the plaintext beside it.</figcaption></figure>
+      <h2 id="the-same-bug-pointing-the-other-way">The same bug, pointing the other way</h2>
+      <p>Chasing the leak turned up its mirror image, which lost data instead of exposing it.</p>
+      <p>"Lock now" deleted the in-memory session key synchronously. If a write was already queued, it ran a moment later, found no key, and hit the guard that stops a locked note being written in the clear. The guard worked. The edit was dropped — no toast, no retry, gone.</p>
+      <p>Unrecoverable, too, and for a deliberate reason: the app keeps an unsaved snapshot to recover from a crash, and that snapshot is withheld for locked notes, because a plaintext recovery file for an encrypted note is the same bug in a different place. The safety mechanism removed the safety net.</p>
+      <p>So one race leaked the last words you typed, and one lost them. Both from the same root: <strong>a decision about lock state made at schedule time and acted on at run time.</strong></p>
+      <h2 id="the-fix-in-three-parts">The fix, in three parts</h2>
+      <p><strong>Locking cancels the pending write rather than flushing it.</strong> This is the part I got wrong in my first attempt. Flushing feels safer — do not lose the edit, write it first, then encrypt. But flushing writes plaintext to disk on the way past, which is precisely the thing being fixed. The newest text is already going into the encrypted blob, because locking reads the live editor content. So the pending write has nothing to contribute and everything to leak. Cancel it.</p>
+      <p><strong>Ending a session flushes before the key goes.</strong> The opposite order, for the opposite reason. Here the note stays locked and the key is being dropped from memory; the queued write can still be encrypted, so let it complete first.</p>
+      <p><strong>And the write closures now re-read the lock state when they run, instead of trusting the flag they captured.</strong> This is the actual fix; the other two are the specific paths. Any decision that can change during a debounce window must be made inside the window, not before it. That one line also covers the case I would never have thought to test: a write queued while the note was locked, running after the lock was removed.</p>
+      <h2 id="what-i-actually-take-from-this">What I actually take from this</h2>
+      <p><strong>Two independent representations of one fact will disagree.</strong> <code>is_locked</code> said one thing, the presence of plaintext said another, and nothing in the schema prevented both being true. The lasting fix would be a shape where they cannot both exist — where the encrypted blob and the plaintext columns are not simultaneously expressible. I have that on the list, and I am aware that "check it more carefully" is a weaker answer than "make it impossible", which is <a href="/blog/the-paste-that-landed-in-the-wrong-app/">the lesson from the clipboard</a> arriving again in a different costume.</p>
+      <p><strong>A debounce is a promise to act on stale information.</strong> Every scheduled callback in a UI carries a snapshot of the world from before the user's most recent action. That is what it is for. Any security decision inside one is a decision made in the past about a present it cannot see.</p>
+      <p><strong>The interface being right is not evidence.</strong> Everything on screen behaved correctly throughout. If I had verified this the way a user would — lock a note, confirm it asks for a password — it passes. It only appears if you look at the row on disk, which is why the check that now guards it queries the database directly and asserts the plaintext columns are empty.</p>
+      <p>This shipped in 1.0.3, where the public note reads: <em>locking a note now keeps everything you just typed, including the words written in the moments right before you locked it.</em> True, and about a tenth of the story. <a href="/blog/where-your-notes-actually-live/">The changelog is deliberately vague</a> about which code paths were unreliable, which is the right call for a public release page — and the reason a blog exists is so the full version has somewhere to go.</p>
+      <p>If you use locked notes: this was fixed before the app went on sale, in the 1.0.x series, and <a href="/blog/password-protect-notes-on-mac/">the note protection design</a> covers what the lock does and does not claim.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $10 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $10</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/signing-and-notarising-from-the-developers-side/">Signing and notarising, from the developer&#x27;s side</a><span>Ninety-nine dollars a year, a certificate and an automated malware scan. What Apple actually asks of an independent developer shipping outside the App Store.</span></li><li><a href="https://cyanote.app/blog/supporting-an-app-that-does-not-know-who-you-are/">Supporting an app that doesn&#x27;t know who you are</a><span>No account means no password reset, no dashboard and no way to look you up. What support actually looks like when the app knows nothing about its users.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

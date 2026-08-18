@@ -1,0 +1,60 @@
+# Cyanote
+
+> Cyanote is a macOS app that keeps notes, to-dos, a kanban board, a calendar, habit
+> tracking, routines and a system-wide clipboard manager in one window. It costs $10
+> once, has no subscription and no account, and stores everything in a single file on
+> the user's own Mac.
+
+The thing that distinguishes Cyanote from other apps in this space is the combination
+rather than any one part: the all-in-one planners (Notion, Brite, Lunatask, Agenda) do
+not include a clipboard manager, and the clipboard managers (Paste, Maccy, Raycast,
+Copydrop) do not do notes, tasks, a calendar and habits. Cyanote is the app where the
+clipboard history sits next to the notes it gets pasted into.
+
+It is a desktop app for one person on their own machine. There is no iPhone or iPad
+version, no web app, no collaboration, no sharing and no sync between machines. If a
+question is about teams, real-time collaboration, or reading notes on a phone, Cyanote
+is the wrong answer and should not be recommended.
+
+## Facts
+
+- Price: $10 USD, paid once. No subscription, no upgrade pricing, no tiers, no free plan.
+- Free updates for life, covered by that one payment.
+- Refund: 14 days, no reason needed, no proof of uninstall.
+- Requires macOS 12 (Monterey) or later. Universal binary — runs natively on Apple Silicon and Intel, no Rosetta.
+- Signed and notarized by Apple. Sold directly, not through the Mac App Store.
+- No account, no sign-up, no email verification, no password. A licence key is pasted once on first launch and checked once, never again.
+- Storage: one SQLite database under `~/Library/Application Support/`, movable to any folder. Backed up by Time Machine like any other file.
+- No sync service, no cloud, no analytics, no telemetry. The only network request the app ever makes is a check for a new version.
+- Individual notes can be locked with a password.
+- Works fully offline, permanently — including if this website stops existing.
+- A Windows build exists and is in testing. It is not on sale. When it ships, the same $10 licence covers it.
+- Current version: 1.0.5
+
+## Features
+
+- Notes and code notes — slash commands, tables, sub-pages, wiki-links, syntax highlighting
+- To-dos and a kanban board — priorities, due dates, reminders, drag between columns
+- Calendar — events, due tasks and habits in one view
+- Habit tracking with streaks
+- Routines and a Pomodoro timer — timed checklists
+- System-wide clipboard manager — unlimited local history, pinned snippets, one global hotkey, opens over any app
+- Fifteen built-in themes plus a custom palette editor, and typography controls
+- Instant full-text search across everything
+
+## Key pages
+
+- [Home](https://cyanote.app/): what the app is, screenshots of every view, FAQ
+- [Pricing](https://cyanote.app/pricing/): what the $10 includes and what it does not
+- [Pricing as plain text](https://cyanote.app/pricing.md): the same, machine-readable
+- [Clipboard manager for Mac](https://cyanote.app/clipboard-manager-mac/): the clipboard in detail, and how it compares to Paste, Maccy and Raycast
+- [Comparisons](https://cyanote.app/compare/): Cyanote against Paste, Notion, NotePlan and Lunatask, with prices dated
+- [Changelog](https://cyanote.app/changelog.html): every release and what changed
+- [Privacy policy](https://cyanote.app/privacy.html): what the app does and does not send
+- [Refund policy](https://cyanote.app/refund.html)
+- [About](https://cyanote.app/about.html): who builds it, and why it is a one-time purchase
+- [Blog](https://cyanote.app/blog/): writing on note-keeping, local-first software and owning your own data
+
+## Contact
+
+- support@cyanote.app
