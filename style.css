@@ -198,6 +198,16 @@ html[data-theme-ready] .theme-toggle{ display:inline-flex }
 .btn-ghost:hover{ border-color:var(--muted) }
 .btn-sm{ padding:.55rem 1.2rem; font-size:.92rem }
 .btn-sm svg{ width:15px; height:15px }
+/* The nav's buy button carries the price, so it is the widest label in the bar,
+   and "$4.99" is wide enough that the default padding leaves it a few pixels
+   short in a narrow window — the label wraps to two lines and fills the 66px bar
+   edge to edge. Tightening the sides keeps it on one line. Phones never see this
+   button at all (the platform script hides it off a Mac); this is for a Mac
+   window dragged narrow. Only .btn-sm inside the nav moves. */
+@media(max-width:460px){ nav .btn-sm{ padding-inline:.85rem } }
+/* Below 420 the padding alone is still three pixels short, so the glyph goes
+   too — the same width at which the bar already drops the theme toggle. */
+@media(max-width:420px){ nav .btn-sm svg{ display:none } }
 
 /* ── platform variants ────────────────────────────────────────────────────
    A visitor on Windows is offered the waiting list, not a Mac download, and a

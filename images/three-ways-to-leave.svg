@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-labelledby="tw-title tw-desc">
+  <title id="tw-title">Three ways an app stops being in front of you, and what each owes the user</title>
+  <desc id="tw-desc">The red close button hides the window and keeps the process running, so it owes the user a way back in — the Dock click, which had nothing listening for it. Command-Q raises the exit event, which holds the quit until the webview has flushed its debounced edits, with a five-second backstop. Accepting an update calls relaunch, which restarts the process directly and never raises that exit event, so the flush never ran and the last half-second of typing was lost.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .path { font-size: 17px; fill: #71757e; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .ok   { font-size: 18px; font-weight: 600; fill: #0e7cc4; }
+    .bad  { font-size: 18px; font-weight: 600; fill: #b3392c; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+    .lbl  { font-size: 16px; font-weight: 600; fill: #71757e; letter-spacing: .04em; }
+  </style>
+
+  <rect class="card" x="24" y="34" width="368" height="300" rx="12"/>
+  <rect x="24" y="34" width="368" height="7" rx="3.5" fill="#0e7cc4"/>
+  <text class="lbl" x="56" y="76">EXIT ONE</text>
+  <text class="h" x="56" y="110">The red button</text>
+  <text class="path" x="56" y="142">CloseRequested &#8594; hide</text>
+  <line x1="56" y1="166" x2="360" y2="166" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="56" y="200">Process keeps running</text>
+  <text class="item" x="56" y="230">Clipboard still watching</text>
+  <text class="item" x="56" y="260">Reminders still arriving</text>
+  <text class="bad" x="56" y="304">Owed: a way back in</text>
+
+  <rect class="card" x="416" y="34" width="368" height="300" rx="12"/>
+  <rect x="416" y="34" width="368" height="7" rx="3.5" fill="#0e7cc4"/>
+  <text class="lbl" x="448" y="76">EXIT TWO</text>
+  <text class="h" x="448" y="110">Command-Q</text>
+  <text class="path" x="448" y="142">ExitRequested &#8594; hold</text>
+  <line x1="448" y1="166" x2="752" y2="166" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="448" y="200">Asks the webview to flush</text>
+  <text class="item" x="448" y="230">Waits for the write to land</text>
+  <text class="item" x="448" y="260">5s backstop if it never answers</text>
+  <text class="ok" x="448" y="304">Last sentence: kept</text>
+
+  <rect class="card" x="808" y="34" width="368" height="300" rx="12"/>
+  <rect x="808" y="34" width="368" height="7" rx="3.5" fill="#b3392c"/>
+  <text class="lbl" x="840" y="76">EXIT THREE</text>
+  <text class="h" x="840" y="110">Accepting an update</text>
+  <text class="path" x="840" y="142">relaunch() &#8212; no exit event</text>
+  <line x1="840" y1="166" x2="1144" y2="166" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="840" y="200">The hold never ran</text>
+  <text class="item" x="840" y="230">Edits debounce ~500ms</text>
+  <text class="item" x="840" y="260">Restart inside that window</text>
+  <text class="bad" x="840" y="304">Last sentence: gone</text>
+
+  <line x1="24" y1="372" x2="1176" y2="372" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="410">Three doors out of one process. The safety was attached to the middle one, and nothing in</text>
+  <text class="foot" x="24" y="436">the design made it visible that the third door bypassed it &#8212; at the one moment the app</text>
+  <text class="foot" x="24" y="462">had told the user it was safe to restart.</text>
+</svg>

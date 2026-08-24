@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-labelledby="md-title md-desc">
+  <title id="md-title">How editing a shipped migration splits a user base in two</title>
+  <desc id="md-desc">Migration 18 ships and the runner records it as applied. Its SQL is then edited in place. Anyone who installed before the edit has already applied version 18, so the runner never reads that SQL again and they keep the old schema. Anyone installing after the edit applies the new SQL and gets a different schema. Both populations run the same app version, and nothing on either side reports the difference.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .note { font-size: 17px; fill: #71757e; }
+    .tag  { font-size: 16px; font-weight: 600; fill: #0e7cc4; letter-spacing: .04em; }
+    .schema { font-size: 26px; font-weight: 600; fill: #0a0a0b; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="34" width="360" height="150" rx="12"/>
+  <rect x="24" y="34" width="360" height="7" rx="3.5" fill="#0e7cc4"/>
+  <text class="tag" x="54" y="76">STEP ONE</text>
+  <text class="h" x="54" y="108">Migration 18 ships</text>
+  <text class="note" x="54" y="140">The runner records &#8220;applied: 18&#8221;</text>
+  <text class="note" x="54" y="164">in every database that reaches it</text>
+
+  <rect class="card" x="24" y="216" width="360" height="150" rx="12"/>
+  <rect x="24" y="216" width="360" height="7" rx="3.5" fill="#a3a7af"/>
+  <text class="tag" x="54" y="258" fill="#71757e">STEP TWO</text>
+  <text class="h" x="54" y="290">You edit its SQL</text>
+  <text class="note" x="54" y="322">A typo, a missing DEFAULT, a wrong</text>
+  <text class="note" x="54" y="346">column on an index. Fixed in place.</text>
+
+  <path d="M392 110 h30" stroke="#a3a7af" stroke-width="2" fill="none"/>
+  <path d="M392 292 h30" stroke="#a3a7af" stroke-width="2" fill="none"/>
+
+  <rect class="card" x="430" y="34" width="746" height="150" rx="12"/>
+  <text class="h" x="464" y="76">Installed before the edit</text>
+  <text class="item" x="464" y="110">Runner: version 18 is already applied &#8212; that SQL is never read again</text>
+  <text class="note" x="464" y="142">The edit reaches nothing. The old schema is permanent.</text>
+  <text class="schema" x="1146" y="122" text-anchor="end">Schema A</text>
+
+  <rect class="card" x="430" y="216" width="746" height="150" rx="12"/>
+  <text class="h" x="464" y="258">Installed after the edit</text>
+  <text class="item" x="464" y="292">Runner: version 18 not applied &#8212; runs the new SQL, records 18</text>
+  <text class="note" x="464" y="324">Correct, current, and different from everybody else&#8217;s.</text>
+  <text class="schema" x="1146" y="304" text-anchor="end">Schema B</text>
+
+  <line x1="24" y1="404" x2="1176" y2="404" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="440">Both sides report the same app version. There is no error, nothing in any log, and no query</text>
+  <text class="foot" x="24" y="466">the app can run to discover which of the two schemas it is holding.</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="dg-title dg-desc">
+  <title id="dg-title">Where dictation earns its place, and where it costs more than it saves</title>
+  <desc id="dg-desc">Dictation is good for a first pass at something you already know how to say, for capture when your hands are busy, for long recall, for getting past a blank page, and as an accessibility tool when typing hurts. It is poor at names and jargon, at structure, at numbers and identifiers, anywhere you can be overheard, and at editing. Speech runs at roughly 120 to 150 words a minute against about 40 typed, but the output is raw material rather than a note.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 21px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .gone { font-size: 18px; fill: #a3a7af; }
+    .lbl  { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+    .big  { font-size: 32px; font-weight: 600; fill: #0e7cc4; }
+    .note { font-size: 16px; fill: #71757e; }
+  </style>
+
+  <rect class="card" x="24" y="30" width="470" height="300" rx="12"/>
+  <rect x="24" y="30" width="470" height="7" rx="3.5" fill="#0e7cc4"/>
+  <text class="lbl" x="56" y="72">GOOD AT</text>
+  <text class="h" x="56" y="106">Getting words down</text>
+  <line x1="56" y1="130" x2="462" y2="130" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="56" y="166">A first pass you already know how to say</text>
+  <text class="item" x="56" y="200">Capture with your hands busy</text>
+  <text class="item" x="56" y="234">Long recall &#8212; what happened, in order</text>
+  <text class="item" x="56" y="268">Getting past a blank page</text>
+  <text class="item" x="56" y="302">Writing at all, when typing hurts</text>
+
+  <rect class="card" x="518" y="30" width="470" height="300" rx="12"/>
+  <rect x="518" y="30" width="470" height="7" rx="3.5" fill="#b8bcc4"/>
+  <text class="lbl" x="550" y="72">BAD AT</text>
+  <text class="h" x="550" y="106">Anything precise</text>
+  <line x1="550" y1="130" x2="956" y2="130" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="gone" x="550" y="166">Names, jargon, acronyms</text>
+  <text class="gone" x="550" y="200">Structure &#8212; &#8220;move that above this&#8221;</text>
+  <text class="gone" x="550" y="234">Numbers and reference codes</text>
+  <text class="gone" x="550" y="268">Anywhere you can be overheard</text>
+  <text class="gone" x="550" y="302">Editing what you just dictated</text>
+
+  <rect class="card" x="1012" y="30" width="164" height="300" rx="12"/>
+  <text class="big" x="1044" y="96">150</text>
+  <text class="note" x="1044" y="124">words a minute,</text>
+  <text class="note" x="1044" y="146">spoken</text>
+  <line x1="1044" y1="180" x2="1144" y2="180" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="big" x="1044" y="230" fill="#71757e">40</text>
+  <text class="note" x="1044" y="258">words a minute,</text>
+  <text class="note" x="1044" y="280">typed</text>
+  <text class="note" x="1044" y="316">Speed was never</text>
+
+  <line x1="24" y1="366" x2="1176" y2="366" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="404">What comes out is a transcript, and a transcript is raw material. Five minutes afterwards &#8212; cut</text>
+  <text class="foot" x="24" y="434">the throat-clearing, fix the names, add two headings, pull out the actions &#8212; makes it a note.</text>
+</svg>

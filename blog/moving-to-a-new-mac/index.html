@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setting up a new Mac: what transfers and what breaks</title>
+<meta name="description" content="Migration Assistant moves your files and mostly gets it right. What it cannot move is permissions, licences, and anything outside your user folder." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/moving-to-a-new-mac/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/moving-to-a-new-mac/" />
+<meta property="og:title" content="Setting up a new Mac: what transfers and what breaks" />
+<meta property="og:description" content="Migration Assistant moves your files and mostly gets it right. What it cannot move is permissions, licences, and anything outside your user folder." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Setting up a new Mac: what transfers and what breaks" />
+<meta name="twitter:description" content="Migration Assistant moves your files and mostly gets it right. What it cannot move is permissions, licences, and anything outside your user folder." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Moving to a new Mac without losing the way you work",
+  "description": "Migration Assistant moves your files and mostly gets it right. What it cannot move is permissions, licences, and anything outside your user folder.",
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-23",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/moving-to-a-new-mac/"
+  },
+  "url": "https://cyanote.app/blog/moving-to-a-new-mac/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/new-mac-transfer.svg",
+      "width": 1200,
+      "height": 470
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "macOS, Backups, How-to",
+  "wordCount": 1265
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Moving to a new Mac without losing the way you work",
+      "item": "https://cyanote.app/blog/moving-to-a-new-mac/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="macOS" />
+<meta property="article:tag" content="Backups" />
+<meta property="article:tag" content="How-to" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Moving to a new Mac without losing the way you work</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-22">22 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>macOS</li><li>Backups</li><li>How-to</li></ul>
+    </header>
+
+    <div class="post">
+      <p>A new Mac is one of the few days a year when your entire working setup is genuinely at risk, and it does not feel like it, because Apple has made the transfer so smooth that people assume everything came across.</p>
+      <p>Most of it does. The parts that do not are predictable, and the failure is usually not noticing for three weeks — by which time the old machine has been wiped, sold, or handed to a family member.</p>
+      <p>Here is what actually moves, what does not, and what to check before the old Mac is gone.</p>
+      <h2 id="what-migration-assistant-does-well">What Migration Assistant does well</h2>
+      <p>Migration Assistant — over a cable, over the network, or from a Time Machine backup — copies your user folder, your applications, and most system settings. For local-first apps, this is the whole job: their data lives in your Library folder, so it comes across with everything else.</p>
+      <p>If your notes live in one file under <code>~/Library/Application Support/</code>, that file arrives on the new machine with the same contents and the same path, and the app opens on the new Mac showing exactly what it showed on the old one. <a href="/blog/where-your-notes-actually-live/">Knowing where your notes actually live</a> is what lets you verify that in ten seconds rather than hoping.</p>
+      <p>It is genuinely good, and I would use it every time over setting up from scratch. Just do not let "the transfer worked" become "everything transferred".</p>
+      <figure><img src="/images/new-mac-transfer.svg" alt="What Migration Assistant carries across, and the four categories it cannot: permissions, licences, anything outside the user folder, and services that need a sign-in" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The left column arrives on its own. The right column is a checklist.</figcaption></figure>
+      <h2 id="what-does-not-come-across">What does not come across</h2>
+      <p><strong>Permissions.</strong> macOS grants privacy permissions per machine, and deliberately so — Accessibility, Full Disk Access, Screen Recording, Microphone, Notifications. Expect to grant them again on the new Mac.</p>
+      <p>This is where things break silently. An app that needs Accessibility to send a keystroke does not crash without it; it just quietly does nothing, once, at the moment you needed it. Any app that pastes for you, moves windows, expands text or responds to a global hotkey is in this category. <a href="/blog/why-a-mac-app-asks-for-accessibility/">Why a Mac app asks for Accessibility in the first place</a> covers what that permission actually allows — the short version is that it is powerful, per-machine, and worth re-checking rather than assuming.</p>
+      <p><strong>Licences for directly-sold apps.</strong> Anything you bought outside the App Store may ask for its key again on a new machine. Before you migrate, find the emails — search your inbox for the app names and file the keys somewhere you will still have access to if this Mac is the one that dies. App Store purchases re-download from your Apple account and need nothing.</p>
+      <p><strong>Anything outside your user folder.</strong> Command-line tools installed into <code>/usr/local</code>, LaunchDaemons, fonts installed system-wide, VPN profiles, printer drivers, anything a package manager put in a system directory. Migration Assistant is conservative about system locations, correctly, and that means some of your environment is not in the box.</p>
+      <p><strong>Things that were never local.</strong> Anything in a service needs a sign-in, and if the service used two-factor tied to an app on your <em>phone</em>, that is fine — but if it was tied to something on the old Mac, sort that out before wiping it.</p>
+      <p><strong>SSH keys and credentials,</strong> if you have them. They are in your user folder and usually come across, but permissions on <code>~/.ssh</code> occasionally do not survive intact, and a key with the wrong mode is refused.</p>
+      <h2 id="the-order-that-avoids-trouble">The order that avoids trouble</h2>
+      <ol><li><strong>Update the old Mac's apps first,</strong> so you are not migrating a version that the new machine's macOS no longer runs.</li><li><strong>Take a real backup of the old Mac</strong> — Time Machine, or a manual copy of anything precious to an external drive. Migration is not a backup: it is a copy operation that can fail halfway, and if it does you want an untouched second copy.</li><li><strong>Export from anything you are worried about.</strong> Notes especially. A plain readable export costs a minute and makes the whole migration reversible; if the app's own file arrives corrupted, the export is what saves you. Same principle as <a href="/blog/getting-your-notes-out/">getting your notes out before you need to</a>.</li><li><strong>Migrate.</strong></li><li><strong>Work on the new Mac for two weeks with the old one still intact.</strong> This is the important one. Two weeks is long enough to touch the monthly things — the invoice, the report, the app you only open when something specific happens.</li><li><strong>Then</strong> wipe the old Mac.</li></ol>
+      <h2 id="the-check-that-takes-ten-minutes">The check that takes ten minutes</h2>
+      <p>Do this on the new machine on day one, in this order:</p>
+      <p><strong>Open every app you rely on and do one real thing in it.</strong> Not launch it — use it. Write a note and reopen it. Trigger the global hotkey. Paste from clipboard history. Send a test message. The apps that need a permission will fail at exactly this step, which is the point.</p>
+      <p><strong>Check your data is actually there, not just the app.</strong> Open the app's settings and find where it says its files live, then look in that folder in the Finder. An app that starts with an empty library because it created a fresh one is a very recoverable problem on day one and a catastrophe in a month.</p>
+      <p><strong>Check your automatic backups restarted.</strong> Time Machine needs its drive re-selected. Any app that keeps its own rolling backups is now writing them to a new machine's folder and its history did or did not come with it — worth confirming rather than assuming.</p>
+      <p><strong>Check the things that run at login.</strong> System Settings → General → Login Items. Some come across, some do not, and the ones that do not are exactly the background tools you never think about because they have always just been running.</p>
+      <h2 id="for-cyanote-specifically">For Cyanote specifically</h2>
+      <p>Everything is in one SQLite file under <code>~/Library/Application Support/app.cyanote.desktop/</code>, with the automatic daily backups in a <code>backups/</code> folder beside it. Migration Assistant carries the folder across whole, so notes, tasks, calendar, habits, routines and clipboard history all arrive together and the app opens on the state you left.</p>
+      <p>Two things to redo by hand: the licence key, so keep the checkout email, and macOS Accessibility permission if you use clipboard pasting — the app will ask, and it offers to open the right settings pane rather than leaving you to find it.</p>
+      <p>If you moved your data folder somewhere custom on the old machine — an external drive, a synced folder — check that the path exists on the new one before launching. A path that is not there is the one case where the app cannot guess what you meant.</p>
+      <h2 id="the-general-principle">The general principle</h2>
+      <p>The apps that survive a machine change with no drama are the ones whose data is a file you can point at. When you know where your work lives, a new Mac is a copy operation you can verify with your own eyes.</p>
+      <p>When you do not know where it lives, every migration is an act of faith — and you find out how much faith was warranted at the worst possible moment, which is after the old machine has been erased. That, more than anything else, is the practical argument for <a href="/blog/what-local-first-means-for-your-notes/">keeping your work in a form you can see</a>.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $4.99 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $4.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/dictating-notes-on-a-mac/">Dictating notes on a Mac, and what to do with what comes out</a><span>Talking is three times faster than typing and much worse at structure. Where dictation helps, where it costs more than it saves, and the five-minute pass after.</span></li><li><a href="https://cyanote.app/blog/getting-your-notes-out/">Getting your notes out, and what breaks on the way</a><span>Every notes app has an export button. What matters is what survives it — links between notes, images, checkboxes, dates. How to find out before you need to know.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

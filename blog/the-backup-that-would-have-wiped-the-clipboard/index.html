@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Designing a restore that assumes something went wrong</title>
+<meta name="description" content="A restore clears the tables a backup does not mention. Leave the clipboard out to keep the daily file small, and every restore quietly erases it." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/the-backup-that-would-have-wiped-the-clipboard/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/the-backup-that-would-have-wiped-the-clipboard/" />
+<meta property="og:title" content="Designing a restore that assumes something went wrong" />
+<meta property="og:description" content="A restore clears the tables a backup does not mention. Leave the clipboard out to keep the daily file small, and every restore quietly erases it." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Designing a restore that assumes something went wrong" />
+<meta name="twitter:description" content="A restore clears the tables a backup does not mention. Leave the clipboard out to keep the daily file small, and every restore quietly erases it." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The backup that would have wiped the clipboard",
+  "description": "A restore clears the tables a backup does not mention. Leave the clipboard out to keep the daily file small, and every restore quietly erases it.",
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-23",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/the-backup-that-would-have-wiped-the-clipboard/"
+  },
+  "url": "https://cyanote.app/blog/the-backup-that-would-have-wiped-the-clipboard/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/restore-omissions.svg",
+      "width": 1200,
+      "height": 470
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Builder's log, Backups, Local-first",
+  "wordCount": 1399
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The backup that would have wiped the clipboard",
+      "item": "https://cyanote.app/blog/the-backup-that-would-have-wiped-the-clipboard/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Builder&#x27;s log" />
+<meta property="article:tag" content="Backups" />
+<meta property="article:tag" content="Local-first" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>The backup that would have wiped the clipboard</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-22">22 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Builder&#x27;s log</li><li>Backups</li><li>Local-first</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Automatic daily backups sound like a feature you can add in an afternoon. Write the data to a file once a day, keep a week of them, done.</p>
+      <p>The afternoon version would have destroyed people's clipboard history, and it would have done it inside the safety feature, at the moment it was being used.</p>
+      <h2 id="the-weight-problem">The weight problem</h2>
+      <p>The first measurement made the naive design impossible. In an export of a real database:</p>
+      <div class="table-scroll"><table><thead><tr><th scope="col">What</th><th scope="col" style="text-align:right">Size</th></tr></thead><tbody><tr><td>Every note, task, habit, routine and folder</td><td style="text-align:right">0.01 MB</td></tr><tr><td>Clipboard history</td><td style="text-align:right">33.3 MB</td></tr><tr><td>Total</td><td style="text-align:right">33.3 MB</td></tr></tbody></table></div>
+      <p>The clipboard is not most of the file. It is, to three significant figures, the whole file. Everything a person would actually grieve losing is a rounding error beside a fortnight of copied screenshots — which is a version of <a href="/blog/when-the-clipboard-ate-the-database/">the same discovery that started the clipboard rework</a>, arriving from a different direction.</p>
+      <p>Writing that every day, seven times over, is a couple of hundred megabytes of a user's disk spent almost entirely on data they would not miss. So: leave the clipboard out of the automatic backup. Obvious.</p>
+      <h2 id="why-leaving-it-out-was-the-dangerous-option">Why leaving it out was the dangerous option</h2>
+      <p>A restore in Cyanote <em>clears the tables the backup does not mention</em>. That is deliberate, and it is the difference between a restore and a merge. If you restore last Tuesday's file, you want last Tuesday — not last Tuesday plus every stray row created since, interleaved in an order nobody can reason about. Restoring to a known state means arriving at that state exactly.</p>
+      <p>Put the two together. An automatic backup that simply omits the clipboard is, to the restore logic, a backup taken when the clipboard was empty. Restore it and the clipboard is emptied to match.</p>
+      <p>So the naive design produces a feature that silently destroys 33 MB of a user's data every time they use the thing they turned to <em>because</em> something had already gone wrong. A safety feature that destroys data is worse than no safety feature, because people only reach for it on their worst day.</p>
+      <figure><img src="/images/restore-omissions.svg" alt="A backup that names three tables and omits a fourth: without a declared omission the restore clears it, with one it leaves it alone" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The difference between the two files is one list. The difference in outcome is a fortnight of clipboard history.</figcaption></figure>
+      <h2 id="saying-what-you-left-out">Saying what you left out</h2>
+      <p>The fix is for a backup to be able to declare its own omissions. A file can now carry an <code>omitted</code> list, meaning: <em>these tables are deliberately not in here; leave whatever is in them alone.</em> Anything not named is still cleared, which is what keeps this a restore.</p>
+      <p>Three constraints shaped how that shipped.</p>
+      <p><strong>Old files must still restore.</strong> Manual backups carry everything and stay in the original format, byte-compatible with what earlier versions wrote. A file exported last month restores exactly as it always did.</p>
+      <p><strong>Old builds must not restore new files.</strong> This is the interlock, and it is the reason the omission list came with a format bump rather than being an optional field. A build that predates the omission list does not know that <code>omitted</code> means anything. Handed one of these files it would read the tables present, clear the ones absent, and wipe the clipboard — inside a version of the app that believes it is doing the right thing. Because the format number is higher than it understands, it refuses the file outright instead. Refusing is recoverable. Erasing is not.</p>
+      <p><strong>Ambiguity is refused, not guessed at.</strong> The omission list decides which tables survive, so validation holds it to the same standard as the data. A file that declares omissions but claims the old format is rejected. So is a file in the new format with no list. So is a file that both omits a table and contains it — that one is contradictory and there is no safe reading of it, so there is no reading of it at all.</p>
+      <h2 id="the-rescue-copy">The rescue copy</h2>
+      <p>There is one more rule, and it is the one I would keep if I could keep only one.</p>
+      <p>Before a restore touches anything, the app writes a snapshot of your <em>current</em> data — the state you are about to replace — as a file next to the backup you chose. Beside the backup, deliberately, because that is a folder you can reach and the app's own data directory is not.</p>
+      <p>That is the difference between a restore and a gamble. Pick the wrong file, or realise thirty seconds afterwards that you restored the wrong week, and the thing you overwrote is sitting on disk with a name that says what it is.</p>
+      <p>If the rescue copy cannot be written — a read-only folder, a full disk — the restore is cancelled and says so. Not attempted-with-a-warning. Cancelled. The user is one click into a destructive operation on a bad day; a missing safety net is exactly when to stop, and "we couldn't make a backup of your current notes, so we didn't proceed" is a sentence someone can act on.</p>
+      <h2 id="retention-that-only-deletes-its-own-files">Retention that only deletes its own files</h2>
+      <p>Automatic backups are named to a strict pattern, and retention deletes exactly what matches that pattern and nothing else. The date in the name has to be a real calendar date, leap years included — a file called <code>cyanote-auto-2026-13-40.json</code> is not ours whatever it looks like.</p>
+      <p>That precision exists for one reason: the folder is a folder the user can put things in. A manual backup, one of those rescue copies, an old file dragged in from a previous Mac — a sweep that deleted "the oldest files here" would eat all of them. Anything that is not recognisably a file this feature wrote is invisible to retention, and cannot be deleted by it, and cannot push a daily out of the window either.</p>
+      <p>The count is seven, and the number the app is <em>allowed</em> to keep is clamped in the Rust side rather than trusted from the interface. Deletion is the one operation where a bug on the other side of the bridge could empty a folder or fill a disk, so the rule for what may be deleted lives where it can be tested against a real directory.</p>
+      <h2 id="what-the-tests-actually-assert">What the tests actually assert</h2>
+      <p>Measured against a copy of a real database, never opened for writing:</p>
+      <ul><li>Notes: 11, mangled down to 7, restored to 11.</li><li>Clipboard rows added <em>after</em> that backup was taken: 141 before, 146 after the additions, 146 after the restore. Nothing lost, because the file declared the clipboard omitted.</li><li>One automatic export: 26 KB, against 33.3 MB for a full one.</li><li>Retention against nine dailies plus a manual backup and a rescue file: exactly the two oldest dailies deleted, everything else untouched.</li></ul>
+      <p>Thirty-three tests pass on the Rust side, five of which exist purely to pin restore semantics — what gets cleared, what survives, what is refused. Those five are the ones I would be most reluctant to lose, because every one of them describes a way a user's data could quietly disappear inside a feature named after safety.</p>
+      <h2 id="the-rule-underneath">The rule underneath</h2>
+      <p>A backup format is not really a data format. It is a set of promises about what a future version of your software is allowed to do to somebody's disk, written down in a file that will outlive the version that wrote it.</p>
+      <p>Which means the interesting questions are all about the reader, not the writer: what does a build from eight months ago do with this file? What does a build from next year do? What does the restore do with a table the file does not mention — and is that answer written down anywhere, or is it just what the code happens to do today?</p>
+      <p>Mine was just what the code happened to do. It took a size measurement in an unrelated feature to make me read it. If you want the map of what is in the file in the first place, <a href="/blog/one-sqlite-file-the-whole-data-model/">it is all one SQLite database</a>, and <a href="/blog/the-migration-you-edited-after-it-shipped/">the schema behind it is append-only for the same kind of reason</a>.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $4.99 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $4.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/one-sqlite-file-the-whole-data-model/">One SQLite file, and the whole data model</a><span>Fifteen tables, 26 shipped migrations and a lock file that refuses to let me edit history. A tour of where your work sits, and what keeps it there.</span></li><li><a href="https://cyanote.app/blog/the-migration-you-edited-after-it-shipped/">The migration you edited after it shipped</a><span>A migration that has already run never runs again. Editing one changes what new installs get and nothing else: two schemas, and no error anywhere.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

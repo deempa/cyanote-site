@@ -1,36 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://cyanote.app/</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/about.html</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/changelog.html</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/refund.html</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/privacy.html</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/terms.html</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/pricing/</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/clipboard-manager-mac/</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/compare/</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/compare/paste-alternative/</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/compare/notion-alternative/</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/compare/noteplan-alternative/</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/compare/lunatask-alternative/</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/blog/</loc><lastmod>2026-08-18</lastmod></url>
-  <url><loc>https://cyanote.app/blog/when-the-clipboard-ate-the-database/</loc><lastmod>2026-08-18</lastmod></url>
-  <url><loc>https://cyanote.app/blog/the-sidebar-read-every-note-to-draw-a-list/</loc><lastmod>2026-08-18</lastmod></url>
-  <url><loc>https://cyanote.app/blog/the-paste-that-landed-in-the-wrong-app/</loc><lastmod>2026-08-18</lastmod></url>
-  <url><loc>https://cyanote.app/blog/the-half-second-that-left-a-locked-note-in-the-clear/</loc><lastmod>2026-08-18</lastmod></url>
-  <url><loc>https://cyanote.app/blog/the-features-i-said-no-to/</loc><lastmod>2026-08-18</lastmod></url>
-  <url><loc>https://cyanote.app/blog/the-arithmetic-of-a-ten-dollar-app/</loc><lastmod>2026-08-18</lastmod></url>
-  <url><loc>https://cyanote.app/blog/supporting-an-app-that-does-not-know-who-you-are/</loc><lastmod>2026-08-18</lastmod></url>
-  <url><loc>https://cyanote.app/blog/signing-and-notarising-from-the-developers-side/</loc><lastmod>2026-08-18</lastmod></url>
-  <url><loc>https://cyanote.app/blog/one-sqlite-file-the-whole-data-model/</loc><lastmod>2026-08-18</lastmod></url>
-  <url><loc>https://cyanote.app/blog/it-worked-in-dev-and-was-broken-in-every-build/</loc><lastmod>2026-08-18</lastmod></url>
+  <url><loc>https://cyanote.app/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/about.html</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/changelog.html</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/refund.html</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/privacy.html</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/terms.html</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/pricing/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/clipboard-manager-mac/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/compare/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/compare/paste-alternative/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/compare/notion-alternative/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/compare/noteplan-alternative/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/compare/lunatask-alternative/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/blog/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/blog/where-to-keep-the-things-you-must-not-lose/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/what-not-to-write-down/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-screenshots-are-generated/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-note-you-never-tidy/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-app-said-saved-and-saved-nothing/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-animation-that-stole-its-posters-score/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/porting-to-windows-from-a-mac/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/dictating-notes-on-a-mac/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/closing-a-project/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/a-tour-is-a-bad-introduction/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/what-your-clipboard-should-not-remember/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/two-colour-tokens-forty-three-failing-elements/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/three-ways-to-leave-and-one-way-back/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-migration-you-edited-after-it-shipped/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-green-tick-that-meant-nothing/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-backup-that-would-have-wiped-the-clipboard/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/moving-to-a-new-mac/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/markdown-or-rich-text/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/getting-your-notes-out/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/calendar-or-list/</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://cyanote.app/blog/when-the-clipboard-ate-the-database/</loc><lastmod>2026-08-22</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-sidebar-read-every-note-to-draw-a-list/</loc><lastmod>2026-08-22</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-paste-that-landed-in-the-wrong-app/</loc><lastmod>2026-08-22</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-half-second-that-left-a-locked-note-in-the-clear/</loc><lastmod>2026-08-22</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-features-i-said-no-to/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/blog/the-arithmetic-of-a-ten-dollar-app/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/blog/supporting-an-app-that-does-not-know-who-you-are/</loc><lastmod>2026-08-22</lastmod></url>
+  <url><loc>https://cyanote.app/blog/signing-and-notarising-from-the-developers-side/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/blog/one-sqlite-file-the-whole-data-model/</loc><lastmod>2026-08-22</lastmod></url>
+  <url><loc>https://cyanote.app/blog/it-worked-in-dev-and-was-broken-in-every-build/</loc><lastmod>2026-08-22</lastmod></url>
   <url><loc>https://cyanote.app/blog/writing-your-own-runbooks/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://cyanote.app/blog/writing-an-incident-review/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://cyanote.app/blog/writing-a-long-document-in-a-notes-app/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://cyanote.app/blog/why-a-notes-app-should-open-instantly/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://cyanote.app/blog/why-a-mac-app-asks-for-accessibility/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://cyanote.app/blog/where-your-notes-actually-live/</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/blog/when-to-move-off-apple-notes/</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>https://cyanote.app/blog/when-to-move-off-apple-notes/</loc><lastmod>2026-08-24</lastmod></url>
   <url><loc>https://cyanote.app/blog/what-to-delete-from-your-notes/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://cyanote.app/blog/what-still-works-with-the-wifi-off/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://cyanote.app/blog/what-happens-to-your-notes-when-you-die/</loc><lastmod>2026-08-17</lastmod></url>
@@ -84,18 +104,18 @@
   <url><loc>https://cyanote.app/blog/a-private-journal-that-stays-private/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://cyanote.app/blog/a-personal-crm-that-is-just-notes/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://cyanote.app/blog/a-local-notion-alternative/</loc><lastmod>2026-08-17</lastmod></url>
-  <url><loc>https://cyanote.app/blog/writing-and-code-two-modes/</loc><lastmod>2026-08-16</lastmod></url>
+  <url><loc>https://cyanote.app/blog/writing-and-code-two-modes/</loc><lastmod>2026-08-24</lastmod></url>
   <url><loc>https://cyanote.app/blog/tracking-habits-without-a-separate-app/</loc><lastmod>2026-08-16</lastmod></url>
   <url><loc>https://cyanote.app/blog/pomodoro-timer-mac-app/</loc><lastmod>2026-08-16</lastmod></url>
-  <url><loc>https://cyanote.app/blog/notes-and-code-in-one-app/</loc><lastmod>2026-08-16</lastmod></url>
+  <url><loc>https://cyanote.app/blog/notes-and-code-in-one-app/</loc><lastmod>2026-08-24</lastmod></url>
   <url><loc>https://cyanote.app/blog/mac-app-notes-tasks-calendar/</loc><lastmod>2026-08-16</lastmod></url>
-  <url><loc>https://cyanote.app/blog/customising-a-notes-app/</loc><lastmod>2026-08-16</lastmod></url>
-  <url><loc>https://cyanote.app/blog/when-a-free-clipboard-manager-stops-being-enough/</loc><lastmod>2026-08-15</lastmod></url>
-  <url><loc>https://cyanote.app/blog/what-ten-dollars-once-buys/</loc><lastmod>2026-08-15</lastmod></url>
+  <url><loc>https://cyanote.app/blog/customising-a-notes-app/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/blog/when-a-free-clipboard-manager-stops-being-enough/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://cyanote.app/blog/what-ten-dollars-once-buys/</loc><lastmod>2026-08-24</lastmod></url>
   <url><loc>https://cyanote.app/blog/mac-app-notes-and-clipboard/</loc><lastmod>2026-08-15</lastmod></url>
   <url><loc>https://cyanote.app/blog/what-happens-when-your-notes-app-shuts-down/</loc><lastmod>2026-08-13</lastmod></url>
   <url><loc>https://cyanote.app/blog/notes-app-without-an-account/</loc><lastmod>2026-08-13</lastmod></url>
-  <url><loc>https://cyanote.app/blog/clipboard-manager-mac-without-subscription/</loc><lastmod>2026-08-14</lastmod></url>
+  <url><loc>https://cyanote.app/blog/clipboard-manager-mac-without-subscription/</loc><lastmod>2026-08-24</lastmod></url>
   <url><loc>https://cyanote.app/blog/personal-kanban-board/</loc><lastmod>2026-08-13</lastmod></url>
   <url><loc>https://cyanote.app/blog/password-protect-notes-on-mac/</loc><lastmod>2026-08-13</lastmod></url>
   <url><loc>https://cyanote.app/blog/note-apps-without-a-subscription/</loc><lastmod>2026-08-13</lastmod></url>

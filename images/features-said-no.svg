@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-labelledby="fn-title fn-desc">
   <title id="fn-title">Six requested features, and what each would cost</title>
-  <desc id="fn-desc">Sync, an iPhone app and collaboration all require a server and accounts, which a one-time $10 price cannot fund. AI features require the notes to leave the machine. Plugins turn the internals into a public contract that cannot then be changed. Telemetry costs the promise that nothing is collected. Each row names the property of the app that saying yes would consume.</desc>
+  <desc id="fn-desc">Sync, an iPhone app and collaboration all require a server and accounts, which a one-time $4.99 price cannot fund. AI features require the notes to leave the machine. Plugins turn the internals into a public contract that cannot then be changed. Telemetry costs the promise that nothing is collected. Each row names the property of the app that saying yes would consume.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
@@ -23,7 +23,7 @@
 
   <text class="item" x="54" y="192">Sync between Macs</text>
   <text class="gone" x="404" y="192">A server, per user, forever</text>
-  <text class="item" x="800" y="192">The $10 one-time price</text>
+  <text class="item" x="800" y="192">The $4.99 one-time price</text>
   <line x1="54" y1="214" x2="1146" y2="214" stroke="#efeff1" stroke-width="2"/>
 
   <text class="item" x="54" y="248">An iPhone app</text>

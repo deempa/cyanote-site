@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" role="img" aria-labelledby="ro-title ro-desc">
+  <title id="ro-title">Why a backup has to declare what it deliberately left out</title>
+  <desc id="ro-desc">A restore clears the tables a backup does not mention, which is what makes it a restore rather than a merge. A daily backup that simply omits the clipboard to stay small therefore reads as a backup taken when the clipboard was empty, and restoring it empties the clipboard. A file carrying an explicit omission list tells the restore to leave those tables exactly as they are: measured on a real database, 146 clipboard rows before and 146 after.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 21px; font-weight: 600; fill: #0a0a0b; }
+    .row  { font-size: 18px; fill: #3d3f45; }
+    .gone { font-size: 18px; fill: #b3392c; font-weight: 600; }
+    .kept { font-size: 18px; fill: #0e7cc4; font-weight: 600; }
+    .note { font-size: 16px; fill: #71757e; }
+    .lbl  { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 16px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="30" width="560" height="300" rx="12"/>
+  <rect x="24" y="30" width="560" height="7" rx="3.5" fill="#b3392c"/>
+  <text class="lbl" x="56" y="74">THE FILE SAYS NOTHING</text>
+  <text class="h" x="56" y="106">Clipboard simply left out</text>
+  <text class="mono" x="56" y="146">tables: notes, tasks, habits, folders</text>
+  <line x1="56" y1="172" x2="552" y2="172" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="note" x="56" y="204">The restore reads an absent table as an empty one.</text>
+  <text class="row" x="56" y="244">Notes</text>
+  <text class="row" x="552" y="244" text-anchor="end">restored</text>
+  <text class="row" x="56" y="280">Clipboard history, 146 rows</text>
+  <text class="gone" x="552" y="280" text-anchor="end">cleared</text>
+  <text class="note" x="56" y="312">Inside the feature people only ever use on a bad day.</text>
+
+  <rect class="card" x="616" y="30" width="560" height="300" rx="12"/>
+  <rect x="616" y="30" width="560" height="7" rx="3.5" fill="#0e7cc4"/>
+  <text class="lbl" x="648" y="74">THE FILE DECLARES IT</text>
+  <text class="h" x="648" y="106">Omission travels with the backup</text>
+  <text class="mono" x="648" y="146">omitted: [ clipboard_history ]</text>
+  <line x1="648" y1="172" x2="1144" y2="172" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="note" x="648" y="204">Named tables are left alone. Everything else still clears.</text>
+  <text class="row" x="648" y="244">Notes</text>
+  <text class="row" x="1144" y="244" text-anchor="end">restored</text>
+  <text class="row" x="648" y="280">Clipboard history, 146 rows</text>
+  <text class="kept" x="1144" y="280" text-anchor="end">146 rows</text>
+  <text class="note" x="648" y="312">26 KB a day, against 33.3 MB for a full export.</text>
+
+  <line x1="24" y1="370" x2="1176" y2="370" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="408">The version bump is the interlock: a build that predates the omission list refuses these files</text>
+  <text class="foot" x="24" y="440">rather than restoring them and clearing the clipboard. Refusing is recoverable. Erasing is not.</text>
+</svg>

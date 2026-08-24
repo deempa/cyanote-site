@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Three checks that passed and proved nothing at all</title>
+<meta name="description" content="A build that only worked because of a cached file, a CI run that tested nothing, and a release check that read the old bytes back. None of it evidence." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/the-green-tick-that-meant-nothing/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/the-green-tick-that-meant-nothing/" />
+<meta property="og:title" content="Three checks that passed and proved nothing at all" />
+<meta property="og:description" content="A build that only worked because of a cached file, a CI run that tested nothing, and a release check that read the old bytes back. None of it evidence." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Three checks that passed and proved nothing at all" />
+<meta name="twitter:description" content="A build that only worked because of a cached file, a CI run that tested nothing, and a release check that read the old bytes back. None of it evidence." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The green tick that meant nothing",
+  "description": "A build that only worked because of a cached file, a CI run that tested nothing, and a release check that read the old bytes back. None of it evidence.",
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-23",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/the-green-tick-that-meant-nothing/"
+  },
+  "url": "https://cyanote.app/blog/the-green-tick-that-meant-nothing/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/checks-that-lie.svg",
+      "width": 1200,
+      "height": 470
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Builder's log, Testing, Development",
+  "wordCount": 1332
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The green tick that meant nothing",
+      "item": "https://cyanote.app/blog/the-green-tick-that-meant-nothing/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Builder&#x27;s log" />
+<meta property="article:tag" content="Testing" />
+<meta property="article:tag" content="Development" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>The green tick that meant nothing</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-22">22 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Builder&#x27;s log</li><li>Testing</li><li>Development</li></ul>
+    </header>
+
+    <div class="post">
+      <p>A check that fails is useful. A check that passes when it should have failed is worse than no check at all, because you now have a reason to stop looking.</p>
+      <p>I found three of those in one fortnight, and they had nothing technically in common. What they shared was the shape: something answered <em>yes</em> to a question slightly different from the one I thought I was asking.</p>
+      <h2 id="one-the-build-that-only-worked-because-of-a-cache">One: the build that only worked because of a cache</h2>
+      <p><code>cargo tauri build</code> had been fine for two releases. Then, from a clean checkout, it died:</p>
+      <pre><code>mis-aligned LINKEDIT string pool</code></pre>
+      <p>on <code>libsqlx_macros</code>, at the moment sqlx does <code>pub extern crate sqlx_macros</code>.</p>
+      <p>The cause is a single line in <code>Cargo.toml</code>. <code>strip = true</code> under <code>[profile.release]</code> reads like an instruction about the binary you ship. It is not: it applies to everything built in that profile, including build scripts and procedural macros. Those are not shipped — they are dynamic libraries that the compiler itself loads while compiling your code — and a stripped proc-macro dylib cannot be loaded on macOS at all.</p>
+      <p>The fix is <code>build-override</code>, which turns stripping off for compiler plugins while leaving the app binary stripped. That last part I checked rather than assumed: zero debug symbols in both the executable and its library, after the change.</p>
+      <p>The interesting question is not what broke. It is why it broke <em>then</em>, on a setting that had been in the file for two successful releases.</p>
+      <p>The dylib was cached. Both of those releases linked against a copy produced before stripping ever reached it. The setting was wrong the whole time and invisible the whole time, and what finally exposed it was unrelated: enabling an image feature for <a href="/blog/when-the-clipboard-ate-the-database/">the clipboard fix</a> changed the dependency graph, which invalidated the cache, which caused sqlx's macro crate to be genuinely rebuilt for the first time since the flag went in.</p>
+      <p>I want to be precise about my own part in this, because it is the useful bit. When it first failed I argued the release profile could not be the cause, on the grounds that the profile had not changed. That was true and irrelevant. The profile was never the variable — the cache was. A green build is not evidence that a build setting is correct. Only a build from cold is, and I had not done one in months.</p>
+      <figure><img src="/images/checks-that-lie.svg" alt="Three checks that returned green: a build served from cache, a CI run that fired only on tags, and a verification that read the old bytes back" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>Each answered a question. None of them answered the question I thought I was asking.</figcaption></figure>
+      <h2 id="two-the-ci-that-ran-nothing">Two: the CI that ran nothing</h2>
+      <p>I had two GitHub Actions workflows and a reasonable feeling of being covered.</p>
+      <p>Both fired only on a version tag or a manual dispatch. Neither ran a single test. A commit could land on the main branch having been checked by nothing whatsoever, and the first thing that would notice was the release script — which is late, and only fires on days you happen to be releasing.</p>
+      <p>That is a hard thing to see from the inside. The repository had workflows. The Actions tab had runs in it. The runs were mostly green. Nothing about the surface says "this fires four times a month and never on your code".</p>
+      <p>There is now a <code>checks</code> workflow that runs on every push and every pull request to main, and it runs one thing: the repository's own <code>check</code> script. Type checking, linting, the test suite, and <a href="/blog/the-migration-you-edited-after-it-shipped/">the migration guard</a> that the test suite starts with.</p>
+      <p>Calling the repo's own script rather than listing the steps in the workflow is the load-bearing choice. Any check spelled out in CI is a second copy of the truth, and the two drift — usually in the direction of CI running a subset of what you run locally, discovered on the day it matters. One script, two callers.</p>
+      <p>It deliberately builds nothing. A full desktop build needs a Rust toolchain and takes minutes; it has its own workflow and its own moment. What is wanted from a push is the answer to <em>did that break anything</em> inside a couple of minutes, which is a different product entirely.</p>
+      <h2 id="two-and-a-half-the-run-that-was-always-red">Two and a half: the run that was always red</h2>
+      <p>The other half of the same commit is the one I think about more.</p>
+      <p>The Windows build job ran on every version tag, and failed on every version tag — by design, because the code-signing secrets it needs are not set, because Windows is not on sale yet. Every release I had ever pushed produced a red run for a build nobody could buy. Both pushes of 1.0.0 included.</p>
+      <p>A CI failure that is always red is worse than having no CI, and not by a small margin. Red means nothing once it always means nothing, and the cost is not that one job — it is that you have trained yourself to close the tab. The next failure, the real one, arrives into an inbox where failure is background noise.</p>
+      <p>So the Windows job is manual-only until it can be green. The job itself is untouched and still correct; when Windows ships, the tag trigger goes back and the secrets get set. Turning a permanently-failing check off is not lowering the bar. Leaving it on is.</p>
+      <h2 id="three-the-verification-that-read-the-wrong-copy">Three: the verification that read the wrong copy</h2>
+      <p>The last one is my favourite, because it is a check whose failure mode is aborting a perfectly good release.</p>
+      <p>Publishing an update uploads the payload to object storage, verifies it, and <em>then</em> writes the manifest that points at it. The ordering matters: a manifest pointing at a payload that is not fully there is the one state that would hand a user a broken download. Verify sits between the two on purpose.</p>
+      <p>Re-publishing a version over itself failed with a signature mismatch. The upload was fine. The read-back was not: the storage API kept returning the <em>previous</em> release's bytes — through a delete-and-recreate as well — while the worker in front of the same bucket was already serving the new ones.</p>
+      <p>So the check aborted the publish in precisely the half-written state that its own ordering exists to prevent. A verification step that can fail spuriously is not a neutral cost. It has a blast radius, and here the radius was the thing it was protecting.</p>
+      <p>It now reads through the worker rather than the storage API, with a query string nothing has asked for before so no edge cache can answer it from a copy. That is also, on reflection, the stronger check. "What does the storage API say is stored" was never the question. "What would a user's updater actually receive" is, and it was a different question all along.</p>
+      <h2 id="the-common-shape">The common shape</h2>
+      <p>None of these are exotic. Each is one component answering honestly, and me reading the answer as though it addressed the thing I cared about.</p>
+      <ul><li>The compiler said the build succeeded. It did — against a file produced under different settings.</li><li>CI said green. It was — it had run nothing.</li><li>The verification said the bytes matched. They did — the old ones.</li></ul>
+      <p>The habit I have taken from it is to ask, of any check I am relying on, one question: <em>what would have to be true for this to pass while the thing it protects is broken?</em> Every one of these three had an obvious answer to that question, and I had never asked it, because a green tick is an answer-shaped object and it is genuinely hard to keep interrogating one.</p>
+      <p>The related discipline is to make a check fail on purpose once, in the state it is meant to catch. It costs ten minutes. Two of these three would not have survived it.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $4.99 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $4.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/it-worked-in-dev-and-was-broken-in-every-build/">It worked in dev and was broken in every build</a><span>The Format button failed in every shipped copy and worked perfectly in development. Type checking, linting, the tests and CI all passed. Here is the gap.</span></li><li><a href="https://cyanote.app/blog/porting-to-windows-from-a-mac/">Porting to Windows from a Mac I can&#x27;t run it on</a><span>Half the Windows work is code that cannot run on the machine writing it. What that changes, and the week a compile error had nowhere at all to surface.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

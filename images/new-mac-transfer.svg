@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" role="img" aria-labelledby="nm-title nm-desc">
+  <title id="nm-title">What Migration Assistant carries to a new Mac, and what you redo by hand</title>
+  <desc id="nm-desc">Your user folder, applications, app data under Application Support, documents and most settings arrive with the transfer. Privacy permissions such as Accessibility and Full Disk Access are granted per machine and must be granted again; licences for directly-sold apps usually have to be re-entered; anything installed outside your user folder, such as command-line tools, system fonts and VPN profiles, does not come; and services need signing into again.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .note { font-size: 16px; fill: #71757e; }
+    .lbl  { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="30" width="560" height="310" rx="12"/>
+  <rect x="24" y="30" width="560" height="7" rx="3.5" fill="#0e7cc4"/>
+  <text class="lbl" x="56" y="72">ARRIVES ON ITS OWN</text>
+  <text class="h" x="56" y="106">Migration Assistant</text>
+  <line x1="56" y1="130" x2="552" y2="130" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="56" y="164">Your whole user folder</text>
+  <text class="item" x="56" y="198">Applications</text>
+  <text class="item" x="56" y="232">App data under Application Support</text>
+  <text class="item" x="56" y="266">Most system settings</text>
+  <text class="note" x="56" y="306">A local-first app arrives whole: one file, same contents.</text>
+
+  <rect class="card" x="616" y="30" width="560" height="310" rx="12"/>
+  <rect x="616" y="30" width="560" height="7" rx="3.5" fill="#b3392c"/>
+  <text class="lbl" x="648" y="72">YOU DO BY HAND</text>
+  <text class="h" x="648" y="106">Four categories, every time</text>
+  <line x1="648" y1="130" x2="1144" y2="130" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="648" y="164">Permissions &#8212; granted per machine</text>
+  <text class="item" x="648" y="198">Licence keys for direct-sale apps</text>
+  <text class="item" x="648" y="232">Anything outside your user folder</text>
+  <text class="item" x="648" y="266">Signing back into services</text>
+  <text class="note" x="648" y="306">A missing permission does not crash. It quietly does nothing, once.</text>
+
+  <line x1="24" y1="378" x2="1176" y2="378" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="416">Work on the new Mac for two weeks before wiping the old one &#8212; long enough to touch the</text>
+  <text class="foot" x="24" y="446">monthly things, which is where the gaps in any transfer actually show up.</text>
+</svg>

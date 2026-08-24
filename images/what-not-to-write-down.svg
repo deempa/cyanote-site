@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" role="img" aria-labelledby="wn-title wn-desc">
+  <title id="wn-title">Five things that end up in a notes app, and where each belongs</title>
+  <desc id="wn-desc">Credentials belong in a password manager, not a note. Other people's private information should be reduced to the part you need to act on. Work data belongs on work systems, and personal notes belong off a work machine. Anything protected only by nobody seeing it should be locked or left out. And copies of things that are not yours should be replaced by a line saying where the original lives.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 20px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .to   { font-size: 18px; fill: #0e7cc4; font-weight: 600; }
+    .note { font-size: 15px; fill: #71757e; }
+    .lbl  { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="30" width="1152" height="336" rx="12"/>
+  <text class="lbl" x="56" y="72">IN YOUR NOTES</text>
+  <text class="lbl" x="640" y="72">WHERE IT BELONGS</text>
+  <line x1="56" y1="92" x2="1144" y2="92" stroke="#e6e6e9" stroke-width="2"/>
+
+  <text class="item" x="56" y="132">Passwords, keys, recovery codes</text>
+  <text class="to" x="640" y="132">A password manager</text>
+  <text class="note" x="900" y="132">&#8212; and paper, for the two roots</text>
+  <line x1="56" y1="154" x2="1144" y2="154" stroke="#efeff1" stroke-width="2"/>
+
+  <text class="item" x="56" y="192">Someone else&#8217;s private situation</text>
+  <text class="to" x="640" y="192">The part you must act on</text>
+  <text class="note" x="900" y="192">&#8212; not the detail behind it</text>
+  <line x1="56" y1="214" x2="1144" y2="214" stroke="#efeff1" stroke-width="2"/>
+
+  <text class="item" x="56" y="252">Customer data, internal figures</text>
+  <text class="to" x="640" y="252">Work systems</text>
+  <text class="note" x="900" y="252">&#8212; which have a policy behind them</text>
+  <line x1="56" y1="274" x2="1144" y2="274" stroke="#efeff1" stroke-width="2"/>
+
+  <text class="item" x="56" y="312">A journal, a job search</text>
+  <text class="to" x="640" y="312">Off the work machine</text>
+  <text class="note" x="900" y="312">&#8212; you keep access to it</text>
+  <line x1="56" y1="334" x2="1144" y2="334" stroke="#efeff1" stroke-width="2"/>
+
+  <text class="item" x="56" y="360">A copy of something not yours</text>
+  <text class="to" x="640" y="360">A line saying where it lives</text>
+
+  <line x1="24" y1="404" x2="1176" y2="404" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="442">One question, asked while writing: would this be a problem in five years, in a backup, on a</text>
+  <text class="foot" x="24" y="468">screen somebody else can see? Almost always no &#8212; and the times it is yes are these five.</text>
+</svg>

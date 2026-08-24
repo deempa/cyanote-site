@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="wt-title wt-desc">
+  <title id="wt-title">Why a tour cannot teach the two things a new user most needs</title>
+  <desc id="wt-desc">A tour highlights elements on screen, so its syllabus is limited to what a person could have found by looking: the sidebar, the new note button, the search field. The two facts that matter most on day one are not on screen — that a clipboard manager exists behind a keyboard shortcut outside the window, and that it can be switched off. A welcome can teach both, and can ask the user to press the shortcut once so the app can confirm it worked.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 21px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .note { font-size: 16px; fill: #71757e; }
+    .lbl  { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+    .key  { font-size: 18px; font-weight: 600; fill: #0e7cc4; }
+  </style>
+
+  <rect class="card" x="24" y="30" width="560" height="290" rx="12"/>
+  <rect x="24" y="30" width="560" height="7" rx="3.5" fill="#b8bcc4"/>
+  <text class="lbl" x="56" y="72">A TOUR CAN ONLY POINT AT</text>
+  <text class="h" x="56" y="106">What is already on screen</text>
+  <line x1="56" y1="130" x2="552" y2="130" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="56" y="166">The sidebar</text>
+  <text class="item" x="56" y="200">The new-note button</text>
+  <text class="item" x="56" y="234">The search field</text>
+  <text class="note" x="56" y="278">All true, all visible, all discoverable by looking.</text>
+  <text class="note" x="56" y="302">The format was choosing the syllabus.</text>
+
+  <rect class="card" x="616" y="30" width="560" height="290" rx="12"/>
+  <rect x="616" y="30" width="560" height="7" rx="3.5" fill="#0e7cc4"/>
+  <text class="lbl" x="648" y="72">WHAT DAY ONE ACTUALLY NEEDS</text>
+  <text class="h" x="648" y="106">Two facts, neither on screen</text>
+  <line x1="648" y1="130" x2="1144" y2="130" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="648" y="166">A clipboard manager exists</text>
+  <text class="note" x="648" y="190">outside the window, behind a shortcut</text>
+  <text class="item" x="648" y="230">It can be switched off</text>
+  <text class="note" x="648" y="254">offered with the explanation, not buried later</text>
+  <text class="key" x="648" y="298">&#8220;Press &#8679;&#8997;V now&#8221; &#8212; and the app confirms it opened</text>
+
+  <line x1="24" y1="360" x2="1176" y2="360" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="398">A tour that teaches a shortcut which has deliberately not been registered is worse than one that</text>
+  <text class="foot" x="24" y="430">says nothing: the user tries it, nothing happens, and the false belief stays behind.</text>
+</svg>

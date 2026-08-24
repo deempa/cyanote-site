@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shipping Windows code you cannot execute while writing it</title>
+<meta name="description" content="Half the Windows work is code that cannot run on the machine writing it. What that changes, and the week a compile error had nowhere at all to surface." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/porting-to-windows-from-a-mac/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/porting-to-windows-from-a-mac/" />
+<meta property="og:title" content="Shipping Windows code you cannot execute while writing it" />
+<meta property="og:description" content="Half the Windows work is code that cannot run on the machine writing it. What that changes, and the week a compile error had nowhere at all to surface." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Shipping Windows code you cannot execute while writing it" />
+<meta name="twitter:description" content="Half the Windows work is code that cannot run on the machine writing it. What that changes, and the week a compile error had nowhere at all to surface." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Porting to Windows from a Mac I can't run it on",
+  "description": "Half the Windows work is code that cannot run on the machine writing it. What that changes, and the week a compile error had nowhere at all to surface.",
+  "datePublished": "2026-08-23",
+  "dateModified": "2026-08-23",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/porting-to-windows-from-a-mac/"
+  },
+  "url": "https://cyanote.app/blog/porting-to-windows-from-a-mac/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/windows-from-a-mac.svg",
+      "width": 1200,
+      "height": 470
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Builder's log, Windows, Development",
+  "wordCount": 1331
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Porting to Windows from a Mac I can't run it on",
+      "item": "https://cyanote.app/blog/porting-to-windows-from-a-mac/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Builder&#x27;s log" />
+<meta property="article:tag" content="Windows" />
+<meta property="article:tag" content="Development" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Porting to Windows from a Mac I can&#x27;t run it on</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-23">23 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Builder&#x27;s log</li><li>Windows</li><li>Development</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Cyanote is written on a Mac. A Windows build exists, and every line of Windows-specific code in it was written on a machine that cannot execute it.</p>
+      <p>That is a normal situation for anyone shipping cross-platform software without a second desk, and it changes the work in ways I did not expect. Not "it is slower" — it is slower, obviously. It changes what you are allowed to believe, and where the verification has to live instead.</p>
+      <h2 id="the-compile-error-that-sat-for-a-week">The compile error that sat for a week</h2>
+      <p>The clearest example is a <code>RunEvent::Opened</code> handler. That event is the Apple Event the Finder sends for <em>Open With</em>. The variant does not exist on Windows, so the Rust source did not compile there at all.</p>
+      <p>Not "behaved differently". Did not compile. For a week.</p>
+      <p>The reason it survived a week is the part worth telling. The same commit that introduced the handler had also set the bundle targets to a macOS-only value. So the Windows CI job dutifully built, produced no installer, found nothing to complain about, and reported success. The compile error underneath had nowhere to surface, because the job that would have hit it had been quietly configured to stop before it got there.</p>
+      <p>This is <a href="/blog/the-green-tick-that-meant-nothing/">the green tick that means nothing</a> in its purest form: a job that runs, passes, and exercises none of the thing it is named after. On a platform you can build locally you would have caught it in thirty seconds. On a platform you cannot, CI is not a safety net — it is your only eyes, and an eye that reports success while looking at nothing is worse than a blindfold, because you plan around it.</p>
+      <figure><img src="/images/windows-from-a-mac.svg" alt="Writing platform code you cannot execute: what compiles, what CI can see, and the parts only a unit test can hold honest" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The middle column is where a week disappeared. A job that builds nothing cannot fail.</figcaption></figure>
+      <h2 id="the-wrong-guess-repeated-in-four-places">The wrong guess, repeated in four places</h2>
+      <p>The second one taught me something about how a mistaken assumption spreads.</p>
+      <p>The Windows release build produced exactly what it should: an installer, and a signature file beside it. The verify step failed it anyway, for missing a <code>.nsis.zip</code> and its signature.</p>
+      <p>That pair is the Tauri v1 layout. Version 2 signs the installer itself, so the <code>.exe</code> <em>is</em> the update payload — there is no zip and there was never going to be one.</p>
+      <p>The interesting part is that the wrong guess appeared in four places: the verification step, the artifact upload, a flag in the script that writes the update manifest, and the build documentation. Not four independent mistakes. One assumption, made once, then copied by each subsequent piece of work that needed to know what the file was called — because each of those pieces was written by looking at the previous one, which is how anyone works.</p>
+      <p>If you cannot run the thing, every downstream step gets its facts from an upstream <em>description</em> of the thing rather than from the thing. Get the description wrong and it propagates at the speed of copy-paste, and no single site of the error looks wrong when you read it.</p>
+      <p>The fix included a small durable improvement: on failure, the step now lists what the bundle directory actually contains. The next mismatch names itself instead of only saying what was absent. When you are working blind, an error that describes reality is worth ten that describe expectations.</p>
+      <h2 id="where-verification-has-to-live-instead">Where verification has to live instead</h2>
+      <p>If you cannot run the code, the checks have to be things a compiler or a test can do without a Windows machine.</p>
+      <p>The clearest case is clipboard privacy. Windows has its own convention for <a href="/blog/what-your-clipboard-should-not-remember/">marking a copied secret as not-for-recording</a> — two registered clipboard formats, one whose mere presence is the signal and one carrying a number where zero means keep it out.</p>
+      <p>None of that logic can be executed on a Mac. So the <em>rules</em> live in a separate module with the classification written as pure functions over the marks, and those functions are unit-tested. The tests cannot prove the formats are registered correctly on a real Windows machine. They can prove that, given a set of marks, the decision is the one intended — including the case that matters most, which is what happens when the marks cannot be read at all.</p>
+      <p>That case is fail-closed: anything unclassifiable counts as private and is dropped. Losing one clipboard entry costs a user one Ctrl+C. Storing one password they thought was protected costs them the password. When you cannot observe the running system, you choose the default that is wrong in the cheap direction.</p>
+      <h2 id="the-transparency-that-could-never-be-seen">The transparency that could never be seen</h2>
+      <p>Not everything was a bug. One was pure waste, and it is the kind you only find by reading.</p>
+      <p>The main window was configured transparent, with Mica — Windows' backdrop material — layered on. Neither could ever be seen, because the app paints a fully opaque background outside macOS. Two visual effects, cancelled by a variable somewhere else, invisible in every screenshot anyone had ever taken.</p>
+      <p>The cost was not invisible. A transparent window puts the webview on a composited path, and Mica adds desktop compositor work on top. That is the likeliest reason animations felt less smooth on Windows than on macOS — a performance cost paid continuously for an appearance nobody could observe.</p>
+      <p>Two related discoveries came out of the same read. The configuration listed four window effects in sequence, and the framework applies only the first one it recognises — so two of the four were unreachable, and one of the others is a macOS material that means nothing on Windows. A list that looks like belt and braces can be a list where only the first item was ever running.</p>
+      <p>Two windows do stay transparent, deliberately. One of them is the fullscreen focus overlay, whose page background is transparent so that if the interface fails to render, the user is left with nothing covering their display rather than an opaque sheet they cannot get rid of. That is a failure mode worth designing for, and it is the reason "make every window opaque" was the wrong instruction and "make the main window opaque" was the right one.</p>
+      <h2 id="what-i-would-tell-someone-starting-the-same-port">What I would tell someone starting the same port</h2>
+      <p><strong>Make the platform job fail for the right reason.</strong> A build job that produces no artifact is not a check. Assert on the output — that a file exists, that it has a signature, that its name matches what the updater expects — because the compiler error you actually care about lives behind the step that got skipped.</p>
+      <p><strong>Write platform rules as pure functions.</strong> Anything you can express as data in, decision out, can be tested on the machine you have. What is left is the thin layer that talks to the system, and that layer should be as boring as you can make it, because it is the part nobody can check until it is in front of a user.</p>
+      <p><strong>Choose fail-closed defaults everywhere you are blind.</strong> You will get something wrong on a platform you cannot run. Decide in advance which direction the wrongness should point.</p>
+      <p><strong>Expect assumptions to have children.</strong> When something is wrong in one place and you cannot verify it locally, go and look for the other three places that learned it from the first.</p>
+      <p>None of this makes the port cheap. It makes the parts you cannot see behave like parts you can reason about, which is the most that is available. The rest — signing, notarising, the whole apparatus of making an app openable on a machine that has never heard of you — is <a href="/blog/signing-and-notarising-from-the-developers-side/">its own separate expense</a>, and on Windows it is still waiting on a certificate.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $4.99 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $4.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/the-app-said-saved-and-saved-nothing/">The app said &quot;Saved&quot;, and had saved nothing</a><span>A success message with nothing behind it, a paste that discarded its own error text, and a poll that quietly retired. Four swallowed failures, and the rule.</span></li><li><a href="https://cyanote.app/blog/three-ways-to-leave-and-one-way-back/">Three ways to leave, and one way back in</a><span>The red button hides the window, Command-Q holds the quit until the last edit lands, and an update did neither. Three exits, down three code paths.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

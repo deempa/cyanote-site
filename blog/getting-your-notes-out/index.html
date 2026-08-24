@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to export your notes, and what gets lost when you do</title>
+<meta name="description" content="Every notes app has an export button. What matters is what survives it — links between notes, images, checkboxes, dates. How to find out before you need to know." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/getting-your-notes-out/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/getting-your-notes-out/" />
+<meta property="og:title" content="How to export your notes, and what gets lost when you do" />
+<meta property="og:description" content="Every notes app has an export button. What matters is what survives it — links between notes, images, checkboxes, dates. How to find out before you need to know." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to export your notes, and what gets lost when you do" />
+<meta name="twitter:description" content="Every notes app has an export button. What matters is what survives it — links between notes, images, checkboxes, dates. How to find out before you need to know." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Getting your notes out, and what breaks on the way",
+  "description": "Every notes app has an export button. What matters is what survives it — links between notes, images, checkboxes, dates. How to find out before you need to know.",
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-23",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/getting-your-notes-out/"
+  },
+  "url": "https://cyanote.app/blog/getting-your-notes-out/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/export-fidelity.svg",
+      "width": 1200,
+      "height": 470
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Backups, Ownership, How-to",
+  "wordCount": 1283
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Getting your notes out, and what breaks on the way",
+      "item": "https://cyanote.app/blog/getting-your-notes-out/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Backups" />
+<meta property="article:tag" content="Ownership" />
+<meta property="article:tag" content="How-to" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Getting your notes out, and what breaks on the way</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-22">22 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Backups</li><li>Ownership</li><li>How-to</li></ul>
+    </header>
+
+    <div class="post">
+      <p>The export button is the most important feature in a notes app and the one nobody tests. It sits in a settings pane, everyone is glad it is there, and its actual behaviour is discovered on the day somebody is angry and leaving.</p>
+      <p>Which is the worst possible day to discover that your links between notes came out as plain text.</p>
+      <p>This is a practical guide to finding out early: what an export can and cannot carry, what to check in the file it produces, and why an export is not the same thing as a backup.</p>
+      <h2 id="an-export-is-not-a-backup">An export is not a backup</h2>
+      <p>Worth separating, because apps use the words loosely.</p>
+      <p>A <strong>backup</strong> is for putting your data back into the same app. It can be a database file or a bundle of everything, and it can be perfectly faithful because the only thing that ever has to read it is the app that wrote it. <a href="/blog/backing-up-local-notes/">Backing up notes that live on your own computer</a> is a different job with different rules.</p>
+      <p>An <strong>export</strong> is for taking your data somewhere else. It has to be readable by software that knows nothing about your app, which means dropping to a shared format — and every shared format is smaller than what a modern editor can express.</p>
+      <p>Both matter. If an app gives you only one, ask which one it is, because "we have backups" and "you can leave" are different promises.</p>
+      <figure><img src="/images/export-fidelity.svg" alt="What survives an export cleanly, what needs a decision, and what cannot cross at all" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>Three tiers. The middle one is where apps quietly differ, and where you should be looking.</figcaption></figure>
+      <h2 id="what-travels-intact">What travels intact</h2>
+      <p>Text, headings, bold and italic, lists, quotes, code blocks. This is the settled core of Markdown, and any export worth the name gets it right.</p>
+      <p>Two details still go wrong here and are worth checking. <strong>Nested lists</strong> need consistent indentation to survive a round trip, and an app that writes two spaces where its own importer expects four will re-import its own export badly. And <strong>escaping</strong>: if you have a line containing an asterisk or a square bracket as literal text, a careful exporter escapes it so it does not become syntax on the other side. An uncareful one hands you a file where a paragraph about <code>a * b</code> has become italic in the middle.</p>
+      <h2 id="what-needs-a-decision-and-where-apps-differ">What needs a decision, and where apps differ</h2>
+      <p>This is the tier that matters.</p>
+      <p><strong>Links between notes.</strong> If your app has <code>[[wiki links]]</code> or backlinks, they refer to a note by identity, and after an export there may be no file with that name — or several. There is no correct answer here, only choices. The one Cyanote makes is to keep the title and mark it as a note reference rather than write a link to a file that is not there, on the grounds that a broken link is worse than an honest label. Other apps rewrite them to relative file paths, which works beautifully if you export everything at once and produces dead ends if you export one note.</p>
+      <p><strong>Images.</strong> Are they inside your notes or referenced from somewhere? An export that writes <code>![](image.png)</code> next to a file called <code>image.png</code> is the good outcome. An export that writes a link to a file living inside the app's own storage is a document that will break the moment you uninstall the app.</p>
+      <p><strong>Checkboxes.</strong> <code>- [ ]</code> and <code>- [x]</code> are a widely-supported extension, not part of the original spec. They usually survive. Their <em>state</em> — which ones are ticked — sometimes does not.</p>
+      <p><strong>Tables.</strong> Pipe tables are an extension too. Simple ones travel; merged cells and formatting inside cells do not.</p>
+      <p><strong>Highlights, callouts, toggles, coloured text.</strong> These are the app's own vocabulary. Markdown has no standard spelling for any of them, so each app invents one — <code>==highlight==</code>, a blockquote with a marker, an HTML block. They will render somewhere and be literal text somewhere else.</p>
+      <p><strong>Dates.</strong> Created and modified times usually live in the app's database rather than in the note text. Export to files and the filesystem stamps them with today. If the chronology of your notes matters to you, look for an export that writes the dates into the file itself.</p>
+      <h2 id="what-cannot-cross">What cannot cross</h2>
+      <p>Some things are not lost by carelessness; they simply have nowhere to go.</p>
+      <p>Version history. Comments. The app's search index. Sharing state. Anything that is a relationship between notes rather than content inside one — a board's column order, a note's position in a hierarchy — unless the export encodes it in folder structure or in front matter.</p>
+      <p>Nobody should be surprised by this, but people are, because "export everything" sounds total.</p>
+      <h2 id="the-fifteen-minute-test">The fifteen-minute test</h2>
+      <p>Do this once, today, on the app you already use.</p>
+      <ol><li><strong>Find your most complicated note.</strong> Not a representative one — the worst one. Images, a table, a link to another note, some ticked boxes, whatever your app does that plain text does not.</li><li><strong>Export it.</strong> Note whether you can export one note, a folder, or only everything at once. That matters more than it sounds: an all-or-nothing export is awkward to check and awkward to use.</li><li><strong>Open the result in a plain text editor.</strong> Not in another notes app — a text editor, so you see the characters rather than somebody's rendering of them. TextEdit in plain text mode is fine.</li><li><strong>Read it.</strong> Is the table there? Did the link to your other note become something meaningful? Is there an image file next to it, and does the note point at that file?</li><li><strong>Import it somewhere else.</strong> Anywhere. Another editor, a Markdown preview, a Git repository. The second reader is the one that finds what the first was being polite about.</li></ol>
+      <p>Fifteen minutes, and afterwards you know something concrete about how portable your notes actually are, rather than how portable the feature list implies they are.</p>
+      <h2 id="what-good-looks-like">What good looks like</h2>
+      <p>An export you can rely on has, in my view, four properties:</p>
+      <ul><li><strong>A text format</strong>, so a program written in twenty years can read it without knowing anything about today.</li><li><strong>Images as real files</strong> next to the notes that use them.</li><li><strong>Structure in folders</strong>, so the shape of your work is visible in the Finder rather than only inside the app.</li><li><strong>No all-or-nothing</strong>, so you can take one note to a colleague without exporting your journal.</li></ul>
+      <p>Cyanote stores notes as structured data in <a href="/blog/one-sqlite-file-the-whole-data-model/">one local SQLite file</a> and exports Markdown, because Markdown is the format most likely to outlive both of us. The structured storage is what makes the editor work; the export is what makes the storage acceptable. An app that stores something clever and cannot hand it back has just made your writing a hostage of its own cleverness.</p>
+      <h2 id="do-it-before-you-are-annoyed">Do it before you are annoyed</h2>
+      <p>The reason to run the test now is that the export button's quality is uncorrelated with everything else about an app. It is not a feature people compare, it is not in the marketing, and it gets attention roughly in proportion to how often the developer imagines you leaving.</p>
+      <p>So find out while you are happy. If the answer is good, you have lost fifteen minutes and gained the ability to stop worrying. If the answer is bad, you would rather know now than <a href="/blog/what-happens-when-your-notes-app-shuts-down/">on the morning the app announces it is shutting down</a> — and knowing now means the next app you try gets judged on the thing that actually determines whether you can ever leave it.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $4.99 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $4.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/moving-to-a-new-mac/">Moving to a new Mac without losing the way you work</a><span>Migration Assistant moves your files and mostly gets it right. What it cannot move is permissions, licences, and anything outside your user folder.</span></li><li><a href="https://cyanote.app/blog/what-happens-when-your-notes-app-shuts-down/">What happens to your notes when the app shuts down</a><span>Notes apps close. The good ones give you a month and an export file. Here is what that month actually asks of you, and how to be ready before it arrives.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

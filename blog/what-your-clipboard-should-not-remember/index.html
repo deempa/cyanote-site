@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clipboard history and passwords: the opt-out marker</title>
+<meta name="description" content="A convention lets a password manager say do not record this. It works only if both apps honour it — how it works, and how to test yours in thirty seconds." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/what-your-clipboard-should-not-remember/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/what-your-clipboard-should-not-remember/" />
+<meta property="og:title" content="Clipboard history and passwords: the opt-out marker" />
+<meta property="og:description" content="A convention lets a password manager say do not record this. It works only if both apps honour it — how it works, and how to test yours in thirty seconds." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Clipboard history and passwords: the opt-out marker" />
+<meta name="twitter:description" content="A convention lets a password manager say do not record this. It works only if both apps honour it — how it works, and how to test yours in thirty seconds." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What your clipboard manager is not supposed to remember",
+  "description": "A convention lets a password manager say do not record this. It works only if both apps honour it — how it works, and how to test yours in thirty seconds.",
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-23",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/what-your-clipboard-should-not-remember/"
+  },
+  "url": "https://cyanote.app/blog/what-your-clipboard-should-not-remember/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/concealed-clipboard.svg",
+      "width": 1200,
+      "height": 460
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Clipboard, Privacy, Security",
+  "wordCount": 1253
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "What your clipboard manager is not supposed to remember",
+      "item": "https://cyanote.app/blog/what-your-clipboard-should-not-remember/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Clipboard" />
+<meta property="article:tag" content="Privacy" />
+<meta property="article:tag" content="Security" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>What your clipboard manager is not supposed to remember</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-22">22 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Clipboard</li><li>Privacy</li><li>Security</li></ul>
+    </header>
+
+    <div class="post">
+      <p>A clipboard manager records everything you copy. That is the feature. It is also, once a week or so, a password.</p>
+      <p>Copying a password out of a password manager is the normal way to use one. Copying a two-factor code is the normal way to use those too. Both go through the same system-wide buffer as the URL you sent a colleague, and a tool whose entire job is to remember that buffer will remember them, unless something stops it.</p>
+      <p>Something does — a convention, honoured voluntarily by both sides. It is worth understanding, because it is the difference between a clipboard history that is a convenience and one that is a plain-text password file with a nice interface.</p>
+      <h2 id="the-marker">The marker</h2>
+      <p>When a password manager copies a secret, it can attach a marker to the clipboard item saying <em>this is not for recording</em>.</p>
+      <p>On macOS there are two, both part of a convention published at nspasteboard.com that Mac clipboard tools have followed for years:</p>
+      <ul><li><code>org.nspasteboard.ConcealedType</code> — this is a secret. Do not store it, do not show it in a list.</li><li><code>org.nspasteboard.TransientType</code> — this is temporary and about to be replaced. Do not bother recording it.</li></ul>
+      <p>Windows has an equivalent pair of registered clipboard formats: <code>ExcludeClipboardContentFromMonitorProcessing</code>, whose mere presence is the signal, and <code>CanIncludeInClipboardHistory</code>, which carries a number where zero means keep it out.</p>
+      <p>Nothing in either operating system enforces any of this. There is no permission, no sandbox, no error if a tool ignores the marker. It is entirely a matter of the copying app setting it and the recording app respecting it.</p>
+      <figure><img src="/images/concealed-clipboard.svg" alt="A copied password carrying a concealed marker, and the two ways a clipboard manager can respond to it" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Two apps, one convention, no enforcement. Both halves have to hold up their end.</figcaption></figure>
+      <h2 id="both-halves-have-to-work">Both halves have to work</h2>
+      <p>This is the part people miss. Two apps have to behave for a secret to stay out of your history:</p>
+      <p><strong>The source has to mark it.</strong> Most well-known password managers do. Not everything else does. A secret you copy out of a terminal, a config file, an email, an admin panel, a spreadsheet or a chat window carries no marker at all — because none of those apps knows it was a secret. Your clipboard manager will record it, correctly, because it has been told nothing.</p>
+      <p><strong>The manager has to honour it.</strong> Reading those markers is a few lines of code and it is a few lines a developer has to have thought about. There is no compiler error for missing it. Cyanote's Windows build had exactly this gap for a while — it kept every password, not because anyone decided to, but because the check that existed on macOS had simply not been written for the other platform.</p>
+      <p>So the practical answer to "does my clipboard history contain passwords?" is: probably some of them.</p>
+      <h2 id="test-yours-in-thirty-seconds">Test yours in thirty seconds</h2>
+      <p>Do not take anyone's word for this, including mine.</p>
+      <ol><li>Copy a password out of your password manager, the way you normally would.</li><li>Open your clipboard history.</li><li>Look at the top of the list.</li></ol>
+      <p>If the password is sitting there, your combination of apps is not honouring the convention, and you now know something useful. Try it once more with something copied from a website's password field, and once with a two-factor code.</p>
+      <p>That test is worth more than any feature list, because it exercises the exact pair of apps you actually use.</p>
+      <h2 id="what-a-manager-should-do-when-it-cannot-tell">What a manager should do when it cannot tell</h2>
+      <p>There is a third case that decides how much you should trust a tool: what happens when it cannot classify an item at all. The clipboard is briefly locked by another app, a format cannot be read, something is malformed.</p>
+      <p>There are two possible defaults, and only one is defensible.</p>
+      <p>Cyanote's rule is that anything it cannot classify counts as private and is dropped. The reasoning is an asymmetry: losing one clipboard entry you could not classify costs the user one ⌘C. Storing one password you could not classify costs them the password.</p>
+      <p>That asymmetry is not close, and it is a reasonable thing to ask about any security-adjacent tool — what does it do when it does not know? A tool that defaults to recording when confused will, over months, collect precisely the items that were unusual, which is not a random sample.</p>
+      <p>One related subtlety: Windows also has a <code>CanUploadToCloudClipboard</code> marker. It means "do not sync this to my other machines", which is a statement about the cloud and not about whether a local history may hold it. An app that treats it as a do-not-record instruction is being generous with a signal that says something else; apps that mean both set the other two formats as well.</p>
+      <h2 id="what-else-is-in-there">What else is in there</h2>
+      <p>Passwords are the obvious case and not the largest one. In an ordinary working week, a clipboard history also accumulates:</p>
+      <ul><li>Two-factor codes, which are short-lived in reality and permanent in your history.</li><li>Card numbers, one-time bank codes, your address, your date of birth.</li><li>API keys and connection strings, which almost never carry a marker because they come out of a terminal or a config file.</li><li>Private links — the "anyone with this link" kind, which are credentials wearing a URL's clothes.</li><li>Whatever you copied off a colleague's screen during a call, which is now in your data rather than theirs.</li></ul>
+      <p>None of that is an argument against clipboard history. It is an argument for knowing where the history lives and who else can read it.</p>
+      <h2 id="the-questions-worth-asking">The questions worth asking</h2>
+      <p>Of any clipboard manager, including the one built into your operating system:</p>
+      <p><strong>Where is the history stored, and is it on my machine only?</strong> A local file is a much smaller problem than a synced one. If clipboard history syncs to a service, everything above now applies to that service too.</p>
+      <p><strong>Can I turn it off, and does turning it off clear what is already there?</strong> Off that leaves a fortnight of history on disk is not off. In Cyanote the clipboard can be switched off entirely in Settings, and doing so clears what it has already saved — because the alternative is a feature you disabled still holding your data.</p>
+      <p><strong>Can I delete a single entry?</strong> You will need this five minutes after copying the wrong thing.</p>
+      <p><strong>Does it honour the markers?</strong> Which you now know how to test.</p>
+      <h2 id="a-working-habit">A working habit</h2>
+      <p>The convention covers the common case well and cannot cover the rest, so a small habit closes the gap: after copying something genuinely sensitive that did <em>not</em> come from a password manager — a key from a terminal, a code from an email — copy something harmless afterwards. It costs a second and it means the sensitive item is one entry deep in a list rather than sitting on the clipboard where the next app to ask can read it.</p>
+      <p>And if you use a password manager's autofill instead of copying, the clipboard never sees the password at all, which is the only completely reliable version of any of this.</p>
+      <p>For the wider picture of what a clipboard manager is for, <a href="/blog/clipboard-history-on-mac/">macOS keeps exactly one thing and forgets the rest</a> — and if you are weighing whether you need more than a free one, <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">here is where the free ones stop</a>.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $4.99 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $4.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/what-not-to-write-down/">What not to write down in your personal notes</a><span>Notes outlive the situation that produced them, get restored to new machines and read by other people. Five categories to keep out, and where each belongs.</span></li><li><a href="https://cyanote.app/blog/password-protect-notes-on-mac/">How to password-protect a note on your Mac</a><span>Locking a note, encrypting a disk and using a login password protect against three different things. Here is which one stops what, and where each of them stops.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

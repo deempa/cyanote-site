@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="hl-title hl-desc">
+  <title id="hl-title">How a swapped image source reassigns Largest Contentful Paint</title>
+  <desc id="hl-desc">In the first timeline a 17 kilobyte poster paints early, but the 710 kilobyte animation is swapped into the same element while the Largest Contentful Paint measurement is still open, so the browser times the animation and the page scores against it. In the second timeline the swap is deferred until after the load event and an idle moment, by which point the measurement has closed and the poster owns the score.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 20px; font-weight: 600; fill: #0a0a0b; }
+    .ev   { font-size: 16px; fill: #3d3f45; }
+    .note { font-size: 15px; fill: #71757e; }
+    .lbl  { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+    .badv { font-size: 17px; font-weight: 600; fill: #b3392c; }
+    .okv  { font-size: 17px; font-weight: 600; fill: #0e7cc4; }
+  </style>
+
+  <rect class="card" x="24" y="30" width="1152" height="150" rx="12"/>
+  <rect x="24" y="30" width="1152" height="7" rx="3.5" fill="#b3392c"/>
+  <text class="lbl" x="56" y="70">BEFORE</text>
+  <text class="h" x="140" y="71">Swap while the measurement is open</text>
+
+  <line x1="56" y1="112" x2="1000" y2="112" stroke="#e6e6e9" stroke-width="3"/>
+  <rect x="56" y="104" width="300" height="16" rx="8" fill="#8ec6e8"/>
+  <rect x="356" y="104" width="644" height="16" rx="8" fill="#b3392c" opacity=".75"/>
+  <circle cx="56" cy="112" r="6" fill="#0e7cc4"/>
+  <circle cx="356" cy="112" r="6" fill="#b3392c"/>
+  <text class="ev" x="56" y="146">poster paints &#8212; 17 KB</text>
+  <text class="ev" x="356" y="146">src swapped &#8212; 710 KB animation</text>
+  <text class="badv" x="1144" y="118" text-anchor="end">LCP: the animation</text>
+
+  <rect class="card" x="24" y="204" width="1152" height="150" rx="12"/>
+  <rect x="24" y="204" width="1152" height="7" rx="3.5" fill="#0e7cc4"/>
+  <text class="lbl" x="56" y="244">AFTER</text>
+  <text class="h" x="140" y="245">Swap deferred past load, then idle</text>
+
+  <line x1="56" y1="286" x2="1000" y2="286" stroke="#e6e6e9" stroke-width="3"/>
+  <rect x="56" y="278" width="644" height="16" rx="8" fill="#0e7cc4"/>
+  <rect x="700" y="278" width="300" height="16" rx="8" fill="#b8bcc4"/>
+  <circle cx="56" cy="286" r="6" fill="#0e7cc4"/>
+  <circle cx="700" cy="286" r="6" fill="#71757e"/>
+  <text class="ev" x="56" y="320">poster paints, measurement closes</text>
+  <text class="ev" x="700" y="320">video starts &#8212; 180 KB, pausable</text>
+  <text class="okv" x="1144" y="292" text-anchor="end">LCP: the poster</text>
+
+  <line x1="24" y1="382" x2="1176" y2="382" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="422">A metric attached to an element, not a file, can be reassigned by anything that mutates the</text>
+  <text class="foot" x="24" y="450">element afterwards &#8212; which is exactly what a lazy upgrade does.</text>
+</svg>

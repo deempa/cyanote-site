@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Autoplay hero media, LCP, and the readers who opt out</title>
+<meta name="description" content="A 710 KB hero animation replaced the still it was meant to hide behind, while the browser was still deciding what to time. Three problems in one element." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/the-animation-that-stole-its-posters-score/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/the-animation-that-stole-its-posters-score/" />
+<meta property="og:title" content="Autoplay hero media, LCP, and the readers who opt out" />
+<meta property="og:description" content="A 710 KB hero animation replaced the still it was meant to hide behind, while the browser was still deciding what to time. Three problems in one element." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Autoplay hero media, LCP, and the readers who opt out" />
+<meta name="twitter:description" content="A 710 KB hero animation replaced the still it was meant to hide behind, while the browser was still deciding what to time. Three problems in one element." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The animation that stole its own poster's score",
+  "description": "A 710 KB hero animation replaced the still it was meant to hide behind, while the browser was still deciding what to time. Three problems in one element.",
+  "datePublished": "2026-08-23",
+  "dateModified": "2026-08-23",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/the-animation-that-stole-its-posters-score/"
+  },
+  "url": "https://cyanote.app/blog/the-animation-that-stole-its-posters-score/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/hero-lcp.svg",
+      "width": 1200,
+      "height": 460
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Builder's log, Performance, Design",
+  "wordCount": 1193
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The animation that stole its own poster's score",
+      "item": "https://cyanote.app/blog/the-animation-that-stole-its-posters-score/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Builder&#x27;s log" />
+<meta property="article:tag" content="Performance" />
+<meta property="article:tag" content="Design" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>The animation that stole its own poster&#x27;s score</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-23">23 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>5 min read</span>
+      </div>
+    <ul class="tags"><li>Builder&#x27;s log</li><li>Performance</li><li>Design</li></ul>
+    </header>
+
+    <div class="post">
+      <p>The top of this site's landing page shows the app in motion. For a while, that motion was a 710 KB animated WebP, swapped in over a small still image once it had loaded.</p>
+      <p>There were three things wrong with that, and they are worth separating because they fail differently: one is a performance measurement problem, one is an accessibility problem, and one is about people who never wanted the file at all.</p>
+      <h2 id="the-measurement-problem">The measurement problem</h2>
+      <p>Largest Contentful Paint is the metric browsers use to answer "when did the main thing appear?". On a landing page, the main thing is almost always the hero image — it is the biggest element above the fold, so it is what gets timed.</p>
+      <p>Here is the trap. The measurement does not close the instant something paints. And the swap replaced the <code>src</code> of the <em>same element</em> the browser was timing, while that window was still open.</p>
+      <p>Chrome then times whichever image the element settles on. So the score for the page was being set by the 710 KB animation — the very file the small still exists to hide until it is ready. The still weighed 17 KB and painted almost immediately, and it was getting no credit for it, because the element it painted into went on to become something forty times larger.</p>
+      <p>The fix is unglamorous: wait for the page load event, then wait for an idle moment, and only then swap. By that point LCP is decided and the poster owns it, which is the honest answer — the poster is genuinely what the visitor saw first.</p>
+      <p>What I take from that one is narrower than "optimise your hero". It is that a metric attached to an <em>element</em> rather than to a <em>file</em> can be quietly reassigned by anything that mutates the element afterwards. Progressive enhancement that swaps sources — low-quality placeholders, lazy upgrades, format negotiation done in JavaScript — is exactly the pattern that trips it.</p>
+      <figure><img src="/images/hero-lcp.svg" alt="Two paint timelines: an early poster whose score is reassigned to the animation swapped in over it, and the same page with the swap deferred past load and idle" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Same bytes, same order, one difference in when the swap happens — and a different element gets timed.</figcaption></figure>
+      <h2 id="the-accessibility-problem">The accessibility problem</h2>
+      <p>An animated image cannot be paused. There is no control, no keyboard affordance, nothing to stop it. It loops for as long as the page is open.</p>
+      <p>That is not a preference issue. Content that moves for more than a few seconds and cannot be paused is a recognised barrier — it competes for attention with the text beside it, and for some readers that competition is not winnable by concentrating harder. A looping product demo behind a paragraph explaining what the product is makes the paragraph harder to read, which is a strange thing for a sales page to do to itself.</p>
+      <p>So it is a <code>&lt;video&gt;</code> now. Video elements can be paused, they respect the browser's own controls, and they come with the accompanying decision made explicit rather than implied.</p>
+      <p>The file also got smaller by more than half in the process: 180 KB of MP4 against 710 KB of animated WebP, for the same footage. Animated image formats are a workaround for the era before video autoplay was allowed inline, and they are still worse than video at exactly the thing they are used for.</p>
+      <h2 id="the-people-who-should-never-have-downloaded-it">The people who should never have downloaded it</h2>
+      <p>The third problem is the one I would have missed entirely if the first two had not made me open the file.</p>
+      <p>Two groups of visitors were paying for a decoration they were never going to see the benefit of:</p>
+      <p><strong>Anyone who has asked for reduced motion.</strong> Their operating system carries an explicit instruction that animation should be dialled down, and the site's own CSS honoured it — so the animation was downloaded, decoded, and then suppressed. The request had already cost them the bytes before anything read the preference.</p>
+      <p><strong>Anyone on a connection flagged as metered or slow.</strong> A hero animation is the definition of optional. Sending it to a phone on a poor connection, ahead of the text that explains what the app is, gets the priorities exactly backwards.</p>
+      <p>Neither now downloads it at all. The check happens before the request rather than after, which is the entire difference between honouring a preference and pretending to.</p>
+      <p>I would generalise it like this: a media preference is not a rendering instruction, it is a <em>fetching</em> instruction. If you only apply it in CSS, you have kept the visual promise and broken the practical one, and the practical one is the reason the setting exists.</p>
+      <h2 id="and-a-comment-that-had-been-wrong-twice">And a comment that had been wrong twice</h2>
+      <p>One small archaeological note, because it made me laugh and then made me change a habit.</p>
+      <p>The comment above the image explained the size trade-off using two numbers: 15 KB and about 240 KB. Neither was true. They described a file that had been replaced twice since the comment was written, and each replacement had updated the code and left the explanation behind.</p>
+      <p>A stale comment about a number is worse than no comment, because it is the kind of thing you read once and cite later without re-checking. If a comment contains a measurement, it is a fact with an expiry date attached, and the fix is either to re-measure when you touch the code or to write down what you measured <em>and when</em>, so the next reader knows how much to trust it.</p>
+      <h2 id="what-a-hero-image-owes-the-reader">What a hero image owes the reader</h2>
+      <p>Rolled together, my current rules for anything moving at the top of a page:</p>
+      <ul><li><strong>It must be pausable.</strong> If it cannot be, it should not be moving.</li><li><strong>It must not be the largest contentful paint.</strong> Show a still, let the still be timed, and upgrade after the page has settled.</li><li><strong>It must not be sent to people who have opted out</strong> — reduced motion, metered connection, small screen where the layout drops it anyway. Check before the request.</li><li><strong>It must be smaller than you think it needs to be.</strong> 180 KB is a demo. 710 KB is a demo plus a tax on everyone who came for the sentence underneath it.</li><li><strong>It must not be the thing the page relies on to explain itself.</strong> The page should read perfectly with the media removed entirely — which is a good test to actually run, rather than assume.</li></ul>
+      <p>That last one is why the same change added a single plain sentence saying what this app <em>is</em>, set quieter than the headline above it. Motion is good at showing that something feels quick and useless at saying what it does, and a visitor arriving with the animation blocked, the video not yet loaded, or the page read aloud to them deserves the sentence.</p>
+      <p>Related, from the app side of the same concern: <a href="/blog/why-a-notes-app-should-open-instantly/">why an app should open instantly</a>, and <a href="/blog/the-sidebar-read-every-note-to-draw-a-list/">what happened when the sidebar read every note to draw a list</a>.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $4.99 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $4.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/a-tour-is-a-bad-introduction/">A tour is a good reminder and a bad introduction</a><span>The tour pointed at things already on screen. The two facts a new user most needed were about a feature living outside the window, and their right to switch it off.</span></li><li><a href="https://cyanote.app/blog/two-colour-tokens-forty-three-failing-elements/">Two colour tokens, forty-three failing elements</a><span>An audit listed 43 failing elements on this site. They were two hex values, each a tenth of a ratio short — and, in the app, white on colours users pick.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Calendar or to-do list: where each thing actually goes</title>
+<meta name="description" content="A calendar is for things that happen whether you show up or not. A list is for everything else. The test that sorts them, and why mixing the two ruins both." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/calendar-or-list/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/calendar-or-list/" />
+<meta property="og:title" content="Calendar or to-do list: where each thing actually goes" />
+<meta property="og:description" content="A calendar is for things that happen whether you show up or not. A list is for everything else. The test that sorts them, and why mixing the two ruins both." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Calendar or to-do list: where each thing actually goes" />
+<meta name="twitter:description" content="A calendar is for things that happen whether you show up or not. A list is for everything else. The test that sorts them, and why mixing the two ruins both." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What belongs on the calendar, and what belongs on a list",
+  "description": "A calendar is for things that happen whether you show up or not. A list is for everything else. The test that sorts them, and why mixing the two ruins both.",
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-23",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/calendar-or-list/"
+  },
+  "url": "https://cyanote.app/blog/calendar-or-list/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/calendar-or-list.svg",
+      "width": 1200,
+      "height": 460
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Calendar, Tasks, Method",
+  "wordCount": 1218
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "What belongs on the calendar, and what belongs on a list",
+      "item": "https://cyanote.app/blog/calendar-or-list/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Calendar" />
+<meta property="article:tag" content="Tasks" />
+<meta property="article:tag" content="Method" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>What belongs on the calendar, and what belongs on a list</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-22">22 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Calendar</li><li>Tasks</li><li>Method</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Most people run two systems that overlap badly. Some things end up on the calendar, some on a list, and the rule for which goes where is whatever felt natural at the moment of writing it down.</p>
+      <p>The result is a calendar you have learned to half-trust and a list you have learned to half-read. Both failures come from the same place, and the fix is a single rule you can apply in about a second.</p>
+      <h2 id="the-rule">The rule</h2>
+      <p><strong>A calendar is for things that happen at a time whether or not you show up. A list is for things that need doing but do not have a slot.</strong></p>
+      <p>That is it. The dentist happens at 3pm on Thursday whether you are there or not. "Renew the insurance" does not happen at any time; it needs to be done before a date, which is a different thing entirely.</p>
+      <p>The test, when something is ambiguous: <em>if I am not there, does it still occur?</em> Yes → calendar. No → list.</p>
+      <figure><img src="/images/calendar-or-list.svg" alt="The same seven items sorted by one question — does this happen without me — into a calendar column and a list column" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>One question, applied seven times. Almost everything sorts itself.</figcaption></figure>
+      <h2 id="why-putting-tasks-on-the-calendar-goes-wrong">Why putting tasks on the calendar goes wrong</h2>
+      <p>Blocking out 2pm to 3pm for "write the report" is the most common piece of productivity advice there is, and it fails for a specific, mechanical reason.</p>
+      <p>Tasks slide. The report does not get written at 2pm because a meeting overran, so it moves to 4pm, then to tomorrow. Each move is a small edit and a slightly larger lie: your calendar now shows something that did not happen and something else that will not.</p>
+      <p>Do that for two weeks and the calendar stops being a record of what is true. Once it is not reliably true, you stop reading it as though it were — and now the dentist appointment is in the same visual field as four blocks you already know are fiction. The appointment is what you lose.</p>
+      <p>The cost is not the moved block. It is the trust.</p>
+      <h2 id="why-putting-appointments-on-a-list-goes-wrong">Why putting appointments on a list goes wrong</h2>
+      <p>The opposite error is quieter and more expensive.</p>
+      <p>An appointment on a to-do list has no shape. Lists are read as <em>things I could do next</em>, scanned in priority order, and a 3pm meeting has no priority — it has a time. Put it in a list and it either gets done early, which is impossible, or it gets missed, which is the usual outcome.</p>
+      <p>An appointment needs to be somewhere that will interrupt you. A list will not interrupt you. That is a large part of what makes a list restful to look at.</p>
+      <h2 id="the-useful-third-category-a-deadline">The useful third category: a deadline</h2>
+      <p>Most confusion lives here, and it dissolves once you notice that a deadline is two things.</p>
+      <p>A deadline is a <strong>point in time</strong> — the tax return is due on the 31st. The <em>work</em> is a block of effort with no natural home in the calendar, because it is not an event, it is a task you have to find hours for.</p>
+      <p>So: put the deadline on the calendar as an all-day marker, because it is genuinely a fact about the 31st. Put the work on the list with the 31st as its due date, so it rises as the date approaches. One thing, two records, each of them true.</p>
+      <p>What you should not do is block "do tax return" for Tuesday afternoon and treat that block as the plan. If Tuesday goes wrong you have lost both the plan and the record of the deadline.</p>
+      <h2 id="time-blocking-defended-properly">Time-blocking, defended properly</h2>
+      <p>Time-blocking works, but only under a condition people rarely state: the block has to be a <strong>commitment to be unavailable</strong>, not a prediction of what you will feel like doing.</p>
+      <p>"9 to 11, no meetings, deep work" is a real thing that really happens — you can protect that time, and it is true whether or not the report is what you end up writing in it. It behaves like an appointment because it constrains other people.</p>
+      <p>"2pm, write the report" is a wish. It constrains nobody, it is not verifiable, and it is the version that erodes the calendar.</p>
+      <p>If you want to time-block, block the availability, not the task. Then pull from the list when the block starts.</p>
+      <h2 id="recurring-things-which-are-neither">Recurring things, which are neither</h2>
+      <p>There is a third bucket that people force into one of the first two and should not.</p>
+      <p><em>Water the plants. Twenty minutes of Spanish. Take the pills.</em> Put these on a calendar and it fills with grey repeating events you stop seeing. Put them on a to-do list and they arrive as new tasks every single day, drowning the four things that are actually new.</p>
+      <p>These are habits, and they want a third kind of record: a grid where the question is not "what should I do today" but "how has this gone over the last month". <a href="/blog/tracking-habits-without-a-separate-app/">Tracking habits without a separate app for it</a> goes into that properly. The relevant point here is that misfiling them is what makes both of your other two systems noisy.</p>
+      <p>Similarly, a <strong>routine</strong> — the four things you do every Monday morning, in order — is a checklist you run, not four separate tasks and not a calendar event. <a href="/blog/checklists-for-things-you-do-every-week/">Checklists for the things you do every week</a> is the same idea.</p>
+      <h2 id="what-a-good-day-looks-like">What a good day looks like</h2>
+      <p>With things filed correctly, the morning view answers one question — <em>what is fixed today, and what is available</em> — and it has four parts:</p>
+      <ul><li><strong>What happens at a time.</strong> Two meetings, a call, a collection. Non-negotiable, in order, with the next one's time visible.</li><li><strong>What is due.</strong> Things whose deadline is today or close, risen from the list.</li><li><strong>What is outstanding.</strong> The habits not yet ticked, the routine not yet run.</li><li><strong>Everything else,</strong> which is a list you choose from in the gaps.</li></ul>
+      <p>The point of the separation is that only the first is a constraint. The rest is choice, and being able to see the difference at a glance is most of what people want from a planner. Cyanote's Today page is built exactly on that split, which is not a coincidence — <a href="/blog/planning-a-day-you-will-actually-follow/">it came out of trying to plan a day I would actually follow</a>.</p>
+      <h2 id="a-five-minute-audit">A five-minute audit</h2>
+      <p>Open your calendar for last week and look for anything that moved more than once. Each of those is a task pretending to be an event; take it off, put it on the list with a due date.</p>
+      <p>Then open your list and look for anything with a time in the text — "call Sam 3pm", "dentist Thursday". Those are events pretending to be tasks; put them on the calendar.</p>
+      <p>Most people find between three and ten items in the wrong place, and the immediate effect of moving them is that the calendar becomes true again. A true calendar is one you can read in a second and believe, which is the only version of a calendar that is any use at all.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $4.99 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $4.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/a-someday-list-that-is-not-a-graveyard/">A someday list that is not a graveyard</a><span>Everyone has two hundred things they will never do, in a list they stopped opening. The list is not the problem. Never deleting anything from it is.</span></li><li><a href="https://cyanote.app/blog/personal-kanban-board/">Personal Kanban: a board for your own to-do list</a><span>A Kanban board built for a team does not survive being handed to one person. Here is which parts translate, which columns to use, and when a plain list wins.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-labelledby="tt-title tt-desc">
+  <title id="tt-title">Two colour tokens moved across the WCAG AA contrast line</title>
+  <desc id="tt-desc">The muted text token measured 4.42 to 1 against the page background and the accent 4.28 to 1, both below the 4.5 to 1 that WCAG AA asks for normal text. Three shades darker, with hue and saturation untouched, takes them to 4.62 and 4.58; the accent measures 4.78 on the white panels. Those two values feed forty-three elements across the site — every lede, piece of fine print, feature blurb, figcaption, key-value label and footer link.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 21px; font-weight: 600; fill: #0a0a0b; }
+    .tok  { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 18px; fill: #0a0a0b; }
+    .val  { font-size: 17px; fill: #71757e; }
+    .valok{ font-size: 17px; font-weight: 600; fill: #0e7cc4; }
+    .axis { font-size: 15px; fill: #a3a7af; }
+    .rule { font-size: 16px; font-weight: 600; fill: #b3392c; }
+    .item { font-size: 17px; fill: #3d3f45; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+    .big  { font-size: 46px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+  </style>
+
+  <rect class="card" x="24" y="30" width="800" height="290" rx="12"/>
+
+  <line x1="130" y1="90" x2="130" y2="250" stroke="#efeff1" stroke-width="2"/>
+  <line x1="790" y1="90" x2="790" y2="250" stroke="#efeff1" stroke-width="2"/>
+  <line x1="460" y1="76" x2="460" y2="262" stroke="#b3392c" stroke-width="2" stroke-dasharray="5 5"/>
+  <text class="rule" x="460" y="66" text-anchor="middle">AA &#8212; 4.5:1</text>
+  <text class="axis" x="130" y="284">4.0</text>
+  <text class="axis" x="790" y="284" text-anchor="end">5.0</text>
+
+  <text class="tok" x="56" y="132">--muted</text>
+  <line x1="407.6" y1="126" x2="539.6" y2="126" stroke="#c9cdd4" stroke-width="3"/>
+  <circle cx="407.6" cy="126" r="7" fill="#b8bcc4"/>
+  <circle cx="539.6" cy="126" r="7" fill="#0e7cc4"/>
+  <text class="val" x="399" y="160" text-anchor="end">4.42</text>
+  <text class="valok" x="548" y="160">4.62</text>
+
+  <text class="tok" x="56" y="216">--accent</text>
+  <line x1="314.4" y1="210" x2="512.4" y2="210" stroke="#c9cdd4" stroke-width="3"/>
+  <circle cx="314.4" cy="210" r="7" fill="#b8bcc4"/>
+  <circle cx="512.4" cy="210" r="7" fill="#0e7cc4"/>
+  <text class="val" x="306" y="244" text-anchor="end">4.28</text>
+  <text class="valok" x="521" y="244">4.58</text>
+
+  <text class="lbl" x="56" y="94">CONTRAST AGAINST THE PAGE, #fafafa</text>
+
+  <rect class="card" x="856" y="30" width="320" height="290" rx="12"/>
+  <rect x="856" y="30" width="320" height="7" rx="3.5" fill="#0e7cc4"/>
+  <text class="big" x="888" y="106">43</text>
+  <text class="h" x="888" y="140">failing elements</text>
+  <line x1="888" y1="166" x2="1144" y2="166" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="888" y="198">Every lede and standfirst</text>
+  <text class="item" x="888" y="226">Every piece of fine print</text>
+  <text class="item" x="888" y="254">Feature blurbs, figcaptions</text>
+  <text class="item" x="888" y="282">Key-value labels, footer links</text>
+
+  <line x1="24" y1="358" x2="1176" y2="358" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="396">Hue and saturation untouched; only lightness moved. Side by side at text size the greys are</text>
+  <text class="foot" x="24" y="424">indistinguishable &#8212; which is exactly why the only way to know was to compute it.</text>
+</svg>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Why editing a shipped migration splits your user base</title>
+<meta name="description" content="A migration that has already run never runs again. Editing one changes what new installs get and nothing else: two schemas, and no error anywhere." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/the-migration-you-edited-after-it-shipped/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/the-migration-you-edited-after-it-shipped/" />
+<meta property="og:title" content="Why editing a shipped migration splits your user base" />
+<meta property="og:description" content="A migration that has already run never runs again. Editing one changes what new installs get and nothing else: two schemas, and no error anywhere." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Why editing a shipped migration splits your user base" />
+<meta name="twitter:description" content="A migration that has already run never runs again. Editing one changes what new installs get and nothing else: two schemas, and no error anywhere." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The migration you edited after it shipped",
+  "description": "A migration that has already run never runs again. Editing one changes what new installs get and nothing else: two schemas, and no error anywhere.",
+  "datePublished": "2026-08-22",
+  "dateModified": "2026-08-23",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/the-migration-you-edited-after-it-shipped/"
+  },
+  "url": "https://cyanote.app/blog/the-migration-you-edited-after-it-shipped/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/migration-divergence.svg",
+      "width": 1200,
+      "height": 480
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Builder's log, Local-first, Development",
+  "wordCount": 1281
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The migration you edited after it shipped",
+      "item": "https://cyanote.app/blog/the-migration-you-edited-after-it-shipped/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Builder&#x27;s log" />
+<meta property="article:tag" content="Local-first" />
+<meta property="article:tag" content="Development" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>The migration you edited after it shipped</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-22">22 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>6 min read</span>
+      </div>
+    <ul class="tags"><li>Builder&#x27;s log</li><li>Local-first</li><li>Development</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Here is a bug that cannot be found by testing, does not appear in any log, and gets worse the longer it goes unnoticed.</p>
+      <p>You ship migration 18. A week later you spot that its <code>CREATE INDEX</code> is on the wrong column, or that a <code>DEFAULT</code> is missing, or simply that the description above it is misspelled. So you fix it, in place, in the file where it lives. The tests pass. A fresh install comes up perfectly. You ship.</p>
+      <p>Nothing you did reached a single existing user, and now there are two versions of your database schema in the world.</p>
+      <h2 id="a-migration-runs-once-per-database-forever">A migration runs once, per database, forever</h2>
+      <p>That is the whole mechanism. <a href="https://v2.tauri.app/plugin/sql/">tauri-plugin-sql</a>, like every migration runner I have used, records which versions a given database has applied and never runs them again. It is exactly the behaviour you want — it is what makes the migration list replayable from empty and safe to run on every launch.</p>
+      <p>It also means the SQL text of migration 18 is only ever read on machines that have not yet reached 18. Edit it, and:</p>
+      <ul><li>Everyone who installed before the edit keeps the old schema. They applied version 18, the runner has recorded 18, and it will never look at that SQL again.</li><li>Everyone who installs after the edit gets the new schema.</li><li>Both populations are on the same app version, reporting the same version number, running the same code against two different tables.</li></ul>
+      <p>There is no error. There is no warning. There is no query you can run in the app to detect it, because the app has no idea anything is wrong — the code compiled, the database opened, the index either exists or does not.</p>
+      <p>What it produces is the worst genre of bug report: <em>it works on mine</em>. Months later, one user's search is slow and yours is not; one user's column is null and yours has a default. The reproduction step you will never guess is "install the app before 14 August".</p>
+      <figure><img src="/images/migration-divergence.svg" alt="Two populations of the same app version diverging: installs before the edit keep the old schema, installs after get the new one, and nothing reports the difference" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>The app version is identical on both sides. Only the schema differs, and nothing on either side knows.</figcaption></figure>
+      <h2 id="why-the-obvious-defence-doesn-t-work">Why the obvious defence doesn't work</h2>
+      <p>The obvious defence is discipline. <em>Don't edit shipped migrations.</em> Everybody knows this rule, and everybody knows it in the abstract while looking at a one-character typo in a line of SQL they wrote four days ago.</p>
+      <p>The failure is not ignorance. The failure is that the cost is invisible at the moment of the edit and enormous six months later, which is the exact profile of a mistake people keep making. So it needs a mechanism rather than a resolution.</p>
+      <h2 id="what-the-mechanism-is">What the mechanism is</h2>
+      <p>There is a file, <code>migrations.lock</code>, that records a SHA-256 for every migration that has ever shipped. Thirty of them, at the time of writing.</p>
+      <p>The hash is not of the SQL alone. It is of a canonical form:</p>
+      <pre><code>version=&lt;n&gt;
+kind=&lt;kind&gt;
+description=&lt;byte length&gt;:&lt;text&gt;
+sql=&lt;byte length&gt;:&lt;text&gt;</code></pre>
+      <p>The length prefixes are the part worth explaining. Without them, the framing and the content can be confused with each other: a description ending in <code>\nsql=</code> produces the same bytes as a shorter description followed by the real field. Prefixing each text with its own byte length makes that impossible — the reader knows how many bytes to take before it looks at what they say. It is the same reason network protocols length-prefix frames rather than hunting for a delimiter.</p>
+      <p>A script, run before anything else, reads the migration list out of the Rust source and compares it against the lock. An edit fails. A deletion fails. Both name the version and say what to do instead. A brand-new migration above the highest locked version passes and is reported as unlocked, because that is a normal state to be in halfway through writing one; <code>npm run migrations:bless</code> appends it to the lock when it is ready to ship.</p>
+      <h2 id="byte-exact-deliberately">Byte-exact, deliberately</h2>
+      <p>The first thing anyone suggests here is whitespace normalisation. Strip the indentation, collapse runs of spaces, then hash — so that reformatting a migration does not trip the guard.</p>
+      <p>I decided against it, and the reason is specific. Tolerating reformatting also tolerates edits <em>inside string literals</em>. <code>DEFAULT 'a  b'</code> to <code>DEFAULT 'a b'</code> is a whitespace change to a formatter and a data change to every row inserted afterwards. The same applies inside an FTS5 <code>tokenize</code> argument, where the spacing is an argument list, not a layout.</p>
+      <p>The asymmetry settles it. A false alarm costs you a <code>git checkout</code> of one file. A missed edit costs you a permanently split user base that you find out about from a stranger, in a year, with no way to tell which of them are on which side.</p>
+      <h2 id="where-it-runs">Where it runs</h2>
+      <p>Two places, and the choice of both is deliberate.</p>
+      <p><strong>First in <code>npm test</code>.</strong> Not last. It takes about a second, needs no build, and catches the mistake while the change is still in your head. A guard that runs after four minutes of bundling is a guard you learn to skip.</p>
+      <p><strong>As a release preflight in <code>ship.sh</code>,</strong> before anything is bumped, built, signed or uploaded. The release script's job is to make a bad release impossible to publish by accident, and this is the failure that would otherwise be undetectable after the fact — every other release mistake can be fixed by releasing again.</p>
+      <h2 id="two-readers-so-neither-can-drift">Two readers, so neither can drift</h2>
+      <p>The guard reads the migration list by parsing Rust source with JavaScript. That is a text parser looking at a language it does not understand, and text parsers drift from languages.</p>
+      <p>So the migration list moved out of the middle of a function into <code>pub fn migrations()</code>, and there is a Rust test that hashes the same lock file against the structs <em>as the compiler sees them</em>. Two independent readers of the same source of truth, in two languages, checked against one lock file. If the parser ever stops seeing what the compiler sees, the two disagree and the build fails — which is the only way a parser like that can be trusted at all.</p>
+      <h2 id="the-general-rule">The general rule</h2>
+      <p>The database on a user's disk is state I will never see. <a href="/blog/the-features-i-said-no-to/">There is no telemetry in this app</a>, no server holding a copy, and — for a local-first app — that is the point rather than an oversight. But it does mean that anything I cannot observe in the field has to be made impossible at build time instead.</p>
+      <p>Migrations are the sharpest instance because they are append-only in the same way an event log is: once a version has run on somebody's machine, that version is a historical fact and no longer a piece of source code. The file it lives in is misleading — it looks editable, it sits in your editor, the linter will happily reformat it. Everything about the medium says "text you can change", and exactly one thing says otherwise.</p>
+      <p>That is what the lock file is really for. Not to catch a mistake, but to change what the file looks like when you open it.</p>
+      <p>If you want the shape of what all these migrations have built, <a href="/blog/one-sqlite-file-the-whole-data-model/">the whole data model is one SQLite file</a> — and the reason its integrity matters so much is that <a href="/blog/where-your-notes-actually-live/">it is also the thing you back up, move and inherit</a>.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $4.99 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $4.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/porting-to-windows-from-a-mac/">Porting to Windows from a Mac I can&#x27;t run it on</a><span>Half the Windows work is code that cannot run on the machine writing it. What that changes, and the week a compile error had nowhere at all to surface.</span></li><li><a href="https://cyanote.app/blog/the-app-said-saved-and-saved-nothing/">The app said &quot;Saved&quot;, and had saved nothing</a><span>A success message with nothing behind it, a paste that discarded its own error text, and a poll that quietly retired. Four swallowed failures, and the rule.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

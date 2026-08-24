@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What a first run should teach, and what a tour cannot</title>
+<meta name="description" content="The tour pointed at things already on screen. The two facts a new user most needed were about a feature living outside the window, and their right to switch it off." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/a-tour-is-a-bad-introduction/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/a-tour-is-a-bad-introduction/" />
+<meta property="og:title" content="What a first run should teach, and what a tour cannot" />
+<meta property="og:description" content="The tour pointed at things already on screen. The two facts a new user most needed were about a feature living outside the window, and their right to switch it off." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What a first run should teach, and what a tour cannot" />
+<meta name="twitter:description" content="The tour pointed at things already on screen. The two facts a new user most needed were about a feature living outside the window, and their right to switch it off." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A tour is a good reminder and a bad introduction",
+  "description": "The tour pointed at things already on screen. The two facts a new user most needed were about a feature living outside the window, and their right to switch it off.",
+  "datePublished": "2026-08-23",
+  "dateModified": "2026-08-23",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/a-tour-is-a-bad-introduction/"
+  },
+  "url": "https://cyanote.app/blog/a-tour-is-a-bad-introduction/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/welcome-vs-tour.svg",
+      "width": 1200,
+      "height": 460
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Builder's log, Design, Onboarding",
+  "wordCount": 1143
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "A tour is a good reminder and a bad introduction",
+      "item": "https://cyanote.app/blog/a-tour-is-a-bad-introduction/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Builder&#x27;s log" />
+<meta property="article:tag" content="Design" />
+<meta property="article:tag" content="Onboarding" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>A tour is a good reminder and a bad introduction</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-08-23">23 August 2026</time></span>
+        <span class="dot">·</span>
+        <span>5 min read</span>
+      </div>
+    <ul class="tags"><li>Builder&#x27;s log</li><li>Design</li><li>Onboarding</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Onboarding was a tour: a sequence of highlights pointing at the sidebar, the new-note button, the search field. It was well made, and it was the whole of the introduction, and it was teaching the wrong things.</p>
+      <p>The realisation came from writing down what a person actually needs to know in their first minute, and then noticing that a tour is structurally incapable of saying most of it.</p>
+      <h2 id="a-tour-can-only-point-at-what-is-visible">A tour can only point at what is visible</h2>
+      <p>That is the constraint, and everything follows from it. A tour highlights elements on screen. So the things it can teach are exactly the things a person could have discovered by looking.</p>
+      <p>The two most important facts about this app on day one are neither of them on screen.</p>
+      <p><strong>The clipboard manager exists.</strong> It lives outside the window, behind a keyboard shortcut. There is no button for it, no panel, nothing in the sidebar. A user who never learns the shortcut has bought an app and received two thirds of it, and no amount of pointing at the visible interface will tell them, because the feature is deliberately not in the visible interface.</p>
+      <p><strong>It can be switched off.</strong> This matters more than a feature announcement. A tool that records everything you copy is one people are entitled to be wary of; some of them will want it off, and finding out that off is available is part of deciding to trust the thing at all. A tour has no vocabulary for "here is something you may not want, and here is how to decline it".</p>
+      <p>Every step of the old tour was accurate. The introduction as a whole was still wrong, because the syllabus was chosen by what could be highlighted rather than by what was worth knowing.</p>
+      <figure><img src="/images/welcome-vs-tour.svg" alt="A tour can only point at what is on screen; the two things a new user most needs to know are a feature outside the window and their right to switch it off" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>The syllabus was being chosen by the format. Anything not on screen could not be taught.</figcaption></figure>
+      <h2 id="what-replaced-it">What replaced it</h2>
+      <p>A welcome now runs first, and hands over to the tour afterwards — or does not, because every step can be left.</p>
+      <p><strong>What the app is,</strong> in a sentence, before anything else. Not a feature list. The thing a person would say to a friend.</p>
+      <p><strong>A theme, applied live.</strong> You pick, and the app changes underneath the dialog rather than showing you a picture of what it would look like. That is a small thing that pays twice: the choice is real, and the first interaction anyone has with the app is one where something they did changed something immediately.</p>
+      <p><strong>The clipboard manager, explained, with a keep-or-skip choice.</strong> Explained meaning what it records and where that goes, before the choice, not after. And then the shortcut — with a prompt to press it <em>now</em>, which confirms itself when the popup actually opens.</p>
+      <p>That last detail is the part I would defend hardest. Telling someone a shortcut is not teaching it. Watching them use it once, and having the app acknowledge that it worked, is the difference between a fact they were told and a thing they have done. It also verifies the shortcut works on their machine, which is not guaranteed — another app may already own it.</p>
+      <p><strong>Three things worth knowing on day one,</strong> and then out.</p>
+      <h2 id="the-rule-the-rewrite-ran-into">The rule the rewrite ran into</h2>
+      <p>The tour that follows is now built around anchors — new note, search, tasks, the calendar, settings — and it has one conditional behaviour that turned out to be the whole lesson.</p>
+      <p>If the clipboard manager is off, the tour's clipboard steps disappear entirely.</p>
+      <p>They used to be unconditional, which produced the worst possible outcome: a tour teaching a keyboard shortcut that had deliberately not been registered. The user presses it, nothing happens, and now they have learned something false about the app <em>and</em> about their own competence. That is worse than a tour that says nothing at all, because silence leaves no wrong belief behind.</p>
+      <p>Any interface that teaches has this obligation. If you tell someone how to do something, the something has to work when they try it. Which means every piece of instructional UI has a dependency on the state it describes, and that dependency is invisible in the code until someone turns the feature off.</p>
+      <h2 id="written-at-the-end-not-the-beginning">Written at the end, not the beginning</h2>
+      <p>One more small fix with a general shape.</p>
+      <p>The flag that records "this user has been introduced" was written when the introduction <em>opened</em>. So closing the app halfway through the welcome — which is a thing people do, because a first launch is often a quick look before making a cup of tea — meant it never appeared again. The user had been marked as introduced by having been shown the first screen of an introduction they never finished.</p>
+      <p>It is written when the welcome is finished or explicitly skipped. Skipped counts, because that is a decision; interrupted does not, because that is not.</p>
+      <p>Both halves also replay from settings, separately, so the tour is available later as what it is actually good for — a reminder for someone who has used the app for a month and wants to know what they have missed. In that role it is genuinely useful. It was only ever bad at being first.</p>
+      <h2 id="what-i-would-ask-of-any-first-run">What I would ask of any first run</h2>
+      <ul><li><strong>What are the two or three things that cannot be discovered by looking?</strong> Those are your syllabus. Everything visible can wait for curiosity.</li><li><strong>Is there anything here a reasonable person might not want?</strong> Offer the decline, early, next to the explanation rather than buried in settings.</li><li><strong>Does anything you teach depend on state that could be off?</strong> Then it needs to disappear when that state is off, or you are teaching a falsehood.</li><li><strong>Does the user do anything, or only read?</strong> One real action beats five screens.</li><li><strong>When is "done" recorded?</strong> If it is at the start, a person who was interrupted has silently used up their introduction.</li></ul>
+      <p>None of this is exotic, and all of it came from the same place: writing the list of what somebody needs to know before looking at what the existing format was able to show them. The format had been choosing the content for a year, quietly, and it had chosen badly — not because a tour is bad, but because it was answering a question nobody had asked it.</p>
+      <p>The features that are deliberately absent are their own kind of introduction too — <a href="/blog/the-features-i-said-no-to/">the ones I said no to</a>, and <a href="/blog/supporting-an-app-that-does-not-know-who-you-are/">how support works for an app that does not know who you are</a>.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $4.99 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $4.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/the-animation-that-stole-its-posters-score/">The animation that stole its own poster&#x27;s score</a><span>A 710 KB hero animation replaced the still it was meant to hide behind, while the browser was still deciding what to time. Three problems in one element.</span></li><li><a href="https://cyanote.app/blog/the-screenshots-are-generated/">The screenshots on this site are generated</a><span>Nobody photographs this app by hand. A script seeds a database, drives the interface and shoots it — which makes the marketing images a test that fails loudly.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

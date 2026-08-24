@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="cp-title cp-desc">
+  <title id="cp-title">How the screenshots on this site are produced</title>
+  <desc id="cp-desc">A seed file writes demo content into a database, the page clock is pinned to a fixed time so time-dependent screens are identical on every run, the real application is driven through the interface, each shot is captured at a fixed size after animations have settled, and the images are optimised. Because the middle step drives the real application, a moved control or an empty render breaks the run — the pipeline behaves as a test that happens to produce pictures.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .note { font-size: 15px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+    .num  { font-size: 15px; font-weight: 600; fill: #0e7cc4; }
+    .app  { font-size: 21px; font-weight: 600; fill: #ffffff; }
+    .appn { font-size: 15px; fill: #dcecf8; }
+  </style>
+
+  <rect class="card" x="24" y="40" width="212" height="150" rx="12"/>
+  <text class="num" x="52" y="76">01</text>
+  <text class="h" x="52" y="106">Seed</text>
+  <text class="note" x="52" y="134">Eleven weeks of habits,</text>
+  <text class="note" x="52" y="156">with real gaps in them</text>
+
+  <rect class="card" x="264" y="40" width="212" height="150" rx="12"/>
+  <text class="num" x="292" y="76">02</text>
+  <text class="h" x="292" y="106">Pin the clock</text>
+  <text class="note" x="292" y="134">Today is a clock; every</text>
+  <text class="note" x="292" y="156">driver freezes it at 10:12</text>
+
+  <rect x="504" y="40" width="212" height="150" rx="12" fill="#0e7cc4"/>
+  <text class="app" x="532" y="86">The real app</text>
+  <text class="appn" x="532" y="118">Driven through its own</text>
+  <text class="appn" x="532" y="140">interface, like a user</text>
+  <text class="appn" x="532" y="168">No mockups anywhere</text>
+
+  <rect class="card" x="744" y="40" width="212" height="150" rx="12"/>
+  <text class="num" x="772" y="76">03</text>
+  <text class="h" x="772" y="106">Shoot</text>
+  <text class="note" x="772" y="134">1000ms wait &#8212; longer than</text>
+  <text class="note" x="772" y="156">the 750ms row stagger</text>
+
+  <rect class="card" x="984" y="40" width="192" height="150" rx="12"/>
+  <text class="num" x="1012" y="76">04</text>
+  <text class="h" x="1012" y="106">Optimise</text>
+  <text class="note" x="1012" y="134">Fixed sizes, so the</text>
+  <text class="note" x="1012" y="156">page never shifts</text>
+
+  <path d="M244 115 h12 M484 115 h12 M724 115 h12 M964 115 h12" stroke="#a3a7af" stroke-width="2"/>
+
+  <line x1="24" y1="238" x2="1176" y2="238" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="278" font-weight="600" fill="#0a0a0b">Because step three drives the real app, the run fails when the app changes:</text>
+  <text class="foot" x="24" y="310">a control that moved into a right-click menu, a button that became a segmented control, an</text>
+  <text class="foot" x="24" y="342">overlay that a synthetic click does not dismiss, a page that renders empty.</text>
+  <text class="foot" x="24" y="392">Every one of those is a screenshot that would have been wrong, and a change nobody wrote down.</text>
+  <text class="foot" x="24" y="424">The pictures are the output. The test is the side effect &#8212; and it is the half that keeps them true.</text>
+</svg>

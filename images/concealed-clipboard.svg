@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="cc-title cc-desc">
+  <title id="cc-title">How a copied secret asks not to be recorded, and what can go wrong</title>
+  <desc id="cc-desc">A password manager can attach a concealed or transient marker to a clipboard item, and on Windows an equivalent pair of registered formats. Nothing enforces it: the copying app has to set the marker and the clipboard manager has to honour it. Secrets copied from a terminal, a config file or an email carry no marker at all, because none of those apps knows the text was a secret. When an item cannot be classified, the safe default is to drop it.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 21px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 17px; fill: #3d3f45; }
+    .note { font-size: 16px; fill: #71757e; }
+    .lbl  { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; fill: #0e7cc4; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+    .kept { font-size: 18px; font-weight: 600; fill: #0e7cc4; }
+    .gone { font-size: 18px; font-weight: 600; fill: #b3392c; }
+  </style>
+
+  <rect class="card" x="24" y="30" width="470" height="300" rx="12"/>
+  <text class="lbl" x="56" y="70">WHAT THE COPYING APP SAYS</text>
+  <text class="h" x="56" y="104">Three cases, every week</text>
+  <line x1="56" y1="128" x2="462" y2="128" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="item" x="56" y="162">A password manager</text>
+  <text class="mono" x="56" y="186">org.nspasteboard.ConcealedType</text>
+  <text class="item" x="56" y="228">Something short-lived</text>
+  <text class="mono" x="56" y="252">org.nspasteboard.TransientType</text>
+  <text class="item" x="56" y="294">A terminal, a config file, an email</text>
+  <text class="note" x="56" y="318">no marker &#8212; the app has no idea it was a secret</text>
+
+  <path d="M502 180 h44" stroke="#a3a7af" stroke-width="2" fill="none"/>
+  <path d="M538 174 l10 6 l-10 6 z" fill="#a3a7af"/>
+
+  <rect class="card" x="562" y="30" width="614" height="140" rx="12"/>
+  <rect x="562" y="30" width="614" height="7" rx="3.5" fill="#0e7cc4"/>
+  <text class="h" x="594" y="76">The manager honours the marker</text>
+  <text class="item" x="594" y="110">Nothing is written. The entry never exists.</text>
+  <text class="kept" x="1144" y="110" text-anchor="end">not recorded</text>
+  <text class="note" x="594" y="142">A few lines of code, on each platform, that somebody had to think of.</text>
+
+  <rect class="card" x="562" y="190" width="614" height="140" rx="12"/>
+  <rect x="562" y="190" width="614" height="7" rx="3.5" fill="#b3392c"/>
+  <text class="h" x="594" y="236">The manager ignores it</text>
+  <text class="item" x="594" y="270">The password is row one of a searchable list.</text>
+  <text class="gone" x="1144" y="270" text-anchor="end">stored</text>
+  <text class="note" x="594" y="302">No error, no permission prompt, nothing to notice. Test it yourself.</text>
+
+  <line x1="24" y1="368" x2="1176" y2="368" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="406">And when an item cannot be classified at all, the default decides everything:</text>
+  <text class="foot" x="24" y="438">losing one entry costs a user one press of &#8984;C. Storing one password costs them the password.</text>
+</svg>
