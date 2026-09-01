@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Craft alternative for Mac: what the free block limit means</title>
+<meta name="description" content="Craft&#x27;s free plan stops at 1,500 blocks — paragraphs, not documents. Here is what that limit means in practice, and when a local app is the better answer." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/leaving-craft/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/leaving-craft/" />
+<meta property="og:title" content="Craft alternative for Mac: what the free block limit means" />
+<meta property="og:description" content="Craft&#x27;s free plan stops at 1,500 blocks — paragraphs, not documents. Here is what that limit means in practice, and when a local app is the better answer." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Craft alternative for Mac: what the free block limit means" />
+<meta name="twitter:description" content="Craft&#x27;s free plan stops at 1,500 blocks — paragraphs, not documents. Here is what that limit means in practice, and when a local app is the better answer." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Leaving Craft, and the 1,500-block ceiling",
+  "description": "Craft's free plan stops at 1,500 blocks — paragraphs, not documents. Here is what that limit means in practice, and when a local app is the better answer.",
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/leaving-craft/"
+  },
+  "url": "https://cyanote.app/blog/leaving-craft/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/note.webp",
+      "width": 1500,
+      "height": 938
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Notes, Buying advice, Local-first",
+  "wordCount": 976
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Leaving Craft, and the 1,500-block ceiling",
+      "item": "https://cyanote.app/blog/leaving-craft/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-09-01" />
+<meta property="article:modified_time" content="2026-09-01" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Notes" />
+<meta property="article:tag" content="Buying advice" />
+<meta property="article:tag" content="Local-first" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Leaving Craft, and the 1,500-block ceiling</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-09-01">1 September 2026</time></span>
+        <span class="dot">·</span>
+        <span>4 min read</span>
+      </div>
+    <ul class="tags"><li>Notes</li><li>Buying advice</li><li>Local-first</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Craft is the best-designed document app on the Mac and it has the awards to prove it. Blocks that behave properly, documents that look finished without effort, sharing that produces a page you are not embarrassed by. It won Mac App of the Year and it deserved to.</p>
+      <p>It is also the app people most often describe to me as "the one I loved until I hit the wall". The wall is specific and it is worth understanding before it arrives rather than after.</p>
+      <h2 id="the-limit-is-counted-in-blocks">The limit is counted in blocks</h2>
+      <p>From <a href="https://www.craft.do/pricing">craft.do/pricing</a>, checked 1 September 2026, the free plan gives you <strong>1,500 blocks</strong>, 1 GB of storage, a 25 MB media upload cap, 7 days of version history and 15 AI credits.</p>
+      <p>The number to look at is the first one, and the unit is the trap. A block is not a document. It is a paragraph, a heading, a list item, an image, a table row. A single meeting note with a heading, six bullets and a paragraph is nine blocks. A page of anything substantial is twenty to forty.</p>
+      <p>So 1,500 blocks is somewhere between forty and a hundred real documents, depending on how you write. That is a few months of ordinary use, not a trial — which is generous by the standards of free tiers, and also why the ceiling arrives quietly. Nobody counts paragraphs. You just find out one day that you cannot add another one.</p>
+      <p>Plus removes the block, storage and upload limits and extends version history to 30 days. The price varies by country — Craft's own FAQ says so — and sits around $8 a month, less on an annual plan. Check it in your own currency before doing any arithmetic on it.</p>
+      <h2 id="what-the-ceiling-actually-does-to-you">What the ceiling actually does to you</h2>
+      <p>A block cap has a different psychology from a note cap and it is worse.</p>
+      <p>A note cap tells you where you are. Fifty notes of fifty, and you know the situation. A block cap is invisible until you are against it, and then it applies to the whole workspace at once — including the three long documents that are eating most of your budget and the forty short ones you barely think about.</p>
+      <p>The response most people have is to start writing shorter and deleting older things, which is exactly the behaviour a notes app should never produce. The point of writing something down is to stop managing it. An app that makes you ration paragraphs has quietly turned back into a filing decision.</p>
+      <p>If you are near the ceiling and you are pruning to stay under it, that is the signal. Either pay for Plus or move — but do not keep economising.</p>
+      <h2 id="the-other-structural-fact">The other structural fact</h2>
+      <p>Craft is a cloud app with local caching, not a local app with optional sync. Your documents live in Craft's service, which is what makes the sharing and the collaboration work, and it is a coherent design.</p>
+      <p>It also means the usual questions apply: <a href="/blog/what-happens-when-your-notes-app-shuts-down/">what happens to your documents if the company changes course</a>, what an account is actually buying you, and whether the thing you are writing should sit on someone else's infrastructure at all. Those are not accusations against Craft specifically. They are the standing costs of the model, and they are worth paying when you want the sharing and not worth paying when you do not.</p>
+      <figure><img src="/images/note.webp" alt="One local file, no block budget, nothing counted" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>A cap counted in paragraphs is a cap you cannot feel coming.</figcaption></figure>
+      <h2 id="getting-your-documents-out">Getting your documents out</h2>
+      <p>Craft exports, and you should do it before you need to.</p>
+      <p><strong>Export to Markdown, per document or per space.</strong> PDF is for sending to people, not for keeping. Markdown is the one that lets another app read the text.</p>
+      <p><strong>Blocks flatten.</strong> Craft's nested block structure — a block inside a block inside a page — is richer than Markdown, and the export makes a reasonable job of it. Deeply nested documents come out flatter than they went in.</p>
+      <p><strong>Backlinks and page references become plain text or links to nothing.</strong> If you built a web of interlinked pages, that web is Craft's, not yours. Same caveat as <a href="/blog/linking-notes-without-a-second-brain/">any linked collection</a>.</p>
+      <p><strong>Check your images.</strong> The 25 MB upload cap means most of them are small, but confirm where the export put them and that the references still resolve.</p>
+      <p>Then open a handful of the exported files somewhere else. <a href="/blog/backing-up-local-notes/">An export you have not opened is a hypothesis.</a></p>
+      <h2 id="who-should-not-switch">Who should not switch</h2>
+      <p>If you share documents with other people, stay. Craft's shared pages are genuinely good and a local app cannot produce them at all.</p>
+      <p>If you work across a Mac, an iPad and a phone, stay. Cyanote is one Mac and no sync, and that is not a soft limitation.</p>
+      <p>If the visual quality of the finished document is the reason you use it, stay. Nothing local looks like Craft, and I would rather say that here than have you discover it in week two.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>Cyanote is a smaller thing than Craft on purpose. No sharing, no collaboration, no web version, no phone app, no AI credits, and documents that look like working notes rather than published pages.</p>
+      <p>What it has: notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard in one Mac window, with no block limit, no storage limit and no account, in <a href="/blog/where-your-notes-actually-live/">a single file on your own disk</a>, for $4.99 once.</p>
+      <p>The trade is publishable against unlimited-and-private. If you were near the block ceiling and the sharing was never the reason you were there, that trade is probably the right way round.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $4.99 once, updates free forever.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $4.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/leaving-obsidian/">Leaving Obsidian, when you wanted an app and got a system</a><span>Obsidian is free, keeps your notes as files and does more than almost anything. The reason people leave is not a missing feature — it is the maintenance.</span></li><li><a href="https://cyanote.app/blog/leaving-todoist/">Leaving Todoist, and the five-project free tier</a><span>Todoist&#x27;s free plan stops at five projects and Pro is $60 a year. Here is what the subscription genuinely buys, and when a bought-once task list is enough.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+</body>
+</html>

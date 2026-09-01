@@ -7,12 +7,339 @@
     <atom:link href="https://cyanote.app/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Plain writing about keeping notes, running a week and owning your own data — from the person who builds Cyanote, a local-first Mac app you pay for once.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 23 Aug 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 09:00:00 +0000</lastBuildDate>
     <image>
       <url>https://cyanote.app/og-image.png</url>
       <title>The Cyanote blog — notes, tasks and calmer software</title>
       <link>https://cyanote.app/blog/</link>
     </image>
+    <item>
+      <title>Raycast&#x27;s clipboard history, and its three-month edge</title>
+      <link>https://cyanote.app/blog/raycast-clipboard-alternative/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/raycast-clipboard-alternative/</guid>
+      <pubDate>Tue, 01 Sep 2026 09:00:00 +0000</pubDate>
+      <description>Raycast keeps three months of clipboard history on the free plan. Here is what that limit actually means, and when a separate app is the better answer.</description>
+      <content:encoded><![CDATA[<p>Raycast is a launcher that grew a clipboard history, and the history is better than it has any right to be. It is fast, it searches, it is one keystroke from everything else you do in Raycast, and on the free plan it costs nothing.</p>
+<p>If you already live in Raycast, adding a second app to hold your clips is a hard sell and it should be. This post is about the specific point where it stops being the obvious answer.</p>
+<h2 id="the-limit-is-time-not-size">The limit is time, not size</h2>
+<p>The thing worth knowing, because it is easy to miss: Raycast's free plan keeps clipboard history for <strong>three months</strong>. <a href="https://www.raycast.com/pricing">Their pricing page</a>, checked 1 September 2026, lists unlimited history as a paid feature; Pro is $10 a month, or $8 a month billed annually.</p>
+<p>That is a genuinely generous free tier, and for most people three months is more history than they will ever scroll back through. But notice what kind of limit it is. It is not "the last 500 items", which you would hit in a week and immediately understand. It is a rolling window, and the things it quietly deletes are the ones you copied once, months ago, and assumed were kept.</p>
+<p>A size limit teaches you where the edge is. A time limit does not tell you anything until the thing you wanted is already gone.</p>
+<h2 id="what-that-means-in-practice">What that means in practice</h2>
+<p>The clips that survive three months in anyone's history fall into two groups.</p>
+<p><strong>The ones you paste constantly</strong> — a work email address, a licence key, a command you can never remember the flags for. These never age out, because you keep re-copying them. Raycast handles them fine, and pinning makes them permanent.</p>
+<p><strong>The ones you copied once and needed much later</strong> — the tracking number, the config snippet from a machine you no longer have access to, the paragraph from a document someone has since revoked. These are exactly what a rolling window eats, and they are the ones you go looking for specifically.</p>
+<p>The second group is the argument. Not because three months is stingy, but because those clips were never really clipboard entries. They were notes you had not written down yet. <a href="/blog/the-snippets-you-paste-every-week/">The snippets you paste every week</a> belong in a clipboard manager; the things you will want in November do not.</p>
+<h2 id="the-launcher-question-underneath-it">The launcher question underneath it</h2>
+<p>There is a deeper trade here and it is worth naming, because it decides the answer more than the retention window does.</p>
+<p>Raycast's clipboard is a feature of a launcher. That is its strength — zero extra apps, one hotkey, everything in the same palette — and it is also the shape of its limits. A launcher is transient by design. You invoke it, it does something, it disappears. The clipboard inherits that posture: it is a place you pass through.</p>
+<p>If what you want is a place you pass through, that is the right design, and paying $8 a month to make the corridor longer is a reasonable thing to do if you are already paying for Pro's AI features anyway.</p>
+<p>If what you want is a place things get kept, a corridor is the wrong shape no matter how long it is.</p>
+<figure><img src="/images/clipboard.webp" alt="A clip that stops being a clip the moment it is worth keeping" width="1400" height="912" loading="lazy" decoding="async" /><figcaption>Three months is a long corridor. It is still a corridor.</figcaption></figure>
+<h2 id="running-both-is-legitimate">Running both is legitimate</h2>
+<p>Unlike two clipboard managers, a launcher and a notes app with clipboard history coexist perfectly well — but you should decide which one is capturing, because both polling the pasteboard means every copy appears twice and your muscle memory splits.</p>
+<p>The arrangement that works, if you keep Raycast: turn off Raycast's clipboard history extension, keep everything else. You lose nothing you were using Raycast for — app launching, window management, extensions, calculations — and the clips land in one place. Raycast is a superb launcher whether or not it holds your clipboard.</p>
+<p>The arrangement that does not work is leaving both on and hoping you will remember which hotkey you pressed.</p>
+<h2 id="who-should-not-switch">Who should not switch</h2>
+<p>If your clipboard is genuinely transient and three months is ample, stay. You already have the feature, it is free, and it is one keystroke closer than anything else could be.</p>
+<p>If you are on Raycast Pro for the AI and the unlimited history comes along with it, you have already paid for this and adding a second app is not an upgrade.</p>
+<p>If you need history across two Macs, neither Raycast's local history nor Cyanote solves that, and <a href="/compare/paste-alternative/">Paste's sync is the honest answer</a>.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Cyanote is not a launcher and is not trying to be. It will not replace Raycast, it has no extensions, no window management and no command palette for your whole system.</p>
+<p>What it has is the clipboard history sitting in the same window as your notes, to-dos, calendar and habits, held in <a href="/blog/where-your-notes-actually-live/">one file on your own Mac</a>, with no retention window and no account, for $4.99 once. A clip you want to keep becomes a note in the same app, which is the specific thing a launcher cannot do — not because it is worse, but because keeping things is not what a launcher is for.</p>
+<p>Keep Raycast. It is excellent. The question is only whether your clipboard should be part of it.</p>]]></content:encoded>
+      <category>Clipboard</category>
+      <category>Buying advice</category>
+      <category>macOS</category>
+    </item>
+    <item>
+      <title>Leaving Todoist, and the five-project free tier</title>
+      <link>https://cyanote.app/blog/leaving-todoist/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/leaving-todoist/</guid>
+      <pubDate>Tue, 01 Sep 2026 09:00:00 +0000</pubDate>
+      <description>Todoist&#x27;s free plan stops at five projects and Pro is $60 a year. Here is what the subscription genuinely buys, and when a bought-once task list is enough.</description>
+      <content:encoded><![CDATA[<p>Todoist is the task manager most people have tried, and it earned that position. Natural-language input that actually parses, an app on every platform, an API, integrations with everything, and fifteen years of steady development behind it.</p>
+<p>It is also, for a lot of people, the last subscription left after they cancelled the others — which makes it the one that gets examined.</p>
+<h2 id="what-the-tiers-actually-are">What the tiers actually are</h2>
+<p>From <a href="https://todoist.com/pricing">todoist.com/pricing</a>, checked 1 September 2026:</p>
+<p><strong>Beginner (free):</strong> 5 personal projects, 3 filter views, 1 week of activity history, 5 MB file uploads, task reminders, list and board layouts.</p>
+<p><strong>Pro:</strong> US$5 per user per month, $60 billed yearly. 300 personal projects, 150 filter views, calendar layout, task duration, custom reminders, full reporting history, 100 MB uploads.</p>
+<p><strong>Business:</strong> US$8 per user per month, $96 a year, for shared team workspaces.</p>
+<p>The number that pushes people onto Pro is almost always the first one. Five projects sounds like plenty until you realise that in Todoist a project is the only container there is — so Work, Home, a side project, a house move and a reading list is the whole allowance, and the sixth thing in your life has nowhere to go.</p>
+<h2 id="the-free-tier-is-a-shape-not-a-size">The free tier is a shape, not a size</h2>
+<p>That is the thing worth naming. Five projects is not a stingy quantity, it is a structural constraint, and it pushes you into one of two behaviours.</p>
+<p>Either you flatten everything into a handful of giant projects and use labels and filters to carve them back up — except filters are capped at three on the free tier, so that route closes too. Or you delete finished projects to make room, which means <a href="/blog/closing-a-project/">closing a project</a> becomes an act of destruction rather than an archive.</p>
+<p>Both of those are the free tier working as intended. It is a well-designed funnel and there is nothing dishonest about it. But it is worth recognising the moment for what it is: you are not upgrading because you outgrew a task manager, you are upgrading because you have five containers and six areas of life.</p>
+<h2 id="what-60-a-year-is-genuinely-funding">What $60 a year is genuinely funding</h2>
+<p>Be fair about this, because a lot of "cancel your subscriptions" writing is not.</p>
+<p>Todoist syncs across web, macOS, Windows, iOS, Android and a watch, in near real time, with conflict resolution, offline queuing and shared projects. That is a service with servers behind it and a permanent per-user cost, and <a href="/blog/the-arithmetic-of-a-ten-dollar-app/">a one-time payment cannot fund a permanent per-user cost</a> — whatever anyone promises at the point of sale.</p>
+<p>If you assign tasks to other people, or capture on a phone and work on a laptop, or use the integrations, you are using the thing you are paying for. $60 a year is a fair price for it and cancelling would be a downgrade dressed up as a saving.</p>
+<p>The people who should look again are the ones who added Todoist to a phone in 2021, do everything on one Mac, and have not opened the mobile app in a year.</p>
+<figure><img src="/images/todo.webp" alt="To-dos, a board and a calendar in the same window as the notes" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Five projects is not a quantity problem. It is a shape problem.</figcaption></figure>
+<h2 id="getting-your-tasks-out">Getting your tasks out</h2>
+<p><strong>Export per project, as CSV or as a template.</strong> Todoist has no single "export everything" button, which is the most irritating thing about leaving it. Project by project is the route.</p>
+<p><strong>Completed tasks are the part you lose.</strong> Activity history is capped at one week on the free tier, and the export is oriented around active tasks. If your completed archive is a record you care about — for invoicing, for <a href="/blog/a-work-log-worth-keeping/">a work log</a>, for anything — get it out deliberately, because it is not coming with the CSV.</p>
+<p><strong>Recurring rules do not travel.</strong> "Every other Tuesday" is Todoist's natural-language parser doing work at read time, and it exports as text. Every recurring task has to be recreated wherever you land.</p>
+<p><strong>Sub-tasks flatten, mostly.</strong> Check the CSV's indent column and expect to rebuild hierarchy by hand.</p>
+<p>Budget an evening, not a weekend, and do it before the renewal rather than after.</p>
+<h2 id="who-should-not-switch">Who should not switch</h2>
+<p>If you share tasks with anyone — a partner, a team, a client — stay. Collaboration is not a feature a local app can approximate.</p>
+<p>If you capture tasks on a phone, stay, or accept that half your capture route disappears. Cyanote has no mobile app and no sync, and this is the limitation that matters most for a task manager specifically.</p>
+<p>If you rely on the integrations or the API, stay. Neither exists here.</p>
+<p>If the natural-language parsing is what you love, note that it is imitable but rarely equalled — Todoist's is the best in the category, and <a href="/blog/typing-a-task-the-way-you-say-it/">typing a task the way you say it</a> is a feature worth being picky about.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Cyanote's to-dos are not better than Todoist's. There is no sharing, no mobile app, no sync, no API, no integrations, and the reporting is nothing like as rich.</p>
+<p>What is different is where they sit. To-dos with priorities, due dates, reminders and a Kanban board, in the same window as your notes, calendar, habits, routines and clipboard history, with no project cap, no filter cap and no account, in <a href="/blog/where-your-notes-actually-live/">one file on your own Mac</a>, for $4.99 once.</p>
+<p>Against $60 a year that is a fourteen-month payback on price alone — but price alone is the wrong reason to switch a task manager. The right reason is that the tasks and the notes about the tasks stop being in different applications. If you have never felt that friction, Todoist is the better product and you should keep it.</p>]]></content:encoded>
+      <category>Tasks</category>
+      <category>Buying advice</category>
+      <category>One-time purchase</category>
+    </item>
+    <item>
+      <title>Leaving OneNote on a Mac, where the app is the problem</title>
+      <link>https://cyanote.app/blog/leaving-onenote/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/leaving-onenote/</guid>
+      <pubDate>Tue, 01 Sep 2026 09:00:00 +0000</pubDate>
+      <description>OneNote is free, generous and built for Windows first. On a Mac the complaint is rarely features — it is the app itself, and the notebook format underneath it.</description>
+      <content:encoded><![CDATA[<p>OneNote is the most generous free notes app there is, and the free part is not a trial. Unlimited notes, handwriting that actually works, sections and pages, cross-platform sync, all at no cost. Its only real storage limit is the 5 GB of OneDrive a free Microsoft account comes with.</p>
+<p>That is a genuinely strong offer. The reason people search for a way off it on a Mac is almost never the feature list.</p>
+<h2 id="the-mac-build-is-a-second-class-citizen-and-everyone-knows-it">The Mac build is a second-class citizen and everyone knows it</h2>
+<p>OneNote was designed around Windows and a stylus, and every Mac release makes the priority obvious. Features arrive later or not at all. The interface follows Microsoft's conventions rather than the platform's. It is heavier to launch than a notes app has any business being, and it behaves like something ported rather than something built here.</p>
+<p>None of that is a defect Microsoft is hiding. It is a resourcing decision that has been consistent for a decade, and it is not going to change because you are annoyed about it.</p>
+<p>So the honest question is not "is OneNote good" — it is very good, on Windows — but whether you are using the version of it that the effort went into. If you are on a Mac and you have never used the Windows build, you have been evaluating the wrong app the whole time.</p>
+<h2 id="the-free-vs-paid-line-precisely">The free-vs-paid line, precisely</h2>
+<p>OneNote itself is free. What costs money is Microsoft 365, and it is worth knowing what that actually adds so you do not pay for it by accident.</p>
+<p>From <a href="https://www.microsoft.com/en-us/microsoft-365/buy/compare-all-microsoft-365-products">Microsoft's own comparison page</a>, checked 1 September 2026: <strong>Microsoft 365 Personal is $99.99 a year, or $9.99 a month</strong>. Family is $129.99 a year or $12.99 a month, and Premium is $199.99 a year.</p>
+<p>For OneNote specifically, the subscription mostly buys storage — 1 TB of OneDrive instead of 5 GB — along with the rest of Office. If you are paying for 365 already because of Word and Excel, OneNote is a free extra and there is no money to save here. If you were considering paying <em>for OneNote</em>, do not: the free app is the same app.</p>
+<p>The storage limit is the one to watch, because OneNote notebooks with embedded images and printouts get large faster than text-only notes ever would, and sync simply stops when the 5 GB is gone.</p>
+<h2 id="the-notebook-format-is-the-real-switching-cost">The notebook format is the real switching cost</h2>
+<p>This is the part that catches people, and it is worth understanding before you start rather than during.</p>
+<p>OneNote does not store notes as documents. It stores <code>.one</code> notebook files with a proprietary internal structure built around free-form canvas positioning — anything can go anywhere on the page, which is exactly why handwriting and diagrams work so well.</p>
+<p>That structure does not have an equivalent anywhere else. When you export, you get a choice between PDF, which preserves the layout and loses the editability, and Word, which preserves the text and rearranges the layout into something linear. There is no option that keeps both, because no other app has the same model of a page.</p>
+<p>So the migration question is: <strong>how much of your OneNote depends on where things are on the page?</strong> If your notebooks are mostly linear text under headings, the export is fine and you will barely notice. If they are annotated diagrams, handwritten margins, and clipped screenshots arranged around each other, you are not migrating notes, you are flattening a canvas, and much of what made them useful is positional.</p>
+<p>For that second case, the honest advice is to keep OneNote installed for the archive and start fresh elsewhere, rather than convert. <a href="/blog/leaving-evernote/">Splitting the archive from the working set</a> is the same move that makes any long migration survivable.</p>
+<figure><img src="/images/note.webp" alt="Notes in headings and blocks rather than free-form canvas" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>A page where anything can go anywhere is the feature — and the reason it will not export cleanly.</figcaption></figure>
+<h2 id="doing-the-export-properly">Doing the export properly</h2>
+<p><strong>Export notebook by notebook, not all at once.</strong> OneNote's Mac export is per-notebook and it is slow. Batching is the only way to know what failed.</p>
+<p><strong>Do PDF for the archive and Word for anything you intend to keep editing.</strong> Two passes, not one. Disk is cheap and re-exporting later from a lapsed setup is not always possible.</p>
+<p><strong>Handwriting becomes an image.</strong> Ink is preserved visually in the PDF and lost entirely as text. If you have searchable handwriting you rely on, that search is going away and no destination app on the Mac will restore it.</p>
+<p><strong>Check that section groups survived.</strong> Nested section groups are the structure most likely to arrive flattened.</p>
+<p>Then open several exported files somewhere that is not OneNote — the same rule as <a href="/blog/backing-up-local-notes/">every backup</a>.</p>
+<h2 id="who-should-not-switch">Who should not switch</h2>
+<p>If you handwrite on an iPad or a Surface, stay. This is not close: OneNote's ink is best in class and free.</p>
+<p>If you work with people who share OneNote notebooks with you, stay. Shared notebooks are a collaboration feature and no local app replaces them.</p>
+<p>If you are already paying for Microsoft 365 for Office, you are not saving money by leaving, and the storage complaint does not apply to you.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Cyanote is a Mac-only app with no handwriting, no free-form canvas, no sharing, no phone app and no sync. On raw capability against OneNote it loses several arguments outright, and the ink one is not arguable at all.</p>
+<p>What it offers is the thing OneNote on a Mac is not: an app built for this platform, that opens instantly, works with the wifi off, and puts notes, to-dos, a board, a calendar, habits and a system-wide clipboard in one window backed by <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file on your own disk</a>, with no account and no storage tier, for $4.99 once.</p>
+<p>If your complaint about OneNote is the feature list, staying is correct. If your complaint is that it never felt like a Mac app, that is the complaint this answers.</p>]]></content:encoded>
+      <category>Notes</category>
+      <category>Buying advice</category>
+      <category>macOS</category>
+    </item>
+    <item>
+      <title>Leaving Obsidian, when you wanted an app and got a system</title>
+      <link>https://cyanote.app/blog/leaving-obsidian/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/leaving-obsidian/</guid>
+      <pubDate>Tue, 01 Sep 2026 09:00:00 +0000</pubDate>
+      <description>Obsidian is free, keeps your notes as files and does more than almost anything. The reason people leave is not a missing feature — it is the maintenance.</description>
+      <content:encoded><![CDATA[<p>Obsidian is the strongest argument in this category and it is not close. Your notes are Markdown files in a folder you chose. There is no account, <a href="https://obsidian.md/pricing">no sign-up at all</a>, and the free plan has no limits on anything. If the app disappeared tomorrow your notes would be exactly where you left them, readable in TextEdit.</p>
+<p>That is the standard every local-first app should be held to, including mine. So the honest framing of this post is narrow: there is one reason people leave Obsidian, it is not a feature, and it does not apply to everyone.</p>
+<h2 id="the-one-honest-reason">The one honest reason</h2>
+<p>You wanted a notes app. You got a system to maintain.</p>
+<p>Obsidian ships deliberately spare and expects you to assemble the rest. That is a real design philosophy and for a large number of people it is the entire appeal — the vault becomes theirs in a way a finished app never can be. Community plugins, themes, CSS snippets, a daily-note template, a task syntax, a folder convention, a plugin that adds a calendar, another that adds kanban.</p>
+<p>Then, some months in, a plugin breaks against an update. Or you sit down to write something and spend forty minutes on the vault instead. Or you realise you cannot remember which of the eleven plugins is responsible for the behaviour you rely on.</p>
+<p>None of that is Obsidian being bad. It is the cost side of extensibility, and it is invisible when you are enjoying it and obvious when you are not. <a href="/blog/linking-notes-without-a-second-brain/">Linking notes without building a second brain</a> is about the same trap from the other direction: the structure starts as a tool and becomes the work.</p>
+<h2 id="three-things-people-get-wrong-about-the-price">Three things people get wrong about the price</h2>
+<p>Obsidian is free, and it is worth being precise about what that does and does not cover. All figures from <a href="https://obsidian.md/pricing">obsidian.md/pricing</a>, checked 1 September 2026.</p>
+<p><strong>Sync is a subscription.</strong> $4 per user per month billed annually, $5 monthly. Files-on-disk means you <em>can</em> sync them yourself with iCloud, Dropbox or Syncthing, and plenty of people do — but the supported, encrypted, conflict-aware option is a recurring bill, and self-syncing a folder of Markdown across two machines is <a href="/blog/two-macs-one-system/">its own small project</a>.</p>
+<p><strong>Commercial use is $50 per user per year.</strong> This is the one almost nobody knows. If you use Obsidian for work at a company of two or more people, the commercial licence applies. It is not enforced by the app and there is no phone-home, which is why it stays invisible — but "free" describes personal use, and a lot of Obsidian's heaviest users are using it at work.</p>
+<p><strong>Catalyst is $25 once</strong>, and buys early access and a badge rather than features you need. Genuinely optional.</p>
+<p>So the price comparison is rarely $0 against anything. For a personal, single-machine, hand-synced vault it really is free, and that case is common. For someone syncing two machines and using it at work, it is $98 a year.</p>
+<figure><img src="/images/note.webp" alt="Notes, tasks and a calendar in one window, with nothing to assemble" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The trade is finished-and-narrow against assemble-it-yourself-and-unlimited.</figcaption></figure>
+<h2 id="what-obsidian-does-that-a-finished-app-cannot">What Obsidian does that a finished app cannot</h2>
+<p>Say this plainly, because it decides most of these choices.</p>
+<p><strong>Files you can read anywhere.</strong> Markdown in a folder is the best exit story in software. Nothing beats it, including a database — <a href="/blog/getting-your-notes-out/">getting your notes out</a> is trivial by construction.</p>
+<p><strong>Linking and graph.</strong> Backlinks, unlinked mentions, transclusion. If you write by connecting ideas rather than filing them, this is the feature and there is no adequate substitute.</p>
+<p><strong>Plugins.</strong> Whatever workflow you have, someone has built for it. This is unbeatable by any single-developer app, permanently.</p>
+<p><strong>Every platform.</strong> Mac, Windows, Linux, iOS, Android.</p>
+<p>If any two of those matter to you, stop reading. The rest of this is not aimed at you and switching would cost you things you cannot get back.</p>
+<h2 id="the-case-for-leaving-anyway">The case for leaving anyway</h2>
+<p>It is narrow and it is about scope, not quality.</p>
+<p>Obsidian is a notes app. Tasks, a calendar, habits and a clipboard history are plugins, or other apps, or both. That is fine when the plugins hold. The alternative shape is an app where those things are simply present, built by one person against one data model, so there is nothing to install and nothing to break in October.</p>
+<p>You trade extensibility for not having to think about it. That is a bad trade for a tinkerer and a good one for someone who wants to open the app and start working. Only you know which you are, and the honest test is not what you would like to be — it is whether you enjoyed the last hour you spent configuring the vault.</p>
+<h2 id="moving-out">Moving out</h2>
+<p>The export is the part that is already done, which is the nicest thing about leaving Obsidian.</p>
+<p><strong>Your vault is the export.</strong> A folder of <code>.md</code> files. Copy it somewhere safe before you touch anything.</p>
+<p><strong>Wiki links do not travel.</strong> <code>[[Note name]]</code> is Obsidian's convention, not Markdown's. Whatever you import into will render those as literal text unless it understands them. Budget for that if your vault is heavily interlinked, and consider it a signal — a collection whose value is mostly in its links is a collection that should probably stay in Obsidian.</p>
+<p><strong>Plugin-generated content is Markdown, mostly.</strong> Dataview queries are not: they are code that produces a view at render time, and they arrive as unresolved query blocks. Anything a plugin was computing for you needs rebuilding by hand or letting go.</p>
+<p><strong>Attachments live in the vault.</strong> Check where your plugin config put them before you copy folders around.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Cyanote does not compete with Obsidian on Obsidian's own ground and would lose if it tried. There are no plugins, no graph view, no backlinks panel, no mobile app, no Windows build on sale, and your notes are in a SQLite database rather than a folder of files — <a href="/blog/three-ways-to-leave-and-one-way-back/">exportable, but not editable in place</a>.</p>
+<p>What it is: notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard in one Mac app, finished, with nothing to install, for $4.99 once and no account. If the vault has become a hobby you did not sign up for, that is the trade on offer. If the vault is the point, stay — you are already using the best thing there is.</p>]]></content:encoded>
+      <category>Notes</category>
+      <category>Buying advice</category>
+      <category>Local-first</category>
+    </item>
+    <item>
+      <title>Leaving Maccy, when free stops being the point</title>
+      <link>https://cyanote.app/blog/leaving-maccy/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/leaving-maccy/</guid>
+      <pubDate>Tue, 01 Sep 2026 09:00:00 +0000</pubDate>
+      <description>Maccy is free, open source and genuinely good. The reasons to leave it are not feature complaints — they are about where the clipboard sits in the rest of your day.</description>
+      <content:encoded><![CDATA[<p>Maccy is the app I recommend to people who ask me for a clipboard manager and do not want to spend anything. That is not a diplomatic sentence. It is free, it is <a href="https://github.com/p0deje/Maccy">MIT-licensed and the whole source is on GitHub</a>, it opens instantly, it stays out of the way, and it has been maintained for years by someone who clearly uses it.</p>
+<p>So a post about leaving it has to start by being honest: most people reading this should stay. What follows is the small set of reasons that are actually structural, as opposed to the feature envy that makes people churn through tools without ever being better off.</p>
+<h2 id="what-maccy-gets-right-and-why-it-is-hard-to-beat">What Maccy gets right, and why it is hard to beat</h2>
+<p>It does one job with almost no surface. Hit the hotkey, the history appears, type to filter, press return. Pinning is there — <code>⌥P</code> moves an item to the top with a permanent shortcut. It polls the pasteboard <a href="https://github.com/p0deje/Maccy">every 500 ms by default</a>, which is invisible in practice and cheap enough that you forget it is running.</p>
+<p>That minimalism is the product. Every paid clipboard manager on the Mac has to justify itself against an app that costs nothing and does the core thing well, and most of them justify it with features you will use twice.</p>
+<p>Be suspicious of anything that tries to sell you a replacement on the basis that Maccy is missing something. Usually it is not missing it. You just did not need it.</p>
+<h2 id="the-reasons-that-are-actually-structural">The reasons that are actually structural</h2>
+<p><strong>It requires a recent macOS.</strong> Current Maccy needs macOS Sonoma 14 or later. If you are on an older Mac that Apple stopped feeding updates to, this is not a preference, it is a wall — and it is the one reason on this list that has nothing to do with taste. <a href="/blog/software-for-an-older-mac/">What still runs well on an older Mac</a> is a longer version of that problem.</p>
+<p><strong>It has no sync, and neither does anything honest at this price.</strong> If you copy on a desktop and paste on a laptop, no free local clipboard manager solves that. Paste does, by running a sync service and charging for it. That is a real difference and it is worth paying for if it is your situation.</p>
+<p><strong>The clipboard is one of five things you are running.</strong> This is the reason that actually moves people, and it is not a criticism of Maccy at all. Maccy holds the clips, something else holds the notes, something else the tasks, something else the calendar. Each one is fine. The cost is the crossing between them, which nobody counts because it is two seconds at a time.</p>
+<h2 id="the-crossing-is-the-thing-worth-measuring">The crossing is the thing worth measuring</h2>
+<p>Watch what you actually do with a clip you want to keep.</p>
+<p>You copy something — a command, an address, a paragraph from a doc you will lose access to. It goes into the clipboard history. Then, if it matters, you open your notes app, find or make the right note, and paste it there. The clipboard was a corridor, not a destination.</p>
+<p>A clipboard manager cannot help with the second half of that, because it does not know what a note is. It is doing its job perfectly and the friction is in the seam. This is the same argument as <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">when a free clipboard manager stops being enough</a>, stated from the other end: the ceiling is not the history length, it is that the history is a different app from the place things get kept.</p>
+<p>If you never do that second half — if your clipboard is genuinely a scratch buffer and nothing in it is worth keeping — then Maccy is not just adequate, it is correct, and a bundled alternative buys you nothing.</p>
+<figure><img src="/images/clipboard.webp" alt="The clipboard sitting beside the notes rather than in a separate app" width="1400" height="912" loading="lazy" decoding="async" /><figcaption>The question is not how much history you keep. It is how far a clip has to travel to become a note.</figcaption></figure>
+<h2 id="what-to-check-before-you-move-anything">What to check before you move anything</h2>
+<p><strong>Your history does not migrate.</strong> No clipboard manager imports another's history, and you should not want it to — a clipboard history is the most disposable data you own, and <a href="/blog/what-your-clipboard-should-not-remember/">some of what is in it should not be kept at all</a>. Whatever you switch to starts empty. Treat that as a feature.</p>
+<p><strong>Your pins do.</strong> Manually, and it takes five minutes. Open Maccy, look at what you pinned, and write those down. That list is the only thing you genuinely lose, and it is usually shorter than you expect — <a href="/blog/the-snippets-you-paste-every-week/">the snippets you actually paste every week</a> are rarely more than a dozen.</p>
+<p><strong>Two clipboard managers running at once is a bad afternoon.</strong> They both poll the pasteboard, they both pop up on hotkeys that will collide, and the second one will capture what the first one just captured. Pick one, quit the other properly, and remove it from login items before you judge the replacement.</p>
+<h2 id="who-should-not-switch">Who should not switch</h2>
+<p>If you want a clipboard manager and nothing else, stay. Free beats $4.99, and paying for a bundle whose other four parts you will not open is a worse deal than paying nothing.</p>
+<p>If you need the history on two machines, neither Maccy nor Cyanote helps you, and this is the case where Paste's subscription is honestly earning its money. <a href="/compare/paste-alternative/">The longer comparison is here</a>.</p>
+<p>If you are on macOS 13 or earlier and Maccy will not run, the answer is an older build or a different app — not necessarily a paid one.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Cyanote's argument is not that it is a better clipboard manager than Maccy. On the narrow job, they are close enough that the difference is taste, and Maccy costs nothing.</p>
+<p>The argument is that the clipboard sits in the same window as your notes, to-dos, calendar and habits, in <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file on your own Mac</a>, with no account, for $4.99 once. A clip becomes a note without crossing an app boundary, and the four things you were running separately become one thing you were going to open anyway.</p>
+<p>If that describes the friction you actually feel, it is worth the price. If it does not, Maccy is free, it is good, and there is no reason to change.</p>]]></content:encoded>
+      <category>Clipboard</category>
+      <category>Buying advice</category>
+      <category>macOS</category>
+    </item>
+    <item>
+      <title>Leaving Google Keep, when the notes outgrew the sticky</title>
+      <link>https://cyanote.app/blog/leaving-google-keep/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/leaving-google-keep/</guid>
+      <pubDate>Tue, 01 Sep 2026 09:00:00 +0000</pubDate>
+      <description>Keep is free, syncs everywhere and has no Mac app. Here is when the sticky-note model stops fitting, and what to check before you move your notes off it.</description>
+      <content:encoded><![CDATA[<p>Google Keep is the most-used notes app that nobody chose. It is already there, it is free, it syncs to every device you own, and it is one tap from the Android home screen or one tab in a browser. Millions of people's entire written record lives in it by default rather than by decision.</p>
+<p>It is also very good at the thing it was built for. Short notes. Lists. A photo of the parking bay. A colour. Reminders that actually fire. If that is what you need, this post is not for you and you should keep using it.</p>
+<h2 id="the-two-structural-facts">The two structural facts</h2>
+<p><strong>There is no Mac app.</strong> Keep on a Mac is a browser tab, or a browser tab wearing a costume. That is the fact that decides most of these switches, and it does not improve with familiarity: no global capture hotkey, no offline that you can rely on, no native window, and your notes are one accidental tab-close from being somewhere you have to navigate back to.</p>
+<p><strong>It is inside a Google account.</strong> Keep's notes do not count against the 15 GB shared with Gmail, Drive and Photos, which is genuinely useful. But the notes are in the account, subject to the account's terms and the account's fate, which is a category of risk people mostly discover through other people's stories. <a href="/blog/notes-app-without-an-account/">What an account actually buys you</a> is the longer version of that argument, and it applies to every cloud app, not just this one.</p>
+<p>Neither of those is a scandal. They are the shape of the product.</p>
+<h2 id="the-sticky-note-ceiling">The sticky-note ceiling</h2>
+<p>Keep is built on one metaphor and it holds it consistently: a wall of small coloured cards.</p>
+<p>That works beautifully up to a point, and the point is roughly where a note stops being a reminder and starts being a document. Keep has no headings. No tables. No code blocks. No nesting beyond a checklist. No sub-pages. Labels and colours are the entire organisational system, and search is the only real way back to anything.</p>
+<p>The failure is not that a long note is impossible — it is that a long note in Keep is a wall of undifferentiated text, and after a while you stop writing them there. What happens next is the interesting part: people do not leave Keep, they start a second app for anything serious, and end up checking two places. <a href="/blog/the-app-you-keep-replacing/">The app you keep replacing</a> is usually the second one.</p>
+<p>If you are running Keep plus something else, that is the signal to consolidate — in either direction.</p>
+<h2 id="before-you-move-anything">Before you move anything</h2>
+<p><strong>Use Google Takeout, and use it now.</strong> Takeout exports Keep as HTML plus JSON, one file per note, with the labels, timestamps and attachments. It is a good export. Do it while you are still using the product, not while you are annoyed with it.</p>
+<p><strong>Check what your checklists became.</strong> Lists are the thing Keep is best at and they export as structure that a receiving app may or may not understand. Look at a few.</p>
+<p><strong>Your images are separate files.</strong> Photos of whiteboards and receipts come out as image files referenced by the HTML. If a lot of your Keep is pictures, you are moving a small photo library, not a notes collection, and it may belong somewhere else entirely.</p>
+<p><strong>Reminders do not travel.</strong> They are Google's, tied to the account and to Google Assistant. Whatever you move to, <a href="/blog/reminders-you-do-not-start-ignoring/">reminders will need setting up again</a> and it is worth deciding deliberately rather than rebuilding them out of habit.</p>
+<figure><img src="/images/note.webp" alt="Notes with headings, tables and lists, in a real window" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Keep is excellent at the small card. The trouble starts when the card wants to be a page.</figcaption></figure>
+<h2 id="the-privacy-question-stated-fairly">The privacy question, stated fairly</h2>
+<p>I am not going to tell you Google reads your notes. The useful version of this question is duller and more practical.</p>
+<p>Your notes are on a server, tied to an identity, under an account that also holds your email, your photos and your logins. That concentration is convenient and it is also the reason a single account recovery problem becomes an everything problem. If you have ever written anything in Keep you would not want attached to your name in a breach — and <a href="/blog/what-not-to-write-down/">most people have</a> — it is worth knowing the notes are not in a separate box.</p>
+<p>The alternative is not paranoia. It is that some categories of note are better off on a disk you own, and the rest can stay exactly where they are.</p>
+<h2 id="who-should-not-switch">Who should not switch</h2>
+<p>If you use Android, stay. Keep on Android is a first-class app and nothing on this list replaces it.</p>
+<p>If you need your notes on a phone at all, be honest about it. Cyanote has no mobile app and no sync, and swapping Keep for it means the phone half of your life stops being covered.</p>
+<p>If your notes are genuinely short, shared with family, and mostly shopping lists, Keep is the right tool and free is the right price.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Cyanote is a Mac app with no web version, no phone app, no sync and no sharing. Against Keep's everywhere-and-free, that is a straightforwardly worse deal on availability, and I am not going to argue otherwise.</p>
+<p>The trade is what happens on the Mac. A real window with a global capture hotkey, notes that can hold headings, tables, code and images, to-dos and a calendar and habits in the same place, full-text search across all of it, <a href="/blog/where-your-notes-actually-live/">one file on your own disk</a>, no account, $4.99 once.</p>
+<p>If Keep is where your quick captures live and something else holds everything that matters, this is the app for the second half. If Keep is genuinely all you need, you already have the answer and it costs nothing.</p>]]></content:encoded>
+      <category>Notes</category>
+      <category>Privacy</category>
+      <category>Buying advice</category>
+    </item>
+    <item>
+      <title>Leaving Craft, and the 1,500-block ceiling</title>
+      <link>https://cyanote.app/blog/leaving-craft/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/leaving-craft/</guid>
+      <pubDate>Tue, 01 Sep 2026 09:00:00 +0000</pubDate>
+      <description>Craft&#x27;s free plan stops at 1,500 blocks — paragraphs, not documents. Here is what that limit means in practice, and when a local app is the better answer.</description>
+      <content:encoded><![CDATA[<p>Craft is the best-designed document app on the Mac and it has the awards to prove it. Blocks that behave properly, documents that look finished without effort, sharing that produces a page you are not embarrassed by. It won Mac App of the Year and it deserved to.</p>
+<p>It is also the app people most often describe to me as "the one I loved until I hit the wall". The wall is specific and it is worth understanding before it arrives rather than after.</p>
+<h2 id="the-limit-is-counted-in-blocks">The limit is counted in blocks</h2>
+<p>From <a href="https://www.craft.do/pricing">craft.do/pricing</a>, checked 1 September 2026, the free plan gives you <strong>1,500 blocks</strong>, 1 GB of storage, a 25 MB media upload cap, 7 days of version history and 15 AI credits.</p>
+<p>The number to look at is the first one, and the unit is the trap. A block is not a document. It is a paragraph, a heading, a list item, an image, a table row. A single meeting note with a heading, six bullets and a paragraph is nine blocks. A page of anything substantial is twenty to forty.</p>
+<p>So 1,500 blocks is somewhere between forty and a hundred real documents, depending on how you write. That is a few months of ordinary use, not a trial — which is generous by the standards of free tiers, and also why the ceiling arrives quietly. Nobody counts paragraphs. You just find out one day that you cannot add another one.</p>
+<p>Plus removes the block, storage and upload limits and extends version history to 30 days. The price varies by country — Craft's own FAQ says so — and sits around $8 a month, less on an annual plan. Check it in your own currency before doing any arithmetic on it.</p>
+<h2 id="what-the-ceiling-actually-does-to-you">What the ceiling actually does to you</h2>
+<p>A block cap has a different psychology from a note cap and it is worse.</p>
+<p>A note cap tells you where you are. Fifty notes of fifty, and you know the situation. A block cap is invisible until you are against it, and then it applies to the whole workspace at once — including the three long documents that are eating most of your budget and the forty short ones you barely think about.</p>
+<p>The response most people have is to start writing shorter and deleting older things, which is exactly the behaviour a notes app should never produce. The point of writing something down is to stop managing it. An app that makes you ration paragraphs has quietly turned back into a filing decision.</p>
+<p>If you are near the ceiling and you are pruning to stay under it, that is the signal. Either pay for Plus or move — but do not keep economising.</p>
+<h2 id="the-other-structural-fact">The other structural fact</h2>
+<p>Craft is a cloud app with local caching, not a local app with optional sync. Your documents live in Craft's service, which is what makes the sharing and the collaboration work, and it is a coherent design.</p>
+<p>It also means the usual questions apply: <a href="/blog/what-happens-when-your-notes-app-shuts-down/">what happens to your documents if the company changes course</a>, what an account is actually buying you, and whether the thing you are writing should sit on someone else's infrastructure at all. Those are not accusations against Craft specifically. They are the standing costs of the model, and they are worth paying when you want the sharing and not worth paying when you do not.</p>
+<figure><img src="/images/note.webp" alt="One local file, no block budget, nothing counted" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>A cap counted in paragraphs is a cap you cannot feel coming.</figcaption></figure>
+<h2 id="getting-your-documents-out">Getting your documents out</h2>
+<p>Craft exports, and you should do it before you need to.</p>
+<p><strong>Export to Markdown, per document or per space.</strong> PDF is for sending to people, not for keeping. Markdown is the one that lets another app read the text.</p>
+<p><strong>Blocks flatten.</strong> Craft's nested block structure — a block inside a block inside a page — is richer than Markdown, and the export makes a reasonable job of it. Deeply nested documents come out flatter than they went in.</p>
+<p><strong>Backlinks and page references become plain text or links to nothing.</strong> If you built a web of interlinked pages, that web is Craft's, not yours. Same caveat as <a href="/blog/linking-notes-without-a-second-brain/">any linked collection</a>.</p>
+<p><strong>Check your images.</strong> The 25 MB upload cap means most of them are small, but confirm where the export put them and that the references still resolve.</p>
+<p>Then open a handful of the exported files somewhere else. <a href="/blog/backing-up-local-notes/">An export you have not opened is a hypothesis.</a></p>
+<h2 id="who-should-not-switch">Who should not switch</h2>
+<p>If you share documents with other people, stay. Craft's shared pages are genuinely good and a local app cannot produce them at all.</p>
+<p>If you work across a Mac, an iPad and a phone, stay. Cyanote is one Mac and no sync, and that is not a soft limitation.</p>
+<p>If the visual quality of the finished document is the reason you use it, stay. Nothing local looks like Craft, and I would rather say that here than have you discover it in week two.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Cyanote is a smaller thing than Craft on purpose. No sharing, no collaboration, no web version, no phone app, no AI credits, and documents that look like working notes rather than published pages.</p>
+<p>What it has: notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard in one Mac window, with no block limit, no storage limit and no account, in <a href="/blog/where-your-notes-actually-live/">a single file on your own disk</a>, for $4.99 once.</p>
+<p>The trade is publishable against unlimited-and-private. If you were near the block ceiling and the sharing was never the reason you were there, that trade is probably the right way round.</p>]]></content:encoded>
+      <category>Notes</category>
+      <category>Buying advice</category>
+      <category>Local-first</category>
+    </item>
+    <item>
+      <title>Leaving Bear, and what the subscription actually buys</title>
+      <link>https://cyanote.app/blog/leaving-bear/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/leaving-bear/</guid>
+      <pubDate>Tue, 01 Sep 2026 09:00:00 +0000</pubDate>
+      <description>Bear Pro is $2.99 a month, and the free tier keeps your notes local. Here is exactly what the subscription is funding, and when buying once makes more sense.</description>
+      <content:encoded><![CDATA[<p>Bear is the best-looking notes app on the Mac and it is not a close contest either. The typography is considered, the Markdown is unobtrusive, the tag system is genuinely clever, and it feels like a native app because it is one.</p>
+<p>People do not leave Bear because it is bad. They leave because of one recurring line on a bank statement, and it is worth being exact about what that line is paying for before deciding it is not worth it.</p>
+<h2 id="what-is-free-and-what-is-not">What is free and what is not</h2>
+<p>From <a href="https://bear.app/">bear.app</a>, checked 1 September 2026: Bear Pro is <strong>$2.99 a month or $29.99 a year</strong>, with a seven-day trial.</p>
+<p>The free tier is more useful than most people assume. You get local access to all your notes, document scanning, export to a long list of formats — TXT, Markdown, TextBundle, RTF, PDF, JPG, HTML, DOCX, ePub — three themes and one app icon.</p>
+<p>Pro adds 28-plus themes and fifteen app icons, OCR search inside PDFs and images, and the one that actually matters: <strong>iCloud sync across your devices</strong>.</p>
+<p>So the honest summary is that Bear's subscription is a sync subscription with cosmetics attached. If you use Bear on one Mac and nowhere else, the free tier is a complete notes app and you should not be paying at all.</p>
+<h2 id="which-means-the-question-is-about-sync">Which means the question is about sync</h2>
+<p>$29.99 a year for sync across a Mac, an iPad and an iPhone is not a rip-off. Someone maintains the sync engine, handles conflicts, and keeps it working across three OS updates a year. That is real work with a real ongoing cost, and <a href="/blog/the-arithmetic-of-a-ten-dollar-app/">the arithmetic of a one-time price</a> explains why an app that syncs cannot honestly charge once.</p>
+<p>The question is only whether you use it.</p>
+<p>A large number of Bear subscriptions are paid by people who capture on their phone two or three times a month and do everything else on one Mac. That is $29.99 a year for a convenience you could replace with the share sheet and an email to yourself — and there are <a href="/blog/getting-a-note-to-your-phone-without-sync/">several other routes to getting a note onto your phone</a> that cost nothing.</p>
+<p>If, on the other hand, you write on an iPad and edit on a Mac and check things on a phone, sync is not a convenience, it is the product. Keep paying. Nothing local will replace it.</p>
+<h2 id="the-tag-system-is-the-switching-cost">The tag system is the switching cost</h2>
+<p>This is the part people underestimate.</p>
+<p>Bear does not have folders. It has nested tags written inline in the note — <code>#work/clients/acme</code> — and over a couple of years those become the structure of your entire collection. They are not metadata sitting beside the note. They are text inside it.</p>
+<p>That is elegant while you are in Bear and awkward when you leave. Export to Markdown and your tags come with you as literal <code>#work/clients/acme</code> strings in the body, which is honest but not useful: the receiving app will show them as text, or as its own flat tags, or as headings if you are unlucky.</p>
+<p>Before you move anything, look at how much of your organisation lives in tags rather than in the notes themselves. If the answer is "most of it", you are not migrating notes, you are migrating a taxonomy, and it will need rebuilding by hand. <a href="/blog/getting-your-notes-out/">What actually travels when you leave an app</a> is worth reading first.</p>
+<figure><img src="/images/note.webp" alt="Notes with headings, tables and code, in an app you paid for once" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Bear's free tier is a complete local notes app. The subscription is sync.</figcaption></figure>
+<h2 id="do-the-export-before-you-decide">Do the export before you decide</h2>
+<p>Bear's export is good, which is a genuine mark in its favour and also the reason there is no excuse for skipping this.</p>
+<p><strong>Export the whole library to Markdown, in batches.</strong> Not to PDF, not to Bear's own archive format if you intend to read it elsewhere.</p>
+<p><strong>Open five of the files at random in something that is not Bear.</strong> This is where you find out how images were referenced and what happened to your tables.</p>
+<p><strong>Keep the export whether you stay or not.</strong> It costs a few megabytes and it turns a subscription into something you can walk away from on your own schedule rather than at renewal.</p>
+<h2 id="who-should-not-switch">Who should not switch</h2>
+<p>If you use Bear on more than one device, stay. This is the whole argument and it is decisive.</p>
+<p>If the free tier already covers you and you are not paying, there is nothing to save and no reason to move. Bear free on one Mac is an excellent situation.</p>
+<p>If the typography is why you use it — and for some people it genuinely is — nothing else on the Mac looks like Bear, and I am not going to pretend otherwise.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Cyanote is a worse-looking notes app than Bear. It has no iOS app, no iCloud sync, no themes worth boasting about, and if writing in a beautiful window is the point, this is a downgrade.</p>
+<p>What it does instead is put notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard manager in one window on one Mac, in <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file you own</a>, with no account, for $4.99 once. Against Bear Pro at $29.99 a year, that pays for itself in about two months — but only if you were paying for sync you were not using.</p>
+<p>If you were using the sync, the comparison is not about money and this is the wrong app for you.</p>]]></content:encoded>
+      <category>Notes</category>
+      <category>Buying advice</category>
+      <category>One-time purchase</category>
+    </item>
     <item>
       <title>Where to keep the things you must not lose</title>
       <link>https://cyanote.app/blog/where-to-keep-the-things-you-must-not-lose/</link>
