@@ -70,7 +70,7 @@
   "offers": {
     "@type": "Offer",
     "@id": "https://cyanote.app/#offer",
-    "price": "10.00",
+    "price": "4.99",
     "priceCurrency": "USD",
     "url": "https://cyanote.app/pricing/",
     "availability": "https://schema.org/InStock",
@@ -108,6 +108,7 @@
 <a class="skip" href="#post">Skip to the content</a>
 <nav aria-label="Main"><div class="wrap">
   <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
   <div class="links">
     <a href="https://cyanote.app/#features">Features</a>
     <a href="https://cyanote.app/pricing/" aria-current="page">Pricing</a>
@@ -119,6 +120,10 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
       <span class="btn-label">Get Cyanote — $4.99</span></a>
   </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
   <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
     <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
     <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
@@ -138,6 +143,28 @@
 
     <div class="post">
       <p><strong>Cyanote costs a single payment of $4.99 (USD). There is no subscription, no free trial that expires, no paid tier, and no account to create. It runs on macOS 12 or later, on Apple Silicon and Intel. When the Windows version ships, the same $4.99 covers it.</strong></p>
+
+      <div id="buy" class="price" style="margin-top:34px">
+        <div class="amt">$4.99<span> once</span></div>
+        <div data-plat="mac">
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
+            <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+            <span class="btn-label">Download for Mac — $4.99</span></a>
+          <p class="fineprint">Secure checkout via Lemon Squeezy · macOS 12+ (Apple Silicon &amp; Intel), notarized by Apple</p>
+        </div>
+        <div data-plat="windows">
+          <a class="btn btn-ghost" href="mailto:support@cyanote.app?subject=Tell%20me%20when%20Cyanote%20for%20Windows%20is%20ready">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg>
+            <span class="btn-label">Tell me when Windows is ready</span></a>
+          <p class="fineprint">The Mac version is on sale now. When Windows ships, the same $4.99 covers it — nothing more to pay.</p>
+        </div>
+        <div data-plat="mobile">
+          <span class="btn btn-inert">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+            <span class="btn-label">Available on Mac only</span></span>
+          <p class="fineprint">Open this page on your Mac to buy — a licence key is no use without a Mac to run it on.</p>
+        </div>
+      </div>
 
       <div class="table-scroll">
       <table>
@@ -170,28 +197,6 @@
         <li>Instant search across everything</li>
         <li>Markdown import, and export of everything to a single JSON file</li>
       </ul>
-
-      <div id="buy" class="price" style="margin-top:34px">
-        <div class="amt">$4.99<span> once</span></div>
-        <div data-plat="mac">
-          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
-            <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
-            <span class="btn-label">Download for Mac — $4.99</span></a>
-          <p class="fineprint">Secure checkout via Lemon Squeezy · macOS 12+ (Apple Silicon &amp; Intel), notarized by Apple</p>
-        </div>
-        <div data-plat="windows">
-          <a class="btn btn-ghost" href="mailto:support@cyanote.app?subject=Tell%20me%20when%20Cyanote%20for%20Windows%20is%20ready">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg>
-            <span class="btn-label">Tell me when Windows is ready</span></a>
-          <p class="fineprint">The Mac version is on sale now. When Windows ships, the same $4.99 covers it — nothing more to pay.</p>
-        </div>
-        <div data-plat="mobile">
-          <span class="btn btn-inert">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-            <span class="btn-label">Available on Mac only</span></span>
-          <p class="fineprint">Open this page on your Mac to buy — a licence key is no use without a Mac to run it on.</p>
-        </div>
-      </div>
 
       <h2 id="why-ten-dollars">Why $4.99, and why only once</h2>
 
@@ -263,5 +268,6 @@
 </div></footer>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
 <script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
 </body>
 </html>

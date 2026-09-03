@@ -93,7 +93,7 @@
   "offers": {
     "@type": "Offer",
     "@id": "https://cyanote.app/#offer",
-    "price": "10.00",
+    "price": "4.99",
     "priceCurrency": "USD",
     "url": "https://cyanote.app/pricing/",
     "availability": "https://schema.org/InStock",
@@ -197,7 +197,7 @@
     "width": 1500,
     "height": 938
   },
-  "dateModified": "2026-08-24"
+  "dateModified": "2026-09-03"
 }
 </script>
 </head>
@@ -206,6 +206,7 @@
 
 <nav aria-label="Main"><div class="wrap">
   <a class="brand" href="#"><img src="favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
   <div class="links">
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
@@ -222,6 +223,10 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg>
       <span class="btn-label">Windows — soon</span></a>
   </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
   <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
     <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
     <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
@@ -651,5 +656,6 @@
 </script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
 <script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
 </body>
 </html>

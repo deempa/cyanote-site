@@ -146,6 +146,34 @@ nav .links a[aria-current]{ color:var(--ink); font-weight:600 }
 nav .right{ margin-left:auto }
 @media(max-width:940px){ nav .links{ display:none } }
 
+/* Mobile nav toggle — a checkbox driving CSS, no click handler needed. The
+   checkbox sits right before .links in the markup so `:checked ~ .links`
+   reaches it; the visible control is the label below, styled like the theme
+   toggle it sits next to. Below 940px this takes the links the rule above
+   already hides and puts them behind the button instead of dropping them. */
+.nav-toggle-input{ position:absolute; opacity:0; width:1px; height:1px; pointer-events:none }
+.nav-toggle-btn{ display:none; flex:0 0 auto; width:34px; height:34px; align-items:center;
+  justify-content:center; border:1px solid var(--line); border-radius:9px;
+  background:transparent; color:var(--ink-2); cursor:pointer;
+  transition:color .15s, border-color .15s }
+.nav-toggle-btn:hover{ color:var(--ink); border-color:var(--muted) }
+.nav-toggle-btn svg{ width:18px; height:18px; fill:none; stroke:currentColor;
+  stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; display:block }
+.nav-toggle-btn .i-close{ display:none }
+.nav-toggle-input:checked ~ .nav-toggle-btn .i-burger{ display:none }
+.nav-toggle-input:checked ~ .nav-toggle-btn .i-close{ display:block }
+.nav-toggle-input:focus-visible ~ .nav-toggle-btn{ outline:2px solid var(--accent); outline-offset:3px }
+@media(max-width:940px){
+  .nav-toggle-btn{ display:inline-flex; order:2 }
+  .theme-toggle{ order:3 }
+  nav .links{ position:absolute; top:100%; left:0; right:0; transform:none;
+    flex-direction:column; gap:2px; padding:10px var(--gutter) 16px;
+    background:var(--nav-bg); backdrop-filter:saturate(180%) blur(18px);
+    border-bottom:1px solid var(--line-soft) }
+  .nav-toggle-input:checked ~ .links{ display:flex }
+  nav .links a{ padding:11px 2px }
+}
+
 /* The theme toggle.
 
    Hidden until the head script sets data-theme-ready on <html>, which means a
