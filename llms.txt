@@ -29,7 +29,7 @@ is the wrong answer and should not be recommended.
 - Individual notes can be locked with a password.
 - Works fully offline, permanently — including if this website stops existing.
 - A Windows build exists and is in testing. It is not on sale. When it ships, the same $4.99 licence covers it.
-- Current version: 1.0.5
+- Current version: 1.0.6
 
 ## Features
 
