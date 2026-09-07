@@ -38,7 +38,7 @@
   "headline": "Writing an incident review people will read",
   "description": "Most postmortems get filed and never opened again. The ones that change anything share a structure, and it is not the template your company hands you.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Incidents, Method, Work",
-  "wordCount": 1239
+  "wordCount": 1234
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Incidents" />
 <meta property="article:tag" content="Method" />
@@ -166,15 +166,15 @@
       <p>The outage ends at 3am. Everyone is relieved, exhausted, and quietly certain they will remember what happened. Nine days later somebody writes a document from Slack scrollback and half-memories, it gets a meeting, it gets filed, and nothing changes.</p>
       <p>That is the normal outcome, and the causes are structural rather than a failure of anyone's diligence.</p>
       <h2 id="why-most-reviews-change-nothing">Why most reviews change nothing</h2>
-      <p><strong>Written too late.</strong> Memory of an incident degrades unusually fast, because most of it was formed under stress and much of it was wrong at the time. What survives at day nine is a tidy narrative in which the sequence made sense — which is precisely the version that contains no lessons.</p>
+      <p><strong>Written too late.</strong> Memory of an incident degrades unusually fast, because most of it was formed under stress and much of it was wrong at the time. What survives at day nine is a tidy narrative in which the sequence made sense, which is precisely the version that contains no lessons.</p>
       <p><strong>The timeline is reconstructed instead of recorded.</strong> A timeline assembled afterwards has hindsight in every line. "At 02:14 we realised it was the cache" is nearly always wrong; at 02:14 someone <em>suspected</em> the cache, among three other theories. The suspicion and the alternatives are the interesting part, and reconstruction deletes them.</p>
       <p><strong>Blameless is stated but not practised.</strong> If the document says blameless and the meeting looks for who deployed it, everyone learns which of the two is real, and the next review will be written defensively. A defensive review has no useful content.</p>
       <p><strong>The actions are aspirational.</strong> "Improve monitoring" is not an action. It has no owner, no date, and no definition of done, and it will be on the next review too.</p>
-      <p><strong>Root cause, singular.</strong> Complex systems do not have a root cause. They have a set of conditions that were individually survivable, and the search for the one cause stops the investigation at whatever is easiest to blame — usually a person or the last change.</p>
+      <p><strong>Root cause, singular.</strong> Complex systems do not have a root cause. They have a set of conditions that were individually survivable, and the search for the one cause stops the investigation at whatever is easiest to blame, usually a person or the last change.</p>
       <figure><img src="/images/incident-timeline.svg" alt="One note holding the timeline, what people believed at the time, and what actually changed afterwards" width="1200" height="490" loading="lazy" decoding="async" /><figcaption>Recorded as it happens, including the wrong theories. Reconstructed later, the wrong theories are the first thing to disappear.</figcaption></figure>
       <h2 id="record-during-not-after">Record during, not after</h2>
-      <p>The highest-leverage change, and it costs one person's partial attention.</p>
-      <p>During an incident, someone writes timestamped lines as things happen. Not analysis — observation:</p>
+      <p>The change that does the most, and it costs one person's partial attention.</p>
+      <p>During an incident, someone writes timestamped lines as things happen. Not analysis, but observation:</p>
       <pre><code>02:04  alerts on checkout latency
 02:09  suspect the deploy at 01:50, start rollback
 02:14  rollback done, no change — so not the deploy
@@ -192,12 +192,12 @@
       <p><strong>What we are changing.</strong> Two or three items, each with a name and a date. Not eleven. Eleven means none, and everyone in the room knows it.</p>
       <h2 id="the-blameless-part-done-properly">The blameless part, done properly</h2>
       <p>Not "we will not say who". That is silence, not blamelessness.</p>
-      <p>It is: <strong>assume everyone acted sensibly given what they knew at the time, and ask what made the sensible action wrong.</strong> Somebody deployed on a Friday afternoon — why did that seem fine? Somebody muted the alert — what was it doing that made muting reasonable? Those questions produce fixable answers. "Who deployed it" produces a person who will be more careful and a system that is exactly as fragile as before.</p>
+      <p>It is: <strong>assume everyone acted sensibly given what they knew at the time, and ask what made the sensible action wrong.</strong> Somebody deployed on a Friday afternoon. Why did that seem fine? Somebody muted the alert. What was it doing that made muting reasonable? Those questions produce fixable answers. "Who deployed it" produces a person who will be more careful and a system that is exactly as fragile as before.</p>
       <p>The practical test is whether people write down their own mistakes in the timeline. If they do, you have it. If the timeline is written in the passive voice throughout, you do not, whatever the template says.</p>
       <h2 id="what-happens-afterwards">What happens afterwards</h2>
       <p>Two things, neither of which is the meeting.</p>
       <p><strong>The actions become real dated tasks with owners</strong>, in whatever system that team actually uses, that day. An action item living only inside a document is a wish. This is the step that separates teams whose reviews change things from teams whose reviews accumulate.</p>
-      <p><strong>Somebody reads the last five before writing the sixth.</strong> The single most valuable habit in this whole area, and almost nobody does it. Repeats are the signal — the same contributing condition showing up three times means the fix from last time did not happen or did not work, and that pattern is invisible one document at a time. It is the same reason <a href="/blog/keeping-a-decision-journal/">a decision journal only works if you reread it</a>.</p>
+      <p><strong>Somebody reads the last five before writing the sixth.</strong> The single most valuable habit in this whole area, and almost nobody does it. Repeats are the signal. The same contributing condition showing up three times means the fix from last time did not happen or did not work, and that pattern is invisible one document at a time. It is the same reason <a href="/blog/keeping-a-decision-journal/">a decision journal only works if you reread it</a>.</p>
       <p>Which means the reviews have to be findable by content, not filed by date. You will search for "cache" or "rollback", not for "the March one".</p>
       <h2 id="the-personal-version">The personal version</h2>
       <p>Not everyone works somewhere with a process. The same shape works for one person.</p>
@@ -206,7 +206,7 @@
       <h2 id="the-honest-version">The honest version</h2>
       <p>If you run incidents at any scale, use an incident management tool. Timeline capture, paging, status pages and action tracking are a real product category and they do things a notes app will not.</p>
       <p>For a small team, a solo operator, or the personal version, the shape above is most of the value and it needs a text editor and the discipline to write during rather than after.</p>
-      <p>Cyanote has incident review and retro templates in the <code>/</code> menu — the five sections in order, so the document starts as prompts rather than a blank page. Notes hold timestamped lines, code blocks with the actual error, and images of the graph, all in one document; <code>⇧⌘F</code> searches the body of every review you have written, which is what makes "have we seen this before" a question you can answer in four seconds. It is one local database on your own Mac, which for the personal version is the point — your record of how things fail is yours, not your employer's.</p>
+      <p>Cyanote has incident review and retro templates in the <code>/</code> menu: the five sections in order, so the document starts as prompts rather than a blank page. Notes hold timestamped lines, code blocks with the actual error, and images of the graph, all in one document; <code>⇧⌘F</code> searches the body of every review you have written, which is what makes "have we seen this before" a question you can answer in four seconds. It is one local database on your own Mac, which for the personal version is the point. Your record of how things fail is yours, not your employer's.</p>
     </div>
   </article>
 

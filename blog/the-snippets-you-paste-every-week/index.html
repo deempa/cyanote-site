@@ -38,7 +38,7 @@
   "headline": "The snippets you retype every week",
   "description": "Clipboard history is for what you copied. Snippets are for what you paste over and over. They look like the same feature and solve opposite problems.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Clipboard, Workflow, Productivity",
-  "wordCount": 1215
+  "wordCount": 1207
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Clipboard" />
 <meta property="article:tag" content="Workflow" />
@@ -157,17 +157,17 @@
         <span class="dot">·</span>
         <span><time datetime="2026-08-17">17 August 2026</time></span>
         <span class="dot">·</span>
-        <span>6 min read</span>
+        <span>5 min read</span>
       </div>
     <ul class="tags"><li>Clipboard</li><li>Workflow</li><li>Productivity</li></ul>
     </header>
 
     <div class="post">
       <p>There is a short list of text you have typed hundreds of times. Your address. Your VAT number. The bank details you send to clients. The SSH command with the right flags. The paragraph you write to decline a meeting politely. The regex you always get wrong on the first attempt.</p>
-      <p>None of it is hard to type. That is exactly why it never gets fixed — each instance costs fifteen seconds, and fifteen seconds never feels like it justifies solving anything.</p>
+      <p>None of it is hard to type. That is exactly why it never gets fixed. Each instance costs fifteen seconds, and fifteen seconds never feels like it justifies solving anything.</p>
       <h2 id="why-this-is-not-the-same-as-clipboard-history">Why this is not the same as clipboard history</h2>
       <p>They look like one feature. They are opposites, and conflating them is why people install a clipboard manager and still retype their address.</p>
-      <p><strong>Clipboard history is a record of the past.</strong> Everything you copied, newest first, mostly noise, occasionally the thing you copied twenty minutes ago and then overwrote. It answers "what did I copy earlier". Its defining property is that it fills up and scrolls away — that is the design working, since the whole point is recency.</p>
+      <p><strong>Clipboard history is a record of the past.</strong> Everything you copied, newest first, mostly noise, occasionally the thing you copied twenty minutes ago and then overwrote. It answers "what did I copy earlier". Its defining property is that it fills up and scrolls away. That is the design working, since the whole point is recency.</p>
       <p><strong>Snippets are a chosen library.</strong> A small number of items you decided to keep, which do not scroll away, because they are not from anywhere. They answer "give me the thing I always need". Their defining property is stability.</p>
       <p>Put them in the same list and each ruins the other: your address sinks under four hundred URLs within a day, and the history gets cluttered with pinned items that are not part of the story it is telling. The apps that get this right keep two lists with two shortcuts. The apps that get it wrong offer one list with a star icon, and nobody's address survives the month.</p>
       <figure><img src="/images/clipboard.webp" alt="Copied items and kept items in the same window but not the same list — history scrolls, pinned snippets do not" width="1400" height="912" loading="lazy" decoding="async" /><figcaption>The list on the left is a record of what happened. A snippet library is a decision. Mixing them destroys both.</figcaption></figure>
@@ -178,22 +178,22 @@
       <p>Twelve to twenty items covers almost everyone. If your library reaches sixty, it has quietly become a notes app with worse search, and the items past twenty are ones you will never find in time to use.</p>
       <h2 id="what-does-not-belong">What does not belong</h2>
       <p><strong>Anything secret.</strong> Passwords, API keys, recovery codes. A snippet library is a convenience feature with a keyboard shortcut, usually stored in plain text, and reachable by anything running as you. Those belong in a password manager, which is built for exactly this and encrypts at rest. The convenience is not worth it, and the failure mode is not recoverable.</p>
-      <p>Worth knowing on the same subject: well-behaved clipboard managers on macOS honour the flag password managers set to mark a copy as private, so a copied password is not recorded in the history. That is the correct behaviour, and it is worth verifying in whatever you use — copy a password, then open the history and check it is not there.</p>
+      <p>Worth knowing on the same subject: well-behaved clipboard managers on macOS honour the flag password managers set to mark a copy as private, so a copied password is not recorded in the history. That is the correct behaviour, and it is worth verifying in whatever you use: copy a password, then open the history and check it is not there.</p>
       <p><strong>Things that change.</strong> A snippet with last quarter's figures in it is a trap: it works perfectly, silently, with the wrong number.</p>
       <p><strong>Anything you would need to read before pasting.</strong> If you have to check the snippet is the right one, it is a note, not a snippet. Snippets are for text you trust without reading.</p>
       <h2 id="snippets-versus-text-expansion">Snippets versus text expansion</h2>
       <p>Two mechanisms, and it is worth knowing which you want.</p>
-      <p><strong>Text expansion</strong> replaces an abbreviation as you type: you type <code>;addr</code> and your address appears. macOS has this built in under Keyboard settings, and dedicated tools go much further with variables, dates and fill-in fields. It is the fastest possible route — zero interruption, no window, no picking.</p>
+      <p><strong>Text expansion</strong> replaces an abbreviation as you type: you type <code>;addr</code> and your address appears. macOS has this built in under Keyboard settings, and dedicated tools go much further with variables, dates and fill-in fields. It is the fastest possible route: zero interruption, no window, no picking.</p>
       <p>The cost is that you have to remember the abbreviation. For five items you use daily, you will. For twenty items you use monthly, you will not, and an expansion you cannot remember is an expansion that does not exist. There is also the occasional indignity of an abbreviation firing inside a real word.</p>
       <p><strong>A picker</strong> — a shortcut that opens a small window of your snippets, and you choose — costs one extra second and requires remembering nothing. That makes it the right shape for the long tail, and it degrades gracefully: if you cannot remember which snippet you want, you can look.</p>
       <p>Most people who use both end up with expansion for the daily five and a picker for the rest.</p>
       <h2 id="the-detail-that-decides-whether-you-use-it">The detail that decides whether you use it</h2>
       <p>Where the pasted text lands.</p>
-      <p>A snippet tool is used <em>while you are in another app</em> — the email, the terminal, the form. If picking a snippet means switching to the snippet app, copying, switching back, and pasting, you have replaced fifteen seconds of typing with fifteen seconds of window management and you will stop within a week.</p>
-      <p>The version that works: a global shortcut opens a small window over whatever you are in, you pick, it pastes into the app you were in, and that app is in front again with focus where you left it. No visible switch. It is the same design requirement as <a href="/blog/mac-app-notes-and-clipboard/">a clipboard history that comes to you</a> rather than making you go to it — and it is the single thing worth testing before you commit to any tool in this category.</p>
+      <p>A snippet tool is used <em>while you are in another app</em>: the email, the terminal, the form. If picking a snippet means switching to the snippet app, copying, switching back, and pasting, you have replaced fifteen seconds of typing with fifteen seconds of window management and you will stop within a week.</p>
+      <p>The version that works: a global shortcut opens a small window over whatever you are in, you pick, it pastes into the app you were in, and that app is in front again with focus where you left it. No visible switch. It is the same design requirement as <a href="/blog/mac-app-notes-and-clipboard/">a clipboard history that comes to you</a> rather than making you go to it, and it is the single thing worth testing before you commit to any tool in this category.</p>
       <h2 id="the-honest-version">The honest version</h2>
       <p>If you want serious snippet management — variables, cursor positions, date maths, per-app rules, shared team libraries — a dedicated tool is the answer. TextExpander and Alfred have spent many years on this, and Raycast has a well-liked free tier that covers snippets and clipboard history together. None of that is being out-featured by a panel bundled into a notes app.</p>
-      <p>What the bundled version is for is the ordinary case: fifteen items, no variables, reachable without leaving what you were doing. That case is most people, and the deciding factor is not depth of features — it is whether the thing appears over your email and puts you back where you were.</p>
+      <p>What the bundled version is for is the ordinary case: fifteen items, no variables, reachable without leaving what you were doing. That case is most people, and the deciding factor is whether the thing appears over your email and puts you back where you were, not depth of features.</p>
       <p>Cyanote keeps the two lists separate and gives each its own shortcut: <code>⌥⇧V</code> opens the clipboard history over whatever app you are in, <code>⌥⇧B</code> opens pinned snippets, and both paste into that app and hand the foreground back. Copies your password manager marks as private are never recorded at all. Everything lives in the same local database as the notes, which means the snippet library is on your disk and in your backup rather than in a service.</p>
     </div>
   </article>

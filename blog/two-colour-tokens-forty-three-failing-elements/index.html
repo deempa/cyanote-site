@@ -38,7 +38,7 @@
   "headline": "Two colour tokens, forty-three failing elements",
   "description": "An audit listed 43 failing elements on this site. They were two hex values, each a tenth of a ratio short — and, in the app, white on colours users pick.",
   "datePublished": "2026-08-22",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Design, Accessibility",
-  "wordCount": 1366
+  "wordCount": 1362
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-22" />
-<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Design" />
@@ -175,29 +175,29 @@
       <figure><img src="/images/two-tokens-43-elements.svg" alt="Two token values, each a fraction below the 4.5:1 line, feeding forty-three elements across the site" width="1200" height="440" loading="lazy" decoding="async" /><figcaption>One value, forty-three places. The count in the audit report measures the design system, not the problem.</figcaption></figure>
       <h2 id="measure-against-your-actual-background">Measure against your actual background</h2>
       <p>The rule I would pass on: check a colour against the background it will really sit on, not against white.</p>
-      <p>This page is <code>#fafafa</code>. Not white — an off-white, chosen because a full-white page under a lamp at night is a light source rather than a page. The gap between <code>#fafafa</code> and <code>#ffffff</code> is small enough to be invisible and large enough to hide exactly the failure I had: a grey that clears 4.5:1 on pure white and lands at 4.42 on paper.</p>
+      <p>This page is <code>#fafafa</code>. Not white, but an off-white, chosen because a full-white page under a lamp at night is a light source rather than a page. The gap between <code>#fafafa</code> and <code>#ffffff</code> is small enough to be invisible and large enough to hide exactly the failure I had: a grey that clears 4.5:1 on pure white and lands at 4.42 on paper.</p>
       <p>Nearly every contrast tool defaults to white. If your page is not white, its default answer is optimistic, and optimistic by roughly the size of the mistakes you are trying to catch.</p>
       <h2 id="the-other-two-findings-which-were-not-colour">The other two findings, which were not colour</h2>
       <p>The same audit turned up two things that had nothing to do with contrast, and both were structural.</p>
-      <p>The footer's column headings were <code>h4</code> sitting immediately after the closing section's <code>h2</code>. Visually fine — the footer's own CSS sets their size regardless of level, which is precisely why nobody noticed. To a screen reader moving through headings, a skipped level reads as a missing section: the listener is told something exists between these two things and is not shown it. They are <code>h3</code> now, in the hand-written pages and both generators. The level was always free to be correct; nothing about the design depended on it being wrong.</p>
-      <p>And one link inside a paragraph of muted text was distinguished from the text around it by hue alone, at a ratio of 1.03:1 against its neighbours. Not "hard to see" — invisible, to anyone whose colour vision does not separate those two greys, and near enough invisible to everyone else. Every other link in running text on this site is underlined. This one had been made an exception at some point, for tidiness. It is underlined now.</p>
+      <p>The footer's column headings were <code>h4</code> sitting immediately after the closing section's <code>h2</code>. Visually fine, because the footer's own CSS sets their size regardless of level, which is precisely why nobody noticed. To a screen reader moving through headings, a skipped level reads as a missing section: the listener is told something exists between these two things and is not shown it. They are <code>h3</code> now, in the hand-written pages and both generators. The level was always free to be correct; nothing about the design depended on it being wrong.</p>
+      <p>And one link inside a paragraph of muted text was distinguished from the text around it by hue alone, at a ratio of 1.03:1 against its neighbours. Not "hard to see" but invisible, to anyone whose colour vision does not separate those two greys, and near enough invisible to everyone else. Every other link in running text on this site is underlined. This one had been made an exception at some point, for tidiness. It is underlined now.</p>
       <p>Both of those are the same category of bug: something that looks right because the visual layer was doing the work, while the layer that carries meaning to a machine or a screen reader said something else.</p>
       <p>The accessibility score went from 89 to 100 on mobile and desktop. Performance, best practices and SEO did not move — 97/100/100 on mobile, 100/100/100 on desktop — which is worth saying because the usual objection to this work is that it costs something elsewhere. It cost three shades of grey.</p>
       <h2 id="in-the-app-the-colours-come-from-the-user">In the app, the colours come from the user</h2>
       <p>The website is the easy half. Every colour there is one I chose. The app paints text and icons on colours that arrive from data: a habit's swatch, a routine's time of day, a priority on the board, and the accent the user picked out of a palette. You cannot check those by eye at design time, because at design time you do not know what they are.</p>
-      <p>For a long time the app simply wrote white on all of them. Measured, that fails badly. White on the lime habit swatch <code>#84cc16</code> is 1.98:1. Near-black on the same swatch is 11.1:1. Not a close call in either direction — the wrong choice by a factor of five.</p>
+      <p>For a long time the app simply wrote white on all of them. Measured, that fails badly. White on the lime habit swatch <code>#84cc16</code> is 1.98:1. Near-black on the same swatch is 11.1:1. Not a close call in either direction. The wrong choice by a factor of five.</p>
       <p>The accent had a heuristic, which was worse than none, because a heuristic looks like diligence. It used Rec. 601 perceived brightness with a 0.6 cutoff to decide between light and dark text. That is a formula for a different problem — it comes from video luma, not from contrast — and against the thirteen built-in accents it chose wrong for ten of them.</p>
       <p>There is now one implementation of one formula, WCAG relative luminance, and every caller uses it the same way: compute the ratio for both candidate foregrounds and take whichever actually scores higher.</p>
       <p>Picking the better of two beats any threshold, and it fails gracefully. On a saturated mid indigo where <em>neither</em> black nor white clears 4.5:1, a threshold has to invent an answer; comparing gives you the less bad one and no drama.</p>
       <h2 id="the-half-shade-that-unlocked-the-palette">The half-shade that unlocked the palette</h2>
       <p>One detail from that work I still like.</p>
-      <p>The dark foreground is now pure black, where it used to be a near-black <code>#141419</code> — a softening that had been introduced because pure black felt harsh in the abstract. On a saturated fill at chip size, at the sizes text actually appears, nobody can see the difference. What it cost was about 0.6 of a contrast ratio.</p>
-      <p>And 0.6 was the whole problem. Two habit colours could not be made readable with <em>either</em> foreground: indigo <code>#6366f1</code> capped at 4.47 and violet <code>#8b5cf6</code> at 4.34. Against pure black they reach 4.70 and 4.96. The palette needed no editing at all — the two colours I had been ready to remove were fine, and the thing standing between them and passing was an unmeasured aesthetic preference in the foreground. Everything else gained too: lime from 9.29 to 10.63, amber from 8.55 to 9.78.</p>
-      <p>There is a companion trick for the light themes. Some code has to darken a colour during render, before it can read the live background, so it measures against the darkest background any light theme uses — the warm paper of the sepia theme. Clear it there and you clear it on every lighter one, which is all fifteen. One conservative reference instead of fifteen conditional cases.</p>
+      <p>The dark foreground is now pure black, where it used to be a near-black <code>#141419</code>, a softening that had been introduced because pure black felt harsh in the abstract. On a saturated fill at chip size, at the sizes text actually appears, nobody can see the difference. What it cost was about 0.6 of a contrast ratio.</p>
+      <p>And 0.6 was the whole problem. Two habit colours could not be made readable with <em>either</em> foreground: indigo <code>#6366f1</code> capped at 4.47 and violet <code>#8b5cf6</code> at 4.34. Against pure black they reach 4.70 and 4.96. The palette needed no editing at all. The two colours I had been ready to remove were fine, and the thing standing between them and passing was an unmeasured aesthetic preference in the foreground. Everything else gained too: lime from 9.29 to 10.63, amber from 8.55 to 9.78.</p>
+      <p>There is a companion trick for the light themes. Some code has to darken a colour during render, before it can read the live background, so it measures against the darkest background any light theme uses: the warm paper of the sepia theme. Clear it there and you clear it on every lighter one, which is all fifteen. One conservative reference instead of fifteen conditional cases.</p>
       <h2 id="why-i-think-this-is-the-good-kind-of-accessibility-work">Why I think this is the good kind of accessibility work</h2>
       <p>There is a version of this that is compliance theatre: a score to raise, a report to file, a design flattened into beige.</p>
       <p>None of what is above changed a design decision. The greys are the same greys. The accent is the same blue. The habit palette kept every colour, including the two that were about to be cut. The whole delta is that the values were computed instead of eyeballed, and computing them was cheaper than the meeting about whether they looked fine.</p>
-      <p>Contrast is one of the few parts of design that is arithmetic. It has a formula, the formula is published, and your opinion is not an input. That makes it the part you should never be guessing at — and, unusually for accessibility work, it means you can be <em>certain</em> you are done rather than hopeful.</p>
+      <p>Contrast is one of the few parts of design that is arithmetic. It has a formula, the formula is published, and your opinion is not an input. That makes it the part you should never be guessing at, and, unusually for accessibility work, it means you can be <em>certain</em> you are done rather than hopeful.</p>
       <p>If you would rather read the reading-comfort side of the same subject, <a href="/blog/reading-and-writing-at-night/">there is a post about setting a page you will actually read at night</a>, and one about <a href="/blog/customising-a-notes-app/">making an app fit your own eyes</a>.</p>
     </div>
   </article>

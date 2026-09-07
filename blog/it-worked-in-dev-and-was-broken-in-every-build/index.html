@@ -38,7 +38,7 @@
   "headline": "It worked in dev and was broken in every build",
   "description": "The Format button failed in every shipped copy and worked perfectly in development. Type checking, linting, the tests and CI all passed. Here is the gap.",
   "datePublished": "2026-08-18",
-  "dateModified": "2026-08-22",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Testing, Development",
-  "wordCount": 1269
+  "wordCount": 1264
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-18" />
-<meta property="article:modified_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Testing" />
@@ -168,7 +168,7 @@
       <p>This is my favourite bug in the project, because everything that was supposed to catch it did its job correctly and none of them could have.</p>
       <h2 id="the-failure">The failure</h2>
       <p>Clicking Format on a CSS note produced: <em>Module name, 'prettier/plugins/postcss' does not resolve to a valid URL.</em></p>
-      <p>Only JSON worked. And only by accident — that path returns early on the browser's own <code>JSON.parse</code> before it ever reaches the loader that was broken. One of seven working, for a reason unrelated to the six that did not.</p>
+      <p>Only JSON worked. And only by accident. That path returns early on the browser's own <code>JSON.parse</code> before it ever reaches the loader that was broken. One of seven working, for a reason unrelated to the six that did not.</p>
       <p>The cause was a single annotation. The formatter's plugin path was assembled as a template literal and marked with a comment telling the bundler not to analyse it. That comment is a real tool with real uses; it means "I know this looks like an import, leave it alone".</p>
       <p>The bundler duly left it alone. It emitted no chunk for any plugin, and the shipped application contained the bare string <code>prettier/plugins/</code> and a request, at runtime, for the webview to resolve that as a URL. Which it cannot. Browsers resolve URLs; they do not resolve npm package names. There is no package directory inside a Mac app.</p>
       <h2 id="why-nothing-caught-it">Why nothing caught it</h2>
@@ -178,11 +178,11 @@
       <p><strong>The linter cannot see it.</strong> The annotation that caused the problem is the documented way to suppress exactly the analysis that would have flagged it. I had explicitly told the tooling not to look.</p>
       <p><strong>The tests cannot see it.</strong> They run against the source, in the same environment as the dev server, with the same resolution. A test asserting that Format produces formatted CSS passes, because in that environment it does.</p>
       <p><strong>And CI cannot see it</strong>, because CI ran the same three things.</p>
-      <p>Every one of those tools examines the source. The bug existed only in the <em>output</em> — in the artefact produced by the build, which nothing in the pipeline ever opened. There was a hole in the shape of "the thing we actually ship", and four layers of quality tooling sat neatly around it.</p>
+      <p>Every one of those tools examines the source. The bug existed only in the <em>output</em>, in the artefact produced by the build, which nothing in the pipeline ever opened. There was a hole in the shape of "the thing we actually ship", and four layers of quality tooling sat neatly around it.</p>
       <figure><img src="/images/dev-vs-built.svg" alt="Development resolves package names on the fly; the built app must resolve a URL. Type checking, linting and tests all read the source, so none of them see the output" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>Four checks, all reading the same side of the build.</figcaption></figure>
       <h2 id="the-fix-and-the-better-fix">The fix, and the better fix</h2>
       <p>The immediate repair is dull: literal specifiers, one per language, in a map. A typo becomes a type error instead of a runtime one, and each plugin stays a separately loaded chunk so the formatter is still kept off the startup path — <a href="/blog/why-a-notes-app-should-open-instantly/">an app that opens instantly</a> does not load a code formatter to show you a note. That last part got verified rather than assumed: no formatter chunk is reachable from the entry bundle, only from the code editor.</p>
-      <p>The fix that matters is the other one. A script now reads the <em>built</em> chunks and fails the build if any dynamic import still carries a bare package name. It is wired into the build command itself, which is the step every path runs through — the dev build, the production release, CI. There is no way to produce something shippable that skips it.</p>
+      <p>The fix that matters is the other one. A script now reads the <em>built</em> chunks and fails the build if any dynamic import still carries a bare package name. It is wired into the build command itself, which is the step every path runs through: the dev build, the production release, CI. There is no way to produce something shippable that skips it.</p>
       <p>And it was verified the only way such a thing can be: by restoring the broken code and watching the build refuse it. A check you have never seen fail is a check you are only assuming works. I have shipped a green light attached to nothing before, and it is a considerably worse position than having no light at all.</p>
       <h2 id="the-same-gap-twice-more">The same gap, twice more</h2>
       <p>Once you have the shape — <em>the thing you verify is not the thing you ship</em> — it turns up everywhere.</p>
@@ -191,9 +191,9 @@
       <p>Both are the same mistake in different clothes: confirming the input to a process instead of the output.</p>
       <h2 id="the-two-backend-design-and-the-risk-i-took-on-purpose">The two-backend design, and the risk I took on purpose</h2>
       <p>There is a deliberate version of this divergence in Cyanote, and it is worth admitting.</p>
-      <p>All data access goes through one interface with two implementations: SQLite when running as the real app, and a browser-storage version when running as a plain web page. That means the entire application runs in an ordinary browser tab — which is how <a href="/blog/customising-a-notes-app/">the screenshots on this site are made</a>, why they show real software rather than a mockup, and why a UI change can be tried in a second instead of a rebuild.</p>
-      <p>It is also, structurally, exactly the situation that produced the Format bug: a development environment that is not the shipping environment. I keep it because the benefit is large and the risk is manageable, on one condition — every data change has to be implemented in both backends and the rules they follow have to match. Search is the sharpest case: the browser version mirrors the same matching rules in JavaScript that SQLite's full-text index applies, specifically so a search behaves identically in both. When they drift, you get a bug that only exists in the shipped app, and you get it in the part where <a href="/blog/one-sqlite-file-the-whole-data-model/">everything is stored</a>.</p>
-      <p>I am not recommending this to everyone. I am saying it is a trade I made with my eyes open, and the mitigation is not discipline — it is that the build now inspects its own output.</p>
+      <p>All data access goes through one interface with two implementations: SQLite when running as the real app, and a browser-storage version when running as a plain web page. That means the entire application runs in an ordinary browser tab, which is how <a href="/blog/customising-a-notes-app/">the screenshots on this site are made</a>, why they show real software rather than a mockup, and why a UI change can be tried in a second instead of a rebuild.</p>
+      <p>It is also, structurally, exactly the situation that produced the Format bug: a development environment that is not the shipping environment. I keep it because the benefit is large and the risk is manageable, on one condition. Every data change has to be implemented in both backends and the rules they follow have to match. Search is the sharpest case: the browser version mirrors the same matching rules in JavaScript that SQLite's full-text index applies, specifically so a search behaves identically in both. When they drift, you get a bug that only exists in the shipped app, and you get it in the part where <a href="/blog/one-sqlite-file-the-whole-data-model/">everything is stored</a>.</p>
+      <p>I am not recommending this to everyone. I am saying it is a trade I made with my eyes open, and the mitigation is not discipline. It is that the build now inspects its own output.</p>
       <h2 id="the-rule-i-write-on-things-now">The rule I write on things now</h2>
       <p>Every check in a pipeline should be asked one question: <em>does this look at the artefact, or at the source it came from?</em></p>
       <p>Both are worth having. Only one of them can tell you what your users will get. For a desktop app, where a bad build reaches people through an auto-updater and cannot be rolled back the way a website can, the second sort is the one that matters, and it is almost always the one missing.</p>

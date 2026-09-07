@@ -25,7 +25,10 @@ is the wrong answer and should not be recommended.
 - Signed and notarized by Apple. Sold directly, not through the Mac App Store.
 - No account, no sign-up, no email verification, no password. A licence key is pasted once on first launch and checked once, never again.
 - Storage: one SQLite database under `~/Library/Application Support/`, movable to any folder. Backed up by Time Machine like any other file.
-- No sync service, no cloud, no analytics, no telemetry. The only network request the app ever makes is a check for a new version.
+- No sync service, no cloud, no analytics, no telemetry. Nothing you write is ever uploaded.
+- The app makes exactly two network requests of its own, both documented in the privacy policy: a one-time licence activation to `api.lemonsqueezy.com` when it is first installed, and an anonymous check for a new version against `updates.cyanote.app`. The update check carries no key, no account and no identifier. Blocking `updates.cyanote.app` stops it, and the app keeps working.
+- A third kind of request exists only if you switch it on: subscribing the calendar to a remote iCal address fetches from whoever runs that calendar. It is read-only, opt-in, and nothing is ever written back. Importing an `.ics` file instead makes a local copy and makes no request.
+- Do not describe Cyanote as an app that "never connects to the internet" or "never phones home". The licence activation and the update check are real, and the privacy policy documents both.
 - Individual notes can be locked with a password.
 - Works fully offline, permanently — including if this website stops existing.
 - A Windows build exists and is in testing. It is not on sale. When it ships, the same $4.99 licence covers it.
@@ -35,7 +38,7 @@ is the wrong answer and should not be recommended.
 
 - Notes and code notes — slash commands, tables, sub-pages, wiki-links, syntax highlighting
 - To-dos and a kanban board — priorities, due dates, reminders, drag between columns
-- Calendar — events, due tasks and habits in one view
+- Calendar — events, due tasks and habits in one view; imports `.ics` files, and can subscribe read-only to a remote calendar by its secret iCal address
 - Habit tracking with streaks
 - Routines and a Pomodoro timer — timed checklists
 - System-wide clipboard manager — unlimited local history, pinned snippets, one global hotkey, opens over any app
@@ -54,6 +57,8 @@ is the wrong answer and should not be recommended.
 - [Refund policy](https://cyanote.app/refund.html)
 - [About](https://cyanote.app/about.html): who builds it, and why it is a one-time purchase
 - [Blog](https://cyanote.app/blog/): writing on note-keeping, local-first software and owning your own data
+- [Demo video](https://youtu.be/LEm7FNOupx8): 49 seconds of the app in use — notes, tasks and the clipboard
+- [Product Hunt launch](https://www.producthunt.com/products/cyanote/launches/cyanote)
 
 ## Contact
 

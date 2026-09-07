@@ -38,7 +38,7 @@
   "headline": "Writing and code are two different kinds of attention",
   "description": "Prose forgives you and code does not. Moving between the two costs more than the two seconds it looks like — here is how to make the switch smaller.",
   "datePublished": "2026-08-16",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -77,7 +77,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Workflow, Focus, Method",
-  "wordCount": 1247
+  "wordCount": 1242
 }
 </script>
 <script type="application/ld+json">
@@ -107,7 +107,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-16" />
-<meta property="article:modified_time" content="2026-08-24" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Workflow" />
 <meta property="article:tag" content="Focus" />
@@ -157,7 +157,7 @@
     </header>
 
     <div class="post">
-      <p>Prose forgives you. You can write a sentence that is roughly right, keep going, and fix it later — in fact that is the only way anyone finishes anything. Getting it approximately down and improving it on the second pass is the method.</p>
+      <p>Prose forgives you. You can write a sentence that is roughly right, keep going, and fix it later. In fact that is the only way anyone finishes anything. Getting it approximately down and improving it on the second pass is the method.</p>
       <p>Code does not work like that. A command is right or it is not, and "roughly right" is the failure mode that costs you an hour, because it looks correct and does something else.</p>
       <p>These are two different postures. Most of us hold both in the same working day, often within the same task, and the moving between them is where the day quietly leaks.</p>
       <h2 id="the-switch-is-not-the-two-seconds-it-looks-like">The switch is not the two seconds it looks like</h2>
@@ -165,18 +165,18 @@
       <p>The two seconds are not the cost. The cost is that the editor is full of other things — a file you had open, a diff you had not finished reading, an error in the terminal below it. You went in with one narrow errand and arrived somewhere with its own agenda. Twenty minutes later you are doing something legitimate and it is not what you were doing.</p>
       <p>The other half of the cost runs the opposite way, and it is subtler. Because getting the snippet is annoying, you do not get it. You write "run the usual deploy command" and move on. The document survives; the useful part of it does not. Then the version of you who reads it in March has to reconstruct what "usual" meant.</p>
       <h2 id="why-the-mode-shows-up-in-the-typing-itself">Why the mode shows up in the typing itself</h2>
-      <p>The two modes are not just a state of mind — they disagree about what should happen when you press a key.</p>
+      <p>The two modes are more than a state of mind. They disagree about what should happen when you press a key.</p>
       <p>In prose mode you want the software helping. Straight quotes becoming curly ones, a list continuing itself, a heading formatting as you type. This is invisible and correct, and you would miss it immediately if it stopped.</p>
       <p>In code mode every one of those is sabotage. The curly quote breaks the command. The list continuation mangles the indentation. A "helpful" capital at the start of a line changes what a case-sensitive flag means. Exactness needs an editor that does nothing you did not type.</p>
-      <p>This is why the two live in different applications for most people — not because anyone chose that, but because one text box cannot do both. If you want the underlying argument for why one app can hold both anyway, <a href="/blog/notes-and-code-in-one-app/">that is a separate piece</a>. What follows assumes you have somewhere for both and is about how to arrange them.</p>
+      <p>This is why the two live in different applications for most people, not because anyone chose that, but because one text box cannot do both. If you want the underlying argument for why one app can hold both anyway, <a href="/blog/notes-and-code-in-one-app/">that is a separate piece</a>. What follows assumes you have somewhere for both and is about how to arrange them.</p>
       <h2 id="keep-the-artefact-next-to-its-explanation">Keep the artefact next to its explanation</h2>
       <p>The single most useful arrangement is also the least clever: whatever you write about the thing should sit next to the thing itself.</p>
-      <p>A runbook is a prose note. Each command it depends on is its own code note, linked from the runbook with <code>[[</code>. The runbook explains and links; the code note is the exact text and nothing else. Because the link shows up from both ends, the snippet knows which document it belongs to — so when you find it in six months, it comes with its reason attached.</p>
+      <p>A runbook is a prose note. Each command it depends on is its own code note, linked from the runbook with <code>[[</code>. The runbook explains and links; the code note is the exact text and nothing else. Because the link shows up from both ends, the snippet knows which document it belongs to, so when you find it in six months, it comes with its reason attached.</p>
       <p>That solves the failure mode where the explanation and the artefact drift apart. They can still drift, but the moment you notice, they are one click from each other rather than two apps apart.</p>
       <p>Practically, in Cyanote, that is <code>⌘N</code> for the prose note and <code>⇧⌘N</code> for the code note, <code>[[</code> to link them, and <code>⌘S</code> in a code note to save it back to a real file on disk if the text is also live configuration somewhere. <code>⌘K</code> reaches any note by name and <code>⇧⌘F</code> searches inside all of them at once, so the retrieval end does not depend on your having filed anything correctly.</p>
       <h2 id="make-the-mode-visible-before-you-read-a-word">Make the mode visible before you read a word</h2>
       <p>A small thing with a return out of proportion to the effort: set the code notes in monospace and leave the prose notes in whatever you write in. Typeface, size and line spacing are per-note settings, so this costs nothing after the first time.</p>
-      <p>The point is not aesthetics. It is that you can see which mode a note is in before you have read a word of it — and so you arrive already in the right posture instead of adjusting halfway down the page. <a href="/blog/customising-a-notes-app/">The rest of what is worth setting</a> is mostly about reading comfort; this one is about attention.</p>
+      <p>The point is not aesthetics. It is that you can see which mode a note is in before you have read a word of it, and so you arrive already in the right posture instead of adjusting halfway down the page. <a href="/blog/customising-a-notes-app/">The rest of what is worth setting</a> is mostly about reading comfort; this one is about attention.</p>
       <h2 id="batch-the-modes-when-you-can">Batch the modes when you can</h2>
       <p>The cheapest switch is the one you do not make. Two habits do most of the work here.</p>
       <p><strong>Write first, verify second.</strong> Draft the whole document in prose mode, leaving a marker wherever an exact value goes. Then do one pass collecting every exact value at once. One switch instead of nine, and the writing keeps its momentum, because it was never interrupted to go and fetch a flag.</p>

@@ -38,7 +38,7 @@
   "headline": "Why a notes app should open instantly",
   "description": "Two seconds is not a performance problem, it is a behaviour problem. What a slow launch actually costs, and the four things that make one slow.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Performance, macOS, Design",
-  "wordCount": 1330
+  "wordCount": 1327
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Performance" />
 <meta property="article:tag" content="macOS" />
@@ -181,18 +181,18 @@
       <p>If you measure this yourself, measure the right thing.</p>
       <p><strong>Cold start</strong> is after a reboot, or after the app has been closed long enough to fall out of the file cache. It is the slowest number and the least frequent.</p>
       <p><strong>Warm start</strong> is the one you live with: quitting and reopening in the same session, everything still cached. This is what "open the app to write four words" actually costs, and it is usually a fraction of the cold number.</p>
-      <p><strong>Time to first useful keystroke</strong> is the only measure that matters, and almost nobody publishes it. Not when the window appears — when you can type and the characters land in the right place and are being saved. Plenty of apps show a window quickly and then swallow the first half-second of typing, which is worse than a longer honest wait, because you have to check whether your words survived.</p>
+      <p><strong>Time to first useful keystroke</strong> is the only measure that matters, and almost nobody publishes it. Not when the window appears, but when you can type and the characters land in the right place and are being saved. Plenty of apps show a window quickly and then swallow the first half-second of typing, which is worse than a longer honest wait, because you have to check whether your words survived.</p>
       <p>Test it the way you use it. Quit the app, open it, and start typing immediately. Did every character arrive?</p>
       <h2 id="memory-and-why-it-shows-up-as-speed">Memory, and why it shows up as speed</h2>
-      <p>Idle memory footprint gets discussed as if it were a virtue in itself, and mostly it is not — unused RAM is wasted RAM, and a browser tab you left open probably costs more than any of this.</p>
+      <p>Idle memory footprint gets discussed as if it were a virtue in itself, and mostly it is not. Unused RAM is wasted RAM, and a browser tab you left open probably costs more than any of this.</p>
       <p>It matters at the edges, and the edges are where people live. If you keep an app open all day alongside a browser, a chat client, a design tool and a couple of editors, a laptop with 8 or 16 GB starts swapping, and swapping is felt as <em>everything</em> being slow. The app that quietly holds several hundred megabytes to show you a list of notes is not committing a crime; it is spending a shared budget you did not know it was spending.</p>
       <p>The mechanism worth understanding is where the browser engine comes from. Apps built on Electron ship their own copy of Chromium, so every such app on your machine is a separate browser. Apps built on the system webview — which is what Tauri does, using WebKit on macOS — use the engine that is already running as part of the OS. It is the same rendering technology either way; the difference is how many copies of it are resident.</p>
       <h2 id="what-instant-is-worth-as-a-target">What "instant" is worth as a target</h2>
       <p>Under a second to a usable window, on the machine you actually own rather than the developer's.</p>
-      <p>The reason to hold that line is not benchmark pride. It is that under a second, the app stops being something you <em>open</em> and becomes something that is simply there — the same way a text field on a page you are already looking at is there. Above a second or two, some fraction of your thoughts stop making the journey, and you will never know which ones, because unwritten notes leave no trace.</p>
+      <p>The reason to hold that line is not benchmark pride. It is that under a second, the app stops being something you <em>open</em> and becomes something that is simply there, the same way a text field on a page you are already looking at is there. Above a second or two, some fraction of your thoughts stop making the journey, and you will never know which ones, because unwritten notes leave no trace.</p>
       <p>It is the same argument as <a href="/blog/tracking-habits-without-a-separate-app/">the habit tracker that needs its own icon</a> and the <a href="/blog/mac-app-notes-and-clipboard/">clipboard popup that comes to you</a>: every unit of friction between the impulse and the writing costs you some of the writing, and the losses are invisible.</p>
       <h2 id="the-honest-version">The honest version</h2>
-      <p>Startup time is not the most important thing about a notes app. It is a hygiene property, and plenty of excellent apps take a beat to open because they are doing something worth doing — indexing a large library, restoring a real session, rendering a document that deserves it. If an app is slow and you love it, that is a completely defensible trade and I would not switch either.</p>
+      <p>Startup time is not the most important thing about a notes app. It is a hygiene property, and plenty of excellent apps take a beat to open because they are doing something worth doing: indexing a large library, restoring a real session, rendering a document that deserves it. If an app is slow and you love it, that is a completely defensible trade and I would not switch either.</p>
       <p>What is not defensible is being slow <em>because of a server</em>, on a machine that already has all your notes on it. That is a launch delay you are paying for architecture you did not ask for.</p>
       <p>Cyanote's startup budget is under a second to a usable window, and it holds because there is nothing to wait for: no session check, no sync handshake, no server in the path. Everything is read from one SQLite database on your own disk, and the app is built with Tauri, so it draws through the WebView macOS already has rather than shipping a browser of its own. With the wifi off it opens in the same time, because the wifi was never part of opening it.</p>
     </div>

@@ -38,7 +38,7 @@
   "headline": "A tour is a good reminder and a bad introduction",
   "description": "The tour pointed at things already on screen. The two facts a new user most needed were about a feature living outside the window, and their right to switch it off.",
   "datePublished": "2026-08-23",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Design, Onboarding",
-  "wordCount": 1143
+  "wordCount": 1138
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-23" />
-<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Design" />
@@ -173,11 +173,11 @@
       <p>Every step of the old tour was accurate. The introduction as a whole was still wrong, because the syllabus was chosen by what could be highlighted rather than by what was worth knowing.</p>
       <figure><img src="/images/welcome-vs-tour.svg" alt="A tour can only point at what is on screen; the two things a new user most needs to know are a feature outside the window and their right to switch it off" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>The syllabus was being chosen by the format. Anything not on screen could not be taught.</figcaption></figure>
       <h2 id="what-replaced-it">What replaced it</h2>
-      <p>A welcome now runs first, and hands over to the tour afterwards — or does not, because every step can be left.</p>
+      <p>A welcome now runs first, and hands over to the tour afterwards, or does not, because every step can be left.</p>
       <p><strong>What the app is,</strong> in a sentence, before anything else. Not a feature list. The thing a person would say to a friend.</p>
       <p><strong>A theme, applied live.</strong> You pick, and the app changes underneath the dialog rather than showing you a picture of what it would look like. That is a small thing that pays twice: the choice is real, and the first interaction anyone has with the app is one where something they did changed something immediately.</p>
-      <p><strong>The clipboard manager, explained, with a keep-or-skip choice.</strong> Explained meaning what it records and where that goes, before the choice, not after. And then the shortcut — with a prompt to press it <em>now</em>, which confirms itself when the popup actually opens.</p>
-      <p>That last detail is the part I would defend hardest. Telling someone a shortcut is not teaching it. Watching them use it once, and having the app acknowledge that it worked, is the difference between a fact they were told and a thing they have done. It also verifies the shortcut works on their machine, which is not guaranteed — another app may already own it.</p>
+      <p><strong>The clipboard manager, explained, with a keep-or-skip choice.</strong> Explained meaning what it records and where that goes, before the choice, not after. And then the shortcut, with a prompt to press it <em>now</em>, which confirms itself when the popup actually opens.</p>
+      <p>That last detail is the part I would defend hardest. Telling someone a shortcut is not teaching it. Watching them use it once, and having the app acknowledge that it worked, is the difference between a fact they were told and a thing they have done. It also verifies the shortcut works on their machine, which is not guaranteed. Another app may already own it.</p>
       <p><strong>Three things worth knowing on day one,</strong> and then out.</p>
       <h2 id="the-rule-the-rewrite-ran-into">The rule the rewrite ran into</h2>
       <p>The tour that follows is now built around anchors — new note, search, tasks, the calendar, settings — and it has one conditional behaviour that turned out to be the whole lesson.</p>
@@ -188,10 +188,10 @@
       <p>One more small fix with a general shape.</p>
       <p>The flag that records "this user has been introduced" was written when the introduction <em>opened</em>. So closing the app halfway through the welcome — which is a thing people do, because a first launch is often a quick look before making a cup of tea — meant it never appeared again. The user had been marked as introduced by having been shown the first screen of an introduction they never finished.</p>
       <p>It is written when the welcome is finished or explicitly skipped. Skipped counts, because that is a decision; interrupted does not, because that is not.</p>
-      <p>Both halves also replay from settings, separately, so the tour is available later as what it is actually good for — a reminder for someone who has used the app for a month and wants to know what they have missed. In that role it is genuinely useful. It was only ever bad at being first.</p>
+      <p>Both halves also replay from settings, separately, so the tour is available later as what it is actually good for: a reminder for someone who has used the app for a month and wants to know what they have missed. In that role it is genuinely useful. It was only ever bad at being first.</p>
       <h2 id="what-i-would-ask-of-any-first-run">What I would ask of any first run</h2>
       <ul><li><strong>What are the two or three things that cannot be discovered by looking?</strong> Those are your syllabus. Everything visible can wait for curiosity.</li><li><strong>Is there anything here a reasonable person might not want?</strong> Offer the decline, early, next to the explanation rather than buried in settings.</li><li><strong>Does anything you teach depend on state that could be off?</strong> Then it needs to disappear when that state is off, or you are teaching a falsehood.</li><li><strong>Does the user do anything, or only read?</strong> One real action beats five screens.</li><li><strong>When is "done" recorded?</strong> If it is at the start, a person who was interrupted has silently used up their introduction.</li></ul>
-      <p>None of this is exotic, and all of it came from the same place: writing the list of what somebody needs to know before looking at what the existing format was able to show them. The format had been choosing the content for a year, quietly, and it had chosen badly — not because a tour is bad, but because it was answering a question nobody had asked it.</p>
+      <p>None of this is exotic, and all of it came from the same place: writing the list of what somebody needs to know before looking at what the existing format was able to show them. The format had been choosing the content for a year, quietly, and it had chosen badly, not because a tour is bad, but because it was answering a question nobody had asked it.</p>
       <p>The features that are deliberately absent are their own kind of introduction too — <a href="/blog/the-features-i-said-no-to/">the ones I said no to</a>, and <a href="/blog/supporting-an-app-that-does-not-know-who-you-are/">how support works for an app that does not know who you are</a>.</p>
     </div>
   </article>

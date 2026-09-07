@@ -38,7 +38,7 @@
   "headline": "AI features in a notes app, and what they cost",
   "description": "Ask-your-notes-anything means sending your notes somewhere. What each kind of AI feature actually transmits, and which ones can run on your machine.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Privacy, Local-first, Buying advice",
-  "wordCount": 1333
+  "wordCount": 1328
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Privacy" />
 <meta property="article:tag" content="Local-first" />
@@ -177,7 +177,7 @@
       <figure><img src="/images/ai-what-leaves.svg" alt="The two shapes of AI feature: one you initiate, and one that runs on a schedule" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The first column is a decision. The second is a policy, and the difference is what you should be weighing.</figcaption></figure>
       <h2 id="the-questions-to-ask">The questions to ask</h2>
       <p>Vendors vary enormously and several are genuinely careful. These are the questions that distinguish them.</p>
-      <p><strong>Is my content used for training?</strong> Most business-focused vendors now say no by default. Check whether that is the default or an opt-out, and whether it differs by plan — free tiers sometimes have different terms.</p>
+      <p><strong>Is my content used for training?</strong> Most business-focused vendors now say no by default. Check whether that is the default or an opt-out, and whether it differs by plan. Free tiers sometimes have different terms.</p>
       <p><strong>How long is it retained?</strong> Many providers keep API inputs for a period for abuse monitoring, commonly around 30 days. That is reasonable operationally and it means your notes exist on their infrastructure after the request.</p>
       <p><strong>Who is the third party?</strong> Most apps do not run their own models. Your notes are going to the app vendor <em>and</em> to whichever model provider they use, which is two organisations and two sets of terms.</p>
       <p><strong>Is it opt-in per action, or always on?</strong> A button you press is a decision. Background indexing is a policy.</p>
@@ -189,21 +189,21 @@
       <p><strong>Local "ask your notes anything": partially.</strong> The retrieval part runs locally. The answering part is where local models are weakest, and it is the part people judge the feature on.</p>
       <p>The honest summary: local AI is genuinely viable in 2026 and it is not as good. Anyone claiming the gap has closed is selling something, and anyone claiming local models are useless has not tried recently.</p>
       <h2 id="the-thing-nobody-mentions-about-app-size">The thing nobody mentions about app size</h2>
-      <p>A local model is a few gigabytes. That is a large change to what installing a notes app means — an app that was 15 MB becomes a multi-gigabyte download, holds significant memory while running, and has real implications on <a href="/blog/software-for-an-older-mac/">an older machine</a>.</p>
+      <p>A local model is a few gigabytes. That is a large change to what installing a notes app means. An app that was 15 MB becomes a multi-gigabyte download, holds significant memory while running, and has real implications on <a href="/blog/software-for-an-older-mac/">an older machine</a>.</p>
       <p>Which is why most apps that offer local AI make it an optional download, and why apps that value being small often decline the feature entirely. It is a real architectural fork, not a checkbox.</p>
       <h2 id="where-this-leaves-a-local-first-app">Where this leaves a local-first app</h2>
       <p>Being straight about the position, since this is the part where a page like this usually gets evasive.</p>
       <p>An app with no server has three options. Call somebody else's API, which contradicts the reason people chose it. Ship a local model, which multiplies the download size and gives worse results. Or not have AI features, and be worse at some genuinely useful things than the competition.</p>
       <p>There is no fourth option, and anyone telling you their local-first app has frontier-quality AI with nothing leaving the machine is describing something that does not exist.</p>
-      <p>What a local app does have, and it is worth weighing: <strong>very good conventional search</strong>. Ranked full-text search across everything answers a large share of what people use AI search for, instantly, with no model, no transmission and no wait. It fails on the questions where you cannot remember any word from the note — which is exactly where semantic search shines, and that is the honest boundary between them.</p>
+      <p>What a local app does have, and it is worth weighing: <strong>very good conventional search</strong>. Ranked full-text search across everything answers a large share of what people use AI search for, instantly, with no model, no transmission and no wait. It fails on the questions where you cannot remember any word from the note, which is exactly where semantic search shines, and that is the honest boundary between them.</p>
       <h2 id="how-to-decide">How to decide</h2>
       <p><strong>If the material is ordinary</strong> — work notes, projects, drafts, things you would not mind a colleague reading — hosted AI features are a reasonable trade and the productivity is real. Check the training and retention terms, and get on with it.</p>
       <p><strong>If some of it is sensitive</strong> — client work under NDA, health, legal, a journal, anything covered by a policy — the useful move is not to refuse AI entirely. It is to keep the sensitive material somewhere without it, and use AI-equipped tools for the rest. Two places with a clear line beats one place with a policy you hope holds.</p>
-      <p><strong>If you cannot tell what is going where</strong>, that is itself the answer. A feature you cannot characterise is one you cannot consent to, and vagueness at this specific point is worth reacting to — the same standard as <a href="/blog/apps-that-do-not-phone-home/">any other claim about what an app transmits</a>.</p>
+      <p><strong>If you cannot tell what is going where</strong>, that is itself the answer. A feature you cannot characterise is one you cannot consent to, and vagueness at this specific point is worth reacting to, the same standard as <a href="/blog/apps-that-do-not-phone-home/">any other claim about what an app transmits</a>.</p>
       <h2 id="the-honest-version">The honest version</h2>
       <p>AI features in notes apps are useful and I am not going to pretend otherwise. Summarising a long meeting note, finding something by meaning, turning fragments into prose — these save real time.</p>
       <p>The cost is a copy of your writing on infrastructure you do not control, and whether that matters depends entirely on what you write. For most notes it does not. For some notes it very much does, and the mistake is having one policy for both.</p>
-      <p>Cyanote has no AI features at all. Nothing is summarised, nothing is embedded, nothing is sent — the app makes <a href="/blog/apps-that-do-not-phone-home/">three network requests in total</a> and none carries a word you have written. What it has instead is ranked full-text search across every note, code block and table, running against a local database, returning results while you are still typing. That is a real trade rather than a superior position: if what you want is to ask your notes a question in plain language, this app does not do that, and one that does will serve you better.</p>
+      <p>Cyanote has no AI features at all. Nothing is summarised, nothing is embedded, nothing is sent. The app makes <a href="/blog/apps-that-do-not-phone-home/">three network requests in total</a> and none carries a word you have written. What it has instead is ranked full-text search across every note, code block and table, running against a local database, returning results while you are still typing. That is a real trade rather than a superior position: if what you want is to ask your notes a question in plain language, this app does not do that, and one that does will serve you better.</p>
     </div>
   </article>
 

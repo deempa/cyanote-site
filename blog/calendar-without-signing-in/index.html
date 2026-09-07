@@ -38,7 +38,7 @@
   "headline": "Seeing your calendar without signing into it",
   "description": "There is a middle option between typing everything twice and handing an app your Google account. It is called an ICS subscription, and it is read-only.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Calendar, Privacy, How-to",
-  "wordCount": 1257
+  "wordCount": 1252
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Calendar" />
 <meta property="article:tag" content="Privacy" />
@@ -163,24 +163,24 @@
     </header>
 
     <div class="post">
-      <p>Every calendar app asks the same thing on first run: sign in with Google. And it makes sense from their side — the calendar is on Google's servers, so reading it means asking Google.</p>
-      <p>What that button actually grants is worth reading before you press it. OAuth scopes for calendar access are not "show me what is on Thursday". They are, typically, read <em>and</em> write access to every calendar on the account, held by a third party, valid until you go and revoke it — and, depending on the app, a copy of your events sitting on that third party's server so their sync can work while your laptop is closed.</p>
+      <p>Every calendar app asks the same thing on first run: sign in with Google. And it makes sense from their side. The calendar is on Google's servers, so reading it means asking Google.</p>
+      <p>What that button actually grants is worth reading before you press it. OAuth scopes for calendar access are not "show me what is on Thursday". They are, typically, read <em>and</em> write access to every calendar on the account, held by a third party, valid until you go and revoke it, and, depending on the app, a copy of your events sitting on that third party's server so their sync can work while your laptop is closed.</p>
       <p>For a calendar app you have chosen deliberately, that may be a fine trade. For a notes app that also happens to show your week, it is a lot to hand over so that Thursday has three lines on it.</p>
       <p>There is a middle option. It has existed since the late nineties, it is boring, and almost nobody mentions it.</p>
       <h2 id="subscribing-instead-of-signing-in">Subscribing instead of signing in</h2>
       <p>Every major calendar service can hand out a <strong>secret address</strong>: a long URL that returns your calendar as an ICS file, the plain-text format calendars have used for decades. Any app that can fetch a URL can then show your events.</p>
-      <p>In Google Calendar it sits in an individual calendar's settings under "Integrate calendar", named the Secret address in iCal format — and Google's own <a href="https://support.google.com/calendar/answer/37648">help page for it</a> files it under getting a view-only copy, with the instruction that only you should know the address and it should not be shared. Apple's iCloud calendars can be made public and produce a comparable link. Outlook has its own version. Most work calendars, university timetables, sports fixtures and bin collections publish one too.</p>
+      <p>In Google Calendar it sits in an individual calendar's settings under "Integrate calendar", named the Secret address in iCal format, and Google's own <a href="https://support.google.com/calendar/answer/37648">help page for it</a> files it under getting a view-only copy, with the instruction that only you should know the address and it should not be shared. Apple's iCloud calendars can be made public and produce a comparable link. Outlook has its own version. Most work calendars, university timetables, sports fixtures and bin collections publish one too.</p>
       <p>What you get:</p>
       <ul><li><strong>Read-only.</strong> The app can display your events. It cannot create, move or delete anything, because the format has no way to write back. For seeing your week next to your notes, read-only is the entire requirement.</li><li><strong>No account, no token, no scope.</strong> Nothing is authorised. There is no session to revoke and no app sitting in your Google security settings.</li><li><strong>Per calendar, not per account.</strong> Subscribe to your personal calendar and leave work alone, or the other way round. Signing in is all-or-nothing at the account level; a link is one calendar.</li><li><strong>Revocable in one click.</strong> Regenerate the address in your calendar's settings and every copy of the old URL stops working immediately.</li></ul>
       <figure><img src="/images/calendar.webp" alt="A month view in Cyanote, showing subscribed events alongside things created locally" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Read-only is not a limitation here. Nothing about seeing Thursday requires the ability to rewrite it.</figcaption></figure>
       <h2 id="the-honest-caveats">The honest caveats</h2>
       <p>This is where most write-ups of this trick stop, so: three things you should know.</p>
-      <p><strong>The URL is the password.</strong> Anyone who has it can read that calendar, forever, without logging in as you. Do not paste it into a shared document, a support ticket, or a chat with your team. If you think it has leaked, regenerate it — that is what the button is for.</p>
+      <p><strong>The URL is the password.</strong> Anyone who has it can read that calendar, forever, without logging in as you. Do not paste it into a shared document, a support ticket, or a chat with your team. If you think it has leaked, regenerate it. That is what the button is for.</p>
       <p><strong>It still makes a network request.</strong> Your app fetches that URL from Google, so Google sees a request from your IP on some schedule. This is not local and it is not private <em>from Google</em>. It is only private from everyone else: no third-party app holds a token, and no third-party server holds a copy of your events.</p>
       <p><strong>It refreshes on a delay.</strong> Subscribed calendars are polled, not pushed: your app asks for the file every so often, and the publisher decides how current the file it hands back is. In practice an event you add on your phone can take hours to appear in a subscribed view, and neither end promises otherwise. For a week you are looking at rather than editing, that is fine. If you need something you just accepted to show up within seconds, subscription is the wrong mechanism and you want a real sync.</p>
       <h2 id="the-other-option-import-the-file-once">The other option: import the file once</h2>
       <p>If even one request is more than you want, download the <code>.ics</code> file and import it. Your calendar app can export one; so can most event pages and every conference that sends you a booking.</p>
-      <p>This makes literally zero network requests. It also does not update, ever — it is a snapshot. Which sounds useless until you notice how many calendars never change: a term timetable, a fixture list, the twelve dates of a course. Importing those once is not a downgrade. It is the correct shape for the data.</p>
+      <p>This makes literally zero network requests. It also does not update, ever. It is a snapshot. Which sounds useless until you notice how many calendars never change: a term timetable, a fixture list, the twelve dates of a course. Importing those once is not a downgrade. It is the correct shape for the data.</p>
       <p>The two mechanisms cover different things, and most people want both: subscribe to the calendar that moves, import the ones that do not.</p>
       <h2 id="what-this-cannot-do">What this cannot do</h2>
       <p>Worth being plain, because a subscription genuinely gives up capability.</p>

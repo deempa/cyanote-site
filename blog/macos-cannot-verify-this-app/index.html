@@ -38,7 +38,7 @@
   "headline": "When macOS says it cannot verify an app",
   "description": "The warning is not a virus alert and it is not nothing. Here is what Gatekeeper actually checked, what changed in recent macOS, and when to walk away.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "macOS, Security, Buying advice",
-  "wordCount": 1171
+  "wordCount": 1166
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="macOS" />
 <meta property="article:tag" content="Security" />
@@ -167,16 +167,16 @@
       <p>Two wrong readings follow. Some people conclude the app has a virus and delete it. Others conclude macOS is being annoying and reach for the bypass. Neither is right, and the actual meaning is narrow enough to state precisely.</p>
       <h2 id="what-gatekeeper-checked">What Gatekeeper checked</h2>
       <p>macOS looked for two things, and the warning tells you which one failed.</p>
-      <p><strong>A Developer ID signature.</strong> The developer enrolled in Apple's programme, has a real identity on file with Apple, and used their certificate to sign the app. The signature also proves the app has not been altered since. If this is missing, macOS calls it an unidentified developer — meaning literally that: nobody's name is attached.</p>
+      <p><strong>A Developer ID signature.</strong> The developer enrolled in Apple's programme, has a real identity on file with Apple, and used their certificate to sign the app. The signature also proves the app has not been altered since. If this is missing, macOS calls it an unidentified developer, meaning literally that: nobody's name is attached.</p>
       <p><strong>Notarisation.</strong> The developer uploaded the finished build to Apple, which scanned it automatically for known malicious content and issued a ticket. This is not a review of quality or behaviour. It is an automated malware scan plus a record that a specific, identifiable developer shipped this specific binary.</p>
-      <p>Neither check says the app is good, safe, or well made. Together they say: a real identity is attached, and an automated scan found nothing known. That is a lower bar than people assume, and a meaningfully higher one than nothing — mainly because accountability raises the cost of shipping something bad.</p>
+      <p>Neither check says the app is good, safe, or well made. Together they say: a real identity is attached, and an automated scan found nothing known. That is a lower bar than people assume, and a meaningfully higher one than nothing, mainly because accountability raises the cost of shipping something bad.</p>
       <figure><img src="/images/gatekeeper-flow.svg" alt="What macOS checked before it showed you the warning, and what each check does and does not prove" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>A signature is a name. Notarisation is a scan. Neither is a promise the app is any good.</figcaption></figure>
       <h2 id="what-changed-and-why-the-old-advice-fails">What changed, and why the old advice fails</h2>
       <p>For years the standard workaround was Control-click the app, choose Open, and confirm. Half the internet still says this.</p>
       <p>Apple removed that path in macOS Sequoia. The <a href="https://developer.apple.com/news/?id=saqachfa">developer note announcing it</a> is explicit: users can no longer Control-click to override Gatekeeper for software that is not signed correctly or notarised, and must go to System Settings → Privacy &amp; Security to review the security information before allowing it to run.</p>
       <p>So the current route, if you have decided to trust something:</p>
       <ol><li>Try to open it once. It will be refused.</li><li>Open System Settings → Privacy &amp; Security.</li><li>Scroll down. There is a message naming the app that was blocked, with an <strong>Open Anyway</strong> button.</li><li>Confirm, and authenticate.</li></ol>
-      <p>The extra friction is deliberate. It makes the decision explicit, in a settings pane, rather than something you can be talked through on a phone call by someone claiming to be support — which was the attack the old shortcut enabled.</p>
+      <p>The extra friction is deliberate. It makes the decision explicit, in a settings pane, rather than something you can be talked through on a phone call by someone claiming to be support, which was the attack the old shortcut enabled.</p>
       <h2 id="what-you-should-never-do">What you should never do</h2>
       <p><strong>Do not run <code>xattr -d com.apple.quarantine</code> because a forum told you to.</strong> That command strips the flag macOS uses to know the file came from the internet, and it makes the warning disappear for <em>any</em> file, including one that should have triggered it. It is the single most commonly pasted dangerous command in Mac support threads, and the people posting it are usually trying to help.</p>
       <p><strong>Do not disable Gatekeeper entirely.</strong> <code>spctl --master-disable</code> turns the whole system off for everything, permanently, to solve one download. If you have done this at some point in the past, it is worth checking whether it is still off.</p>
@@ -185,7 +185,7 @@
       <p>The warning has told you what macOS does not know. The rest is yours, and these are the questions worth asking.</p>
       <p><strong>Where did the download come from?</strong> The developer's own site over HTTPS, or a link in a search ad, or a download-portal mirror? Mirrors are where re-bundled installers live, and the app can be legitimate while the copy you got is not.</p>
       <p><strong>Does the developer have a name and a history?</strong> A site, a changelog, a support address, a track record, people discussing it publicly. Software with no findable author asking you to override a security warning is a bad combination regardless of what it does.</p>
-      <p><strong>Is it open source, and are you getting it from the actual project?</strong> A great deal of good Mac software is unsigned simply because the developer will not pay Apple annually to give it away. That is a legitimate reason and a common one — but it makes provenance everything, since the project's release page and a random mirror carry very different risk.</p>
+      <p><strong>Is it open source, and are you getting it from the actual project?</strong> A great deal of good Mac software is unsigned simply because the developer will not pay Apple annually to give it away. That is a legitimate reason and a common one, but it makes provenance everything, since the project's release page and a random mirror carry very different risk.</p>
       <p><strong>Is the warning proportionate to what you are installing?</strong> A small utility that draws a window is one thing. Something that wants Accessibility permission, a kernel extension or admin rights is another, and an unsigned app that immediately asks for <a href="/blog/why-a-mac-app-asks-for-accessibility/">broad system permissions</a> deserves considerably more scepticism.</p>
       <h2 id="the-version-of-this-you-should-walk-away-from">The version of this you should walk away from</h2>
       <p>Some cases are not judgement calls.</p>
@@ -193,7 +193,7 @@
       <p>In all four, the warning is doing precisely the job it was designed for.</p>
       <h2 id="the-other-side-what-it-costs-developers">The other side: what it costs developers</h2>
       <p>Worth knowing, because it explains why so much decent software trips it.</p>
-      <p>Signing requires a paid Apple Developer membership, renewed annually. Notarisation requires uploading each build to Apple and waiting for a result, which adds a step to every release. For a hobbyist giving software away, that is a recurring cost and a recurring chore in exchange for no warning dialog — and plenty of them reasonably decline.</p>
+      <p>Signing requires a paid Apple Developer membership, renewed annually. Notarisation requires uploading each build to Apple and waiting for a result, which adds a step to every release. For a hobbyist giving software away, that is a recurring cost and a recurring chore in exchange for no warning dialog, and plenty of them reasonably decline.</p>
       <p>Which means the warning is not a quality signal. Some of the best Mac utilities ever written are unsigned, and plenty of mediocre commercial software is signed and notarised. It is an accountability signal, and only that.</p>
       <h2 id="the-honest-version">The honest version</h2>
       <p>The warning means: nobody is on the hook for this, or nobody checked it. Decide with provenance, not with the dialog.</p>

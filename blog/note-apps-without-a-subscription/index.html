@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Pricing, Local-first, Buying advice",
-  "wordCount": 1332
+  "wordCount": 1329
 }
 </script>
 <script type="application/ld+json">
@@ -169,12 +169,12 @@
       <p>This is not a post about subscriptions being a scam. Some of them are entirely fair, and I will make that case below before making the other one. It is a post about what you are actually paying for in each model, and what a one-time purchase has to include before it means anything.</p>
       <h2 id="why-note-apps-went-to-subscriptions">Why note apps went to subscriptions</h2>
       <p>The honest reason is that most of them run servers.</p>
-      <p>If an app syncs your notes between devices, somebody is paying for storage, for bandwidth, and for the engineers who keep it all running at 3am. That cost recurs every month you keep using it, whether or not the app gained a single feature. A one-time payment cannot fund an ongoing cost — the maths simply doesn't work, and an app that tried would either degrade or disappear.</p>
+      <p>If an app syncs your notes between devices, somebody is paying for storage, for bandwidth, and for the engineers who keep it all running at 3am. That cost recurs every month you keep using it, whether or not the app gained a single feature. A one-time payment cannot fund an ongoing cost. The maths simply doesn't work, and an app that tried would either degrade or disappear.</p>
       <p>There is a second reason, less often stated: subscriptions produce predictable revenue, and predictable revenue is what lets a company plan. A one-time-purchase app has to keep finding new customers forever to pay yesterday's salaries. That pressure is real, and it is why so many apps that started as a purchase ended up as a rental.</p>
       <p>So if an app genuinely runs infrastructure for you, a subscription is the honest price of it. The question worth asking is whether it runs infrastructure for you.</p>
       <h2 id="what-you-are-renting">What you are renting</h2>
       <p>The uncomfortable part of the model is what happens when you stop paying.</p>
-      <p>With most subscription note apps, the answer is that you lose access to the app but your notes are still "yours" in the sense that you can export them. That is better than nothing. It is also less reassuring than it sounds, because export quality varies enormously — a folder of Markdown files with your structure intact is a real escape route, and a single JSON blob with proprietary block references in it is a hostage note.</p>
+      <p>With most subscription note apps, the answer is that you lose access to the app but your notes are still "yours" in the sense that you can export them. That is better than nothing. It is also less reassuring than it sounds, because export quality varies enormously. A folder of Markdown files with your structure intact is a real escape route, and a single JSON blob with proprietary block references in it is a hostage note.</p>
       <p>Worth knowing before you commit, not after:</p>
       <ul><li>Can you export everything, including attachments, in a format something else can open?</li><li>Does the export keep your links between notes working, or does it flatten them?</li><li>If you stop paying, is the app read-only, or does it lock you out entirely?</li><li>Is the export a feature of the free tier, or does cancelling remove the tool you need to leave?</li></ul>
       <p>An app that answers all four well is one you can leave, which is the only thing that makes staying a choice.</p>
@@ -188,7 +188,7 @@
       <p>This is the one that actually matters, and it is a question about architecture rather than intent. An app that stores your notes on your own machine and does not check in with a server keeps working the day after its developer walks away. An app that phones home to validate your licence every launch stops working the day that endpoint goes dark, no matter how sincerely the developer promised otherwise.</p>
       <p>Ask specifically: does it need the internet to start? Does it check my licence more than once? Where exactly are my notes on this disk?</p>
       <h3 id="a-plain-data-format-underneath">A plain data format underneath</h3>
-      <p>Your notes will outlive the app you write them in — that is true of every app, including good ones. The thing that determines whether that is a migration or a loss is whether the format underneath is something another program can read.</p>
+      <p>Your notes will outlive the app you write them in. That is true of every app, including good ones. The thing that determines whether that is a migration or a loss is whether the format underneath is something another program can read.</p>
       <h3 id="the-two-models-side-by-side">The two models, side by side</h3>
       <p>Set out together, they differ in ways that have nothing to do with which one is better:</p>
       <div class="table-scroll"><table><thead><tr><th scope="col">What differs</th><th scope="col">Subscription, in the cloud</th><th scope="col">One-time purchase, on your machine</th></tr></thead><tbody><tr><td>What the money pays for</td><td>Servers, sync, storage, and the people who keep them up</td><td>Development, once</td></tr><tr><td>When you stop paying</td><td>The app locks, or drops to read-only. Export before you cancel, not after</td><td>Nothing happens. It keeps working</td></tr><tr><td>If the company closes</td><td>The service ends with it; you have whatever you exported</td><td>The copy on your disk keeps running</td></tr><tr><td>Working offline</td><td>Partly. Sync needs the network, and some apps need it just to sign in</td><td>Entirely</td></tr><tr><td>Where the notes are</td><td>On someone else's servers, in their format</td><td>On your own disk, in a file you can point at</td></tr><tr><td>Sync between devices</td><td>Yes — this is the thing you are paying for</td><td>No, unless you arrange it yourself</td></tr><tr><td>Cost over five years</td><td>Recurring, and it can be raised</td><td>Fixed at whatever you paid on day one</td></tr></tbody></table></div>

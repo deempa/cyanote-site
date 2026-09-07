@@ -38,7 +38,7 @@
   "headline": "Screenshots and images in your notes",
   "description": "An image in a note is either a file inside your database or a link to somebody's server. The difference is invisible until the day it is a grey box.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Notes, Local-first, How-to",
-  "wordCount": 1113
+  "wordCount": 1110
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Notes" />
 <meta property="article:tag" content="Local-first" />
@@ -166,14 +166,14 @@
       <p>You paste a screenshot into a note. It appears. Everything is fine.</p>
       <p>Two years later you open that note and there is a grey box with a broken-image icon, or the picture is there but the database is 40 MB and you cannot work out why the app got slow. Both outcomes come from the same decision, made by the app on your behalf on the day you pasted, which almost no app tells you about.</p>
       <h2 id="the-three-things-an-app-can-do-with-a-pasted-image">The three things an app can do with a pasted image</h2>
-      <p><strong>Store it in the database.</strong> The bytes go into the app's own storage, alongside the note. The image is now part of your collection: it backs up when the collection backs up, exports when it exports, and works with the wifi off forever. The cost is size — your database grows by the size of every image, and screenshots are not small.</p>
+      <p><strong>Store it in the database.</strong> The bytes go into the app's own storage, alongside the note. The image is now part of your collection: it backs up when the collection backs up, exports when it exports, and works with the wifi off forever. The cost is size. Your database grows by the size of every image, and screenshots are not small.</p>
       <p><strong>Store it as a file, referenced by path.</strong> The image goes into a folder and the note points at it. Efficient, transparent, and fragile in one specific way: move or rename the folder and every reference breaks. Some apps handle this well with a managed attachments directory. Some just write the path you dragged from, which means your notes now depend on a Downloads folder you clear monthly.</p>
       <p><strong>Upload it and store a URL.</strong> Common in anything cloud-backed. The picture is on somebody's CDN and your note holds a link. The note is tiny. The picture is not yours, it needs a connection, it is gone if the account lapses, and any export you take is an export of links.</p>
       <p>The tell for the third is the export: export a note with an image and open the result somewhere else. If the picture is there, you have one of the first two. If you get a URL or a broken box, you have the third, and every screenshot you have ever pasted is a tenancy rather than a possession.</p>
       <figure><img src="/images/note.webp" alt="A note with an image sitting in the same document as the text — the picture is in the database, not on a server" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The question is not how it looks in the note. It is what is left when you export it.</figcaption></figure>
       <h2 id="why-this-matters-more-than-it-sounds">Why this matters more than it sounds</h2>
       <p>Images in notes are disproportionately the <em>evidence</em>. The error message. The receipt. The whiteboard at the end of the meeting. The before-and-after. The screenshot of the thing somebody said before they said they had not said it.</p>
-      <p>Text you can usually reconstruct. Evidence you cannot — that whiteboard is wiped, that error was transient, that receipt is in a bin in another country. Which means the images in your notes are, item for item, often the least replaceable content you have, and they are the part most likely to be stored as a link to somebody else's server.</p>
+      <p>Text you can usually reconstruct. Evidence you cannot: that whiteboard is wiped, that error was transient, that receipt is in a bin in another country. Which means the images in your notes are, item for item, often the least replaceable content you have, and they are the part most likely to be stored as a link to somebody else's server.</p>
       <h2 id="what-to-do-about-screenshot-bloat">What to do about screenshot bloat</h2>
       <p>The real cost of the good options is size, and it is manageable.</p>
       <p><strong>Screenshot the region, not the screen.</strong> <code>⇧⌘4</code> and drag beats <code>⇧⌘3</code> by a large margin in file size, and produces a more useful picture — a screenshot of a whole 5K display, viewed later in a note, is a picture in which nothing is legible anyway.</p>
@@ -191,7 +191,7 @@
       <h2 id="the-honest-version">The honest version</h2>
       <p>If your work is genuinely visual — design references, a research corpus of images, screenshots by the thousand — a notes app is not your image library and you want something built for it. Managing tens of gigabytes of pictures inside a notes database is a bad plan regardless of how well the app handles it.</p>
       <p>For the ordinary case of a few images a week as evidence and context, the only thing that really matters is which of the three storage choices your app made, and you can find out in two minutes by exporting one note.</p>
-      <p>Cyanote stores images in the same local SQLite database as everything else. They are in the backup because the backup is the database, they are in the JSON export because the export includes them, and they render with the wifi off because nothing about them was ever a URL. Notes hold images inline alongside headings, tables, callouts and code, and the clipboard history keeps copied images as well as text — so a screenshot you took an hour ago and lost is still recoverable from <code>⌥⇧V</code>.</p>
+      <p>Cyanote stores images in the same local SQLite database as everything else. They are in the backup because the backup is the database, they are in the JSON export because the export includes them, and they render with the wifi off because nothing about them was ever a URL. Notes hold images inline alongside headings, tables, callouts and code, and the clipboard history keeps copied images as well as text, so a screenshot you took an hour ago and lost is still recoverable from <code>⌥⇧V</code>.</p>
     </div>
   </article>
 

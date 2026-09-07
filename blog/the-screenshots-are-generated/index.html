@@ -38,7 +38,7 @@
   "headline": "The screenshots on this site are generated",
   "description": "Nobody photographs this app by hand. A script seeds a database, drives the interface and shoots it — which makes the marketing images a test that fails loudly.",
   "datePublished": "2026-08-23",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Design, Testing",
-  "wordCount": 1281
+  "wordCount": 1276
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-23" />
-<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Design" />
@@ -173,10 +173,10 @@
       <figure><img src="/images/capture-pipeline.svg" alt="A capture pipeline: seed a database, pin the clock, drive the interface, shoot at a fixed size, optimise — with the app&#x27;s real UI in the middle" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>The middle box is the app itself. Nothing here is a mockup, which is exactly why the pipeline breaks when the app changes.</figcaption></figure>
       <h2 id="the-regeneration-that-found-four-bugs">The regeneration that found four bugs</h2>
       <p>The first time I regenerated the whole set against a rebuilt interface, I expected stale pixels. What came out was four faults, none of which was about pixels.</p>
-      <p><strong>A script that deleted work it had not made.</strong> The store-listing script wiped its entire output folder on every run, then wrote the numbered shots. It did not produce the hand-made checkout hero that lived in the same folder — so it destroyed it, every single run, and anyone who wanted that image back had to rebuild it. It now clears only the files it writes. "Clean the output directory" is a reasonable-sounding line that quietly claims ownership of everything in it.</p>
+      <p><strong>A script that deleted work it had not made.</strong> The store-listing script wiped its entire output folder on every run, then wrote the numbered shots. It did not produce the hand-made checkout hero that lived in the same folder, so it destroyed it, every single run, and anyone who wanted that image back had to rebuild it. It now clears only the files it writes. "Clean the output directory" is a reasonable-sounding line that quietly claims ownership of everything in it.</p>
       <p><strong>A menu that followed the camera around.</strong> The note shot opens the slash-command menu, which is the whole point of that shot. Navigation between pages is a synthetic click, and a synthetic click does not dismiss a fixed-position overlay. So the menu stayed open, and was photographed on top of Habits, Today, Calendar, Board and Routines. Five shots showing a menu that has nothing to do with the page under it, produced by a script that thought it had moved on.</p>
-      <p><strong>Two clicks aimed at buttons that had moved.</strong> One targeted a control that had since been relocated into a right-click menu; the other a lowercase text button that had become a capitalised segmented control. Both are exactly what you would expect a UI-driving script to suffer, and both are the pipeline doing its job — a broken selector is the script telling you the interface changed. One of the two turned out better for it: rather than restore the old shot, it now shows the habit grid with a missed day being filled in, which demonstrates something the original never did.</p>
-      <p><strong>Animations caught mid-flight.</strong> Page waits were 450 milliseconds. The page cross-fade is 180 milliseconds, which is fine, but rows stagger in and are still moving at 750. So the bottom rows of longer pages were photographed half-arrived — slightly transparent, slightly offset, in a way that reads as a rendering bug rather than as motion. The wait is a full second now. A screenshot has no motion to explain the blur.</p>
+      <p><strong>Two clicks aimed at buttons that had moved.</strong> One targeted a control that had since been relocated into a right-click menu; the other a lowercase text button that had become a capitalised segmented control. Both are exactly what you would expect a UI-driving script to suffer, and both are the pipeline doing its job. A broken selector is the script telling you the interface changed. One of the two turned out better for it: rather than restore the old shot, it now shows the habit grid with a missed day being filled in, which demonstrates something the original never did.</p>
+      <p><strong>Animations caught mid-flight.</strong> Page waits were 450 milliseconds. The page cross-fade is 180 milliseconds, which is fine, but rows stagger in and are still moving at 750. So the bottom rows of longer pages were photographed half-arrived: slightly transparent, slightly offset, in a way that reads as a rendering bug rather than as motion. The wait is a full second now. A screenshot has no motion to explain the blur.</p>
       <h2 id="the-clock-problem">The clock problem</h2>
       <p>My favourite of these deserves its own section, because it is a category of bug that only exists in captured images.</p>
       <p>The Today page is a clock. It shows the day's schedule, what is next, and a countdown to it. Which means a screenshot of it is a screenshot of a <em>moment</em>, and the moment is whenever the capture happened to run.</p>
@@ -185,8 +185,8 @@
       <p>Two lessons in that. The obvious one: if you are photographing time-dependent UI, freeze time. The less obvious one: the same trick is exactly what you want for tests. Any interface that renders differently at 23:00 has a whole class of bugs that only appear late at night, and pinning the clock is how you find them on purpose rather than by working late.</p>
       <h2 id="the-seed-is-a-design-document">The seed is a design document</h2>
       <p>The demo content is not filler. It is a claim about what the app is for, and it is worth writing deliberately.</p>
-      <p>The habits seed carries eleven weeks of history with real gaps in it — because a habit grid with a perfect streak is both unrealistic and, worse, discouraging. Mixed repeat cadences, so all three of the colours the grid uses actually appear rather than one of them being theoretical. One task on each to-do shelf, so no shelf is empty and none is crowded.</p>
-      <p>Its date helper had a genuine bug, and a familiar one: it compared a UTC day against the app's local day. Off by a few hours in one direction and a habit tick lands on the wrong square — visible in a screenshot, and the same class of mistake that puts a task on the wrong day in the actual app.</p>
+      <p>The habits seed carries eleven weeks of history with real gaps in it, because a habit grid with a perfect streak is both unrealistic and, worse, discouraging. Mixed repeat cadences, so all three of the colours the grid uses actually appear rather than one of them being theoretical. One task on each to-do shelf, so no shelf is empty and none is crowded.</p>
+      <p>Its date helper had a genuine bug, and a familiar one: it compared a UTC day against the app's local day. Off by a few hours in one direction and a habit tick lands on the wrong square, visible in a screenshot, and the same class of mistake that puts a task on the wrong day in the actual app.</p>
       <h2 id="a-pipeline-is-a-test-that-produces-pictures">A pipeline is a test that produces pictures</h2>
       <p>That is the thing I did not appreciate before building it.</p>
       <p>The script opens the app, navigates, opens a menu, ticks a habit, switches theme, fills in a missed day. It uses the interface the way a person does. When a selector stops matching, that is a UI change nobody wrote down. When a shot comes out empty, something is not rendering. When the shots take longer than usual, something got slower.</p>

@@ -38,7 +38,7 @@
   "headline": "When the clipboard ate the database",
   "description": "On a real install the clipboard was 42.8 MB of a 44.8 MB database, and 80 screenshots were all of it. A row limit does not bound bytes. What replaced it.",
   "datePublished": "2026-08-18",
-  "dateModified": "2026-08-22",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Clipboard, Performance",
-  "wordCount": 1335
+  "wordCount": 1328
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-18" />
-<meta property="article:modified_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Clipboard" />
@@ -168,32 +168,32 @@
       <p>The number that actually frightened me came after: the history limit counts <em>rows</em>. Five hundred rows against a 6 MB per-image cap is about three gigabytes, and nothing in the design said otherwise. Nobody had hit it yet. Somebody would.</p>
       <h2 id="a-row-limit-does-not-bound-bytes">A row limit does not bound bytes</h2>
       <p>This is the whole bug in one sentence, and it is an easy one to write.</p>
-      <p>"Keep the last 500 clipboard entries" is a completely reasonable rule when you picture a clipboard entry — a URL, a paragraph, a command you copied out of a terminal. Kilobytes. Five hundred of those is a rounding error.</p>
+      <p>"Keep the last 500 clipboard entries" is a completely reasonable rule when you picture a clipboard entry: a URL, a paragraph, a command you copied out of a terminal. Kilobytes. Five hundred of those is a rounding error.</p>
       <p>Then you support images, because a clipboard manager that forgets your screenshots is not much of a clipboard manager. And on a Retina Mac an ordinary full-screen grab is 2880×1800. The unit of the limit and the unit of the cost have quietly stopped being the same thing, and every subsequent decision inherits that.</p>
       <p>What made it invisible is that the app worked fine. Nothing was slow in a way anyone would report, nothing crashed, no user wrote in. The database was just steadily becoming a screenshot archive nobody asked for, on machines I would never see, because <a href="/blog/the-features-i-said-no-to/">there is no telemetry in this app</a> to tell me otherwise. It surfaced because I went and looked at a real file. That is not a repeatable process, and it is most of the reason I now open one on purpose every few weeks.</p>
       <h2 id="the-same-decision-costing-twice">The same decision, costing twice</h2>
       <p>Storage was the visible half. The popup was paying for it too.</p>
       <p>Full-resolution image data lived in the same column as text content, base64-encoded. Listing the history selected that column. The popup then drew 36-pixel-tall thumbnails out of it.</p>
-      <p>Roughly 12 MB crossing the bridge between the Rust side and the interface to paint one screenful of a list — and decoded at full resolution on the other side to be drawn a tenth of an inch tall.</p>
+      <p>Roughly 12 MB crossing the bridge between the Rust side and the interface to paint one screenful of a list, and decoded at full resolution on the other side to be drawn a tenth of an inch tall.</p>
       <p>Both problems have the same root: one representation of an image, at full fidelity, used for every purpose. Storing it, listing it, previewing it and pasting it are four jobs with wildly different fidelity requirements, and they were all being served by the largest possible answer.</p>
       <figure><img src="/images/clipboard-budget.svg" alt="A 44.8 MB database with 42.8 MB of clipboard history, and the design that replaced it: a small thumbnail read by the list, full-resolution bytes fetched only on paste" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>Four jobs, four fidelities. The list never asks for the megabytes.</figcaption></figure>
       <h2 id="what-replaced-it">What replaced it</h2>
-      <p><strong>Every image gets a thumbnail, about 384 pixels, stored beside the original.</strong> The list reads only that. Paste and the hover preview fetch the full row by id at the moment they actually need the pixels — which is the moment a user has chosen one specific entry, rather than the moment they opened a list of forty.</p>
-      <p><strong>A byte budget, not a row count.</strong> <code>CLIP_IMAGE_BUDGET</code> caps what the full-resolution copies may occupy between them. Past the cap, the oldest images give up their full-resolution data and keep their thumbnail. That is the part I am happiest with, because of what it does <em>not</em> do: an old screenshot does not disappear. It still appears in the list, and it still pastes. It pastes the thumbnail rather than the original, so it is no longer pixel-exact — a degradation, honestly, but an enormously better one than a gap where your screenshot used to be.</p>
-      <p><strong>A rule that saved every existing user's history.</strong> Rows stored before this change have no thumbnail, and cannot be given one after the fact from the Rust side. Without a special case, the first trim would have looked at those rows, seen an image over budget, dropped the full-resolution data, and left nothing at all — destroying every image already in every user's history, in the update that was meant to fix image handling.</p>
+      <p><strong>Every image gets a thumbnail, about 384 pixels, stored beside the original.</strong> The list reads only that. Paste and the hover preview fetch the full row by id at the moment they actually need the pixels, which is the moment a user has chosen one specific entry, rather than the moment they opened a list of forty.</p>
+      <p><strong>A byte budget, not a row count.</strong> <code>CLIP_IMAGE_BUDGET</code> caps what the full-resolution copies may occupy between them. Past the cap, the oldest images give up their full-resolution data and keep their thumbnail. That is the part I am happiest with, because of what it does <em>not</em> do: an old screenshot does not disappear. It still appears in the list, and it still pastes. It pastes the thumbnail rather than the original, so it is no longer pixel-exact. A degradation, honestly, but an enormously better one than a gap where your screenshot used to be.</p>
+      <p><strong>A rule that saved every existing user's history.</strong> Rows stored before this change have no thumbnail, and cannot be given one after the fact from the Rust side. Without a special case, the first trim would have looked at those rows, seen an image over budget, dropped the full-resolution data, and left nothing at all, destroying every image already in every user's history, in the update that was meant to fix image handling.</p>
       <p>So: a row whose thumbnail is NULL is never emptied, whatever the budget says. Those images keep their pixels until the popup gets around to backfilling a thumbnail for them.</p>
       <p>I did not spot that from reading. I spotted it writing out what the trim would do to a row that predates the column, which is a habit worth having whenever a migration adds something that later code assumes is present. Migration 26 in <a href="/blog/one-sqlite-file-the-whole-data-model/">the schema</a> is that column; the NULL rule is the thing that made shipping it safe.</p>
       <p><strong>And a check where I had assumed.</strong> Thumbnails encode as WebP, which is dramatically smaller — but only where the webview can genuinely encode WebP. The awkward part is that <code>toDataURL</code> does not fail when it cannot; it hands you back a PNG and says nothing. So the app verifies what it actually got rather than trusting what it asked for, and falls back to JPEG where WebP is unavailable. An API that silently substitutes something else is the most expensive kind to trust.</p>
       <h2 id="the-one-that-got-away-for-a-while">The one that got away for a while</h2>
       <p>Related, and found the same week: pasting a screenshot <em>into</em> a note took four seconds.</p>
-      <p>All of it was one call. Handing an image object across the bridge takes a JSON path, and the encoder ran a conversion once per element — 14.7 million calls for a single screenshot. Isolated, the same serialisation was 43ms without that step and 2,672ms with it. It was never bandwidth. The Rust side, at 243ms, was never the bottleneck either.</p>
+      <p>All of it was one call. Handing an image object across the bridge takes a JSON path, and the encoder ran a conversion once per element: 14.7 million calls for a single screenshot. Isolated, the same serialisation was 43ms without that step and 2,672ms with it. It was never bandwidth. The Rust side, at 243ms, was never the bottleneck either.</p>
       <p>Sending the PNG bytes and letting Rust decode them removed the JavaScript decode, a canvas round trip and a full pixel copy along with it. A 2560×1440 paste went from 3,151ms to 256ms. On a Retina Mac the four-second case was the <em>common</em> one, because a full-screen grab is exactly that size.</p>
       <p>Correctness got checked at the byte level rather than by eye: a known image round-tripped through the pasteboard came back pixel-identical, and the pasteboard was dumped from outside the app to confirm that what any other application receives on ⌘V is a valid, complete PNG. Looking right is not the same as being right, particularly with images, where an off-by-one in a stride produces something that looks perfect and is subtly wrong.</p>
       <h2 id="what-i-would-tell-the-version-of-me-who-wrote-the-original">What I would tell the version of me who wrote the original</h2>
       <p><strong>State the limit in the unit of the cost.</strong> If what you are protecting is disk, the limit is bytes. A row count is a proxy that holds exactly until one row can be a thousand times bigger than another, which — for anything touching user-supplied media — is immediately.</p>
       <p><strong>Degrade instead of deleting.</strong> The budget could have dropped whole entries. Keeping a lower-fidelity version means the history stays complete and the user never encounters an unexplained hole. People forgive fuzzy. Nobody forgives missing.</p>
       <p><strong>Check what an API gave you, not what you asked for.</strong> WebP that is silently a PNG. A <code>from_bytes</code> call that returns a stub because a build feature was not enabled. Both were caught by verifying the result; neither would have failed loudly on its own.</p>
-      <p>All of this shipped in 1.0.3, where the public note says the clipboard takes up far less space and its list opens faster when it holds screenshots. Both true. The <a href="/clipboard-manager-mac/">clipboard manager page</a> covers what it does; <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">when a free clipboard manager stops being enough</a> covers why you would want unlimited history in the first place — a promise that is only honest if somebody has done this arithmetic.</p>
+      <p>All of this shipped in 1.0.3, where the public note says the clipboard takes up far less space and its list opens faster when it holds screenshots. Both true. The <a href="/clipboard-manager-mac/">clipboard manager page</a> covers what it does; <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">when a free clipboard manager stops being enough</a> covers why you would want unlimited history in the first place, a promise that is only honest if somebody has done this arithmetic.</p>
     </div>
   </article>
 

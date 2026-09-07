@@ -38,7 +38,7 @@
   "headline": "Two Macs, one system, no sync",
   "description": "A desktop and a laptop is a harder problem than a phone, because you do real work on both. Four arrangements, and the one question that picks between them.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Local-first, Workflow, macOS",
-  "wordCount": 1166
+  "wordCount": 1162
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Local-first" />
 <meta property="article:tag" content="Workflow" />
@@ -163,7 +163,7 @@
     </header>
 
     <div class="post">
-      <p>A phone is a capture device. You write four words on it, standing up, and that is genuinely most of what happens there — which is why <a href="/blog/getting-a-note-to-your-phone-without-sync/">going without sync to a phone</a> turns out to be workable for a lot of people.</p>
+      <p>A phone is a capture device. You write four words on it, standing up, and that is genuinely most of what happens there, which is why <a href="/blog/getting-a-note-to-your-phone-without-sync/">going without sync to a phone</a> turns out to be workable for a lot of people.</p>
       <p>A second Mac is different. You write on both, you think on both, and a note started on one and needed on the other is not an edge case, it is Tuesday. The workarounds that cover a phone do not cover this, and pretending otherwise wastes your time.</p>
       <h2 id="first-the-question-that-decides-it">First, the question that decides it</h2>
       <p><strong>Do you use both machines in the same week, or in different weeks?</strong></p>
@@ -172,20 +172,20 @@
       <p>Most two-Mac setups are the second kind and are treated as the first, which is where the frustration comes from.</p>
       <figure><img src="/images/two-macs.svg" alt="One local database, one machine at a time — the arrangement that works when the two Macs are used in different weeks rather than the same one" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Concurrent editing needs sync. Handover does not.</figcaption></figure>
       <h2 id="the-four-arrangements">The four arrangements</h2>
-      <p><strong>One machine is the home, the other borrows.</strong> The desktop holds everything. Before a trip, export or copy across what you will need; when you get back, bring the new material over. Deliberate, unglamorous, and it fails exactly once — the time you forget, and need the note you did not bring.</p>
+      <p><strong>One machine is the home, the other borrows.</strong> The desktop holds everything. Before a trip, export or copy across what you will need; when you get back, bring the new material over. Deliberate, unglamorous, and it fails exactly once: the time you forget, and need the note you did not bring.</p>
       <p><strong>Split by domain, not by device.</strong> Work on the work machine, personal on the personal one, and no attempt to unify. This is the arrangement most people who have solved it actually use, and its strength is that the split is real rather than administrative: your employment contract and your privacy both point the same way. The rule to hold is that nothing lives in two places, because two half-collections is the worst outcome available.</p>
-      <p><strong>A file you carry.</strong> The whole collection exports to one file; the file lives on a USB stick, an external SSD, or your own server. Copy it over, work, copy it back. This is the arrangement everyone thinks is primitive and it is genuinely fine for handover — a single file, moved deliberately, with no ambiguity about which copy is current.</p>
+      <p><strong>A file you carry.</strong> The whole collection exports to one file; the file lives on a USB stick, an external SSD, or your own server. Copy it over, work, copy it back. This is the arrangement everyone thinks is primitive and it is genuinely fine for handover: a single file, moved deliberately, with no ambiguity about which copy is current.</p>
       <p><strong>Actual sync, from something built for it.</strong> Obsidian syncs a folder of files. Apple Notes syncs through iCloud. Notion is a browser away. If you are in the same-week case, this is the answer and it is not a compromise.</p>
       <h2 id="the-one-thing-not-to-do">The one thing not to do</h2>
       <p>Do not put a live app database in iCloud Drive or Dropbox and call it sync.</p>
       <p>It is the obvious move and it is the one that corrupts data. A file-sync service copies whole files after they change; a database is written continuously, often in more than one file, with a journal that must stay consistent with the main file. Two machines writing to that arrangement produces either a conflicted copy or a silently chosen winner, and neither preserves a database's internal consistency.</p>
       <p>The failure is not immediate, which is what makes it dangerous. It works for weeks. Then one day both machines were open, and you have two divergent versions and no way to merge them.</p>
-      <p>If an app lets you relocate its storage, moving it to an external disk is fine — one machine at a time, mounted deliberately. Moving it into a folder that two machines are actively syncing is a different thing entirely.</p>
+      <p>If an app lets you relocate its storage, moving it to an external disk is fine, one machine at a time, mounted deliberately. Moving it into a folder that two machines are actively syncing is a different thing entirely.</p>
       <h2 id="making-handover-reliable">Making handover reliable</h2>
       <p>If you are in the handover case, three habits make it stop failing.</p>
       <p><strong>Have one direction at a time.</strong> Decide, out loud, which machine is authoritative right now. Ambiguity about which copy is current is the entire problem, and a rule as crude as "the laptop is authoritative while I am away" resolves it completely.</p>
       <p><strong>Do the copy at a fixed moment.</strong> Not when you remember — as part of packing, and as part of unpacking. Attaching it to something you already do is the difference between a habit that survives and one that does not, which is the same reason <a href="/blog/checklists-for-things-you-do-every-week/">routines beat intentions</a>.</p>
-      <p><strong>Take the export anyway, on both machines, on a schedule.</strong> The handover copy is not a backup, and the moment you have two machines is the moment you will eventually overwrite the wrong one. <a href="/blog/backing-up-local-notes/">A backup is a copy that does not change when the original does</a> — the handover file changes constantly, which disqualifies it.</p>
+      <p><strong>Take the export anyway, on both machines, on a schedule.</strong> The handover copy is not a backup, and the moment you have two machines is the moment you will eventually overwrite the wrong one. <a href="/blog/backing-up-local-notes/">A backup is a copy that does not change when the original does</a>. The handover file changes constantly, which disqualifies it.</p>
       <h2 id="what-you-gain-by-not-syncing">What you gain by not syncing</h2>
       <p>Worth stating, since this reads as a list of limitations.</p>
       <p>There is no sync conflict, ever. Anyone who has used syncing notes software for years has a story about a note that became two notes, or a paragraph that vanished on one device, or a merge that ate an afternoon. That entire category of failure does not exist when there is one copy.</p>

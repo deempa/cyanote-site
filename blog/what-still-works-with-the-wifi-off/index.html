@@ -38,7 +38,7 @@
   "headline": "What still works with the wifi off",
   "description": "Most apps that call themselves offline just queue your changes until the connection returns. That is a different promise. Here is how to tell in advance.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Offline, Local-first, Travel",
-  "wordCount": 1212
+  "wordCount": 1209
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Offline" />
 <meta property="article:tag" content="Local-first" />
@@ -157,7 +157,7 @@
         <span class="dot">·</span>
         <span><time datetime="2026-08-17">17 August 2026</time></span>
         <span class="dot">·</span>
-        <span>6 min read</span>
+        <span>5 min read</span>
       </div>
     <ul class="tags"><li>Offline</li><li>Local-first</li><li>Travel</li></ul>
     </header>
@@ -170,7 +170,7 @@
       <p>They are sold with the same word and they behave nothing alike.</p>
       <p><strong>Offline-tolerant.</strong> The app needs the network but degrades politely. It caches what you looked at recently, lets you read it, and queues edits. Works fine on a train with patchy signal. Falls apart on a two-week trip, or the moment the cache expires, or when you want something you have not opened in a month.</p>
       <p><strong>Offline-capable with sync.</strong> There is a real local copy of your data and a real local database. You can work fully offline for as long as you like, and changes reconcile when you reconnect. This is the good version of cloud software, and it is expensive to build, which is why it is rarer than the marketing suggests.</p>
-      <p><strong>Local-first.</strong> There is no server in the loop at all. The database on your disk is not a cache of the truth; it <em>is</em> the truth. Offline is not a supported mode, because there is no other mode — the network was never involved.</p>
+      <p><strong>Local-first.</strong> There is no server in the loop at all. The database on your disk is not a cache of the truth; it <em>is</em> the truth. Offline is not a supported mode, because there is no other mode. The network was never involved.</p>
       <p>The difference only shows up under pressure. All three feel identical on a good connection, which is precisely why people find out which one they bought at the worst possible moment.</p>
       <figure><img src="/images/offline-still-works.svg" alt="What is still there when the network is not: the local database, and everything drawn from it" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The question is not whether the app opens. It is whether the thing you need was ever on the machine.</figcaption></figure>
       <h2 id="the-four-second-test-done-properly">The four-second test, done properly</h2>
@@ -183,15 +183,15 @@
       <p>Five minutes, once. It tells you more about an app than a fortnight of using it well-connected.</p>
       <h2 id="why-this-is-not-really-about-planes">Why this is not really about planes</h2>
       <p>Everybody frames offline as a travel feature and that undersells it badly. Flights are the least common case.</p>
-      <p>The common cases are ordinary. A hotel captive portal that wants a room number you do not have. A conference wifi that authenticates for eleven minutes at a time. A train through a valley. The morning your home connection is out and you need the note with the account number in it, on the machine in front of you, to make the call about the connection being out. A café network so bad that the app is technically connected and therefore refuses to admit it is offline — which is the worst state of all, because a connected-but-useless app usually has no offline mode to fall into.</p>
-      <p>There is also the version with no network involved at all: a company that goes under, an account locked by an automated system, a service that decides your region is no longer supported. Those look nothing like a flight and produce exactly the same screen. I have written about <a href="/blog/what-happens-when-your-notes-app-shuts-down/">what happens when the app itself shuts down</a> — offline capability is the same property, tested by a different failure.</p>
+      <p>The common cases are ordinary. A hotel captive portal that wants a room number you do not have. A conference wifi that authenticates for eleven minutes at a time. A train through a valley. The morning your home connection is out and you need the note with the account number in it, on the machine in front of you, to make the call about the connection being out. A café network so bad that the app is technically connected and therefore refuses to admit it is offline, which is the worst state of all, because a connected-but-useless app usually has no offline mode to fall into.</p>
+      <p>There is also the version with no network involved at all: a company that goes under, an account locked by an automated system, a service that decides your region is no longer supported. Those look nothing like a flight and produce exactly the same screen. I have written about <a href="/blog/what-happens-when-your-notes-app-shuts-down/">what happens when the app itself shuts down</a>. Offline capability is the same property, tested by a different failure.</p>
       <h2 id="what-working-offline-should-feel-like">What working offline should feel like</h2>
       <p>Not "a limited mode". Nothing at all.</p>
       <p>If offline is genuinely handled, turning the wifi off changes nothing you can see. No banner, no reduced feature set, no read-only state, no queue counter. You do not find out the connection dropped, because the app was never asking.</p>
       <p>That is the actual bar. Any visible offline experience — however well designed — is telling you that the app's normal state involves a server, and that you are currently in the fallback. Sometimes that is a fine trade for sync and sharing, and <a href="/blog/notes-app-without-an-account/">an account genuinely buys you things</a>. But it should be a trade you made knowingly, not one you discover in an airport.</p>
       <h2 id="the-trade-you-are-making">The trade you are making</h2>
       <p>Being honest about the other side, since a page arguing for local-first has an obvious incentive not to be.</p>
-      <p>No network means no sync. Your notes are on this machine, and if you want them on your phone you need to do something deliberate about it — an export, a file in a folder you sync yourself, or accepting that the phone is not part of the system. It means no collaboration: nobody else can see or edit anything. And it means backups are entirely your job, because there is no server quietly keeping a copy of everything for you. That last one is the real cost, and it is why <a href="/blog/backing-up-local-notes/">backups deserve their own five minutes</a>.</p>
+      <p>No network means no sync. Your notes are on this machine, and if you want them on your phone you need to do something deliberate about it: an export, a file in a folder you sync yourself, or accepting that the phone is not part of the system. It means no collaboration: nobody else can see or edit anything. And it means backups are entirely your job, because there is no server quietly keeping a copy of everything for you. That last one is the real cost, and it is why <a href="/blog/backing-up-local-notes/">backups deserve their own five minutes</a>.</p>
       <p>If your life genuinely runs across three devices and two other people, offline-capable-with-sync is the shape you want, and paying for it is reasonable. The mistake is paying for offline-<em>tolerant</em> while believing you bought one of the other two.</p>
       <h2 id="the-honest-version">The honest version</h2>
       <p>Run the test. Whatever you use, and especially if it is something you have trusted for years without checking. It costs five minutes, and the answer is a fact about your own setup rather than a claim from a marketing page.</p>

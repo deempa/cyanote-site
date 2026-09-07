@@ -123,7 +123,16 @@
      actually sells the app, and the repository this site is published from.
      Nothing aspirational goes in this array: a `sameAs` pointing at a page that
      isn't there is the same lie as a made-up rating, and it fails louder. When
-     Product Hunt / YouTube / LinkedIn go live, they belong here too. -->
+     Product Hunt / YouTube / LinkedIn go live, they belong here too.
+
+     Both added 2026-09-04, and both were checked for a 200 first. The YouTube
+     entry is the channel, not the video: `sameAs` means "another page about
+     this same entity", and a single video is a work by the entity, not the
+     entity. The handle is still the auto-generated @rabanianos-qw9rn, which is
+     a personal channel hosting the product demo rather than a Cyanote channel
+     — weaker as an identity claim than it should be. If the handle is ever
+     changed to a Cyanote one, change it here too: a `sameAs` pointing at a
+     dead handle is the failure this comment exists to prevent. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -142,7 +151,9 @@
   "founder": { "@id": "https://cyanote.app/about.html#person" },
   "sameAs": [
     "https://cyanote.lemonsqueezy.com/",
-    "https://github.com/deempa/cyanote-site"
+    "https://github.com/deempa/cyanote-site",
+    "https://www.producthunt.com/products/cyanote/launches/cyanote",
+    "https://www.youtube.com/@rabanianos-qw9rn"
   ]
 }
 </script>
@@ -198,6 +209,45 @@
     "height": 938
   },
   "dateModified": "2026-09-03"
+}
+</script>
+
+<!-- The demo above the fold is a real <video>, and until now nothing said so to
+     anything that does not run a browser. The element carries an aria-label for
+     screen readers, but a crawler building a page summary sees a poster image
+     and no indication that the moving picture of the app exists at all — which
+     is the one asset here that shows the product working rather than describing
+     it. `thumbnailUrl` is the poster frame the page already ships, so this costs
+     no extra bytes.
+
+     `uploadDate` is the day the file was committed, not the day of the build:
+     the encode has not changed since, and a date that moves whenever the site
+     is rebuilt is a date worth nothing. `duration` and the dimensions are read
+     off the file itself (19.03s, 900x564) rather than guessed — Google drops a
+     VideoObject whose stated duration disagrees with the media it points at.
+
+     No `embedUrl`: that is for a player page or an iframe, and this is a bare
+     media file played inline. Declaring one that does not exist is the usual
+     way this markup gets ignored. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": "https://cyanote.app/#demo-video",
+  "name": "Cyanote in use — ticking off to-dos and writing a note",
+  "description": "A short screen recording of Cyanote on macOS: tasks being ticked off the list, then a note being typed with the slash-command menu open.",
+  "contentUrl": "https://cyanote.app/demo.mp4",
+  "thumbnailUrl": "https://cyanote.app/demo-poster.webp",
+  "encodingFormat": "video/mp4",
+  "uploadDate": "2026-08-13",
+  "duration": "PT19S",
+  "width": 900,
+  "height": 564,
+  "inLanguage": "en",
+  "isFamilyFriendly": true,
+  "about": { "@id": "https://cyanote.app/#app" },
+  "publisher": { "@id": "https://cyanote.app/#organization" },
+  "mainEntityOfPage": { "@id": "https://cyanote.app/#page" }
 }
 </script>
 </head>

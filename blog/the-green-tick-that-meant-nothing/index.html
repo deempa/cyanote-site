@@ -38,7 +38,7 @@
   "headline": "The green tick that meant nothing",
   "description": "A build that only worked because of a cached file, a CI run that tested nothing, and a release check that read the old bytes back. None of it evidence.",
   "datePublished": "2026-08-22",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Testing, Development",
-  "wordCount": 1332
+  "wordCount": 1324
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-22" />
-<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Testing" />
@@ -173,19 +173,19 @@
       <p>The fix is <code>build-override</code>, which turns stripping off for compiler plugins while leaving the app binary stripped. That last part I checked rather than assumed: zero debug symbols in both the executable and its library, after the change.</p>
       <p>The interesting question is not what broke. It is why it broke <em>then</em>, on a setting that had been in the file for two successful releases.</p>
       <p>The dylib was cached. Both of those releases linked against a copy produced before stripping ever reached it. The setting was wrong the whole time and invisible the whole time, and what finally exposed it was unrelated: enabling an image feature for <a href="/blog/when-the-clipboard-ate-the-database/">the clipboard fix</a> changed the dependency graph, which invalidated the cache, which caused sqlx's macro crate to be genuinely rebuilt for the first time since the flag went in.</p>
-      <p>I want to be precise about my own part in this, because it is the useful bit. When it first failed I argued the release profile could not be the cause, on the grounds that the profile had not changed. That was true and irrelevant. The profile was never the variable — the cache was. A green build is not evidence that a build setting is correct. Only a build from cold is, and I had not done one in months.</p>
+      <p>I want to be precise about my own part in this, because it is the useful bit. When it first failed I argued the release profile could not be the cause, on the grounds that the profile had not changed. That was true and irrelevant. The profile was never the variable. The cache was. A green build is not evidence that a build setting is correct. Only a build from cold is, and I had not done one in months.</p>
       <figure><img src="/images/checks-that-lie.svg" alt="Three checks that returned green: a build served from cache, a CI run that fired only on tags, and a verification that read the old bytes back" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>Each answered a question. None of them answered the question I thought I was asking.</figcaption></figure>
       <h2 id="two-the-ci-that-ran-nothing">Two: the CI that ran nothing</h2>
       <p>I had two GitHub Actions workflows and a reasonable feeling of being covered.</p>
-      <p>Both fired only on a version tag or a manual dispatch. Neither ran a single test. A commit could land on the main branch having been checked by nothing whatsoever, and the first thing that would notice was the release script — which is late, and only fires on days you happen to be releasing.</p>
+      <p>Both fired only on a version tag or a manual dispatch. Neither ran a single test. A commit could land on the main branch having been checked by nothing whatsoever, and the first thing that would notice was the release script, which is late, and only fires on days you happen to be releasing.</p>
       <p>That is a hard thing to see from the inside. The repository had workflows. The Actions tab had runs in it. The runs were mostly green. Nothing about the surface says "this fires four times a month and never on your code".</p>
       <p>There is now a <code>checks</code> workflow that runs on every push and every pull request to main, and it runs one thing: the repository's own <code>check</code> script. Type checking, linting, the test suite, and <a href="/blog/the-migration-you-edited-after-it-shipped/">the migration guard</a> that the test suite starts with.</p>
-      <p>Calling the repo's own script rather than listing the steps in the workflow is the load-bearing choice. Any check spelled out in CI is a second copy of the truth, and the two drift — usually in the direction of CI running a subset of what you run locally, discovered on the day it matters. One script, two callers.</p>
+      <p>Calling the repo's own script rather than listing the steps in the workflow is the load-bearing choice. Any check spelled out in CI is a second copy of the truth, and the two drift, usually in the direction of CI running a subset of what you run locally, discovered on the day it matters. One script, two callers.</p>
       <p>It deliberately builds nothing. A full desktop build needs a Rust toolchain and takes minutes; it has its own workflow and its own moment. What is wanted from a push is the answer to <em>did that break anything</em> inside a couple of minutes, which is a different product entirely.</p>
       <h2 id="two-and-a-half-the-run-that-was-always-red">Two and a half: the run that was always red</h2>
       <p>The other half of the same commit is the one I think about more.</p>
-      <p>The Windows build job ran on every version tag, and failed on every version tag — by design, because the code-signing secrets it needs are not set, because Windows is not on sale yet. Every release I had ever pushed produced a red run for a build nobody could buy. Both pushes of 1.0.0 included.</p>
-      <p>A CI failure that is always red is worse than having no CI, and not by a small margin. Red means nothing once it always means nothing, and the cost is not that one job — it is that you have trained yourself to close the tab. The next failure, the real one, arrives into an inbox where failure is background noise.</p>
+      <p>The Windows build job ran on every version tag, and failed on every version tag, by design, because the code-signing secrets it needs are not set, because Windows is not on sale yet. Every release I had ever pushed produced a red run for a build nobody could buy. Both pushes of 1.0.0 included.</p>
+      <p>A CI failure that is always red is worse than having no CI, and not by a small margin. Red means nothing once it always means nothing, and the cost is not that one job. It is that you have trained yourself to close the tab. The next failure, the real one, arrives into an inbox where failure is background noise.</p>
       <p>So the Windows job is manual-only until it can be green. The job itself is untouched and still correct; when Windows ships, the tag trigger goes back and the secrets get set. Turning a permanently-failing check off is not lowering the bar. Leaving it on is.</p>
       <h2 id="three-the-verification-that-read-the-wrong-copy">Three: the verification that read the wrong copy</h2>
       <p>The last one is my favourite, because it is a check whose failure mode is aborting a perfectly good release.</p>
@@ -195,7 +195,7 @@
       <p>It now reads through the worker rather than the storage API, with a query string nothing has asked for before so no edge cache can answer it from a copy. That is also, on reflection, the stronger check. "What does the storage API say is stored" was never the question. "What would a user's updater actually receive" is, and it was a different question all along.</p>
       <h2 id="the-common-shape">The common shape</h2>
       <p>None of these are exotic. Each is one component answering honestly, and me reading the answer as though it addressed the thing I cared about.</p>
-      <ul><li>The compiler said the build succeeded. It did — against a file produced under different settings.</li><li>CI said green. It was — it had run nothing.</li><li>The verification said the bytes matched. They did — the old ones.</li></ul>
+      <ul><li>The compiler said the build succeeded. It did, against a file produced under different settings.</li><li>CI said green. It was. It had run nothing.</li><li>The verification said the bytes matched. They did, the old ones.</li></ul>
       <p>The habit I have taken from it is to ask, of any check I am relying on, one question: <em>what would have to be true for this to pass while the thing it protects is broken?</em> Every one of these three had an obvious answer to that question, and I had never asked it, because a green tick is an answer-shaped object and it is genuinely hard to keep interrogating one.</p>
       <p>The related discipline is to make a check fail on purpose once, in the state it is meant to catch. It costs ten minutes. Two of these three would not have survived it.</p>
     </div>

@@ -38,7 +38,7 @@
   "headline": "Where your notes actually live on a Mac",
   "description": "Your data stays on your device\" is a claim with a file path behind it. Here is how to find that path in any app, and what to do once you have it.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Local-first, Backups, How-to",
-  "wordCount": 1281
+  "wordCount": 1276
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Local-first" />
 <meta property="article:tag" content="Backups" />
@@ -164,7 +164,7 @@
 
     <div class="post">
       <p>Every app in this category says some version of "your data stays on your device". It is a good sentence. It is also unfalsifiable until you can point at the file.</p>
-      <p>So point at the file. It takes two minutes, it works for any app you use, and the answer changes what you can do — because a path you can find is a thing you can back up, copy to a new machine, and check the size of. A path you cannot find is a promise.</p>
+      <p>So point at the file. It takes two minutes, it works for any app you use, and the answer changes what you can do, because a path you can find is a thing you can back up, copy to a new machine, and check the size of. A path you cannot find is a promise.</p>
       <h2 id="the-three-places-a-mac-app-can-put-your-data">The three places a Mac app can put your data</h2>
       <p>Nearly everything lives in one of these.</p>
       <p><strong>Application Support.</strong> <code>~/Library/Application Support/&lt;some identifier&gt;/</code>. This is the correct home for an app's own database, and it is where most well-behaved apps put it. The folder is hidden by default, which is why most people have never seen theirs.</p>
@@ -181,7 +181,7 @@
       <p>This is why it was worth two minutes.</p>
       <p><strong>Point your backup at it.</strong> Time Machine already covers your home folder, so if it is running, this is done — but knowing the path is what lets you <em>verify</em> that, by browsing a Time Machine snapshot and finding the file. An untested backup is a hypothesis. I have written about <a href="/blog/backing-up-local-notes/">the wider version of this</a>, and it starts here.</p>
       <p><strong>Copy it before you do anything drastic.</strong> New Mac, major OS upgrade, app version you are unsure about: copy the folder somewhere first. It costs seconds and it is the difference between a bad afternoon and a lost year.</p>
-      <p><strong>Check its size occasionally.</strong> A database that is 40 MB and stops growing while you keep writing is telling you something. A database that has doubled in a month is also telling you something — usually that you have been pasting images.</p>
+      <p><strong>Check its size occasionally.</strong> A database that is 40 MB and stops growing while you keep writing is telling you something. A database that has doubled in a month is also telling you something, usually that you have been pasting images.</p>
       <p><strong>Know it for when the app is gone.</strong> If the developer disappears, the file is what you have. Whether that is a recovery or a dead end depends entirely on the format, which is the next question.</p>
       <h2 id="the-format-matters-more-than-the-path">The format matters more than the path</h2>
       <p>A file you can find is not the same as a file you can read.</p>
@@ -190,12 +190,12 @@
       <p><strong>A proprietary binary blob</strong> is the one to be wary of. If the file has an extension you have never seen and the app offers no export, then finding the path has told you where the data is and not much else.</p>
       <p>The practical test is not "which format is purest". It is: <strong>can I get everything out, today, into something readable, without the app's cooperation being permanent?</strong> An app storing SQLite with a working full export passes. An app storing Markdown files passes trivially. Anything that fails both is a risk you are carrying whether or not you have noticed.</p>
       <h2 id="two-things-people-get-wrong">Two things people get wrong</h2>
-      <p><strong>Putting the database in a sync folder.</strong> It is tempting: move the app's data into iCloud Drive or Dropbox and you have invented sync. Sometimes this works. What it also does is let two machines write to one database file, and file-sync services resolve that by picking a winner or leaving you a conflicted copy — neither of which is what a database needs. If an app supports moving its storage, moving it to an external disk or a different folder is fine; moving it into a live sync folder used by two Macs at once is how corruption happens.</p>
-      <p><strong>Assuming iCloud Drive is a backup.</strong> It is a sync service. Delete something and the deletion syncs, promptly and everywhere. A backup is a copy that does not change when the original does — that is the entire definition, and it is the reason <a href="/blog/backing-up-local-notes/">a restore should replace rather than merge</a>.</p>
+      <p><strong>Putting the database in a sync folder.</strong> It is tempting: move the app's data into iCloud Drive or Dropbox and you have invented sync. Sometimes this works. What it also does is let two machines write to one database file, and file-sync services resolve that by picking a winner or leaving you a conflicted copy, neither of which is what a database needs. If an app supports moving its storage, moving it to an external disk or a different folder is fine; moving it into a live sync folder used by two Macs at once is how corruption happens.</p>
+      <p><strong>Assuming iCloud Drive is a backup.</strong> It is a sync service. Delete something and the deletion syncs, promptly and everywhere. A backup is a copy that does not change when the original does. That is the entire definition, and it is the reason <a href="/blog/backing-up-local-notes/">a restore should replace rather than merge</a>.</p>
       <h2 id="the-honest-version">The honest version</h2>
       <p>Knowing the path does not make you safer by itself. What it does is convert a marketing claim into something you can check, and give you the one piece of information every recovery starts with.</p>
       <p>If you use an app whose settings do not tell you where your writing is, go and find out today. Not because the app is untrustworthy — most are fine — but because the day you need to know is never a calm day.</p>
-      <p>Cyanote keeps everything in one SQLite file at <code>~/Library/Application Support/app.cyanote.desktop/</code>, and Settings shows you that path and lets you move it wherever you want. Notes, tasks, calendar, habits, routines and the clipboard history are all in that one file, so backing it up is one copy. On top of that there is a readable JSON export of everything, and automatic daily backups keeping the last seven — because a path you can find is the floor, not the whole answer.</p>
+      <p>Cyanote keeps everything in one SQLite file at <code>~/Library/Application Support/app.cyanote.desktop/</code>, and Settings shows you that path and lets you move it wherever you want. Notes, tasks, calendar, habits, routines and the clipboard history are all in that one file, so backing it up is one copy. On top of that there is a readable JSON export of everything, and automatic daily backups keeping the last seven, because a path you can find is the floor, not the whole answer.</p>
     </div>
   </article>
 

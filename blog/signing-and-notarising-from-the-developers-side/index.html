@@ -38,7 +38,7 @@
   "headline": "Signing and notarising, from the developer's side",
   "description": "Ninety-nine dollars a year, a certificate and an automated malware scan. What Apple actually asks of an independent developer shipping outside the App Store.",
   "datePublished": "2026-08-18",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, macOS, Security",
-  "wordCount": 1253
+  "wordCount": 1245
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-18" />
-<meta property="article:modified_time" content="2026-08-24" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="macOS" />
@@ -167,16 +167,16 @@
       <p>I have written the buyer's side of that warning already. This is what it looks like from the other end.</p>
       <h2 id="what-the-99-buys">What the $99 buys</h2>
       <p>An identity on file with Apple, and the certificate that proves it.</p>
-      <p>Enrolling in the Developer Program is $99 a year. What you get, for the purposes of shipping outside the App Store, is a <strong>Developer ID Application</strong> certificate — the thing that signs a binary such that macOS can say who shipped it and confirm nothing has been altered since.</p>
+      <p>Enrolling in the Developer Program is $99 a year. What you get, for the purposes of shipping outside the App Store, is a <strong>Developer ID Application</strong> certificate: the thing that signs a binary such that macOS can say who shipped it and confirm nothing has been altered since.</p>
       <p>That is the whole of it. Not a review, not a listing, not a store. The right to have your name attached to a file in a way the operating system will accept.</p>
-      <p>Two consequences people outside this get wrong. It is <strong>not</strong> a quality bar — nobody at Apple looked at Cyanote. And it is <strong>not</strong> free of teeth: a Developer ID can be revoked, and a revoked certificate takes every copy of your app with it, on every machine, immediately. The identity is the point. Your name is the collateral.</p>
+      <p>Two consequences people outside this get wrong. It is <strong>not</strong> a quality bar. Nobody at Apple looked at Cyanote. And it is <strong>not</strong> free of teeth: a Developer ID can be revoked, and a revoked certificate takes every copy of your app with it, on every machine, immediately. The identity is the point. Your name is the collateral.</p>
       <h2 id="the-four-variables">The four variables</h2>
       <p>A production build here needs four environment values, and the shape of them says a lot about the process:</p>
       <pre><code>APPLE_SIGNING_IDENTITY   Developer ID Application: Name (AB12CD34EF)
 APPLE_ID                 the account email
 APPLE_PASSWORD           an app-specific password
 APPLE_TEAM_ID            ten characters</code></pre>
-      <p>The third is the interesting one. You cannot notarise with your actual Apple account password — you generate an <strong>app-specific password</strong> at appleid.apple.com, a one-purpose credential that exists so an automated build is not carrying the keys to your entire Apple identity. Good design. It also means the credential is a string that a script needs and a human generated, which is exactly the kind of thing that ends up pasted into a shell history at midnight.</p>
+      <p>The third is the interesting one. You cannot notarise with your actual Apple account password. You generate an <strong>app-specific password</strong> at appleid.apple.com, a one-purpose credential that exists so an automated build is not carrying the keys to your entire Apple identity. Good design. It also means the credential is a string that a script needs and a human generated, which is exactly the kind of thing that ends up pasted into a shell history at midnight.</p>
       <p>Locally, none of this is needed. Development builds are signed with a self-signed certificate called <code>cyanote-dev</code>, which macOS accepts on the machine that made it and nowhere else. Two paths, deliberately: the dev one is fast and offline, the production one is slow and talks to Apple. Conflating them means every test build waits on a network round trip.</p>
       <h2 id="build-sign-notarise-staple-verify">Build, sign, notarise, staple, verify</h2>
       <p>The production script does five things in order, and every one of them can fail in a way worth handling.</p>
@@ -188,16 +188,16 @@ APPLE_TEAM_ID            ten characters</code></pre>
       <figure><img src="/images/notarise-pipeline.svg" alt="The production release path: build universal, sign with Developer ID, notarise with Apple, staple the ticket, verify with spctl, publish" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The check runs locally on the user's Mac because the ticket is stapled to the file. That is what keeps a first launch offline.</figcaption></figure>
       <h2 id="the-step-that-needed-a-human">The step that needed a human</h2>
       <p>For a while, the release could not run unattended. One step wanted the app-specific password typed at the keyboard.</p>
-      <p>That sounds minor. It is the difference between a release being a command and a release being an occasion. A process with a human step in the middle gets run less often, which means fixes sit in <code>main</code> waiting for a big enough batch to justify the ceremony — and batching changes is how a release becomes risky. The bug you shipped is somewhere in eleven commits instead of one.</p>
+      <p>That sounds minor. It is the difference between a release being a command and a release being an occasion. A process with a human step in the middle gets run less often, which means fixes sit in <code>main</code> waiting for a big enough batch to justify the ceremony, and batching changes is how a release becomes risky. The bug you shipped is somewhere in eleven commits instead of one.</p>
       <p>Getting the human out of it is now, in my head, a first-class feature rather than tooling housekeeping. The whole thing is one command that builds, notarises, publishes the update payload, cuts the notes-only release, deploys the site, and pushes the tag. It is safe to re-run: every step after the build checks whether it already happened, because the failure mode you actually hit is a release that dies three-quarters of the way through on a network timeout.</p>
-      <p>It also refuses to start if <code>CHANGELOG.md</code> has no section for the version being released — the <a href="/blog/where-your-notes-actually-live/">same text the app shows</a> before anyone accepts an update. A release with no notes is not a release anyone should accept.</p>
+      <p>It also refuses to start if <code>CHANGELOG.md</code> has no section for the version being released, the <a href="/blog/where-your-notes-actually-live/">same text the app shows</a> before anyone accepts an update. A release with no notes is not a release anyone should accept.</p>
       <h2 id="a-detail-that-took-an-afternoon">A detail that took an afternoon</h2>
-      <p>Building the DMG briefly opens a Finder window. It has to — the disk image's layout is configured by actually mounting it and arranging it.</p>
+      <p>Building the DMG briefly opens a Finder window. It has to. The disk image's layout is configured by actually mounting it and arranging it.</p>
       <p>Harmless, and deeply irritating when it happens on every dev build while you are working. So it happens only on production builds now, which is a two-line change that meaningfully improved my day and would never appear in any changelog.</p>
-      <p>The other one: notarising the DMG and notarising the app inside it are separate operations, and a stapled DMG containing an unstapled app passes a casual check on a machine that has already seen the app. That is the class of bug where the only honest test is a fresh Mac with no network — which is the test I now run, because everything else confirms what you already believe.</p>
+      <p>The other one: notarising the DMG and notarising the app inside it are separate operations, and a stapled DMG containing an unstapled app passes a casual check on a machine that has already seen the app. That is the class of bug where the only honest test is a fresh Mac with no network, which is the test I now run, because everything else confirms what you already believe.</p>
       <h2 id="windows-in-comparison">Windows, in comparison</h2>
       <p>The Windows build exists, and is not on sale, and one reason is that the equivalent process there is worse in an instructive way.</p>
-      <p>Authenticode signing has no $99 flat rate. It is a certificate from a commercial authority, priced per year, with identity validation attached, and until recently the norm was a physical hardware token that someone posts to you — which makes automated CI signing an interesting problem involving a USB device plugged into something. Cloud signing services have improved this a great deal. It is still several times the friction of Apple's process, and Apple's process involves a mandatory malware scan by a company that can revoke your identity.</p>
+      <p>Authenticode signing has no $99 flat rate. It is a certificate from a commercial authority, priced per year, with identity validation attached, and until recently the norm was a physical hardware token that someone posts to you, which makes automated CI signing an interesting problem involving a USB device plugged into something. Cloud signing services have improved this a great deal. It is still several times the friction of Apple's process, and Apple's process involves a mandatory malware scan by a company that can revoke your identity.</p>
       <p>I say that as someone who complains about Gatekeeper regularly. Having now done both, $99 and a stapled ticket is the better arrangement, and the <a href="/pricing/">same $4.99 licence will cover Windows</a> when it ships.</p>
     </div>
   </article>

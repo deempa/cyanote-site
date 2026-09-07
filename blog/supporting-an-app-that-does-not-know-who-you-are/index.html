@@ -38,7 +38,7 @@
   "headline": "Supporting an app that doesn't know who you are",
   "description": "No account means no password reset, no dashboard and no way to look you up. What support actually looks like when the app knows nothing about its users.",
   "datePublished": "2026-08-18",
-  "dateModified": "2026-08-22",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Privacy, Support",
-  "wordCount": 1303
+  "wordCount": 1298
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-18" />
-<meta property="article:modified_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Privacy" />
@@ -172,8 +172,8 @@
       <p>Some of that absence is straightforwardly good. Nobody can ever email me and ask me to hand over a customer's notes, because I do not have them. There is no breach that exposes what you write, because there is nowhere for it to leak from. A company that cannot be compelled to produce something has a much simpler relationship with the question than one that promises not to look.</p>
       <p>And some of it is just harder. If you lose the file that holds your work, I cannot restore it. There is no copy. That is the same property, read from the other side, and it is why <a href="/blog/backing-up-local-notes/">the backup story</a> gets more attention in this app than it does in one where the cloud quietly holds a version for you.</p>
       <h2 id="the-one-thing-that-replaced-logs">The one thing that replaced logs</h2>
-      <p>You cannot print your way out of a problem in a shipped desktop app. A GUI binary has no console attached — the diagnostic line you carefully wrote goes nowhere at all on the platform where the bug actually reproduces.</p>
-      <p>So the app writes a small diagnostic file locally. Not analytics; it is never sent anywhere. It is a file on the user's own disk, which the user can read, that says what the app did on launch — so that when someone writes in, there is one thing I can ask them to attach that turns "it did not work" into a sequence of events.</p>
+      <p>You cannot print your way out of a problem in a shipped desktop app. A GUI binary has no console attached. The diagnostic line you carefully wrote goes nowhere at all on the platform where the bug actually reproduces.</p>
+      <p>So the app writes a small diagnostic file locally. Not analytics; it is never sent anywhere. It is a file on the user's own disk, which the user can read, that says what the app did on launch, so that when someone writes in, there is one thing I can ask them to attach that turns "it did not work" into a sequence of events.</p>
       <p>Three constraints on it, all learned rather than designed:</p>
       <p><strong>Bounded.</strong> 32 KB, capped. An unbounded diagnostic file on a machine you cannot reach is a disk-space bug waiting for the one user who leaves the app running for eleven months.</p>
       <p><strong>Best-effort throughout.</strong> Every write can fail silently. A diagnostic that can fail a launch is strictly worse than no diagnostic at all, and it is very easy to write the version that throws on a read-only directory and takes the app down with it.</p>
@@ -185,12 +185,12 @@
       <p>It has a second benefit I did not anticipate. A fix shipped on a guess, which appears to work, leaves you unsure forever whether you fixed the bug or moved it. A fix shipped against a recorded sequence of events is a fix you can prove. When the bug is in a path that touches somebody's data, "it seems fine now" is not a standard I am willing to ship against — <a href="/blog/the-half-second-that-left-a-locked-note-in-the-clear/">the locked-note race</a> is the case that settled that for me permanently.</p>
       <h2 id="support-that-happens-inside-the-app">Support that happens inside the app</h2>
       <p>The cheapest support ticket is the one that never gets written, and with no team to answer them, that stops being a platitude and becomes the design constraint.</p>
-      <p>So the app tries to explain itself at the exact moment it fails. The clearest example: pasting from the clipboard history needs the macOS Accessibility permission, and without it the paste simply cannot happen. The old behaviour was to close the popup and do nothing — which is indistinguishable from broken software, and generates an email that begins "your clipboard doesn't work". Now it names the missing permission, offers to open the right settings pane, and points out that the entry is already on your clipboard so you can paste it yourself. <a href="/blog/why-a-mac-app-asks-for-accessibility/">Why a Mac app asks for Accessibility</a> exists for the same reason: the question is predictable, so answer it before it is asked.</p>
+      <p>So the app tries to explain itself at the exact moment it fails. The clearest example: pasting from the clipboard history needs the macOS Accessibility permission, and without it the paste simply cannot happen. The old behaviour was to close the popup and do nothing, which is indistinguishable from broken software, and generates an email that begins "your clipboard doesn't work". Now it names the missing permission, offers to open the right settings pane, and points out that the entry is already on your clipboard so you can paste it yourself. <a href="/blog/why-a-mac-app-asks-for-accessibility/">Why a Mac app asks for Accessibility</a> exists for the same reason: the question is predictable, so answer it before it is asked.</p>
       <p>Every silent failure is a support ticket with a delay on it. That is the rule, and it has changed how I write error paths more than any other single idea in the project.</p>
       <h2 id="the-refund-policy-is-an-admission">The refund policy is an admission</h2>
       <p>14 days, no reason needed, no proof of uninstall.</p>
-      <p>That last clause is not generosity. It is honesty about capability. I could not verify an uninstall if I wanted to — there is no phone-home, so there is nothing to observe. A policy demanding proof I cannot check would be theatre, and the sort of theatre that makes a person feel accused on their way out the door.</p>
-      <p>The same absence shapes what a refund <em>tells</em> me. With no analytics, a cluster of refunds mentioning the same feature is one of the very few real signals I get about what the app is like to use. It is a terrible instrument — tiny sample, self-selected, arriving only from people annoyed enough to act. It is also nearly all of it, along with email, and I would rather work from a biased sample than hold a database of everything everyone does inside their own notes.</p>
+      <p>That last clause is not generosity. It is honesty about capability. I could not verify an uninstall if I wanted to. There is no phone-home, so there is nothing to observe. A policy demanding proof I cannot check would be theatre, and the sort of theatre that makes a person feel accused on their way out the door.</p>
+      <p>The same absence shapes what a refund <em>tells</em> me. With no analytics, a cluster of refunds mentioning the same feature is one of the very few real signals I get about what the app is like to use. It is a terrible instrument: tiny sample, self-selected, arriving only from people annoyed enough to act. It is also nearly all of it, along with email, and I would rather work from a biased sample than hold a database of everything everyone does inside their own notes.</p>
       <p>That is the trade, stated plainly. I know less about my users than any product manager would consider acceptable, and in exchange the app can promise something almost nobody else in this category can: it makes one network request, ever, and it is a check for a new version. Everything else stays on your Mac, including the record of what went wrong.</p>
     </div>
   </article>

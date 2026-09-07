@@ -38,7 +38,7 @@
   "headline": "The animation that stole its own poster's score",
   "description": "A 710 KB hero animation replaced the still it was meant to hide behind, while the browser was still deciding what to time. Three problems in one element.",
   "datePublished": "2026-08-23",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Performance, Design",
-  "wordCount": 1193
+  "wordCount": 1188
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-23" />
-<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Performance" />
@@ -166,15 +166,15 @@
       <p>The top of this site's landing page shows the app in motion. For a while, that motion was a 710 KB animated WebP, swapped in over a small still image once it had loaded.</p>
       <p>There were three things wrong with that, and they are worth separating because they fail differently: one is a performance measurement problem, one is an accessibility problem, and one is about people who never wanted the file at all.</p>
       <h2 id="the-measurement-problem">The measurement problem</h2>
-      <p>Largest Contentful Paint is the metric browsers use to answer "when did the main thing appear?". On a landing page, the main thing is almost always the hero image — it is the biggest element above the fold, so it is what gets timed.</p>
+      <p>Largest Contentful Paint is the metric browsers use to answer "when did the main thing appear?". On a landing page, the main thing is almost always the hero image. It is the biggest element above the fold, so it is what gets timed.</p>
       <p>Here is the trap. The measurement does not close the instant something paints. And the swap replaced the <code>src</code> of the <em>same element</em> the browser was timing, while that window was still open.</p>
-      <p>Chrome then times whichever image the element settles on. So the score for the page was being set by the 710 KB animation — the very file the small still exists to hide until it is ready. The still weighed 17 KB and painted almost immediately, and it was getting no credit for it, because the element it painted into went on to become something forty times larger.</p>
-      <p>The fix is unglamorous: wait for the page load event, then wait for an idle moment, and only then swap. By that point LCP is decided and the poster owns it, which is the honest answer — the poster is genuinely what the visitor saw first.</p>
+      <p>Chrome then times whichever image the element settles on. So the score for the page was being set by the 710 KB animation, the very file the small still exists to hide until it is ready. The still weighed 17 KB and painted almost immediately, and it was getting no credit for it, because the element it painted into went on to become something forty times larger.</p>
+      <p>The fix is unglamorous: wait for the page load event, then wait for an idle moment, and only then swap. By that point LCP is decided and the poster owns it, which is the honest answer. The poster is genuinely what the visitor saw first.</p>
       <p>What I take from that one is narrower than "optimise your hero". It is that a metric attached to an <em>element</em> rather than to a <em>file</em> can be quietly reassigned by anything that mutates the element afterwards. Progressive enhancement that swaps sources — low-quality placeholders, lazy upgrades, format negotiation done in JavaScript — is exactly the pattern that trips it.</p>
       <figure><img src="/images/hero-lcp.svg" alt="Two paint timelines: an early poster whose score is reassigned to the animation swapped in over it, and the same page with the swap deferred past load and idle" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Same bytes, same order, one difference in when the swap happens — and a different element gets timed.</figcaption></figure>
       <h2 id="the-accessibility-problem">The accessibility problem</h2>
       <p>An animated image cannot be paused. There is no control, no keyboard affordance, nothing to stop it. It loops for as long as the page is open.</p>
-      <p>That is not a preference issue. Content that moves for more than a few seconds and cannot be paused is a recognised barrier — it competes for attention with the text beside it, and for some readers that competition is not winnable by concentrating harder. A looping product demo behind a paragraph explaining what the product is makes the paragraph harder to read, which is a strange thing for a sales page to do to itself.</p>
+      <p>That is not a preference issue. Content that moves for more than a few seconds and cannot be paused is a recognised barrier. It competes for attention with the text beside it, and for some readers that competition is not winnable by concentrating harder. A looping product demo behind a paragraph explaining what the product is makes the paragraph harder to read, which is a strange thing for a sales page to do to itself.</p>
       <p>So it is a <code>&lt;video&gt;</code> now. Video elements can be paused, they respect the browser's own controls, and they come with the accompanying decision made explicit rather than implied.</p>
       <p>The file also got smaller by more than half in the process: 180 KB of MP4 against 710 KB of animated WebP, for the same footage. Animated image formats are a workaround for the era before video autoplay was allowed inline, and they are still worse than video at exactly the thing they are used for.</p>
       <h2 id="the-people-who-should-never-have-downloaded-it">The people who should never have downloaded it</h2>
@@ -190,7 +190,7 @@
       <p>A stale comment about a number is worse than no comment, because it is the kind of thing you read once and cite later without re-checking. If a comment contains a measurement, it is a fact with an expiry date attached, and the fix is either to re-measure when you touch the code or to write down what you measured <em>and when</em>, so the next reader knows how much to trust it.</p>
       <h2 id="what-a-hero-image-owes-the-reader">What a hero image owes the reader</h2>
       <p>Rolled together, my current rules for anything moving at the top of a page:</p>
-      <ul><li><strong>It must be pausable.</strong> If it cannot be, it should not be moving.</li><li><strong>It must not be the largest contentful paint.</strong> Show a still, let the still be timed, and upgrade after the page has settled.</li><li><strong>It must not be sent to people who have opted out</strong> — reduced motion, metered connection, small screen where the layout drops it anyway. Check before the request.</li><li><strong>It must be smaller than you think it needs to be.</strong> 180 KB is a demo. 710 KB is a demo plus a tax on everyone who came for the sentence underneath it.</li><li><strong>It must not be the thing the page relies on to explain itself.</strong> The page should read perfectly with the media removed entirely — which is a good test to actually run, rather than assume.</li></ul>
+      <ul><li><strong>It must be pausable.</strong> If it cannot be, it should not be moving.</li><li><strong>It must not be the largest contentful paint.</strong> Show a still, let the still be timed, and upgrade after the page has settled.</li><li><strong>It must not be sent to people who have opted out</strong> — reduced motion, metered connection, small screen where the layout drops it anyway. Check before the request.</li><li><strong>It must be smaller than you think it needs to be.</strong> 180 KB is a demo. 710 KB is a demo plus a tax on everyone who came for the sentence underneath it.</li><li><strong>It must not be the thing the page relies on to explain itself.</strong> The page should read perfectly with the media removed entirely, which is a good test to actually run, rather than assume.</li></ul>
       <p>That last one is why the same change added a single plain sentence saying what this app <em>is</em>, set quieter than the headline above it. Motion is good at showing that something feels quick and useless at saying what it does, and a visitor arriving with the animation blocked, the video not yet loaded, or the page read aloud to them deserves the sentence.</p>
       <p>Related, from the app side of the same concern: <a href="/blog/why-a-notes-app-should-open-instantly/">why an app should open instantly</a>, and <a href="/blog/the-sidebar-read-every-note-to-draw-a-list/">what happened when the sidebar read every note to draw a list</a>.</p>
     </div>

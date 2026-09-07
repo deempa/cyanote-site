@@ -38,7 +38,7 @@
   "headline": "Moving to a new Mac without losing the way you work",
   "description": "Migration Assistant moves your files and mostly gets it right. What it cannot move is permissions, licences, and anything outside your user folder.",
   "datePublished": "2026-08-22",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "macOS, Backups, How-to",
-  "wordCount": 1265
+  "wordCount": 1258
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-22" />
-<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="macOS" />
 <meta property="article:tag" content="Backups" />
@@ -164,7 +164,7 @@
 
     <div class="post">
       <p>A new Mac is one of the few days a year when your entire working setup is genuinely at risk, and it does not feel like it, because Apple has made the transfer so smooth that people assume everything came across.</p>
-      <p>Most of it does. The parts that do not are predictable, and the failure is usually not noticing for three weeks — by which time the old machine has been wiped, sold, or handed to a family member.</p>
+      <p>Most of it does. The parts that do not are predictable, and the failure is usually not noticing for three weeks, by which time the old machine has been wiped, sold, or handed to a family member.</p>
       <p>Here is what actually moves, what does not, and what to check before the old Mac is gone.</p>
       <h2 id="what-migration-assistant-does-well">What Migration Assistant does well</h2>
       <p>Migration Assistant — over a cable, over the network, or from a Time Machine backup — copies your user folder, your applications, and most system settings. For local-first apps, this is the whole job: their data lives in your Library folder, so it comes across with everything else.</p>
@@ -173,26 +173,26 @@
       <figure><img src="/images/new-mac-transfer.svg" alt="What Migration Assistant carries across, and the four categories it cannot: permissions, licences, anything outside the user folder, and services that need a sign-in" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The left column arrives on its own. The right column is a checklist.</figcaption></figure>
       <h2 id="what-does-not-come-across">What does not come across</h2>
       <p><strong>Permissions.</strong> macOS grants privacy permissions per machine, and deliberately so — Accessibility, Full Disk Access, Screen Recording, Microphone, Notifications. Expect to grant them again on the new Mac.</p>
-      <p>This is where things break silently. An app that needs Accessibility to send a keystroke does not crash without it; it just quietly does nothing, once, at the moment you needed it. Any app that pastes for you, moves windows, expands text or responds to a global hotkey is in this category. <a href="/blog/why-a-mac-app-asks-for-accessibility/">Why a Mac app asks for Accessibility in the first place</a> covers what that permission actually allows — the short version is that it is powerful, per-machine, and worth re-checking rather than assuming.</p>
-      <p><strong>Licences for directly-sold apps.</strong> Anything you bought outside the App Store may ask for its key again on a new machine. Before you migrate, find the emails — search your inbox for the app names and file the keys somewhere you will still have access to if this Mac is the one that dies. App Store purchases re-download from your Apple account and need nothing.</p>
+      <p>This is where things break silently. An app that needs Accessibility to send a keystroke does not crash without it; it just quietly does nothing, once, at the moment you needed it. Any app that pastes for you, moves windows, expands text or responds to a global hotkey is in this category. <a href="/blog/why-a-mac-app-asks-for-accessibility/">Why a Mac app asks for Accessibility in the first place</a> covers what that permission actually allows. The short version is that it is powerful, per-machine, and worth re-checking rather than assuming.</p>
+      <p><strong>Licences for directly-sold apps.</strong> Anything you bought outside the App Store may ask for its key again on a new machine. Before you migrate, find the emails. Search your inbox for the app names and file the keys somewhere you will still have access to if this Mac is the one that dies. App Store purchases re-download from your Apple account and need nothing.</p>
       <p><strong>Anything outside your user folder.</strong> Command-line tools installed into <code>/usr/local</code>, LaunchDaemons, fonts installed system-wide, VPN profiles, printer drivers, anything a package manager put in a system directory. Migration Assistant is conservative about system locations, correctly, and that means some of your environment is not in the box.</p>
       <p><strong>Things that were never local.</strong> Anything in a service needs a sign-in, and if the service used two-factor tied to an app on your <em>phone</em>, that is fine — but if it was tied to something on the old Mac, sort that out before wiping it.</p>
       <p><strong>SSH keys and credentials,</strong> if you have them. They are in your user folder and usually come across, but permissions on <code>~/.ssh</code> occasionally do not survive intact, and a key with the wrong mode is refused.</p>
       <h2 id="the-order-that-avoids-trouble">The order that avoids trouble</h2>
-      <ol><li><strong>Update the old Mac's apps first,</strong> so you are not migrating a version that the new machine's macOS no longer runs.</li><li><strong>Take a real backup of the old Mac</strong> — Time Machine, or a manual copy of anything precious to an external drive. Migration is not a backup: it is a copy operation that can fail halfway, and if it does you want an untouched second copy.</li><li><strong>Export from anything you are worried about.</strong> Notes especially. A plain readable export costs a minute and makes the whole migration reversible; if the app's own file arrives corrupted, the export is what saves you. Same principle as <a href="/blog/getting-your-notes-out/">getting your notes out before you need to</a>.</li><li><strong>Migrate.</strong></li><li><strong>Work on the new Mac for two weeks with the old one still intact.</strong> This is the important one. Two weeks is long enough to touch the monthly things — the invoice, the report, the app you only open when something specific happens.</li><li><strong>Then</strong> wipe the old Mac.</li></ol>
+      <ol><li><strong>Update the old Mac's apps first,</strong> so you are not migrating a version that the new machine's macOS no longer runs.</li><li><strong>Take a real backup of the old Mac</strong> — Time Machine, or a manual copy of anything precious to an external drive. Migration is not a backup: it is a copy operation that can fail halfway, and if it does you want an untouched second copy.</li><li><strong>Export from anything you are worried about.</strong> Notes especially. A plain readable export costs a minute and makes the whole migration reversible; if the app's own file arrives corrupted, the export is what saves you. Same principle as <a href="/blog/getting-your-notes-out/">getting your notes out before you need to</a>.</li><li><strong>Migrate.</strong></li><li><strong>Work on the new Mac for two weeks with the old one still intact.</strong> This is the important one. Two weeks is long enough to touch the monthly things: the invoice, the report, the app you only open when something specific happens.</li><li><strong>Then</strong> wipe the old Mac.</li></ol>
       <h2 id="the-check-that-takes-ten-minutes">The check that takes ten minutes</h2>
       <p>Do this on the new machine on day one, in this order:</p>
       <p><strong>Open every app you rely on and do one real thing in it.</strong> Not launch it — use it. Write a note and reopen it. Trigger the global hotkey. Paste from clipboard history. Send a test message. The apps that need a permission will fail at exactly this step, which is the point.</p>
       <p><strong>Check your data is actually there, not just the app.</strong> Open the app's settings and find where it says its files live, then look in that folder in the Finder. An app that starts with an empty library because it created a fresh one is a very recoverable problem on day one and a catastrophe in a month.</p>
-      <p><strong>Check your automatic backups restarted.</strong> Time Machine needs its drive re-selected. Any app that keeps its own rolling backups is now writing them to a new machine's folder and its history did or did not come with it — worth confirming rather than assuming.</p>
+      <p><strong>Check your automatic backups restarted.</strong> Time Machine needs its drive re-selected. Any app that keeps its own rolling backups is now writing them to a new machine's folder and its history did or did not come with it, worth confirming rather than assuming.</p>
       <p><strong>Check the things that run at login.</strong> System Settings → General → Login Items. Some come across, some do not, and the ones that do not are exactly the background tools you never think about because they have always just been running.</p>
       <h2 id="for-cyanote-specifically">For Cyanote specifically</h2>
       <p>Everything is in one SQLite file under <code>~/Library/Application Support/app.cyanote.desktop/</code>, with the automatic daily backups in a <code>backups/</code> folder beside it. Migration Assistant carries the folder across whole, so notes, tasks, calendar, habits, routines and clipboard history all arrive together and the app opens on the state you left.</p>
-      <p>Two things to redo by hand: the licence key, so keep the checkout email, and macOS Accessibility permission if you use clipboard pasting — the app will ask, and it offers to open the right settings pane rather than leaving you to find it.</p>
+      <p>Two things to redo by hand: the licence key, so keep the checkout email, and macOS Accessibility permission if you use clipboard pasting. The app will ask, and it offers to open the right settings pane rather than leaving you to find it.</p>
       <p>If you moved your data folder somewhere custom on the old machine — an external drive, a synced folder — check that the path exists on the new one before launching. A path that is not there is the one case where the app cannot guess what you meant.</p>
       <h2 id="the-general-principle">The general principle</h2>
       <p>The apps that survive a machine change with no drama are the ones whose data is a file you can point at. When you know where your work lives, a new Mac is a copy operation you can verify with your own eyes.</p>
-      <p>When you do not know where it lives, every migration is an act of faith — and you find out how much faith was warranted at the worst possible moment, which is after the old machine has been erased. That, more than anything else, is the practical argument for <a href="/blog/what-local-first-means-for-your-notes/">keeping your work in a form you can see</a>.</p>
+      <p>When you do not know where it lives, every migration is an act of faith, and you find out how much faith was warranted at the worst possible moment, which is after the old machine has been erased. That, more than anything else, is the practical argument for <a href="/blog/what-local-first-means-for-your-notes/">keeping your work in a form you can see</a>.</p>
     </div>
   </article>
 

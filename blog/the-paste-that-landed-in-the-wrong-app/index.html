@@ -38,7 +38,7 @@
   "headline": "The paste that landed in the wrong app",
   "description": "The popup synthesised Cmd-V into whatever was frontmost and assumed it was your app. Sometimes it was Cyanote. The race, and how it was made impossible.",
   "datePublished": "2026-08-18",
-  "dateModified": "2026-08-22",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Clipboard, macOS",
-  "wordCount": 1103
+  "wordCount": 1096
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-18" />
-<meta property="article:modified_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Clipboard" />
@@ -166,26 +166,26 @@
       <p>A clipboard manager has one job at the end: put the thing you picked into the app you were working in. Cyanote's got that wrong, occasionally, in a way that could paste a password into a note.</p>
       <p>Here is how, because the shape of the mistake is more useful than the mistake.</p>
       <h2 id="the-design-that-was-wrong">The design that was wrong</h2>
-      <p>Picking an entry did two things. It put the content on the system pasteboard, then it synthesised a ⌘V keystroke — posted to the system, delivered to whatever application happened to be frontmost at that instant.</p>
+      <p>Picking an entry did two things. It put the content on the system pasteboard, then it synthesised a ⌘V keystroke, posted to the system, delivered to whatever application happened to be frontmost at that instant.</p>
       <p>The assumption baked into that second step: whatever is frontmost is the app the popup opened over. Usually true. It is the app you were in a moment ago, and the popup is a floating panel that deliberately does not take over.</p>
-      <p>Usually. A mouse click on the popup could hand Cyanote the foreground first, and then the keystroke went to Cyanote — which pasted the entry into whichever note happened to be open. Keyboard selection mostly won the race. Mouse selection sometimes lost it.</p>
+      <p>Usually. A mouse click on the popup could hand Cyanote the foreground first, and then the keystroke went to Cyanote, which pasted the entry into whichever note happened to be open. Keyboard selection mostly won the race. Mouse selection sometimes lost it.</p>
       <p>Read that back with the contents of a clipboard history in mind. The entries most worth protecting are exactly the ones you copy and paste immediately: a password out of a manager, an API key, a card number. The failure landed those in a document, silently, in the app that had just promised to be careful with them.</p>
       <p>Nobody reported it. I found it while chasing something else, which is the ordinary way these are found, and is an argument for reading your own code paths on purpose rather than waiting.</p>
       <h2 id="guarding-versus-making-it-impossible">Guarding versus making it impossible</h2>
       <p>The obvious fix is a guard. Before posting the keystroke, check whether Cyanote is frontmost; if it is, bail out or restore the other app first and try again.</p>
-      <p>I had guards. That is what the original design needed to work at all, and one of them had started refusing a legitimate case — pasting into Cyanote itself, which is a completely reasonable thing to want. The guards were accumulating, each one narrowing a broadcast that was wrong in principle.</p>
+      <p>I had guards. That is what the original design needed to work at all, and one of them had started refusing a legitimate case: pasting into Cyanote itself, which is a completely reasonable thing to want. The guards were accumulating, each one narrowing a broadcast that was wrong in principle.</p>
       <p>Broadcasting a keystroke to "whoever is in front" is a message with no addressee. Every guard is an attempt to reason about who might receive it, from a process that cannot actually know.</p>
       <p><code>CGEvent::post_to_pid</code> takes an addressee. The event goes to one named process, whatever is in front.</p>
-      <p>So the popup now captures the process id of the app that was active at the moment it opened, and the paste is delivered to that pid. Where a paste lands stops being a race and becomes a value recorded up front. The wrong-app paste is not guarded against; it is unrepresentable — there is no longer a code path that can express "send this to whoever is in front", so no future refactor can reintroduce it by accident. The guards came out with it, and pasting into Cyanote works again, because it is now just another pid.</p>
+      <p>So the popup now captures the process id of the app that was active at the moment it opened, and the paste is delivered to that pid. Where a paste lands stops being a race and becomes a value recorded up front. The wrong-app paste is not guarded against; it is unrepresentable. There is no longer a code path that can express "send this to whoever is in front", so no future refactor can reintroduce it by accident. The guards came out with it, and pasting into Cyanote works again, because it is now just another pid.</p>
       <figure><img src="/images/paste-target-pid.svg" alt="Two designs: a keystroke broadcast to whatever is frontmost, versus one addressed to the process id captured when the popup opened" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>A guard narrows a wrong design. An addressee replaces it.</figcaption></figure>
       <h2 id="what-fell-out-of-the-accessibility-grant">What fell out of the Accessibility grant</h2>
-      <p>Synthesising keystrokes on macOS requires the Accessibility permission, and that grant is per-binary — a detail with two consequences the app had never said out loud.</p>
+      <p>Synthesising keystrokes on macOS requires the Accessibility permission, and that grant is per-binary, a detail with two consequences the app had never said out loud.</p>
       <p><strong>Restoring the foreground needed the same permission, and used to fail with it.</strong> The old code asked System Events to bring the previous app forward, which is Apple Events, which needs the very grant that was missing. So on a build without it, the paste failed <em>and</em> the restore failed together, and the popup looked simply broken rather than blocked. <code>NSRunningApplication.activate</code> needs no permission at all and does the same job. Restoring the window you came from is now unconditional.</p>
       <p><strong>A paste that cannot happen says so.</strong> If the grant is missing, the popup reports it, offers to open the right settings pane, and points out that the entry is on the clipboard already — so you can press ⌘V yourself and get on with your day. Before, it closed and nothing arrived. Silence is the worst possible response to a permission problem, because the user's only theory is that your software is broken. <a href="/blog/why-a-mac-app-asks-for-accessibility/">Why a Mac app asks for Accessibility</a> is the longer version of that argument.</p>
-      <p><strong>And the order of the two final steps matters more than it looks.</strong> The foreground is handed back <em>before</em> the popup's panel is ordered out, not after. When a panel goes away, AppKit has to move key status somewhere, and it picks the app's main window — which raises Cyanote in front of whatever you were doing, one beat after you asked it to get out of the way. Restoring first means that reassignment happens inside an app that is no longer active, so nothing is raised. The same ordering fixes Escape: dismissing the popup without picking anything now puts you back where you were too.</p>
+      <p><strong>And the order of the two final steps matters more than it looks.</strong> The foreground is handed back <em>before</em> the popup's panel is ordered out, not after. When a panel goes away, AppKit has to move key status somewhere, and it picks the app's main window, which raises Cyanote in front of whatever you were doing, one beat after you asked it to get out of the way. Restoring first means that reassignment happens inside an app that is no longer active, so nothing is raised. The same ordering fixes Escape: dismissing the popup without picking anything now puts you back where you were too.</p>
       <p>That last one took an embarrassing while to see. I kept reading the activation code, because that is where the bug obviously was, and the bug was in a line of window teardown two functions away that I had never once suspected.</p>
       <h2 id="what-i-took-from-it">What I took from it</h2>
-      <p>The clipboard is the part of the app with the most exposure to the rest of the system — it opens over other applications, reads what they put on the pasteboard, and types into them. Every one of those is a boundary where "usually true" hides.</p>
+      <p>The clipboard is the part of the app with the most exposure to the rest of the system. It opens over other applications, reads what they put on the pasteboard, and types into them. Every one of those is a boundary where "usually true" hides.</p>
       <p>Two rules came out of it, and they now apply well beyond the clipboard:</p>
       <p><strong>If the code can express the wrong outcome, it will eventually produce it.</strong> Not through malice or carelessness — through a race, a refactor, or a user doing something reasonable in an order nobody tried. Deleting the expression beats adding a check.</p>
       <p><strong>A silent failure at a permission boundary is worse than a loud one.</strong> The user cannot see the boundary. If the app does not name it, the app is what looks broken.</p>

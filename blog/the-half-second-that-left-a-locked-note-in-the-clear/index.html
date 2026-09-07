@@ -38,7 +38,7 @@
   "headline": "The half-second that left a locked note in the clear",
   "description": "Locking a note took 138 milliseconds. The save it raced was scheduled 500 milliseconds earlier, and the gap wrote the plaintext back to disk underneath it.",
   "datePublished": "2026-08-18",
-  "dateModified": "2026-08-22",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Security, Privacy",
-  "wordCount": 1140
+  "wordCount": 1134
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-18" />
-<meta property="article:modified_time" content="2026-08-22" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Security" />
@@ -167,31 +167,31 @@
       <p>On disk, in the version before 1.0.3, the plaintext was sitting right there beside the encrypted copy. Searchable. Showing as the note's own title in the sidebar.</p>
       <p>It took two numbers to produce, and they are the most instructive pair in the whole codebase.</p>
       <h2 id="500-against-138">500 against 138</h2>
-      <p>Typing in a note does not write to the database on every keystroke. It schedules a write 500 milliseconds later, and each new keystroke pushes that out — an ordinary debounce, in every editor ever built.</p>
+      <p>Typing in a note does not write to the database on every keystroke. It schedules a write 500 milliseconds later, and each new keystroke pushes that out, an ordinary debounce, in every editor ever built.</p>
       <p>The save function decided, at the moment it was <em>scheduled</em>, whether the note was locked. If unlocked, write the plaintext. If locked, encrypt. Sensible-looking code. The decision was captured in a closure, and the closure ran half a second afterwards.</p>
       <p>Locking a note took about 138 milliseconds, measured.</p>
       <p>So: you type. A write is scheduled for 500ms from now, carrying a captured decision that says <em>this note is unlocked, write it in the clear</em>. At 138ms you finish locking. At 500ms the stale closure runs and does exactly what it was told half a second ago.</p>
       <p>The row it left behind: <code>is_locked = 1</code>, a valid encrypted blob, and the plaintext in <code>content_json</code> and <code>content_text</code> beside it. Both true at once.</p>
       <h2 id="why-that-was-worse-than-it-sounds">Why that was worse than it sounds</h2>
       <p>Plaintext on disk under a lock is bad enough. The full-text index is what made it serious.</p>
-      <p>Cyanote's search index <a href="/blog/one-sqlite-file-the-whole-data-model/">is kept in step with the notes by triggers</a>. A write to <code>content_text</code> fires the trigger. So the secret was not merely on disk — it was indexed, and a search for a word inside a locked note would find it, without the password, while the note itself still showed the lock gate.</p>
+      <p>Cyanote's search index <a href="/blog/one-sqlite-file-the-whole-data-model/">is kept in step with the notes by triggers</a>. A write to <code>content_text</code> fires the trigger. So the secret was not merely on disk. It was indexed, and a search for a word inside a locked note would find it, without the password, while the note itself still showed the lock gate.</p>
       <p>The sidebar draws a note's title from the same text. Whatever you had typed in those last few seconds became the note's visible title.</p>
       <p>None of that is subtle once you see it, and none of it was visible from inside the app. The interface was completely honest: the lock was on, the gate appeared, the password was required to open it. Every user-facing signal said the note was protected. The disk disagreed.</p>
       <figure><img src="/images/lock-race-timeline.svg" alt="A 500ms debounce window with the lock completing at 138ms, and the stale write landing afterwards to put plaintext beside the encrypted blob" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Both states were true at once: is_locked = 1, and the plaintext beside it.</figcaption></figure>
       <h2 id="the-same-bug-pointing-the-other-way">The same bug, pointing the other way</h2>
       <p>Chasing the leak turned up its mirror image, which lost data instead of exposing it.</p>
-      <p>"Lock now" deleted the in-memory session key synchronously. If a write was already queued, it ran a moment later, found no key, and hit the guard that stops a locked note being written in the clear. The guard worked. The edit was dropped — no toast, no retry, gone.</p>
+      <p>"Lock now" deleted the in-memory session key synchronously. If a write was already queued, it ran a moment later, found no key, and hit the guard that stops a locked note being written in the clear. The guard worked. The edit was dropped: no toast, no retry, gone.</p>
       <p>Unrecoverable, too, and for a deliberate reason: the app keeps an unsaved snapshot to recover from a crash, and that snapshot is withheld for locked notes, because a plaintext recovery file for an encrypted note is the same bug in a different place. The safety mechanism removed the safety net.</p>
       <p>So one race leaked the last words you typed, and one lost them. Both from the same root: <strong>a decision about lock state made at schedule time and acted on at run time.</strong></p>
       <h2 id="the-fix-in-three-parts">The fix, in three parts</h2>
-      <p><strong>Locking cancels the pending write rather than flushing it.</strong> This is the part I got wrong in my first attempt. Flushing feels safer — do not lose the edit, write it first, then encrypt. But flushing writes plaintext to disk on the way past, which is precisely the thing being fixed. The newest text is already going into the encrypted blob, because locking reads the live editor content. So the pending write has nothing to contribute and everything to leak. Cancel it.</p>
+      <p><strong>Locking cancels the pending write rather than flushing it.</strong> This is the part I got wrong in my first attempt. Flushing feels safer. Do not lose the edit, write it first, then encrypt. But flushing writes plaintext to disk on the way past, which is precisely the thing being fixed. The newest text is already going into the encrypted blob, because locking reads the live editor content. So the pending write has nothing to contribute and everything to leak. Cancel it.</p>
       <p><strong>Ending a session flushes before the key goes.</strong> The opposite order, for the opposite reason. Here the note stays locked and the key is being dropped from memory; the queued write can still be encrypted, so let it complete first.</p>
       <p><strong>And the write closures now re-read the lock state when they run, instead of trusting the flag they captured.</strong> This is the actual fix; the other two are the specific paths. Any decision that can change during a debounce window must be made inside the window, not before it. That one line also covers the case I would never have thought to test: a write queued while the note was locked, running after the lock was removed.</p>
       <h2 id="what-i-actually-take-from-this">What I actually take from this</h2>
-      <p><strong>Two independent representations of one fact will disagree.</strong> <code>is_locked</code> said one thing, the presence of plaintext said another, and nothing in the schema prevented both being true. The lasting fix would be a shape where they cannot both exist — where the encrypted blob and the plaintext columns are not simultaneously expressible. I have that on the list, and I am aware that "check it more carefully" is a weaker answer than "make it impossible", which is <a href="/blog/the-paste-that-landed-in-the-wrong-app/">the lesson from the clipboard</a> arriving again in a different costume.</p>
+      <p><strong>Two independent representations of one fact will disagree.</strong> <code>is_locked</code> said one thing, the presence of plaintext said another, and nothing in the schema prevented both being true. The lasting fix would be a shape where they cannot both exist, where the encrypted blob and the plaintext columns are not simultaneously expressible. I have that on the list, and I am aware that "check it more carefully" is a weaker answer than "make it impossible", which is <a href="/blog/the-paste-that-landed-in-the-wrong-app/">the lesson from the clipboard</a> arriving again in a different costume.</p>
       <p><strong>A debounce is a promise to act on stale information.</strong> Every scheduled callback in a UI carries a snapshot of the world from before the user's most recent action. That is what it is for. Any security decision inside one is a decision made in the past about a present it cannot see.</p>
       <p><strong>The interface being right is not evidence.</strong> Everything on screen behaved correctly throughout. If I had verified this the way a user would — lock a note, confirm it asks for a password — it passes. It only appears if you look at the row on disk, which is why the check that now guards it queries the database directly and asserts the plaintext columns are empty.</p>
-      <p>This shipped in 1.0.3, where the public note reads: <em>locking a note now keeps everything you just typed, including the words written in the moments right before you locked it.</em> True, and about a tenth of the story. <a href="/blog/where-your-notes-actually-live/">The changelog is deliberately vague</a> about which code paths were unreliable, which is the right call for a public release page — and the reason a blog exists is so the full version has somewhere to go.</p>
+      <p>This shipped in 1.0.3, where the public note reads: <em>locking a note now keeps everything you just typed, including the words written in the moments right before you locked it.</em> True, and about a tenth of the story. <a href="/blog/where-your-notes-actually-live/">The changelog is deliberately vague</a> about which code paths were unreliable, which is the right call for a public release page, and the reason a blog exists is so the full version has somewhere to go.</p>
       <p>If you use locked notes: this was fixed before the app went on sale, in the 1.0.x series, and <a href="/blog/password-protect-notes-on-mac/">the note protection design</a> covers what the lock does and does not claim.</p>
     </div>
   </article>

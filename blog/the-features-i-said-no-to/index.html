@@ -38,7 +38,7 @@
   "headline": "The features I said no to",
   "description": "Sync, an iPhone app, collaboration, AI, plugins and telemetry. Six things people ask for, the reason each one is a no, and what saying no actually costs me.",
   "datePublished": "2026-08-18",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Design, Local-first",
-  "wordCount": 1325
+  "wordCount": 1322
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-18" />
-<meta property="article:modified_time" content="2026-08-24" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Design" />
@@ -170,33 +170,33 @@
       <p>Sync is not a feature you add. It is a distributed systems problem you adopt. The moment two machines can both edit a note, you own conflict resolution, offline queues, partial failures, clock skew, and a class of bug where the wrong version wins and someone's afternoon disappears. Ask anyone who has shipped it. The demo is a weekend; the correctness is years.</p>
       <p>And it needs a server, permanently, per user. Go back to <a href="/blog/the-arithmetic-of-a-ten-dollar-app/">the arithmetic of a $4.99 app</a>: a one-time payment against a recurring per-user cost has exactly one ending, and it is a subscription announcement dressed up as a "sustainability update".</p>
       <p>So the no here is not "sync is hard". It is: a synced Cyanote could not be a $4.99 app you buy once, and if I have to choose between those two things, the pricing is the part people cannot get elsewhere.</p>
-      <p>What exists instead: the database is a single file, and Settings will put it wherever you like — including a folder that Dropbox or iCloud Drive already syncs. That works if you are careful about not running both Macs at once, and I say so plainly rather than pretending it is a feature. <a href="/blog/two-macs-one-system/">Two Macs, one system</a> is the honest guide to the trade-offs.</p>
+      <p>What exists instead: the database is a single file, and Settings will put it wherever you like, including a folder that Dropbox or iCloud Drive already syncs. That works if you are careful about not running both Macs at once, and I say so plainly rather than pretending it is a feature. <a href="/blog/two-macs-one-system/">Two Macs, one system</a> is the honest guide to the trade-offs.</p>
       <h2 id="an-iphone-app">An iPhone app</h2>
       <p>The second most requested, and the answer is arithmetic again, of a different kind.</p>
-      <p>A native iOS app is a second codebase. Not a port — a different interface, different interaction model, a review process with its own timeline, and a permanent doubling of every future change. One person maintaining two platforms ships each of them half as well.</p>
+      <p>A native iOS app is a second codebase. Not a port, but a different interface, a different interaction model, a review process with its own timeline, and a permanent doubling of every future change. One person maintaining two platforms ships each of them half as well.</p>
       <p>There is a worse version of this that I want to name, because it is the trap. A mobile app that is useful needs to see your notes, which means it needs sync, which means the server, which means the subscription. The iPhone request and the sync request are the same request, and answering it turns Cyanote into a different company.</p>
       <p>If you need your notes in your pocket, Cyanote is the wrong app, and I would rather you learn that from a blog post than from a refund form. <a href="/blog/getting-a-note-to-your-phone-without-sync/">Getting a note to your phone without sync</a> covers what actually works when it is occasional rather than constant.</p>
       <h2 id="collaboration">Collaboration</h2>
       <p>Shared notes need identity: who are you, what may you see, who changed this. Identity means accounts. Accounts mean a user database, a password reset flow, a breach surface, and a server that has to be up for you to open your own notes.</p>
-      <p>Cyanote has no account because it has nothing to sign into, and that is the single strongest privacy property it has — not a policy, an absence. <a href="/blog/notes-app-without-an-account/">What an account actually buys you</a> goes through what disappears along with it.</p>
+      <p>Cyanote has no account because it has nothing to sign into, and that is the single strongest privacy property it has. Not a policy, an absence. <a href="/blog/notes-app-without-an-account/">What an account actually buys you</a> goes through what disappears along with it.</p>
       <p>It is a desktop app for one person on their own machine. If two people need the same document, use something built for that; there are good ones, and this is not one of them.</p>
       <figure><img src="/images/features-said-no.svg" alt="Six requested features, what each one would require, and the property of the app it would consume" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>Every no is a yes to something else. These are the somethings.</figcaption></figure>
       <h2 id="ai-features">AI features</h2>
       <p>The interesting no, because I do not think AI in a notes app is stupid. Summarising a long meeting note is genuinely useful.</p>
-      <p>The problem is the direction the data flows. Any model worth using runs on someone else's hardware, which means your notes leave your machine to be useful. The app's whole promise is that they do not. You cannot hold both. "We only send the note you asked about, and we don't train on it" is a policy — revocable, unverifiable from where you sit, and a completely different kind of assurance from <em>the app makes one network request ever, and it is a version check</em>.</p>
+      <p>The problem is the direction the data flows. Any model worth using runs on someone else's hardware, which means your notes leave your machine to be useful. The app's whole promise is that they do not. You cannot hold both. "We only send the note you asked about, and we don't train on it" is a policy: revocable, unverifiable from where you sit, and a completely different kind of assurance from <em>the app makes one network request ever, and it is a version check</em>.</p>
       <p>A local model would keep the promise, and someday that may be genuinely good enough on ordinary hardware for a specific job. It is not a no forever. It is a no while the honest version of the feature is "your notes get uploaded". <a href="/blog/ai-features-and-private-notes/">AI features and private notes</a> has the longer argument.</p>
       <h2 id="plugins">Plugins</h2>
       <p>Plugins look free. Other people write the features, users get what they want, nobody is asking me for a Kanban swimlane.</p>
       <p>What a plugin API actually does is turn your internals into a public contract. Every table shape, every state store, every editor node that a plugin can reach is now something you may not change without breaking somebody's setup. Cyanote has <a href="/blog/one-sqlite-file-the-whole-data-model/">26 shipped database migrations</a> and I have edited the data model on a dozen ordinary afternoons. That freedom is what has kept it moving. A plugin ecosystem trades it away permanently, at exactly the stage when I still get the shape wrong regularly.</p>
       <p>There is also the security half: a plugin runs inside an app holding an unencrypted clipboard history. "Install this handy extension" is not a sentence I want anywhere near that.</p>
-      <p>Themes were the compromise, and the right one. Fifteen built in, plus <a href="/blog/customising-a-notes-app/">an editor for the seven colours the whole app is drawn from</a> — real customisation, no API surface, nothing executing.</p>
+      <p>Themes were the compromise, and the right one. Fifteen built in, plus <a href="/blog/customising-a-notes-app/">an editor for the seven colours the whole app is drawn from</a>: real customisation, no API surface, nothing executing.</p>
       <h2 id="telemetry">Telemetry</h2>
       <p>No analytics, no crash reporting, no "anonymous usage statistics to help us improve".</p>
       <p>This one costs me the most, and I want to be straight about it rather than noble. I have no idea which features get used. I do not know how many notes a typical database holds, whether anybody opens the board view, or which of the fifteen themes is anyone's favourite. Every product decision is made without the data that every other product team considers a baseline.</p>
       <p>I took that trade because a searchable index of everything you copy sits in this app, and "we collect anonymous usage data" is where the erosion always begins. Not with a scandal. With a reasonable-sounding paragraph in a privacy policy, then a slightly wider one.</p>
       <p>The replacement is worse and slower: people email me. That is a biased sample, it is a fraction of a percent of users, and it is what I have. <a href="/blog/supporting-an-app-that-does-not-know-who-you-are/">Support for an app with no accounts</a> covers what that is actually like.</p>
       <h2 id="what-the-noes-cost">What the noes cost</h2>
-      <p>Every one of these loses sales. Sync and mobile lose the most, and they lose them silently — people read the page, see what is missing, and close the tab, and I never learn their names.</p>
+      <p>Every one of these loses sales. Sync and mobile lose the most, and they lose them silently. People read the page, see what is missing, and close the tab, and I never learn their names.</p>
       <p>What is left is an app that opens instantly, works with the wifi off, keeps everything in <a href="/blog/where-your-notes-actually-live/">one file you can copy to a USB stick</a>, and costs $4.99 once. Those four properties are downstream of the six noes. Add sync and you lose the price. Add AI and you lose the privacy. Add plugins and you lose the ability to fix things quickly.</p>
       <p>I would rather be exactly right for a smaller number of people than approximately right for everyone. That is a real position with real costs, and this is the list of them.</p>
     </div>

@@ -38,7 +38,7 @@
   "headline": "The app said \"Saved\", and had saved nothing",
   "description": "A success message with nothing behind it, a paste that discarded its own error text, and a poll that quietly retired. Four swallowed failures, and the rule.",
   "datePublished": "2026-08-23",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Development, Design",
-  "wordCount": 1332
+  "wordCount": 1325
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-23" />
-<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Development" />
@@ -163,34 +163,34 @@
     </header>
 
     <div class="post">
-      <p>The worst bug reports are the ones that cannot exist. A user does something, the app says it worked, and it did not — so there is nothing to report except a feeling that the software is unreliable, which is not a bug report, which is why you never hear it.</p>
+      <p>The worst bug reports are the ones that cannot exist. A user does something, the app says it worked, and it did not, so there is nothing to report except a feeling that the software is unreliable, which is not a bug report, which is why you never hear it.</p>
       <p>I found four of these in the same codebase within a fortnight. Every one of them was a <code>catch</code> block doing what it had been told.</p>
       <h2 id="one-the-success-message-with-nothing-behind-it">One: the success message with nothing behind it</h2>
       <p>Saving a custom template wrote to browser storage, notified the interface that templates had changed, and returned. The write was wrapped in a <code>try</code>/<code>catch</code> that swallowed failures, and the change notification fired regardless.</p>
-      <p>So when a write failed: the sidebar refreshed, found nothing new, drew the same list it already had — and the calling code, having received no error, showed a cheerful "Saved".</p>
+      <p>So when a write failed: the sidebar refreshed, found nothing new, drew the same list it already had, and the calling code, having received no error, showed a cheerful "Saved".</p>
       <p>The user got a success message, no template, and nothing anywhere explaining the discrepancy. If they looked again later and their template was missing, the most reasonable conclusion available to them is that the app loses things. That belief, once formed, is not recoverable by anything except never doing it again.</p>
       <p>It throws now, and the callers act on it: saving shows a storage error instead of a success toast, and deleting reports the failure rather than silently keeping the entry it claimed to remove.</p>
       <figure><img src="/images/swallowed-errors.svg" alt="Four swallowed failures: a save that reported success, a paste that discarded its own error text, a focus session that did nothing, and a poll that ended for the session" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>Each one is a catch block behaving exactly as written. The bug is upstream of the code, in what the code was told to do.</figcaption></figure>
       <h2 id="the-read-back-is-as-important-as-the-catch">The read-back is as important as the catch</h2>
       <p>There is a second half to that fix, and it is the part I would most like people to take away.</p>
-      <p>Adding the <code>throw</code> handles the case where the write raises an error. It does not handle the case where the write returns quietly and the value is not there afterwards — a storage quota that fails softly, a policy that silently discards, a value written to the wrong place.</p>
+      <p>Adding the <code>throw</code> handles the case where the write raises an error. It does not handle the case where the write returns quietly and the value is not there afterwards: a storage quota that fails softly, a policy that silently discards, a value written to the wrong place.</p>
       <p><em>"It did not throw"</em> is not the same claim as <em>"the value is there"</em>, and only one of those is what the user is being told. So the write is followed by a read-back, and the read-back is what the success message is actually based on.</p>
       <p>That distinction generalises to almost every persistence path in a program: the API's error channel tells you about the failures its author anticipated. Reading the value back tells you about the state of the world.</p>
       <h2 id="two-the-paste-that-discarded-every-clue-it-had">Two: the paste that discarded every clue it had</h2>
       <p>The clipboard's paste keystroke runs a small system script. Everything that can go wrong with it — Accessibility permission revoked, the system event refused, the service not answering — exits non-zero and prints a sentence to standard error explaining exactly which one.</p>
       <p>The code spawned that process and dropped the handle. Every one of those sentences went nowhere.</p>
       <p>Consider the combination. A paste that silently does nothing is the <em>worst</em> failure this feature has, from a user's point of view: they pressed the key, the thing they chose did not arrive, and the app looks fine. And it was simultaneously the only failure that left nothing behind to debug from. The most confusing symptom had the least evidence, by construction.</p>
-      <p>It waits on the process now and keeps what it says. That also reaps the child, which had been leaving a zombie process behind on every single paste — an unrelated bug, found only because somebody finally looked at the return value.</p>
+      <p>It waits on the process now and keeps what it says. That also reaps the child, which had been leaving a zombie process behind on every single paste, an unrelated bug, found only because somebody finally looked at the return value.</p>
       <h2 id="three-the-loop-that-stopped-for-the-session">Three: the loop that stopped for the session</h2>
       <p>The clipboard poll reschedules itself after each tick, on the success path only.</p>
-      <p>Nothing awaits that tick, so a rejection had nowhere to go. It ended the loop outright. Clipboard history simply stopped recording for the rest of the session — no message, no indicator, no way for the user to know that the feature they were relying on had quietly retired at 11am.</p>
+      <p>Nothing awaits that tick, so a rejection had nowhere to go. It ended the loop outright. Clipboard history simply stopped recording for the rest of the session: no message, no indicator, no way for the user to know that the feature they were relying on had quietly retired at 11am.</p>
       <p>The asymmetry here is brutal and easy to miss when writing the code. A capture that fails costs one clip. A capture that <em>throws</em> cost the feature. Same line, two orders of magnitude apart, and the difference is entirely in whether the scheduling happens on the success path or unconditionally.</p>
-      <p>Any self-rescheduling loop deserves that specific review: does the next tick get scheduled even when this one fails? For a poll, a retry queue, a watcher, a sync — that one question separates a transient error from a permanent one.</p>
+      <p>Any self-rescheduling loop deserves that specific review: does the next tick get scheduled even when this one fails? For a poll, a retry queue, a watcher, a sync, that one question separates a transient error from a permanent one.</p>
       <h2 id="four-the-version-skew-nobody-could-have-seen">Four: the version skew nobody could have seen</h2>
       <p>A shipped build carried a frontend that called a command its own backend did not export. The call rejected, a helper named "invoke quietly" ate the rejection, and starting a focus session did nothing at all.</p>
       <p>No error. No log. The user pressed the button and the app declined to have an opinion about it.</p>
       <p>The fix is the rule I now apply to every quiet-by-default wrapper: <strong>failing to hide can stay quiet; failing to show must speak.</strong></p>
-      <p>If hiding an overlay fails, there is nothing useful to say and nothing for the user to do. If <em>showing</em> it fails, the user asked for something and did not get it, and they need to know — including the useful part, which is that their timer is still running. Silence there is not restraint, it is withholding.</p>
+      <p>If hiding an overlay fails, there is nothing useful to say and nothing for the user to do. If <em>showing</em> it fails, the user asked for something and did not get it, and they need to know, including the useful part, which is that their timer is still running. Silence there is not restraint, it is withholding.</p>
       <p>Most "quiet" helpers are written for the first case and then used for both, because the name does not distinguish them.</p>
       <h2 id="the-honest-ending">The honest ending</h2>
       <p>I could not reproduce the template failure. In a development build the whole save-notify-render path works — a probe template appears immediately — and the stored value reads as an empty array in the real app, but the app was running at the time and the browser engine buffers that storage, so the value on disk may simply have been stale.</p>

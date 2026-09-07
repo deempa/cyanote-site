@@ -38,7 +38,7 @@
   "headline": "What your clipboard manager is not supposed to remember",
   "description": "A convention lets a password manager say do not record this. It works only if both apps honour it — how it works, and how to test yours in thirty seconds.",
   "datePublished": "2026-08-22",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Clipboard, Privacy, Security",
-  "wordCount": 1253
+  "wordCount": 1248
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-22" />
-<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Clipboard" />
 <meta property="article:tag" content="Privacy" />
@@ -165,7 +165,7 @@
     <div class="post">
       <p>A clipboard manager records everything you copy. That is the feature. It is also, once a week or so, a password.</p>
       <p>Copying a password out of a password manager is the normal way to use one. Copying a two-factor code is the normal way to use those too. Both go through the same system-wide buffer as the URL you sent a colleague, and a tool whose entire job is to remember that buffer will remember them, unless something stops it.</p>
-      <p>Something does — a convention, honoured voluntarily by both sides. It is worth understanding, because it is the difference between a clipboard history that is a convenience and one that is a plain-text password file with a nice interface.</p>
+      <p>Something does: a convention, honoured voluntarily by both sides. It is worth understanding, because it is the difference between a clipboard history that is a convenience and one that is a plain-text password file with a nice interface.</p>
       <h2 id="the-marker">The marker</h2>
       <p>When a password manager copies a secret, it can attach a marker to the clipboard item saying <em>this is not for recording</em>.</p>
       <p>On macOS there are two, both part of a convention published at nspasteboard.com that Mac clipboard tools have followed for years:</p>
@@ -175,8 +175,8 @@
       <figure><img src="/images/concealed-clipboard.svg" alt="A copied password carrying a concealed marker, and the two ways a clipboard manager can respond to it" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Two apps, one convention, no enforcement. Both halves have to hold up their end.</figcaption></figure>
       <h2 id="both-halves-have-to-work">Both halves have to work</h2>
       <p>This is the part people miss. Two apps have to behave for a secret to stay out of your history:</p>
-      <p><strong>The source has to mark it.</strong> Most well-known password managers do. Not everything else does. A secret you copy out of a terminal, a config file, an email, an admin panel, a spreadsheet or a chat window carries no marker at all — because none of those apps knows it was a secret. Your clipboard manager will record it, correctly, because it has been told nothing.</p>
-      <p><strong>The manager has to honour it.</strong> Reading those markers is a few lines of code and it is a few lines a developer has to have thought about. There is no compiler error for missing it. Cyanote's Windows build had exactly this gap for a while — it kept every password, not because anyone decided to, but because the check that existed on macOS had simply not been written for the other platform.</p>
+      <p><strong>The source has to mark it.</strong> Most well-known password managers do. Not everything else does. A secret you copy out of a terminal, a config file, an email, an admin panel, a spreadsheet or a chat window carries no marker at all, because none of those apps knows it was a secret. Your clipboard manager will record it, correctly, because it has been told nothing.</p>
+      <p><strong>The manager has to honour it.</strong> Reading those markers is a few lines of code and it is a few lines a developer has to have thought about. There is no compiler error for missing it. Cyanote's Windows build had exactly this gap for a while. It kept every password, not because anyone decided to, but because the check that existed on macOS had simply not been written for the other platform.</p>
       <p>So the practical answer to "does my clipboard history contain passwords?" is: probably some of them.</p>
       <h2 id="test-yours-in-thirty-seconds">Test yours in thirty seconds</h2>
       <p>Do not take anyone's word for this, including mine.</p>
@@ -187,7 +187,7 @@
       <p>There is a third case that decides how much you should trust a tool: what happens when it cannot classify an item at all. The clipboard is briefly locked by another app, a format cannot be read, something is malformed.</p>
       <p>There are two possible defaults, and only one is defensible.</p>
       <p>Cyanote's rule is that anything it cannot classify counts as private and is dropped. The reasoning is an asymmetry: losing one clipboard entry you could not classify costs the user one ⌘C. Storing one password you could not classify costs them the password.</p>
-      <p>That asymmetry is not close, and it is a reasonable thing to ask about any security-adjacent tool — what does it do when it does not know? A tool that defaults to recording when confused will, over months, collect precisely the items that were unusual, which is not a random sample.</p>
+      <p>That asymmetry is not close, and it is a reasonable thing to ask about any security-adjacent tool. What does it do when it does not know? A tool that defaults to recording when confused will, over months, collect precisely the items that were unusual, which is not a random sample.</p>
       <p>One related subtlety: Windows also has a <code>CanUploadToCloudClipboard</code> marker. It means "do not sync this to my other machines", which is a statement about the cloud and not about whether a local history may hold it. An app that treats it as a do-not-record instruction is being generous with a signal that says something else; apps that mean both set the other two formats as well.</p>
       <h2 id="what-else-is-in-there">What else is in there</h2>
       <p>Passwords are the obvious case and not the largest one. In an ordinary working week, a clipboard history also accumulates:</p>
@@ -196,13 +196,13 @@
       <h2 id="the-questions-worth-asking">The questions worth asking</h2>
       <p>Of any clipboard manager, including the one built into your operating system:</p>
       <p><strong>Where is the history stored, and is it on my machine only?</strong> A local file is a much smaller problem than a synced one. If clipboard history syncs to a service, everything above now applies to that service too.</p>
-      <p><strong>Can I turn it off, and does turning it off clear what is already there?</strong> Off that leaves a fortnight of history on disk is not off. In Cyanote the clipboard can be switched off entirely in Settings, and doing so clears what it has already saved — because the alternative is a feature you disabled still holding your data.</p>
+      <p><strong>Can I turn it off, and does turning it off clear what is already there?</strong> Off that leaves a fortnight of history on disk is not off. In Cyanote the clipboard can be switched off entirely in Settings, and doing so clears what it has already saved, because the alternative is a feature you disabled still holding your data.</p>
       <p><strong>Can I delete a single entry?</strong> You will need this five minutes after copying the wrong thing.</p>
       <p><strong>Does it honour the markers?</strong> Which you now know how to test.</p>
       <h2 id="a-working-habit">A working habit</h2>
       <p>The convention covers the common case well and cannot cover the rest, so a small habit closes the gap: after copying something genuinely sensitive that did <em>not</em> come from a password manager — a key from a terminal, a code from an email — copy something harmless afterwards. It costs a second and it means the sensitive item is one entry deep in a list rather than sitting on the clipboard where the next app to ask can read it.</p>
       <p>And if you use a password manager's autofill instead of copying, the clipboard never sees the password at all, which is the only completely reliable version of any of this.</p>
-      <p>For the wider picture of what a clipboard manager is for, <a href="/blog/clipboard-history-on-mac/">macOS keeps exactly one thing and forgets the rest</a> — and if you are weighing whether you need more than a free one, <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">here is where the free ones stop</a>.</p>
+      <p>For the wider picture of what a clipboard manager is for, <a href="/blog/clipboard-history-on-mac/">macOS keeps exactly one thing and forgets the rest</a>, and if you are weighing whether you need more than a free one, <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">here is where the free ones stop</a>.</p>
     </div>
   </article>
 

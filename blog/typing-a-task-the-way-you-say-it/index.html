@@ -38,7 +38,7 @@
   "headline": "Typing a task the way you would say it",
   "description": "Pay rent tomorrow 9am !high\" should become a task with a date, a time and a priority. Why that one detail decides whether a to-do list survives a month.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Tasks, Workflow, How-to",
-  "wordCount": 1115
+  "wordCount": 1113
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Tasks" />
 <meta property="article:tag" content="Workflow" />
@@ -173,7 +173,7 @@
       <figure><img src="/images/todo.webp" alt="Tasks in Cyanote, grouped by when they are due, with the parsed date and priority shown as chips on the task" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The date came out of the sentence. The chip is there so you can see what it decided, and dismiss it if it guessed wrong.</figcaption></figure>
       <h2 id="why-it-also-breaks-things">Why it also breaks things</h2>
       <p>Every parser is a guess, and the guesses fail in a specific, annoying way.</p>
-      <p>You type <code>call Mark about the May figures</code> and the app helpfully schedules it for 1 May. You type <code>read the March report</code> and it does the same. The word was part of the thing, not part of the schedule, and the app cannot tell — English does not mark the difference.</p>
+      <p>You type <code>call Mark about the May figures</code> and the app helpfully schedules it for 1 May. You type <code>read the March report</code> and it does the same. The word was part of the thing, not part of the schedule, and the app cannot tell. English does not mark the difference.</p>
       <p>This is the failure that makes people turn natural-language entry off, and the fix is not a better parser. It is <strong>visible, reversible parsing</strong>. The app shows you what it extracted, as something you can see and dismiss — a chip, a highlight, a token in the field — before or right after the task is created. Then a wrong guess costs one click to undo instead of a task that silently shows up on the wrong day in six weeks.</p>
       <p>Compare that with the invisible version, which quietly rewrites the title and tells you nothing. That app is not faster. It is faster <em>and occasionally wrong in a way you will find out about later</em>, which is worse than slow.</p>
       <h2 id="the-grammar-worth-learning">The grammar worth learning</h2>
@@ -183,7 +183,7 @@
       <h2 id="where-the-task-goes-afterwards-matters-as-much">Where the task goes afterwards matters as much</h2>
       <p>Fast capture into a bad list is just a faster way to build a pile.</p>
       <p>What makes the pile navigable is grouping by <em>when</em>, not by project. Overdue, today, this week, later. That ordering answers the only question you have when you open a to-do list on a Tuesday morning, which is "what is actually mine today". Project grouping answers a question you ask once a week, at most, and it is the wrong default for the other six days.</p>
-      <p>The same tasks seen a different way is a separate and legitimate need — that is what a board is for, and I have written about <a href="/blog/personal-kanban-board/">running a personal kanban board</a> without turning it into project management. The point is that both views should be the same tasks, not two lists you maintain.</p>
+      <p>The same tasks seen a different way is a separate and legitimate need. That is what a board is for, and I have written about <a href="/blog/personal-kanban-board/">running a personal kanban board</a> without turning it into project management. The point is that both views should be the same tasks, not two lists you maintain.</p>
       <h2 id="what-to-check-before-you-commit">What to check before you commit</h2>
       <ul><li><strong>Does it show you what it parsed?</strong> The single most important question. Invisible parsing is a slow-motion trust problem.</li><li><strong>Can you dismiss one part and keep the rest?</strong> Wrong date, right priority, should be one click — not "clear and retype".</li><li><strong>What happens with no schedule at all?</strong> Typing a bare sentence and pressing return should produce a plain undated task, not an error and not a form.</li><li><strong>Does the reminder follow the task, or is it separate?</strong> In some apps a due date and a reminder are two different fields, which means every genuinely time-sensitive task takes two passes.</li><li><strong>Is capture reachable from anywhere?</strong> A capture box that requires the app to be in front of you is capture that will not happen during the four seconds.</li></ul>
       <h2 id="the-honest-version">The honest version</h2>

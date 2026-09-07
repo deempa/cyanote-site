@@ -38,7 +38,7 @@
   "headline": "Three ways to leave, and one way back in",
   "description": "The red button hides the window, Command-Q holds the quit until the last edit lands, and an update did neither. Three exits, down three code paths.",
   "datePublished": "2026-08-22",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, macOS, Development",
-  "wordCount": 1429
+  "wordCount": 1423
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-22" />
-<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="macOS" />
@@ -174,7 +174,7 @@
       <h2 id="then-the-way-back-arrived-too-late">Then the way back arrived too late</h2>
       <p>Fixing that created a better bug.</p>
       <p>The clipboard popup works by taking the foreground, letting you pick an entry, giving the foreground back to whatever you were working in, and pasting. That handover is the entire feature — <a href="/blog/the-paste-that-landed-in-the-wrong-app/">a paste that lands in the wrong app is worse than no paste at all</a>.</p>
-      <p>Reopen is an Apple Event. It is queued, not synchronous with the click that caused it, and it can be delivered <em>after</em> the panel has already gone and the paste has already finished. So a mouse click on a clipboard row could produce a reopen that arrived a beat late and helpfully raised the main window — on top of the document that had just been pasted into, in the moment of triumph, undoing the handover the whole feature exists to perform.</p>
+      <p>Reopen is an Apple Event. It is queued, not synchronous with the click that caused it, and it can be delivered <em>after</em> the panel has already gone and the paste has already finished. So a mouse click on a clipboard row could produce a reopen that arrived a beat late and helpfully raised the main window, on top of the document that had just been pasted into, in the moment of triumph, undoing the handover the whole feature exists to perform.</p>
       <p>Three things now separate "the user clicked the Dock icon" from "the user clicked a clipboard row":</p>
       <ul><li>A flag set for the duration of a paste handover, so a reopen landing anywhere inside it is ignored.</li><li>A flag tracking whether the popup is on screen — set by the two calls that put it there and take it away. The obvious source, asking the panel whether it is visible, turned out to lie: it reported false while the popup was the thing the user had just clicked. A flag you set yourself cannot disagree with the calls that set it.</li><li>A grace window of 2.5 seconds after the last popup interaction, because the first two are instantaneous checks and the event is not instantaneous. Every interaction pushes the deadline out, so a late reopen is still recognisably the popup's, while a genuine Dock click a second later is not.</li></ul>
       <p>The general shape: when the system hands you an event that is queued rather than synchronous, no instantaneous check can tell you what caused it. You need a window of time, and you have to pick its length.</p>
@@ -182,18 +182,18 @@
       <p>Quitting properly runs a different path again, and this one has to deal with the fact that typing is not saved instantly.</p>
       <p>Edits are debounced roughly half a second before they reach SQLite. That is ordinary and necessary — writing to disk on every keystroke would be a lot of writes for no benefit — but it means there is always a short window in which the newest thing you typed exists only in the editor.</p>
       <p>So a quit is held. The app asks the webview to flush what it is holding, and does not exit until the write has landed and the webview says so.</p>
-      <p>There is a backstop, because a wedged webview must not make the app impossible to quit. It used to be 1.5 seconds and it is now five, and the change came from a real failure: a flush retries a locked statement for up to 1050ms <em>each</em>, and a rich note writes several rows. With the clipboard monitor writing at the same time, ⌘Q was hitting the backstop and force-exiting through a flush that was working correctly — throwing away the exact edit the hold exists to save.</p>
+      <p>There is a backstop, because a wedged webview must not make the app impossible to quit. It used to be 1.5 seconds and it is now five, and the change came from a real failure: a flush retries a locked statement for up to 1050ms <em>each</em>, and a rich note writes several rows. With the clipboard monitor writing at the same time, ⌘Q was hitting the backstop and force-exiting through a flush that was working correctly, throwing away the exact edit the hold exists to save.</p>
       <p>Five seconds to quit a jammed app is an annoyance. A lost paragraph is not. When those two are in tension the timeout should be generous, and the fact that a shorter one had felt "snappy" was not evidence of anything.</p>
       <h2 id="and-then-the-update-did-neither">And then the update did neither</h2>
       <p>The third exit is the one I had not thought of as an exit at all.</p>
-      <p>Accepting an update downloads it, installs it, and restarts the app. Under the covers that is <code>relaunch()</code>, which restarts the process directly — and, crucially, <em>does not raise the exit event</em>. So the entire hold-and-flush path, the whole reason ⌘Q is safe, never ran for an update.</p>
+      <p>Accepting an update downloads it, installs it, and restarts the app. Under the covers that is <code>relaunch()</code>, which restarts the process directly and, crucially, <em>does not raise the exit event</em>. So the entire hold-and-flush path, the whole reason ⌘Q is safe, never ran for an update.</p>
       <p>Which means: accept an update within about half a second of typing, and the last thing you typed was gone. At the one moment the app had explicitly told the user it was safe to restart.</p>
-      <p>That is the part that bothers me most in hindsight. The bug was not that data could be lost on restart; it was that the app invited the restart. Every safety mechanism I had built was attached to a code path the update did not take, and nothing in the design made that visible — two functions, both of which end with the process going away, one of which raises the event everything else depends on.</p>
+      <p>That is the part that bothers me most in hindsight. The bug was not that data could be lost on restart; it was that the app invited the restart. Every safety mechanism I had built was attached to a code path the update did not take, and nothing in the design made that visible: two functions, both of which end with the process going away, one of which raises the event everything else depends on.</p>
       <p>The fix is to flush before relaunching, on the same path the quit uses. And the update now asks first: the notice says the app will close and reopen, and <em>Not now</em> leaves the update pending so it can be taken at a better moment rather than waiting for the next check hours later.</p>
-      <p>Installing is not deferrable, and that is a platform constraint rather than a choice. On Windows the updater hands off to the installer, which takes the process down itself — so an "install now, restart later" button would do two genuinely different things on two platforms while wearing one label. Better to ask honestly and act once.</p>
+      <p>Installing is not deferrable, and that is a platform constraint rather than a choice. On Windows the updater hands off to the installer, which takes the process down itself, so an "install now, restart later" button would do two genuinely different things on two platforms while wearing one label. Better to ask honestly and act once.</p>
       <h2 id="what-i-take-from-it">What I take from it</h2>
       <p>Three exits, three code paths, one shared obligation: land the user's last sentence, and leave a way back in.</p>
-      <p>I had tested the obvious one. ⌘Q was solid, because ⌘Q is what you press a hundred times a day while developing. The red button I pressed rarely, since I was usually restarting into a new build anyway. And the update path I had, by definition, tested least of all — you cannot casually accept an update on a machine that is building the update.</p>
+      <p>I had tested the obvious one. ⌘Q was solid, because ⌘Q is what you press a hundred times a day while developing. The red button I pressed rarely, since I was usually restarting into a new build anyway. And the update path I had, by definition, tested least of all. You cannot casually accept an update on a machine that is building the update.</p>
       <p>The paths you exercise least while building are exactly the paths a user meets most, and they are all the ones where the app is going away, which is the moment it is holding something of theirs. That is not a coincidence to be noted; it is a place to go looking on purpose. Some of the same reasoning applies to what the app does <em>before</em> it goes away — <a href="/blog/the-backup-that-would-have-wiped-the-clipboard/">the backup it writes and what a restore is allowed to clear</a>.</p>
     </div>
   </article>

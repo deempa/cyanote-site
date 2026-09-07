@@ -38,7 +38,7 @@
   "headline": "The arithmetic of a $4.99 app",
   "description": "Apple takes $99 a year before a single copy sells. Here is what the $4.99 actually has to pay for, and the obligation that starts the moment someone buys.",
   "datePublished": "2026-08-18",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Pricing, One-time purchase",
-  "wordCount": 1263
+  "wordCount": 1261
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-18" />
-<meta property="article:modified_time" content="2026-08-24" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Pricing" />
@@ -181,10 +181,10 @@
       <figure><img src="/images/ten-dollar-math.svg" alt="One $4.99 sale against the fixed yearly costs: $4.24 net, $111 a year in floor costs, and the maintenance that the price does not scale with" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The cash side is small. The obligation is the part with no ceiling.</figcaption></figure>
       <h2 id="what-the-price-makes-impossible">What the price makes impossible</h2>
       <p>Here is where the arithmetic stops being accounting and starts being product design.</p>
-      <p>$4.99 once cannot fund a server. Not a sync server, not an account system, not a licence server that phones home on every launch. Run the numbers on any of those and you get a per-user, per-month cost against a one-time payment that was already spent — the classic way a buy-once app becomes insolvent about eighteen months in, quietly degrades, and then announces a subscription.</p>
+      <p>$4.99 once cannot fund a server. Not a sync server, not an account system, not a licence server that phones home on every launch. Run the numbers on any of those and you get a per-user, per-month cost against a one-time payment that was already spent, the classic way a buy-once app becomes insolvent about eighteen months in, quietly degrades, and then announces a subscription.</p>
       <p>So the architecture had to make servers unnecessary rather than cheap. Everything lives in <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file on your own disk</a>. There is no account because there is nothing for an account to sign into. The licence key is checked once, on first launch, and never again — <a href="/blog/supporting-an-app-that-does-not-know-who-you-are/">which creates its own support problems</a>, and I would rather have those than the alternative.</p>
       <p>I did not arrive at local-first from an ideology about data ownership, though I have since acquired one. I arrived at it because it is the only shape that a $4.99 payment can actually sustain. <a href="/blog/what-local-first-means-for-your-notes/">What local-first means for your notes</a> is the buyer-facing version of that argument; this is the ledger underneath it.</p>
-      <p>$4.99 also cannot fund a support team, which is why the app tries hard to explain itself in place — a paste that cannot happen <a href="/blog/why-a-mac-app-asks-for-accessibility/">says what permission is missing</a> rather than failing silently and generating an email.</p>
+      <p>$4.99 also cannot fund a support team, which is why the app tries hard to explain itself in place. A paste that cannot happen <a href="/blog/why-a-mac-app-asks-for-accessibility/">says what permission is missing</a> rather than failing silently and generating an email.</p>
       <h2 id="the-refund-line">The refund line</h2>
       <p>14 days, no reason required, no proof of uninstall.</p>
       <p>The received wisdom is that a no-questions refund policy on a cheap product invites abuse. Maybe. What it definitely does is remove the reason a person hesitates at a checkout for a $4.99 app from a developer they have never heard of, with no free trial, that they cannot try before buying. That hesitation costs far more than the refunds will.</p>

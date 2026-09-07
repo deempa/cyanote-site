@@ -38,7 +38,7 @@
   "headline": "Getting your notes out, and what breaks on the way",
   "description": "Every notes app has an export button. What matters is what survives it — links between notes, images, checkboxes, dates. How to find out before you need to know.",
   "datePublished": "2026-08-22",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Backups, Ownership, How-to",
-  "wordCount": 1283
+  "wordCount": 1282
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-22" />
-<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Backups" />
 <meta property="article:tag" content="Ownership" />
@@ -169,7 +169,7 @@
       <h2 id="an-export-is-not-a-backup">An export is not a backup</h2>
       <p>Worth separating, because apps use the words loosely.</p>
       <p>A <strong>backup</strong> is for putting your data back into the same app. It can be a database file or a bundle of everything, and it can be perfectly faithful because the only thing that ever has to read it is the app that wrote it. <a href="/blog/backing-up-local-notes/">Backing up notes that live on your own computer</a> is a different job with different rules.</p>
-      <p>An <strong>export</strong> is for taking your data somewhere else. It has to be readable by software that knows nothing about your app, which means dropping to a shared format — and every shared format is smaller than what a modern editor can express.</p>
+      <p>An <strong>export</strong> is for taking your data somewhere else. It has to be readable by software that knows nothing about your app, which means dropping to a shared format, and every shared format is smaller than what a modern editor can express.</p>
       <p>Both matter. If an app gives you only one, ask which one it is, because "we have backups" and "you can leave" are different promises.</p>
       <figure><img src="/images/export-fidelity.svg" alt="What survives an export cleanly, what needs a decision, and what cannot cross at all" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>Three tiers. The middle one is where apps quietly differ, and where you should be looking.</figcaption></figure>
       <h2 id="what-travels-intact">What travels intact</h2>
@@ -197,7 +197,7 @@
       <p>Cyanote stores notes as structured data in <a href="/blog/one-sqlite-file-the-whole-data-model/">one local SQLite file</a> and exports Markdown, because Markdown is the format most likely to outlive both of us. The structured storage is what makes the editor work; the export is what makes the storage acceptable. An app that stores something clever and cannot hand it back has just made your writing a hostage of its own cleverness.</p>
       <h2 id="do-it-before-you-are-annoyed">Do it before you are annoyed</h2>
       <p>The reason to run the test now is that the export button's quality is uncorrelated with everything else about an app. It is not a feature people compare, it is not in the marketing, and it gets attention roughly in proportion to how often the developer imagines you leaving.</p>
-      <p>So find out while you are happy. If the answer is good, you have lost fifteen minutes and gained the ability to stop worrying. If the answer is bad, you would rather know now than <a href="/blog/what-happens-when-your-notes-app-shuts-down/">on the morning the app announces it is shutting down</a> — and knowing now means the next app you try gets judged on the thing that actually determines whether you can ever leave it.</p>
+      <p>So find out while you are happy. If the answer is good, you have lost fifteen minutes and gained the ability to stop worrying. If the answer is bad, you would rather know now than <a href="/blog/what-happens-when-your-notes-app-shuts-down/">on the morning the app announces it is shutting down</a>, and knowing now means the next app you try gets judged on the thing that actually determines whether you can ever leave it.</p>
     </div>
   </article>
 

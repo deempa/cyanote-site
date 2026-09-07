@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Clipboard, macOS, How-to",
-  "wordCount": 1102
+  "wordCount": 1097
 }
 </script>
 <script type="application/ld+json">
@@ -165,7 +165,7 @@
     </header>
 
     <div class="post">
-      <p>The short answer is the one nobody wants: macOS has no clipboard history. There is no key combination that shows you the last ten things you copied, because the last ten things you copied no longer exist. The Mac clipboard holds one item — <a href="https://developer.apple.com/documentation/appkit/nspasteboard">the general pasteboard</a>, in Apple's own terms. Copy something else and the previous one is gone — not archived, not recoverable, gone.</p>
+      <p>The short answer is the one nobody wants: macOS has no clipboard history. There is no key combination that shows you the last ten things you copied, because the last ten things you copied no longer exist. The Mac clipboard holds one item — <a href="https://developer.apple.com/documentation/appkit/nspasteboard">the general pasteboard</a>, in Apple's own terms. Copy something else and the previous one is gone, not archived, not recoverable, gone.</p>
       <p>If you came here from Windows this is genuinely surprising. Windows has had <code>Win</code> + <code>V</code> since 2018, and it shows a scrollable list of recent copies. There is no macOS equivalent, and there never has been.</p>
       <p>What follows is what the system actually gives you, why the gap exists, and what to do about it.</p>
       <h2 id="does-macos-have-a-clipboard-history">Does macOS have a clipboard history?</h2>
@@ -173,7 +173,7 @@
       <h3 id="finder-s-clipboard-viewer">Finder's clipboard viewer</h3>
       <p>Open Finder, then <strong>Edit → Show Clipboard</strong>. A small window appears showing what is on the clipboard right now. That is the whole feature. It is a window onto the single current item, useful for checking whether a copy worked and useless for getting back anything older.</p>
       <h3 id="universal-clipboard">Universal Clipboard</h3>
-      <p>Copy on your Mac, paste on your iPhone. It is genuinely good and it is not history — it moves the one current item between your devices and expires it after a short while. There is no list, and nothing is stored.</p>
+      <p>Copy on your Mac, paste on your iPhone. It is genuinely good and it is not history. It moves the one current item between your devices and expires it after a short while. There is no list, and nothing is stored.</p>
       <h3 id="undo">Undo</h3>
       <p><code>Cmd</code> + <code>Z</code> will bring back text you deleted in a document. It has nothing to do with the clipboard and will not help you recover something you copied over.</p>
       <h2 id="why-the-gap-exists">Why the gap exists</h2>
@@ -191,19 +191,19 @@
       <h3 id="where-the-history-is-stored">Where the history is stored</h3>
       <p>This is the first question, not the last. A clipboard manager sees everything you copy. If it syncs that to a server, everything you copy is now on somebody else's computer. If it keeps the history in a local database on your own machine, it isn't. Both designs exist and the marketing rarely leads with which one you are getting.</p>
       <h3 id="whether-it-is-searchable">Whether it is searchable</h3>
-      <p>A list of the last few items is a convenience. A searchable history of everything is a different tool — you stop thinking of it as "undo for copying" and start using it as a place things can be found later.</p>
+      <p>A list of the last few items is a convenience. A searchable history of everything is a different tool. You stop thinking of it as "undo for copying" and start using it as a place things can be found later.</p>
       <h3 id="what-it-does-with-sensitive-copies">What it does with sensitive copies</h3>
       <p>Good behaviour: recognising when a password manager put something on the clipboard and declining to keep it. Also good: letting you delete an individual item, and clear the lot in one action.</p>
       <h3 id="pinned-items">Pinned items</h3>
       <p>The three snippets you paste constantly should not scroll away under a week of ordinary copying. Pinning is what turns a history into a set of shortcuts.</p>
       <h3 id="whether-it-holds-more-than-text">Whether it holds more than text</h3>
       <p>Images, files and colours all travel through the clipboard. A manager that keeps only text quietly drops the rest.</p>
-      <p>Disclosure, since this blog belongs to one: Cyanote keeps its clipboard history in a local database on your Mac, searchable, with pinning for the snippets you paste constantly. It is one of five things it does rather than the only one — which is either the point or the drawback, depending on what you came for.</p>
+      <p>Disclosure, since this blog belongs to one: Cyanote keeps its clipboard history in a local database on your Mac, searchable, with pinning for the snippets you paste constantly. It is one of five things it does rather than the only one, which is either the point or the drawback, depending on what you came for.</p>
       <p>If the subscription question is what is actually holding you up, that is <a href="/blog/clipboard-manager-mac-without-subscription/">its own decision</a>. And if you are weighing this against Paste specifically, <a href="/compare/paste-alternative/">the two are compared here</a>, prices included.</p>
       <h2 id="before-you-install-one">Before you install one</h2>
       <p>Two things I would do regardless of which tool you choose.</p>
       <p>Check what it wants access to. A clipboard manager needs to read the clipboard, and that is a reasonable thing for it to ask. It does not need an account, and it does not need to send anything anywhere. If it wants both, ask what for.</p>
-      <p>And decide what you want it to forget. The most useful setting in any clipboard manager is the one that stops it keeping the things you would rather it didn't — whether that is a password-manager exclusion, an app blocklist, or a history that expires.</p>
+      <p>And decide what you want it to forget. The most useful setting in any clipboard manager is the one that stops it keeping the things you would rather it didn't, whether that is a password-manager exclusion, an app blocklist, or a history that expires.</p>
       <p>The gap in macOS is real and it is not closing. But it is one of the few missing features where the fix is genuinely small, sits out of the way, and pays you back the first afternoon you use it.</p>
     </div>
   </article>

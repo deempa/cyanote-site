@@ -38,7 +38,7 @@
   "headline": "Porting to Windows from a Mac I can't run it on",
   "description": "Half the Windows work is code that cannot run on the machine writing it. What that changes, and the week a compile error had nowhere at all to surface.",
   "datePublished": "2026-08-23",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Windows, Development",
-  "wordCount": 1331
+  "wordCount": 1324
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-23" />
-<meta property="article:modified_time" content="2026-08-23" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Windows" />
@@ -164,30 +164,30 @@
 
     <div class="post">
       <p>Cyanote is written on a Mac. A Windows build exists, and every line of Windows-specific code in it was written on a machine that cannot execute it.</p>
-      <p>That is a normal situation for anyone shipping cross-platform software without a second desk, and it changes the work in ways I did not expect. Not "it is slower" — it is slower, obviously. It changes what you are allowed to believe, and where the verification has to live instead.</p>
+      <p>That is a normal situation for anyone shipping cross-platform software without a second desk, and it changes the work in ways I did not expect. Not "it is slower", which it obviously is. It changes what you are allowed to believe, and where the verification has to live instead.</p>
       <h2 id="the-compile-error-that-sat-for-a-week">The compile error that sat for a week</h2>
       <p>The clearest example is a <code>RunEvent::Opened</code> handler. That event is the Apple Event the Finder sends for <em>Open With</em>. The variant does not exist on Windows, so the Rust source did not compile there at all.</p>
       <p>Not "behaved differently". Did not compile. For a week.</p>
       <p>The reason it survived a week is the part worth telling. The same commit that introduced the handler had also set the bundle targets to a macOS-only value. So the Windows CI job dutifully built, produced no installer, found nothing to complain about, and reported success. The compile error underneath had nowhere to surface, because the job that would have hit it had been quietly configured to stop before it got there.</p>
-      <p>This is <a href="/blog/the-green-tick-that-meant-nothing/">the green tick that means nothing</a> in its purest form: a job that runs, passes, and exercises none of the thing it is named after. On a platform you can build locally you would have caught it in thirty seconds. On a platform you cannot, CI is not a safety net — it is your only eyes, and an eye that reports success while looking at nothing is worse than a blindfold, because you plan around it.</p>
+      <p>This is <a href="/blog/the-green-tick-that-meant-nothing/">the green tick that means nothing</a> in its purest form: a job that runs, passes, and exercises none of the thing it is named after. On a platform you can build locally you would have caught it in thirty seconds. On a platform you cannot, CI is not a safety net. It is your only eyes, and an eye that reports success while looking at nothing is worse than a blindfold, because you plan around it.</p>
       <figure><img src="/images/windows-from-a-mac.svg" alt="Writing platform code you cannot execute: what compiles, what CI can see, and the parts only a unit test can hold honest" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The middle column is where a week disappeared. A job that builds nothing cannot fail.</figcaption></figure>
       <h2 id="the-wrong-guess-repeated-in-four-places">The wrong guess, repeated in four places</h2>
       <p>The second one taught me something about how a mistaken assumption spreads.</p>
       <p>The Windows release build produced exactly what it should: an installer, and a signature file beside it. The verify step failed it anyway, for missing a <code>.nsis.zip</code> and its signature.</p>
-      <p>That pair is the Tauri v1 layout. Version 2 signs the installer itself, so the <code>.exe</code> <em>is</em> the update payload — there is no zip and there was never going to be one.</p>
-      <p>The interesting part is that the wrong guess appeared in four places: the verification step, the artifact upload, a flag in the script that writes the update manifest, and the build documentation. Not four independent mistakes. One assumption, made once, then copied by each subsequent piece of work that needed to know what the file was called — because each of those pieces was written by looking at the previous one, which is how anyone works.</p>
+      <p>That pair is the Tauri v1 layout. Version 2 signs the installer itself, so the <code>.exe</code> <em>is</em> the update payload. There is no zip and there was never going to be one.</p>
+      <p>The interesting part is that the wrong guess appeared in four places: the verification step, the artifact upload, a flag in the script that writes the update manifest, and the build documentation. Not four independent mistakes. One assumption, made once, then copied by each subsequent piece of work that needed to know what the file was called, because each of those pieces was written by looking at the previous one, which is how anyone works.</p>
       <p>If you cannot run the thing, every downstream step gets its facts from an upstream <em>description</em> of the thing rather than from the thing. Get the description wrong and it propagates at the speed of copy-paste, and no single site of the error looks wrong when you read it.</p>
       <p>The fix included a small durable improvement: on failure, the step now lists what the bundle directory actually contains. The next mismatch names itself instead of only saying what was absent. When you are working blind, an error that describes reality is worth ten that describe expectations.</p>
       <h2 id="where-verification-has-to-live-instead">Where verification has to live instead</h2>
       <p>If you cannot run the code, the checks have to be things a compiler or a test can do without a Windows machine.</p>
-      <p>The clearest case is clipboard privacy. Windows has its own convention for <a href="/blog/what-your-clipboard-should-not-remember/">marking a copied secret as not-for-recording</a> — two registered clipboard formats, one whose mere presence is the signal and one carrying a number where zero means keep it out.</p>
-      <p>None of that logic can be executed on a Mac. So the <em>rules</em> live in a separate module with the classification written as pure functions over the marks, and those functions are unit-tested. The tests cannot prove the formats are registered correctly on a real Windows machine. They can prove that, given a set of marks, the decision is the one intended — including the case that matters most, which is what happens when the marks cannot be read at all.</p>
+      <p>The clearest case is clipboard privacy. Windows has its own convention for <a href="/blog/what-your-clipboard-should-not-remember/">marking a copied secret as not-for-recording</a>: two registered clipboard formats, one whose mere presence is the signal and one carrying a number where zero means keep it out.</p>
+      <p>None of that logic can be executed on a Mac. So the <em>rules</em> live in a separate module with the classification written as pure functions over the marks, and those functions are unit-tested. The tests cannot prove the formats are registered correctly on a real Windows machine. They can prove that, given a set of marks, the decision is the one intended, including the case that matters most, which is what happens when the marks cannot be read at all.</p>
       <p>That case is fail-closed: anything unclassifiable counts as private and is dropped. Losing one clipboard entry costs a user one Ctrl+C. Storing one password they thought was protected costs them the password. When you cannot observe the running system, you choose the default that is wrong in the cheap direction.</p>
       <h2 id="the-transparency-that-could-never-be-seen">The transparency that could never be seen</h2>
       <p>Not everything was a bug. One was pure waste, and it is the kind you only find by reading.</p>
       <p>The main window was configured transparent, with Mica — Windows' backdrop material — layered on. Neither could ever be seen, because the app paints a fully opaque background outside macOS. Two visual effects, cancelled by a variable somewhere else, invisible in every screenshot anyone had ever taken.</p>
-      <p>The cost was not invisible. A transparent window puts the webview on a composited path, and Mica adds desktop compositor work on top. That is the likeliest reason animations felt less smooth on Windows than on macOS — a performance cost paid continuously for an appearance nobody could observe.</p>
-      <p>Two related discoveries came out of the same read. The configuration listed four window effects in sequence, and the framework applies only the first one it recognises — so two of the four were unreachable, and one of the others is a macOS material that means nothing on Windows. A list that looks like belt and braces can be a list where only the first item was ever running.</p>
+      <p>The cost was not invisible. A transparent window puts the webview on a composited path, and Mica adds desktop compositor work on top. That is the likeliest reason animations felt less smooth on Windows than on macOS: a performance cost paid continuously for an appearance nobody could observe.</p>
+      <p>Two related discoveries came out of the same read. The configuration listed four window effects in sequence, and the framework applies only the first one it recognises, so two of the four were unreachable, and one of the others is a macOS material that means nothing on Windows. A list that looks like belt and braces can be a list where only the first item was ever running.</p>
       <p>Two windows do stay transparent, deliberately. One of them is the fullscreen focus overlay, whose page background is transparent so that if the interface fails to render, the user is left with nothing covering their display rather than an opaque sheet they cannot get rid of. That is a failure mode worth designing for, and it is the reason "make every window opaque" was the wrong instruction and "make the main window opaque" was the right one.</p>
       <h2 id="what-i-would-tell-someone-starting-the-same-port">What I would tell someone starting the same port</h2>
       <p><strong>Make the platform job fail for the right reason.</strong> A build job that produces no artifact is not a check. Assert on the output — that a file exists, that it has a signature, that its name matches what the updater expects — because the compiler error you actually care about lives behind the step that got skipped.</p>

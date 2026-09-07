@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Backups, Local-first, How-to",
-  "wordCount": 1174
+  "wordCount": 1172
 }
 </script>
 <script type="application/ld+json">
@@ -171,7 +171,7 @@
       <p>Worth getting out of the way first, because it is the single most common mistake in this area, and it catches people who thought they were being careful.</p>
       <p>Sync propagates changes. That is its purpose and it is very good at it. Which means when you delete a note, sync faithfully deletes it everywhere, immediately. When a file is corrupted, sync distributes the corruption. When you paste over three paragraphs and quit, sync ensures all your devices agree on the wrong version.</p>
       <p>A backup is different in one specific way: it can give you back a state from <em>before</em> the thing you regret. If a system has no notion of "yesterday", it is not a backup, whatever it is called.</p>
-      <p>Cloud note apps blur this because most of them do keep version history, which is a backup — of the note contents, on their servers, subject to their retention policy. Useful. Just not the same thing as sync, and worth knowing which one you are relying on.</p>
+      <p>Cloud note apps blur this because most of them do keep version history, which is a backup, of the note contents, on their servers, subject to their retention policy. Useful. Just not the same thing as sync, and worth knowing which one you are relying on.</p>
       <h2 id="does-time-machine-back-up-my-notes">Does Time Machine back up my notes?</h2>
       <p>On a Mac, <a href="https://support.apple.com/guide/mac-help/back-up-your-files-with-time-machine-mh35860/mac">Time Machine</a> is most of the answer, and it is already built in.</p>
       <p>It keeps hourly snapshots for the last 24 hours, daily for the past month, and weekly beyond that, until the disk fills and it starts dropping the oldest. That's a real answer to "get me the version from before Tuesday". Turn it on, point it at an external disk, and the majority of this problem is solved by a single setting.</p>
@@ -181,7 +181,7 @@
       <h2 id="the-rule-worth-actually-following">The rule worth actually following</h2>
       <p>The 3-2-1 rule has survived decades because it is simple: <strong>three copies of anything you care about, on two different kinds of storage, one of them somewhere else.</strong></p>
       <p>For notes on a Mac that translates to something quite ordinary:</p>
-      <ol><li>The working copy on your Mac.</li><li>Time Machine on an external disk.</li><li>Something offsite — a cloud backup service, an encrypted copy in whatever cloud storage you already pay for, or a second drive you keep at work or a relative's house and swap occasionally.</li></ol>
+      <ol><li>The working copy on your Mac.</li><li>Time Machine on an external disk.</li><li>Something offsite: a cloud backup service, an encrypted copy in whatever cloud storage you already pay for, or a second drive you keep at work or a relative's house and swap occasionally.</li></ol>
       <p>The third one is the one people skip, and it is the one that covers the scenarios where you lose the building rather than the file.</p>
       <p>If the offsite copy goes to a cloud service and the whole point of keeping notes local was privacy, encrypt it before it leaves. Disk Utility can make an encrypted disk image; several backup tools will do it for you. An encrypted archive in someone else's cloud is a different proposition from your notes in someone else's app.</p>
       <h2 id="export-and-backup-are-not-the-same-thing">Export and backup are not the same thing</h2>
@@ -195,7 +195,7 @@
       <p>A backup you have never restored is not a backup. It is a hypothesis.</p>
       <p>The failure mode is boringly common: the drive was full, the job silently stopped months ago, the encryption password was never written down, the export was producing empty files the whole time. Every one of these is invisible until you need the thing, at which point it is also unfixable.</p>
       <p>The test does not need to be elaborate:</p>
-      <ul><li>Restore a single note from a week ago into a scratch location. Open it. Confirm it is the note.</li><li>Check the date of the most recent backup. If it surprises you, that is the finding.</li><li>Confirm you can actually get <em>in</em> — the recovery key, the encryption password, the account. Store them somewhere that is not the machine being backed up. A recovery key saved only in the notes app you are trying to recover is a joke you only get to hear once.</li></ul>
+      <ul><li>Restore a single note from a week ago into a scratch location. Open it. Confirm it is the note.</li><li>Check the date of the most recent backup. If it surprises you, that is the finding.</li><li>Confirm you can actually get <em>in</em>: the recovery key, the encryption password, the account. Store them somewhere that is not the machine being backed up. A recovery key saved only in the notes app you are trying to recover is a joke you only get to hear once.</li></ul>
       <p>Twice a year is plenty. I keep it on the calendar, because it is exactly the kind of task nothing will ever remind you to do.</p>
       <h2 id="the-short-version">The short version</h2>
       <p>Turn on Time Machine today; it is fifteen minutes and covers most of it. Add one offsite copy, encrypted if the contents are private. Run your app's export once so you know what it produces before you need it. And restore something, twice a year, so that you know.</p>

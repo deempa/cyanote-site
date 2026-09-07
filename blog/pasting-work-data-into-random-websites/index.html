@@ -38,7 +38,7 @@
   "headline": "The small text tools you keep pasting work data into",
   "description": "Everyone has a bookmark for a JSON formatter and a JWT decoder. Few of us think about where that paste goes. Here is the real risk, and the boring fix.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-08-17",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Tools, Privacy, Developers",
-  "wordCount": 1202
+  "wordCount": 1196
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-08-17" />
+<meta property="article:modified_time" content="2026-09-07" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Tools" />
 <meta property="article:tag" content="Privacy" />
@@ -164,10 +164,10 @@
 
     <div class="post">
       <p>You have a response body that is one long line and you need to read it. So you do what everyone does: search "json formatter", click the first result, paste, read.</p>
-      <p>I have done this a thousand times. Almost all of those times it was fine. The problem is that "almost all" is doing real work in that sentence, and the paste is never the thing you were paying attention to — you were debugging, the object was in the way, and the tool was a means of getting past it in four seconds.</p>
+      <p>I have done this a thousand times. Almost all of those times it was fine. The problem is that "almost all" is doing real work in that sentence, and the paste is never the thing you were paying attention to. You were debugging, the object was in the way, and the tool was a means of getting past it in four seconds.</p>
       <h2 id="what-you-are-actually-pasting">What you are actually pasting</h2>
       <p>Take an honest inventory of what tends to end up in those boxes.</p>
-      <p>A JSON response with a customer's email, address and order history in it. A JWT — which is to say, a live credential, decoded on a page whose only claim is that it does it in the browser. A stack trace containing internal hostnames and file paths. A config file with the connection string still in it. A CSV a colleague sent you. Someone's phone number, because you were checking a regex against real data rather than making one up.</p>
+      <p>A JSON response with a customer's email, address and order history in it. A JWT, which is to say a live credential, decoded on a page whose only claim is that it does it in the browser. A stack trace containing internal hostnames and file paths. A config file with the connection string still in it. A CSV a colleague sent you. Someone's phone number, because you were checking a regex against real data rather than making one up.</p>
       <p>Nobody sets out to paste a customer record into a stranger's website. It happens because the tool is a text box and the thing in your clipboard is what you happen to be debugging.</p>
       <figure><img src="/images/paste-into-a-website.svg" alt="The path a paste takes when the tool is a web page you found in a search result" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>Everything up to the paste is a decision you made. Everything after it is a decision someone else made.</figcaption></figure>
       <h2 id="it-all-happens-in-your-browser-and-the-three-ways-that-fails">"It all happens in your browser" — and the three ways that fails</h2>
@@ -182,16 +182,16 @@
       <h2 id="the-fix-is-boring">The fix is boring</h2>
       <p>Do the operation on your own machine.</p>
       <p>For a lot of these there is a command already installed. <code>jq .</code> formats and validates JSON. <code>base64 -d</code> decodes. <code>pbpaste | ...</code> reads the clipboard directly. If you live in a terminal, that is the whole answer and you can stop reading.</p>
-      <p>The reason people use websites anyway is not ignorance of <code>jq</code>. It is that the terminal version requires remembering the flag, and the website requires remembering nothing. For a four-second task, "remembering nothing" wins every time — which is a UI problem, not a security problem, and it is why telling people to just use the CLI has been failing for fifteen years.</p>
-      <p>The version that actually sticks is a local tool with a text box in it. Same shape as the website, same four seconds, same nothing-to-remember — but the text never leaves the machine, so there is no claim to verify.</p>
+      <p>The reason people use websites anyway is not ignorance of <code>jq</code>. It is that the terminal version requires remembering the flag, and the website requires remembering nothing. For a four-second task, "remembering nothing" wins every time. That is a UI problem, not a security problem, and it is why telling people to just use the CLI has been failing for fifteen years.</p>
+      <p>The version that actually sticks is a local tool with a text box in it. Same shape as the website, same four seconds, same nothing-to-remember, but the text never leaves the machine, so there is no claim to verify.</p>
       <h2 id="the-list-worth-having-locally">The list worth having locally</h2>
       <p>The tools that come up over and over, in roughly the order people reach for them:</p>
       <ul><li><strong>JSON format and validate.</strong> The single most-pasted thing on the internet.</li><li><strong>Base64 encode and decode.</strong> Often on something that came out of a header.</li><li><strong>JWT decode.</strong> The one that should worry you most, because a JWT is a bearer credential and pasting it is handing over the credential, not a description of it.</li><li><strong>URL encode and decode</strong>, and a <strong>URL inspector</strong> for pulling a query string apart.</li><li><strong>A regex tester.</strong> Where real data gets pasted more than anywhere else, because made-up test data never has the edge case in it.</li><li><strong>Text compare.</strong> Two versions of a config, side by side.</li><li><strong>Case and line operations</strong> — sort, dedupe, join, split, trim.</li><li><strong>Invisible-character stripping.</strong> The fix for text copied out of a PDF or a chat client that looks identical and breaks a comparison.</li><li><strong>A timestamp converter.</strong> Because nobody reads epoch seconds on sight.</li></ul>
       <p>That is nine things. None of them is hard. Collectively they account for a startling share of what gets typed into a search bar during a workday.</p>
       <h2 id="the-honest-version">The honest version</h2>
       <p>If you are formatting a JSON blob you generated yourself with no real data in it, a website is fine and the risk is genuinely zero. This is not an argument that those sites are dangerous; it is an argument that the <em>habit</em> is indiscriminate, and the habit does not check what is in the clipboard before it fires.</p>
-      <p>There are good local answers at every price. DevUtils and Boop are both well-liked Mac apps built for exactly this. If a dedicated one fits how you work, use it — this is a category where several people have done the job properly.</p>
-      <p>Cyanote has these on a Tools page, next to the notes: case and line operations, invisible-character stripping, text compare, Base64, URL and JWT encode and decode, JSON format and validate, a regex tester, a URL inspector and a timestamp converter. They are there because the paste usually happens two seconds after something got copied — which is also why the <a href="/blog/clipboard-history-on-mac/">clipboard history</a> sits in the same window. Nothing you type into them is sent anywhere, because the app has no server to send it to.</p>
+      <p>There are good local answers at every price. DevUtils and Boop are both well-liked Mac apps built for exactly this. If a dedicated one fits how you work, use it. This is a category where several people have done the job properly.</p>
+      <p>Cyanote has these on a Tools page, next to the notes: case and line operations, invisible-character stripping, text compare, Base64, URL and JWT encode and decode, JSON format and validate, a regex tester, a URL inspector and a timestamp converter. They are there because the paste usually happens two seconds after something got copied, which is also why the <a href="/blog/clipboard-history-on-mac/">clipboard history</a> sits in the same window. Nothing you type into them is sent anywhere, because the app has no server to send it to.</p>
     </div>
   </article>
 
