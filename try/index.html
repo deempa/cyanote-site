@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light" />
+<title>Try Cyanote — a demo you can click around</title>
+<meta name="description" content="A live demo of Cyanote's notes, today view, habits, calendar and clipboard manager, right in your browser. Nothing you type here is saved." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<link rel="canonical" href="https://cyanote.app/try/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="preload" href="https://cyanote.app/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="/try/demo.css" />
+<script>
+  // Same platform check the homepage and pricing page do, and for the same
+  // reason: the buy button below should never offer a Mac .dmg to a phone or a
+  // Windows machine. Inline because an external file would be a round trip
+  // before first paint. If it does not run, no class is set and the Mac layout
+  // stands — which is what the CSS falls back to anyway.
+  (function () {
+    var n = navigator, ua = n.userAgent, uad = n.userAgentData;
+    var platform = (uad && uad.platform) || n.platform || '';
+    var tablet = /iPad/.test(ua) || (/Mac/i.test(platform) && n.maxTouchPoints > 1);
+    var phone = (uad && uad.mobile === true) || /iPhone|iPod|Android/i.test(ua);
+    var plat = (phone || tablet) ? 'mobile'
+             : (/Win/i.test(platform) || /Windows/i.test(ua)) ? 'windows' : 'mac';
+    document.documentElement.classList.add('plat-' + plat);
+  })();
+</script>
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:url" content="https://cyanote.app/try/" />
+<meta property="og:title" content="Try Cyanote — a demo you can click around" />
+<meta property="og:description" content="A live demo of Cyanote's notes, today view, habits, calendar and clipboard manager. Nothing you type here is saved." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Try Cyanote — a demo you can click around" />
+<meta name="twitter:description" content="A live demo of Cyanote's notes, today view, habits, calendar and clipboard manager." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/pricing/">Pricing</a>
+    <a href="https://cyanote.app/blog/">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="#buy">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $4.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+
+<main id="main">
+  <header class="hero">
+    <div class="wrap">
+      <h1>Have a click around.</h1>
+      <p class="lede">This is Cyanote. Nothing you type here is saved — the real thing lives on your Mac.</p>
+
+      <!-- The app, drawn in HTML. Structure and geometry are taken from
+           website/images/note.webp, which is a capture of the real Cyanote
+           running the very seed this demo uses, and the palette is lifted
+           verbatim out of desktop/src/index.css. Anything in here that is
+           aria-hidden is a drawing rather than a control: it is in the picture
+           because the app has it, and it is not clickable because clicking it
+           would promise something this page cannot do. The live controls are
+           the three nav buttons, the note rows, the clipboard button and
+           Reset — every one of which goes somewhere. -->
+      <div class="demo-window" id="demo-root">
+        <div class="demo-titlebar">
+          <span class="demo-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="demo-title">Cyanote</span>
+          <span class="demo-pill">Demo — nothing is saved</span>
+          <button type="button" id="demo-reset" class="demo-reset">Reset</button>
+        </div>
+
+        <div class="demo-body">
+          <aside class="demo-sidebar" id="demo-sidebar">
+            <div class="demo-brand">
+              <span class="demo-mark" aria-hidden="true">{}</span>
+              <span class="demo-wordmark">Cyanote</span>
+              <span class="demo-collapse" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18m7.5-9-3 3 3 3"/></svg>
+              </span>
+            </div>
+
+            <div class="demo-search" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+              <span>Search notes…</span>
+            </div>
+
+            <div class="demo-actions" aria-hidden="true">
+              <span class="demo-act demo-act-primary">
+                <svg viewBox="0 0 24 24"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.4 2.6a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4Z"/></svg>
+                <span class="demo-act-label">New note</span>
+              </span>
+              <span class="demo-act demo-act-ghost">
+                <svg viewBox="0 0 24 24"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></svg>
+                <span class="demo-act-label">Code note</span>
+              </span>
+              <span class="demo-act demo-act-icon">
+                <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </div>
+
+            <!-- Three sections, not nine. The six this demo does not build are
+                 absent rather than greyed out: a nav item that does nothing
+                 when clicked is a dead end in the one place a visitor is most
+                 curious about what the app can do. -->
+            <nav class="demo-nav" aria-label="Cyanote sections">
+              <button type="button" class="demo-navitem" data-view="today" title="Today">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M4.9 8.9l1.4 1.4M2 18h2m16 0h2m-4.3-7.7 1.4-1.4M22 22H2M8 6l4-4 4 4M16 18a4 4 0 0 0-8 0"/></svg>
+                <span>Today</span>
+              </button>
+              <button type="button" class="demo-navitem" data-view="calendar" title="Calendar">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+                <span>Calendar</span>
+              </button>
+              <button type="button" class="demo-navitem" data-view="habits" title="Habits">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/></svg>
+                <span>Habits</span>
+              </button>
+            </nav>
+
+            <hr class="demo-divider" />
+
+            <div class="demo-scopes" aria-hidden="true">
+              <span class="demo-chip">
+                <svg viewBox="0 0 24 24"><path d="m12 2.5 9 4.8-9 4.8-9-4.8 9-4.8Z"/><path d="m3 12.3 9 4.8 9-4.8M3 16.9l9 4.8 9-4.8"/></svg>
+                All notes
+              </span>
+              <span class="demo-glyph demo-glyph-favorites">
+                <svg viewBox="0 0 24 24"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9L12 3Z"/></svg>
+              </span>
+              <span class="demo-glyph demo-glyph-recent">
+                <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.6-6.4M3 3.5V9h5.5M12 7.5V12l3 2"/></svg>
+              </span>
+              <span class="demo-glyph demo-glyph-sort">
+                <svg viewBox="0 0 24 24"><path d="M7 4v16m0 0-3-3m3 3 3-3M17 20V4m0 0-3 3m3-3 3 3"/></svg>
+              </span>
+              <span class="demo-glyph demo-glyph-tree">
+                <svg viewBox="0 0 24 24"><path d="m8 9 4-4 4 4M16 15l-4 4-4-4"/></svg>
+              </span>
+              <span class="demo-glyph demo-glyph-tree">
+                <svg viewBox="0 0 24 24"><path d="m8 5 4 4 4-4M16 19l-4-4-4 4"/></svg>
+              </span>
+            </div>
+
+            <!-- The note list. Seeded here with the same five notes demo-seed.js
+                 carries, so the shell is correct before any script runs; Task 4
+                 re-renders it from the store. -->
+            <ul class="demo-notelist">
+              <li><button type="button" class="demo-note" data-note="note-1" aria-current="true" title="Weekend in Lisbon"><span class="demo-note-icon" aria-hidden="true">✈️</span><span class="demo-note-title">Weekend in Lisbon</span></button></li>
+              <li><button type="button" class="demo-note" data-note="note-3" title="Flat inspection — what to fix"><span class="demo-note-icon" aria-hidden="true">🔧</span><span class="demo-note-title">Flat inspection — what to fix</span></button></li>
+              <li><button type="button" class="demo-note" data-note="note-4" title="Sarah's birthday"><span class="demo-note-icon" aria-hidden="true">🎁</span><span class="demo-note-title">Sarah's birthday</span></button></li>
+              <li><button type="button" class="demo-note" data-note="note-2" title="Reading list"><span class="demo-note-icon" aria-hidden="true">📚</span><span class="demo-note-title">Reading list</span></button></li>
+              <li><button type="button" class="demo-note" data-note="note-5" title="Things to do in the new place"><span class="demo-note-icon" aria-hidden="true">🏠</span><span class="demo-note-title">Things to do in the new place</span></button></li>
+            </ul>
+
+            <div class="demo-sidefoot">
+              <span class="demo-settings" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3m0 13v3M2.5 12h3m13 0h3M5.3 5.3l2.1 2.1m9.2 9.2 2.1 2.1m0-13.4-2.1 2.1m-9.2 9.2-2.1 2.1"/></svg>
+                Settings
+              </span>
+              <!-- The clipboard manager is a floating overlay in the real app,
+                   summoned by a global hotkey. A web page has no business
+                   claiming a hotkey *globally*, so it gets a button — and it
+                   sits down here with the chrome rather than in the nav,
+                   because it is not a section of the app. demo-clipboard.js
+                   adds `/` and Cmd/Ctrl+Shift+V on top, both of which stand
+                   down unless the focus is already inside this window. -->
+              <!-- aria-expanded is written by the overlay as it opens and
+                   closes; it starts here so the button is never a haspopup
+                   with no state. -->
+              <button type="button" id="demo-clip-open" class="demo-clip" title="Clipboard"
+                      aria-haspopup="dialog" aria-expanded="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8.5" y="2.5" width="7" height="4" rx="1"/><path d="M15.5 4.5H18a2 2 0 0 1 2 2V19a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2h2.5"/></svg>
+                <span class="demo-clip-label">Clipboard</span>
+              </button>
+              <span class="demo-moon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+              </span>
+            </div>
+          </aside>
+
+          <div class="demo-main">
+            <div class="demo-crumbbar">
+              <span class="demo-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></svg></span>
+              <span class="demo-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></svg></span>
+              <span class="demo-crumb" id="demo-crumb">Weekend in Lisbon</span>
+              <span class="demo-glyph demo-glyph-trash" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 6h17M9 6V4.2A1.2 1.2 0 0 1 10.2 3h3.6A1.2 1.2 0 0 1 15 4.2V6m3.5 0-.9 13.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8L5.5 6"/></svg></span>
+            </div>
+
+            <!-- Shown only when a note is open; demo.js toggles [hidden] and
+                 replaces this tab with a live one whose × is a real button.
+                 The cross below stays a drawing: with no module there is
+                 nothing for it to close, and a dead button is worse than a
+                 glyph that never claimed to be one. -->
+            <div class="demo-tabbar" id="demo-tabbar">
+              <span class="demo-tab">
+                <span class="demo-tab-icon" aria-hidden="true">✈️</span>
+                <span class="demo-tab-title">Weekend in Lisbon</span>
+                <span class="demo-tab-close" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
+              </span>
+            </div>
+
+            <!-- The pane a render replaces wholesale. What is in it now is the
+                 no-script state: the open note as flat markup, so the window is
+                 a window rather than an empty rectangle for a reader whose
+                 module never arrives, and so the blueprint grid behind it can
+                 be seen. -->
+            <div id="demo-pane" class="demo-pane" data-view="notes">
+              <div class="demo-sheet">
+                <p class="demo-sheet-icon" aria-hidden="true">✈️</p>
+                <h2 class="demo-sheet-title">Weekend in Lisbon</h2>
+                <p class="demo-sheet-body">Three days, no rush. <strong>Book the tram tickets before Friday</strong> — they sell out.</p>
+              </div>
+            </div>
+
+            <div class="demo-statusbar" id="demo-status">
+              <span class="demo-status-left">45 words · 234 chars · ~1 min read</span>
+              <span class="demo-status-right">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg>
+                Outline
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="buy" class="price" style="margin-top:34px">
+        <div class="amt">$4.99<span> once</span></div>
+        <div data-plat="mac">
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
+            <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+            <span class="btn-label">Download for Mac — $4.99</span></a>
+          <p class="fineprint">Secure checkout via Lemon Squeezy · macOS 12+ (Apple Silicon &amp; Intel), notarized by Apple</p>
+        </div>
+        <div data-plat="windows">
+          <a class="btn btn-ghost" href="mailto:support@cyanote.app?subject=Tell%20me%20when%20Cyanote%20for%20Windows%20is%20ready">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg>
+            <span class="btn-label">Tell me when Windows is ready</span></a>
+          <p class="fineprint">The Mac version is on sale now. When Windows ships, the same $4.99 covers it — nothing more to pay.</p>
+        </div>
+        <div data-plat="mobile">
+          <span class="btn btn-inert">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+            <span class="btn-label">Available on Mac only</span></span>
+          <p class="fineprint">Open this page on your Mac to buy — a licence key is no use without a Mac to run it on.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+</main>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/pricing/">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/compare/">Compare</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/pricing/">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Cyanote. All rights reserved.</span>
+  </div>
+</div></footer>
+<!-- The demo itself. A module, so it is deferred by definition and the DOM it
+     wires up is already parsed; nothing it does touches the rest of the page. -->
+<script type="module" src="/try/demo.js"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+</body>
+</html>

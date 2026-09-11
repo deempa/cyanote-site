@@ -253,5 +253,6 @@
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
 <script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
 <script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
 </body>
 </html>
