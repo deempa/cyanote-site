@@ -5016,8 +5016,9 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <p>An app that answers all four well is one you can leave, which is the only thing that makes staying a choice.</p>
 <h2 id="what-buy-once-has-to-include-to-mean-anything">What "buy once" has to include to mean anything</h2>
 <p>The one-time purchase has its own failure modes, and they are worth naming, because "pay once" on a pricing page can hide several different deals.</p>
-<h3 id="free-updates-not-just-free-patches">Free updates, not just free patches</h3>
-<p>The oldest trick in the category is selling version 1, then selling version 2 eighteen months later to the same people. That is a subscription with extra steps and worse communication. The version that means something is the one where updates keep coming and keep being included.</p>
+<h3 id="the-version-2-upsell">The version-2 upsell</h3>
+<p>The oldest trick in the category is selling version 1, then selling version 2 eighteen months later to the same people. That is a subscription with extra steps and worse communication.</p>
+<p>What protects you from it is not a sentence on a pricing page. "Free updates for life" costs nothing to write, and the developer who has thought hard about what it commits them to writes the identical words as the one who has not. Look for the changelog instead: a public release history, going back years, that people who bought early are plainly still receiving. That is evidence, and it is the only part of this you can check.</p>
 <h3 id="no-feature-gates">No feature gates</h3>
 <p>If the purchase unlocks the app but the interesting parts are separate purchases, you did not buy the app. Check whether the price on the page is the price of everything.</p>
 <h3 id="it-keeps-working-if-the-company-stops">It keeps working if the company stops</h3>
