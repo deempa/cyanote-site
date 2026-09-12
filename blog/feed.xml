@@ -46,7 +46,7 @@
 <p>If you need history across two Macs, neither Raycast's local history nor Cyanote solves that, and <a href="/compare/paste-alternative/">Paste's sync is the honest answer</a>.</p>
 <h2 id="the-honest-version">The honest version</h2>
 <p>Cyanote is not a launcher and is not trying to be. It will not replace Raycast, it has no extensions, no window management and no command palette for your whole system.</p>
-<p>What it has is the clipboard history sitting in the same window as your notes, to-dos, calendar and habits, held in <a href="/blog/where-your-notes-actually-live/">one file on your own Mac</a>, with no retention window and no account, for $4.99 once. A clip you want to keep becomes a note in the same app, which is the specific thing a launcher cannot do, not because it is worse, but because keeping things is not what a launcher is for.</p>
+<p>What it has is the clipboard history sitting in the same window as your notes, to-dos, calendar and habits, held in <a href="/blog/where-your-notes-actually-live/">one file on your own Mac</a>, with no retention window and no account, for $7.99 once. A clip you want to keep becomes a note in the same app, which is the specific thing a launcher cannot do, not because it is worse, but because keeping things is not what a launcher is for.</p>
 <p>Keep Raycast. It is excellent. The question is only whether your clipboard should be part of it.</p>]]></content:encoded>
       <category>Clipboard</category>
       <category>Buying advice</category>
@@ -89,7 +89,7 @@
 <p>If the natural-language parsing is what you love, note that it is imitable but rarely equalled. Todoist's is the best in the category, and <a href="/blog/typing-a-task-the-way-you-say-it/">typing a task the way you say it</a> is a feature worth being picky about.</p>
 <h2 id="the-honest-version">The honest version</h2>
 <p>Cyanote's to-dos are not better than Todoist's. There is no sharing, no mobile app, no sync, no API, no integrations, and the reporting is nothing like as rich.</p>
-<p>What is different is where they sit. To-dos with priorities, due dates, reminders and a Kanban board, in the same window as your notes, calendar, habits, routines and clipboard history, with no project cap, no filter cap and no account, in <a href="/blog/where-your-notes-actually-live/">one file on your own Mac</a>, for $4.99 once.</p>
+<p>What is different is where they sit. To-dos with priorities, due dates, reminders and a Kanban board, in the same window as your notes, calendar, habits, routines and clipboard history, with no project cap, no filter cap and no account, in <a href="/blog/where-your-notes-actually-live/">one file on your own Mac</a>, for $7.99 once.</p>
 <p>Against $60 a year that is a fourteen-month payback on price alone, but price alone is the wrong reason to switch a task manager. The right reason is that the tasks and the notes about the tasks stop being in different applications. If you have never felt that friction, Todoist is the better product and you should keep it.</p>]]></content:encoded>
       <category>Tasks</category>
       <category>Buying advice</category>
@@ -131,7 +131,7 @@
 <p>If you are already paying for Microsoft 365 for Office, you are not saving money by leaving, and the storage complaint does not apply to you.</p>
 <h2 id="the-honest-version">The honest version</h2>
 <p>Cyanote is a Mac-only app with no handwriting, no free-form canvas, no sharing, no phone app and no sync. On raw capability against OneNote it loses several arguments outright, and the ink one is not arguable at all.</p>
-<p>What it offers is the thing OneNote on a Mac is not: an app built for this platform, that opens instantly, works with the wifi off, and puts notes, to-dos, a board, a calendar, habits and a system-wide clipboard in one window backed by <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file on your own disk</a>, with no account and no storage tier, for $4.99 once.</p>
+<p>What it offers is the thing OneNote on a Mac is not: an app built for this platform, that opens instantly, works with the wifi off, and puts notes, to-dos, a board, a calendar, habits and a system-wide clipboard in one window backed by <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file on your own disk</a>, with no account and no storage tier, for $7.99 once.</p>
 <p>If your complaint about OneNote is the feature list, staying is correct. If your complaint is that it never felt like a Mac app, that is the complaint this answers.</p>]]></content:encoded>
       <category>Notes</category>
       <category>Buying advice</category>
@@ -176,7 +176,7 @@
 <p><strong>Attachments live in the vault.</strong> Check where your plugin config put them before you copy folders around.</p>
 <h2 id="the-honest-version">The honest version</h2>
 <p>Cyanote does not compete with Obsidian on Obsidian's own ground and would lose if it tried. There are no plugins, no graph view, no backlinks panel, no mobile app, no Windows build on sale, and your notes are in a SQLite database rather than a folder of files — <a href="/blog/three-ways-to-leave-and-one-way-back/">exportable, but not editable in place</a>.</p>
-<p>What it is: notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard in one Mac app, finished, with nothing to install, for $4.99 once and no account. If the vault has become a hobby you did not sign up for, that is the trade on offer. If the vault is the point, stay. You are already using the best thing there is.</p>]]></content:encoded>
+<p>What it is: notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard in one Mac app, finished, with nothing to install, for $7.99 once and no account. If the vault has become a hobby you did not sign up for, that is the trade on offer. If the vault is the point, stay. You are already using the best thing there is.</p>]]></content:encoded>
       <category>Notes</category>
       <category>Buying advice</category>
       <category>Local-first</category>
@@ -208,12 +208,12 @@
 <p><strong>Your pins do.</strong> Manually, and it takes five minutes. Open Maccy, look at what you pinned, and write those down. That list is the only thing you genuinely lose, and it is usually shorter than you expect — <a href="/blog/the-snippets-you-paste-every-week/">the snippets you actually paste every week</a> are rarely more than a dozen.</p>
 <p><strong>Two clipboard managers running at once is a bad afternoon.</strong> They both poll the pasteboard, they both pop up on hotkeys that will collide, and the second one will capture what the first one just captured. Pick one, quit the other properly, and remove it from login items before you judge the replacement.</p>
 <h2 id="who-should-not-switch">Who should not switch</h2>
-<p>If you want a clipboard manager and nothing else, stay. Free beats $4.99, and paying for a bundle whose other four parts you will not open is a worse deal than paying nothing.</p>
+<p>If you want a clipboard manager and nothing else, stay. Free beats $7.99, and paying for a bundle whose other four parts you will not open is a worse deal than paying nothing.</p>
 <p>If you need the history on two machines, neither Maccy nor Cyanote helps you, and this is the case where Paste's subscription is honestly earning its money. <a href="/compare/paste-alternative/">The longer comparison is here</a>.</p>
 <p>If you are on macOS 13 or earlier and Maccy will not run, the answer is an older build or a different app, not necessarily a paid one.</p>
 <h2 id="the-honest-version">The honest version</h2>
 <p>Cyanote's argument is not that it is a better clipboard manager than Maccy. On the narrow job, they are close enough that the difference is taste, and Maccy costs nothing.</p>
-<p>The argument is that the clipboard sits in the same window as your notes, to-dos, calendar and habits, in <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file on your own Mac</a>, with no account, for $4.99 once. A clip becomes a note without crossing an app boundary, and the four things you were running separately become one thing you were going to open anyway.</p>
+<p>The argument is that the clipboard sits in the same window as your notes, to-dos, calendar and habits, in <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file on your own Mac</a>, with no account, for $7.99 once. A clip becomes a note without crossing an app boundary, and the four things you were running separately become one thing you were going to open anyway.</p>
 <p>If that describes the friction you actually feel, it is worth the price. If it does not, Maccy is free, it is good, and there is no reason to change.</p>]]></content:encoded>
       <category>Clipboard</category>
       <category>Buying advice</category>
@@ -252,7 +252,7 @@
 <p>If your notes are genuinely short, shared with family, and mostly shopping lists, Keep is the right tool and free is the right price.</p>
 <h2 id="the-honest-version">The honest version</h2>
 <p>Cyanote is a Mac app with no web version, no phone app, no sync and no sharing. Against Keep's everywhere-and-free, that is a straightforwardly worse deal on availability, and I am not going to argue otherwise.</p>
-<p>The trade is what happens on the Mac. A real window with a global capture hotkey, notes that can hold headings, tables, code and images, to-dos and a calendar and habits in the same place, full-text search across all of it, <a href="/blog/where-your-notes-actually-live/">one file on your own disk</a>, no account, $4.99 once.</p>
+<p>The trade is what happens on the Mac. A real window with a global capture hotkey, notes that can hold headings, tables, code and images, to-dos and a calendar and habits in the same place, full-text search across all of it, <a href="/blog/where-your-notes-actually-live/">one file on your own disk</a>, no account, $7.99 once.</p>
 <p>If Keep is where your quick captures live and something else holds everything that matters, this is the app for the second half. If Keep is genuinely all you need, you already have the answer and it costs nothing.</p>]]></content:encoded>
       <category>Notes</category>
       <category>Privacy</category>
@@ -293,7 +293,7 @@
 <p>If the visual quality of the finished document is the reason you use it, stay. Nothing local looks like Craft, and I would rather say that here than have you discover it in week two.</p>
 <h2 id="the-honest-version">The honest version</h2>
 <p>Cyanote is a smaller thing than Craft on purpose. No sharing, no collaboration, no web version, no phone app, no AI credits, and documents that look like working notes rather than published pages.</p>
-<p>What it has: notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard in one Mac window, with no block limit, no storage limit and no account, in <a href="/blog/where-your-notes-actually-live/">a single file on your own disk</a>, for $4.99 once.</p>
+<p>What it has: notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard in one Mac window, with no block limit, no storage limit and no account, in <a href="/blog/where-your-notes-actually-live/">a single file on your own disk</a>, for $7.99 once.</p>
 <p>The trade is publishable against unlimited-and-private. If you were near the block ceiling and the sharing was never the reason you were there, that trade is probably the right way round.</p>]]></content:encoded>
       <category>Notes</category>
       <category>Buying advice</category>
@@ -334,7 +334,7 @@
 <p>If the typography is why you use it — and for some people it genuinely is — nothing else on the Mac looks like Bear, and I am not going to pretend otherwise.</p>
 <h2 id="the-honest-version">The honest version</h2>
 <p>Cyanote is a worse-looking notes app than Bear. It has no iOS app, no iCloud sync, no themes worth boasting about, and if writing in a beautiful window is the point, this is a downgrade.</p>
-<p>What it does instead is put notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard manager in one window on one Mac, in <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file you own</a>, with no account, for $4.99 once. Against Bear Pro at $29.99 a year, that pays for itself in about two months, but only if you were paying for sync you were not using.</p>
+<p>What it does instead is put notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard manager in one window on one Mac, in <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file you own</a>, with no account, for $7.99 once. Against Bear Pro at $29.99 a year, that pays for itself in about two months, but only if you were paying for sync you were not using.</p>
 <p>If you were using the sync, the comparison is not about money and this is the wrong app for you.</p>]]></content:encoded>
       <category>Notes</category>
       <category>Buying advice</category>
@@ -1384,8 +1384,8 @@ sql=&lt;byte length&gt;:&lt;text&gt;</code></pre>
 <h2 id="sync">Sync</h2>
 <p>The most requested, by a distance, and the one I am most confident about.</p>
 <p>Sync is not a feature you add. It is a distributed systems problem you adopt. The moment two machines can both edit a note, you own conflict resolution, offline queues, partial failures, clock skew, and a class of bug where the wrong version wins and someone's afternoon disappears. Ask anyone who has shipped it. The demo is a weekend; the correctness is years.</p>
-<p>And it needs a server, permanently, per user. Go back to <a href="/blog/the-arithmetic-of-a-ten-dollar-app/">the arithmetic of a $4.99 app</a>: a one-time payment against a recurring per-user cost has exactly one ending, and it is a subscription announcement dressed up as a "sustainability update".</p>
-<p>So the no here is not "sync is hard". It is: a synced Cyanote could not be a $4.99 app you buy once, and if I have to choose between those two things, the pricing is the part people cannot get elsewhere.</p>
+<p>And it needs a server, permanently, per user. Go back to <a href="/blog/the-arithmetic-of-a-ten-dollar-app/">the arithmetic of a $7.99 app</a>: a one-time payment against a recurring per-user cost has exactly one ending, and it is a subscription announcement dressed up as a "sustainability update".</p>
+<p>So the no here is not "sync is hard". It is: a synced Cyanote could not be a $7.99 app you buy once, and if I have to choose between those two things, the pricing is the part people cannot get elsewhere.</p>
 <p>What exists instead: the database is a single file, and Settings will put it wherever you like, including a folder that Dropbox or iCloud Drive already syncs. That works if you are careful about not running both Macs at once, and I say so plainly rather than pretending it is a feature. <a href="/blog/two-macs-one-system/">Two Macs, one system</a> is the honest guide to the trade-offs.</p>
 <h2 id="an-iphone-app">An iPhone app</h2>
 <p>The second most requested, and the answer is arithmetic again, of a different kind.</p>
@@ -1413,50 +1413,50 @@ sql=&lt;byte length&gt;:&lt;text&gt;</code></pre>
 <p>The replacement is worse and slower: people email me. That is a biased sample, it is a fraction of a percent of users, and it is what I have. <a href="/blog/supporting-an-app-that-does-not-know-who-you-are/">Support for an app with no accounts</a> covers what that is actually like.</p>
 <h2 id="what-the-noes-cost">What the noes cost</h2>
 <p>Every one of these loses sales. Sync and mobile lose the most, and they lose them silently. People read the page, see what is missing, and close the tab, and I never learn their names.</p>
-<p>What is left is an app that opens instantly, works with the wifi off, keeps everything in <a href="/blog/where-your-notes-actually-live/">one file you can copy to a USB stick</a>, and costs $4.99 once. Those four properties are downstream of the six noes. Add sync and you lose the price. Add AI and you lose the privacy. Add plugins and you lose the ability to fix things quickly.</p>
+<p>What is left is an app that opens instantly, works with the wifi off, keeps everything in <a href="/blog/where-your-notes-actually-live/">one file you can copy to a USB stick</a>, and costs $7.99 once. Those four properties are downstream of the six noes. Add sync and you lose the price. Add AI and you lose the privacy. Add plugins and you lose the ability to fix things quickly.</p>
 <p>I would rather be exactly right for a smaller number of people than approximately right for everyone. That is a real position with real costs, and this is the list of them.</p>]]></content:encoded>
       <category>Builder&#x27;s log</category>
       <category>Design</category>
       <category>Local-first</category>
     </item>
     <item>
-      <title>The arithmetic of a $4.99 app</title>
+      <title>The arithmetic of a $7.99 app</title>
       <link>https://cyanote.app/blog/the-arithmetic-of-a-ten-dollar-app/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/the-arithmetic-of-a-ten-dollar-app/</guid>
       <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
-      <description>Apple takes $99 a year before a single copy sells. Here is what the $4.99 actually has to pay for, and the obligation that starts the moment someone buys.</description>
+      <description>Apple takes $99 a year before a single copy sells. Here is what the $7.99 actually has to pay for, and the obligation that starts the moment someone buys.</description>
       <content:encoded><![CDATA[<p>Apple charges $99 a year for the right to sign software that opens without a warning on someone else's Mac. That bill arrives whether I sell nothing or sell ten thousand copies, and it arrived before Cyanote had a name.</p>
-<p>At $4.99 a copy, with the payment processor's cut taken out, that is twenty-four sales a year to stand still.</p>
+<p>At $7.99 a copy, with the payment processor's cut taken out, that is fourteen sales a year to stand still.</p>
 <p>I want to lay out the rest of the numbers, because "one-time purchase" gets discussed almost entirely from the buyer's side — as a nicer line on a bank statement — and almost never as the constraint it puts on the person on the other end. The constraint is the interesting part. It shapes what the app is allowed to be.</p>
-<h2 id="where-the-4-99-goes">Where the $4.99 goes</h2>
-<p>Take one sale. Lemon Squeezy is the merchant of record, which means they handle sales tax in every jurisdiction that wants some, and they charge 5% plus 50¢ for the service. On a $4.99 sale that is 75¢, so $4.24 lands.</p>
+<h2 id="where-the-7-99-goes">Where the $7.99 goes</h2>
+<p>Take one sale. Lemon Squeezy is the merchant of record, which means they handle sales tax in every jurisdiction that wants some, and they charge 5% plus 50¢ for the service. On a $7.99 sale that is 90¢, so $7.09 lands.</p>
 <p>Against that, the recurring costs:</p>
 <p><strong>Apple Developer Program, $99/year.</strong> Not optional. Without it there is no Developer ID certificate, which means no notarisation, which means every buyer meets <a href="/blog/macos-cannot-verify-this-app/">the warning that macOS cannot verify the app</a> and a meaningful share of them stop right there.</p>
 <p><strong>A domain, about $12/year.</strong> Boring, unavoidable.</p>
 <p><strong>Hosting, near zero.</strong> The site is static and sits on GitHub Pages. The update payload goes to a Cloudflare R2 bucket, which is free until a level of traffic I would be delighted to reach.</p>
-<p>So the floor is roughly $111 a year, or about twenty-seven copies. That is the whole cash side. It is small enough that I could pay it out of pocket forever and never notice, which tells you immediately that money is not the real cost here.</p>
+<p>So the floor is roughly $111 a year, or about sixteen copies. That is the whole cash side. It is small enough that I could pay it out of pocket forever and never notice, which tells you immediately that money is not the real cost here.</p>
 <h2 id="the-obligation-the-buyer-never-sees">The obligation the buyer never sees</h2>
-<p>The moment someone pays $4.99, they get free updates for life. That is on the pricing page, and I meant it when I wrote it.</p>
-<p>Now count what "life" contains. macOS ships a major version every autumn. Each one has, historically, been able to break something: a permission prompt that used to appear once and now appears every launch, a window behaviour that changes, a system API that gets deprecated with two years' notice. None of that generates a single new sale. All of it has to be fixed, for people who paid once, three years ago, and are entirely right to expect the app to keep opening.</p>
+<p>The pricing page used to say "free updates for life". It now says nothing about updates at all — no term, no number, not a carefully worded version of the same sentence. I took the line down rather than reword it, because a pricing page is a poor place to write a cheque that some future autumn has to cash, and the rest of this section is why.</p>
+<p>macOS ships a major version every autumn. Each one has, historically, been able to break something: a permission prompt that used to appear once and now appears every launch, a window behaviour that changes, a system API that gets deprecated with two years' notice. None of that generates a single new sale. All of it has to be fixed, for people who paid once, three years ago, and are entirely right to expect the app to keep opening.</p>
 <p>The surface that has to survive those autumns is about 36,000 lines of TypeScript and 3,500 lines of Rust, sitting on a webview that Apple ships and I do not control.</p>
 <p>This is the honest asymmetry of buy-once software, and the reason so many good apps drifted to subscriptions: revenue is a spike at launch and a long tail after, while the maintenance is flat forever. Anyone who tells you the model is simply better for everyone is selling you something. It is better for the buyer, plainly. For the developer it is a bet that enough new people keep arriving to fund work that existing customers have already paid for.</p>
-<figure><img src="/images/ten-dollar-math.svg" alt="One $4.99 sale against the fixed yearly costs: $4.24 net, $111 a year in floor costs, and the maintenance that the price does not scale with" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The cash side is small. The obligation is the part with no ceiling.</figcaption></figure>
+<figure><img src="/images/ten-dollar-math.svg" alt="One $7.99 sale against the fixed yearly costs: $7.09 net, $111 a year in floor costs, and the maintenance that the price does not scale with" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>The cash side is small. The obligation is the part with no ceiling.</figcaption></figure>
 <h2 id="what-the-price-makes-impossible">What the price makes impossible</h2>
 <p>Here is where the arithmetic stops being accounting and starts being product design.</p>
-<p>$4.99 once cannot fund a server. Not a sync server, not an account system, not a licence server that phones home on every launch. Run the numbers on any of those and you get a per-user, per-month cost against a one-time payment that was already spent, the classic way a buy-once app becomes insolvent about eighteen months in, quietly degrades, and then announces a subscription.</p>
+<p>$7.99 once cannot fund a server. Not a sync server, not an account system, not a licence server that phones home on every launch. Run the numbers on any of those and you get a per-user, per-month cost against a one-time payment that was already spent, the classic way a buy-once app becomes insolvent about eighteen months in, quietly degrades, and then announces a subscription.</p>
 <p>So the architecture had to make servers unnecessary rather than cheap. Everything lives in <a href="/blog/one-sqlite-file-the-whole-data-model/">one SQLite file on your own disk</a>. There is no account because there is nothing for an account to sign into. The licence key is checked once, on first launch, and never again — <a href="/blog/supporting-an-app-that-does-not-know-who-you-are/">which creates its own support problems</a>, and I would rather have those than the alternative.</p>
-<p>I did not arrive at local-first from an ideology about data ownership, though I have since acquired one. I arrived at it because it is the only shape that a $4.99 payment can actually sustain. <a href="/blog/what-local-first-means-for-your-notes/">What local-first means for your notes</a> is the buyer-facing version of that argument; this is the ledger underneath it.</p>
-<p>$4.99 also cannot fund a support team, which is why the app tries hard to explain itself in place. A paste that cannot happen <a href="/blog/why-a-mac-app-asks-for-accessibility/">says what permission is missing</a> rather than failing silently and generating an email.</p>
+<p>I did not arrive at local-first from an ideology about data ownership, though I have since acquired one. I arrived at it because it is the only shape that a $7.99 payment can actually sustain. <a href="/blog/what-local-first-means-for-your-notes/">What local-first means for your notes</a> is the buyer-facing version of that argument; this is the ledger underneath it.</p>
+<p>$7.99 also cannot fund a support team, which is why the app tries hard to explain itself in place. A paste that cannot happen <a href="/blog/why-a-mac-app-asks-for-accessibility/">says what permission is missing</a> rather than failing silently and generating an email.</p>
 <h2 id="the-refund-line">The refund line</h2>
 <p>14 days, no reason required, no proof of uninstall.</p>
-<p>The received wisdom is that a no-questions refund policy on a cheap product invites abuse. Maybe. What it definitely does is remove the reason a person hesitates at a checkout for a $4.99 app from a developer they have never heard of, with no free trial, that they cannot try before buying. That hesitation costs far more than the refunds will.</p>
+<p>The received wisdom is that a no-questions refund policy on a cheap product invites abuse. Maybe. What it definitely does is remove the reason a person hesitates at a checkout for a $7.99 app from a developer they have never heard of, with no free trial, that they cannot try before buying. That hesitation costs far more than the refunds will.</p>
 <p>There is also a version of this that is just self-interest: a refund tells me something. A stream of them clustered around one feature is the most direct signal I will ever get, given that there is no telemetry in the app and I have deliberately given up every other way of knowing what people do inside it.</p>
 <h2 id="what-i-would-tell-someone-pricing-their-own">What I would tell someone pricing their own</h2>
 <p>Three things, learned mostly by doing them in the wrong order.</p>
-<p><strong>Price the maintenance, not the build.</strong> The build is finite and mostly already spent by the time you have a price. The maintenance runs until you stop, and the price is the only thing funding it. $4.99 is defensible for Cyanote because the app has no per-user running cost. If yours does, $4.99 is a slow way to lose money and no amount of goodwill fixes that.</p>
-<p><strong>Make the promise you can keep, and write it down narrowly.</strong> "Free updates for life" is a promise about updates to this app on this platform. It is not a promise that every future thing I build is free, and the pricing page says so in plain words. Vague generosity at the point of sale becomes a bitter argument in year three.</p>
+<p><strong>Price the maintenance, not the build.</strong> The build is finite and mostly already spent by the time you have a price. The maintenance runs until you stop, and the price is the only thing funding it. $7.99 is defensible for Cyanote because the app has no per-user running cost. If yours does, $7.99 is a slow way to lose money and no amount of goodwill fixes that.</p>
+<p><strong>Do not promise what you cannot price.</strong> I put "free updates for life" on a pricing page before I had shipped a single autumn's worth of compatibility work, which means I priced a commitment I had never once paid for. It is off the page now. What the money buys is stated in the present tense and the sentence stops there, because vague generosity at the point of sale becomes a bitter argument in year three.</p>
 <p><strong>Do not pretend the model has no downside.</strong> The <a href="/blog/what-ten-dollars-once-buys/">thing a one-time price genuinely buys</a> is real and worth having — no renewal date, nothing taken away for lapsing, an app that still opens if I disappear. The thing it cannot promise is an infinite runway. Anyone who has watched a beloved buy-once app go quiet knows the failure mode, and pretending otherwise on a pricing page insults the reader.</p>
-<p>The arithmetic is not comfortable and it is not a secret. Twenty-four sales a year covers Apple. Everything after that funds the autumn when macOS changes something and a few thousand people who paid once, years ago, expect their notes to open exactly as they did the day before.</p>]]></content:encoded>
+<p>The arithmetic is not comfortable and it is not a secret. Fourteen sales a year covers Apple. Everything after that funds the autumn when macOS changes something and a few thousand people who paid once, years ago, expect their notes to open exactly as they did the day before.</p>]]></content:encoded>
       <category>Builder&#x27;s log</category>
       <category>Pricing</category>
       <category>One-time purchase</category>
@@ -1541,7 +1541,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <h2 id="windows-in-comparison">Windows, in comparison</h2>
 <p>The Windows build exists, and is not on sale, and one reason is that the equivalent process there is worse in an instructive way.</p>
 <p>Authenticode signing has no $99 flat rate. It is a certificate from a commercial authority, priced per year, with identity validation attached, and until recently the norm was a physical hardware token that someone posts to you, which makes automated CI signing an interesting problem involving a USB device plugged into something. Cloud signing services have improved this a great deal. It is still several times the friction of Apple's process, and Apple's process involves a mandatory malware scan by a company that can revoke your identity.</p>
-<p>I say that as someone who complains about Gatekeeper regularly. Having now done both, $99 and a stapled ticket is the better arrangement, and the <a href="/pricing/">same $4.99 licence will cover Windows</a> when it ships.</p>]]></content:encoded>
+<p>I say that as someone who complains about Gatekeeper regularly. Having now done both, $99 and a stapled ticket is the better arrangement, and the <a href="/pricing/">same $7.99 licence will cover Windows</a> when it ships.</p>]]></content:encoded>
       <category>Builder&#x27;s log</category>
       <category>macOS</category>
       <category>Security</category>
@@ -1955,7 +1955,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <p><strong>Run the four-second test on the new one</strong> before you commit: turn the wifi off and see <a href="/blog/what-still-works-with-the-wifi-off/">what still works</a>.</p>
 <h2 id="the-honest-version">The honest version</h2>
 <p>Most people reading this should stay on Apple Notes, and I would rather say that than sell you something. The four reasons above are narrow on purpose: exit cost, the sensitivity of what you write, editors that do not fit the shape of it, and a week that is more than notes.</p>
-<p>Cyanote answers the last three and the first: a block editor with code blocks and syntax highlighting, notes that nest into sub-pages, typography set per note, tasks and a board and a calendar and habits and a clipboard history in the same window, everything in one SQLite database on your own Mac with no account, and a one-file JSON export of the whole collection whenever you want it. It has no iPhone app, no collaboration and no share sheet, and it costs $4.99 once where Notes costs nothing. Those are the actual terms of the trade.</p>]]></content:encoded>
+<p>Cyanote answers the last three and the first: a block editor with code blocks and syntax highlighting, notes that nest into sub-pages, typography set per note, tasks and a board and a calendar and habits and a clipboard history in the same window, everything in one SQLite database on your own Mac with no account, and a one-file JSON export of the whole collection whenever you want it. It has no iPhone app, no collaboration and no share sheet, and it costs $7.99 once where Notes costs nothing. Those are the actual terms of the trade.</p>]]></content:encoded>
       <category>Buying advice</category>
       <category>macOS</category>
       <category>Notes</category>
@@ -4427,7 +4427,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <h2 id="the-honest-version">The honest version</h2>
 <p>If your working day is entirely one mode, this is not a problem you have. A writer with no snippets and an engineer who never writes anything down are both well served by one good app and no thought about it at all.</p>
 <p>The switching cost is worth attention when the two are genuinely interleaved — when the document you are writing is about a system, and half of what makes it useful is text that has to be exact.</p>
-<p>Cyanote holds both kinds in one window, on one Mac, in <a href="/blog/what-local-first-means-for-your-notes/">one local database</a>, for $4.99 once. It has no sync and no mobile app, so if the runbook needs to be readable from a phone at 3am, this is the wrong tool and you should know that before you pay rather than after.</p>]]></content:encoded>
+<p>Cyanote holds both kinds in one window, on one Mac, in <a href="/blog/what-local-first-means-for-your-notes/">one local database</a>, for $7.99 once. It has no sync and no mobile app, so if the runbook needs to be readable from a phone at 3am, this is the wrong tool and you should know that before you pay rather than after.</p>]]></content:encoded>
       <category>Workflow</category>
       <category>Focus</category>
       <category>Method</category>
@@ -4550,7 +4550,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <p>And if you work on more than one machine, stop here. Cyanote keeps everything in one SQLite database on one disk and has no sync of any kind, which for anyone moving between a laptop and a desktop is disqualifying on its own. Not a caveat, a disqualification.</p>
 <h2 id="the-honest-version">The honest version</h2>
 <p>The case for one app is narrow and specific. It applies when you keep prose and you keep snippets, when the two constantly refer to each other, and when you are tired of paying a context switch to move six inches between them.</p>
-<p>Cyanote sits on that side: notes and code notes in one window, one local database, one search box, <a href="/blog/notes-app-without-an-account/">no account and no server</a>, for $4.99 once. If the fiddling itself is what you enjoy, <a href="/blog/customising-a-notes-app/">what is actually worth customising</a> covers the settings that change how the text reads rather than how it looks, and <a href="/blog/writing-and-code-two-modes/">two kinds of attention</a> is about arranging the work rather than the app. And if what you want is Notion with fewer moving parts, the <a href="/compare/notion-alternative/">comparison page</a> is the more useful thing to read next.</p>]]></content:encoded>
+<p>Cyanote sits on that side: notes and code notes in one window, one local database, one search box, <a href="/blog/notes-app-without-an-account/">no account and no server</a>, for $7.99 once. If the fiddling itself is what you enjoy, <a href="/blog/customising-a-notes-app/">what is actually worth customising</a> covers the settings that change how the text reads rather than how it looks, and <a href="/blog/writing-and-code-two-modes/">two kinds of attention</a> is about arranging the work rather than the app. And if what you want is Notion with fewer moving parts, the <a href="/compare/notion-alternative/">comparison page</a> is the more useful thing to read next.</p>]]></content:encoded>
       <category>Notes</category>
       <category>Code</category>
       <category>Workflow</category>
@@ -4639,7 +4639,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <p>If you are undecided, use the default. It was chosen by someone who had to make it work for everybody, which is a decent proxy for making it work for you.</p>
 <p>Change the size if the text is too small. Change the line spacing if you lose your place. Change the theme if the room is dark. Those are responses to an actual complaint, and a setting changed in response to a complaint almost always sticks. A setting changed out of curiosity almost always gets changed again next month.</p>
 <p>The point of customisation is not self-expression in an app only you will see. It is that the software should stop being noticeable, so that what you wrote is the thing in front of you.</p>
-<p>Cyanote does this the way it does everything else: locally, in <a href="/blog/what-local-first-means-for-your-notes/">a database on your own disk</a>, with no account, for $4.99 once. The settings live with your notes, which means they survive a restore and do not follow you to a second machine, because there is no sync, which is a real limitation and not a philosophical position.</p>]]></content:encoded>
+<p>Cyanote does this the way it does everything else: locally, in <a href="/blog/what-local-first-means-for-your-notes/">a database on your own disk</a>, with no account, for $7.99 once. The settings live with your notes, which means they survive a restore and do not follow you to a second machine, because there is no sync, which is a real limitation and not a philosophical position.</p>]]></content:encoded>
       <category>Customisation</category>
       <category>Typography</category>
       <category>Design</category>
@@ -4686,12 +4686,12 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <h2 id="if-none-of-this-describes-you">If none of this describes you</h2>
 <p>Then stay where you are. A free tool that does what you need is not a problem to be solved, and there is no version of this argument where you should pay to replace software that is already working. The limits above are narrow on purpose: text only, one machine, three months, one launcher. If you read all four and recognised none of them, you have not hit a limit. You have hit a Tuesday.</p>
 <p>And if you did recognise one, the fix is usually smaller than a whole new workflow. An image-heavy day wants a manager that holds images. A launcher you resent wants a smaller tool beside it. Match the change to the thing that actually broke.</p>
-<p>Cyanote is the option where the clipboard and the place things get kept are the same app — which removes the crossing described above — and it costs $4.99 once with no subscription and no account. The limitations are worth stating plainly: macOS only, one Mac, no sync, and a clipboard that lives alongside notes and to-dos rather than being the entire product. If you copy across two machines, or you want the best possible clipboard manager and nothing else, it is the wrong buy. Staying on Maccy or Raycast is a perfectly good decision, and for most people reading this it is the correct one.</p>]]></content:encoded>
+<p>Cyanote is the option where the clipboard and the place things get kept are the same app — which removes the crossing described above — and it costs $7.99 once with no subscription and no account. The limitations are worth stating plainly: macOS only, one Mac, no sync, and a clipboard that lives alongside notes and to-dos rather than being the entire product. If you copy across two machines, or you want the best possible clipboard manager and nothing else, it is the wrong buy. Staying on Maccy or Raycast is a perfectly good decision, and for most people reading this it is the correct one.</p>]]></content:encoded>
       <category>Clipboard</category>
       <category>Buying advice</category>
     </item>
     <item>
-      <title>What $4.99, once, actually buys</title>
+      <title>What $7.99, once, actually buys</title>
       <link>https://cyanote.app/blog/what-ten-dollars-once-buys/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/what-ten-dollars-once-buys/</guid>
       <pubDate>Sat, 15 Aug 2026 09:00:00 +0000</pubDate>
@@ -4729,7 +4729,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <p><strong>Does it need a server to start?</strong> Turn off the wifi, quit the app, open it again. If it wants the network to let you in, then the promise that it keeps working forever is only as durable as somebody else's hosting bill.</p>
 <p><strong>Where is the file?</strong> A real answer is a path you can open in Finder, in a format another program could read. Your work will outlive the app, including if the app is good. Whether that is a migration or a loss is decided by the format underneath.</p>
 <p><strong>What has the developer actually shipped?</strong> Not what they promise. A version history showing years of free updates is evidence. A line on a pricing page saying "lifetime updates" is a sentence. Check the changelog, check the dates, and see whether the pattern you are being promised has already happened.</p>
-<p>Cyanote is $4.99 once, and the honest limitations are that it is macOS only, runs on a single Mac, and has no sync, so two machines means two separate sets of notes. If you work across a laptop and a desktop, or capture things on your phone, a subscription that pays for real sync infrastructure is the better arrangement, and I would rather say so here than have you find out a week in. If one Mac is where your work actually happens, <a href="/pricing/">the price</a> is one number and that is the end of it.</p>]]></content:encoded>
+<p>Cyanote is $7.99 once, and the honest limitations are that it is macOS only, runs on a single Mac, and has no sync, so two machines means two separate sets of notes. If you work across a laptop and a desktop, or capture things on your phone, a subscription that pays for real sync infrastructure is the better arrangement, and I would rather say so here than have you find out a week in. If one Mac is where your work actually happens, <a href="/pricing/">the price</a> is one number and that is the end of it.</p>]]></content:encoded>
       <category>Buying advice</category>
       <category>Pricing</category>
     </item>
@@ -4902,7 +4902,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <p><strong>What happens on the day it stops.</strong> Can you get the history out? For a local app: where is the file, and can you read it without the app?</p>
 <p>That last one matters more for a one-time purchase than a subscription, because a one-time purchase is the one you expect to still be using in five years.</p>
 <h2 id="the-honest-version-of-this-page">The honest version of this page</h2>
-<p>This blog belongs to Cyanote, which has a clipboard manager in it and costs $4.99 once. So take the following as an interested party's summary rather than a neutral roundup.</p>
+<p>This blog belongs to Cyanote, which has a clipboard manager in it and costs $7.99 once. So take the following as an interested party's summary rather than a neutral roundup.</p>
 <p>If you want the best clipboard manager on the Mac and nothing else, you should probably buy a dedicated one. Maccy is free and open source and very good. Paste is polished and syncs across devices, and it charges for the servers that make that work: a subscription, or $89.99 once if you would rather not rent it, which is the honest version of the trade described above. Raycast bundles clipboard history into a launcher. Any of those will out-feature a clipboard that sits inside a notes app, because that is their whole product and this is one of five.</p>
 <p>Paste is the one people ask about most, so it has <a href="https://cyanote.app/compare/paste-alternative/">a page of its own</a> working through the prices and the cases where it is the better buy.</p>
 <p>What a bundled one gets you is the thing you copied out of a note being one hotkey from the note you copied it from, and one purchase covering both. Whether that is worth more than depth is genuinely a matter of what you are trying to stop doing.</p>
@@ -5035,7 +5035,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <p>An app that keeps everything on your own computer — <a href="https://www.inkandswitch.com/local-first/">the local-first model</a> — has no servers to pay for. There is no per-user monthly cost to recover, because there is no per-user monthly cost. The development work is real and ongoing, but that is funded by new customers, not by charging the existing ones rent for storage that doesn't exist.</p>
 <p>That is why the local-first corner of the market still sells one-time licences while the cloud corner mostly cannot. It is not a moral difference between the developers. It is a difference in what the software actually costs to run.</p>
 <p>So here is the test I apply when I am comparing two apps and one is $8 a month and the other is a single payment: ask what the monthly one is doing with a server. (<a href="/blog/what-local-first-means-for-your-notes/">What it means for an app to not need one</a> is worth understanding before you decide.) If the answer is "syncing across my devices, sharing with my team, and running search across ten years of notes", the subscription is buying you something. If the answer is "not much, really", you are paying rent on software that lives on your laptop.</p>
-<p>For the sake of declaring it: Cyanote, the app this blog belongs to, is one of the one-time ones — $4.99, local, no account, no server to pay for. That is the argument above applied to itself, and you should hold it to the same test.</p>
+<p>For the sake of declaring it: Cyanote, the app this blog belongs to, is one of the one-time ones — $7.99, local, no account, no server to pay for. That is the argument above applied to itself, and you should hold it to the same test.</p>
 <p>Both models can be honest. Only one of them should be the default, and it isn't the one that became one.</p>]]></content:encoded>
       <category>Pricing</category>
       <category>Local-first</category>
@@ -5231,7 +5231,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <h2 id="who-should-choose-a-local-first-app">Who should choose a local-first app?</h2>
 <p>Choose local-first if you work mostly at one machine, if you write things you would rather not have on someone else's server, and if you would like the tool you learn this year to still be there in five.</p>
 <p>Do not choose it if you move between machines constantly, if capture on a phone is central to how you think, or if you would rather someone else be responsible for your backups. Those are real requirements and cloud apps meet them properly.</p>
-<p>If the first description fits, <a href="https://cyanote.app/#pricing">Cyanote is a $4.99 one-time purchase</a> with no subscription behind it — I wrote about why it exists in <a href="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/">I replaced five subscriptions with one $4.99 app</a>, and about the routine I use to keep a week in order in <a href="https://cyanote.app/blog/weekly-review-in-20-minutes/">the weekly review, in 20 minutes</a>.</p>]]></content:encoded>
+<p>If the first description fits, <a href="https://cyanote.app/#pricing">Cyanote is a $7.99 one-time purchase</a> with no subscription behind it — I wrote about why it exists in <a href="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/">I replaced five subscriptions with one $7.99 app</a>, and about the routine I use to keep a week in order in <a href="https://cyanote.app/blog/weekly-review-in-20-minutes/">the weekly review, in 20 minutes</a>.</p>]]></content:encoded>
       <category>Local-first</category>
       <category>Privacy</category>
       <category>Offline</category>
@@ -5301,7 +5301,7 @@ SET (3 min)
 <p>Cyanote ships a <strong>Weekly review</strong> note template. It opens dated, with sections for Wins, Didn't get to, Lessons and Next week, so the Read and Set passes have somewhere to land. The Decide pass happens in the task list itself, where due dates and priorities live. And because tasks, calendar and notes are the same data rather than three synced copies, "what was due and did not get done" is something you look at rather than something you reconstruct.</p>
 <figure><img src="https://cyanote.app/images/routines.webp" alt="Cyanote&#x27;s routines view: a timed checklist laid out on a daily timeline, one step at a time" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The four passes as a routine, each step with its own timer.</figcaption></figure>
 <p>If you prefer the timer to run itself, the four passes also work as a <strong>routine</strong>: a timed checklist that moves you along, which is the version I use, because I cannot be trusted to leave the Decide pass after seven minutes on my own.</p>
-<p>None of that is necessary. The method is the method; a pen and a Friday afternoon will do. But if you are already looking for one place to keep the week, <a href="https://cyanote.app/#pricing">Cyanote is a $4.99 one-time purchase</a> that runs entirely on your own Mac. I wrote about why it exists at all in <a href="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/">I replaced five subscriptions with one $4.99 app</a>.</p>
+<p>None of that is necessary. The method is the method; a pen and a Friday afternoon will do. But if you are already looking for one place to keep the week, <a href="https://cyanote.app/#pricing">Cyanote is a $7.99 one-time purchase</a> that runs entirely on your own Mac. I wrote about why it exists at all in <a href="https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/">I replaced five subscriptions with one $7.99 app</a>.</p>
 <h2 id="start-with-a-bad-one">Start with a bad one</h2>
 <p>Your first weekly review will be poor. The inbox will take fifteen minutes on its own, you will not get to the Set pass, and you will finish it feeling like it did not work.</p>
 <p>Do it anyway, and then do the next one. By the third or fourth, Clear takes four minutes because there is less to clear, Read is quick because you remember the week, and the whole thing lands inside twenty minutes with room to spare. The review gets shorter precisely because you keep doing it, which is a rare and pleasant property in a habit.</p>]]></content:encoded>
@@ -5310,7 +5310,7 @@ SET (3 min)
       <category>Method</category>
     </item>
     <item>
-      <title>I replaced five subscriptions with one $4.99 app</title>
+      <title>I replaced five subscriptions with one $7.99 app</title>
       <link>https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/replaced-five-subscriptions-with-one-app/</guid>
       <pubDate>Wed, 15 Jul 2026 09:00:00 +0000</pubDate>
@@ -5320,7 +5320,7 @@ SET (3 min)
 <p>Added up, they came to roughly $260 a year. For software I had already decided I wanted, years ago, and had been re-buying every month since without ever making the decision again.</p>
 <p>Written out, the stack was this:</p>
 <div class="table-scroll"><table><thead><tr><th scope="col">The job</th><th scope="col">What I was paying for it</th><th scope="col">What does it now</th></tr></thead><tbody><tr><td>Writing things down</td><td>Notion</td><td>Notes, and code notes</td></tr><tr><td>What is due</td><td>Todoist</td><td>To-dos and a board</td></tr><tr><td>What is scheduled</td><td>Fantastical</td><td>Calendar</td></tr><tr><td>Daily habits</td><td>Streaks</td><td>Habits</td></tr><tr><td>What I copied earlier</td><td>Paste</td><td>Clipboard manager</td></tr></tbody></table></div>
-<p>Five line items, about $260 a year between them, against $4.99 once. The money is the least interesting column, though. The next section is about the other one.</p>
+<p>Five line items, about $260 a year between them, against $7.99 once. The money is the least interesting column, though. The next section is about the other one.</p>
 <h2 id="the-bit-that-annoyed-me-was-not-the-money">The bit that annoyed me was not the money</h2>
 <p>$260 is a real number but it is not a crisis. What actually bothered me was what I got for it.</p>
 <p>A Tuesday looked like this. A thought arrives during a meeting, so it goes in Notion. It turns out to have a deadline, so a task goes in Todoist. The deadline is a Thursday, so I put a block in Fantastical. Later I want the meeting link I had copied twenty minutes earlier, so I open Paste. That evening Streaks asks whether I did the thing I said I would do daily, and I have no idea, because the evidence is spread across four other apps.</p>
@@ -5340,8 +5340,8 @@ SET (3 min)
 <p>Cyanote is what came out. Notes, to-dos and a board, a calendar, habits, routines and a Pomodoro timer, and a system-wide clipboard manager, in one window, with one search box that looks across all of it.</p>
 <figure><img src="https://cyanote.app/images/today.webp" alt="Cyanote&#x27;s Today view: the day&#x27;s schedule, what is due, and habits still to tick, on one screen" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>One window, one search box — the day in one place rather than in five.</figcaption></figure>
 <p>The unification is not decorative. A task with a due date shows up in the calendar because it is the same task, not a copy synced across a boundary. A note can link to another note, and the note being linked to says so. When you finish a focus session against a task, the app can tell you later where the day actually went. None of that is clever engineering. It is just what stops being hard once the data is not living in five separate accounts.</p>
-<p>It costs $4.99. Once. There is no subscription, no account and no upsell later. A new install asks once for the licence key from your purchase email; there is nothing to sign in to, and the key is not checked again after that. Updates are free for as long as the app exists. The <a href="https://cyanote.app/changelog.html">changelog</a> is the whole record of what that has meant so far.</p>
-<h2 id="the-honest-economics-of-4-99-once">The honest economics of $4.99, once</h2>
+<p>It costs $7.99. Once. There is no subscription, no account and no upsell later. A new install asks once for the licence key from your purchase email; there is nothing to sign in to, and the key is not checked again after that. The <a href="https://cyanote.app/changelog.html">changelog</a> is the record of everything that has shipped since.</p>
+<h2 id="the-honest-economics-of-7-99-once">The honest economics of $7.99, once</h2>
 <p>I want to be straight about this, because "pay once" is often sold as pure virtue and it is really a trade.</p>
 <p>What you get: no recurring charge, and an app with no structural reason to grow features you did not ask for. My income does not depend on this month looking busy. It depends on the app being good enough that someone recommends it. Those pressures point in a much better direction.</p>
 <p>What I give up: predictable revenue. That means Cyanote will never have a large team, a support desk with shift rotas, or a five-year roadmap underwritten by investors. It is one person, shipping steadily. If you need enterprise SSO and a service-level agreement, this is honestly not the software for you, and I would rather say so on a blog post than in a refund email.</p>
@@ -5355,7 +5355,7 @@ SET (3 min)
 <p>For me, obviously. I have been using it every day for a year and I no longer pay $260 for the privilege of copying things between windows.</p>
 <p>The more useful answer is the general one. Most people do not need five productivity subscriptions. They need one place that opens fast, holds the week, and does not ask anything of them again. If that is you, the audit is worth doing even if you never install anything I made: open your bank statement, find every recurring software charge under ten dollars, and ask which ones you would buy again today.</p>
 <p>You will cancel at least one. Possibly five.</p>
-<p>If you want somewhere for it all to land afterwards, <a href="https://cyanote.app/#pricing">Cyanote is $4.99</a> and that is the last time it asks you for money. If you want to see the routine I use to keep a week from drifting, that is <a href="https://cyanote.app/blog/weekly-review-in-20-minutes/">the weekly review, in 20 minutes</a>.</p>
+<p>If you want somewhere for it all to land afterwards, <a href="https://cyanote.app/#pricing">Cyanote is $7.99</a> and that is the last time it asks you for money. If you want to see the routine I use to keep a week from drifting, that is <a href="https://cyanote.app/blog/weekly-review-in-20-minutes/">the weekly review, in 20 minutes</a>.</p>
 <p>Two of the five have pages of their own, weighed properly rather than in passing: <a href="https://cyanote.app/compare/notion-alternative/">Notion</a>, which is free for one person and so is not really a money argument at all, and <a href="https://cyanote.app/compare/paste-alternative/">Paste</a>, which is the better clipboard manager.</p>]]></content:encoded>
       <category>One-time purchase</category>
       <category>Subscriptions</category>

@@ -6,11 +6,10 @@ one thing to buy.
 
 ## Cyanote for Mac
 
-- Price: $4.99 USD, one time
+- Price: $7.99 USD, one time
 - Billing: none. It is a purchase, not a subscription — nothing recurs and there is
   nothing to cancel.
 - Seats: one person. The licence covers that person's own Macs.
-- Updates: free for life, covered by the same $4.99.
 - Refund: 14 days, no reason needed.
 - Delivery: download link and licence key on screen at checkout, and by email.
 - Payment processor: Lemon Squeezy (merchant of record; handles VAT and sales tax).
@@ -50,12 +49,12 @@ These do not exist in the product and are not planned as paid additions:
 ## Cyanote for Windows
 
 - Status: built, in testing, not on sale
-- Price when it ships: covered by the same $4.99 Mac licence. Someone who buys today
-  pays nothing further for Windows.
+- Release date: none announced
+- Price when it ships: not decided. Buying today buys the macOS app.
 
 ## Notes for anyone comparing on price
 
-Comparing Cyanote to a subscription needs the time axis to be honest: $4.99 once against
+Comparing Cyanote to a subscription needs the time axis to be honest: $7.99 once against
 $3–$12 per month is a different shape of number, not a smaller one. Against the
 one-time-purchase field it sits at the cheap end — a couple of Mac clipboard managers
 still sell for less ($3 once), and most sell for more. The argument for the price is the bundle, not the figure:
