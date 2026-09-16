@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A research log: what to record so a result survives</title>
+<meta name="description" content="It worked on Tuesday. The same script gives a different number today and nothing in the record says what changed. The missing variable is almost never in the code." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/the-experiment-that-cannot-be-repeated/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/the-experiment-that-cannot-be-repeated/" />
+<meta property="og:title" content="A research log: what to record so a result survives" />
+<meta property="og:description" content="It worked on Tuesday. The same script gives a different number today and nothing in the record says what changed. The missing variable is almost never in the code." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="A research log: what to record so a result survives" />
+<meta name="twitter:description" content="It worked on Tuesday. The same script gives a different number today and nothing in the record says what changed. The missing variable is almost never in the code." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The experiment that worked and cannot be repeated",
+  "description": "It worked on Tuesday. The same script gives a different number today and nothing in the record says what changed. The missing variable is almost never in the code.",
+  "datePublished": "2026-09-16",
+  "dateModified": "2026-09-16",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/the-experiment-that-cannot-be-repeated/"
+  },
+  "url": "https://cyanote.app/blog/the-experiment-that-cannot-be-repeated/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/run-divergence.svg",
+      "width": 1200,
+      "height": 480
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Method, Notes, Learning",
+  "wordCount": 1753
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The experiment that worked and cannot be repeated",
+      "item": "https://cyanote.app/blog/the-experiment-that-cannot-be-repeated/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-09-16" />
+<meta property="article:modified_time" content="2026-09-16" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Method" />
+<meta property="article:tag" content="Notes" />
+<meta property="article:tag" content="Learning" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>The experiment that worked and cannot be repeated</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-09-16">16 September 2026</time></span>
+        <span class="dot">·</span>
+        <span>8 min read</span>
+      </div>
+    <ul class="tags"><li>Method</li><li>Notes</li><li>Learning</li></ul>
+    </header>
+
+    <div class="post">
+      <p>It worked on Tuesday.</p>
+      <p>You have the number, and it is a good number, and you were pleased with it. Today the same script on the same machine produces something else, and the gap between the two is larger than anything you can explain. Nothing in the repository changed. You are now going to spend two days finding out what did.</p>
+      <p>The answer, almost always, is something that was never in the code: a parameter you edited by hand and put back, a file you regenerated, a threshold you nudged at eleven at night, a library that updated underneath you, the one run where you used the cleaned data rather than the raw.</p>
+      <p>None of those are in version control. All of them were known to you, briefly, on Tuesday.</p>
+      <h2 id="what-a-log-is-actually-for">What a log is actually for</h2>
+      <p>The laboratory notebook is one of the oldest pieces of research infrastructure there is, and the convention around it is unusually strict: dated entries, written at the time, in ink, never erased, in enough detail that somebody else could repeat the work.</p>
+      <p>Every one of those rules exists because of a specific way research goes wrong, and none of them stop applying because the experiment is now a script rather than a bench. If anything the computational version is more exposed, because the number of silent moving parts is larger and none of them leave a smell or a stain to remind you they were there.</p>
+      <p>The purpose is not tidiness. It is that a result which cannot be repeated is not yet a result, and the thing standing between you and repeatability is usually one unrecorded decision.</p>
+      <figure><img src="/images/run-divergence.svg" alt="The same code and the same data producing two different numbers, because of one change that was never written down" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>Everything that was tracked is identical. The difference is in the row nobody thought to record.</figcaption></figure>
+      <h2 id="what-one-entry-needs">What one entry needs</h2>
+      <p>Per run, or per experiment, or per session at the bench — whatever your unit of work is. The test is simple: could a competent stranger, or you in eight months, do this again and get the same answer?</p>
+      <p><strong>The date and the question.</strong> What you were trying to find out. One sentence, and it is worth more than it looks, because in three months the runs blur into each other and the question is what tells them apart.</p>
+      <p><strong>What version of everything.</strong> The commit hash, the data file and its version or checksum, the environment or container, the versions of anything that matters. If you edited something by hand, that is the most important line in the entry, precisely because nothing else will ever record it.</p>
+      <p><strong>The parameters.</strong> All of them, including the ones you did not change. "Defaults" is not a record, because defaults change.</p>
+      <p><strong>What you actually did</strong>, including the parts that were not the plan. The rerun after the crash. The two rows dropped because they were obviously wrong. The manual fix at the end. These are the steps that get silently omitted, and they are the steps that most often explain the discrepancy.</p>
+      <p><strong>What came out.</strong> The number, the figure, where the output was written.</p>
+      <p><strong>What you think it means</strong> — marked clearly as interpretation, and separable from everything above it.</p>
+      <p>That last separation matters more than it sounds. Observation and inference decay at different rates: what you did stays true forever, and what you concluded on the day is frequently wrong. A log that blends them gives you no way, later, to keep the one and discard the other.</p>
+      <h2 id="write-it-before-you-know-whether-it-worked">Write it before you know whether it worked</h2>
+      <p>This is the rule that improves the record most and the one nobody follows.</p>
+      <p>Once you know the outcome, you write a different entry. Not dishonestly — the process is invisible from the inside. A run that succeeded gets written up as though the path to it were direct. A run that failed gets a shorter entry, because it feels like nothing happened. The awkward steps, the reruns, the thing you tried first, quietly vanish from the record in proportion to how well the result turned out.</p>
+      <p>So write the setup before you press go: the question, the versions, the parameters, what you expect. Then add the outcome underneath. It takes two minutes and it is the only reliable defence against hindsight editing your own notes.</p>
+      <p>It is the same habit as <a href="/blog/writing-your-own-runbooks/">writing something down the first time you work it out</a>, moved thirty seconds earlier, to the moment before you have an opinion about it.</p>
+      <h2 id="negative-results-are-the-ones-worth-keeping">Negative results are the ones worth keeping</h2>
+      <p>The most valuable entries in a research log are the things that did not work, and they are the least likely to be written, because a failed run feels like a day with nothing to show for it.</p>
+      <p>Five months later you will have the idea again. It is a good idea — that is why you had it twice — and without a record you will spend another three days rediscovering why it does not work. Multiply by a research group, where the person who tried it has since graduated, and this is a substantial fraction of all wasted effort in science.</p>
+      <p>The entry is one line. "Tried the weighted version; it makes no difference, because the weights are almost uniform in this sample." That sentence is worth days, and it is worth more to the next person than to you.</p>
+      <h2 id="version-control-does-half-of-this">Version control does half of this</h2>
+      <p>Be fair to git: it records the code exactly, it records when it changed, and it lets you go back. That is a large part of the problem solved, and if you are not using it for research code, start there before reading anything else in this article.</p>
+      <p>What it does not record is the rest of the entry. It does not know why you made the change, which run produced figure 3, what data file was mounted, what you typed at the prompt, what the environment looked like, or which of eleven branches was the one that produced the number in the draft. A commit message is a note about a change to the code; a log entry is a note about a piece of work. They are different objects and one does not substitute for the other.</p>
+      <p>The join between them is the commit hash, written into the log entry. One line, and it makes both records navigable from either end.</p>
+      <h2 id="every-figure-should-name-its-run">Every figure should name its run</h2>
+      <p>This is the specific failure that hurts most, and it happens late.</p>
+      <p>You are assembling a paper. There are eleven figures. Someone asks what the sample size was for figure 4, or a reviewer asks you to regenerate it with one change, and it turns out nobody can say with certainty which run produced it. The figure is nine months old, the script has moved on four times, and the number in the caption cannot be re-derived.</p>
+      <p>The fix is one line per figure, kept with the figure: which run, which commit, which data, which script. If you do only one thing from this article after the negative-results line, do this one, because it is the one that turns into a genuine crisis rather than an inconvenience.</p>
+      <figure><img src="/images/note.webp" alt="A dated log with entries appended underneath the facts that do not change" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Appended as you go, never rewritten. A log you tidy is a summary, and a summary is what you already had.</figcaption></figure>
+      <h2 id="append-never-rewrite">Append, never rewrite</h2>
+      <p>The entries are added and not edited. If March was wrong, September says so; March stays as it was.</p>
+      <p>The reason is not ceremony. A log that is revised in the light of what you later learned is no longer evidence of anything — it is a summary, and you already had one of those in your head, which is what made it unreliable. The value of the record is precisely that it was written before you knew how the story ended.</p>
+      <p>This is the same discipline that makes <a href="/blog/keeping-a-decision-journal/">a decision journal</a> worth keeping, for the same reason: the entry is useful because it cannot flatter you afterwards.</p>
+      <h2 id="where-it-should-live">Where it should live</h2>
+      <p>Unpublished results, in a searchable pile, for the duration of a project that may run for years.</p>
+      <p>The requirements are unglamorous. It must open fast enough that you use it mid-task, because a log you open only at the end of the day is a log written from memory. It must still work when the network does not, on a bench, in a field site, on a train. It must be searchable across years, because the query is always "when did I last see this error" and never "which folder is it in". And it must be exportable, because the project will outlive whatever you are using and possibly your access to the institution's systems.</p>
+      <p>Local, plain, no account, one file you can copy. That is <a href="/blog/what-local-first-means-for-your-notes/">the ordinary local-first case</a>, and research is where it happens to bite hardest, because the time horizons are long and the data is often governed by rules about where it may be stored. Whatever you choose, back it up somewhere that is not the laptop — a lost research log is not recoverable by any means at all.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>Nobody does all of this. The people with the best records in any research group keep maybe two-thirds of it, and they keep it because they were burned once, badly, and the memory is still fresh.</p>
+      <p>The realistic version is three lines before each run — the question, the versions, the parameters — and one line after, including the failures. That is under two minutes per run and it catches most of what goes wrong.</p>
+      <p>The rest of it, you will add gradually, each item after the specific week it would have saved you. That is how everybody actually learns this, and there is no shortcut, except possibly reading the list above and deciding to believe it early.</p>
+      <p>If you want one place for it that opens instantly, appends without ceremony and searches across four years of it, <a href="/#pricing">Cyanote is $7.99, once</a>. The <a href="/blog/the-paper-you-read-twice/">literature notes</a> are a separate pile with a separate job, and what happens to both of them <a href="/blog/notes-from-year-one-read-in-year-four/">after three or four years</a> is its own problem.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/notes-from-year-one-read-in-year-four/">Notes from year one, read in year four</a><span>You open a note in your own words and a stranger wrote it. Context is free when you write and costs everything when you read it four years later.</span></li><li><a href="https://cyanote.app/blog/the-paper-you-read-twice/">The paper you read twice</a><span>You have read this before. You remember the argument, not the verdict, and cannot find the note. Research reading fails differently from ordinary reading.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>

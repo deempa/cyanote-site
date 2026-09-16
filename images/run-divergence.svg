@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="run-title run-desc">
+  <title id="run-title">Two runs that differ only in something nobody recorded</title>
+  <desc id="run-desc">A comparison of two runs of the same analysis, on Tuesday and Thursday. The commit hash, the data file, the environment, the threshold and the random seed are identical in both. One row, marked in red, differs: on Tuesday two rows were dropped by hand and on Thursday they were not, and that step was never written down anywhere. The results differ as a consequence, 0.812 against 0.741.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .ttl  { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .hd   { font-size: 14px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+    .k    { font-size: 17px; fill: #3d3f45; }
+    .v    { font-size: 17px; fill: #3d3f45; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .kr   { font-size: 17px; font-weight: 600; fill: #b3392c; }
+    .vr   { font-size: 17px; font-weight: 600; fill: #b3392c; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .res  { font-size: 19px; font-weight: 600; fill: #0a0a0b; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .rl   { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+  </style>
+
+  <rect class="card" x="24" y="24" width="1152" height="392" rx="12"/>
+  <text class="ttl" x="56" y="66">Same commit, same data, same parameters</text>
+
+  <text class="hd" x="56"  y="106">TRACKED</text>
+  <text class="hd" x="620" y="106">RUN A &#183; TUESDAY</text>
+  <text class="hd" x="900" y="106">RUN B &#183; THURSDAY</text>
+  <line x1="56" y1="120" x2="1144" y2="120" stroke="#e6e6e9" stroke-width="2"/>
+
+  <text class="k" x="56" y="152">Commit</text>
+  <text class="v" x="620" y="152">a4f21e9</text>
+  <text class="v" x="900" y="152">a4f21e9</text>
+  <text class="k" x="56" y="186">Data file</text>
+  <text class="v" x="620" y="186">raw_v3.csv</text>
+  <text class="v" x="900" y="186">raw_v3.csv</text>
+  <text class="k" x="56" y="220">Environment</text>
+  <text class="v" x="620" y="220">env-2026-04</text>
+  <text class="v" x="900" y="220">env-2026-04</text>
+  <text class="k" x="56" y="254">Threshold</text>
+  <text class="v" x="620" y="254">0.30</text>
+  <text class="v" x="900" y="254">0.30</text>
+  <text class="k" x="56" y="288">Random seed</text>
+  <text class="v" x="620" y="288">1234</text>
+  <text class="v" x="900" y="288">1234</text>
+
+  <line x1="56" y1="312" x2="1144" y2="312" stroke="#e6e6e9" stroke-width="2"/>
+  <rect x="40" y="326" width="6" height="26" rx="3" fill="#b3392c"/>
+  <text class="kr" x="56"  y="346">Two rows dropped by hand</text>
+  <text class="vr" x="620" y="346">yes</text>
+  <text class="vr" x="900" y="346">no</text>
+  <text class="hd" x="620" y="372">NEVER WRITTEN DOWN ANYWHERE</text>
+
+  <line x1="56" y1="388" x2="1144" y2="388" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="rl"  x="56"  y="410">RESULT</text>
+  <text class="res" x="620" y="410">0.812</text>
+  <text class="res" x="900" y="410">0.741</text>
+
+  <line x1="24" y1="452" x2="1176" y2="452" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="488">Everything version control can see is identical. The difference is in the row it was never able to see.</text>
+</svg>

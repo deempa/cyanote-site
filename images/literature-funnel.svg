@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="lit-title lit-desc">
+  <title id="lit-title">What each stage of a literature review is worth writing down</title>
+  <desc id="lit-desc">A narrowing funnel of four stages. About four hundred papers are found, and each earns one line: a title and where it came from. About a hundred and twenty are screened, and each earns a verdict and a reason — including the rejections. About forty are read properly, and each earns a full seven-part note. About fifteen are cited, and each earns the claim, the page number and the citation key written back into the note.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .st   { font-size: 20px; font-weight: 600; fill: #0a0a0b; }
+    .stw  { font-size: 20px; font-weight: 600; fill: #ffffff; }
+    .ct   { font-size: 16px; fill: #3d3f45; }
+    .ctw  { font-size: 16px; fill: #dcecf8; }
+    .note { font-size: 17px; fill: #3d3f45; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+  </style>
+
+  <rect x="40" y="70"  width="620" height="72" rx="8" fill="#efeff1"/>
+  <text class="st" x="72" y="102">Found</text>
+  <text class="ct" x="72" y="128">about 400 titles</text>
+  <text class="note" x="700" y="114">A title and where it came from. One line.</text>
+
+  <rect x="40" y="160" width="470" height="72" rx="8" fill="#dcecf8"/>
+  <text class="st" x="72" y="192">Screened</text>
+  <text class="ct" x="72" y="218">about 120 abstracts</text>
+  <text class="note" x="700" y="204">A verdict and the reason &#8212; rejections too.</text>
+
+  <rect x="40" y="250" width="320" height="72" rx="8" fill="#8ec6e8"/>
+  <text class="st" x="72" y="282">Read</text>
+  <text class="ct" x="72" y="308">about 40 papers</text>
+  <text class="note" x="700" y="294">The full seven-part note.</text>
+
+  <rect x="40" y="340" width="190" height="72" rx="8" fill="#0e7cc4"/>
+  <text class="stw" x="72" y="372">Cited</text>
+  <text class="ctw" x="72" y="398">about 15</text>
+  <text class="note" x="700" y="384">The claim, the page, the citation key.</text>
+
+  <line x1="24" y1="452" x2="1176" y2="452" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="488">Writing a full note on everything at the top is how a literature review stalls in week six.</text>
+</svg>

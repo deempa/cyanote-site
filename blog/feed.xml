@@ -7,17 +7,136 @@
     <atom:link href="https://cyanote.app/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Plain writing about keeping notes, running a week and owning your own data — from the person who builds Cyanote, a local-first Mac app you pay for once.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 17 Sep 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 09:00:00 +0000</lastBuildDate>
     <image>
       <url>https://cyanote.app/og-image.png</url>
       <title>The Cyanote blog — notes, tasks and calmer software</title>
       <link>https://cyanote.app/blog/</link>
     </image>
     <item>
+      <title>The paper you read twice</title>
+      <link>https://cyanote.app/blog/the-paper-you-read-twice/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/the-paper-you-read-twice/</guid>
+      <pubDate>Wed, 16 Sep 2026 09:00:00 +0000</pubDate>
+      <description>You have read this before. You remember the argument, not the verdict, and cannot find the note. Research reading fails differently from ordinary reading.</description>
+      <content:encoded><![CDATA[<p>Halfway down the first page you realise you have read this before.</p>
+<p>You remember the shape of the argument. You do not remember what you thought of it, whether you decided the sample was too small, or whether this is the one whose second half turned out to be useful. There is no note, or there is a note and you cannot find it, and the cheapest way forward is to read the whole thing again.</p>
+<p>That is an hour, and it is not the only hour. Over a literature review it is most of a month.</p>
+<h2 id="reading-for-research-is-a-different-job">Reading for research is a different job</h2>
+<p>I have written before about <a href="/blog/taking-notes-on-what-you-read/">reading notes without a highlighting app</a>, and most of that holds here. But research reading fails in two ways that ordinary reading does not, and they are what shape everything below.</p>
+<p><strong>The volume is wrong for memory.</strong> You will touch several hundred titles, skim a hundred abstracts, read perhaps forty properly and cite maybe fifteen. No system that depends on remembering which is which survives that, and the failure is not gradual — it arrives about six weeks in, all at once, when two papers by the same group blur together.</p>
+<p><strong>You have to be able to prove it later.</strong> Ordinary reading leaves an impression, which is fine, because nobody audits an impression. Research reading has to produce a claim attached to a source attached to a page, defensible in a viva or a review, possibly three years after you last had the paper open.</p>
+<p>Those two together mean the note is not a souvenir of having read something. It is a working record with a job.</p>
+<h2 id="most-papers-do-not-deserve-a-note">Most papers do not deserve a note</h2>
+<p>The single most useful thing to understand about a literature review is that the pile has stages, and each stage produces a different amount of writing. People exhaust themselves writing full notes on everything at the top of the funnel and give up.</p>
+<figure><img src="/images/literature-funnel.svg" alt="Several hundred papers narrowing to a handful, with the record each stage deserves" width="1200" height="520" loading="lazy" decoding="async" /><figcaption>Each stage produces a different amount of writing. Most of the pile only ever earns one line.</figcaption></figure>
+<p><strong>Found.</strong> A title and an author and nothing else. One line, in one list. You are only recording that it exists and where it came from.</p>
+<p><strong>Screened.</strong> You read the abstract and made a decision. This is the stage everyone skips and it is the one that pays the most, for a reason that only becomes obvious later: <em>record the rejections and why.</em> One line — "not relevant, different population" or "methods paper, no data" — costs five seconds and stops you rediscovering the same paper in four months, from a different search, and screening it again with exactly the same reasoning.</p>
+<p><strong>Read.</strong> A proper note, described below. Reserve this for papers you have actually read properly, which will be far fewer than you expect.</p>
+<p><strong>Cited.</strong> The claim, the page, and the citation key, written into the note the moment you use it in a draft.</p>
+<h2 id="what-goes-in-a-note-for-a-paper-you-have-read">What goes in a note for a paper you have read</h2>
+<p>Seven things. It takes ten minutes at the end of a read, and it is the difference between a note that answers questions and a note that is a summary of something you could have reread anyway.</p>
+<p><strong>The full citation, first, always.</strong> Authors, year, title, venue, DOI. It is the most boring line and the one whose absence costs the most, because reconstructing a reference from a half-remembered title is a genuinely miserable hour.</p>
+<p><strong>The claim, in one sentence, in your own words.</strong> Not the abstract. What this paper argues, as you would say it to someone in a corridor. If you cannot write this sentence, you have not finished reading.</p>
+<p><strong>The method and the sample.</strong> What they actually did, to whom, how many, and over how long. This is what decides whether you can use the paper for what you want to use it for, and it is the part that gets lost first.</p>
+<p><strong>The specific number or quote you might use — with the page.</strong> Not "they found a large effect". The figure, the table it is in, the page it is on.</p>
+<p><strong>What it is for, in your argument.</strong> One line about why this is in your pile at all: supports the second chapter, contradicts the thing everyone cites, is the standard reference for the method. This line is what makes the note findable in a year, because by then you will search for your problem, not for their title.</p>
+<p><strong>What is wrong with it.</strong> The limitation they admit, and the one they do not. Your own objection, written while you still have it. This is the part you will never reconstruct and the part a supervisor or reviewer will ask about first.</p>
+<p><strong>Who it cites that you should read.</strong> Two or three names, maximum. The citation trail is how literature reviews actually get built, and it goes stale the moment you close the PDF.</p>
+<h2 id="the-quotation-rule-that-matters-more-than-it-looks">The quotation rule that matters more than it looks</h2>
+<p>In your own notes, a direct quotation must be visibly, unmistakably a quotation: in quote marks, with the page number, every time. A paraphrase must be visibly a paraphrase.</p>
+<p>This sounds like pedantry and it is not. The common route into accidental plagiarism is not dishonesty; it is a note taken in a hurry, eighteen months ago, where a sentence was copied down without quote marks and has since been read as your own phrasing. By the time it reaches a draft, the distinction is unrecoverable — you cannot tell, and neither can anyone else, without going back to the source.</p>
+<p>Pick a convention on day one and never break it. Quotes in quote marks with a page number. Your own words plain. Your own opinions marked as yours — a leading <code>&gt;</code> or <code>[me]</code> or anything at all, as long as it is consistent. The cost is a keystroke. The failure mode is a career problem.</p>
+<h2 id="the-question-you-will-be-asked-in-two-years">The question you will be asked in two years</h2>
+<p>"Where did that come from?"</p>
+<p>Someone will point at a sentence in your draft — a supervisor, a reviewer, an examiner, you at 2am — and ask which source it rests on. The path from any claim in your writing back to a page in a paper has to be walkable, and it is either built as you go or not at all.</p>
+<p>The habit is small: when you use a source in a draft, write the citation key into that paper's note, next to the claim it supports. It takes three seconds and it turns the collection from a pile of summaries into an index that runs both ways. You can ask what a paper says, and you can ask what rests on a paper — which is the question that matters when one of them turns out to be retracted, superseded, or weaker than you thought.</p>
+<figure><img src="/images/note.webp" alt="A note with the citation at the top, the claim underneath, and links out to related notes" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>One note per paper, with the citation first — the line whose absence costs an hour.</figcaption></figure>
+<h2 id="a-reference-manager-and-a-notes-app-are-not-the-same-tool">A reference manager and a notes app are not the same tool</h2>
+<p>Be fair about this, because a lot of writing on the subject is not.</p>
+<p>A reference manager — Zotero, or whatever your field uses — stores metadata, talks to your word processor, formats a bibliography in whatever style is demanded, and renumbers it when you reorder a chapter. That is real work, it is fiddly, and you should not do it by hand. Nothing in this article replaces it.</p>
+<p>What reference managers are generally poor at is the thinking: the objection you had, the connection to the other paper, the reason this one matters to chapter three. That lives better as prose in a note, and the two are joined by the citation key, which is the only thing that needs to exist in both places.</p>
+<p>Use both. Let the reference manager own the bibliography and let your notes own your opinions.</p>
+<h2 id="what-this-is-not">What this is not</h2>
+<p>It is not a second brain. The temptation, once you have two hundred notes and a linking feature, is to start tending the collection — refactoring the structure, building the index, adding the connections — and to feel productive doing it.</p>
+<p>That is a well-documented way to spend a year, and I have written about it at <a href="/blog/linking-notes-without-a-second-brain/">more length elsewhere</a>. The literature notes exist to produce a chapter. If a session of organising has not moved a chapter, it was not work, however much it felt like it.</p>
+<h2 id="where-it-should-live">Where it should live</h2>
+<p>Unpublished research is not ordinary text. It is unpublished results, an unfinished argument, and often data about people, held under an ethics approval that says specific things about where it may be stored.</p>
+<p>That is a strong argument for notes on a machine you control, with no account, no sync to a third party and no vendor whose terms can change mid-degree. It is also an argument that your institution may have its own rules about — check them, because for interview data or anything identifiable, "on my laptop" is a claim you may have to defend, and it is a much better claim when the laptop is encrypted and the backup is one you can describe.</p>
+<p>The practical point is that a doctorate outlasts most software subscriptions, and that <a href="/blog/notes-from-year-one-read-in-year-four/">your own notes from year one</a> will be read by someone who has forgotten writing them. Something you paid for once, that keeps working offline and exports everything to a file you can read without it, is a better bet across four years than something that requires a card to stay valid. That is <a href="/blog/what-local-first-means-for-your-notes/">the local-first argument</a> with an unusually long time horizon attached.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>This is more discipline than most people manage, and the good news is that the returns are front-loaded and uneven. Recording your rejections and writing the full citation first are perhaps five per cent of the effort and most of the benefit. If you do nothing else, do those two.</p>
+<p>The rest compounds slowly and pays out at the worst moments — the week before a deadline, the morning of a viva, the day a reviewer asks where a number came from. That is not a satisfying pitch. It is, unfortunately, an accurate one.</p>
+<p>Start with the paper on your desk right now. Write the citation, the one-sentence claim and your objection, and see how long it takes. It will be less time than reading it a second time.</p>
+<p>If you want somewhere to keep them that opens instantly, searches across all of it, and has no account to lose between the start of a doctorate and the end of it, <a href="/#pricing">Cyanote is $7.99, once</a>. The <a href="/blog/the-experiment-that-cannot-be-repeated/">research log that goes alongside it</a> is a different note with a different job, and it is the next thing to get right.</p>]]></content:encoded>
+      <category>Learning</category>
+      <category>Method</category>
+      <category>Notes</category>
+    </item>
+    <item>
+      <title>The experiment that worked and cannot be repeated</title>
+      <link>https://cyanote.app/blog/the-experiment-that-cannot-be-repeated/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/the-experiment-that-cannot-be-repeated/</guid>
+      <pubDate>Wed, 16 Sep 2026 09:00:00 +0000</pubDate>
+      <description>It worked on Tuesday. The same script gives a different number today and nothing in the record says what changed. The missing variable is almost never in the code.</description>
+      <content:encoded><![CDATA[<p>It worked on Tuesday.</p>
+<p>You have the number, and it is a good number, and you were pleased with it. Today the same script on the same machine produces something else, and the gap between the two is larger than anything you can explain. Nothing in the repository changed. You are now going to spend two days finding out what did.</p>
+<p>The answer, almost always, is something that was never in the code: a parameter you edited by hand and put back, a file you regenerated, a threshold you nudged at eleven at night, a library that updated underneath you, the one run where you used the cleaned data rather than the raw.</p>
+<p>None of those are in version control. All of them were known to you, briefly, on Tuesday.</p>
+<h2 id="what-a-log-is-actually-for">What a log is actually for</h2>
+<p>The laboratory notebook is one of the oldest pieces of research infrastructure there is, and the convention around it is unusually strict: dated entries, written at the time, in ink, never erased, in enough detail that somebody else could repeat the work.</p>
+<p>Every one of those rules exists because of a specific way research goes wrong, and none of them stop applying because the experiment is now a script rather than a bench. If anything the computational version is more exposed, because the number of silent moving parts is larger and none of them leave a smell or a stain to remind you they were there.</p>
+<p>The purpose is not tidiness. It is that a result which cannot be repeated is not yet a result, and the thing standing between you and repeatability is usually one unrecorded decision.</p>
+<figure><img src="/images/run-divergence.svg" alt="The same code and the same data producing two different numbers, because of one change that was never written down" width="1200" height="480" loading="lazy" decoding="async" /><figcaption>Everything that was tracked is identical. The difference is in the row nobody thought to record.</figcaption></figure>
+<h2 id="what-one-entry-needs">What one entry needs</h2>
+<p>Per run, or per experiment, or per session at the bench — whatever your unit of work is. The test is simple: could a competent stranger, or you in eight months, do this again and get the same answer?</p>
+<p><strong>The date and the question.</strong> What you were trying to find out. One sentence, and it is worth more than it looks, because in three months the runs blur into each other and the question is what tells them apart.</p>
+<p><strong>What version of everything.</strong> The commit hash, the data file and its version or checksum, the environment or container, the versions of anything that matters. If you edited something by hand, that is the most important line in the entry, precisely because nothing else will ever record it.</p>
+<p><strong>The parameters.</strong> All of them, including the ones you did not change. "Defaults" is not a record, because defaults change.</p>
+<p><strong>What you actually did</strong>, including the parts that were not the plan. The rerun after the crash. The two rows dropped because they were obviously wrong. The manual fix at the end. These are the steps that get silently omitted, and they are the steps that most often explain the discrepancy.</p>
+<p><strong>What came out.</strong> The number, the figure, where the output was written.</p>
+<p><strong>What you think it means</strong> — marked clearly as interpretation, and separable from everything above it.</p>
+<p>That last separation matters more than it sounds. Observation and inference decay at different rates: what you did stays true forever, and what you concluded on the day is frequently wrong. A log that blends them gives you no way, later, to keep the one and discard the other.</p>
+<h2 id="write-it-before-you-know-whether-it-worked">Write it before you know whether it worked</h2>
+<p>This is the rule that improves the record most and the one nobody follows.</p>
+<p>Once you know the outcome, you write a different entry. Not dishonestly — the process is invisible from the inside. A run that succeeded gets written up as though the path to it were direct. A run that failed gets a shorter entry, because it feels like nothing happened. The awkward steps, the reruns, the thing you tried first, quietly vanish from the record in proportion to how well the result turned out.</p>
+<p>So write the setup before you press go: the question, the versions, the parameters, what you expect. Then add the outcome underneath. It takes two minutes and it is the only reliable defence against hindsight editing your own notes.</p>
+<p>It is the same habit as <a href="/blog/writing-your-own-runbooks/">writing something down the first time you work it out</a>, moved thirty seconds earlier, to the moment before you have an opinion about it.</p>
+<h2 id="negative-results-are-the-ones-worth-keeping">Negative results are the ones worth keeping</h2>
+<p>The most valuable entries in a research log are the things that did not work, and they are the least likely to be written, because a failed run feels like a day with nothing to show for it.</p>
+<p>Five months later you will have the idea again. It is a good idea — that is why you had it twice — and without a record you will spend another three days rediscovering why it does not work. Multiply by a research group, where the person who tried it has since graduated, and this is a substantial fraction of all wasted effort in science.</p>
+<p>The entry is one line. "Tried the weighted version; it makes no difference, because the weights are almost uniform in this sample." That sentence is worth days, and it is worth more to the next person than to you.</p>
+<h2 id="version-control-does-half-of-this">Version control does half of this</h2>
+<p>Be fair to git: it records the code exactly, it records when it changed, and it lets you go back. That is a large part of the problem solved, and if you are not using it for research code, start there before reading anything else in this article.</p>
+<p>What it does not record is the rest of the entry. It does not know why you made the change, which run produced figure 3, what data file was mounted, what you typed at the prompt, what the environment looked like, or which of eleven branches was the one that produced the number in the draft. A commit message is a note about a change to the code; a log entry is a note about a piece of work. They are different objects and one does not substitute for the other.</p>
+<p>The join between them is the commit hash, written into the log entry. One line, and it makes both records navigable from either end.</p>
+<h2 id="every-figure-should-name-its-run">Every figure should name its run</h2>
+<p>This is the specific failure that hurts most, and it happens late.</p>
+<p>You are assembling a paper. There are eleven figures. Someone asks what the sample size was for figure 4, or a reviewer asks you to regenerate it with one change, and it turns out nobody can say with certainty which run produced it. The figure is nine months old, the script has moved on four times, and the number in the caption cannot be re-derived.</p>
+<p>The fix is one line per figure, kept with the figure: which run, which commit, which data, which script. If you do only one thing from this article after the negative-results line, do this one, because it is the one that turns into a genuine crisis rather than an inconvenience.</p>
+<figure><img src="/images/note.webp" alt="A dated log with entries appended underneath the facts that do not change" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Appended as you go, never rewritten. A log you tidy is a summary, and a summary is what you already had.</figcaption></figure>
+<h2 id="append-never-rewrite">Append, never rewrite</h2>
+<p>The entries are added and not edited. If March was wrong, September says so; March stays as it was.</p>
+<p>The reason is not ceremony. A log that is revised in the light of what you later learned is no longer evidence of anything — it is a summary, and you already had one of those in your head, which is what made it unreliable. The value of the record is precisely that it was written before you knew how the story ended.</p>
+<p>This is the same discipline that makes <a href="/blog/keeping-a-decision-journal/">a decision journal</a> worth keeping, for the same reason: the entry is useful because it cannot flatter you afterwards.</p>
+<h2 id="where-it-should-live">Where it should live</h2>
+<p>Unpublished results, in a searchable pile, for the duration of a project that may run for years.</p>
+<p>The requirements are unglamorous. It must open fast enough that you use it mid-task, because a log you open only at the end of the day is a log written from memory. It must still work when the network does not, on a bench, in a field site, on a train. It must be searchable across years, because the query is always "when did I last see this error" and never "which folder is it in". And it must be exportable, because the project will outlive whatever you are using and possibly your access to the institution's systems.</p>
+<p>Local, plain, no account, one file you can copy. That is <a href="/blog/what-local-first-means-for-your-notes/">the ordinary local-first case</a>, and research is where it happens to bite hardest, because the time horizons are long and the data is often governed by rules about where it may be stored. Whatever you choose, back it up somewhere that is not the laptop — a lost research log is not recoverable by any means at all.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Nobody does all of this. The people with the best records in any research group keep maybe two-thirds of it, and they keep it because they were burned once, badly, and the memory is still fresh.</p>
+<p>The realistic version is three lines before each run — the question, the versions, the parameters — and one line after, including the failures. That is under two minutes per run and it catches most of what goes wrong.</p>
+<p>The rest of it, you will add gradually, each item after the specific week it would have saved you. That is how everybody actually learns this, and there is no shortcut, except possibly reading the list above and deciding to believe it early.</p>
+<p>If you want one place for it that opens instantly, appends without ceremony and searches across four years of it, <a href="/#pricing">Cyanote is $7.99, once</a>. The <a href="/blog/the-paper-you-read-twice/">literature notes</a> are a separate pile with a separate job, and what happens to both of them <a href="/blog/notes-from-year-one-read-in-year-four/">after three or four years</a> is its own problem.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>Notes</category>
+      <category>Learning</category>
+    </item>
+    <item>
       <title>The deposit you get back is the one you photographed</title>
       <link>https://cyanote.app/blog/the-deposit-you-photographed/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/the-deposit-you-photographed/</guid>
-      <pubDate>Thu, 17 Sep 2026 09:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Sep 2026 09:00:00 +0000</pubDate>
       <description>A deposit dispute is settled two years later by whoever kept evidence. The agent has a file and a process. Most tenants have a memory of the flat.</description>
       <content:encoded><![CDATA[<p>A deposit dispute is not an argument about what happened. It is an argument about what can be shown to have happened, decided by somebody who was never in the building, reading two accounts of a carpet.</p>
 <p>One of those accounts will be a dated check-in report with photographs, produced by a letting agent who does this four hundred times a year and has a template for it. The other will be yours.</p>
@@ -84,7 +203,7 @@
       <title>The bill that was an estimate</title>
       <link>https://cyanote.app/blog/the-bill-that-was-an-estimate/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/the-bill-that-was-an-estimate/</guid>
-      <pubDate>Thu, 17 Sep 2026 09:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Sep 2026 09:00:00 +0000</pubDate>
       <description>A bill arrives and the only thing you can tell about it is that it is bigger than last time. Sixty seconds a month is the difference between knowing and hoping.</description>
       <content:encoded><![CDATA[<p>Most household bills are not measurements. They are guesses, made by a supplier who has not read your meter, based on what a property like yours used in a year like this one, and then reconciled later against what actually happened.</p>
 <p>Usually that is fine, and the guess is close enough that nobody notices. Sometimes the guess runs low for eleven months and the correction arrives all at once, in the same week as everything else, as a number you cannot check.</p>
@@ -205,6 +324,66 @@
       <category>Method</category>
       <category>Backups</category>
       <category>Privacy</category>
+    </item>
+    <item>
+      <title>Notes from year one, read in year four</title>
+      <link>https://cyanote.app/blog/notes-from-year-one-read-in-year-four/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/notes-from-year-one-read-in-year-four/</guid>
+      <pubDate>Wed, 16 Sep 2026 09:00:00 +0000</pubDate>
+      <description>You open a note in your own words and a stranger wrote it. Context is free when you write and costs everything when you read it four years later.</description>
+      <content:encoded><![CDATA[<p>The note is in your own words. You recognise the phrasing and the abbreviations are yours. You still cannot tell what it means.</p>
+<p>"Checked the other one against S's version — same problem as before, so use the second approach for now." Every word is clear and the sentence is unreadable. Which other one. Which S. What problem. What were the two approaches.</p>
+<p>You wrote it in your first year. It is now your fourth. Nothing has gone wrong with the file; the note is exactly as you left it. What has gone is everything that was in the room at the time, and the note was written on the assumption that it would still be there.</p>
+<h2 id="context-is-free-when-you-write-and-expensive-when-you-read">Context is free when you write and expensive when you read</h2>
+<p>This is the whole mechanism, and it explains almost every failure of an old note.</p>
+<p>At the moment of writing, you have just been in the meeting. You know who S is, what the two approaches are, what happened last time. Writing any of that down feels absurd — padding, at best, and probably a waste of the thirty seconds you have before the next thing. So the note records the part that felt new, and silently relies on the rest.</p>
+<p>At the moment of reading, all of that is gone, and none of it can be recovered from the note, because the note is what survived. There is nowhere else to look.</p>
+<p>Most productivity advice treats this as a discipline problem — you should have written more. That is not quite right. Writing everything down is genuinely too slow, and people who try it stop within a fortnight. The trick is knowing which small number of things decay and adding only those.</p>
+<h2 id="the-seven-things-that-stop-resolving">The seven things that stop resolving</h2>
+<p>They are strikingly consistent, and if you fix them you have fixed most of it.</p>
+<figure><img src="/images/note-decay.svg" alt="The same note read a year apart, with the parts that stopped resolving marked" width="1200" height="520" loading="lazy" decoding="async" /><figcaption>Nothing in the note changed. Six of its references simply stopped having anything to point at.</figcaption></figure>
+<p><strong>Pronouns and demonstratives.</strong> "It", "they", "this one", "the other version". Fine in the room, unrecoverable outside it.</p>
+<p><strong>Initials and first names without a role.</strong> "S said" is meaningless in year four, after three cohorts have passed through. "S (Sana, the second reader)" costs four words.</p>
+<p><strong>"The usual", "as discussed", "same as before".</strong> These point at a shared context that expires. Name the thing instead, once.</p>
+<p><strong>Relative dates.</strong> "Last week", "the new version", "the current draft", "recently". Every one of these is an arrow at a moving target. Absolute dates are always right and never need interpreting.</p>
+<p><strong>Paths and locations.</strong> <code>~/work/data/final2/</code> is a promise about a filesystem that will be reorganised twice before you finish. Record what the thing is as well as where it was.</p>
+<p><strong>Links out.</strong> A URL to a preprint, an internal wiki, a shared drive. Some fraction of these will be dead within four years, and the ones that break are not predictable. A link plus the title and author survives; a bare link does not.</p>
+<p><strong>Unstated conclusions.</strong> The note records what happened and not what you decided, because at the time the decision was obvious. It stops being obvious almost immediately.</p>
+<p>Six or seven words per note, in total. That is the entire cost.</p>
+<h2 id="the-question-you-were-asking-has-changed">The question you were asking has changed</h2>
+<p>The second thing that happens over four years is subtler and cannot be fixed by writing more clearly.</p>
+<p>Year-one notes were taken to answer a year-one question. By year three the project has narrowed, pivoted, or been quietly replaced by a better version of itself, and the old notes are not wrong — they are answers to a question you no longer have. They discuss a framing you have abandoned, using terms you have since redefined, weighing options that stopped being live two years ago.</p>
+<p>This is why the instinct to reorganise old notes is usually a waste. The structure is not the problem. The problem is that a note written under the old framing needs a sentence at the top saying what it was for and why it stopped mattering — which is an annotation, not a reorganisation, and takes a minute rather than a weekend.</p>
+<p>The most useful hour in a long project is the one spent at the end of each year rereading the previous year's notes and adding those sentences. Not tidying, not linking, not restructuring. Reading, and writing down what you now know that the note does not.</p>
+<h2 id="some-notes-should-be-allowed-to-die">Some notes should be allowed to die</h2>
+<p>The corollary, and the part people find hardest: most of it does not need to survive.</p>
+<p>A four-year project generates an enormous amount of writing that was useful on the day and has no further job — the working-out, the meeting you already acted on, the version of the argument you discarded in month eight. Keeping it costs nothing in disk and something real in attention, because it is what your searches will fill up with.</p>
+<p>What is worth carrying forward is fairly small: decisions and why, methods and parameters, things that were tried and failed, the literature notes, anything about people, and anything you would need to defend. I have written separately about <a href="/blog/what-to-delete-from-your-notes/">what to delete</a>; the rule that transfers best to research is that you delete what you would not want to find, and you keep what somebody might ask you about.</p>
+<p>The rest can stay where it falls. There is no need to curate it, and curating it is one of the more convincing ways to avoid writing a chapter.</p>
+<figure><img src="/images/note.webp" alt="A search box finding the one note across four years of them" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>After four years the question is always when did I last see this, never which folder is it in.</figcaption></figure>
+<h2 id="search-is-the-only-structure-that-survives">Search is the only structure that survives</h2>
+<p>Related, and worth saying plainly: whatever folder scheme you invent in year one will not be the scheme you want in year four, because you did not yet know what the project was about.</p>
+<p>This is not a failure of planning. It is unavoidable, and it means the structure you should rely on is the one that does not depend on having guessed correctly — <a href="/blog/searching-your-own-notes/">search that actually works</a>, across everything, instantly. Fold in a small number of durable conventions, like putting the date and the type of thing at the top of every note, and that is genuinely enough. Elaborate hierarchies are a bet on a version of the project that does not exist yet.</p>
+<h2 id="somebody-else-will-read-these">Somebody else will read these</h2>
+<p>At some point the notes stop being private. A supervisor asks how a number was produced. An examiner asks why you rejected an approach. A successor inherits the data and the scripts, sometimes after you have left and stopped answering email.</p>
+<p>Research groups run on <a href="/blog/inheriting-someone-elses-notes/">inherited notes</a>, and the experience of receiving them is usually poor — the person who wrote them was writing for themselves, on the reasonable assumption that themselves was the only reader.</p>
+<p>The test is the one from <a href="/blog/handing-over-your-work/">handing over your work</a>: could someone competent continue from what is written, without asking you? For a research project the honest answer is usually no, and the gap between no and yes is not a documentation project. It is the seven things above, plus the annotation pass, plus one page per major piece of work saying what it was, where the data is, and what state it was left in.</p>
+<p>Write that page when you finish a piece of work, not when you leave. At the end, you will be <a href="/blog/closing-a-project/">closing the project</a> in a hurry, and it will not get written.</p>
+<h2 id="four-years-is-longer-than-most-software">Four years is longer than most software</h2>
+<p>A practical point that only matters on this timescale.</p>
+<p>A doctorate, a long study, a multi-year project — these outlast subscriptions, funding, laptops, institutional accounts and quite a few companies. A system that requires a valid card, an institutional login, or a service to still exist is a system with an expiry date you do not control, and the expiry will not arrive at a convenient moment.</p>
+<p>The properties that matter over four years are unromantic: it works offline, it opens without asking anyone's permission, it stores things in a form you can read without the application, and <a href="/blog/getting-your-notes-out/">everything comes out in one file</a> when you want it to. Whatever you use, the test is whether you could walk away with the lot tomorrow.</p>
+<p>And back it up somewhere that is not the laptop, in more than one place, tested at least once. Of everything in this article this is the only item where the failure is total rather than annoying.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>You cannot write notes that need no context. You can write notes that need a little less of it, and the difference between the two is about six words per note.</p>
+<p>If you take one habit: <strong>name the thing instead of pointing at it.</strong> Not "the other version" but "the 2024 version with the wider sample". Not "as discussed" but the actual decision. It takes seconds and it is the single change that makes an old note readable.</p>
+<p>If you take two: <strong>absolute dates, always.</strong> "Last week" is a note that decays from the moment it is written.</p>
+<p>Everything else here is worth doing and none of it is worth stopping work for. The annotation pass at the end of a year, the page written when a piece of work finishes, the discipline of naming people with their roles — these accumulate quietly, and the payoff arrives in the last year, when you are writing up and reading four years of yourself at speed.</p>
+<p>That is the week this is for. Not today.</p>
+<p>If you want somewhere that opens instantly, searches four years of notes in one box and does not depend on an account that might expire before you finish, <a href="/#pricing">Cyanote is $7.99, once</a>. The two piles this has to hold are <a href="/blog/the-paper-you-read-twice/">the papers you have read</a> and <a href="/blog/the-experiment-that-cannot-be-repeated/">the record of what you actually did</a>.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>Notes</category>
+      <category>Learning</category>
     </item>
     <item>
       <title>Getting paid is a separate job from doing the work</title>
