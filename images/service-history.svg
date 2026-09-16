@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-labelledby="svc-title svc-desc">
+  <title id="svc-title">One maintenance note: fixed facts above, dated entries below</title>
+  <desc id="svc-desc">A single note for a boiler. The top block holds facts that rarely change: installation date and installer, serial number and where the plate is, warranty length, service interval, the isolation valve location and the exact filter it takes. Below a divider, dated entries are appended newest last and never edited, each recording what happened on a date: a service with the pressure reading, a pressure drop, a replaced expansion vessel with its cost, and a bled radiator.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .ttl  { font-size: 24px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .lbl  { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+    .date { font-size: 17px; font-weight: 600; fill: #0e7cc4; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  </style>
+
+  <rect class="card" x="24" y="24" width="1152" height="448" rx="12"/>
+  <rect x="24" y="24" width="1152" height="7" rx="3.5" fill="#0e7cc4"/>
+
+  <text class="ttl" x="56" y="80">Boiler &#8212; Worcester Bosch Greenstar 30i</text>
+
+  <text class="lbl" x="56" y="120">FACTS THAT RARELY CHANGE</text>
+  <text class="item" x="56"  y="158">Installed Mar 2019 &#8212; Kelly Plumbing</text>
+  <text class="item" x="620" y="158">Serial 7731600123, plate behind casing</text>
+  <text class="item" x="56"  y="192">Warranty 10 years from install</text>
+  <text class="item" x="620" y="192">Service interval: annually, every October</text>
+  <text class="item" x="56"  y="226">Isolation valve: under the sink, left</text>
+  <text class="item" x="620" y="226">Filter: Magnaclean Pro2, 22mm</text>
+
+  <line x1="56" y1="256" x2="1144" y2="256" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="lbl" x="56" y="292">DATED ENTRIES &#8212; APPENDED, NEVER EDITED</text>
+
+  <text class="date" x="56" y="330">2024-10-08</text>
+  <text class="item" x="212" y="330">Serviced, Kelly. Pressure 1.4. Said the pump is getting noisy.</text>
+  <text class="date" x="56" y="366">2025-02-19</text>
+  <text class="item" x="212" y="366">Pressure down to 0.7 twice in a week. Repressurised.</text>
+  <text class="date" x="56" y="402">2025-10-02</text>
+  <text class="item" x="212" y="402">Serviced, Kelly. Expansion vessel replaced, &#163;180.</text>
+  <text class="date" x="56" y="438">2026-03-11</text>
+  <text class="item" x="212" y="438">Back bedroom radiator cold at the top. Bled, fine since.</text>
+
+  <line x1="24" y1="496" x2="1176" y2="496" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="528">Four lines of history is enough to tell whether the noise in 2024 became the repair in 2025.</text>
+</svg>

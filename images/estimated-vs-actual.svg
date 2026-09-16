@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="ev-title ev-desc">
+  <title id="ev-title">Flat estimated billing against what the house actually used</title>
+  <desc id="ev-desc">Twelve months of billing. For eleven months the bill is a flat forty-five pounds, shown as short grey bars. A blue line shows what the house actually used each month, which is far higher in winter — ninety-five pounds in January — and lower in summer, dipping to thirty pounds. The line runs far above the bars through the winter and dips below them in summer, so a shortfall builds up across the year as a whole. In December a catch-up bill of two hundred and twenty-seven pounds arrives, shown as a tall red bar. The yearly total is seven hundred and twenty-two pounds either way.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .ax   { font-size: 15px; fill: #71757e; }
+    .mon  { font-size: 15px; fill: #71757e; text-anchor: middle; }
+    .key  { font-size: 16px; fill: #3d3f45; }
+    .cal  { font-size: 17px; font-weight: 600; fill: #b3392c; text-anchor: middle; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+  </style>
+
+  <rect x="110" y="34" width="14" height="14" rx="3" fill="#c9cdd4"/>
+  <text class="key" x="134" y="46">Billed each month</text>
+  <line x1="320" y1="41" x2="352" y2="41" stroke="#0e7cc4" stroke-width="3"/>
+  <circle cx="336" cy="41" r="4" fill="#0e7cc4"/>
+  <text class="key" x="362" y="46">What the house actually used</text>
+
+  <line x1="110.0" y1="400.0" x2="1150.0" y2="400.0" stroke="#efeff1" stroke-width="2"/>
+  <text class="ax" x="92" y="406.0" text-anchor="end">&#163;0</text>
+  <line x1="110.0" y1="336.5" x2="1150.0" y2="336.5" stroke="#efeff1" stroke-width="2"/>
+  <text class="ax" x="92" y="342.5" text-anchor="end">&#163;50</text>
+  <line x1="110.0" y1="273.1" x2="1150.0" y2="273.1" stroke="#efeff1" stroke-width="2"/>
+  <text class="ax" x="92" y="279.1" text-anchor="end">&#163;100</text>
+  <line x1="110.0" y1="209.6" x2="1150.0" y2="209.6" stroke="#efeff1" stroke-width="2"/>
+  <text class="ax" x="92" y="215.6" text-anchor="end">&#163;150</text>
+  <line x1="110.0" y1="146.2" x2="1150.0" y2="146.2" stroke="#efeff1" stroke-width="2"/>
+  <text class="ax" x="92" y="152.2" text-anchor="end">&#163;200</text>
+  <line x1="110.0" y1="82.7" x2="1150.0" y2="82.7" stroke="#efeff1" stroke-width="2"/>
+  <text class="ax" x="92" y="88.7" text-anchor="end">&#163;250</text>
+  <rect x="130.3" y="342.9" width="46" height="57.1" rx="3" fill="#c9cdd4"/>
+  <rect x="217.0" y="342.9" width="46" height="57.1" rx="3" fill="#c9cdd4"/>
+  <rect x="303.7" y="342.9" width="46" height="57.1" rx="3" fill="#c9cdd4"/>
+  <rect x="390.3" y="342.9" width="46" height="57.1" rx="3" fill="#c9cdd4"/>
+  <rect x="477.0" y="342.9" width="46" height="57.1" rx="3" fill="#c9cdd4"/>
+  <rect x="563.7" y="342.9" width="46" height="57.1" rx="3" fill="#c9cdd4"/>
+  <rect x="650.3" y="342.9" width="46" height="57.1" rx="3" fill="#c9cdd4"/>
+  <rect x="737.0" y="342.9" width="46" height="57.1" rx="3" fill="#c9cdd4"/>
+  <rect x="823.7" y="342.9" width="46" height="57.1" rx="3" fill="#c9cdd4"/>
+  <rect x="910.3" y="342.9" width="46" height="57.1" rx="3" fill="#c9cdd4"/>
+  <rect x="997.0" y="342.9" width="46" height="57.1" rx="3" fill="#c9cdd4"/>
+  <rect x="1083.7" y="111.9" width="46" height="288.1" rx="3" fill="#b3392c"/>
+  <polyline points="153.3,279.4 240.0,285.8 326.7,304.8 413.3,330.2 500.0,349.2 586.7,359.4 673.3,361.9 760.0,361.9 846.7,349.2 933.3,323.8 1020.0,298.5 1106.7,279.4" fill="none" stroke="#0e7cc4" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="153.3" cy="279.4" r="4" fill="#0e7cc4"/>
+  <circle cx="240.0" cy="285.8" r="4" fill="#0e7cc4"/>
+  <circle cx="326.7" cy="304.8" r="4" fill="#0e7cc4"/>
+  <circle cx="413.3" cy="330.2" r="4" fill="#0e7cc4"/>
+  <circle cx="500.0" cy="349.2" r="4" fill="#0e7cc4"/>
+  <circle cx="586.7" cy="359.4" r="4" fill="#0e7cc4"/>
+  <circle cx="673.3" cy="361.9" r="4" fill="#0e7cc4"/>
+  <circle cx="760.0" cy="361.9" r="4" fill="#0e7cc4"/>
+  <circle cx="846.7" cy="349.2" r="4" fill="#0e7cc4"/>
+  <circle cx="933.3" cy="323.8" r="4" fill="#0e7cc4"/>
+  <circle cx="1020.0" cy="298.5" r="4" fill="#0e7cc4"/>
+  <circle cx="1106.7" cy="279.4" r="4" fill="#0e7cc4"/>
+  <text class="cal" x="1106.7" y="97.9">&#163;227</text>
+  <text class="mon" x="153.3" y="428">J</text>
+  <text class="mon" x="240.0" y="428">F</text>
+  <text class="mon" x="326.7" y="428">M</text>
+  <text class="mon" x="413.3" y="428">A</text>
+  <text class="mon" x="500.0" y="428">M</text>
+  <text class="mon" x="586.7" y="428">J</text>
+  <text class="mon" x="673.3" y="428">J</text>
+  <text class="mon" x="760.0" y="428">A</text>
+  <text class="mon" x="846.7" y="428">S</text>
+  <text class="mon" x="933.3" y="428">O</text>
+  <text class="mon" x="1020.0" y="428">N</text>
+  <text class="mon" x="1106.7" y="428">D</text>
+  <line x1="110" y1="400" x2="1150" y2="400" stroke="#b8bcc4" stroke-width="2"/>
+
+  <line x1="24" y1="452" x2="1176" y2="452" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="486">Eleven months at &#163;45, then &#163;227. The same &#163;722 either way &#8212; the only variable is whether you saw it coming.</text>
+</svg>

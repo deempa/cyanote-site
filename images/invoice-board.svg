@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="inb-title inb-desc">
+  <title id="inb-title">Outstanding invoices on a board, with the overdue column ageing</title>
+  <desc id="inb-desc">Five columns tracking invoices: Drafted, Sent, Overdue, Chased and Paid. Drafted holds one invoice not yet issued. Sent holds two with future due dates. Overdue holds two, aged thirty-four and twelve days, marked in red. Chased holds one with a promised payment date. Paid holds two settled invoices. The two middle columns together are money already earned but not received.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .col  { fill: #efeff1; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .lbl  { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .04em; }
+    .lblr { font-size: 15px; font-weight: 600; fill: #b3392c; letter-spacing: .04em; }
+    .ref  { font-size: 17px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 15px; fill: #71757e; }
+    .subr { font-size: 15px; font-weight: 600; fill: #b3392c; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+  </style>
+
+  <rect class="col" x="24"  y="40" width="216" height="344" rx="12"/>
+  <rect class="col" x="258" y="40" width="216" height="344" rx="12"/>
+  <rect class="col" x="492" y="40" width="216" height="344" rx="12"/>
+  <rect class="col" x="726" y="40" width="216" height="344" rx="12"/>
+  <rect class="col" x="960" y="40" width="216" height="344" rx="12"/>
+
+  <text class="lbl"  x="48"  y="76">DRAFTED</text>
+  <text class="lbl"  x="282" y="76">SENT</text>
+  <text class="lblr" x="516" y="76">OVERDUE</text>
+  <text class="lbl"  x="750" y="76">CHASED</text>
+  <text class="lbl"  x="984" y="76">PAID</text>
+
+  <rect class="card" x="40" y="96" width="184" height="68" rx="10"/>
+  <text class="ref" x="60" y="128">#0114 &#183; &#163;1,200</text>
+  <text class="sub" x="60" y="150">work finished Friday</text>
+
+  <rect class="card" x="274" y="96" width="184" height="68" rx="10"/>
+  <text class="ref" x="294" y="128">#0112 &#183; &#163;850</text>
+  <text class="sub" x="294" y="150">due 30 Sep</text>
+  <rect class="card" x="274" y="180" width="184" height="68" rx="10"/>
+  <text class="ref" x="294" y="212">#0113 &#183; &#163;2,400</text>
+  <text class="sub" x="294" y="234">due 12 Oct &#183; PO 44192</text>
+
+  <rect class="card" x="508" y="96" width="184" height="68" rx="10"/>
+  <rect x="508" y="96" width="6" height="68" rx="3" fill="#b3392c"/>
+  <text class="ref"  x="530" y="128">#0109 &#183; &#163;1,750</text>
+  <text class="subr" x="530" y="150">34 days overdue</text>
+  <rect class="card" x="508" y="180" width="184" height="68" rx="10"/>
+  <rect x="508" y="180" width="6" height="68" rx="3" fill="#b3392c"/>
+  <text class="ref"  x="530" y="212">#0110 &#183; &#163;600</text>
+  <text class="subr" x="530" y="234">12 days overdue</text>
+
+  <rect class="card" x="742" y="96" width="184" height="68" rx="10"/>
+  <text class="ref" x="762" y="128">#0107 &#183; &#163;3,000</text>
+  <text class="sub" x="762" y="150">promised the 28th</text>
+
+  <rect class="card" x="976" y="96" width="184" height="68" rx="10"/>
+  <text class="ref" x="996" y="128">#0106 &#183; &#163;1,100</text>
+  <text class="sub" x="996" y="150">paid 2 Sep</text>
+  <rect class="card" x="976" y="180" width="184" height="68" rx="10"/>
+  <text class="ref" x="996" y="212">#0105 &#183; &#163;940</text>
+  <text class="sub" x="996" y="234">paid 21 Aug</text>
+
+  <line x1="24" y1="424" x2="1176" y2="424" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="462">&#163;2,350 overdue and &#163;3,000 promised is &#163;5,350 you have earned and do not have.</text>
+  <text class="foot" x="24" y="490">Nothing moves to Paid on a promise &#8212; only when the money is in the account.</text>
+</svg>

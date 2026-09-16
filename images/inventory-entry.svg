@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="inv-title inv-desc">
+  <title id="inv-title">What each line of an inventory entry is for</title>
+  <desc id="inv-desc">A single home-inventory entry for a bicycle, with each of its five lines paired to the job that line does in an insurance claim. The description line is a replacement instruction rather than a category. The serial number is the only field that cannot be reconstructed after the item is gone. The purchase line is deliberately approximate. The proof line is a pointer to where evidence lives rather than the evidence itself. The photograph places the item inside your home.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 21px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .lbl  { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: .05em; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+    .note { font-size: 16px; fill: #71757e; }
+    .warn { font-size: 16px; font-weight: 600; fill: #b3392c; }
+  </style>
+
+  <rect class="card" x="24" y="24" width="600" height="392" rx="12"/>
+  <rect x="24" y="24" width="600" height="7" rx="3.5" fill="#0e7cc4"/>
+  <text class="lbl" x="56" y="66">ONE ENTRY, AS WRITTEN</text>
+  <line x1="56" y1="92" x2="592" y2="92" stroke="#e6e6e9" stroke-width="2"/>
+
+  <text class="h"    x="56" y="132">Bicycle &#8212; Trek FX 3 Disc, 2022, matt black</text>
+  <text class="item" x="56" y="194">Serial WTU123K0456M, under the bracket</text>
+  <text class="item" x="56" y="256">Jul 2022, Evans Cycles, about &#163;750</text>
+  <text class="item" x="56" y="318">Receipt photographed below; card stmt Jul 2022</text>
+  <text class="item" x="56" y="380">Photo: in the hall, by the radiator</text>
+
+  <line x1="636" y1="126" x2="684" y2="126" stroke="#c9cdd4" stroke-width="2"/>
+  <line x1="636" y1="188" x2="684" y2="188" stroke="#c9cdd4" stroke-width="2"/>
+  <line x1="636" y1="250" x2="684" y2="250" stroke="#c9cdd4" stroke-width="2"/>
+  <line x1="636" y1="312" x2="684" y2="312" stroke="#c9cdd4" stroke-width="2"/>
+  <line x1="636" y1="374" x2="684" y2="374" stroke="#c9cdd4" stroke-width="2"/>
+
+  <text class="lbl" x="700" y="66">WHAT THE LINE IS DOING</text>
+  <text class="note" x="700" y="132">A replacement instruction, not a category</text>
+  <text class="warn" x="700" y="194">The one field you cannot reconstruct later</text>
+  <text class="note" x="700" y="256">Approximate and honest beats confident and wrong</text>
+  <text class="note" x="700" y="318">A pointer to the proof, not the proof itself</text>
+  <text class="note" x="700" y="380">Places the item inside your home</text>
+
+  <line x1="24" y1="452" x2="1176" y2="452" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="foot" x="24" y="492">Written on the day it arrives, this takes a minute. Written after a break-in, the second line cannot be written at all.</text>
+</svg>

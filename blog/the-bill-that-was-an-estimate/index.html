@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Meter readings, estimated bills and the record that settles it</title>
+<meta name="description" content="A bill arrives and the only thing you can tell about it is that it is bigger than last time. Sixty seconds a month is the difference between knowing and hoping." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/the-bill-that-was-an-estimate/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/the-bill-that-was-an-estimate/" />
+<meta property="og:title" content="Meter readings, estimated bills and the record that settles it" />
+<meta property="og:description" content="A bill arrives and the only thing you can tell about it is that it is bigger than last time. Sixty seconds a month is the difference between knowing and hoping." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Meter readings, estimated bills and the record that settles it" />
+<meta name="twitter:description" content="A bill arrives and the only thing you can tell about it is that it is bigger than last time. Sixty seconds a month is the difference between knowing and hoping." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The bill that was an estimate",
+  "description": "A bill arrives and the only thing you can tell about it is that it is bigger than last time. Sixty seconds a month is the difference between knowing and hoping.",
+  "datePublished": "2026-09-17",
+  "dateModified": "2026-09-17",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/the-bill-that-was-an-estimate/"
+  },
+  "url": "https://cyanote.app/blog/the-bill-that-was-an-estimate/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/estimated-vs-actual.svg",
+      "width": 1200,
+      "height": 520
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Method, How-to, Backups",
+  "wordCount": 1712
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The bill that was an estimate",
+      "item": "https://cyanote.app/blog/the-bill-that-was-an-estimate/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-09-17" />
+<meta property="article:modified_time" content="2026-09-17" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Method" />
+<meta property="article:tag" content="How-to" />
+<meta property="article:tag" content="Backups" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>The bill that was an estimate</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-09-17">17 September 2026</time></span>
+        <span class="dot">·</span>
+        <span>8 min read</span>
+      </div>
+    <ul class="tags"><li>Method</li><li>How-to</li><li>Backups</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Most household bills are not measurements. They are guesses, made by a supplier who has not read your meter, based on what a property like yours used in a year like this one, and then reconciled later against what actually happened.</p>
+      <p>Usually that is fine, and the guess is close enough that nobody notices. Sometimes the guess runs low for eleven months and the correction arrives all at once, in the same week as everything else, as a number you cannot check.</p>
+      <p>The thing that makes it uncheckable is not the supplier. It is that you have nothing to check it against.</p>
+      <h2 id="what-an-estimated-bill-actually-does-to-you">What an estimated bill actually does to you</h2>
+      <p>The mechanics are worth understanding, because they explain why the pain is shaped the way it is.</p>
+      <p>If the estimate runs high, you are lending the supplier money at no interest until somebody notices. Annoying, recoverable, and the kind of thing that sits in a credit balance you forget to reclaim.</p>
+      <p>If the estimate runs low, something worse happens: nothing, for a long time. You pay a comfortable monthly figure, form a belief about what your household costs to run, and make other decisions on the strength of it. Then a real reading happens — a meter is read, you move out, you switch supplier — and the whole accumulated difference arrives as one bill.</p>
+      <figure><img src="/images/estimated-vs-actual.svg" alt="Twelve months of flat estimated billing against what the house actually used, and the catch-up bill at the end" width="1200" height="520" loading="lazy" decoding="async" /><figcaption>Nothing here is a mistake. The shortfall was real from January; it was simply not billed until December.</figcaption></figure>
+      <p>None of that is a scandal. The money was always owed and the supplier is not doing anything improper. But there is a real difference between a cost you understood and a cost that ambushed you, and the difference is entirely about whether anybody was keeping a record.</p>
+      <h2 id="the-sixty-second-habit">The sixty-second habit</h2>
+      <p>Photograph the meter once a month, on roughly the same day.</p>
+      <p>Not write down the number — photograph it, and specifically photograph it so that three things are in a single frame:</p>
+      <p><strong>The reading itself</strong>, legible, including the decimal digits if there are any.</p>
+      <p><strong>The meter's serial number.</strong> This is what makes the photograph evidence rather than a claim. It proves which meter you read, which matters when the supplier has you down for the wrong one — a genuinely common problem in flats, where two meters in one cupboard can be swapped in a database for years.</p>
+      <p><strong>Enough of the surroundings</strong> to make it obvious it is your meter and not a stock photo.</p>
+      <p>The file carries its own date, which is the fourth fact and the one you would otherwise have to remember.</p>
+      <p>Sixty seconds, twelve times a year. It is the highest-value recurring minute in household admin, and it is boring enough that the only way it survives is as a repeating reminder rather than an intention — the same reason <a href="/blog/reminders-you-do-not-start-ignoring/">the reminders you do not start ignoring</a> are the ones attached to a fixed day rather than a good intention.</p>
+      <h2 id="what-a-year-of-readings-is-worth">What a year of readings is worth</h2>
+      <p>One reading is a number. Twelve are a different kind of object, and they do four things you cannot otherwise do.</p>
+      <p><strong>They let you say a bill is wrong with arithmetic.</strong> "This is too much" is a feeling and will be treated as one. "Your bill charges 2,400 units between March and June; my photographed readings for those dates show 1,430" is a correction, and it is handled by a different part of the organisation entirely.</p>
+      <p><strong>They find faults.</strong> The most useful pattern in a year of readings is the one that does not change when your life does. Usage that stays flat through a fortnight away, or climbs steadily through a summer, is a broken appliance, an immersion heater somebody left on, a heating timer set wrong, or — in a shared building — a circuit that is not actually yours. None of those is visible in a single bill, and all of them are obvious in a list.</p>
+      <p><strong>They make a tariff change legible.</strong> When a price changes, the question is what it means for you, and the answer requires knowing what you use. A year of readings turns a percentage into a number of pounds.</p>
+      <p><strong>They settle the final bill.</strong> More on this next, because it is where the actual money is.</p>
+      <h2 id="the-final-bill-is-where-people-lose-money">The final bill is where people lose money</h2>
+      <p>Every relationship with a supplier ends, and the ending is the expensive part.</p>
+      <p>You move out, or you switch, and there is a closing account to settle. That settlement uses a reading. If nobody took one on the day, the supplier will estimate it — and by then you no longer have access to the meter, which means you have no way to contest the estimate and no way to prove what the reading was on the day you left.</p>
+      <p>So the day you hand back keys or complete a sale, you take readings, photographed, for everything: electricity, gas, water where it is metered. This is the same photograph that does duty as <a href="/blog/the-deposit-you-photographed/">check-in and check-out evidence for a deposit</a>, and the same one that <a href="/blog/notes-for-a-house-move/">a house move</a> needs, which is a good indication of how much work one image does.</p>
+      <p>Submit them in writing, the same day, and keep the submission. Then put a reminder six weeks out to check that a final bill actually arrived and used the figure you gave. Final bills go wrong quietly and they go wrong after you have stopped paying attention, which is precisely why they go wrong.</p>
+      <h2 id="the-bills-that-are-not-metered-at-all">The bills that are not metered at all</h2>
+      <p>The same failure has a second form, and it is not about meters.</p>
+      <p>A subscription renews at a rate you did not agree to and would not have agreed to. An insurance policy auto-renews at a substantially higher premium than the one that attracted you. A service adds a fee, or moves you to a new plan "with more features", and the letter explaining it arrived eleven months ago.</p>
+      <p>The defence is identical in shape: keep the old document. What you were quoted, what the renewal letter said, the date the price changed, the plan you were actually on. Almost every dispute of this kind is won or lost on whether the customer can produce the earlier terms, and almost every customer cannot, because the email was in an account they have since cleaned out.</p>
+      <p>One note, per supplier, with the account number at the top and the renewal price each year underneath, is a five-year record of what a company has done to you. It is remarkably persuasive, and it takes one line a year to maintain.</p>
+      <h2 id="when-you-do-have-to-argue">When you do have to argue</h2>
+      <p>If a bill is wrong, the work is not complicated, but it is record-keeping rather than rhetoric.</p>
+      <p>Get the reference for the complaint at the first contact and write it down. Log every call the day it happens: the date, the name, what was said, what was promised. Ask for a specific thing — a corrected bill, a reading used, a date by which someone will respond — rather than for agreement in general.</p>
+      <p>If it escalates, the dated log is the thing that changes the conversation, exactly as it does when <a href="/blog/getting-paid-is-a-separate-job/">chasing an invoice that has not been paid</a>. The single most useful sentence available to you is "on the 14th, Dan told me this would be corrected by the 28th", and you can only say it if it was written down at the time.</p>
+      <p>Where you can take a complaint after the supplier has finished with it — an ombudsman, a regulator, a scheme — depends entirely on where you live and what the service is. Find out once, and note it. You will use it rarely and you will be very glad it is written down.</p>
+      <figure><img src="/images/calendar.webp" alt="A calendar with a repeating monthly reminder alongside the notes for the same thing" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The note holds the readings. The calendar is the only reason the readings exist.</figcaption></figure>
+      <h2 id="the-whole-system">The whole system</h2>
+      <p>One repeating monthly reminder. One note per supplier, with the account number, the meter serial, the tariff and the renewal date at the top, and a photographed reading appended each month underneath.</p>
+      <p>That is it. It is about twelve minutes a year, and it converts every bill you receive from an assertion into something you can check.</p>
+      <p>It should live somewhere that is yours. A record of what your household uses, month by month, is a fairly complete picture of when you are at home, and a supplier's own portal is not a substitute — it shows you their version of your history, for as long as you remain their customer, and it goes away when you leave. The point of the exercise is to have a record that survives the relationship it documents, which means <a href="/blog/where-your-notes-actually-live/">a file on your own machine</a>, backed up somewhere else.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>You will probably never need this. Most bills are roughly right, most suppliers correct errors when they are pointed out, and most years pass without an argument.</p>
+      <p>The case for doing it anyway is that the cost is sixty seconds a month and the payoff is asymmetric. The month it matters, it is worth a few hundred pounds and an afternoon of feeling powerless, and there is no way to construct the evidence retroactively — a meter does not remember what it said in March.</p>
+      <p>Start with one photograph, today, of each meter you have. That single image already does more than most households can produce, because it establishes a baseline, and every reading after it becomes a measurement rather than a guess.</p>
+      <p>If you want somewhere to keep them, <a href="/#pricing">Cyanote is $7.99, once</a> — one note per supplier with the photographs inside it, a calendar for the monthly reminder and the renewal dates, and no subscription, which feels like the right way to buy software that exists to help you notice subscriptions.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Download for Mac — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/the-deposit-you-photographed/">The deposit you get back is the one you photographed</a><span>A deposit dispute is settled two years later by whoever kept evidence. The agent has a file and a process. Most tenants have a memory of the flat.</span></li><li><a href="https://cyanote.app/blog/a-house-has-a-service-history/">A house has a service history and nobody keeps it</a><span>A car worth fifteen thousand comes with a service book. A house worth twenty times that comes with a drawer of manuals and a vague handover.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>

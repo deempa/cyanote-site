@@ -7,12 +7,326 @@
     <atom:link href="https://cyanote.app/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Plain writing about keeping notes, running a week and owning your own data — from the person who builds Cyanote, a local-first Mac app you pay for once.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Sep 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 09:00:00 +0000</lastBuildDate>
     <image>
       <url>https://cyanote.app/og-image.png</url>
       <title>The Cyanote blog — notes, tasks and calmer software</title>
       <link>https://cyanote.app/blog/</link>
     </image>
+    <item>
+      <title>The deposit you get back is the one you photographed</title>
+      <link>https://cyanote.app/blog/the-deposit-you-photographed/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/the-deposit-you-photographed/</guid>
+      <pubDate>Thu, 17 Sep 2026 09:00:00 +0000</pubDate>
+      <description>A deposit dispute is settled two years later by whoever kept evidence. The agent has a file and a process. Most tenants have a memory of the flat.</description>
+      <content:encoded><![CDATA[<p>A deposit dispute is not an argument about what happened. It is an argument about what can be shown to have happened, decided by somebody who was never in the building, reading two accounts of a carpet.</p>
+<p>One of those accounts will be a dated check-in report with photographs, produced by a letting agent who does this four hundred times a year and has a template for it. The other will be yours.</p>
+<p>That asymmetry is the entire problem, and it has nothing to do with whether you were a good tenant. You rent somewhere every two or three years. They do this professionally. They have a process and you have a recollection.</p>
+<h2 id="the-window-you-do-not-know-is-open">The window you do not know is open</h2>
+<p>Almost every tenancy starts with a check-in inventory — a document listing the condition of the property, room by room, written by the landlord or their agent.</p>
+<p>It is not neutral. It is not meant to be dishonest either; it is simply written quickly, by someone who has seen forty flats this month, using phrases like "good condition throughout" that will later be read as a much stronger claim than whoever typed it intended.</p>
+<p>You are usually given a short period to respond to it. That window is the single most valuable thing you get as a tenant and it is the thing most people let close, because it arrives in the week you are carrying boxes and it looks like paperwork rather than money.</p>
+<p>Read it against the actual flat, in each room, with the document open. Where it is wrong, say so in writing, specifically, and keep a copy of what you sent and when. "The report says the oven is clean; it is not, photographs attached" is a sentence that will be worth several hundred pounds in two years, and it takes a minute to write on the day and cannot be written at all afterwards.</p>
+<p>The exact rules — how long the window is, what scheme holds the money, who adjudicates, what happens if nobody responds — vary enormously by country and sometimes by region. Find out which rules apply to you at the start of the tenancy, not at the end. At the end you are looking it up because something has already gone wrong.</p>
+<h2 id="day-one-is-the-only-day-the-flat-is-not-your-fault">Day one is the only day the flat is not your fault</h2>
+<p>Everything visible on the first day is somebody else's. Everything visible on the last day is presumed to be yours unless the first day says otherwise.</p>
+<p>So the first day gets an hour, and the hour produces photographs. Not an artistic record — evidence, which has different requirements:</p>
+<p><strong>Every room, wide, from the doorway.</strong> Establishes the general state and the layout.</p>
+<p><strong>Every existing mark, close.</strong> The scuff on the skirting, the chip in the bath, the stain on the carpet by the window, the crack in the tile, the burn on the worktop. These are the specific things that come back later with your name on them.</p>
+<p><strong>The oven, inside.</strong> It is a cliché because it is true. Ovens are where a surprising share of deposit money goes, and the only defence is a photograph of how clean it was when you got the keys.</p>
+<p><strong>Appliances, working.</strong> A short video of each one running is better than a photograph of it existing.</p>
+<p><strong>Every meter, whole, with the serial number and the reading in one frame.</strong> This belongs to the deposit and to <a href="/blog/the-bill-that-was-an-estimate/">the bill you will be asked to pay</a> — one photograph does both jobs.</p>
+<p><strong>Anything that does not work.</strong> The window that will not close, the radiator that stays cold, the extractor that does nothing. Report each one in writing this week, even if you do not want it fixed yet.</p>
+<p>Then put them somewhere they will still be, in the state you left them, in two years — which means <a href="/blog/backing-up-local-notes/">somewhere you back up</a>, not only a phone that may be replaced twice before this tenancy ends.</p>
+<figure><img src="/images/tenancy-evidence.svg" alt="The three moments a tenancy produces evidence, and the gap most tenants leave in the middle" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Two of these are an hour each. The middle one is ten seconds at a time, and it is the one nobody keeps.</figcaption></figure>
+<h2 id="the-repair-you-reported-by-phone-did-not-happen">The repair you reported by phone did not happen</h2>
+<p>This is the failure that costs the most and feels the least like a failure at the time.</p>
+<p>You call about the damp. Someone is sympathetic. Nothing happens. You call again in March, and again in the summer, and eventually it either gets fixed or you stop mentioning it. When the tenancy ends and there is mould on the wall, the position is that you never reported it, because as far as any record is concerned, you did not.</p>
+<p>A phone call leaves nothing behind. A text message to a letting agent's mobile leaves something, but on a device and in a thread you do not control and cannot search in two years.</p>
+<p>The habit is simple and it is the same one that makes <a href="/blog/notes-for-a-house-move/">a house move survivable</a>: report in writing, and log the ones you did not.</p>
+<p>One note for the tenancy, with dated entries appended and never rewritten:</p>
+<pre><code>2025-11-04  Emailed agent re: damp on the north bedroom wall. Photos attached.
+2025-11-19  Called, spoke to Dan. Said he'd chase the landlord this week.
+2025-12-02  Emailed again, no reply to either.
+2026-01-08  Contractor visited, said it is condensation, no work done.</code></pre>
+<p>Four lines. Written as they happened, each one taking ten seconds. Together they are a completely different document from "I definitely told them about the damp" — and the difference is visible to a stranger, which is the only audience that matters.</p>
+<p>Follow up every phone call with an email that says what was agreed. Not as a hostile act — as the normal thing a person does. "Thanks for the call — just to confirm, you'll ask the landlord about the damp and come back to me next week." If it never happens, that email is the record. If it does, you have lost nothing.</p>
+<h2 id="the-things-that-go-missing-from-a-tenancy">The things that go missing from a tenancy</h2>
+<p>Collected from the ways these go wrong, and all of them belong in the same note as the repair log, at the top, where the facts sit:</p>
+<p>The address as the agency writes it, and your tenancy reference. The landlord's name, and whether you deal with them or an agent. The deposit amount, which scheme holds it, and the scheme's reference — get this at the start; it is the number you will need at the end.</p>
+<p>The tenancy start and end dates, the notice period, and how notice has to be given. Put the notice deadline in the calendar with a month's warning, because a tenancy that rolls on by accident is an expensive kind of accident, and this is exactly the <a href="/blog/life-admin-in-one-place/">life admin failure</a> that dates prevent.</p>
+<p>What is included: which appliances are the landlord's, whether the garden is yours to maintain, what the parking permit situation is, who holds the spare key. The emergency contact for a leak at 11pm, and whether it is the agent or the landlord, because you will need this once and urgently.</p>
+<p>Where the stopcock is. The boiler's make and last service date. Yes, this is the same list as <a href="/blog/a-house-has-a-service-history/">a house's service history</a> — the building has the same needs whether or not you own it, and the difference is that you also need to prove you did not break it.</p>
+<h2 id="the-last-day-from-the-same-positions">The last day, from the same positions</h2>
+<p>Check-out is the mirror of check-in and the part people rush, because by then they are exhausted and the van is outside.</p>
+<p>Photograph everything again, after cleaning, from the same doorways and the same angles as day one. Same frames matter more than good frames: two photographs of the same corner two years apart are an argument that resolves itself. Two photographs of roughly the same room are a discussion.</p>
+<p>Take the meter readings, photographed the same way, on the day you hand back the keys. Get written confirmation of the date you returned them.</p>
+<p>Then, before you submit anything, read the check-in report one more time and go through it line by line against your own photographs. The disputes that go badly are the ones where the tenant responds to a deduction with a general feeling of unfairness. The ones that go well are the ones where the tenant responds with "item 14, hall carpet: photographed on 3 March 2024, attached, showing the same mark".</p>
+<h2 id="fair-wear-and-tear-is-where-the-money-actually-is">Fair wear and tear is where the money actually is</h2>
+<p>Nearly every deposit dispute turns on one distinction: damage, which you pay for, and fair wear and tear, which you do not.</p>
+<p>Carpets thin. Paint marks. Things age, and a landlord is not entitled to a newer flat than the one they let. Where exactly the line falls depends on your jurisdiction and, honestly, on the adjudicator, but the thing that decides it in practice is almost always evidence of the starting condition and the length of the tenancy.</p>
+<p>Which is the same conclusion as everything above. You cannot argue about the rate of decline of a carpet without a picture of the carpet.</p>
+<figure><img src="/images/note.webp" alt="A note holding photographs and a dated log together" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The photographs and the log of what you reported, in one note, for the whole tenancy.</figcaption></figure>
+<h2 id="where-this-should-live">Where this should live</h2>
+<p>An hour of photographs of the inside of your home, plus your tenancy reference, your landlord's details and a log of every disagreement you have had with them, is not a document to scatter across a phone gallery and an email account belonging to an agency.</p>
+<p>It wants to be one note, on your own machine, that opens when you need it and does not depend on an account you might lose access to between the start of the tenancy and the end of it. That is the ordinary <a href="/blog/what-local-first-means-for-your-notes/">local-first argument</a>, on a document with a number attached to it.</p>
+<p>The one thing you must add is a copy somewhere else. A deposit record that only exists on the laptop is a deposit record with a single point of failure, and tenancies run for years.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>None of this makes a landlord reasonable. A landlord determined to keep your deposit will still try, and you may still end up in an adjudication you find irritating and slow.</p>
+<p>What it changes is the outcome of that adjudication, and more often, whether it happens at all. Most deductions are proposed rather than insisted on, and a tenant who replies with dated photographs and a written repair log usually receives a revised figure without any dispute at all — because the person on the other side can see exactly how it would go.</p>
+<p>The whole system is two hours: one on the day you get the keys, one on the day you give them back, and ten seconds every time you report something. Against a deposit that is routinely more than a month's rent, that is the best-paid two hours in this entire blog.</p>
+<p>If you want one place to keep the photographs, the references and the dated log together, <a href="/#pricing">Cyanote is $7.99, once</a> — one note per tenancy, on your own Mac, with no account that can expire between the day you move in and the day you argue about the carpet.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>How-to</category>
+      <category>Privacy</category>
+    </item>
+    <item>
+      <title>The bill that was an estimate</title>
+      <link>https://cyanote.app/blog/the-bill-that-was-an-estimate/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/the-bill-that-was-an-estimate/</guid>
+      <pubDate>Thu, 17 Sep 2026 09:00:00 +0000</pubDate>
+      <description>A bill arrives and the only thing you can tell about it is that it is bigger than last time. Sixty seconds a month is the difference between knowing and hoping.</description>
+      <content:encoded><![CDATA[<p>Most household bills are not measurements. They are guesses, made by a supplier who has not read your meter, based on what a property like yours used in a year like this one, and then reconciled later against what actually happened.</p>
+<p>Usually that is fine, and the guess is close enough that nobody notices. Sometimes the guess runs low for eleven months and the correction arrives all at once, in the same week as everything else, as a number you cannot check.</p>
+<p>The thing that makes it uncheckable is not the supplier. It is that you have nothing to check it against.</p>
+<h2 id="what-an-estimated-bill-actually-does-to-you">What an estimated bill actually does to you</h2>
+<p>The mechanics are worth understanding, because they explain why the pain is shaped the way it is.</p>
+<p>If the estimate runs high, you are lending the supplier money at no interest until somebody notices. Annoying, recoverable, and the kind of thing that sits in a credit balance you forget to reclaim.</p>
+<p>If the estimate runs low, something worse happens: nothing, for a long time. You pay a comfortable monthly figure, form a belief about what your household costs to run, and make other decisions on the strength of it. Then a real reading happens — a meter is read, you move out, you switch supplier — and the whole accumulated difference arrives as one bill.</p>
+<figure><img src="/images/estimated-vs-actual.svg" alt="Twelve months of flat estimated billing against what the house actually used, and the catch-up bill at the end" width="1200" height="520" loading="lazy" decoding="async" /><figcaption>Nothing here is a mistake. The shortfall was real from January; it was simply not billed until December.</figcaption></figure>
+<p>None of that is a scandal. The money was always owed and the supplier is not doing anything improper. But there is a real difference between a cost you understood and a cost that ambushed you, and the difference is entirely about whether anybody was keeping a record.</p>
+<h2 id="the-sixty-second-habit">The sixty-second habit</h2>
+<p>Photograph the meter once a month, on roughly the same day.</p>
+<p>Not write down the number — photograph it, and specifically photograph it so that three things are in a single frame:</p>
+<p><strong>The reading itself</strong>, legible, including the decimal digits if there are any.</p>
+<p><strong>The meter's serial number.</strong> This is what makes the photograph evidence rather than a claim. It proves which meter you read, which matters when the supplier has you down for the wrong one — a genuinely common problem in flats, where two meters in one cupboard can be swapped in a database for years.</p>
+<p><strong>Enough of the surroundings</strong> to make it obvious it is your meter and not a stock photo.</p>
+<p>The file carries its own date, which is the fourth fact and the one you would otherwise have to remember.</p>
+<p>Sixty seconds, twelve times a year. It is the highest-value recurring minute in household admin, and it is boring enough that the only way it survives is as a repeating reminder rather than an intention — the same reason <a href="/blog/reminders-you-do-not-start-ignoring/">the reminders you do not start ignoring</a> are the ones attached to a fixed day rather than a good intention.</p>
+<h2 id="what-a-year-of-readings-is-worth">What a year of readings is worth</h2>
+<p>One reading is a number. Twelve are a different kind of object, and they do four things you cannot otherwise do.</p>
+<p><strong>They let you say a bill is wrong with arithmetic.</strong> "This is too much" is a feeling and will be treated as one. "Your bill charges 2,400 units between March and June; my photographed readings for those dates show 1,430" is a correction, and it is handled by a different part of the organisation entirely.</p>
+<p><strong>They find faults.</strong> The most useful pattern in a year of readings is the one that does not change when your life does. Usage that stays flat through a fortnight away, or climbs steadily through a summer, is a broken appliance, an immersion heater somebody left on, a heating timer set wrong, or — in a shared building — a circuit that is not actually yours. None of those is visible in a single bill, and all of them are obvious in a list.</p>
+<p><strong>They make a tariff change legible.</strong> When a price changes, the question is what it means for you, and the answer requires knowing what you use. A year of readings turns a percentage into a number of pounds.</p>
+<p><strong>They settle the final bill.</strong> More on this next, because it is where the actual money is.</p>
+<h2 id="the-final-bill-is-where-people-lose-money">The final bill is where people lose money</h2>
+<p>Every relationship with a supplier ends, and the ending is the expensive part.</p>
+<p>You move out, or you switch, and there is a closing account to settle. That settlement uses a reading. If nobody took one on the day, the supplier will estimate it — and by then you no longer have access to the meter, which means you have no way to contest the estimate and no way to prove what the reading was on the day you left.</p>
+<p>So the day you hand back keys or complete a sale, you take readings, photographed, for everything: electricity, gas, water where it is metered. This is the same photograph that does duty as <a href="/blog/the-deposit-you-photographed/">check-in and check-out evidence for a deposit</a>, and the same one that <a href="/blog/notes-for-a-house-move/">a house move</a> needs, which is a good indication of how much work one image does.</p>
+<p>Submit them in writing, the same day, and keep the submission. Then put a reminder six weeks out to check that a final bill actually arrived and used the figure you gave. Final bills go wrong quietly and they go wrong after you have stopped paying attention, which is precisely why they go wrong.</p>
+<h2 id="the-bills-that-are-not-metered-at-all">The bills that are not metered at all</h2>
+<p>The same failure has a second form, and it is not about meters.</p>
+<p>A subscription renews at a rate you did not agree to and would not have agreed to. An insurance policy auto-renews at a substantially higher premium than the one that attracted you. A service adds a fee, or moves you to a new plan "with more features", and the letter explaining it arrived eleven months ago.</p>
+<p>The defence is identical in shape: keep the old document. What you were quoted, what the renewal letter said, the date the price changed, the plan you were actually on. Almost every dispute of this kind is won or lost on whether the customer can produce the earlier terms, and almost every customer cannot, because the email was in an account they have since cleaned out.</p>
+<p>One note, per supplier, with the account number at the top and the renewal price each year underneath, is a five-year record of what a company has done to you. It is remarkably persuasive, and it takes one line a year to maintain.</p>
+<h2 id="when-you-do-have-to-argue">When you do have to argue</h2>
+<p>If a bill is wrong, the work is not complicated, but it is record-keeping rather than rhetoric.</p>
+<p>Get the reference for the complaint at the first contact and write it down. Log every call the day it happens: the date, the name, what was said, what was promised. Ask for a specific thing — a corrected bill, a reading used, a date by which someone will respond — rather than for agreement in general.</p>
+<p>If it escalates, the dated log is the thing that changes the conversation, exactly as it does when <a href="/blog/getting-paid-is-a-separate-job/">chasing an invoice that has not been paid</a>. The single most useful sentence available to you is "on the 14th, Dan told me this would be corrected by the 28th", and you can only say it if it was written down at the time.</p>
+<p>Where you can take a complaint after the supplier has finished with it — an ombudsman, a regulator, a scheme — depends entirely on where you live and what the service is. Find out once, and note it. You will use it rarely and you will be very glad it is written down.</p>
+<figure><img src="/images/calendar.webp" alt="A calendar with a repeating monthly reminder alongside the notes for the same thing" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The note holds the readings. The calendar is the only reason the readings exist.</figcaption></figure>
+<h2 id="the-whole-system">The whole system</h2>
+<p>One repeating monthly reminder. One note per supplier, with the account number, the meter serial, the tariff and the renewal date at the top, and a photographed reading appended each month underneath.</p>
+<p>That is it. It is about twelve minutes a year, and it converts every bill you receive from an assertion into something you can check.</p>
+<p>It should live somewhere that is yours. A record of what your household uses, month by month, is a fairly complete picture of when you are at home, and a supplier's own portal is not a substitute — it shows you their version of your history, for as long as you remain their customer, and it goes away when you leave. The point of the exercise is to have a record that survives the relationship it documents, which means <a href="/blog/where-your-notes-actually-live/">a file on your own machine</a>, backed up somewhere else.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>You will probably never need this. Most bills are roughly right, most suppliers correct errors when they are pointed out, and most years pass without an argument.</p>
+<p>The case for doing it anyway is that the cost is sixty seconds a month and the payoff is asymmetric. The month it matters, it is worth a few hundred pounds and an afternoon of feeling powerless, and there is no way to construct the evidence retroactively — a meter does not remember what it said in March.</p>
+<p>Start with one photograph, today, of each meter you have. That single image already does more than most households can produce, because it establishes a baseline, and every reading after it becomes a measurement rather than a guess.</p>
+<p>If you want somewhere to keep them, <a href="/#pricing">Cyanote is $7.99, once</a> — one note per supplier with the photographs inside it, a calendar for the monthly reminder and the renewal dates, and no subscription, which feels like the right way to buy software that exists to help you notice subscriptions.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>How-to</category>
+      <category>Backups</category>
+    </item>
+    <item>
+      <title>Proving you owned it</title>
+      <link>https://cyanote.app/blog/proving-you-owned-it/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/proving-you-owned-it/</guid>
+      <pubDate>Wed, 16 Sep 2026 09:00:00 +0000</pubDate>
+      <description>After a burglary or a flood an insurer asks what you had and how you know. Most people cannot answer either, because the proof was in the room.</description>
+      <content:encoded><![CDATA[<p>An insurance policy is a promise to replace things. A claim is the moment you find out the promise had conditions, and the main one is evidence.</p>
+<p>Not evidence that the fire happened, or that the back door was forced — an assessor can see that. Evidence that you owned what you say you owned, and that it was worth what you say it was worth.</p>
+<p>Almost nobody has it, and the reason is not carelessness. It is that the proof lives in the same room as the things.</p>
+<h2 id="what-a-claim-actually-asks-for">What a claim actually asks for</h2>
+<p>The form is shorter than you expect and worse than you expect. It wants a list. One line per item, and for each one: what it was, the make and model, roughly when you bought it, and roughly what you paid.</p>
+<p>Then, for anything expensive, it wants something behind the line. Policies differ and jurisdictions differ, so read your own, but the shape is consistent: below a certain per-item value the insurer will generally take your word, and above it they will ask for a receipt, a bank or card statement showing the purchase, a photograph of the item in your home, a serial number, or a valuation.</p>
+<p>Sitting down to write that list from memory, three days after something bad happened, is the worst possible time to do it. You will forget entire categories. People routinely remember the television and forget the six years of tools in the shed, the two bicycles, the good coat, the external drive, the wedding rings that were in the drawer rather than on a hand.</p>
+<p>The list you write from memory is not the list of what you lost. It is the list of what you can still picture.</p>
+<h2 id="the-list-has-to-survive-the-event-it-documents">The list has to survive the event it documents</h2>
+<p>This is the part that makes a home inventory different from ordinary admin, and it is the part most advice skips.</p>
+<p>An inventory kept in a note on the laptop is useless after the laptop is stolen. A spreadsheet on the iMac is useless after the flat floods. A folder of photographs on the phone is useless if the phone went with the bag. The document exists specifically for a category of event that is quite likely to take the document with it.</p>
+<p>So there are really two jobs, and doing the first without the second is close to worthless:</p>
+<ol><li>Write the inventory.</li><li>Put a copy somewhere the disaster cannot reach.</li></ol>
+<p>The second one is not complicated. Export the note, or print it to PDF, and keep that file in at least one place that is not your home and not the machine it was written on — an external drive kept at work or at a relative's, a printed copy in a folder somewhere else, an encrypted archive in whatever cloud storage you already pay for. The <a href="/blog/backing-up-local-notes/">three copies, two places</a> rule exists for exactly this, and an inventory is the one document where people most often skip it.</p>
+<p>If you take nothing else from this, take that. A perfect inventory in one location is a worse plan than a rough inventory in three.</p>
+<h2 id="what-one-entry-needs">What one entry needs</h2>
+<p>You are not writing a catalogue. You are writing the minimum that lets a stranger agree with you about something that no longer exists.</p>
+<figure><img src="/images/inventory-entry.svg" alt="One inventory entry, with each line labelled by the job it does in a claim" width="1200" height="520" loading="lazy" decoding="async" /><figcaption>Five lines per item. Only one of them is hard to reconstruct afterwards, and it is not the price.</figcaption></figure>
+<p>Five lines, and the discipline is to keep them to five. The entry that takes four minutes to write is the entry you stop writing on item nine.</p>
+<p><strong>What it is.</strong> Make and model, not "laptop". "MacBook Pro 14-inch, M3 Pro, space black" is a replacement instruction. "Laptop" is a negotiation.</p>
+<p><strong>Serial or identifying number.</strong> More on this below — it is the one field that does real work.</p>
+<p><strong>When and where you bought it, and what you paid.</strong> Approximate is fine and honest. "About March 2023, John Lewis, around £1,400" is far better than nothing and far better than a confident wrong number.</p>
+<p><strong>Where the proof is.</strong> Not the proof itself — a pointer. "Receipt photographed below", or "card statement, Barclays, March 2023", or "order in the Apple account". Half of a claim is knowing where to go looking.</p>
+<p><strong>A photograph.</strong> The item, in your home, with enough of the room in the frame to place it there.</p>
+<h2 id="serial-numbers-are-the-field-that-earns-its-keep">Serial numbers are the field that earns its keep</h2>
+<p>Every other field on that list can be reconstructed after the fact, with effort. You can trawl old bank statements for the price. You can find the model from an old email. You can approximate the date.</p>
+<p>You cannot reconstruct a serial number, because the only place it was written was on the object, and the object is gone.</p>
+<p>A serial number turns "a bicycle" into "that bicycle". It is what makes a police report specific, what a pawnbroker or a marketplace listing can be checked against, what makes a recovered item provably yours, and what removes any argument with an assessor about which model you actually had.</p>
+<p>It is also printed somewhere inconvenient on almost everything you own: the underside of the laptop, the back of the television, the frame under the bottom bracket, the inside of the appliance door, the plate behind the boiler casing. Twenty minutes with a phone camera, walking round the flat photographing the small print, is the single highest-value thing in this entire article. <a href="/blog/screenshots-and-images-in-your-notes/">Photographs paste straight into a note</a>, so the picture of the plate can sit in the entry for the thing it belongs to, which is the only place you will ever think to look for it.</p>
+<h2 id="you-do-not-need-to-list-everything">You do not need to list everything</h2>
+<p>The reason most inventories are never finished is that people start in the kitchen, itemise cutlery, and give up before the bedroom.</p>
+<p>Itemise four things:</p>
+<ul><li>anything worth more than roughly a hundred of your local currency unit</li><li>anything with a serial number</li><li>anything irreplaceable, which usually means jewellery, instruments, tools and anything inherited</li><li>anything specifically listed or excluded on your policy, because those are the items the insurer has already told you it will argue about</li></ul>
+<p>Everything else — clothes, books, kitchenware, the contents of the cupboard under the stairs — gets handled in one pass, with video. Walk through the home with a phone, open every cupboard and wardrobe, and narrate as you go. It takes fifteen minutes and produces something no list can: evidence that a room full of ordinary possessions existed. Nobody itemises forty books. A thirty-second pan of the shelves settles it.</p>
+<p>Save the video with the inventory, and copy it off the machine along with everything else.</p>
+<p>If you rent, that same walkthrough is doing two jobs at once. Shot on the day you get the keys it is also <a href="/blog/the-deposit-you-photographed/">the evidence that decides your deposit</a>, which is a separate argument with a separate opponent and the same photographs.</p>
+<h2 id="receipts-rot">Receipts rot</h2>
+<p>Two quiet failures, both common.</p>
+<p><strong>Till receipts fade.</strong> Thermal paper goes blank, and the timescale is years, not decades — a drawer of receipts kept since 2019 may already be a drawer of grey rectangles. The fix is to photograph them once, when they are new, and throw the paper away with a clear conscience.</p>
+<p><strong>Email receipts leave with the account.</strong> An order confirmation in a webmail account you no longer use, or a purchase history inside a retailer's account you have since closed, is evidence held by somebody else on terms you do not control. If it matters, it belongs in a file you hold. This is the same argument as <a href="/blog/getting-your-notes-out/">getting your notes out</a>, applied to shopping.</p>
+<h2 id="keeping-it-true">Keeping it true</h2>
+<p>An inventory decays faster than almost any other document, because you keep buying things. A list written two years ago and never touched is not merely incomplete — it is misleading, because it looks authoritative and describes a home you no longer have.</p>
+<p>Two habits keep it honest, and neither is a project.</p>
+<p><strong>Add at the point of purchase.</strong> When something expensive arrives, the entry takes sixty seconds, because everything you need is in your hand: the box with the serial, the confirmation email, the price you just paid. The same entry costs twenty minutes in eighteen months, which is why it never gets written then.</p>
+<p><strong>Read it once a year.</strong> Attach it to something that already happens annually — the renewal date on the policy is the natural hook, since you are thinking about cover anyway. If <a href="/blog/life-admin-in-one-place/">the renewal is already in your calendar</a> with a month's notice, add the inventory review to the same reminder.</p>
+<p>While you are there, the review answers the more useful question: is the cover still right? An inventory that adds up to substantially more than your contents sum is the cheapest possible warning that you are underinsured, and you would not otherwise discover it until the day it matters.</p>
+<h2 id="where-it-should-live">Where it should live</h2>
+<p>An itemised list of everything valuable in your home, with photographs and purchase dates, is not an ordinary document. It is a shopping list for a burglar and a gift to anyone who breaches a service you uploaded it to.</p>
+<p>That is the argument for keeping it somewhere with no account attached. A note on your own Mac cannot be locked out from the other end, cannot be read by a support engineer, works when the broadband is off, and is not sitting in a service whose breach notification you will read in two years. It is <a href="/blog/what-local-first-means-for-your-notes/">what local-first actually buys you</a>, on a document where the stakes are unusually legible.</p>
+<p>The trade is that the responsibility for copies moves entirely to you — which is where this article started, and why the off-site copy is not optional. There is no server quietly keeping a second version of this one.</p>
+<figure><img src="/images/note.webp" alt="A note holding a photograph, a list and the details underneath it" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>One note per room, or one per category. Either works; having one is the whole thing.</figcaption></figure>
+<p>Whether it is one note per room, one per category, or a single long note, matters much less than people think. Search finds the item either way. Pick the one you will finish.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>This is admin with a bad payoff profile. Most people will do it and never need it, which makes it feel like wasted effort right up until the week it is worth several thousand pounds and a great deal of arguing.</p>
+<p>And there is a second beneficiary who is easy to forget. If someone else ever has to deal with your home — an executor, a partner, whoever is left <a href="/blog/what-happens-to-your-notes-when-you-die/">sorting out what you had</a> — this list is the difference between a week of work and a month of guessing.</p>
+<p>Start with the twenty-minute version. Walk round with a phone, photograph the serial plates and the receipts you still have, shoot the video, and write entries for the ten most expensive things you own. That is most of the value, and it fits in an evening.</p>
+<p>Then copy it somewhere else. That part is the article.</p>
+<p>If you want somewhere to keep it that has no account to lose, works offline and holds the photographs next to the list, <a href="/#pricing">Cyanote is $7.99, once</a>. It exports the lot to a single file, which is exactly the file you want to put somewhere that is not your house.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>Backups</category>
+      <category>Privacy</category>
+    </item>
+    <item>
+      <title>Getting paid is a separate job from doing the work</title>
+      <link>https://cyanote.app/blog/getting-paid-is-a-separate-job/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/getting-paid-is-a-separate-job/</guid>
+      <pubDate>Wed, 16 Sep 2026 09:00:00 +0000</pubDate>
+      <description>Sending the invoice feels like the last step of the project. It is the first step of a different one, and the freelancers paid on time know it.</description>
+      <content:encoded><![CDATA[<p>The work is finished, the invoice is sent, and the feeling is that the job is done.</p>
+<p>It is not. The invoice has left your side and entered somebody else's process, and what happens next is almost entirely determined by whether anyone is tracking it. At their end, frequently, nobody is. Accounts payable pays what reaches it in the right shape at the right point in a cycle; anything that arrives at the wrong address, without a purchase order number, or two days after the run, waits a month without anyone deciding that it should.</p>
+<p>Which means the tracking has to be yours. Not because clients are dishonest — most late payment is nobody's decision at all — but because you are the only party with a reason to notice.</p>
+<h2 id="an-invoice-is-not-a-document-it-is-a-position">An invoice is not a document, it is a position</h2>
+<p>The document is the easy part. Any invoicing tool, spreadsheet or template will produce something legally adequate.</p>
+<p>What people do not keep is the position: which invoices are outstanding, how old each one is, what stage it reached, and who is sitting on it. That information is not in the PDF. It usually lives in a sent-items folder and the back of your head, which is why the honest answer to "how much are you owed right now?" is, for most freelancers, a pause.</p>
+<p>The pause is the problem. You cannot chase what you cannot see, and an invoice nobody chases at sixty days often becomes an invoice nobody chases at ninety.</p>
+<h2 id="what-you-need-to-know-about-each-one">What you need to know about each one</h2>
+<p>Six facts. They fit in a short block at the top of a note, and every one of them is something you will otherwise go looking for while drafting an awkward email.</p>
+<p><strong>The invoice number and the amount.</strong> Sequential numbers, no gaps. Whoever does your books will care, and so will you when two invoices to the same client are both outstanding and you need to say which one you mean.</p>
+<p><strong>The date it was sent, and the terms.</strong> "Net 30" is not a date. Work out the actual day it becomes overdue and write that down, because that is the thing you are going to act on.</p>
+<p><strong>The purchase order or reference number.</strong> For any client with a finance department, this is the single most common reason for a silent delay. No PO number, no payment, and nobody will tell you — the invoice simply sits in a queue it can never leave.</p>
+<p><strong>Who approves it, by name.</strong> Not the company. A person, usually the one who hired you, who has to click something before finance sees it. Most "late payments" are an unclicked approval by somebody on annual leave.</p>
+<p><strong>Where to send the chase.</strong> Often a different address from the one that commissioned the work. Getting this wrong means your polite reminder goes to someone with no ability to act on it.</p>
+<p><strong>What happened, dated.</strong> Sent. Acknowledged. Chased. Promised for the 14th. Paid. Appended, never rewritten, so that by the third chase you can say exactly what was agreed and when, which changes the tone of the conversation entirely.</p>
+<h2 id="a-board-beats-a-list">A board beats a list</h2>
+<p>Outstanding invoices have states, and states are what a board is for. A list tells you what exists; a board tells you where everything is.</p>
+<figure><img src="/images/invoice-board.svg" alt="Invoices moving across a board from drafted to paid, with the overdue column ageing" width="1200" height="520" loading="lazy" decoding="async" /><figcaption>The two columns to the right of Sent are the ones that matter: money you have earned and do not have.</figcaption></figure>
+<p>Five columns is enough: <strong>Drafted</strong>, <strong>Sent</strong>, <strong>Overdue</strong>, <strong>Chased</strong>, <strong>Paid</strong>. A card per invoice, carrying the six facts above.</p>
+<p>The value is not the tidiness. It is that thirty seconds on a Monday morning tells you the thing you would otherwise need an hour and a bank statement to work out: what is owed, and what is old. <a href="/blog/personal-kanban-board/">A personal Kanban board</a> is usually recommended for work in progress. Money in progress suits it better, because the states are genuinely distinct and the ageing is what you need to see.</p>
+<p>Two rules keep it honest. A card moves to <strong>Sent</strong> only when the invoice has actually left, with the PDF attached where you can find it. Nothing moves to <strong>Paid</strong> on a promise — only when the money is in the account.</p>
+<h2 id="chasing-on-a-schedule-without-feeling-anything-about-it">Chasing, on a schedule, without feeling anything about it</h2>
+<p>The reason freelancers chase late is not forgetfulness. It is that chasing feels like an accusation, so it gets deferred until the resentment outweighs the awkwardness, at which point the email is worse than it would have been at day 31.</p>
+<p>The fix is to take the decision out of the moment. When you send an invoice, put the chase dates in the calendar immediately — the day after it falls due, then a week later, then a fortnight after that. Reminders you do not have to decide about are reminders that <a href="/blog/reminders-you-do-not-start-ignoring/">you do not start ignoring</a>, and a chase that arrives on schedule reads as process rather than as grievance.</p>
+<p>The messages themselves get shorter as they go, not longer.</p>
+<p><strong>Day one overdue.</strong> Short, friendly, assume an oversight, re-attach the invoice, state the number and the date it was due. Most invoices clear here, because for most of them nobody had noticed either.</p>
+<p><strong>Day seven.</strong> Same, plus a direct question: has it been approved, and if not, who is it with? You are asking them to locate it, which is a different request from asking them to pay.</p>
+<p><strong>Day fourteen.</strong> Copy in accounts payable directly and ask for a payment date. Not payment — a date. A specific date is something a person can give you without authority to release funds, and once you have one, you have something to hold them to.</p>
+<p>Beyond that, what is available to you depends entirely on where you are and what your contract says, and this is the point at which the answer stops being a workflow question. Know in advance what your own terms and local rules allow, before you need it.</p>
+<p>Write every reply into the card the day it arrives. The single most useful sentence in a difficult payment conversation is "on the 14th you said it would be paid by the 28th" — and you can only say it if somebody wrote it down.</p>
+<h2 id="the-trail-you-will-want-at-the-end-of-the-year">The trail you will want at the end of the year</h2>
+<p>At some point you have to account for the year, to a tax authority, an accountant, or both. What they need varies by country and by how you are set up, and this is not the place for an answer to that — ask the person who signs off your return.</p>
+<p>What does not vary is that the answer is much easier to give if the records exist as they happen. Four things are worth keeping as you go:</p>
+<p><strong>What you invoiced, and when it was paid.</strong> The board already knows this, if paid cards are archived rather than deleted. <a href="/blog/closing-a-project/">Closing a project</a> should include closing its money.</p>
+<p><strong>Receipts, photographed on the day.</strong> Till receipts fade, sometimes within a couple of years. A photograph taken when the receipt is new costs ten seconds and survives; the paper in the shoebox may not.</p>
+<p><strong>Expenses, written at the time.</strong> What it was, what it was for, and which client or project it belonged to. The "what it was for" is the part you cannot reconstruct in April from a card statement line reading a coffee shop and £4.60.</p>
+<p><strong>Mileage or travel, logged the same day.</strong> It is the record people most often reconstruct from memory, and reconstruction is exactly what you do not want to be doing.</p>
+<p>None of that is bookkeeping. It is the raw material bookkeeping runs on, and the difference between having it and not is the difference between an afternoon and a very bad weekend.</p>
+<h2 id="fifteen-minutes-on-a-friday">Fifteen minutes on a Friday</h2>
+<p>All of this collapses into one recurring appointment, and the appointment is what makes it work rather than the notes.</p>
+<p>Once a week: invoice anything finished, move every card to its true column, read the Overdue column, send whatever chase is due, and photograph the week's receipts. Fifteen minutes, usually less.</p>
+<p>The alternative is not doing it weekly in less time. It is doing it in March, across eleven months of email archaeology, with a deadline. If you already run <a href="/blog/weekly-review-in-20-minutes/">a weekly review</a>, money is the section most people leave out, and it is the one with a number attached.</p>
+<figure><img src="/images/board.webp" alt="A board with cards in columns, next to the notes for the same work" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The invoice board next to the notes for the work it came from, in one window.</figcaption></figure>
+<h2 id="where-it-should-live">Where it should live</h2>
+<p>Invoicing software will do this, and if you are billing thirty clients a month you should probably buy some.</p>
+<p>Below that volume, the case for keeping it in the same place as the work is straightforward: the note about what you agreed, the scope you actually delivered, the emails you summarised and the invoice that came out of it are all one story, and splitting them across two applications means reconstructing the story every time there is a dispute about scope. That is the same argument as <a href="/blog/keeping-client-work-straight/">keeping client work straight</a> — the invoice is simply the last entry in the client's note rather than a separate universe.</p>
+<p>It also means your financial position is not sitting in a third-party account you can be locked out of, and not readable by anyone but you, which for a document listing your clients and your rates is worth something.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Nothing here makes a client pay you. A client who has decided not to pay will not be moved by a well-maintained board.</p>
+<p>What it changes is the large, dull middle: the invoices that are late because nobody noticed, missing a PO number, waiting on an approval by someone who has forgotten, or sent to the wrong address. That is most late payment, and every one of those is fixed by somebody noticing on the right day and sending three sentences.</p>
+<p>The board is how you notice. The calendar is how you notice on time. The dated log is how the third conversation goes better than the second.</p>
+<p>If you want all three in one window, next to the notes for the work itself, <a href="/#pricing">Cyanote is $7.99, once</a> — a board, a calendar, notes and no subscription, which is a reasonable thing to expect from software that exists to help you get paid.</p>]]></content:encoded>
+      <category>Freelancing</category>
+      <category>Workflow</category>
+      <category>Method</category>
+    </item>
+    <item>
+      <title>A house has a service history and nobody keeps it</title>
+      <link>https://cyanote.app/blog/a-house-has-a-service-history/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/a-house-has-a-service-history/</guid>
+      <pubDate>Wed, 16 Sep 2026 09:00:00 +0000</pubDate>
+      <description>A car worth fifteen thousand comes with a service book. A house worth twenty times that comes with a drawer of manuals and a vague handover.</description>
+      <content:encoded><![CDATA[<p>Buy a used car and you ask to see the service history, because a car with a stamped book is worth more than the same car without one. Everybody accepts this. The book is not sentimental; it is the difference between a known object and an unknown one.</p>
+<p>Now buy a house, which costs perhaps twenty times as much and contains a boiler, a consumer unit, a roof, several appliances and forty metres of pipework you cannot see. What you get is a carrier bag of manuals, a gas certificate from two owners ago, and whatever the previous occupants happened to remember during the handover.</p>
+<p>Nobody keeps a service history for a house. The information exists — it is just distributed across tradespeople's memories, your own, and a pile of paperwork nobody has opened since the survey.</p>
+<h2 id="what-actually-goes-missing">What actually goes missing</h2>
+<p>Not the big things. You will remember that the roof was done. It is the specifics, and the specifics are what cost money later.</p>
+<p>The make and model of the boiler, and the date it was last serviced. The size of the filter the extractor takes. The colour of the hall — not "off-white", the actual name and code on the tin, and whether it was matt or eggshell. Which of the four unlabelled switches in the cupboard runs the outside light. Where the stopcock is, which you will need to know on exactly one occasion, urgently, in the dark.</p>
+<p>What the plumber found behind the bath in 2023 and said to keep an eye on. The fact that the radiator in the back bedroom needs bleeding twice a winter and nobody knows why. The warranty on the washing machine and the date it started. The name of the electrician who was good, as opposed to the two who were not.</p>
+<p>Individually these are trivia. Collectively they are the operating manual for a building, and every one of them was known by somebody at some point, usually by you.</p>
+<h2 id="the-cost-is-paying-twice-for-the-same-knowledge">The cost is paying twice for the same knowledge</h2>
+<p>Here is the part that should annoy you.</p>
+<p>A tradesperson arrives, spends the first half hour finding the isolation valve, identifying the model, and working out what the last person did. You are paying for that half hour. You paid for it last time too, and the time before that, because the findings left with the last visitor.</p>
+<p>The same applies to the decisions. You spent an afternoon in 2022 choosing between two ways of doing something, picked one for reasons that were good at the time, and by 2025 all that survives is the outcome without the reasoning — which is exactly the situation <a href="/blog/keeping-a-decision-journal/">a decision journal</a> exists to prevent, applied to a building rather than a career.</p>
+<p>And the same applies to selling. A buyer who is shown a dated record of what has been serviced, replaced and inspected is a buyer who stops wondering what you are not telling them. That is not a small effect on a survey negotiation.</p>
+<h2 id="one-note-per-thing-that-can-break">One note per thing that can break</h2>
+<p>The structure is the entire method, and it is boring on purpose.</p>
+<p>Make one note for each thing in the house that has a model number, a service interval, or a history: the boiler, the consumer unit, the roof, the windows, each major appliance, the car. Not one note called "House", which becomes a scroll, and not forty notes, which becomes a filing problem.</p>
+<figure><img src="/images/service-history.svg" alt="A single maintenance note: fixed facts at the top, dated entries appended underneath" width="1200" height="540" loading="lazy" decoding="async" /><figcaption>Facts that rarely change live at the top. Everything else is appended, newest last, and never rewritten.</figcaption></figure>
+<p>Each note has two parts, and keeping them separate is what makes it usable while somebody is standing in your kitchen asking questions.</p>
+<p><strong>The top block: facts that rarely change.</strong> Make and model. Serial number. Where it physically is. When it was installed, by whom. Warranty length and start date. Service interval. Which consumable it takes, with the exact size — filter, bulb fitting, belt, blade, cartridge.</p>
+<p><strong>Below it: dated entries, appended.</strong> One line or one paragraph every time anything happens. Serviced, on this date, by this person, who said this. Replaced this part. Made this noise. Fixed itself after doing that.</p>
+<p>The rule that makes the log trustworthy is the same one that makes a lab notebook trustworthy: entries are added, never edited. If you were wrong in March, you write in September that you were wrong in March. Rewriting history turns the log into a summary, and a summary is exactly the thing you already had in your head and could not rely on.</p>
+<h2 id="the-note-that-is-only-useful-in-an-emergency">The note that is only useful in an emergency</h2>
+<p>Separately from all of the above, one note, findable in three seconds, containing the physical facts about the building:</p>
+<p>Where the water stopcock is, and which way it turns. Where the gas shut-off is. Where the consumer unit is, and what each breaker actually controls, having tested them rather than trusted the labels. Where the electricity and water meters are, and their serial numbers — the same photograph that makes <a href="/blog/the-bill-that-was-an-estimate/">an estimated bill checkable</a>. Where the loft hatch pole lives. Which drain is which. Where the boiler pressure gauge is and what the number is supposed to be.</p>
+<p>This note exists for the night something is leaking. It should therefore contain no cleverness, no nesting, and nothing you would have to read twice — and it should be one of the things that still works <a href="/blog/what-still-works-with-the-wifi-off/">with the wifi off</a>, because a burst pipe and a dead router are not mutually exclusive.</p>
+<p>Test it once. Follow your own instructions to the stopcock and see whether they are true.</p>
+<h2 id="the-boring-appendix-that-saves-the-most-time">The boring appendix that saves the most time</h2>
+<p>A short note, or a section of the house note, listing consumables and finishes. It is the least interesting thing in this article and probably the one you will use most.</p>
+<p>Paint: room, brand, colour name, code, finish, and which wall got the second coat. Filters: appliance, exact size or part number. Bulbs: fitting type, wattage, colour temperature, because a kitchen with two slightly different whites is a special kind of irritating. Batteries for the thermostat and the smoke alarms. The tile, the grout, the flooring, the specific screws.</p>
+<p>Every one of these is a fact you already established once, standing in a shop or a merchant's, and will otherwise establish again from scratch. The photograph of the tin, <a href="/blog/screenshots-and-images-in-your-notes/">pasted into the note</a>, does the job faster than typing the code.</p>
+<h2 id="write-it-up-the-day-it-happens">Write it up the day it happens</h2>
+<p>The whole system fails at one point: the gap between the tradesperson leaving and you writing anything down.</p>
+<p>They tell you three useful things on the doorstep. By the evening you have one of them, by the weekend none. So the entry gets written while they are packing up, or in the ten minutes afterwards, on a phone or a laptop, badly. Six words is fine. "Serviced, fine, said the pump is getting noisy" is a complete and useful entry.</p>
+<p>This is the same discipline as <a href="/blog/writing-your-own-runbooks/">writing it down the first time you work it out</a>, and it fails the same way: the moment you know the thing is the moment it feels least worth recording, because right then it is obvious.</p>
+<p>The dates with money attached — annual service, warranty expiry, insurance renewal, the certificate that needs renewing — go in the calendar, not the note. A note cannot remind you of anything. Give them a month's notice rather than a week's, for the same reason as <a href="/blog/life-admin-in-one-place/">everything else in life admin</a>: a week tells you it is happening, a month lets you get quotes.</p>
+<figure><img src="/images/calendar.webp" alt="The day&#x27;s schedule next to what is due, with the annual service on it" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The note holds what happened. The calendar holds what has to happen next.</figcaption></figure>
+<h2 id="the-car-is-the-same-problem-with-a-book-nobody-fills-in">The car is the same problem with a book nobody fills in</h2>
+<p>Cars come with the service book precisely because the industry learned that undocumented maintenance destroys resale value. Then the book lives in the glovebox and the dealer stamps it and nothing else ever gets written in it.</p>
+<p>The things that are not in the stamped book are the ones you want: the tyre size and the pressures, the battery fitted and when, the oil it takes, the MOT or inspection date, the tracking done after the pothole, the intermittent fault the garage could not reproduce, what the last three services actually cost so you can tell whether this quote is reasonable.</p>
+<p>Same shape as the boiler. Top block of facts, dated entries below, dates in the calendar.</p>
+<h2 id="handing-it-over">Handing it over</h2>
+<p>The eventual payoff is a handover, and there are more of them than you think: selling, letting, a housesitter, a new partner moving in, a family member dealing with the place when you cannot.</p>
+<p>A house with a written history hands over in twenty minutes. Without one, it hands over as a tour of the building with you narrating from memory, which is the format that guarantees the stopcock gets mentioned and the immersion switch does not.</p>
+<p>This is <a href="/blog/handing-over-your-work/">handing over your work</a> applied to a building, and it has the same test: can somebody else run this thing from what is written down, without asking you? If the answer is no, the gap is the list of things to write.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>This will not take a weekend. It takes about an hour to start and then thirty seconds a few times a year, and it never feels urgent, which is why almost nobody does it.</p>
+<p>The honest pitch is not that it is satisfying. It is that you already paid for every one of these facts once — in a call-out fee, an afternoon of research, or a conversation on a doorstep — and writing them down is how you stop buying them again.</p>
+<p>Start with three notes: the boiler, the emergency facts, and the paint. That is an hour, and it covers the three things you are most likely to need at short notice.</p>
+<p>If you want somewhere for them that opens instantly, holds photographs of the serial plates alongside the text, and works when the broadband does not, <a href="/#pricing">Cyanote is $7.99, once</a> — notes, a calendar for the service dates, and no account to be locked out of at the moment the boiler dies.</p>]]></content:encoded>
+      <category>Method</category>
+      <category>How-to</category>
+      <category>Workflow</category>
+    </item>
     <item>
       <title>Raycast&#x27;s clipboard history, and its three-month edge</title>
       <link>https://cyanote.app/blog/raycast-clipboard-alternative/</link>
