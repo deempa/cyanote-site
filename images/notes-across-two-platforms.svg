@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" role="img" aria-labelledby="ntp-title ntp-desc">
+  <title id="ntp-title">Four routes from an iPhone or Mac note to a Windows PC</title>
+  <desc id="ntp-desc">There is no Apple Notes application for Windows. Four routes exist and only one of them reaches the notes themselves: iCloud.com in a browser, which gives you all of them but needs a connection; iCloud for Windows, which syncs photos, files, calendars and contacts but not notes; the Outlook add-in, which carries mail, calendars and contacts and dropped notes years ago; and emailing yourself the text, which arrives once and has no way back to the original.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 17px; font-weight: 600; fill: #71757e; letter-spacing: 0.4px; }
+    .item { font-size: 19px; fill: #3d3f45; }
+    .note { font-size: 18px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <!-- where the note is -->
+  <rect class="card" x="24" y="36" width="268" height="300" rx="12"/>
+  <rect x="24" y="36" width="268" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="52" y="92">Where it is</text>
+  <circle cx="62" cy="135" r="5" fill="#0e7cc4"/>
+  <text class="item" x="84" y="142">On the iPhone</text>
+  <circle cx="62" cy="175" r="5" fill="#0e7cc4"/>
+  <text class="item" x="84" y="182">On the Mac</text>
+  <circle cx="62" cy="215" r="5" fill="#0e7cc4"/>
+  <text class="item" x="84" y="222">In iCloud</text>
+  <text class="note" x="52" y="278">Written wherever it</text>
+  <text class="note" x="52" y="302">was easiest to write.</text>
+
+  <g stroke="#0e7cc4" stroke-width="2.5" fill="none">
+    <path d="M298 186 h 20"/>
+  </g>
+  <path d="M340 186 l -14 -7 l 0 14 z" fill="#0e7cc4"/>
+
+  <!-- routes table -->
+  <rect class="card" x="352" y="36" width="824" height="300" rx="12"/>
+
+  <text class="lbl" x="380" y="76">ROUTE</text>
+  <text class="lbl" x="662" y="76">WHAT ARRIVES</text>
+  <text class="lbl" x="922" y="76">WHAT DOES NOT</text>
+  <line x1="380" y1="94" x2="1148" y2="94" stroke="#e6e6e9" stroke-width="2"/>
+
+  <circle cx="366" cy="127" r="5" fill="#0e7cc4"/>
+  <text class="item" x="380" y="134">iCloud.com in a browser</text>
+  <text class="item" x="662" y="134">All of them, editable</text>
+  <text class="item" x="922" y="134">Working offline</text>
+  <line x1="380" y1="160" x2="1148" y2="160" stroke="#e6e6e9" stroke-width="2"/>
+
+  <circle cx="366" cy="179" r="5" fill="#b8bcc4"/>
+  <text class="item" x="380" y="186">iCloud for Windows</text>
+  <text class="item" x="662" y="186">Photos, files, calendars</text>
+  <text class="item" x="922" y="186">Notes — not offered</text>
+  <line x1="380" y1="212" x2="1148" y2="212" stroke="#e6e6e9" stroke-width="2"/>
+
+  <circle cx="366" cy="231" r="5" fill="#b8bcc4"/>
+  <text class="item" x="380" y="238">The Outlook add-in</text>
+  <text class="item" x="662" y="238">Mail, calendars, contacts</text>
+  <text class="item" x="922" y="238">Notes — dropped</text>
+  <line x1="380" y1="264" x2="1148" y2="264" stroke="#e6e6e9" stroke-width="2"/>
+
+  <circle cx="366" cy="283" r="5" fill="#b8bcc4"/>
+  <text class="item" x="380" y="290">Email it to yourself</text>
+  <text class="item" x="662" y="290">The text, once</text>
+  <text class="item" x="922" y="290">Any way back</text>
+
+  <text class="foot" x="24" y="404">Only the first route reaches the notes themselves, and only while the connection holds.</text>
+  <text class="foot" x="24" y="438">There is no fifth route with an installer at the end of it.</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" role="img" aria-labelledby="f4-title f4-desc">
+  <title id="f4-title">The four kinds of free notes app</title>
+  <desc id="f4-desc">A bundled app is paid for by the hardware you already bought and stops at getting everything out at once. A free tier is paid for by the people who hit the ceiling and stops at sync, devices, storage or history. A free app funded elsewhere is paid for by ads, data or an account worth keeping, and stops wherever the funding needs it to. An open source app is paid for by donated time and your own setup work, and stops at your patience for administration.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 21px; font-weight: 600; fill: #0a0a0b; }
+    .lab  { font-size: 14px; font-weight: 600; fill: #71757e; letter-spacing: 1.1px; }
+    .b    { font-size: 17px; fill: #3d3f45; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <!-- bundled -->
+  <rect class="card" x="30" y="30" width="265" height="330" rx="14"/>
+  <rect x="30" y="30" width="265" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="52" y="78">Bundled with</text>
+  <text class="h" x="52" y="102">the Mac</text>
+  <line x1="52" y1="122" x2="273" y2="122" stroke="#efeff1" stroke-width="2"/>
+  <text class="lab" x="52" y="154">WHAT PAYS FOR IT</text>
+  <text class="b" x="52" y="184">The hardware you</text>
+  <text class="b" x="52" y="208">already bought</text>
+  <text class="lab" x="52" y="250">WHERE IT STOPS</text>
+  <text class="b" x="52" y="280">Getting everything</text>
+  <text class="b" x="52" y="304">out at once, and the</text>
+  <text class="b" x="52" y="328">shape of the editor</text>
+
+  <!-- free tier -->
+  <rect class="card" x="321" y="30" width="265" height="330" rx="14"/>
+  <rect x="321" y="30" width="265" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="343" y="78">Free tier of a</text>
+  <text class="h" x="343" y="102">subscription</text>
+  <line x1="343" y1="122" x2="564" y2="122" stroke="#efeff1" stroke-width="2"/>
+  <text class="lab" x="343" y="154">WHAT PAYS FOR IT</text>
+  <text class="b" x="343" y="184">The people who</text>
+  <text class="b" x="343" y="208">hit the ceiling</text>
+  <text class="lab" x="343" y="250">WHERE IT STOPS</text>
+  <text class="b" x="343" y="280">Sync, devices,</text>
+  <text class="b" x="343" y="304">storage or history,</text>
+  <text class="b" x="343" y="328">moved when they like</text>
+
+  <!-- funded elsewhere -->
+  <rect class="card" x="612" y="30" width="265" height="330" rx="14"/>
+  <rect x="612" y="30" width="265" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="634" y="78">Free, funded</text>
+  <text class="h" x="634" y="102">somewhere else</text>
+  <line x1="634" y1="122" x2="855" y2="122" stroke="#efeff1" stroke-width="2"/>
+  <text class="lab" x="634" y="154">WHAT PAYS FOR IT</text>
+  <text class="b" x="634" y="184">Ads, data, or an</text>
+  <text class="b" x="634" y="208">account worth keeping</text>
+  <text class="lab" x="634" y="250">WHERE IT STOPS</text>
+  <text class="b" x="634" y="280">Wherever the funding</text>
+  <text class="b" x="634" y="304">needs it to, which is</text>
+  <text class="b" x="634" y="328">not your decision</text>
+
+  <!-- open source -->
+  <rect class="card" x="903" y="30" width="265" height="330" rx="14"/>
+  <rect x="903" y="30" width="265" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="925" y="78">Open source or</text>
+  <text class="h" x="925" y="102">genuinely free</text>
+  <line x1="925" y1="122" x2="1146" y2="122" stroke="#efeff1" stroke-width="2"/>
+  <text class="lab" x="925" y="154">WHAT PAYS FOR IT</text>
+  <text class="b" x="925" y="184">Donated time, and</text>
+  <text class="b" x="925" y="208">your own setup work</text>
+  <text class="lab" x="925" y="250">WHERE IT STOPS</text>
+  <text class="b" x="925" y="280">Nowhere, in theory.</text>
+  <text class="b" x="925" y="304">In practice, at your</text>
+  <text class="b" x="925" y="328">patience for admin</text>
+
+  <text class="foot" x="30" y="412">All four are free at the moment you download them.</text>
+  <text class="foot" x="30" y="444">Only the first and the last are free for a reason that does not need to change.</text>
+</svg>
