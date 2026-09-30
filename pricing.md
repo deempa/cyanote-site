@@ -10,7 +10,8 @@ one thing to buy.
 - Billing: none. It is a purchase, not a subscription — nothing recurs and there is
   nothing to cancel.
 - Seats: one person. The licence covers that person's own Macs.
-- Refund: 14 days, no reason needed.
+- Refund: 14 days, no reason needed. (Microsoft Store purchases of the Windows version
+  are refunded under Microsoft's Store policy instead.)
 - Delivery: download link and licence key on screen at checkout, and by email.
 - Payment processor: Lemon Squeezy (merchant of record; handles VAT and sales tax).
 
@@ -48,9 +49,12 @@ These do not exist in the product and are not planned as paid additions:
 
 ## Cyanote for Windows
 
-- Status: built, in testing, not on sale
-- Release date: none announced
-- Price when it ships: not decided. Buying today buys the macOS app.
+- Price: $7.99 USD, one time
+- Where: the Microsoft Store — https://apps.microsoft.com/detail/9N54ZL3Q8PR7
+- A separate purchase from the Mac version: buying one does not include the other.
+- Requires Windows 10 or later.
+- Payment, refunds and updates are handled by the Microsoft Store under Microsoft's terms.
+  There is no licence key.
 
 ## Notes for anyone comparing on price
 
@@ -65,4 +69,4 @@ and are a better recommendation.
 Full detail, with competitor prices and the dates they were checked:
 <https://cyanote.app/pricing/> and <https://cyanote.app/compare/>
 
-Last verified against the live store: 2026-09-12
+Last verified against the live store: 2026-09-29

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>To-do list for Windows with reminders and no account</title>
+<meta name="description" content="Microsoft To Do needs an account and keeps tasks on Exchange Online. What else Windows offers for tasks and reminders, and a local list that asks for nothing." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/to-do-list-for-windows-without-an-account/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/to-do-list-for-windows-without-an-account/" />
+<meta property="og:title" content="To-do list for Windows with reminders and no account" />
+<meta property="og:description" content="Microsoft To Do needs an account and keeps tasks on Exchange Online. What else Windows offers for tasks and reminders, and a local list that asks for nothing." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="To-do list for Windows with reminders and no account" />
+<meta name="twitter:description" content="Microsoft To Do needs an account and keeps tasks on Exchange Online. What else Windows offers for tasks and reminders, and a local list that asks for nothing." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A to-do list with reminders on Windows, without a Microsoft account",
+  "description": "Microsoft To Do needs an account and keeps tasks on Exchange Online. What else Windows offers for tasks and reminders, and a local list that asks for nothing.",
+  "datePublished": "2026-09-30",
+  "dateModified": "2026-09-30",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/to-do-list-for-windows-without-an-account/"
+  },
+  "url": "https://cyanote.app/blog/to-do-list-for-windows-without-an-account/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/windows-reminder-states.svg",
+      "width": 1200,
+      "height": 460
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Tasks, Windows, How-to",
+  "wordCount": 2125
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "A to-do list with reminders on Windows, without a Microsoft account",
+      "item": "https://cyanote.app/blog/to-do-list-for-windows-without-an-account/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-09-30" />
+<meta property="article:modified_time" content="2026-09-30" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Tasks" />
+<meta property="article:tag" content="Windows" />
+<meta property="article:tag" content="How-to" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>A to-do list with reminders on Windows, without a Microsoft account</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-09-30">30 September 2026</time></span>
+        <span class="dot">·</span>
+        <span>10 min read</span>
+      </div>
+    <ul class="tags"><li>Tasks</li><li>Windows</li><li>How-to</li></ul>
+    </header>
+
+    <div class="post">
+      <p>You want a list of things to do on your Windows PC, and you want the PC to tell you when one of them is due. That is the whole requirement. What you do not want is to create an account, sign in, or have the list live on a server so that a reminder can reach a machine it never left.</p>
+      <p>It turns out to be a harder combination than it sounds, because the obvious answer on Windows is built the other way round. Here is what Microsoft offers, checked against its own support pages, then what I built.</p>
+      <h2 id="microsoft-to-do-an-account-by-design">Microsoft To Do: an account, by design</h2>
+      <p>Microsoft To Do is the app Windows points you at, and it is good. It is also not something you can use without signing in. Microsoft's page on <a href="https://support.microsoft.com/en-us/office/which-accounts-can-i-use-microsoft-to-do-with-b0eef0e0-9077-435c-9d65-0fff24e2766e">which accounts To Do works with</a> lists personal Microsoft accounts (free) and certain work or school accounts, and nothing else. It also explains why. To Do needs an Exchange Online mailbox to store and sync your tasks, and personal Microsoft accounts are "powered by Exchange Online in the background".</p>
+      <p>So your tasks are not a file on your PC. They live on Microsoft's mail servers, next to your inbox. That is also why Outlook shows them. Microsoft says <a href="https://support.microsoft.com/en-us/todo/using-microsoft-to-do-with-outlook-tasks">all tasks are stored on Exchange Online servers</a>, so the same list turns up in To Do and in Outlook's Tasks, provided you sign in to both with the same account.</p>
+      <p>In fairness, what you get for the account is substantial. To Do <a href="https://support.microsoft.com/en-us/office/set-up-microsoft-to-do-490c1a8c-2333-4952-8125-841afadb9620">runs on Android, iOS, Mac, Windows and the web</a> and syncs between them. A task can have steps, <a href="https://support.microsoft.com/en-us/outlook/calendar/manage-tasks-with-to-do-in-outlook">repeat daily, on weekdays, weekly, monthly or on a custom pattern</a>, carry a due date, and remind you at a time you pick. If you add a task on the train and want your phone to buzz about it, and your PC to show it when you get to your desk, To Do does exactly that and I would not talk you out of it. It is free. It is just not account-free, and nothing about it is local.</p>
+      <h2 id="outlook-tasks-the-same-list-seen-from-outlook">Outlook tasks: the same list, seen from Outlook</h2>
+      <p>In the new Outlook for Windows, tasks come from To Do. Microsoft's own page on <a href="https://support.microsoft.com/en-us/outlook/calendar/manage-tasks-with-to-do-in-outlook">managing tasks in Outlook</a> is titled "with To Do", and the My Day pane shows your tasks next to your mail and calendar. It is a convenient view if you live in Outlook, but it is not a separate option. The same account, the same Exchange Online storage, one more window on it.</p>
+      <h2 id="sticky-notes-as-a-list">Sticky Notes as a list</h2>
+      <p>Plenty of people keep their to-do list on a sticky note, and on Windows that works without signing in. Microsoft says that on Windows 10 and 11 <a href="https://support.microsoft.com/en-us/windows/apps/stickynotes/see-your-sticky-notes-on-other-devices-and-the-web">you don't need to be signed in</a> to start using Sticky Notes. The account comes in only when you want the notes on your phone or in Outlook. More on that in <a href="/blog/notes-app-for-windows-without-an-account/">the notes-app version of this question</a>.</p>
+      <p>What a sticky note does not do is remind you. The feature that used to come closest was Insights: the same FAQ says that when a note contains a date, Sticky Notes can offer to create "a reminder in Cortana". Which brings us to Cortana.</p>
+      <h2 id="cortana-retired">Cortana: retired</h2>
+      <p>Cortana used to be the easy answer to "remind me at five to call the garage". Microsoft says the standalone Cortana app in Windows <a href="https://support.microsoft.com/en-us/cortana/end-of-support-for-cortana">was retired in the spring of 2023</a>, and the rest of Cortana followed across Teams and Outlook mobile. If an old article tells you to ask Cortana, it is out of date.</p>
+      <h2 id="the-clock-app-alarms-not-tasks">The Clock app: alarms, not tasks</h2>
+      <p>The one thing Windows has that will interrupt you at a given time without an account is the Clock app. Microsoft's page says <a href="https://support.microsoft.com/en-us/windows/apps/how-to-use-alarms-and-timers-in-the-clock-app-in-windows">alarms and timers work even if the app is closed or your device is locked</a>, with an important condition. Notifications only show if the device is awake, so you have to stop it going to sleep.</p>
+      <p>An alarm is a time, though, not a task. It does not know what you were supposed to do, it is not on a list, and when you tick it off nothing is ticked off. For "take the bread out" it is perfect. For a week of things with due dates it is a stack of alarms you will eventually stop reading, a problem I have <a href="/blog/reminders-you-do-not-start-ignoring/">written about separately</a>.</p>
+      <h2 id="so-the-gap-is-quite-specific">So the gap is quite specific</h2>
+      <p>Sort through that and there is an obvious hole. Windows gives you a list with no reminders (Sticky Notes), reminders with no list (Clock), or a proper list with proper reminders that requires an account and keeps your tasks on Microsoft's servers (To Do and Outlook). There is no built-in to-do list with due dates and reminders that sits on your own disk and asks for nothing.</p>
+      <h2 id="what-cyanote-does-instead">What Cyanote does instead</h2>
+      <p>Cyanote is a desktop app that keeps notes, to-dos, a calendar and clipboard history in one window, on your machine. It started on the Mac and now has a Windows edition on the Microsoft Store. There is no account in it anywhere. No sign-up, no email address, no password. The tasks, like everything else, sit in one database file on your PC. Here is what the task side does, and I have read the code for each of these rather than going from memory.</p>
+      <p><strong>You type a task the way you would say it.</strong> "Pay rent tomorrow 9am !high" becomes a task called "Pay rent", due tomorrow, with a reminder at 9:00 and high priority. The parser understands today, tomorrow, weekdays ("fri", "next friday"), "next week", and dates like "12 aug" or "aug 12". Times can be "9am", "9:30 pm" or "at 17:00", and priority can be <code>!high</code>, <code>!med</code> and <code>!low</code>, or <code>p1</code> to <code>p3</code> if you are used to issue trackers. What it took from your sentence shows up as chips under the input, and one click on a chip puts those words back in the title. It is deliberately cautious: "12/8" is not treated as a date, because half the world reads it the other way, and a bare number counts as a time only after "at". A task typed with no date lands on today. The reasoning behind all of this is in <a href="/blog/typing-a-task-the-way-you-say-it/">typing a task the way you say it</a>.</p>
+      <p><strong>The list sorts itself by when.</strong> Tasks group under Overdue, Today, Tomorrow, Later and No date. Anything overdue carries onto today rather than disappearing into the past, and a task due yesterday counts as overdue from midnight, not 24 hours later.</p>
+      <p><strong>There is a board.</strong> The same tasks can be viewed as a Kanban board with columns by priority, from none to high. Dragging a card rightwards raises its priority. How I would set up a board for one person is in <a href="/blog/personal-kanban-board/">personal Kanban</a>.</p>
+      <p><strong>Tasks show on the calendar.</strong> A task with a due date appears on that day in the calendar's month view, week view and agenda, next to your events. If you are unsure which of the two something belongs in, <a href="/blog/calendar-or-list/">calendar or list</a> is my test.</p>
+      <p><strong>Reminders are Windows notifications.</strong> Set one from the bell on a task, with quick picks for 30 minutes, an hour, this evening and tomorrow at 9:00, or any date and time you choose. When it is due, it arrives as an ordinary Windows notification. This is one of the parts I have tested on a real Windows laptop, not just compiled. Launch at sign-in, clipboard history, paste-back, global shortcuts and opening <code>.txt</code> files are the others.</p>
+      <h2 id="what-the-app-must-be-running-means-here">What "the app must be running" means here</h2>
+      <p>This is the honest bit, because it is where local reminders differ from To Do. No server is watching the clock for you. Cyanote is. So the question is what happens in each state, and the answer is in the code.</p>
+      <figure><img src="/images/windows-reminder-states.svg" alt="When a Cyanote reminder reaches you on Windows: on the minute with the window open or closed to the tray; on waking, marked missed, if the PC was asleep; on next launch, marked missed, if the app was quit less than a day ago" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>The app has to be running for a reminder to arrive on time.</figcaption></figure>
+      <ul><li><strong>Window closed.</strong> Closing the window does not quit Cyanote. It hides to the notification area (the tray), and reminders keep arriving. The check runs on a native timer aligned to the clock, so a reminder for 09:15 is checked at 09:15:00, not at some point in the next half-minute.</li><li><strong>PC asleep.</strong> Nothing arrives while the PC is asleep, which is true of the Clock app too. When it wakes, the reminder arrives, labelled as missed and saying how long ago it was due.</li><li><strong>Cyanote quit.</strong> If you choose Quit from the tray menu, nothing is checking. When you next open the app, a reminder less than a day late arrives as missed. One more than a day late is dropped rather than announced, because a week of stale alerts after a holiday helps nobody. The task stays on your list either way. Only the alert expires.</li><li><strong>After a restart.</strong> Turn on launch at sign-in in Settings (it is off until you do) and Cyanote starts with Windows, so a reboot does not quietly switch your reminders off. If you disable it later in Windows' own Startup settings, Windows does not let the app switch it back on, and Settings says so.</li></ul>
+      <p>One Windows setting to know about: Cyanote's reminders are ordinary app notifications. With Do Not Disturb on, Microsoft says <a href="https://support.microsoft.com/en-us/windows/experience/notifications-and-do-not-disturb-in-windows">other notifications are sent directly to the notification center</a> instead of showing a banner, unless you add the app to the list allowed through. If you rely on Do Not Disturb, add Cyanote to that list in Settings, System, Notifications.</p>
+      <h2 id="what-it-does-not-do">What it does not do</h2>
+      <p>Just as plainly. Cyanote has no repeating tasks and no subtasks. A task is a title, a due date, a priority and an optional reminder. Repeating things live elsewhere in the app: calendar events can repeat, and habits and routines can have a daily reminder time. But "water the plants every Sunday" is not a repeating task in the list, and To Do does that better.</p>
+      <p>There is no sync, no phone app and no web version. A task added on this PC is on this PC, and so is its reminder. If you need your phone to buzz, To Do is the right tool and you should use it. If you are weighing up a subscription task manager instead, <a href="/blog/leaving-todoist/">leaving Todoist</a> goes through what the subscription actually buys.</p>
+      <h2 id="what-it-costs">What it costs</h2>
+      <p>$7.99, once, on the Microsoft Store. No subscription. It needs Windows 10 or later. It is a separate purchase from the Mac version, which is sold directly, and buying one does not include the other. If you use both machines, <a href="/blog/one-notes-app-on-a-mac-and-a-pc/">one notes app on a Mac and a PC</a> covers how that works without sync. Dated tasks also show up in the calendar, which has <a href="/blog/calendar-on-windows-without-signing-in/">its own write-up</a>.</p>
+      <p>The same window also has notes and a clipboard history that survives a restart. <a href="/blog/clipboard-history-on-windows/">Clipboard history on Windows</a> is about that half, if the built-in Win+V has let you down.</p>
+      <h2 id="choosing">Choosing</h2>
+      <p>If your tasks need to follow you onto a phone, use Microsoft To Do and accept the account. It is free and it is good at that. If one thing needs to go off at one time, the Clock app will do it without asking anything of you.</p>
+      <p>If you work at one PC, you want a list with due dates and reminders that arrive as Windows notifications, and you would rather not sign in to anything to have one, Cyanote is <a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">on the Microsoft Store</a> for $7.99, once.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/calendar-on-windows-without-signing-in/">A calendar on Windows without signing in</a><span>Windows Mail and Calendar are gone and the new Outlook is built around accounts. What is left for a calendar that stays on your PC, and when to sign in anyway.</span></li><li><a href="https://cyanote.app/blog/clipboard-history-on-windows/">Clipboard history on Windows</a><span>Windows has a clipboard history built in. Here is how to turn it on, what it actually keeps, why it empties itself, and when a clipboard manager is worth installing.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>

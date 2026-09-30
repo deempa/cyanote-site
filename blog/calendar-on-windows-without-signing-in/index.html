@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Windows calendar app without a Microsoft account</title>
+<meta name="description" content="Windows Mail and Calendar are gone and the new Outlook is built around accounts. What is left for a calendar that stays on your PC, and when to sign in anyway." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/calendar-on-windows-without-signing-in/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/calendar-on-windows-without-signing-in/" />
+<meta property="og:title" content="A Windows calendar app without a Microsoft account" />
+<meta property="og:description" content="Windows Mail and Calendar are gone and the new Outlook is built around accounts. What is left for a calendar that stays on your PC, and when to sign in anyway." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="A Windows calendar app without a Microsoft account" />
+<meta name="twitter:description" content="Windows Mail and Calendar are gone and the new Outlook is built around accounts. What is left for a calendar that stays on your PC, and when to sign in anyway." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A calendar on Windows without signing in",
+  "description": "Windows Mail and Calendar are gone and the new Outlook is built around accounts. What is left for a calendar that stays on your PC, and when to sign in anyway.",
+  "datePublished": "2026-09-30",
+  "dateModified": "2026-09-30",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/calendar-on-windows-without-signing-in/"
+  },
+  "url": "https://cyanote.app/blog/calendar-on-windows-without-signing-in/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/windows-calendar-sources.svg",
+      "width": 1200,
+      "height": 460
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Calendar, Windows, How-to",
+  "wordCount": 2137
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "A calendar on Windows without signing in",
+      "item": "https://cyanote.app/blog/calendar-on-windows-without-signing-in/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-09-30" />
+<meta property="article:modified_time" content="2026-09-30" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Calendar" />
+<meta property="article:tag" content="Windows" />
+<meta property="article:tag" content="How-to" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>A calendar on Windows without signing in</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-09-30">30 September 2026</time></span>
+        <span class="dot">·</span>
+        <span>10 min read</span>
+      </div>
+    <ul class="tags"><li>Calendar</li><li>Windows</li><li>How-to</li></ul>
+    </header>
+
+    <div class="post">
+      <p>For years a Windows PC came with a Calendar app that you could open, click on a Tuesday and type "dentist, 3pm" into. That app is gone. Its replacement is the new Outlook, and the new Outlook is an email client that starts by asking which account to add.</p>
+      <p>So if what you want is a calendar on a PC that keeps your events on that PC and never asks you to sign in, the options have narrowed. Here is what is left, checked against Microsoft's and the other vendors' own pages, and where I would stop before buying anything.</p>
+      <h2 id="what-happened-to-windows-mail-and-calendar">What happened to Windows Mail and Calendar</h2>
+      <p>Microsoft's support page is short about it: <a href="https://support.microsoft.com/en-us/outlook/windows-mail-calendar-and-people-are-becoming-new-outlook">support for Windows Mail, Calendar and People ended on 31 December 2024</a>. The same page says you can no longer send and receive emails or events with them, and that Windows 11 devices now ship with the new Outlook as the default mail app. Any local events you had in the old Calendar app remain exportable, and the page walks through moving them into the new Outlook.</p>
+      <p>Microsoft's <a href="https://support.microsoft.com/en-us/office/outlook-for-windows-the-future-of-mail-calendar-and-people-on-windows-11-715fc27c-e0f4-4652-9174-47faa751b199">overview of the change</a> says the new Outlook is free, needs no subscription, and was also brought to Windows 10 in early 2025.</p>
+      <h2 id="does-the-new-outlook-need-an-account">Does the new Outlook need an account?</h2>
+      <p>This is the question most people searching for this want answered, so I went looking for a Microsoft page that says either "yes" or "no". I did not find one that says it plainly. What I found is that every page about the new Outlook describes it in terms of the accounts you put into it.</p>
+      <p><a href="https://support.microsoft.com/en-us/office/start-using-new-outlook-for-windows-4395454d-cb2f-4c16-bb24-fa4bb36650ae">Start using new Outlook for Windows</a> says most accounts are supported — Outlook.com and Hotmail, work or school accounts, Gmail, Yahoo, iCloud, and others over IMAP — and that your accounts may be added automatically when it first opens, or you add one by following the prompts. The page on <a href="https://support.microsoft.com/en-us/outlook/getstarted/add-an-email-account-to-outlook-for-windows">adding an email account</a> is the same shape.</p>
+      <p>There is a Microsoft page titled <a href="https://support.microsoft.com/en-us/office/use-outlook-without-an-email-account-477a1fc3-4423-4156-bef4-67489edfdbef">Use Outlook without an email account</a>, and it is the one that tends to come up. Read the top of it: it applies to classic Outlook — Outlook for Microsoft 365, 2024 and 2021 — and the steps, which involve typing <code>Outlook.exe /PIM</code> into the Run box, say they only work for Outlook 2016 or Outlook with a Microsoft 365 subscription. It does not mention the new Outlook at all. It also notes that a profile without an email address keeps its calendar on that one computer — exactly what the person searching wanted, in the wrong Outlook.</p>
+      <p>So the fair summary is: the new Outlook is an account-based app, and I could not find a documented way to run it as a calendar with no account in it. If you already have an email account you are happy to add, that is not a problem. If the point was not to sign in to anything, it is not the tool.</p>
+      <h2 id="the-calendar-in-the-taskbar-clock">The calendar in the taskbar clock</h2>
+      <p>Click the date in the corner of the taskbar and a month grid appears. On Windows 11, Microsoft's troubleshooting page explains that <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-client/shell-experience/taskbar-calendar-does-not-open">the taskbar calendar is part of the Notifications and Action Center</a>, which is why switching that off by policy stops it opening.</p>
+      <p>It is good for what it is: finding out what date next Thursday is without opening anything. It needs no account because it holds nothing. It is a view of the month, not a place to keep events, so it answers "what date" and not "what am I doing".</p>
+      <h2 id="google-calendar-in-a-browser">Google Calendar in a browser</h2>
+      <p>If you already have a Google account, Google Calendar in a tab is a perfectly sensible answer: it is on your phone, it is shareable, and it costs nothing.</p>
+      <p>It is also an account, by definition. Google's own <a href="https://support.google.com/calendar/answer/2465776?hl=en&amp;co=GENIE.Platform%3DDesktop">getting-started page</a> begins with signing in to your Google Account. And "offline" is narrower than it sounds: Google's page on <a href="https://support.google.com/calendar/answer/1340696?hl=en">using Calendar offline</a> says it works in Chrome, lets you see the last four weeks and anything in the future, and that while you are offline you cannot create or edit events.</p>
+      <h2 id="thunderbird-the-free-local-option">Thunderbird: the free local option</h2>
+      <p>This is the one I would point most people to first, because it is free and it does exactly what the search asks for.</p>
+      <p>Thunderbird is Mozilla's email client, and it has a calendar built in. Mozilla's help page on <a href="https://support.mozilla.org/en-US/kb/creating-new-calendars">creating new calendars</a> offers two kinds. Choose "On my computer" and the calendar is usable only on that computer, with everything stored in a database file in your Thunderbird profile. Choose "On the Network" and you can connect to CalDAV servers, Google calendars, or read-only ICS feeds such as holiday calendars.</p>
+      <p>So you can have a local calendar with no account on any server. What you get with it is an email client wrapped around it: Thunderbird is built for mail first, and its calendar is one tab among several. If you would use Thunderbird for mail anyway, this is very likely the answer and you should stop reading. If you only want the calendar, it is a large application to carry around for one tab — but it is free, so try it before paying for anything, including what I make.</p>
+      <h2 id="when-an-account-based-calendar-is-the-right-answer">When an account-based calendar is the right answer</h2>
+      <p>Worth saying plainly, because "no account" is a preference, not a virtue.</p>
+      <p>If your calendar is shared — a family calendar, a team, anything where somebody else adds events you need to see — it has to live on a server, and an account is how you get to it. If you want the same calendar on your phone, same thing. If your work runs on meeting invitations, you need a client that can accept and send them, and that means the new Outlook, classic Outlook, or whatever your organisation already uses.</p>
+      <p>The case for keeping a calendar local is narrower and just as real: one PC, your own plans, and no wish to give an app your email or a copy of your week to get them. The Mac version of this post, <a href="/blog/calendar-without-signing-in/">seeing your calendar without signing into it</a>, goes through the one mechanism that bridges the two — a read-only subscription address — in more depth than I will repeat here.</p>
+      <h2 id="what-i-built">What I built</h2>
+      <p>Cyanote is a desktop app that keeps notes, to-dos, clipboard history and a calendar in one window, on your own machine. It started on the Mac and now has a Windows edition, sold on the Microsoft Store. <a href="/blog/notes-app-for-windows-without-an-account/">The notes side</a> and <a href="/blog/clipboard-history-on-windows/">the clipboard side</a> have their own posts. This is the calendar, described from the code rather than from memory.</p>
+      <figure><img src="/images/windows-calendar-sources.svg" alt="Four ways something reaches the Cyanote calendar: events you create, tasks with a due date and an imported .ics file stay on the PC with no network; a subscribed iCal address is a read-only mirror re-checked every 30 minutes, and only exists if you add one" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Three of the four never leave the PC.</figcaption></figure>
+      <p><strong>Events you create stay in one local file.</strong> The calendar is part of the same SQLite database as your notes and tasks, and there is no account, sign-in screen or server anywhere in it. An event has a title, a date and time, a place and notes. It can repeat daily, weekly or monthly, and it can remind you at the time, or 5, 10 or 30 minutes, an hour or a day before.</p>
+      <p><strong>Four views.</strong> Day, week, month and an agenda list. Week is the default, because most of the time the question is today and tomorrow. In the day and week grids you can drag across the hours to make an event, and drag an event to move or resize it. A repeating event is edited as a whole series, so dragging one Tuesday is refused rather than quietly moving every Tuesday.</p>
+      <p><strong>Tasks sit on their day.</strong> A to-do with a due date appears on that day, in a strip above the hours alongside all-day events, and you can tick it off there. Right-click a day and you can add an event, add a task due that day, or open that day's daily note. This is the whole reason the calendar is in the same app as the list; <a href="/blog/calendar-or-list/">what belongs on a calendar and what belongs on a list</a> goes into why the two should be different things that you can see side by side.</p>
+      <p><strong>Importing a file is a copy.</strong> Settings has "Import from a file" for an <code>.ics</code> — the file most calendars export and most booking emails attach. The events become ordinary events of yours: editable, never re-checked, and no network involved. Importing the same file twice skips what is already there rather than doubling it.</p>
+      <p><strong>Subscribing is opt-in, read-only, and the only request.</strong> If you want to see a calendar that lives elsewhere — Google's "Secret address in iCal format", a work calendar, a fixture list — you can paste its address. Cyanote then fetches that address over <code>https</code> when you add it, shortly after launch, when the PC comes back online, and every 30 minutes while it is open, plus a Refresh button if you are impatient. Nothing is written back: those events are a mirror, and the next refresh replaces them. The one thing you can set on a subscribed event is your own reminder, and that survives refreshes. A failed refresh leaves the calendar as it was rather than emptying it, and each subscription can be paused, renamed, recoloured or removed.</p>
+      <p>This is the only network request the Windows edition makes on its own, and it only happens for addresses you have pasted in. Two honest limits come with it. Google rebuilds these feeds on its own schedule, so a change made on your phone can take hours to arrive, and the app says so in Settings. And the fetch deliberately ignores the system proxy, so behind a corporate proxy that blocks direct connections a subscription will not work; import a downloaded <code>.ics</code> instead.</p>
+      <p><strong>What it does not do.</strong> There is no sync, so an event made on this PC is on this PC. It cannot accept or send invitations, show someone else's free time, or put an event on your phone. There is no <code>.ics</code> export. And one thing I want to be precise about: the parts of the Windows edition I have tested by hand on a Windows laptop are clipboard history, paste-back, shortcuts, reminders, launch at login and opening <code>.txt</code> files. The calendar is the same code as the Mac one, and I have described it from that code; it was not on that list.</p>
+      <p>If you use it the way I do, <a href="/blog/planning-a-day-you-will-actually-follow/">planning a day you will actually follow</a> is the routine, and on the Mac the same calendar is covered in <a href="/blog/mac-app-notes-tasks-calendar/">notes, tasks and a calendar in one window</a>.</p>
+      <h2 id="choosing">Choosing</h2>
+      <ul><li><strong>You only need to know what date it is.</strong> The taskbar clock. Nothing to install.</li><li><strong>You share a calendar, want it on your phone, or live on invitations.</strong> Sign in. The new Outlook or Google Calendar is doing work an account-free app cannot.</li><li><strong>You want a free local calendar and use desktop email.</strong> Thunderbird, with a calendar "On my computer".</li><li><strong>You want your events, your tasks and your notes in one window on one PC, with nothing signed in.</strong> That is the gap Cyanote is for.</li></ul>
+      <p>It costs $7.99, once, on the Microsoft Store, and runs on Windows 10 or later. It is a separate purchase from the Mac version, which is sold directly; one does not include the other. If you use both machines, <a href="/blog/one-notes-app-on-a-mac-and-a-pc/">one notes app on a Mac and a PC</a> explains how that works without sync. The task side, with typed dates and reminders, is covered in <a href="/blog/to-do-list-for-windows-without-an-account/">a to-do list for Windows without an account</a>.</p>
+      <p>If that last line in the list is you, Cyanote is <a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">on the Microsoft Store</a>.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/clipboard-history-on-windows/">Clipboard history on Windows</a><span>Windows has a clipboard history built in. Here is how to turn it on, what it actually keeps, why it empties itself, and when a clipboard manager is worth installing.</span></li><li><a href="https://cyanote.app/blog/to-do-list-for-windows-without-an-account/">A to-do list with reminders on Windows, without a Microsoft account</a><span>Microsoft To Do needs an account and keeps tasks on Exchange Online. What else Windows offers for tasks and reminders, and a local list that asks for nothing.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>

@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://cyanote.app/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="What local-first actually means for your notes | Cyanote" />
 <meta name="twitter:description" content="Local-first means your notes live on your computer and the app reads them directly. Here is what that buys you, what it really costs, and who should avoid it." />
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Local-first, Privacy, Offline",
-  "wordCount": 1579
+  "wordCount": 1598
 }
 </script>
 <script type="application/ld+json">
@@ -191,7 +191,7 @@
       <p>Some local-first apps solve this with peer-to-peer sync or by putting the data folder in iCloud Drive or Dropbox, which works but reintroduces a cloud service and, with it, conflicts when two machines edit the same thing. Others, <a href="https://cyanote.app/">Cyanote</a> included, do not solve it at all yet: one computer, one set of notes.</p>
       <p>If you genuinely work across two machines all day, this is disqualifying, and you should choose a cloud app with a clear conscience. Being honest about that is more useful to both of us than pretending single-device is a lifestyle choice.</p>
       <h3 id="no-phone">No phone</h3>
-      <p>Related, and equally real. Local-first on a Mac means the thought you have on a bus does not go into the same place as everything else. Plenty of people run a small capture app on their phone and move things over weekly. That works, and it is an extra step you did not previously have.</p>
+      <p>Related, and equally real. Local-first on a desktop means the thought you have on a bus does not go into the same place as everything else. Plenty of people run a small capture app on their phone and move things over weekly. That works, and it is an extra step you did not previously have.</p>
       <h3 id="backups-become-your-job">Backups become your job</h3>
       <p>With no server there is nobody keeping a spare copy for you. A cloud app's genuine advantage is that a stolen laptop is an inconvenience rather than a loss.</p>
       <p>Local-first moves that responsibility across the line to you. This is manageable — Time Machine, or an occasional export to an external disk, covers it entirely — but it only works if you actually do it. Set it up on day one, not after the first scare.</p>
@@ -202,7 +202,7 @@
       <ol><li><strong>Can you create an account-less install?</strong> If signing up is mandatory, the server holds something. That may be fine, but it is not local-first.</li><li><strong>Where is the data, and can you open the folder?</strong> A real answer is a path. If the answer is "in the app", ask again.</li><li><strong>Turn the wifi off and use it for an hour.</strong> Everything should work. Not "most things", but everything.</li></ol>
       <p>A fourth, softer test: what happens when you cancel? If there is nothing to cancel, that tells you where the data was.</p>
       <h2 id="where-cyanote-sits">Where Cyanote sits</h2>
-      <p>Cyanote stores everything in a SQLite database on your own Mac. There is no account, no server holding your notes, and no telemetry. The app makes two network requests of its own and no others. A new install sends the licence key from your purchase email to Lemon Squeezy, once, to confirm the purchase. That is the only moment the app needs a network at all, and there is nothing to sign in to. After that it checks for a new version, about every six hours while it is open, carrying no key, no account and no identifier. Neither request carries a word you have written. Individual notes can be locked with a password on top of that.</p>
+      <p>Cyanote stores everything in a SQLite database on your own computer, Mac or Windows. There is no account, no server holding your notes, and no telemetry. The Mac app makes two network requests of its own and no others. A new install sends the licence key from your purchase email to Lemon Squeezy, once, to confirm the purchase. That is the only moment the app needs a network at all, and there is nothing to sign in to. After that it checks for a new version, about every six hours while it is open, carrying no key, no account and no identifier. Neither request carries a word you have written. The Windows edition is bought and installed through the Microsoft Store, so it makes neither. Individual notes can be locked with a password on top of that.</p>
       <figure><img src="https://cyanote.app/images/note.webp" alt="Cyanote&#x27;s note editor with the slash command menu open, showing headings, lists, tables and code blocks" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>Everything here is a row in a database file on your own disk.</figcaption></figure>
       <p>It takes the trade-offs above rather than dodging them. There is no sync and no iOS app. What it offers in exchange is that the whole thing — notes, tasks, calendar, habits, clipboard history — opens instantly, works in a basement, and cannot be read by me or anyone else. Backup and restore is a single JSON file you can write anywhere you like, and a restore always takes a rescue snapshot of what it is about to replace before it does anything.</p>
       <p>Optional network features exist and are opt-in: you can subscribe to a Google Calendar so events appear alongside your tasks. That is a deliberate exception, and it is a read of a calendar you already publish. Nothing goes the other way.</p>
@@ -215,11 +215,11 @@
 
   <aside class="endcta">
     <h2>Cyanote</h2>
-    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
     Everything stays on your own computer. $7.99 once, no subscription.</p>
     <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-      <span class="btn-label">Download for Mac — $7.99</span></a>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
   </aside>
 
   <section class="related">
@@ -251,7 +251,7 @@
     </ul></div>
     <div><h3>Download</h3><ul>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
     </ul></div>
   </div>
   <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>

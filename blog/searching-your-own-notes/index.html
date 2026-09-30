@@ -4,7 +4,7 @@
 <script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Notes app search on a Mac: what good search looks like</title>
+<title>Notes app search: what good search looks like</title>
 <meta name="description" content="Search is the most-used feature in a notes app and the least designed. Three different things get called search, and only one survives a thousand notes." />
 <meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="theme-color" content="#fafafa" />
@@ -17,14 +17,14 @@
 <meta property="og:site_name" content="Cyanote" />
 <meta property="og:locale" content="en_GB" />
 <meta property="og:url" content="https://cyanote.app/blog/searching-your-own-notes/" />
-<meta property="og:title" content="Notes app search on a Mac: what good search looks like" />
+<meta property="og:title" content="Notes app search: what good search looks like" />
 <meta property="og:description" content="Search is the most-used feature in a notes app and the least designed. Three different things get called search, and only one survives a thousand notes." />
 <meta property="og:image" content="https://cyanote.app/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Notes app search on a Mac: what good search looks like" />
+<meta name="twitter:title" content="Notes app search: what good search looks like" />
 <meta name="twitter:description" content="Search is the most-used feature in a notes app and the least designed. Three different things get called search, and only one survives a thousand notes." />
 <meta name="twitter:image" content="https://cyanote.app/og-image.png" />
 <!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
@@ -38,7 +38,7 @@
   "headline": "What makes a notes app's search actually good",
   "description": "Search is the most-used feature in a notes app and the least designed. Three different things get called search, and only one survives a thousand notes.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-09-07",
+  "dateModified": "2026-09-26",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Search, Notes, How-to",
-  "wordCount": 1402
+  "wordCount": 1411
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-09-07" />
+<meta property="article:modified_time" content="2026-09-26" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Search" />
 <meta property="article:tag" content="Notes" />
@@ -196,17 +196,17 @@
       <h2 id="the-honest-version">The honest version</h2>
       <p>If your notes number in the low hundreds and you write them into folders you remember, title matching will not fail you and none of this matters. Apps with weak search are not badly made; they are made for a size of collection you may never exceed.</p>
       <p>The moment it starts to matter is the moment you cannot remember whether you wrote something down at all. That is the question search is for, and it is the one that separates the three implementations above.</p>
-      <p>Cyanote indexes every note with SQLite's full-text engine, so <code>⇧⌘F</code> searches the body of everything (prose, code blocks, tables, tick boxes, sub-pages) and ranks the results rather than listing them by date. <code>⌘K</code> is the other box: it jumps to any page or note by name. Both run against a database on your own disk, which is why the results move while you are still typing, and why they still do it with the wifi off.</p>
+      <p>Cyanote indexes every note with SQLite's full-text engine, so <code>⇧⌘F</code> searches the body of everything (prose, code blocks, tables, tick boxes, sub-pages) and ranks the results rather than listing them by date. <code>⌘K</code> is the other box: it jumps to any page or note by name. On Windows, both use Ctrl in place of ⌘. Both run against a database on your own disk, which is why the results move while you are still typing, and why they still do it with the wifi off.</p>
     </div>
   </article>
 
   <aside class="endcta">
     <h2>Cyanote</h2>
-    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
     Everything stays on your own computer. $7.99 once, no subscription.</p>
     <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-      <span class="btn-label">Download for Mac — $7.99</span></a>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
   </aside>
 
   <section class="related">
@@ -238,7 +238,7 @@
     </ul></div>
     <div><h3>Download</h3><ul>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
     </ul></div>
   </div>
   <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>

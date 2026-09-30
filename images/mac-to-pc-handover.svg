@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="mp-title mp-desc">
+  <title id="mp-title">Moving notes from a Mac to a Windows PC with a backup file</title>
+  <desc id="mp-desc">Cyanote on the Mac writes one JSON backup file. The file is carried to the PC by hand — a USB stick, a shared drive, an email to yourself. Restoring it on the PC replaces everything there, after first writing a rescue copy of what the PC had.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 19px; fill: #3d3f45; }
+    .note { font-size: 18px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <!-- Mac -->
+  <rect class="card" x="24" y="30" width="340" height="330" rx="12"/>
+  <rect x="24" y="30" width="340" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="54" y="86">The Mac</text>
+  <text class="note" x="54" y="116">One database on its own disk</text>
+  <text class="item" x="54" y="190">Settings → Backup</text>
+  <text class="item" x="54" y="220">→ Back up now</text>
+  <text class="note" x="54" y="300">Nothing on the Mac changes.</text>
+
+  <!-- file -->
+  <rect class="card" x="430" y="30" width="340" height="330" rx="12"/>
+  <rect x="430" y="30" width="340" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="460" y="86">One JSON file</text>
+  <text class="note" x="460" y="116">.cyanote-backup.json</text>
+  <text class="item" x="460" y="190">Notes, tasks, habits,</text>
+  <text class="item" x="460" y="220">calendar, clipboard, images</text>
+  <text class="note" x="460" y="300">Carried by you: USB stick,</text>
+  <text class="note" x="460" y="326">shared drive, email to yourself.</text>
+
+  <!-- PC -->
+  <rect class="card" x="836" y="30" width="340" height="330" rx="12"/>
+  <rect x="836" y="30" width="340" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="866" y="86">The PC</text>
+  <text class="note" x="866" y="116">Its own database, its own disk</text>
+  <text class="item" x="866" y="190">1. Rescue copy of the PC's</text>
+  <text class="item" x="866" y="220">    data is written first</text>
+  <text class="item" x="866" y="260">2. Everything is replaced</text>
+  <text class="note" x="866" y="326">Replaced, not merged.</text>
+
+  <g stroke="#0e7cc4" stroke-width="2.5" fill="none">
+    <path d="M368 195 h 50"/><path d="M774 195 h 50"/>
+  </g>
+  <g fill="#0e7cc4">
+    <path d="M426 195 l -14 -7 l 0 14 z"/>
+    <path d="M832 195 l -14 -7 l 0 14 z"/>
+  </g>
+
+  <text class="foot" x="24" y="420">A handover in one direction, at a moment you choose. Not sync, and nothing runs in the background.</text>
+</svg>

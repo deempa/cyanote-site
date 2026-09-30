@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to password-protect notes on Windows 10 and 11</title>
+<meta name="description" content="What Windows can lock and what it cannot: OneNote section passwords, Sticky Notes, Notepad, BitLocker, encrypted archives, and an app that locks one note." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/password-protect-notes-on-windows/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/password-protect-notes-on-windows/" />
+<meta property="og:title" content="How to password-protect notes on Windows 10 and 11" />
+<meta property="og:description" content="What Windows can lock and what it cannot: OneNote section passwords, Sticky Notes, Notepad, BitLocker, encrypted archives, and an app that locks one note." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to password-protect notes on Windows 10 and 11" />
+<meta name="twitter:description" content="What Windows can lock and what it cannot: OneNote section passwords, Sticky Notes, Notepad, BitLocker, encrypted archives, and an app that locks one note." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to password-protect notes on Windows",
+  "description": "What Windows can lock and what it cannot: OneNote section passwords, Sticky Notes, Notepad, BitLocker, encrypted archives, and an app that locks one note.",
+  "datePublished": "2026-09-30",
+  "dateModified": "2026-09-30",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/password-protect-notes-on-windows/"
+  },
+  "url": "https://cyanote.app/blog/password-protect-notes-on-windows/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Notes, Windows, Privacy, How-to",
+  "wordCount": 2248
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to password-protect notes on Windows",
+      "item": "https://cyanote.app/blog/password-protect-notes-on-windows/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-09-30" />
+<meta property="article:modified_time" content="2026-09-30" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Notes" />
+<meta property="article:tag" content="Windows" />
+<meta property="article:tag" content="Privacy" />
+<meta property="article:tag" content="How-to" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>How to password-protect notes on Windows</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-09-30">30 September 2026</time></span>
+        <span class="dot">·</span>
+        <span>10 min read</span>
+      </div>
+    <ul class="tags"><li>Notes</li><li>Windows</li><li>Privacy</li><li>How-to</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Someone searching "password protect notes Windows" usually has one note in mind. A list of recovery codes, a medical detail, the thing about a colleague that should not be one open laptop away from the colleague. They want that note to ask for a password even while the PC is on and signed in.</p>
+      <p>Windows does less of this than people expect. Here is what it actually offers, checked against Microsoft's own pages, where each option stops, and then how locked notes work in the app I make. <a href="/blog/password-protect-notes-on-mac/">The Mac version</a> covers the same principles; the tools here are different enough to need their own page.</p>
+      <h2 id="the-short-answer">The short answer</h2>
+      <ul><li><strong>OneNote</strong> can put a password on a <em>section</em> of a notebook. Not on a single page, and not on a whole notebook.</li><li><strong>Sticky Notes</strong> and <strong>Notepad</strong> have no password or lock feature at all.</li><li><strong>BitLocker and device encryption</strong> protect the disk when the PC is off or stolen. They do nothing against someone sitting at your signed-in PC.</li><li><strong>An encrypted archive</strong> made with a tool like 7-Zip works for a file you rarely open. It is clumsy for anything you edit.</li><li><strong>A notes app with per-note locking</strong> is the only option on this list that locks one note, and keeps it locked while you are using the computer.</li></ul>
+      <p>The rest of this post is the detail behind each line.</p>
+      <h2 id="onenote-sections-not-notes">OneNote: sections, not notes</h2>
+      <p>OneNote is the only notes app Microsoft ships with a real lock. In the desktop app you <a href="https://support.microsoft.com/en-us/office/password-protect-your-notes-e5ffd8fd-e811-441a-aa02-e13f0f445933">right-click a section and choose Password Protect This Section</a>, then Set Password. That page applies to OneNote for Microsoft 365 and OneNote 2016 to 2024, which covers the current desktop app. The old OneNote for Windows 10 app is <a href="https://support.microsoft.com/en-us/office/what-is-happening-to-onenote-for-windows-10-2b453bfe-66bc-4ab2-9118-01e7eb54d2d6">read-only now</a>, so it is not where you should be setting anything up.</p>
+      <p>It has a few edges worth knowing before you rely on it, all from the same Microsoft page:</p>
+      <p><strong>The unit is the section.</strong> Passwords go on sections only, not entire notebooks, and not individual pages. If you want one page locked, you make a section for it.</p>
+      <p><strong>Audio and video are not covered.</strong> Microsoft says recordings are stored as separate files in the notebook and you cannot apply passwords to them. If you recorded the sensitive conversation rather than typing it, the lock does not reach it.</p>
+      <p><strong>Locked sections drop out of search.</strong> They are not included in notebook searches until you unlock them. That is the correct behaviour (a lock that still answers searches is not a lock), but it catches people out.</p>
+      <p><strong>It can re-lock itself.</strong> Under Options → Advanced → Passwords you can have OneNote lock protected sections after a period of inactivity, or as soon as you navigate away. I would switch on the second one.</p>
+      <p><strong>A forgotten password is final.</strong> In Microsoft's words, not even Microsoft Technical Support could unlock your notes. That is not a support failure, it is what encryption means, and it applies to every option in this post that is worth using.</p>
+      <p>If you already live in OneNote, this is the answer and you can stop reading here. Make a section called something dull, put the password in your password manager before you close the dialog, and turn on locking when you navigate away. If you are in OneNote only because you assumed it was the only way to lock anything, <a href="/blog/leaving-onenote/">leaving OneNote</a> covers what moving out involves.</p>
+      <h2 id="sticky-notes-and-notepad-no-lock-at-all">Sticky Notes and Notepad: no lock at all</h2>
+      <p>Neither has one. Microsoft's pages for <a href="https://support.microsoft.com/en-us/windows/apps/stickynotes/get-started-with-sticky-notes">Sticky Notes</a> describe colours, search, images and syncing through a Microsoft account; there is no password, lock or encryption option anywhere in them. Notepad saves ordinary <code>.txt</code> files, which anyone at your signed-in PC can open.</p>
+      <p>That is fine for the parking bay number. The mistake is putting recovery codes there because it was the window that happened to be open. <a href="/blog/what-not-to-write-down/">What not to write down</a> is a longer argument for keeping some things out of convenient places altogether.</p>
+      <h2 id="bitlocker-and-device-encryption-the-disk-not-the-note">BitLocker and device encryption: the disk, not the note</h2>
+      <p>This is the one people most often think they already have.</p>
+      <p>Microsoft describes <a href="https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/">BitLocker</a> as encryption for entire volumes, addressing data theft or exposure from lost, stolen or inappropriately decommissioned devices. That is exactly what it does, and it is worth having. Someone who takes the drive out of your laptop and plugs it into another machine gets nothing readable.</p>
+      <p>On Windows Home the equivalent is <a href="https://support.microsoft.com/en-us/windows/security/encryption/device-encryption-in-windows">device encryption</a>, which turns BitLocker on automatically for the system drive when you set the PC up with a Microsoft account, or a work or school account. Microsoft's page also says that with a local account, device encryption is not turned on automatically. If you set your PC up without a Microsoft account, check the Device encryption setting in Settings and turn it on yourself. <a href="https://support.microsoft.com/en-us/windows/security/encryption/bitlocker-drive-encryption">BitLocker Drive Encryption</a> proper, where you choose drives manually, is only on Pro, Enterprise and Education editions.</p>
+      <p>The limit is the same as FileVault on a Mac: <strong>disk encryption protects a PC that is off.</strong> Once you have signed in, Windows decrypts the drive for you as you read it, and so does everything running under your account. Someone who borrows your unlocked laptop for five minutes is on the right side of BitLocker.</p>
+      <p>The same goes for the older <a href="https://support.microsoft.com/en-us/windows/how-to-encrypt-a-file-1131805c-47b8-2e3e-a705-807e13c10da7">file encryption option</a> in a file's Properties → Advanced (not available on Home). It is tied to your Windows account, and Microsoft's own description of it is that decryption is <a href="https://learn.microsoft.com/en-us/previous-versions/tn-archive/cc700811%28v=technet.10%29">transparent to the user</a>. Transparent to you is transparent to whoever is using your session.</p>
+      <p>So the other half of this layer is the lock screen. <a href="https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec">Windows key + L</a> locks your PC. Using it every time you stand up does more for the privacy of your notes than anything else in this post.</p>
+      <h2 id="an-encrypted-archive-the-diy-route">An encrypted archive: the DIY route</h2>
+      <p>If you want one file locked and do not want a new app, put it in an encrypted archive.</p>
+      <p>Windows cannot make one for you. File Explorer compresses to ZIP, and on Windows 11 24H2 to 7z and TAR as well, but Microsoft's <a href="https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/zip-and-unzip-files">zip and unzip page</a> says it does not support operations on encrypted archive files. You need a separate tool. <a href="https://www.7-zip.org/">7-Zip</a> is free and open source, and offers AES-256 encryption in 7z and ZIP formats. Choose 7z with "Encrypt file names" ticked if you do not want the file name itself to give things away.</p>
+      <p>It is honest encryption, and a bad fit for anything you edit. To change the note you extract it, which writes a plaintext copy to disk, edit it, re-archive it, and must remember to delete the plaintext. Every round trip leaves a readable file behind for a while, sometimes for good. For a document you read once a year, that is acceptable. For a note you add to weekly, it is a leak with extra steps.</p>
+      <h2 id="which-layer-stops-whom">Which layer stops whom</h2>
+      <p>Disk encryption stops someone holding your PC while it is off. The lock screen stops someone at your PC while you are away from it. A locked note stops someone already using your unlocked PC. They stack, and none replaces another; the <a href="/blog/password-protect-notes-on-mac/">Mac post</a> has a diagram of the same three layers.</p>
+      <h2 id="how-locked-notes-work-in-cyanote">How locked notes work in Cyanote</h2>
+      <p>Cyanote is a desktop app for notes, to-dos, a calendar and clipboard history, on your own machine with no account. It started on the Mac and there is now a Windows edition on the Microsoft Store. Any single note can be locked with a password. Here is what that does, taken from the source rather than from memory.</p>
+      <p><strong>The note is encrypted, not hidden.</strong> When you lock a note, its body is encrypted with AES-256-GCM, using a key derived from your password with PBKDF2 (SHA-256, 600,000 iterations for new locks) and a random salt per note. The app then overwrites the readable copy in the database, so what sits on disk is the ciphertext. The database also runs with SQLite's secure-delete setting on, which zeroes freed space instead of leaving old text in it.</p>
+      <p><strong>The password is not stored anywhere.</strong> Not in the database, not in a settings file. When you unlock a note, the derived key is held in memory for that session only. A wrong password does not get compared against anything; the decryption simply fails.</p>
+      <p><strong>It asks again after a restart.</strong> Once unlocked, the note stays open until you choose Lock now from the note's menu or the app restarts. Then it wants the password again. There is no idle timer: unlike OneNote's inactivity option, Cyanote will not re-lock a note because you walked away. That is what Windows key + L is for.</p>
+      <p><strong>Search does not see inside.</strong> A locked note's searchable text is blanked when you lock it, so a word in its body does not turn up in search and there is no preview snippet in the list. Getting that exactly right took a fix I wrote up in <a href="/blog/the-half-second-that-left-a-locked-note-in-the-clear/">the half-second that left a locked note in the clear</a>. The crash-recovery snapshot the app keeps for unsaved typing is also withheld for locked notes, because a plaintext recovery file for an encrypted note is the same leak in a different place.</p>
+      <p><strong>Backups and exports do not unlock it.</strong> A backup copies the database rows as they are stored, so a locked note goes into the backup file as ciphertext. Export to Markdown refuses a locked note outright and asks you to unlock it first, rather than writing either gibberish or your plaintext.</p>
+      <p><strong>Forget the password and the note is gone.</strong> The lock dialog says so before you confirm, and it is true. I cannot recover it, and nothing in the app can. Put the password in your password manager straight away.</p>
+      <p><strong>The same code on both editions.</strong> The locking code has no Windows-specific branch; it is the same code the Mac edition runs. My own hands-on Windows testing covered clipboard history, paste-back, shortcuts, reminders, launch at login and opening text files, so I am telling you what the code does rather than claiming I have sat and tested locking on a PC.</p>
+      <h2 id="what-a-locked-note-does-not-protect">What a locked note does not protect</h2>
+      <p>Stated as plainly as the features:</p>
+      <ul><li><strong>The title stays readable.</strong> The sidebar has to call the note something. Name it "Bank" rather than "Bank PIN 4471".</li><li><strong>An unlocked note is unlocked.</strong> While it is open on your screen, anyone at your screen can read it.</li><li><strong>The clipboard is a separate copy.</strong> Copy text out of a locked note and it goes wherever copied text goes, including any clipboard history you use. <a href="/blog/clipboard-history-on-windows/">Clipboard history on Windows</a> covers what each option keeps and for how long.</li></ul>
+      <h2 id="the-setup-i-would-use-on-a-pc">The setup I would use on a PC</h2>
+      <ol><li><strong>Check that device encryption or BitLocker is on</strong>, especially if you set the PC up with a local account. Keep the recovery key somewhere that is not this PC.</li><li><strong>Press Windows key + L every time you stand up</strong>, and set the screen to lock after a few minutes.</li><li><strong>Lock the few notes that warrant it</strong>, in OneNote sections or a notes app that locks single notes. Not everything; a notes app where every page wants a password is one you stop using.</li><li><strong>Store each password in your password manager</strong> before you close the dialog.</li><li><strong>Back up.</strong> Encryption adds new ways to lose things for good, and a local app has no server copy to fall back on. <a href="/blog/backing-up-local-notes/">Backing up local notes</a> covers how, and <a href="/blog/where-to-keep-the-things-you-must-not-lose/">where to keep the things you must not lose</a> covers which things belong in a notes app at all.</li></ol>
+      <h2 id="if-you-want-one-app-for-it">If you want one app for it</h2>
+      <p>Locking is the one thing people ask for after the basics; the basics are in <a href="/blog/notes-app-for-windows-without-an-account/">a notes app for Windows that never asks you to sign in</a>, and plain <code>.txt</code> and <code>.md</code> files in <a href="/blog/markdown-and-text-files-on-windows/">Markdown and text files on Windows</a>.</p>
+      <p>If OneNote's sections are more notebook than you need and a sticky note is less, Cyanote locks individual notes as described above, alongside to-dos, a calendar and a clipboard history, with no account and no sync. It is <a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">on the Microsoft Store</a> for $7.99, once, and needs Windows 10 or later. It is a separate purchase from the Mac version, which is sold directly. If you use both a Mac and a PC, <a href="/blog/one-notes-app-on-a-mac-and-a-pc/">one notes app on a Mac and a PC</a> explains how that works without sync.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/markdown-and-text-files-on-windows/">Markdown and text files on Windows: what opens them, and what keeps them</a><span>A .md file is plain text, and Windows already has three ways to open one. What Notepad, VS Code and default apps do, when that is enough, and when it is not.</span></li><li><a href="https://cyanote.app/blog/apple-notes-on-windows/">Apple Notes on a Windows PC</a><span>There is no Apple Notes application for Windows and there never has been. Here is what actually reaches your notes from a PC, and what each route costs you.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>

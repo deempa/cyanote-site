@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://cyanote.app/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="What it takes to ship a notarized Mac app yourself" />
 <meta name="twitter:description" content="Ninety-nine dollars a year, a certificate and an automated malware scan. What Apple actually asks of an independent developer shipping outside the App Store." />
@@ -38,7 +38,7 @@
   "headline": "Signing and notarising, from the developer's side",
   "description": "Ninety-nine dollars a year, a certificate and an automated malware scan. What Apple actually asks of an independent developer shipping outside the App Store.",
   "datePublished": "2026-08-18",
-  "dateModified": "2026-09-12",
+  "dateModified": "2026-09-26",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, macOS, Security",
-  "wordCount": 1245
+  "wordCount": 1235
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-18" />
-<meta property="article:modified_time" content="2026-09-12" />
+<meta property="article:modified_time" content="2026-09-26" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="macOS" />
@@ -196,19 +196,19 @@ APPLE_TEAM_ID            ten characters</code></pre>
       <p>Harmless, and deeply irritating when it happens on every dev build while you are working. So it happens only on production builds now, which is a two-line change that meaningfully improved my day and would never appear in any changelog.</p>
       <p>The other one: notarising the DMG and notarising the app inside it are separate operations, and a stapled DMG containing an unstapled app passes a casual check on a machine that has already seen the app. That is the class of bug where the only honest test is a fresh Mac with no network, which is the test I now run, because everything else confirms what you already believe.</p>
       <h2 id="windows-in-comparison">Windows, in comparison</h2>
-      <p>The Windows build exists, and is not on sale, and one reason is that the equivalent process there is worse in an instructive way.</p>
+      <p>The Windows version is sold through the Microsoft Store, and one reason is that the equivalent process outside the Store is worse in an instructive way.</p>
       <p>Authenticode signing has no $99 flat rate. It is a certificate from a commercial authority, priced per year, with identity validation attached, and until recently the norm was a physical hardware token that someone posts to you, which makes automated CI signing an interesting problem involving a USB device plugged into something. Cloud signing services have improved this a great deal. It is still several times the friction of Apple's process, and Apple's process involves a mandatory malware scan by a company that can revoke your identity.</p>
-      <p>I say that as someone who complains about Gatekeeper regularly. Having now done both, $99 and a stapled ticket is the better arrangement, and the <a href="/pricing/">same $7.99 licence will cover Windows</a> when it ships.</p>
+      <p>I say that as someone who complains about Gatekeeper regularly. Having now done both, $99 and a stapled ticket is the better arrangement.</p>
     </div>
   </article>
 
   <aside class="endcta">
     <h2>Cyanote</h2>
-    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
     Everything stays on your own computer. $7.99 once, no subscription.</p>
     <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-      <span class="btn-label">Download for Mac — $7.99</span></a>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
   </aside>
 
   <section class="related">
@@ -240,7 +240,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
     </ul></div>
     <div><h3>Download</h3><ul>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
     </ul></div>
   </div>
   <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>

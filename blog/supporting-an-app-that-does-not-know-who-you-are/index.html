@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://cyanote.app/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Running support with no accounts and no telemetry" />
 <meta name="twitter:description" content="No account means no password reset, no dashboard and no way to look you up. What support actually looks like when the app knows nothing about its users." />
@@ -38,7 +38,7 @@
   "headline": "Supporting an app that doesn't know who you are",
   "description": "No account means no password reset, no dashboard and no way to look you up. What support actually looks like when the app knows nothing about its users.",
   "datePublished": "2026-08-18",
-  "dateModified": "2026-09-07",
+  "dateModified": "2026-09-26",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Privacy, Support",
-  "wordCount": 1298
+  "wordCount": 1320
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-18" />
-<meta property="article:modified_time" content="2026-09-07" />
+<meta property="article:modified_time" content="2026-09-26" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Privacy" />
@@ -188,20 +188,20 @@
       <p>So the app tries to explain itself at the exact moment it fails. The clearest example: pasting from the clipboard history needs the macOS Accessibility permission, and without it the paste simply cannot happen. The old behaviour was to close the popup and do nothing, which is indistinguishable from broken software, and generates an email that begins "your clipboard doesn't work". Now it names the missing permission, offers to open the right settings pane, and points out that the entry is already on your clipboard so you can paste it yourself. <a href="/blog/why-a-mac-app-asks-for-accessibility/">Why a Mac app asks for Accessibility</a> exists for the same reason: the question is predictable, so answer it before it is asked.</p>
       <p>Every silent failure is a support ticket with a delay on it. That is the rule, and it has changed how I write error paths more than any other single idea in the project.</p>
       <h2 id="the-refund-policy-is-an-admission">The refund policy is an admission</h2>
-      <p>14 days, no reason needed, no proof of uninstall.</p>
+      <p>14 days on a copy bought here, no reason needed, no proof of uninstall. (The Windows edition is sold through the Microsoft Store, so its refunds follow Microsoft's policy.)</p>
       <p>That last clause is not generosity. It is honesty about capability. I could not verify an uninstall if I wanted to. There is no phone-home, so there is nothing to observe. A policy demanding proof I cannot check would be theatre, and the sort of theatre that makes a person feel accused on their way out the door.</p>
       <p>The same absence shapes what a refund <em>tells</em> me. With no analytics, a cluster of refunds mentioning the same feature is one of the very few real signals I get about what the app is like to use. It is a terrible instrument: tiny sample, self-selected, arriving only from people annoyed enough to act. It is also nearly all of it, along with email, and I would rather work from a biased sample than hold a database of everything everyone does inside their own notes.</p>
-      <p>That is the trade, stated plainly. I know less about my users than any product manager would consider acceptable, and in exchange the app can promise something almost nobody else in this category can: it makes one network request, ever, and it is a check for a new version. Everything else stays on your Mac, including the record of what went wrong.</p>
+      <p>That is the trade, stated plainly. I know less about my users than any product manager would consider acceptable, and in exchange the app can promise something almost nobody else in this category can: it barely touches the network, and nothing it sends says who you are or what you wrote. Everything else stays on your machine, including the record of what went wrong.</p>
     </div>
   </article>
 
   <aside class="endcta">
     <h2>Cyanote</h2>
-    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
     Everything stays on your own computer. $7.99 once, no subscription.</p>
     <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-      <span class="btn-label">Download for Mac — $7.99</span></a>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
   </aside>
 
   <section class="related">
@@ -233,7 +233,7 @@
     </ul></div>
     <div><h3>Download</h3><ul>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
     </ul></div>
   </div>
   <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>

@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://cyanote.app/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Three checks that passed and proved nothing at all" />
 <meta name="twitter:description" content="A build that only worked because of a cached file, a CI run that tested nothing, and a release check that read the old bytes back. None of it evidence." />
@@ -38,7 +38,7 @@
   "headline": "The green tick that meant nothing",
   "description": "A build that only worked because of a cached file, a CI run that tested nothing, and a release check that read the old bytes back. None of it evidence.",
   "datePublished": "2026-08-22",
-  "dateModified": "2026-09-07",
+  "dateModified": "2026-09-26",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Testing, Development",
-  "wordCount": 1324
+  "wordCount": 1359
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-22" />
-<meta property="article:modified_time" content="2026-09-07" />
+<meta property="article:modified_time" content="2026-09-26" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Testing" />
@@ -184,9 +184,10 @@
       <p>It deliberately builds nothing. A full desktop build needs a Rust toolchain and takes minutes; it has its own workflow and its own moment. What is wanted from a push is the answer to <em>did that break anything</em> inside a couple of minutes, which is a different product entirely.</p>
       <h2 id="two-and-a-half-the-run-that-was-always-red">Two and a half: the run that was always red</h2>
       <p>The other half of the same commit is the one I think about more.</p>
-      <p>The Windows build job ran on every version tag, and failed on every version tag, by design, because the code-signing secrets it needs are not set, because Windows is not on sale yet. Every release I had ever pushed produced a red run for a build nobody could buy. Both pushes of 1.0.0 included.</p>
+      <p>The Windows build job ran on every version tag, and failed on every version tag, by design, because the code-signing secrets it needs are not set, because Windows was not on sale yet. Every release I had ever pushed produced a red run for a build nobody could buy. Both pushes of 1.0.0 included.</p>
       <p>A CI failure that is always red is worse than having no CI, and not by a small margin. Red means nothing once it always means nothing, and the cost is not that one job. It is that you have trained yourself to close the tab. The next failure, the real one, arrives into an inbox where failure is background noise.</p>
       <p>So the Windows job is manual-only until it can be green. The job itself is untouched and still correct; when Windows ships, the tag trigger goes back and the secrets get set. Turning a permanently-failing check off is not lowering the bar. Leaving it on is.</p>
+      <p><em>A later note: the Windows edition went to the Microsoft Store in the end, which signs the package on Microsoft's side, so the plan in the paragraph above is history rather than a to-do.</em></p>
       <h2 id="three-the-verification-that-read-the-wrong-copy">Three: the verification that read the wrong copy</h2>
       <p>The last one is my favourite, because it is a check whose failure mode is aborting a perfectly good release.</p>
       <p>Publishing an update uploads the payload to object storage, verifies it, and <em>then</em> writes the manifest that points at it. The ordering matters: a manifest pointing at a payload that is not fully there is the one state that would hand a user a broken download. Verify sits between the two on purpose.</p>
@@ -203,11 +204,11 @@
 
   <aside class="endcta">
     <h2>Cyanote</h2>
-    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
     Everything stays on your own computer. $7.99 once, no subscription.</p>
     <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-      <span class="btn-label">Download for Mac — $7.99</span></a>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
   </aside>
 
   <section class="related">
@@ -239,7 +240,7 @@
     </ul></div>
     <div><h3>Download</h3><ul>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
     </ul></div>
   </div>
   <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>

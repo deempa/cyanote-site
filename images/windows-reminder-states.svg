@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="wr-title wr-desc">
+  <title id="wr-title">When a Cyanote reminder reaches you on Windows</title>
+  <desc id="wr-desc">With the window open or closed to the tray, a reminder arrives on the minute as a Windows notification. If the PC was asleep, it arrives on waking, marked as missed. If Cyanote was quit, a reminder less than a day old arrives marked as missed when the app next starts; an older one is dropped, and the task stays on the list.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 19px; fill: #3d3f45; }
+    .note { font-size: 18px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <!-- running -->
+  <rect class="card" x="24" y="30" width="340" height="330" rx="12"/>
+  <rect x="24" y="30" width="340" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="54" y="86">Window open, or</text>
+  <text class="h" x="54" y="116">closed to the tray</text>
+  <text class="item" x="54" y="190">Windows notification</text>
+  <text class="item" x="54" y="220">on the minute</text>
+  <text class="note" x="54" y="300">Closing the window does not</text>
+  <text class="note" x="54" y="326">quit the app.</text>
+
+  <!-- asleep -->
+  <rect class="card" x="430" y="30" width="340" height="330" rx="12"/>
+  <rect x="430" y="30" width="340" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="460" y="86">PC asleep at</text>
+  <text class="h" x="460" y="116">the reminder time</text>
+  <text class="item" x="460" y="190">Arrives when it wakes,</text>
+  <text class="item" x="460" y="220">as a missed reminder</text>
+  <text class="note" x="460" y="300">Says how long ago it</text>
+  <text class="note" x="460" y="326">was due.</text>
+
+  <!-- quit -->
+  <rect class="card" x="836" y="30" width="340" height="330" rx="12"/>
+  <rect x="836" y="30" width="340" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="866" y="86">Cyanote quit</text>
+  <text class="note" x="866" y="116">From the tray menu</text>
+  <text class="item" x="866" y="190">Under a day late: arrives</text>
+  <text class="item" x="866" y="220">as missed on next launch</text>
+  <text class="item" x="866" y="260">Over a day: dropped</text>
+  <text class="note" x="866" y="326">The task itself stays listed.</text>
+
+  <text class="foot" x="24" y="420">The app has to be running for a reminder to arrive on time. Launch at sign-in covers restarts.</text>
+</svg>

@@ -4,7 +4,7 @@
 <script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Images in notes on a Mac: where they go and what breaks</title>
+<title>Images in notes: where they go and what breaks</title>
 <meta name="description" content="An image in a note is either a file inside your database or a link to somebody&#x27;s server. The difference is invisible until the day it is a grey box." />
 <meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="theme-color" content="#fafafa" />
@@ -17,14 +17,14 @@
 <meta property="og:site_name" content="Cyanote" />
 <meta property="og:locale" content="en_GB" />
 <meta property="og:url" content="https://cyanote.app/blog/screenshots-and-images-in-your-notes/" />
-<meta property="og:title" content="Images in notes on a Mac: where they go and what breaks" />
+<meta property="og:title" content="Images in notes: where they go and what breaks" />
 <meta property="og:description" content="An image in a note is either a file inside your database or a link to somebody&#x27;s server. The difference is invisible until the day it is a grey box." />
 <meta property="og:image" content="https://cyanote.app/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Images in notes on a Mac: where they go and what breaks" />
+<meta name="twitter:title" content="Images in notes: where they go and what breaks" />
 <meta name="twitter:description" content="An image in a note is either a file inside your database or a link to somebody&#x27;s server. The difference is invisible until the day it is a grey box." />
 <meta name="twitter:image" content="https://cyanote.app/og-image.png" />
 <!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
@@ -38,7 +38,7 @@
   "headline": "Screenshots and images in your notes",
   "description": "An image in a note is either a file inside your database or a link to somebody's server. The difference is invisible until the day it is a grey box.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-09-07",
+  "dateModified": "2026-09-26",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Notes, Local-first, How-to",
-  "wordCount": 1110
+  "wordCount": 1113
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-09-07" />
+<meta property="article:modified_time" content="2026-09-26" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Notes" />
 <meta property="article:tag" content="Local-first" />
@@ -191,17 +191,17 @@
       <h2 id="the-honest-version">The honest version</h2>
       <p>If your work is genuinely visual — design references, a research corpus of images, screenshots by the thousand — a notes app is not your image library and you want something built for it. Managing tens of gigabytes of pictures inside a notes database is a bad plan regardless of how well the app handles it.</p>
       <p>For the ordinary case of a few images a week as evidence and context, the only thing that really matters is which of the three storage choices your app made, and you can find out in two minutes by exporting one note.</p>
-      <p>Cyanote stores images in the same local SQLite database as everything else. They are in the backup because the backup is the database, they are in the JSON export because the export includes them, and they render with the wifi off because nothing about them was ever a URL. Notes hold images inline alongside headings, tables, callouts and code, and the clipboard history keeps copied images as well as text, so a screenshot you took an hour ago and lost is still recoverable from <code>⌥⇧V</code>.</p>
+      <p>Cyanote stores images in the same local SQLite database as everything else. They are in the backup because the backup is the database, they are in the JSON export because the export includes them, and they render with the wifi off because nothing about them was ever a URL. Notes hold images inline alongside headings, tables, callouts and code, and the clipboard history keeps copied images as well as text, so a screenshot you took an hour ago and lost is still recoverable from <code>⌥⇧V</code> (Alt+Shift+V on Windows).</p>
     </div>
   </article>
 
   <aside class="endcta">
     <h2>Cyanote</h2>
-    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
     Everything stays on your own computer. $7.99 once, no subscription.</p>
     <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-      <span class="btn-label">Download for Mac — $7.99</span></a>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
   </aside>
 
   <section class="related">
@@ -233,7 +233,7 @@
     </ul></div>
     <div><h3>Download</h3><ul>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
     </ul></div>
   </div>
   <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>

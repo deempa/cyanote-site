@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Notes app for Mac and Windows, with no cloud and no sync</title>
+<meta name="description" content="A Mac at home, a Windows PC at work, one notes app on both and no cloud between them. How notes move across on purpose, and when two sets is right." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/one-notes-app-on-a-mac-and-a-pc/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/one-notes-app-on-a-mac-and-a-pc/" />
+<meta property="og:title" content="Notes app for Mac and Windows, with no cloud and no sync" />
+<meta property="og:description" content="A Mac at home, a Windows PC at work, one notes app on both and no cloud between them. How notes move across on purpose, and when two sets is right." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Notes app for Mac and Windows, with no cloud and no sync" />
+<meta name="twitter:description" content="A Mac at home, a Windows PC at work, one notes app on both and no cloud between them. How notes move across on purpose, and when two sets is right." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "One notes app on a Mac and a PC, without sync",
+  "description": "A Mac at home, a Windows PC at work, one notes app on both and no cloud between them. How notes move across on purpose, and when two sets is right.",
+  "datePublished": "2026-09-30",
+  "dateModified": "2026-09-30",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/one-notes-app-on-a-mac-and-a-pc/"
+  },
+  "url": "https://cyanote.app/blog/one-notes-app-on-a-mac-and-a-pc/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/mac-to-pc-handover.svg",
+      "width": 1200,
+      "height": 460
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Local-first, Windows, Workflow",
+  "wordCount": 2135
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "One notes app on a Mac and a PC, without sync",
+      "item": "https://cyanote.app/blog/one-notes-app-on-a-mac-and-a-pc/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-09-30" />
+<meta property="article:modified_time" content="2026-09-30" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Local-first" />
+<meta property="article:tag" content="Windows" />
+<meta property="article:tag" content="Workflow" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>One notes app on a Mac and a PC, without sync</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-09-30">30 September 2026</time></span>
+        <span class="dot">·</span>
+        <span>10 min read</span>
+      </div>
+    <ul class="tags"><li>Local-first</li><li>Windows</li><li>Workflow</li></ul>
+    </header>
+
+    <div class="post">
+      <p>The usual shape of it: a Mac at home, which you chose, and a Windows PC at work, which somebody chose for you. Or the reverse — a Windows desktop you built, and a MacBook the job handed out. Either way you want the same notes app on both, and every search for "notes app for Mac and Windows" returns the same list of cloud services with an account attached.</p>
+      <p>Cyanote now runs on both. It does not sync, and this post is about what that means in practice: what is the same on the two machines, how notes get from one to the other when you want them to, and the case — more common than people admit — where the right number of note collections is two.</p>
+      <h2 id="what-the-same-app-on-both-actually-gives-you">What "the same app on both" actually gives you</h2>
+      <p>The Windows edition is the same application as the Mac one, built from the same code: the same editor, the same sidebar and note tree, the same tasks, habits, calendar and clipboard history. You learn it once. The muscle memory you build at home is the muscle memory you use at work, which is most of what people mean when they say they want one app on both machines.</p>
+      <p>A few things differ, and they are the things that should.</p>
+      <p><strong>The modifier key.</strong> Shortcuts that use Cmd on the Mac use Ctrl on Windows. New note is Cmd+N at home and Ctrl+N at work; search all notes is Cmd+Shift+F and Ctrl+Shift+F; the command palette is Cmd+K and Ctrl+K; settings is Cmd+, and Ctrl+,. Under the hood a shortcut is stored as "the primary modifier", so it means the native one on whichever machine you are sitting at, and a shortcut you re-record on the Mac by pressing Cmd still matches Ctrl on the PC.</p>
+      <p><strong>The clipboard hotkey.</strong> Clipboard history opens from anywhere with Option+Shift+V on the Mac and Alt+Shift+V on Windows — the same physical keys, named differently. Paste-back works the same way: pick an entry and it lands in whichever app you were in.</p>
+      <p><strong>The operating system's own jobs.</strong> Reminders arrive as Windows notifications, launch at login goes through Windows, and a <code>.txt</code> file opens in Cyanote from Explorer the way it does from Finder. I have run the Store build on a real Windows laptop and checked each of those, along with clipboard history, paste-back and the keyboard shortcuts, rather than assuming the Mac behaviour carried over.</p>
+      <p>What does not differ is the part that matters most to me: the data lives on the machine. One SQLite database on the Mac's disk, one on the PC's. No account on either, no server between them.</p>
+      <h2 id="what-does-not-happen">What does not happen</h2>
+      <p>The two copies do not know about each other. A note written on the Mac on Sunday is not on the PC on Monday unless you put it there. There is no background process quietly reconciling them, and there is no sync service waiting behind a setting.</p>
+      <p>If you need the same notes on both machines within the same day — writing on one, reading on the other an hour later, back and forth — you need software that syncs, and I have written about <a href="/blog/apple-notes-on-windows/">the ones worth considering</a> without pretending Cyanote is one of them. <a href="/blog/two-macs-one-system/">Two Macs, one system</a> makes the same argument for a pair of Macs, and the question it asks applies here unchanged: do you use both machines in the same week, or in different weeks?</p>
+      <p>For a Mac at home and a PC at work, the honest answer is usually neither. You use both every weekday, but for <em>different things</em>. That changes the problem again.</p>
+      <h2 id="two-collections-is-often-the-right-answer">Two collections is often the right answer</h2>
+      <p>Before working out how to move notes between the two, ask whether they should move at all.</p>
+      <p>Work notes on a work machine are frequently your employer's data. Meeting notes, a customer's details, the numbers from a spreadsheet you pasted in to tidy up — the fact that they are in your notes app does not make them yours, and copying them home is the kind of thing that sits badly in an acceptable-use policy. It is the same instinct as <a href="/blog/pasting-work-data-into-random-websites/">not pasting work data into random websites</a>: the path out of the company's machine is the thing to be careful about, whatever is at the other end.</p>
+      <p>The reverse holds too. Your personal notes — the passwords-adjacent things, the health things, the list of flats you are looking at — have no business on a computer your employer administers, backs up and can inspect.</p>
+      <p>So the most common good setup is two Cyanote installations that never exchange anything. Work notes stay at work, home notes stay at home, and each machine has a complete, coherent collection for its own purpose. The rule that makes it work is the one from the two-Macs post: nothing lives in two places. Two half-collections, each missing the note you need, is the worst outcome; two whole ones with a clear line between them is not a compromise at all.</p>
+      <p>What you get from having the same app on both is not shared data. It is not having to be two different people with two different tools.</p>
+      <h2 id="moving-notes-across-on-purpose">Moving notes across on purpose</h2>
+      <p>Sometimes you do need to move something. A new job, a machine being replaced, a project that genuinely belongs on the other side. There are three ways to do it, from smallest to largest.</p>
+      <figure><img src="/images/mac-to-pc-handover.svg" alt="Moving notes from a Mac to a PC: back up on the Mac, carry one JSON file across, restore on the PC — which writes a rescue copy of the PC&#x27;s data first and then replaces it" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>A handover in one direction, at a moment you choose.</figcaption></figure>
+      <h3 id="one-note-export-it-as-markdown">One note: export it as Markdown</h3>
+      <p>Right-click a note in the sidebar and choose <strong>Export as Markdown…</strong>. You get an ordinary <code>.md</code> file — headings, lists, tick boxes, links and code blocks written out as Markdown — that any editor on either system can open. On the other machine, <strong>Settings → Backup → Import Markdown files</strong> turns each <code>.md</code>, <code>.markdown</code> or <code>.txt</code> file into a new note. Nothing already there is touched, and importing the same file twice does not create a duplicate.</p>
+      <p>This is the right tool for a handful of notes, and it is additive: it only ever adds. For a single short thing, emailing it to yourself is quicker still, and <a href="/blog/getting-a-note-to-your-phone-without-sync/">the phone version of that trick</a> works just as well pointed at a PC.</p>
+      <h3 id="plain-files-when-a-note-is-really-a-file">Plain files, when a note is really a file</h3>
+      <p>Cyanote opens <code>.txt</code> and code files directly, and a note opened that way stays linked to the file: Ctrl+S or Cmd+S writes it back. If the thing you want on both machines is really a text file — a running log, a config snippet, a list you edit rarely — keep it as a file, put it wherever you already move files between the two machines, and open it in Cyanote on whichever one you are at. The file is the source of truth, and it is a format that will outlive every app involved.</p>
+      <p>The same caution applies as always: do not do this with a file both machines have open at once, and do not put Cyanote's own database in a synced folder. A database is not a document, and file-sync services corrupt databases that two machines are writing to.</p>
+      <h3 id="everything-back-up-on-one-restore-on-the-other">Everything: back up on one, restore on the other</h3>
+      <p>For a whole collection — the machine is being replaced, or you are moving your working life from one side to the other — use the backup.</p>
+      <p>On the Mac, <strong>Settings → Backup → Back up now</strong> writes one file named like <code>Cyanote-backup-2026-09-26-0930.cyanote-backup.json</code>. It is plain JSON with every table in the app: notes and folders, tags, links between notes, tasks, habits, routines, the calendar, clipboard history and pins. Images you have pasted into notes are stored inside the notes themselves, so they travel with them. Carry that file to the PC however you like, then on the PC choose <strong>Settings → Backup → Restore from backup…</strong> and pick it.</p>
+      <p>The Mac and Windows editions share the same backup code and the same format. The file has no notion of which operating system wrote it; restore checks that it is a Cyanote backup, that it is not from a newer version than the app reading it, and that every table's row count matches what was recorded at export, so a truncated file is refused rather than half-restored. The same works in the other direction, PC to Mac.</p>
+      <p><strong>Read this part twice: restore replaces, it does not merge.</strong> Everything on the receiving machine — every note, task and clipboard entry — is swapped for the contents of the file. The app shows you what the backup contains and asks you to confirm with a button that says, in as many words, <em>Replace my data with this backup</em>. Before it touches anything, it writes a rescue backup of the receiving machine's current data next to the file you picked, and if it cannot write that rescue copy the restore is cancelled. The swap itself happens in a single transaction, so a crash halfway leaves your old data intact rather than half of each.</p>
+      <p>The rescue copy is there so a mistake is recoverable. It is not permission to be casual. The practical consequences:</p>
+      <ul><li>Restoring the Mac's backup onto a PC that already has work notes in it will replace those work notes. They are in the rescue file, but they are no longer in the app.</li><li>There is no "add these to what I have". If you want some notes from each side in one place, move the smaller set across as Markdown instead.</li><li>A note that was linked to a file on disk arrives unlinked. A file path from one machine means nothing on another — and following it blindly would be a security hole — so the note keeps every word and you re-link it with Save as… if you want to.</li><li>Locked notes stay locked. They travel encrypted and open with the same password on the other machine, which means you need to remember it.</li></ul>
+      <p>I have written more about <a href="/blog/backing-up-local-notes/">what a backup is and is not</a>, and about <a href="/blog/moving-to-a-new-mac/">doing this between two Macs</a>; the Mac-to-PC version is the same procedure with a different machine at the end. If what you actually want is to leave for another app entirely, <a href="/blog/getting-your-notes-out/">getting your notes out</a> covers that.</p>
+      <h2 id="a-routine-that-works">A routine that works</h2>
+      <p>For someone who keeps two collections and occasionally moves something across:</p>
+      <ul><li><strong>Decide which side each kind of note belongs to</strong>, and say it out loud once. Work on the work machine, everything else at home.</li><li><strong>Move single notes as Markdown</strong>, deliberately, in the direction the note belongs. Additive, nothing overwritten.</li><li><strong>Keep the whole-collection restore for whole-machine events</strong>: a new PC, a new Mac, a change of job. Not for Tuesdays.</li><li><strong>Keep a backup on each machine anyway.</strong> Cyanote writes an automatic backup once a day and keeps a week of them; a manual one copied somewhere else is still worth having. Two machines is exactly the situation in which you eventually restore onto the wrong one.</li></ul>
+      <h2 id="two-editions-two-purchases">Two editions, two purchases</h2>
+      <p>To be plain about the money: the Mac and Windows editions are separate purchases. The Mac edition is $7.99 once, sold directly on this site. The Windows edition is $7.99 once on the Microsoft Store, and needs Windows 10 or later. Buying one does not get you the other; if you want Cyanote on a Mac and a PC, that is two purchases. What the Windows edition does on its own terms, next to Notepad and OneNote, is in <a href="/blog/notes-app-for-windows-without-an-account/">a notes app for Windows that never asks you to sign in</a>.</p>
+      <h2 id="the-honest-version">The honest version</h2>
+      <p>If you need the same notes on a Mac and a PC throughout the same day, buy something that syncs. That is not Cyanote.</p>
+      <p>If what you want is one app you know on both machines, with each machine's notes staying on that machine — and a deliberate, careful way to move things across when life changes — that is exactly what it is built for. The Windows edition is on the <a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Microsoft Store</a>; the Mac edition is on the <a href="/pricing/">pricing page</a>.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/notes-app-for-windows-without-an-account/">A notes app for Windows that never asks you to sign in</a><span>What Notepad, Sticky Notes and OneNote actually need from you on a Windows PC, when one of them is enough, and what a local notes app with no sign-in looks like.</span></li><li><a href="https://cyanote.app/blog/getting-a-note-to-your-phone-without-sync/">Getting a note to your phone without sync</a><span>A local-first app has no phone client, and that is the real cost of it. Here are the four honest workarounds, and the one question that decides if they are enough.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>

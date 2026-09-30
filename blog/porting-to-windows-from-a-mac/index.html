@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://cyanote.app/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history on a Mac" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Shipping Windows code you cannot execute while writing it" />
 <meta name="twitter:description" content="Half the Windows work is code that cannot run on the machine writing it. What that changes, and the week a compile error had nowhere at all to surface." />
@@ -38,7 +38,7 @@
   "headline": "Porting to Windows from a Mac I can't run it on",
   "description": "Half the Windows work is code that cannot run on the machine writing it. What that changes, and the week a compile error had nowhere at all to surface.",
   "datePublished": "2026-08-23",
-  "dateModified": "2026-09-07",
+  "dateModified": "2026-09-26",
   "author": {
     "@type": "Person",
     "@id": "https://cyanote.app/about.html#person",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Windows, Development",
-  "wordCount": 1324
+  "wordCount": 1331
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-23" />
-<meta property="article:modified_time" content="2026-09-07" />
+<meta property="article:modified_time" content="2026-09-26" />
 <meta property="article:author" content="Lior Rabanian" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Windows" />
@@ -194,17 +194,17 @@
       <p><strong>Write platform rules as pure functions.</strong> Anything you can express as data in, decision out, can be tested on the machine you have. What is left is the thin layer that talks to the system, and that layer should be as boring as you can make it, because it is the part nobody can check until it is in front of a user.</p>
       <p><strong>Choose fail-closed defaults everywhere you are blind.</strong> You will get something wrong on a platform you cannot run. Decide in advance which direction the wrongness should point.</p>
       <p><strong>Expect assumptions to have children.</strong> When something is wrong in one place and you cannot verify it locally, go and look for the other three places that learned it from the first.</p>
-      <p>None of this makes the port cheap. It makes the parts you cannot see behave like parts you can reason about, which is the most that is available. The rest — signing, notarising, the whole apparatus of making an app openable on a machine that has never heard of you — is <a href="/blog/signing-and-notarising-from-the-developers-side/">its own separate expense</a>, and on Windows it is still waiting on a certificate.</p>
+      <p>None of this makes the port cheap. It makes the parts you cannot see behave like parts you can reason about, which is the most that is available. The rest — signing, notarising, the whole apparatus of making an app openable on a machine that has never heard of you — is <a href="/blog/signing-and-notarising-from-the-developers-side/">its own separate expense</a>, and on Windows it was settled by selling through the Microsoft Store, which signs what it distributes.</p>
     </div>
   </article>
 
   <aside class="endcta">
     <h2>Cyanote</h2>
-    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one Mac app.
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
     Everything stays on your own computer. $7.99 once, no subscription.</p>
     <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-      <span class="btn-label">Download for Mac — $7.99</span></a>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
   </aside>
 
   <section class="related">
@@ -236,7 +236,7 @@
     </ul></div>
     <div><h3>Download</h3><ul>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
     </ul></div>
   </div>
   <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>

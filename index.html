@@ -5,11 +5,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light" />
-<title>Cyanote — Notes, Tasks, Habits &amp; a Clipboard Manager for Mac</title>
+<title>Cyanote — Notes, Tasks, Habits &amp; a Clipboard Manager for Mac and Windows</title>
 <!-- Kept under 160 characters. The previous one ran to 221, so Google cut it at
      "…clipboard manager. Local-first." and the $7.99 — the one fact that makes
      anyone click — never reached a search result at all. -->
-<meta name="description" content="Notes, to-dos, calendar, habits and a system-wide clipboard manager in one Mac app. $7.99 once, no subscription, no account. Everything stays on your Mac." />
+<meta name="description" content="Notes, to-dos, calendar, habits and a clipboard manager in one Mac and Windows app. $7.99 once, no subscription, no account. Everything stays on your computer." />
 <meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="theme-color" content="#fafafa" />
 <link rel="canonical" href="https://cyanote.app/" />
@@ -46,15 +46,15 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Cyanote" />
 <meta property="og:url" content="https://cyanote.app/" />
-<meta property="og:title" content="Cyanote — Notes, Tasks, Habits &amp; a Clipboard Manager for Mac" />
-<meta property="og:description" content="Local-first, all-in-one app for Mac. Notes, tasks, calendar, habits + a powerful clipboard manager. One-time $7.99, yours to keep. Windows coming soon." />
+<meta property="og:title" content="Cyanote — Notes, Tasks, Habits &amp; a Clipboard Manager for Mac and Windows" />
+<meta property="og:description" content="Local-first, all-in-one app for Mac and Windows. Notes, tasks, calendar, habits + a powerful clipboard manager. One-time $7.99, yours to keep." />
 <meta property="og:image" content="https://cyanote.app/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <!-- Twitter/X card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Cyanote — Notes, Tasks, Habits &amp; a Clipboard Manager for Mac" />
-<meta name="twitter:description" content="Local-first, all-in-one app for Mac. One-time $7.99, yours to keep. Windows coming soon." />
+<meta name="twitter:title" content="Cyanote — Notes, Tasks, Habits &amp; a Clipboard Manager for Mac and Windows" />
+<meta name="twitter:description" content="Local-first, all-in-one app for Mac and Windows. One-time $7.99, yours to keep." />
 <meta name="twitter:image" content="https://cyanote.app/og-image.png" />
 
 <!-- Structured data: helps Google understand the product + show rich results.
@@ -65,9 +65,9 @@
   "@type": "SoftwareApplication",
   "@id": "https://cyanote.app/#app",
   "name": "Cyanote",
-  "operatingSystem": "macOS 12.0 or later (Apple Silicon and Intel)",
+  "operatingSystem": "macOS 12.0 or later (Apple Silicon and Intel), Windows 10 or later",
   "applicationCategory": "ProductivityApplication",
-  "description": "A fast, private, all-in-one app for Mac: notes, to-dos, calendar, habits, and clipboard history. Local-first, one-time payment.",
+  "description": "A fast, private, all-in-one app for Mac and Windows: notes, to-dos, calendar, habits, and clipboard history. Local-first, one-time payment.",
   "url": "https://cyanote.app/",
   "image": "https://cyanote.app/og-image.png",
   "softwareVersion": "1.1.0",
@@ -90,15 +90,27 @@
     "https://cyanote.app/images/clipboard.webp"
   ],
   "publisher": { "@id": "https://cyanote.app/#organization" },
-  "offers": {
-    "@type": "Offer",
-    "@id": "https://cyanote.app/#offer",
-    "price": "7.99",
-    "priceCurrency": "USD",
-    "url": "https://cyanote.app/pricing/",
-    "availability": "https://schema.org/InStock",
-    "seller": { "@id": "https://cyanote.app/#organization" }
-  }
+  "offers": [
+    {
+      "@type": "Offer",
+      "@id": "https://cyanote.app/#offer",
+      "name": "Cyanote for Mac",
+      "price": "7.99",
+      "priceCurrency": "USD",
+      "url": "https://cyanote.app/pricing/",
+      "availability": "https://schema.org/InStock",
+      "seller": { "@id": "https://cyanote.app/#organization" }
+    },
+    {
+      "@type": "Offer",
+      "@id": "https://cyanote.app/#offer-windows",
+      "name": "Cyanote for Windows (Microsoft Store)",
+      "price": "7.99",
+      "priceCurrency": "USD",
+      "url": "https://apps.microsoft.com/detail/9N54ZL3Q8PR7",
+      "availability": "https://schema.org/InStock"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -108,8 +120,8 @@
   "mainEntity": [
     { "@type": "Question", "name": "How do I get it after paying?", "acceptedAnswer": { "@type": "Answer", "text": "A download link appears as soon as checkout completes, and the same link arrives by email along with your licence key. Open the disk image, drag Cyanote to your Applications folder, launch it, and paste the key once when it asks. That is the whole setup: there is no account to create, no email address to verify, and no password to choose. The key is checked on that first launch and never again, so the app keeps working on a machine that is offline, on a machine that never sees the internet again, and on the day this website stops existing. If you lose the key it is still in your checkout email, and if you lose the email, one message to support gets it back." } },
     { "@type": "Question", "name": "Where is my data stored?", "acceptedAnswer": { "@type": "Answer", "text": "On your own Mac, in a single SQLite database file kept under ~/Library/Application Support/. There is nowhere else for it to go: Cyanote has no account system, no sync service, no analytics and no telemetry, so nothing you write is uploaded anywhere. The only time the app talks to the network at all is when it checks whether a new version exists. You can move that database file to any folder you like — an external drive, or a folder your own backup tool already watches — and Cyanote will keep using it there. Individual notes can be locked with a password, and a locked note's plaintext is not left behind in freed database pages. Because it is one ordinary file in an ordinary folder, Time Machine already backs your notes up without being told to." } },
-    { "@type": "Question", "name": "Which computers is it for?", "acceptedAnswer": { "@type": "Answer", "text": "Macs running macOS 12 (Monterey) or newer. Cyanote ships as a universal binary, so it runs natively on both Apple Silicon and Intel Macs — no Rosetta, and no choosing between two downloads. It is signed and notarized by Apple, so Gatekeeper opens it without the unidentified-developer warning that unsigned downloads trigger. It is a desktop app: there is no iPhone or iPad version and nothing to log into in a browser. A Windows build exists and is in testing; it is not on sale yet and has no release date, and what you buy today is the macOS app. Cyanote is not on the Mac App Store — it is sold directly, which is part of what makes a one-time price and a no-account design possible." } },
-    { "@type": "Question", "name": "Is there a free trial?", "acceptedAnswer": { "@type": "Answer", "text": "No, and deliberately not. What there is instead is a fourteen-day refund: buy it, use it properly, and if it is not for you, one email gets your $7.99 back — no reason required, no proof that you uninstalled it, no form. That is a better deal than a trial for the same reason it is a worse funnel: a trial asks you to evaluate an app in the fortnight you happen to have free, against a clock, whereas a refund lets you use it the way you would actually use it and decide afterwards. The refund window is the same whether you ask on day one or day fourteen, and asking for one does not cost you the updates you already downloaded." } },
+    { "@type": "Question", "name": "Which computers is it for?", "acceptedAnswer": { "@type": "Answer", "text": "Macs running macOS 12 (Monterey) or newer. Cyanote ships as a universal binary, so it runs natively on both Apple Silicon and Intel Macs — no Rosetta, and no choosing between two downloads. It is signed and notarized by Apple, so Gatekeeper opens it without the unidentified-developer warning that unsigned downloads trigger. It is a desktop app: there is no iPhone or iPad version and nothing to log into in a browser. Cyanote is also available for Windows 10 and later, sold on the Microsoft Store for $7.99 as a separate purchase from the Mac version. The Mac version is not on the Mac App Store — it is sold directly, which is part of what makes a one-time price and a no-account design possible." } },
+    { "@type": "Question", "name": "Is there a free trial?", "acceptedAnswer": { "@type": "Answer", "text": "No, and deliberately not. What there is instead is a fourteen-day refund: buy it, use it properly, and if it is not for you, one email gets your $7.99 back — no reason required, no proof that you uninstalled it, no form. That is a better deal than a trial for the same reason it is a worse funnel: a trial asks you to evaluate an app in the fortnight you happen to have free, against a clock, whereas a refund lets you use it the way you would actually use it and decide afterwards. The refund window is the same whether you ask on day one or day fourteen, and asking for one does not cost you the updates you already downloaded. Microsoft Store purchases of the Windows version are refunded under Microsoft's Store refund policy, not by us." } },
     { "@type": "Question", "name": "Does it sync between my Macs, or to my phone?", "acceptedAnswer": { "@type": "Answer", "text": "No. Cyanote has no sync service, and this is the direct cost of the design rather than a feature waiting to be built: sync needs a server, a server needs an account, and an account is the thing this app is built not to have. Your notes live in one SQLite file on one Mac. If you want that file on a second Mac, you can put it in a folder that iCloud Drive, Dropbox or Syncthing already watches and point Cyanote at it there — that works, but it is your sync setup and your conflict risk, not a supported feature, so do not run it in both places at once. There is no iPhone or iPad app and none is planned. If reading your notes on a phone is something you need, Cyanote is the wrong app and Apple Notes or Obsidian will serve you better." } },
     { "@type": "Question", "name": "How is it different from Notion, Paste or Apple Notes?", "acceptedAnswer": { "@type": "Answer", "text": "Against Notion: Cyanote opens instantly, works with the wifi off, needs no account, and includes a clipboard manager — Notion is more powerful, collaborative and cross-platform, and free for one person, so if you work with other people it wins outright. Against Paste and the other Mac clipboard managers: several are better at being a clipboard manager alone and several cost less, but none of them holds your notes, to-dos, calendar and habits in the same window. Against Apple Notes: Cyanote adds tasks, a board, a calendar, habits, routines and clipboard history, and stores everything in one file you can move; Apple Notes is free, syncs to your phone and is already installed. Each of these is argued at length, with prices and with the cases where the other app is the better buy, on the comparison pages." } }
   ]
@@ -208,7 +220,7 @@
     "width": 1500,
     "height": 938
   },
-  "dateModified": "2026-09-14"
+  "dateModified": "2026-09-29"
 }
 </script>
 
@@ -270,9 +282,9 @@
       <span class="btn-label">Get Cyanote — $7.99</span></a>
   </div>
   <div class="right" data-plat="windows">
-    <a class="btn btn-ghost btn-sm" href="#pricing">
+    <a class="btn btn-primary btn-sm" href="#pricing">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg>
-      <span class="btn-label">Windows — soon</span></a>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
   </div>
   <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
     <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -290,13 +302,13 @@
   <div class="wrap">
     <!-- Note the space before the <br />. Without it the line break is the only
          thing between the two words, and a <br> contributes no text node — so
-         `textContent` reads "clipboard managerin one quiet Mac app". Browsers
+         `textContent` reads "clipboard managerin one quiet app". Browsers
          render the break either way, which is what made the old version of this
          line ("app for<br />everything") look fine for months while every
          plain-text extractor, and every AI crawler reading one, saw
          "app foreverything you juggle". -->
-    <h1>Notes, tasks and a clipboard <br />manager in one quiet Mac app.</h1>
-    <p class="lede">Five subscriptions&rsquo; worth of app, bought once for $7.99. Everything stays on your Mac — no account, no sync.</p>
+    <h1>Notes, tasks and a clipboard <br />manager in one quiet app.</h1>
+    <p class="lede">Five subscriptions&rsquo; worth of app, bought once for $7.99. Everything stays on your computer — no account, no sync.</p>
     <!-- Three calls to action, one per platform; style.css hides the two that
          don't apply. Only one is ever visible, so only one is ever read out. -->
     <div class="hero-cta" data-plat="mac">
@@ -305,17 +317,19 @@
            again. Same new tab and same placeholder href as the pricing button —
            build.sh rewrites every copy of it, and swaps them all for the notify
            button in pre-launch mode. -->
-      <a class="btn btn-primary" data-cta="hero" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
+      <a class="btn btn-primary plat-btn plat-btn-mac" aria-label="Download Cyanote for Mac — $7.99 (macOS 12 or later)" data-cta="hero" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
         <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
-        <span class="btn-label">Download for Mac — $7.99</span></a>
-      <a class="btn btn-ghost" href="#features">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10.2 8.8 15.5 12l-5.3 3.2Z"/></svg>
-        <span class="btn-label">See what it does</span></a>
+        <span class="btn-label"><span class="pb-small">macOS 12 or later</span><span class="pb-big">Download for Mac — $7.99</span></span></a>
+      <!-- Windows is sold on the Microsoft Store, so its button goes there.
+           Both buttons share one shape, coloured by platform. -->
+      <a class="btn plat-btn plat-btn-win" target="_blank" rel="noopener" href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7" aria-label="Download Cyanote for Windows from the Microsoft Store — $7.99" title="Download Cyanote for Windows from the Microsoft Store — $7.99">
+        <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8.6v8.6H3zM12.4 3H21v8.6h-8.4zM3 12.4h8.6V21H3zM12.4 12.4H21V21h-8.4z"/></svg>
+        <span class="btn-label"><span class="pb-small">Windows 10 or later</span><span class="pb-big">Download for Windows — $7.99</span></span></a>
     </div>
     <div class="hero-cta" data-plat="windows">
-      <a class="btn btn-primary" href="mailto:support@cyanote.app?subject=Tell%20me%20when%20Cyanote%20for%20Windows%20is%20ready">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg>
-        <span class="btn-label">Tell me when Windows is ready</span></a>
+      <a class="btn plat-btn plat-btn-win" target="_blank" rel="noopener" href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7" aria-label="Download Cyanote for Windows from the Microsoft Store — $7.99" title="Download Cyanote for Windows from the Microsoft Store — $7.99">
+        <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8.6v8.6H3zM12.4 3H21v8.6h-8.4zM3 12.4h8.6V21H3zM12.4 12.4H21V21h-8.4z"/></svg>
+        <span class="btn-label"><span class="pb-small">Windows 10 or later</span><span class="pb-big">Download for Windows — $7.99</span></span></a>
       <a class="btn btn-ghost" href="#features">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10.2 8.8 15.5 12l-5.3 3.2Z"/></svg>
         <span class="btn-label">See what it does</span></a>
@@ -323,7 +337,7 @@
     <div class="hero-cta" data-plat="mobile">
       <span class="btn btn-inert">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-        <span class="btn-label">Available on Mac only</span></span>
+        <span class="btn-label">For Mac and Windows computers</span></span>
       <a class="btn btn-ghost" href="#features">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10.2 8.8 15.5 12l-5.3 3.2Z"/></svg>
         <span class="btn-label">See what it does</span></a>
@@ -331,9 +345,9 @@
 
     <!-- Facts, not accolades. The reference badges an award and a review count;
          Cyanote has neither, and inventing them is not on the table. -->
-    <p class="fineprint" data-plat="mac">One-time purchase · macOS 12+ · Windows coming soon</p>
-    <p class="fineprint" data-plat="windows"><b style="color:var(--ink)">Windows: coming soon.</b> Built and in testing — the Mac version is on sale now.</p>
-    <p class="fineprint" data-plat="mobile">Cyanote is a desktop app. Open this page on your Mac to download it.</p>
+    <p class="fineprint" data-plat="mac">One-time purchase · macOS 12+ · Windows version on the Microsoft Store</p>
+    <p class="fineprint" data-plat="windows">One-time purchase on the Microsoft Store · Windows 10 or later</p>
+    <p class="fineprint" data-plat="mobile">Cyanote is a desktop app. Open this page on your Mac or Windows PC to get it.</p>
   </div>
 
   <div class="mac">
@@ -350,7 +364,7 @@
            PageSpeed fetch *both* — 383 KB for a 184 KB animation — and no
            amount of poking at the play path stopped it. A single src cannot
            have that problem. MP4/H.264 is the one to keep: every Safari plays
-           it, which matters for a Mac-only product, and this encode is smaller
+           it, which matters for a product sold to Mac users, and this encode is smaller
            than the WebM was anyway. -->
       <span class="mac-screen"><video id="demo-gif" src="demo.mp4" poster="demo-poster.webp"
         width="900" height="564" muted loop playsinline preload="none"
@@ -517,47 +531,35 @@
       <ul>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Every feature — notes, tasks, board, calendar, habits, routines, Pomodoro, clipboard</li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Works offline, stays on your computer</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Fourteen days to change your mind, no reason needed</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Fourteen days to change your mind (Mac), no reason needed</li>
       </ul>
       <!-- data-plat sits on the wrapper, never on the button: build.sh swaps
            this whole anchor out in pre-launch mode, and an attribute on the
-           anchor would go with it. -->
-      <div data-plat="mac">
-            <!-- Opens in a new tab, so the site the buyer came from is still behind
-             them when checkout finishes or when they change their mind. `noopener`
-             because the new tab is a different origin and has no business holding a
-             handle to this one; the referrer is left intact so Lemon Squeezy can
-             still attribute the sale. -->
-        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
-          <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
-          <span class="btn-label">Download for Mac — $7.99</span></a>
-        <p class="fineprint">Secure checkout via Lemon Squeezy · macOS 12+ (Apple Silicon &amp; Intel), notarized by Apple</p>
-      </div>
-      <div data-plat="windows">
-        <a class="btn btn-ghost" href="mailto:support@cyanote.app?subject=Tell%20me%20when%20Cyanote%20for%20Windows%20is%20ready">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg>
-          <span class="btn-label">Tell me when Windows is ready</span></a>
-        <p class="fineprint">The Mac version is on sale now. The Windows build is in testing, with no release date yet.</p>
+           anchor would go with it. Two separate purchases, one per computer:
+           the Mac copy is sold here, the Windows copy on the Microsoft Store. -->
+      <div class="buy-paths" data-plat="desktop">
+        <div class="buy-path">
+                <!-- Opens in a new tab, so the site the buyer came from is still behind
+               them when checkout finishes or when they change their mind. `noopener`
+               because the new tab is a different origin and has no business holding a
+               handle to this one; the referrer is left intact so Lemon Squeezy can
+               still attribute the sale. -->
+          <a class="btn btn-primary plat-btn plat-btn-mac" aria-label="Download Cyanote for Mac — $7.99 (macOS 12 or later)" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
+            <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+            <span class="btn-label"><span class="pb-small">macOS 12 or later</span><span class="pb-big">Download for Mac — $7.99</span></span></a>
+        </div>
+        <div class="buy-path">
+          <a class="btn plat-btn plat-btn-win" target="_blank" rel="noopener" href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7" aria-label="Download Cyanote for Windows from the Microsoft Store — $7.99" title="Download Cyanote for Windows from the Microsoft Store — $7.99">
+            <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8.6v8.6H3zM12.4 3H21v8.6h-8.4zM3 12.4h8.6V21H3zM12.4 12.4H21V21h-8.4z"/></svg>
+            <span class="btn-label"><span class="pb-small">Windows 10 or later</span><span class="pb-big">Download for Windows — $7.99</span></span></a>
+        </div>
       </div>
       <div data-plat="mobile">
         <span class="btn btn-inert">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-          <span class="btn-label">Available on Mac only</span></span>
-        <p class="fineprint">Open this page on your Mac to buy — a licence key is no use without a Mac to run it on.</p>
+          <span class="btn-label">For Mac and Windows computers</span></span>
+        <p class="fineprint">Open this page on your Mac or Windows PC to buy — the app runs on a computer, not a phone.</p>
       </div>
-    </div>
-
-    <!-- Windows is built but not on sale yet. It stays on the page on purpose:
-         people searching for a Windows app should still find Cyanote, and the
-         mailto builds the list to tell when it ships. Deliberately quiet — a
-         ghost button, so it never competes with Buy above. Shown only to Mac
-         visitors: on Windows this note *is* the offer above, and repeating it
-         under itself reads as a stutter. -->
-    <div class="windows" data-plat="mac">
-      <p class="row">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg>
-        <span><b>Windows coming soon</b></span>
-      </p>
     </div>
 
     <p class="fineprint" style="text-align:center"><a href="/pricing/">Everything the $7.99 includes</a> — and what it does not.</p>
@@ -580,8 +582,8 @@
            only allowed to disagree by being wrong. -->
       <details open><summary>How do I get it after paying?</summary><p>A download link appears as soon as checkout completes, and the same link arrives by email along with your licence key. Open the disk image, drag Cyanote to your Applications folder, launch it, and paste the key once when it asks. That is the whole setup: there is no account to create, no email address to verify, and no password to choose. The key is checked on that first launch and never again, so the app keeps working on a machine that is offline, on a machine that never sees the internet again, and on the day this website stops existing. If you lose the key it is still in your checkout email, and if you lose the email, one message to support gets it back.</p></details>
       <details><summary>Where is my data stored?</summary><p>On your own Mac, in a single SQLite database file kept under <code>~/Library/Application Support/</code>. There is nowhere else for it to go: Cyanote has no account system, no sync service, no analytics and no telemetry, so nothing you write is uploaded anywhere. The only time the app talks to the network at all is when it checks whether a new version exists. You can move that database file to any folder you like — an external drive, or a folder your own backup tool already watches — and Cyanote will keep using it there. Individual notes can be locked with a password, and a locked note's plaintext is not left behind in freed database pages. Because it is one ordinary file in an ordinary folder, Time Machine already backs your notes up without being told to.</p></details>
-      <details><summary>Which computers is it for?</summary><p>Macs running macOS 12 (Monterey) or newer. Cyanote ships as a universal binary, so it runs natively on both Apple Silicon and Intel Macs — no Rosetta, and no choosing between two downloads. It is signed and notarized by Apple, so Gatekeeper opens it without the unidentified-developer warning that unsigned downloads trigger. It is a desktop app: there is no iPhone or iPad version and nothing to log into in a browser. A Windows build exists and is in testing; it is not on sale yet and has no release date, and what you buy today is the macOS app. Cyanote is not on the Mac App Store — it is sold directly, which is part of what makes a one-time price and a no-account design possible.</p></details>
-      <details><summary>Is there a free trial?</summary><p>No, and deliberately not. What there is instead is a fourteen-day refund: buy it, use it properly, and if it is not for you, one email gets your $7.99 back — no reason required, no proof that you uninstalled it, no form. That is a better deal than a trial for the same reason it is a worse funnel: a trial asks you to evaluate an app in the fortnight you happen to have free, against a clock, whereas a refund lets you use it the way you would actually use it and decide afterwards. The refund window is the same whether you ask on day one or day fourteen, and asking for one does not cost you the updates you already downloaded.</p></details>
+      <details><summary>Which computers is it for?</summary><p>Macs running macOS 12 (Monterey) or newer. Cyanote ships as a universal binary, so it runs natively on both Apple Silicon and Intel Macs — no Rosetta, and no choosing between two downloads. It is signed and notarized by Apple, so Gatekeeper opens it without the unidentified-developer warning that unsigned downloads trigger. It is a desktop app: there is no iPhone or iPad version and nothing to log into in a browser. Cyanote is also available for Windows 10 and later, sold on the Microsoft Store for $7.99 as a separate purchase from the Mac version. The Mac version is not on the Mac App Store — it is sold directly, which is part of what makes a one-time price and a no-account design possible.</p></details>
+      <details><summary>Is there a free trial?</summary><p>No, and deliberately not. What there is instead is a fourteen-day refund: buy it, use it properly, and if it is not for you, one email gets your $7.99 back — no reason required, no proof that you uninstalled it, no form. That is a better deal than a trial for the same reason it is a worse funnel: a trial asks you to evaluate an app in the fortnight you happen to have free, against a clock, whereas a refund lets you use it the way you would actually use it and decide afterwards. The refund window is the same whether you ask on day one or day fourteen, and asking for one does not cost you the updates you already downloaded. Microsoft Store purchases of the Windows version are refunded under Microsoft's Store refund policy, not by us.</p></details>
       <details><summary>Does it sync between my Macs, or to my phone?</summary><p>No. Cyanote has no sync service, and this is the direct cost of the design rather than a feature waiting to be built: sync needs a server, a server needs an account, and an account is the thing this app is built not to have. Your notes live in one SQLite file on one Mac. If you want that file on a second Mac, you can put it in a folder that iCloud Drive, Dropbox or Syncthing already watches and point Cyanote at it there — that works, but it is your sync setup and your conflict risk, not a supported feature, so do not run it in both places at once. There is no iPhone or iPad app and none is planned. If reading your notes on a phone is something you need, Cyanote is the wrong app and Apple Notes or Obsidian will serve you better.</p></details>
       <details><summary>How is it different from Notion, Paste or Apple Notes?</summary><p>Against Notion: Cyanote opens instantly, works with the wifi off, needs no account, and includes a clipboard manager — Notion is more powerful, collaborative and cross-platform, and free for one person, so if you work with other people it wins outright. Against Paste and the other Mac clipboard managers: several are better at being a clipboard manager alone and several cost less, but none of them holds your notes, to-dos, calendar and habits in the same window. Against Apple Notes: Cyanote adds tasks, a board, a calendar, habits, routines and clipboard history, and stores everything in one file you can move; Apple Notes is free, syncs to your phone and is already installed. Each of these is argued at length, with prices and with the cases where the other app is the better buy, on the <a href="/compare/">comparison pages</a>.</p></details>
     </div>
@@ -598,25 +600,28 @@
 <div class="closer">
   <div class="wrap">
     <h2>Get your week into one app.</h2>
-    <p class="lede" data-plat="mac">$7.99 once. Everything after that is free.</p>
-    <p class="lede" data-plat="windows">$7.99 once, on Mac today. The Windows build is in testing.</p>
-    <p class="lede" data-plat="mobile">$7.99 once, on your Mac. Everything after that is free.</p>
+    <p class="lede" data-plat="mac">$7.99 once. No subscription, no account.</p>
+    <p class="lede" data-plat="windows">$7.99 once, on the Microsoft Store.</p>
+    <p class="lede" data-plat="mobile">$7.99 once, on your Mac or Windows PC. No subscription, no account.</p>
     <div class="hero-cta" data-plat="mac">
       <!-- The last thing on the page, for someone who has read all of it: send
            them to checkout, not back up to a price they have already seen. -->
-      <a class="btn btn-primary" data-cta="final" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
+      <a class="btn btn-primary plat-btn plat-btn-mac" aria-label="Download Cyanote for Mac — $7.99 (macOS 12 or later)" data-cta="final" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
         <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
-        <span class="btn-label">Download for Mac — $7.99</span></a>
+        <span class="btn-label"><span class="pb-small">macOS 12 or later</span><span class="pb-big">Download for Mac — $7.99</span></span></a>
+      <a class="btn plat-btn plat-btn-win" target="_blank" rel="noopener" href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7" aria-label="Download Cyanote for Windows from the Microsoft Store — $7.99" title="Download Cyanote for Windows from the Microsoft Store — $7.99">
+        <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8.6v8.6H3zM12.4 3H21v8.6h-8.4zM3 12.4h8.6V21H3zM12.4 12.4H21V21h-8.4z"/></svg>
+        <span class="btn-label"><span class="pb-small">Windows 10 or later</span><span class="pb-big">Download for Windows — $7.99</span></span></a>
     </div>
     <div class="hero-cta" data-plat="windows">
-      <a class="btn btn-primary" href="mailto:support@cyanote.app?subject=Tell%20me%20when%20Cyanote%20for%20Windows%20is%20ready">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg>
-        <span class="btn-label">Tell me when Windows is ready</span></a>
+      <a class="btn plat-btn plat-btn-win" target="_blank" rel="noopener" href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7" aria-label="Download Cyanote for Windows from the Microsoft Store — $7.99" title="Download Cyanote for Windows from the Microsoft Store — $7.99">
+        <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8.6v8.6H3zM12.4 3H21v8.6h-8.4zM3 12.4h8.6V21H3zM12.4 12.4H21V21h-8.4z"/></svg>
+        <span class="btn-label"><span class="pb-small">Windows 10 or later</span><span class="pb-big">Download for Windows — $7.99</span></span></a>
     </div>
     <div class="hero-cta" data-plat="mobile">
       <span class="btn btn-inert">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-        <span class="btn-label">Available on Mac only</span></span>
+        <span class="btn-label">For Mac and Windows computers</span></span>
     </div>
   </div>
 </div>
@@ -648,7 +653,7 @@
     </ul></div>
     <div><h3>Download</h3><ul>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="#pricing">macOS</a></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><span>Windows — soon</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
     </ul></div>
   </div>
   <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>

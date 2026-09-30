@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to open and edit Markdown (.md) files on Windows</title>
+<meta name="description" content="A .md file is plain text, and Windows already has three ways to open one. What Notepad, VS Code and default apps do, when that is enough, and when it is not." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/markdown-and-text-files-on-windows/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/markdown-and-text-files-on-windows/" />
+<meta property="og:title" content="How to open and edit Markdown (.md) files on Windows" />
+<meta property="og:description" content="A .md file is plain text, and Windows already has three ways to open one. What Notepad, VS Code and default apps do, when that is enough, and when it is not." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to open and edit Markdown (.md) files on Windows" />
+<meta name="twitter:description" content="A .md file is plain text, and Windows already has three ways to open one. What Notepad, VS Code and default apps do, when that is enough, and when it is not." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Markdown and text files on Windows: what opens them, and what keeps them",
+  "description": "A .md file is plain text, and Windows already has three ways to open one. What Notepad, VS Code and default apps do, when that is enough, and when it is not.",
+  "datePublished": "2026-09-30",
+  "dateModified": "2026-09-30",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/markdown-and-text-files-on-windows/"
+  },
+  "url": "https://cyanote.app/blog/markdown-and-text-files-on-windows/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Notes, Windows, Markdown, How-to",
+  "wordCount": 2115
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Markdown and text files on Windows: what opens them, and what keeps them",
+      "item": "https://cyanote.app/blog/markdown-and-text-files-on-windows/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-09-30" />
+<meta property="article:modified_time" content="2026-09-30" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Notes" />
+<meta property="article:tag" content="Windows" />
+<meta property="article:tag" content="Markdown" />
+<meta property="article:tag" content="How-to" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Markdown and text files on Windows: what opens them, and what keeps them</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-09-30">30 September 2026</time></span>
+        <span class="dot">·</span>
+        <span>10 min read</span>
+      </div>
+    <ul class="tags"><li>Notes</li><li>Windows</li><li>Markdown</li><li>How-to</li></ul>
+    </header>
+
+    <div class="post">
+      <p>You download a project, or someone sends you notes, and there is a file called <code>README.md</code>. You double-click it and Windows either opens it in something odd or asks what you would like to open it with, as if you ought to know.</p>
+      <p>The short answer: a <code>.md</code> file is plain text with a few conventions — <code>#</code> for a heading, <code>-</code> for a list item, <code>**</code> around bold. Anything that can open a <code>.txt</code> file can open it. The only questions are whether you want to see the formatting rendered, and whether you want Windows to remember your choice.</p>
+      <p>Let me go through what Windows gives you for this first, checked against Microsoft's own pages, because for plenty of people it is the whole answer. Then the thing I make, and exactly what it does with these files.</p>
+      <h2 id="opening-a-md-file-with-what-you-already-have">Opening a .md file with what you already have</h2>
+      <h3 id="notepad">Notepad</h3>
+      <p>Right-click the file, choose <em>Open with</em>, pick Notepad. You get the text exactly as written: the hash marks, the asterisks, the lot. For reading a README or fixing a typo, that is fine, and it is what a Markdown file was designed for — readable without being rendered.</p>
+      <p>On Windows 11, Notepad has also been learning Markdown properly. Microsoft began <a href="https://blogs.windows.com/windows-insider/2025/05/30/text-formatting-in-notepad-begin-rolling-out-to-windows-insiders/">rolling out text formatting in Notepad to Windows Insiders</a> in May 2025: a formatting toolbar, bold and italic, links, simple lists and headings, with "Markdown style input and files". The same post says you can switch between the formatted view and the raw Markdown syntax from the View menu or a toggle in the status bar, and turn formatting off entirely in Notepad's settings. A later Insider build <a href="https://blogs.windows.com/windows-insider/2025/11/21/notepad-update-begins-rolling-out-to-windows-insiders/">added tables</a>, and Microsoft's <a href="https://learn.microsoft.com/en-us/windows-insider/release-notes/apps/notepad">Notepad release notes</a> list, for July 2026, a fix so that formatting "is now applied properly" in both <code>.md</code> and <code>.markdown</code> files, in a version going out to Insider channels up to Release Preview.</p>
+      <p>What I could not find is a Microsoft page saying this has reached every Windows 11 PC, so I will not claim it has. The practical test takes ten seconds: open a <code>.md</code> file in Notepad and look for the formatting toggle in the status bar. If it is there, you have it. If not, your Notepad shows the raw text, which still works. Microsoft's posts describe this on Windows 11; on Windows 10, expect plain text.</p>
+      <h3 id="vs-code">VS Code</h3>
+      <p>If you already have Visual Studio Code installed, it is the best free Markdown viewer on the machine. Microsoft's documentation says it <a href="https://code.visualstudio.com/docs/languages/markdown">supports Markdown files out of the box</a>, no extension needed: <code>Ctrl+Shift+V</code> toggles a rendered preview, and <code>Ctrl+K V</code> opens the preview side by side with the source, so you can type on the left and watch the result on the right.</p>
+      <p>I would not install VS Code only to read a README. It is a programmer's editor and it looks like one. But if it is already there, it is the answer.</p>
+      <h3 id="making-windows-remember">Making Windows remember</h3>
+      <p>Picking an app once from <em>Open with</em> opens that file. To make every <code>.md</code> file open in the same app, Microsoft's page on <a href="https://support.microsoft.com/en-us/windows/apps/change-default-apps-in-windows">changing default apps</a> gives the route: <em>Settings</em> &gt; <em>Apps</em> &gt; <em>Default apps</em>, then type the extension — <code>.md</code> — into the search box and choose the app. The same works for <code>.txt</code>, <code>.markdown</code> or anything else. You can also go the other way on that page: select an app to see which file types it can open, and change them from there.</p>
+      <h2 id="when-that-is-enough">When that is enough</h2>
+      <p>Be honest with yourself about what you are doing with these files.</p>
+      <p><strong>You read the odd README.</strong> Notepad. You do not need anything else, and you will not miss a preview.</p>
+      <p><strong>You write Markdown for a project</strong> — documentation, a static site, notes that live in a Git repository next to code. VS Code, or whatever editor you already use for the project. The files belong to the project, the project's tools read them, and a notes app would only be a second place for the same text.</p>
+      <p><strong>You keep a handful of plain-text notes</strong> in a folder: a shopping list, a few addresses, a list of film recommendations. Notepad and File Explorer. At ten files, a folder is a perfectly good notes app.</p>
+      <p>I wrote a longer version of that last point for the Mac, where there is <a href="/blog/notepad-for-mac/">no Notepad at all</a>; on Windows you are better off than you might think.</p>
+      <h2 id="where-a-folder-of-files-runs-out">Where a folder of files runs out</h2>
+      <p>It runs out in the same place for most people: somewhere past a few dozen files, when finding last March's thing means remembering what you named it. Windows search will look inside files, but it is looking across your whole disk, not across your notes. And the moment you want a to-do list next to the notes, or to paste a table in, or to link one note to another, you are either learning more Markdown syntax or opening another app.</p>
+      <p>That is the point where a notes app earns its place. Whether it should store your notes as Markdown files or in something structured is its own argument, and I have made it at length in <a href="/blog/markdown-or-rich-text/">Markdown or rich text</a>. The short version: the format matters less than whether you can get your writing back out in a form other software reads. Test the export, not the file extension.</p>
+      <h2 id="opening-text-files-in-cyanote">Opening text files in Cyanote</h2>
+      <p>Cyanote is a desktop app that keeps notes, to-dos and clipboard history in one window, on your own machine, with no account and no sync. It started on the Mac, and there is now a Windows edition on the Microsoft Store. Here is what it does with <code>.txt</code> and <code>.md</code> files there, and nothing I have not checked in the code.</p>
+      <p><strong>It registers for the usual text extensions.</strong> The Windows edition declares <code>.txt</code>, <code>.md</code>, <code>.markdown</code>, <code>.text</code> and <code>.log</code> to Windows, so Cyanote appears under <em>Open with</em> for those files. It does not make itself the default — Windows leaves that to you, through the Default apps page above. Opening <code>.txt</code> files this way is one of the things I have tested on a real Windows laptop, not just compiled.</p>
+      <p><strong>The file becomes a note, linked to where it lives.</strong> An opened file arrives as a code note: Cyanote's plain-text editor, monospace, with syntax highlighting chosen from the contents. It is not converted into anything, so what you see is the file's text, character for character. Above it sits a <em>File on disk</em> bar with the file's full path — deliberately the full path, so you know which <code>notes.md</code> you are looking at — and buttons to show it in File Explorer, copy the path, or unlink it.</p>
+      <p><strong>Markdown gets a preview.</strong> If the file ends in <code>.md</code> or <code>.markdown</code>, or its contents read as Markdown, the note has a Code / Preview switch. Code is the source; Preview renders headings, lists, tick boxes, tables, links and code blocks. The same idea as VS Code's preview, without VS Code.</p>
+      <p><strong>Saving back is explicit.</strong> Your edits are stored in Cyanote as you type, but they do not reach the file until you press <code>Ctrl+S</code> or <em>Save to file</em>. Then the whole file is written in one go — the old version is replaced only once the new one is complete, so a crash mid-save cannot leave you with half a file. <em>Save a copy</em> writes the note somewhere else and follows the new file from then on.</p>
+      <p><strong>It will not quietly lose edits.</strong> If you unlink a note, or move it to the trash, while it holds changes the file never received, Cyanote asks first and offers to save them.</p>
+      <p>Three limits, because they are real:</p>
+      <ul><li><strong>Opening the same file twice makes two notes.</strong> Each <em>Open with</em> is a new note linked to that path. If you already have one, open that instead.</li><li><strong>It does not watch the file.</strong> If something else changes the file after you opened it, the note does not update, and <code>Ctrl+S</code> writes your version over theirs. For a file another program is actively writing to, use that program.</li><li><strong>Files need to be UTF-8.</strong> Cyanote reads text as UTF-8. A file saved in another encoding, such as UTF-16, will not open in it.</li></ul>
+      <p>If a lot of your text files are really snippets — config, scripts, commands you keep retyping — <a href="/blog/notes-and-code-in-one-app/">notes and code in one app</a> is about exactly this kind of note, and <a href="/blog/writing-and-code-two-modes/">two kinds of attention</a> about keeping the prose and the code apart.</p>
+      <h2 id="writing-markdown-in-ordinary-notes">Writing Markdown in ordinary notes</h2>
+      <p>A code note is the file as text. An ordinary note in Cyanote is the other kind: a document editor with headings, lists, tables, tick-box to-dos and links between notes. It stores its notes structured rather than as <code>.md</code> files, but you type it the way you would type Markdown.</p>
+      <p>At the start of a line, <code>#</code> and a space makes a heading (<code>##</code> and <code>###</code> for smaller ones), <code>-</code> starts a bullet list, <code>1.</code> a numbered one, <code>[]</code> a to-do, <code>&gt;</code> a quote, three backticks a code block with highlighting, and <code>---</code> a divider. <code>Ctrl+N</code> makes a new note and <code>Ctrl+Shift+N</code> a new code note. For anything longer than a page, <a href="/blog/writing-a-long-document-in-a-notes-app/">writing a long document in a notes app</a> covers what changes.</p>
+      <h2 id="bringing-a-folder-in-and-getting-it-back-out">Bringing a folder in, and getting it back out</h2>
+      <p>If you have a folder of Markdown notes from somewhere else, opening them one at a time is the wrong tool. In <em>Settings</em> &gt; <em>General</em> &gt; <em>Backup</em> there is <em>Import Markdown files</em>: pick any number of <code>.md</code>, <code>.markdown</code> or <code>.txt</code> files and each becomes an ordinary note. Headings, lists, tick boxes, quotes, links, tables and fenced code blocks come across as themselves. What the importer does not understand stays as the literal text you wrote rather than being dropped — images arrive as their alt text, YAML front matter as plain lines — and importing the same files twice does not duplicate them.</p>
+      <p>Getting a note out is a right-click in the sidebar: <em>Export as Markdown…</em> writes a <code>.md</code> file wherever you choose. Headings, lists, to-dos, tables and code blocks with their language all go out as standard Markdown, with literal asterisks and brackets escaped so they do not turn into formatting on the other side. Links between notes go out as <code>[[Note title]]</code>, a label rather than a link to a file that is not there. Code notes export as their text, suggested as <code>.txt</code>. And a note you opened from a file is already a file: that is what <code>Ctrl+S</code> is for.</p>
+      <p>Whether any app's export is good enough is worth checking before you need it, and <a href="/blog/getting-your-notes-out/">getting your notes out</a> is the fifteen-minute version of that check.</p>
+      <h2 id="what-it-costs-and-what-it-is-not">What it costs, and what it is not</h2>
+      <p>$7.99, once, on the Microsoft Store. It needs Windows 10 or later. It is a separate purchase from the Mac version, which is sold directly; buying one does not include the other. If some of those notes should not be readable by whoever sits at your PC, <a href="/blog/password-protect-notes-on-windows/">password-protecting notes on Windows</a> covers what locks and what does not.</p>
+      <p>It is not a Markdown IDE. There is no folder view of a directory of files, no Git, no live-reloading preview of a static site. If your Markdown lives in a repository, keep it there and keep using VS Code. It has no sync, no phone app and no web version: a note written on this PC is on this PC. How it handles the rest of a Windows machine — no sign-in, one database file you can move — is in <a href="/blog/notes-app-for-windows-without-an-account/">a notes app for Windows that never asks you to sign in</a>, and the clipboard half in <a href="/blog/clipboard-history-on-windows/">clipboard history on Windows</a>.</p>
+      <p>If Notepad or VS Code already covers what you do with these files, keep using them; they are free and they are good at it. If you want your <code>.txt</code> and <code>.md</code> files, your notes and your to-dos in one window that opens them, edits them and writes them back, Cyanote is <a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">on the Microsoft Store</a> for $7.99, once.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/password-protect-notes-on-windows/">How to password-protect notes on Windows</a><span>What Windows can lock and what it cannot: OneNote section passwords, Sticky Notes, Notepad, BitLocker, encrypted archives, and an app that locks one note.</span></li><li><a href="https://cyanote.app/blog/apple-notes-on-windows/">Apple Notes on a Windows PC</a><span>There is no Apple Notes application for Windows and there never has been. Here is what actually reaches your notes from a PC, and what each route costs you.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>

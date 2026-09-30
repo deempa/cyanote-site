@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Notes app for Windows with no account or subscription</title>
+<meta name="description" content="What Notepad, Sticky Notes and OneNote actually need from you on a Windows PC, when one of them is enough, and what a local notes app with no sign-in looks like." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/notes-app-for-windows-without-an-account/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/notes-app-for-windows-without-an-account/" />
+<meta property="og:title" content="Notes app for Windows with no account or subscription" />
+<meta property="og:description" content="What Notepad, Sticky Notes and OneNote actually need from you on a Windows PC, when one of them is enough, and what a local notes app with no sign-in looks like." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Notes app for Windows with no account or subscription" />
+<meta name="twitter:description" content="What Notepad, Sticky Notes and OneNote actually need from you on a Windows PC, when one of them is enough, and what a local notes app with no sign-in looks like." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A notes app for Windows that never asks you to sign in",
+  "description": "What Notepad, Sticky Notes and OneNote actually need from you on a Windows PC, when one of them is enough, and what a local notes app with no sign-in looks like.",
+  "datePublished": "2026-09-30",
+  "dateModified": "2026-09-30",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/notes-app-for-windows-without-an-account/"
+  },
+  "url": "https://cyanote.app/blog/notes-app-for-windows-without-an-account/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Notes, Windows, Local-first, Buying advice",
+  "wordCount": 2027
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "A notes app for Windows that never asks you to sign in",
+      "item": "https://cyanote.app/blog/notes-app-for-windows-without-an-account/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-09-30" />
+<meta property="article:modified_time" content="2026-09-30" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Notes" />
+<meta property="article:tag" content="Windows" />
+<meta property="article:tag" content="Local-first" />
+<meta property="article:tag" content="Buying advice" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>A notes app for Windows that never asks you to sign in</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-09-30">30 September 2026</time></span>
+        <span class="dot">·</span>
+        <span>9 min read</span>
+      </div>
+    <ul class="tags"><li>Notes</li><li>Windows</li><li>Local-first</li><li>Buying advice</li></ul>
+    </header>
+
+    <div class="post">
+      <p>A new Windows PC asks for a Microsoft account before you have seen the desktop, and a good deal of what comes after it assumes you said yes. So when you open something to write down a phone number, a fair question is whether this bit, at least, can stay on the machine: no sign-in, no OneDrive, no subscription, notes in a file on your own disk.</p>
+      <p>The short answer is yes, and you may already have the tool. The longer answer depends on what you are writing and how much of it there is, so let me go through what Windows ships with first, checked against Microsoft's own pages, before I get to the thing I make.</p>
+      <h2 id="what-windows-already-gives-you">What Windows already gives you</h2>
+      <h3 id="notepad">Notepad</h3>
+      <p>Notepad is better than its reputation. It has had tabs for a while now, and it <a href="https://blogs.windows.com/windows-insider/2023/08/31/new-updates-for-snipping-tool-and-notepad-for-windows-insiders/">restores your session</a> — previously open tabs, including unsaved text in them — when you reopen it, which you can switch off in its settings. Microsoft has also been testing <a href="https://blogs.windows.com/windows-insider/2025/05/30/text-formatting-in-notepad-begin-rolling-out-to-windows-insiders/">Markdown-style formatting</a> — bold, lists, headings, links — with Windows Insiders.</p>
+      <p>It needs no account to open, type and save. Files are ordinary <code>.txt</code> files wherever you put them, which is the most durable format there is.</p>
+      <p>The account question arrives with the AI features. Notepad now has Write, Rewrite and Summarize, and Microsoft's support page says that <a href="https://support.microsoft.com/en-us/windows/enhance-your-writing-with-ai-in-notepad-4088b954-c97b-46dc-813f-959be01746d5">to use them, you need to sign in with your Microsoft account</a>; the subscription versions run through an online Azure service and draw on monthly AI credits. There is a carve-out: on Copilot+ PCs, Microsoft says the features <a href="https://blogs.windows.com/windowsexperience/2025/10/16/new-experiences-currently-rolling-out-for-windows-11/">also run on a local model</a> if you are not signed in or have no subscription, in English only. And the same support page says you can turn the AI features off in Notepad's settings. So Notepad is still a no-account editor unless you ask it to be something else.</p>
+      <p>What it is not is a notes app. There is no list of notes, no folders, no search across everything you have written — you have files, and Windows' file search. At a dozen notes that is fine. At a few hundred, finding last March's thing means remembering what you called it.</p>
+      <h3 id="sticky-notes">Sticky Notes</h3>
+      <p>Sticky Notes is the one people assume needs an account, and it does not. Microsoft's own page is plain about it: <a href="https://support.microsoft.com/en-us/windows/apps/stickynotes/see-your-sticky-notes-on-other-devices-and-the-web">on Windows 10 and 11 you don't need to be signed in</a> to your Microsoft account to start using it.</p>
+      <p>Signing in is what makes them travel. With a Microsoft account, the same page says your notes appear in OneNote on your phone, in Outlook on the desktop and on the web. That is the design: sticky notes are local until you sign in, and then they live in Microsoft's cloud alongside everything else on that account.</p>
+      <p>For what the name says — a reminder stuck to the screen, a code you need for the next ten minutes — it is exactly right, and I would not replace it. It is not where you keep a year of meeting notes or a project's worth of reference.</p>
+      <h3 id="onenote">OneNote</h3>
+      <p>OneNote is the serious one, and the one with the most history to untangle.</p>
+      <p>There used to be two OneNotes on Windows. The Windows 10 app was cloud-only, and Microsoft <a href="https://support.microsoft.com/en-us/office/what-is-happening-to-onenote-for-windows-10-2b453bfe-66bc-4ab2-9118-01e7eb54d2d6">ended its support on 14 October 2025</a>: it is now read-only, for viewing and exporting what is already in it. What remains is the desktop app, now just called OneNote — the descendant of OneNote 2016 — and Microsoft says it is <a href="https://support.microsoft.com/en-us/office/what-s-the-difference-between-the-onenote-versions-a624e692-b78b-4c09-b07f-46181958118f">free to download and use</a>, and that it is the only version that supports local notebook storage on your PC's hard drive as well as the cloud.</p>
+      <p>So local OneNote notebooks do exist. When you <a href="https://support.microsoft.com/en-us/office/create-a-new-notebook-5db754d4-165d-4eb0-82a0-6e30ea13aa0a">create a notebook</a> you choose between OneDrive and This PC. But read the same page and it is clear which way you are being steered: Microsoft says it is best to create notebooks on OneDrive or another shared location. The app is built around the account, and a local notebook is the option you have to go looking for.</p>
+      <p>If you already live in Microsoft 365, none of that is a cost — OneNote is included, your notebooks follow you, and it is very good at free-form pages, handwriting and clipped screenshots. If you are thinking of leaving it, the notebook format is the real switching cost, and <a href="/blog/leaving-onenote/">I have written about that separately</a>.</p>
+      <h3 id="and-the-clipboard">And the clipboard</h3>
+      <p>Windows has clipboard history too, behind Win+V. It is useful and underused. Microsoft's page sets out the limits: <a href="https://support.microsoft.com/en-us/windows/clipboard-in-windows-c436501e-985d-1c8d-97ea-fe46ddf338c6">25 entries, cleared each time you restart</a> except for anything you pinned, and syncing between devices is tied to your Microsoft or work account. For "paste the thing I copied a minute ago", that is enough. Where it stops is its own piece: <a href="/blog/clipboard-history-on-windows/">clipboard history on Windows</a>.</p>
+      <h2 id="a-fair-summary">A fair summary</h2>
+      <div class="table-scroll"><table><thead><tr><th scope="col"></th><th scope="col">Account to use it</th><th scope="col">Works offline</th><th scope="col">Where notes live</th></tr></thead><tbody><tr><td>Notepad</td><td>No (AI features: yes, except local model on Copilot+ PCs)</td><td>Yes</td><td><code>.txt</code> files where you save them</td></tr><tr><td>Sticky Notes</td><td>No (sync: yes)</td><td>Yes</td><td>On the PC until you sign in, then your Microsoft account</td></tr><tr><td>OneNote</td><td>Built around one; local notebooks exist</td><td>Local notebooks, yes</td><td>OneDrive by default, or This PC if you choose it</td></tr><tr><td>Cyanote</td><td>No</td><td>Yes</td><td>One database file on your PC</td></tr></tbody></table></div>
+      <p>Here is where I would stop, if I were you, and not buy anything:</p>
+      <ul><li><strong>You write short things and keep them briefly.</strong> Sticky Notes, no account, done.</li><li><strong>You write longer things, but not many of them.</strong> Notepad and a folder. Plain text will outlive every app on this page, and Notepad's session restore covers most of what people mean by autosave.</li><li><strong>You are already in Microsoft 365 across a phone and two PCs.</strong> OneNote. The account is doing real work for you there, and an account-free app would take away sync you actually use. The same trade applies on every platform, and I went through it in <a href="/blog/notes-app-without-an-account/">a notes app that never asks you to sign up</a>.</li></ul>
+      <h2 id="where-the-built-in-tools-run-out">Where the built-in tools run out</h2>
+      <p>The gap shows up in a particular kind of person: one PC, a lot of small notes accumulating over years, a to-do list that lives somewhere else, and a clipboard that forgets everything at every restart.</p>
+      <p>Notepad gives you files but no way to find them. Sticky Notes is the right size for a sticky note and no bigger. OneNote does both, but its centre of gravity is a Microsoft account and OneDrive, and keeping it local means working against its defaults. And none of the three is a to-do list, so tasks end up in yet another app.</p>
+      <p>None of that is a failing. It is what happens when each tool is designed as part of a set that assumes you signed in at the start.</p>
+      <h2 id="what-i-built-instead">What I built instead</h2>
+      <p>Cyanote is a desktop app that keeps notes, to-dos and clipboard history in one window, on your own machine. It started on the Mac, and there is now a Windows edition, sold on the Microsoft Store. How the Windows port went, <a href="/blog/porting-to-windows-from-a-mac/">including the parts that did not go well</a>, is written up separately; here is what it does on a PC, and nothing I have not checked.</p>
+      <p><strong>No account, anywhere.</strong> There is no sign-up screen, no email address, no password. You open it and there is a blank note.</p>
+      <p><strong>Your notes are one file.</strong> Everything — notes, tasks, clipboard history — lives in a single SQLite database. By default it sits in a folder called Cyanote in your user folder (<code>C:\Users\&lt;you&gt;\Cyanote</code>), where you can see it, and uninstalling the app leaves it in place. Settings lets you move it to any folder you choose: another drive, or a folder you already back up. Backup in Settings writes everything to a single file you can put anywhere. The general case for this is in <a href="/blog/what-local-first-means-for-your-notes/">what local-first means for your notes</a>, and the practical side in <a href="/blog/backing-up-local-notes/">backing up local notes</a>.</p>
+      <p><strong>It does not talk to a server.</strong> The Windows edition has no sync, no cloud and no analytics, and it makes no network requests of its own. The single exception is opt-in: if you subscribe its calendar to a remote iCal address, it fetches that calendar, read-only. Links in your notes open in your browser, which is your browser's business. Pull the network cable and nothing changes.</p>
+      <p><strong>The clipboard remembers.</strong> Clipboard history runs system-wide, keeps entries across restarts, and is searchable. Pick an entry and it pastes straight back into the app you were using. It also respects the flags Windows password managers set on copied secrets, so a password you copy from one is not written into the history — <a href="/blog/what-your-clipboard-should-not-remember/">what your clipboard should not remember</a> explains why that matters more than it sounds.</p>
+      <p><strong>The rest of what a PC app should do.</strong> Global keyboard shortcuts open the app and the clipboard from anywhere. Reminders on your to-dos arrive as Windows notifications. It can launch when you sign in to Windows — off until you turn it on. And it registers as an editor for <code>.txt</code> and Markdown files, so "Open with Cyanote" on a text file puts it in a note.</p>
+      <p>Those are the parts I have tested on a real Windows laptop, not just compiled: clipboard history, paste-back, shortcuts, reminders, launch at login and opening <code>.txt</code> files.</p>
+      <h2 id="what-it-costs-and-what-it-does-not-do">What it costs, and what it does not do</h2>
+      <p>$7.99, once, on the Microsoft Store. No subscription and no tiers; the reasons are in <a href="/blog/note-apps-without-a-subscription/">note apps without a subscription</a>. It needs Windows 10 or later.</p>
+      <p>It is a separate purchase from the Mac version, which is sold directly. Buying one does not include the other.</p>
+      <p>The limits, stated as plainly as the features. There is no sync: a note written on this PC is on this PC. There is no phone app, no web version and no sharing with other people. If you need your notes on a phone, OneNote or Sticky Notes with a Microsoft account will serve you better, and there is no point pretending otherwise. If what you have is an iPhone full of Apple Notes and a Windows PC at work, <a href="/blog/apple-notes-on-windows/">that is a different problem</a> with its own answers.</p>
+      <p>It also does not do what OneNote does best. There is no free-form canvas and no handwriting. Notes are documents, top to bottom, with headings, lists, tables, code blocks and sub-pages.</p>
+      <h2 id="choosing">Choosing</h2>
+      <p>If Sticky Notes or Notepad covers it, keep using them. They cost nothing, ask for nothing, and Microsoft is still improving Notepad in public. If you are in Microsoft 365 on several devices, OneNote is doing a job an account-free app cannot.</p>
+      <p>If you are on one PC, you want notes, to-dos and a clipboard that survives a restart in one place, and you would rather nobody asked you to sign in to get them, Cyanote is <a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">on the Microsoft Store</a> for $7.99, once.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/a-local-notion-alternative/">What you give up leaving Notion, and what you get back</a><span>Notion is genuinely good at things a local app cannot do. It is also slow to open and gone when the connection is. Here is the trade, stated plainly.</span></li><li><a href="https://cyanote.app/blog/leaving-craft/">Leaving Craft, and the 1,500-block ceiling</a><span>Craft&#x27;s free plan stops at 1,500 blocks — paragraphs, not documents. Here is what that limit means in practice, and when a local app is the better answer.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>

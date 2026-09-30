@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clipboard history on Windows: what Win+V keeps and loses</title>
+<meta name="description" content="Windows has a clipboard history built in. Here is how to turn it on, what it actually keeps, why it empties itself, and when a clipboard manager is worth installing." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/clipboard-history-on-windows/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/clipboard-history-on-windows/" />
+<meta property="og:title" content="Clipboard history on Windows: what Win+V keeps and loses" />
+<meta property="og:description" content="Windows has a clipboard history built in. Here is how to turn it on, what it actually keeps, why it empties itself, and when a clipboard manager is worth installing." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Clipboard history on Windows: what Win+V keeps and loses" />
+<meta name="twitter:description" content="Windows has a clipboard history built in. Here is how to turn it on, what it actually keeps, why it empties itself, and when a clipboard manager is worth installing." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Root-relative, not https://cyanote.app/-absolute: the same href then works in a local
+     preview of dist/ and on the live domain. -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Clipboard history on Windows",
+  "description": "Windows has a clipboard history built in. Here is how to turn it on, what it actually keeps, why it empties itself, and when a clipboard manager is worth installing.",
+  "datePublished": "2026-09-30",
+  "dateModified": "2026-09-30",
+  "author": {
+    "@type": "Person",
+    "@id": "https://cyanote.app/about.html#person",
+    "name": "Lior Rabanian",
+    "url": "https://cyanote.app/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/clipboard-history-on-windows/"
+  },
+  "url": "https://cyanote.app/blog/clipboard-history-on-windows/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Clipboard, Windows, How-to",
+  "wordCount": 2032
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Clipboard history on Windows",
+      "item": "https://cyanote.app/blog/clipboard-history-on-windows/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-09-30" />
+<meta property="article:modified_time" content="2026-09-30" />
+<meta property="article:author" content="Lior Rabanian" />
+<meta property="article:tag" content="Clipboard" />
+<meta property="article:tag" content="Windows" />
+<meta property="article:tag" content="How-to" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<div class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Clipboard history on Windows</h1>
+      <div class="meta">
+        <span>By Lior Rabanian</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-09-30">30 September 2026</time></span>
+        <span class="dot">·</span>
+        <span>9 min read</span>
+      </div>
+    <ul class="tags"><li>Clipboard</li><li>Windows</li><li>How-to</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Windows does have a clipboard history, and it is one key combination away: <code>Win</code> + <code>V</code>. That already puts it ahead of the Mac, which <a href="/blog/clipboard-history-on-mac/">has none at all</a>. The catch is in the details. It is off until you switch it on, it keeps 25 items, and it forgets everything that is not pinned when you restart.</p>
+      <p>For a lot of people that is enough, and they should stop reading here. For the rest, what follows is exactly what <code>Win</code> + <code>V</code> does, where it stops, and when something else earns its place.</p>
+      <h2 id="how-to-turn-on-clipboard-history">How to turn on clipboard history</h2>
+      <p>Press <code>Win</code> + <code>V</code>. The first time, Windows shows a small panel offering to switch the feature on; select <strong>Turn on</strong>. From then on, everything you copy is added to the list, and <code>Win</code> + <code>V</code> opens it wherever the cursor is. Pick an item and it is pasted into the app you were in.</p>
+      <p>You can also flip it in <strong>Settings → System → Clipboard</strong>, where the <strong>Clipboard history</strong> toggle lives alongside the sync option and a <strong>Clear</strong> button. Microsoft's own page on <a href="https://support.microsoft.com/en-us/windows/apps/using-the-clipboard">using the clipboard</a> covers both routes, and it applies to Windows 10 and 11 alike.</p>
+      <h2 id="what-win-v-actually-keeps">What Win+V actually keeps</h2>
+      <p>Everything below is from Microsoft's support page, not from memory, because this is the kind of feature that changes quietly between releases.</p>
+      <p><strong>25 items.</strong> The history is limited to 25 copied entries. When a 26th arrives, the oldest unpinned one goes. On a busy afternoon of copying and pasting that is not very long at all — an hour, sometimes less.</p>
+      <p><strong>Text, HTML and images, up to 4 MB each.</strong> The supported formats are text, HTML and bitmap, and each item is capped at 4 MB. A large screenshot can exceed that. Copying a file in File Explorer is not one of those formats either, so the history is not a way to get back a file you copied.</p>
+      <p><strong>Cleared on restart, except pins.</strong> Microsoft's wording is plain: the history is cleared each time you restart your PC, except for the items you have pinned. A Windows update that reboots overnight takes the whole list with it.</p>
+      <p><strong>Pinning.</strong> Open the panel, select the three dots next to an item, and pin it. Pinned items survive both the 25-item churn and restarts. This is the feature that turns <code>Win</code> + <code>V</code> from a short-term memory into somewhere to keep <a href="/blog/the-snippets-you-paste-every-week/">the handful of snippets you paste every week</a> — an address, a sort code, a stock reply.</p>
+      <p><strong>Delete one, or clear all.</strong> Each item has a delete option, and there is a <strong>Clear all</strong> at the top of the panel. Clearing leaves pinned items in place.</p>
+      <p><strong>Optional sync through your Microsoft account.</strong> Under <strong>Settings → System → Clipboard</strong> there is a separate toggle for clipboard history across your devices. Microsoft says the sync is tied to your Microsoft account or your work account, and that you can have it sync automatically or only when you choose. It is off unless you turn it on, and it is the one part of this feature worth thinking about before you do.</p>
+      <p>What Microsoft's page does not describe is a way to search the history. At 25 items that mostly does not matter: you scroll. It matters a great deal the day you want something from last Tuesday, because last Tuesday is not in there.</p>
+      <h2 id="win-v-is-not-working">"Win+V is not working"</h2>
+      <p>This is most of the search traffic on the subject, and it usually comes down to one of four things.</p>
+      <p><strong>It was never switched on.</strong> Pressing <code>Win</code> + <code>V</code> on a fresh install shows the panel with a <strong>Turn on</strong> button and an empty list. Anything you copied before you pressed it was never recorded, which is why the history looks broken the first time rather than empty.</p>
+      <p><strong>It was switched on after the thing you wanted.</strong> Same cause, same answer. Clipboard history cannot reach back before it existed.</p>
+      <p><strong>You restarted.</strong> Everything unpinned is gone after a reboot. That is the design, not a fault, and nothing in Windows recovers it.</p>
+      <p><strong>Your organisation turned it off.</strong> On a work machine, if the toggle in Settings is greyed out with a note that some settings are managed by your organisation, IT has set the <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-experience">Allow Clipboard History policy</a>. When it is disabled, the panel opens and shows nothing. There is a matching policy for the cross-device sync, <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-privacy">Allow Clipboard synchronization across devices</a>, which is often switched off on its own. Installing a third-party clipboard manager on that machine is the same conversation with the same people, and I would have it before rather than after.</p>
+      <p>There is one more case that looks like a fault and is not. An app can say that what it just copied is not allowed in the clipboard history — Microsoft documents the flag as <a href="https://learn.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.clipboardcontentoptions.isallowedinhistory">IsAllowedInHistory</a> — and password managers are exactly the apps that should. If a password you copied never appears in <code>Win</code> + <code>V</code>, that is most likely the feature working as intended. <a href="/blog/what-your-clipboard-should-not-remember/">What your clipboard should not remember</a> goes into how the convention works and how to test it.</p>
+      <h2 id="where-win-v-stops">Where Win+V stops</h2>
+      <p>None of this makes <code>Win</code> + <code>V</code> bad. It is a sensible, conservative feature: small, in memory, and gone at the next restart, which is a reasonable default for a buffer that carries passwords and two-factor codes through it all day. The limits are the design, and they are the same limits that make it safe to leave switched on.</p>
+      <p>But they add up to a particular shape: a scratch buffer for the last hour, with a few pins. It is not a record. The moments where that shows are specific:</p>
+      <ul><li>You copied a paragraph this morning, then spent the afternoon copying links and figures, and the paragraph scrolled off the end at item 26.</li><li>The machine restarted for an update overnight, and the reference number you copied yesterday went with it.</li><li>You remember copying something about a supplier, roughly last week, and would find it instantly if you could type "supplier" into the list.</li></ul>
+      <p>If none of that sounds familiar, <code>Win</code> + <code>V</code> is the right tool and there is nothing to install. If two or three of them do, you have outgrown it, and that is what clipboard managers exist for. I wrote a longer piece on <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">how to tell whether you have really hit a limit</a> of a free tool, from the Mac side, but the test is the same on Windows.</p>
+      <h2 id="what-a-clipboard-manager-adds">What a clipboard manager adds</h2>
+      <p>A clipboard manager is a small background app that watches the clipboard and writes what it sees to a database on disk. The differences from <code>Win</code> + <code>V</code> are the whole point:</p>
+      <p><strong>A history that survives restarts.</strong> Stored on disk rather than held in memory, so a reboot is no longer a wipe.</p>
+      <p><strong>A bigger history.</strong> Hundreds of items instead of 25, so the paragraph from this morning is still there this evening.</p>
+      <p><strong>Search.</strong> Type a word and the list narrows. This is the one that changes how you use it: history stops being "undo for copying" and becomes somewhere things can be found.</p>
+      <p><strong>Its own shortcut.</strong> Most use a key combination of their own, so <code>Win</code> + <code>V</code> can stay switched on alongside.</p>
+      <p>The cost is the other side of the same coin. A history that persists on disk is a record of what went through your clipboard, and that deserves more care than a buffer that empties itself. Three things I would check in any of them: where the history is stored, whether it syncs anywhere, and whether it honours the password-manager flag described above. A persistent, searchable history that ignores that flag is keeping your passwords in plain text.</p>
+      <p>The free option most Windows users land on is Ditto, which is open source, has been around for many years, keeps its history locally and can search it. If all you want is a longer, searchable history on one PC, try that first.</p>
+      <h2 id="cyanote-on-windows">Cyanote on Windows</h2>
+      <p>Disclosure, since this blog belongs to one: Cyanote is a notes app with a clipboard history built in, and the Windows edition is sold on the Microsoft Store. It is not only a clipboard manager — notes, tasks and reminders are in the same app — which is either the reason to choose it or the reason not to, depending on what you came for.</p>
+      <p>What its clipboard history does on Windows, specifically:</p>
+      <ul><li><strong>It keeps 500 items by default</strong>, adjustable in Settings from 10 up to 1,000.</li><li><strong>It is stored on your PC</strong> in a local database, so it survives restarts, and there is no account and no sync. Your notes stay on the machine too.</li><li><strong>It opens with <code>Shift</code> + <code>Alt</code> + <code>V</code></strong> by default, with a separate shortcut for pinned snippets, and both can be changed. <code>Win</code> + <code>V</code> is left alone.</li><li><strong>It searches the whole history</strong>, not just what fits on screen.</li><li><strong>It keeps text, images and copied files.</strong> Very large images are kept as a thumbnail rather than dropped silently.</li><li><strong>It pastes back</strong> into the app you were in when you opened it, rather than just putting the item on the clipboard for you to paste yourself. Pasting into the right window is <a href="/blog/the-paste-that-landed-in-the-wrong-app/">fiddlier than it sounds</a>.</li><li><strong>It skips anything a password manager marks as private.</strong> It checks the Windows clipboard flags that 1Password, Bitwarden and KeePass use, and if it cannot read them it treats the copy as private and does not store it.</li><li><strong>Pinning, deleting a single item and clearing the lot</strong> all work as you would expect.</li></ul>
+      <p>It also launches at login if you want it to, so the history is recording from the moment you sign in. How the Windows version came to exist at all — <a href="/blog/porting-to-windows-from-a-mac/">porting it from a Mac</a> — is its own story.</p>
+      <p>The notes side of it, and how it compares with Notepad, Sticky Notes and OneNote, is in <a href="/blog/notes-app-for-windows-without-an-account/">a notes app for Windows that never asks you to sign in</a>. If you also use a Mac, <a href="/blog/one-notes-app-on-a-mac-and-a-pc/">one notes app on a Mac and a PC</a> covers how the two editions relate.</p>
+      <p>The Windows edition needs Windows 10 or later. It is $7.99 once on the Microsoft Store, and it is a separate purchase from the Mac version, which is sold directly.</p>
+      <h2 id="frequently-asked">Frequently asked</h2>
+      <h3 id="how-many-items-does-windows-clipboard-history-keep">How many items does Windows clipboard history keep?</h3>
+      <ol><li>Older items are removed as new ones arrive, unless they are pinned.</li></ol>
+      <h3 id="does-clipboard-history-survive-a-restart">Does clipboard history survive a restart?</h3>
+      <p>Only pinned items. Everything else is cleared each time the PC restarts.</p>
+      <h3 id="can-i-get-back-something-i-copied-before-i-turned-win-v-on">Can I get back something I copied before I turned Win+V on?</h3>
+      <p>No. Windows only records copies made after clipboard history is switched on. Nothing earlier was ever stored.</p>
+      <h3 id="does-win-v-sync-my-clipboard-to-the-cloud">Does Win+V sync my clipboard to the cloud?</h3>
+      <p>Only if you turn on the cross-device sync in Settings, and it uses your Microsoft or work account. Clipboard history itself works without it.</p>
+      <h3 id="is-win-v-the-same-on-windows-10-and-windows-11">Is Win+V the same on Windows 10 and Windows 11?</h3>
+      <p>Microsoft documents the same feature for both: turn it on with <code>Win</code> + <code>V</code>, 25 items, pins, and optional sync.</p>
+      <h2 id="the-short-version">The short version</h2>
+      <p>Turn on <code>Win</code> + <code>V</code>. It costs nothing, it is already there, and pinning covers the snippets you paste every week. If 25 items and a wipe at every restart turn out to be too little, a clipboard manager is the fix: something that keeps a longer history on disk, lets you search it, and leaves your passwords out of it.</p>
+      <p>If you would like that in the same app as your notes and tasks, <a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Cyanote is on the Microsoft Store</a> for $7.99.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/calendar-on-windows-without-signing-in/">A calendar on Windows without signing in</a><span>Windows Mail and Calendar are gone and the new Outlook is built around accounts. What is left for a calendar that stays on your PC, and when to sign in anyway.</span></li><li><a href="https://cyanote.app/blog/pomodoro-timer-mac-app/">A Pomodoro timer that&#x27;s already in the app you&#x27;re working in</a><span>A focus timer works until switching to it is its own distraction. What that costs when the timer lives in a separate app, and what changes when it doesn&#x27;t.</span></li></ul>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>
