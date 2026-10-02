@@ -7,12 +7,93 @@
     <atom:link href="https://cyanote.app/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Plain writing about keeping notes, running a week and owning your own data — from the person who builds Cyanote, a local-first app for Mac and Windows you pay for once.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Sep 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 09:00:00 +0000</lastBuildDate>
     <image>
       <url>https://cyanote.app/og-image.png</url>
       <title>The Cyanote blog — notes, tasks and calmer software</title>
       <link>https://cyanote.app/blog/</link>
     </image>
+    <item>
+      <title>All-in-one productivity apps for Mac, and who each one is for</title>
+      <link>https://cyanote.app/blog/all-in-one-productivity-apps-for-mac/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/all-in-one-productivity-apps-for-mac/</guid>
+      <pubDate>Fri, 02 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Apple&#x27;s own apps, Notion, Obsidian, NotePlan, Lunatask, Craft, Akiflow, Sunsama and Cyanote: what each one combines, what it costs, and who should pick it.</description>
+      <content:encoded><![CDATA[<p>The short answer first. If you want it free and on your iPhone, use Apple's own Notes, Reminders and Calendar, which are already on your Mac and already sync. If other people work in the same pages as you, use Notion. If you want plain files and enjoy building your own system, use Obsidian. If you plan your day from the calendar and need that plan on your phone, look at NotePlan, or at Sunsama and Akiflow if your tasks arrive from email and chat. If you want habits and mood tracking with encrypted sync on every platform, Linux and Android included, use Lunatask. If you want documents that look finished, use Craft. And if you work on one Mac and want no account, no subscription and a clipboard manager in the same window as your notes, that is Cyanote.</p>
+<p>I make Cyanote, so weigh this accordingly. It is the right answer for the smallest group on that list, and each section below says where the other app beats it.</p>
+<h2 id="the-short-version">The short version</h2>
+<div class="table-scroll"><table><thead><tr><th scope="col">App</th><th scope="col">What it puts together</th><th scope="col">What one person pays</th><th scope="col">Pick it if</th></tr></thead><tbody><tr><td>Apple Notes, Reminders and Calendar</td><td>Notes, to-dos and a calendar, synced through iCloud</td><td>Free; iCloud+ from $0.99/mo past 5 GB</td><td>You want it free, on your iPhone, with nothing to set up</td></tr><tr><td>Notion</td><td>Pages, databases and shared workspaces</td><td>Free; Plus $10/mo, 20% less yearly</td><td>Other people work in it with you, or you want databases</td></tr><tr><td>Obsidian</td><td>Markdown notes in a folder, plus plugins</td><td>Free; Sync $4/mo yearly or $5/mo</td><td>You want plain files and like building the system</td></tr><tr><td>NotePlan</td><td>Markdown notes, tasks and your calendar</td><td>$99/yr or $12/mo</td><td>You plan from the calendar and need it on your phone</td></tr><tr><td>Lunatask</td><td>Tasks, habits, mood, notes and people</td><td>Free tier; $6/mo yearly, $8/mo, or $300 once</td><td>You want encrypted sync everywhere, Linux included</td></tr><tr><td>Craft</td><td>Documents, tasks, daily notes, a calendar view</td><td>Free to 1,500 blocks; Plus varies by country</td><td>You want documents that look finished</td></tr><tr><td>Akiflow</td><td>One task inbox, time-blocked on your calendar</td><td>$19/mo yearly or $34/mo</td><td>Tasks arrive from other tools and you plan in time blocks</td></tr><tr><td>Sunsama</td><td>A guided daily plan over tasks and calendar</td><td>$17/mo yearly or $22/mo</td><td>You want a planning routine at the start of each day</td></tr><tr><td>Cyanote</td><td>Notes, to-dos, board, calendar, habits, routines, clipboard</td><td>$7.99 once on Mac; Windows is a separate $7.99</td><td>One Mac, no account, no subscription, no sync needed</td></tr></tbody></table></div>
+<p>Prices are USD, checked 2 October 2026 on each company's own pricing page. They change, so check them again before you decide anything.</p>
+<h2 id="what-all-in-one-means-here">What "all-in-one" means here</h2>
+<p>Nobody needs an app that does everything. What people searching for one usually mean is narrower: the notes, the to-do list and the calendar should stop living in three places that know nothing about each other. I wrote about that gap in <a href="/blog/mac-app-notes-tasks-calendar/">a calendar that lives next to your notes</a>, and about what it was costing me when <a href="/blog/replaced-five-subscriptions-with-one-app/">I added up five subscriptions</a> that each did one part of the job.</p>
+<p>So every app below covers at least two of those jobs in one place. For each one: what it combines, what it costs, who it suits, and where it beats Cyanote, because nearly all of them do somewhere.</p>
+<h2 id="apple-notes-reminders-and-calendar">Apple Notes, Reminders and Calendar</h2>
+<p><strong>What it combines.</strong> Three apps rather than one, but they share your Apple account and sync to your iPhone and iPad through iCloud with nothing to configure. Notes has folders, tags, checklists, tables and password-locked notes. Reminders has lists, due dates and alerts. Calendar is a calendar. Since macOS 26, Spotlight can also keep a short clipboard history. It is off by default and keeps things for a week at most.</p>
+<p><strong>What it costs.</strong> Nothing; they come with the Mac. Every Apple account gets 5 GB of iCloud storage free, and iCloud+ starts at $0.99 a month for 50 GB once photos have eaten the free allowance.</p>
+<p><strong>Best for.</strong> Most people. If you have an iPhone and the job is somewhere to put things, this is the answer, and the case for <a href="/blog/when-to-move-off-apple-notes/">moving off Apple Notes</a> is weaker than most people expect.</p>
+<p><strong>Where it beats Cyanote.</strong> Price, the phone, sync, and being installed already. Cyanote has no phone app and no sync.</p>
+<p><strong>Where it falls short.</strong> It is three windows, and nothing connects them except you. There are no habits, no board and no focus timer, and the Spotlight clipboard is a short-term list rather than somewhere to keep the address you paste every week.</p>
+<h2 id="notion">Notion</h2>
+<p><strong>What it combines.</strong> Pages, databases, wikis, project boards and a large template gallery, in a browser, a desktop app and phone apps. Notion Calendar is a separate app that connects to it.</p>
+<p><strong>What it costs.</strong> Free for one person, with unlimited pages and blocks. The free plan's limits are 5 MB per uploaded file and seven days of page history. Plus is $10 per member a month, 20% less billed yearly. Business is $20 per member a month. See <a href="https://www.notion.com/pricing">notion.com/pricing</a>.</p>
+<p><strong>Best for.</strong> Teams, and anyone whose system is really a set of databases: a reading list with five views, a small CRM, a content calendar.</p>
+<p><strong>Where it beats Cyanote.</strong> Collaboration, databases, any device with a browser, and a free plan that one person rarely outgrows. If anyone else needs to read or edit your pages, stop here. Notion is the better buy, and Cyanote cannot do that at all.</p>
+<p><strong>Where it falls short.</strong> It runs at the speed of your connection, it needs an account, and it hands you a kit rather than a finished system. I went through that trade in <a href="/blog/a-local-notion-alternative/">what you give up leaving Notion</a>, and <a href="/compare/notion-alternative/">the Notion comparison</a> has the feature table.</p>
+<h2 id="obsidian">Obsidian</h2>
+<p><strong>What it combines.</strong> Out of the box, notes: Markdown files in a folder you choose, linked to each other. Task lists with due dates, a calendar and kanban boards come from community plugins.</p>
+<p><strong>What it costs.</strong> The app is free for every purpose, including work. The commercial licence, $50 per user a year, is optional. Sync is $4 a month billed yearly or $5 monthly, and Publish is $8 a month billed yearly or $10 monthly, per site. See <a href="https://obsidian.md/pricing">obsidian.md/pricing</a>.</p>
+<p><strong>Best for.</strong> People who want their notes as plain files that will open in anything in thirty years, and who enjoy building and tuning the system that sits on top of them.</p>
+<p><strong>Where it beats Cyanote.</strong> Plain files on disk, where Cyanote keeps everything in one database. Phone apps, sync if you pay for it, and a plugin ecosystem that can turn it into nearly anything. It is also free.</p>
+<p><strong>Where it falls short.</strong> The all-in-one part is something you assemble and then maintain. That maintenance is the usual reason people leave, which I wrote up in <a href="/blog/leaving-obsidian/">leaving Obsidian</a>.</p>
+<h2 id="noteplan">NotePlan</h2>
+<p><strong>What it combines.</strong> Markdown notes, tasks and your calendar, organised around a daily note that sits next to the day's events. The notes are plain Markdown files, and it runs on Mac, iPad, iPhone and the web.</p>
+<p><strong>What it costs.</strong> $99 a year, which works out at $8.33 a month, or $12 monthly. There is no free tier and no one-time option. The yearly plan has a 7-day trial and the monthly one a 3-day trial. See <a href="https://noteplan.co/pricing">noteplan.co/pricing</a>.</p>
+<p><strong>Best for.</strong> People who plan from the calendar outward and want that plan on their phone.</p>
+<p><strong>Where it beats Cyanote.</strong> Sync and phone apps, plain-text files, plugins, and calendar-first daily planning that goes further than Cyanote's calendar does. Of everything here it is the product closest to Cyanote, and <a href="/compare/noteplan-alternative/">the NotePlan comparison</a> goes through it row by row.</p>
+<p><strong>Where it falls short.</strong> Habits are something you build out of templates, there is no clipboard manager, and five years at the yearly rate is $495.</p>
+<h2 id="lunatask">Lunatask</h2>
+<p><strong>What it combines.</strong> Tasks with automatic prioritisation, habits, notes, mood tracking and a list of the people in your life, end-to-end encrypted and synced across Windows, macOS, Linux, iOS and Android.</p>
+<p><strong>What it costs.</strong> The free plan is real: two areas of life, seven daily habits and 30 relationships, with notes and mood tracking included. Premium is $6 a month billed yearly or $8 monthly. A lifetime licence is $300 once, though Lunatask says it is not available in the mobile apps or the Mac App Store version. See <a href="https://lunatask.app/pricing">lunatask.app/pricing</a>.</p>
+<p><strong>Best for.</strong> People who want privacy and sync at the same time, and want the app to notice how they are doing as well as what they are doing.</p>
+<p><strong>Where it beats Cyanote.</strong> Encrypted sync on every platform, a free tier, and far more on the personal side: mood, energy and stress tracking, relationships. <a href="/compare/lunatask-alternative/">The Lunatask comparison</a> is the one on this site where I like the other app most.</p>
+<p><strong>Where it falls short.</strong> It needs an account, calendar integration is a Premium feature rather than a built-in calendar, and there is no clipboard manager.</p>
+<h2 id="craft">Craft</h2>
+<p><strong>What it combines.</strong> Documents built from blocks, a task list with Inbox, Today and Upcoming, daily notes, and a calendar view that puts scheduled tasks beside events from Apple, Google or Outlook calendars. It runs on Mac, iPhone and iPad, and on Windows and the web.</p>
+<p><strong>What it costs.</strong> The free plan stops at 1,500 blocks, with 1 GB of storage, a 25 MB upload cap and seven days of version history. Plus removes those limits. Craft sets its prices in local currency for each market, and its page would not show me a US price from where I checked, so <a href="https://www.craft.do/pricing">see their site</a> for yours.</p>
+<p><strong>Best for.</strong> People who write documents other people will read, and who care how those documents look.</p>
+<p><strong>Where it beats Cyanote.</strong> Design, sharing a document as a web page, collaboration, and sync across your devices. Nothing local looks like a Craft document.</p>
+<p><strong>Where it falls short.</strong> It is a cloud app with local caching, and the free plan's ceiling is counted in paragraphs, which <a href="/blog/leaving-craft/">arrives sooner than people expect</a>.</p>
+<h2 id="akiflow-and-sunsama">Akiflow and Sunsama</h2>
+<p>These are a different kind of all-in-one. Neither tries to hold your notes. They gather the tasks that already live in other tools and lay them out against your calendar, so the plan for the day is one screen.</p>
+<p><strong>Akiflow</strong> collects tasks into one inbox from the tools they arrive in, and has you time-block them onto your calendar. It is $19 a month billed yearly ($228 a year) or $34 monthly, after a 7-day trial that needs a card. It also sells time up front: $357.60 for two years, or $699 for five. See <a href="https://akiflow.com/pricing">akiflow.com/pricing</a>.</p>
+<p><strong>Sunsama</strong> is built around a guided daily plan: pick today's tasks from your list and your integrations, estimate them, and fit them around your meetings. It is $17 a month billed yearly or $22 monthly, after a 14-day trial with no card. One answer in Sunsama's own FAQ still quotes $20 and $25, so go by the plan card on <a href="https://www.sunsama.com/pricing">sunsama.com/pricing</a>.</p>
+<p><strong>Best for.</strong> People whose work arrives through email, chat and a project tracker, and who need one place to decide what happens today.</p>
+<p><strong>Where they beat Cyanote.</strong> Integrations with the tools work actually comes from, apps on your phone, and a planning routine that is the product rather than something you bring yourself. Cyanote's only connection to anything outside it is importing a calendar file or subscribing to one.</p>
+<p><strong>Where they fall short.</strong> Neither is a notes app, and they are the most expensive apps here: $204 to $228 a year at the yearly rate.</p>
+<h2 id="cyanote">Cyanote</h2>
+<p>I make this one, so read this section as the maker's description rather than a review.</p>
+<p><strong>What it combines.</strong> Notes with tables, sub-pages, <code>[[</code> links and syntax-highlighted code. To-dos with priorities, due dates and reminders, which also show as a board. A calendar that can import an <code>.ics</code> file or subscribe read-only to one. Habits with streaks, routines and a Pomodoro timer. And a system-wide clipboard manager with unlimited history and pinned snippets, opened over any app with a hotkey. All of it sits in one SQLite file on your own disk, with no account.</p>
+<p><strong>What it costs.</strong> $7.99 once for the Mac, sold through Lemon Squeezy, with a 14-day refund and no reason needed. There is no free tier and no subscription. The Windows version is a separate $7.99 purchase on the Microsoft Store, and buying one does not get you the other. <a href="/pricing/">The pricing page</a> has the detail.</p>
+<p><strong>Best for.</strong> One person on one Mac who wants notes, tasks, a calendar, habits and clipboard history in one window, without a monthly bill.</p>
+<p><strong>Where everything else beats it.</strong> There is no sync, no iPhone or iPad app, no web version, no collaboration and no plugins. If any of those matters to you, one of the apps above is the better buy, and I would rather you bought it than asked me for a refund.</p>
+<p><strong>What it has that the others do not.</strong> A system-wide clipboard manager with unlimited history, kept in the same file as your notes. Apart from Apple's week-long Spotlight history, none of the other apps here has one, and it is the piece that usually stays a separate purchase. <a href="/clipboard-manager-mac/">The clipboard page</a> compares it with Paste, Maccy and Raycast.</p>
+<h2 id="what-a-year-costs-one-person">What a year costs one person</h2>
+<p>At the cheapest rate each app offers for the full product:</p>
+<div class="table-scroll"><table><thead><tr><th scope="col">App</th><th scope="col" style="text-align:right">First year</th><th scope="col" style="text-align:right">Five years</th></tr></thead><tbody><tr><td>Apple Notes, Reminders and Calendar</td><td style="text-align:right">$0</td><td style="text-align:right">$0</td></tr><tr><td>Notion (free plan)</td><td style="text-align:right">$0</td><td style="text-align:right">$0</td></tr><tr><td>Obsidian, with Sync</td><td style="text-align:right">$48</td><td style="text-align:right">$240</td></tr><tr><td>Lunatask Premium</td><td style="text-align:right">$72</td><td style="text-align:right">$300 (lifetime licence)</td></tr><tr><td>NotePlan</td><td style="text-align:right">$99</td><td style="text-align:right">$495</td></tr><tr><td>Sunsama</td><td style="text-align:right">$204</td><td style="text-align:right">$1,020</td></tr><tr><td>Akiflow</td><td style="text-align:right">$228</td><td style="text-align:right">$699 (five-year plan)</td></tr><tr><td>Cyanote (Mac)</td><td style="text-align:right">$7.99</td><td style="text-align:right">$7.99</td></tr></tbody></table></div>
+<p>Craft is left out because its price depends on your country. The free rows are really free: if Apple's apps or Notion's free plan already do the job, nothing on this page saves you money.</p>
+<p>The subscriptions mostly pay for sync and servers, which is a fair charge if you use them. On one Mac that you never leave, it buys nothing.</p>
+<h2 id="choosing-without-a-spreadsheet">Choosing without a spreadsheet</h2>
+<p>Two questions settle most of this list before features come into it.</p>
+<p><strong>Where do you need it?</strong> If the answer includes your phone, Cyanote is out, and the choice is between Apple's apps, Obsidian, NotePlan, Lunatask, Craft and the planners. If the answer is one Mac, most of what those subscriptions pay for is sync you will never use.</p>
+<p><strong>Who else is in it?</strong> If anyone, use Notion. Nothing else here is built for that as well, and Cyanote is not built for it at all.</p>
+<p>After that it comes down to taste: plain files (Obsidian, NotePlan), a planning routine (Sunsama, Akiflow), the personal side (Lunatask), how it looks (Craft), or one local window with the clipboard in it (Cyanote). Whichever you pick, read <a href="/blog/the-app-you-keep-replacing/">the productivity app you keep replacing</a> first, because the switching is usually the expensive part.</p>
+<h2 id="the-honest-version">The honest version</h2>
+<p>Most people searching for an all-in-one productivity app on a Mac already have one: Apple's three apps, free and synced to the phone in their pocket. Teams should use Notion.</p>
+<p>Cyanote is for the narrower case: one Mac, no account, no subscription, and the notes, tasks, calendar, habits and clipboard in one place. If that is you, it is <a href="/pricing/">$7.99 once</a>. If it is not, <a href="/compare/">the comparisons page</a> has the longer arguments, and every one of them says when to buy the other app.</p>]]></content:encoded>
+      <category>Buying advice</category>
+      <category>macOS</category>
+      <category>Tasks</category>
+    </item>
     <item>
       <title>A to-do list with reminders on Windows, without a Microsoft account</title>
       <link>https://cyanote.app/blog/to-do-list-for-windows-without-an-account/</link>
@@ -288,7 +369,7 @@
       <guid isPermaLink="true">https://cyanote.app/blog/clipboard-history-on-windows/</guid>
       <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
       <description>Windows has a clipboard history built in. Here is how to turn it on, what it actually keeps, why it empties itself, and when a clipboard manager is worth installing.</description>
-      <content:encoded><![CDATA[<p>Windows does have a clipboard history, and it is one key combination away: <code>Win</code> + <code>V</code>. That already puts it ahead of the Mac, which <a href="/blog/clipboard-history-on-mac/">has none at all</a>. The catch is in the details. It is off until you switch it on, it keeps 25 items, and it forgets everything that is not pinned when you restart.</p>
+      <content:encoded><![CDATA[<p>Windows does have a clipboard history, and it is one key combination away: <code>Win</code> + <code>V</code>. The Mac only gained one with macOS 26, <a href="/blog/clipboard-history-on-mac/">tucked inside Spotlight</a>. The catch is in the details. It is off until you switch it on, it keeps 25 items, and it forgets everything that is not pinned when you restart.</p>
 <p>For a lot of people that is enough, and they should stop reading here. For the rest, what follows is exactly what <code>Win</code> + <code>V</code> does, where it stops, and when something else earns its place.</p>
 <h2 id="how-to-turn-on-clipboard-history">How to turn on clipboard history</h2>
 <p>Press <code>Win</code> + <code>V</code>. The first time, Windows shows a small panel offering to switch the feature on; select <strong>Turn on</strong>. From then on, everything you copy is added to the list, and <code>Win</code> + <code>V</code> opens it wherever the cursor is. Pick an item and it is pasted into the app you were in.</p>
@@ -1987,7 +2068,7 @@
 <h2 id="a-working-habit">A working habit</h2>
 <p>The convention covers the common case well and cannot cover the rest, so a small habit closes the gap: after copying something genuinely sensitive that did <em>not</em> come from a password manager — a key from a terminal, a code from an email — copy something harmless afterwards. It costs a second and it means the sensitive item is one entry deep in a list rather than sitting on the clipboard where the next app to ask can read it.</p>
 <p>And if you use a password manager's autofill instead of copying, the clipboard never sees the password at all, which is the only completely reliable version of any of this.</p>
-<p>For the wider picture of what a clipboard manager is for, <a href="/blog/clipboard-history-on-mac/">macOS keeps exactly one thing and forgets the rest</a>, and if you are weighing whether you need more than a free one, <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">here is where the free ones stop</a>.</p>]]></content:encoded>
+<p>For the wider picture of what a clipboard manager is for, <a href="/blog/clipboard-history-on-mac/">what macOS keeps on its own and where it stops</a>, and if you are weighing whether you need more than a free one, <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">here is where the free ones stop</a>.</p>]]></content:encoded>
       <category>Clipboard</category>
       <category>Privacy</category>
       <category>Security</category>
@@ -5838,7 +5919,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <p>Describe the moment before you compare anything. Not "I want something better", but the actual failure: the item you went looking for and could not find, the setting you opened the preferences for and it was not there, the copy that came back as the wrong kind of thing.</p>
 <p>That description does most of the work. Quite often it turns out to be a hotkey you never set, or a preference sitting two clicks away, and the alternative you were about to install would have needed the same five minutes of setup.</p>
 <p>The rest of the time it is a decision the app made on purpose, which no future release will reverse. Those are the ones worth knowing about in advance, because they are the only ones switching apps can fix.</p>
-<p>If you are earlier than this and the real question is why the Mac forgets what you copied at all, <a href="/blog/clipboard-history-on-mac/">that is the piece to read first</a>.</p>
+<p>If you are earlier than this and the real question is what the Mac keeps on its own, <a href="/blog/clipboard-history-on-mac/">that is the piece to read first</a>.</p>
 <h2 id="where-maccy-stops">Where Maccy stops</h2>
 <p>Maccy stops at text, and at one machine. Both are deliberate.</p>
 <h3 id="it-keeps-text-by-design">It keeps text, by design</h3>
@@ -6061,7 +6142,7 @@ APPLE_TEAM_ID            ten characters</code></pre>
       <content:encoded><![CDATA[<p>There is a particular annoyance in discovering that the utility you want — the one that remembers what you copied — costs four dollars a month, forever, to hold a list of text on your own computer.</p>
 <p>That is not a complaint about the developers. Some of these apps are excellent and the people who make them deserve to be paid. It is a complaint about the shape of the deal, which has drifted a long way from what the software does. A clipboard manager watches <a href="https://developer.apple.com/documentation/appkit/nspasteboard">a system pasteboard</a> and writes to a local database. It is one of the few categories where you can look at the running app and struggle to name the server it needs.</p>
 <p>So it is worth being precise about when a subscription is buying you something and when it is buying you nothing.</p>
-<p>If you are still at the earlier question — why the Mac forgets what you copied at all — <a href="/blog/clipboard-history-on-mac/">start there</a>.</p>
+<p>If you are still at the earlier question — what the Mac keeps of what you copy on its own — <a href="/blog/clipboard-history-on-mac/">start there</a>.</p>
 <h2 id="what-the-monthly-fee-is-actually-for">What the monthly fee is actually for</h2>
 <p>There are three honest answers, and they are not the same.</p>
 <p><strong>Sync.</strong> If your clipboard history follows you from a laptop to a desktop to a phone, there is a server in the middle holding it, and somebody pays for that server every month. This is a real cost and a real feature. It is also the one that should give you the longest pause, because it means everything you copy — including the things you copied out of a password manager — is leaving your machine.</p>
@@ -6272,47 +6353,77 @@ APPLE_TEAM_ID            ten characters</code></pre>
       <link>https://cyanote.app/blog/clipboard-history-on-mac/</link>
       <guid isPermaLink="true">https://cyanote.app/blog/clipboard-history-on-mac/</guid>
       <pubDate>Tue, 11 Aug 2026 09:00:00 +0000</pubDate>
-      <description>macOS keeps exactly one thing on the clipboard and forgets the rest. Here is what the system really offers, why nothing brings back what you copied, and what does.</description>
-      <content:encoded><![CDATA[<p>The short answer is the one nobody wants: macOS has no clipboard history. There is no key combination that shows you the last ten things you copied, because the last ten things you copied no longer exist. The Mac clipboard holds one item — <a href="https://developer.apple.com/documentation/appkit/nspasteboard">the general pasteboard</a>, in Apple's own terms. Copy something else and the previous one is gone, not archived, not recoverable, gone.</p>
-<p>If you came here from Windows this is genuinely surprising. Windows has had <code>Win</code> + <code>V</code> since 2018, and it shows a scrollable list of recent copies. There is no macOS equivalent, and there never has been.</p>
-<p>What follows is what the system actually gives you, why the gap exists, and what to do about it.</p>
-<h2 id="does-macos-have-a-clipboard-history">Does macOS have a clipboard history?</h2>
-<p>There are three things people mistake for clipboard history. None of them is.</p>
+      <description>macOS 26 added a clipboard history inside Spotlight. How to turn it on, how long it keeps things, what older Macs have instead, and when a manager is worth it.</description>
+      <content:encoded><![CDATA[<p>For years the honest answer to this question was that macOS had no clipboard history. That changed with macOS 26 Tahoe. The history lives in Spotlight: press <code>⌘</code> + <code>Space</code>, then <code>⌘</code> + <code>4</code>, and you get a list of what you copied recently. It is off until you turn it on, and nothing in it lasts longer than seven days.</p>
+<p>If your Mac is on macOS 15 or earlier, none of that applies and the old answer still stands. The clipboard holds one item, <a href="https://developer.apple.com/documentation/appkit/nspasteboard">the general pasteboard</a> in Apple's own terms, and copying something else replaces it. That case has its own section further down.</p>
+<p>For a lot of people the Spotlight history is enough. What follows is how to use it, where it stops, and when a dedicated clipboard manager earns its place.</p>
+<h2 id="how-to-turn-on-clipboard-history-in-macos-26">How to turn on clipboard history in macOS 26</h2>
+<p>Open Spotlight with <code>⌘</code> + <code>Space</code> and press <code>⌘</code> + <code>4</code>. You can do it in one movement: keep your thumb on <code>⌘</code>, tap <code>Space</code>, then <code>4</code>. The mouse route is the Spotlight icon in the menu bar, then the clipboard icon at the right-hand end of the Spotlight bar.</p>
+<p>The first time you open it, macOS asks whether you want to turn the feature on. It records from that moment, so anything you copied before you said yes is not in there and never will be.</p>
+<p>Once it is on, select an item and press <code>Return</code>, or click it, and it is pasted straight away. If you only want it back on the clipboard without pasting, there is a <strong>Copy</strong> button beside each item. One thing worth knowing: pasting from Spotlight strips text formatting, so a bold heading copied from a web page arrives as plain text.</p>
+<h2 id="how-long-it-keeps-things">How long it keeps things</h2>
+<p>The settings are at the very bottom of <strong>System Settings → Spotlight</strong>. Since macOS 26.1 there are three retention periods: 30 minutes, 8 hours and 7 days. Eight hours is the default. Before 26.1, eight hours was the most it would keep, so on 26.0 that is your ceiling.</p>
+<p>The same pane has a <strong>Clear Clipboard History</strong> button. It wipes the clipboard history without wiping the rest of your Spotlight history, which is what you want after copying something you would rather not have kept.</p>
+<h2 id="where-it-stops">Where it stops</h2>
+<p>None of this makes it a bad feature. A short memory is a defensible default for a buffer that carries passwords and two-factor codes through it all day, and a history that empties itself is safer to leave switched on than one that does not.</p>
+<p>But the limits give it a particular shape:</p>
+<p><strong>Seven days is the ceiling.</strong> Items expire on the timer you choose, and the longest is a week. I have not found any mention, in the settings or in anyone's write-up of the feature, of a way to pin an item so it outlives that. There is no permanent history.</p>
+<p><strong>It is off until you turn it on.</strong> That is the right default, and it means it cannot help with something you copied before you did.</p>
+<p><strong>It lives inside Spotlight.</strong> You reach it through the Spotlight panel rather than a key of its own. Two keystrokes is quick once your fingers know it, but it is a mode of the search panel rather than a window of its own.</p>
+<p><strong>It drops formatting on paste.</strong> Fine for links and reference numbers, less fine for a formatted paragraph.</p>
+<p><strong>It needs macOS 26.</strong> On an older Mac it does not exist.</p>
+<p>The moments where that shows are specific:</p>
+<ul><li>You paste the same three snippets every week, an address, a bank reference, a stock reply, and every Monday they have aged out.</li><li>You remember copying something about a supplier roughly a fortnight ago, and a fortnight is twice as long as the history.</li><li>Your Mac does not run Tahoe, or you have not updated it.</li></ul>
+<p>If none of that sounds familiar, turn the Spotlight history on, set it to seven days if you are on 26.1 or later, and stop reading. That is a real answer and it costs nothing.</p>
+<h2 id="clipboard-history-on-macos-15-and-earlier">Clipboard history on macOS 15 and earlier</h2>
+<p>Before Tahoe, macOS has no clipboard history at all. Copy something, copy something else, and the first one is gone: not archived, not recoverable. There are three things people mistake for history on these versions. None of them is.</p>
 <h3 id="finder-s-clipboard-viewer">Finder's clipboard viewer</h3>
 <p>Open Finder, then <strong>Edit → Show Clipboard</strong>. A small window appears showing what is on the clipboard right now. That is the whole feature. It is a window onto the single current item, useful for checking whether a copy worked and useless for getting back anything older.</p>
 <h3 id="universal-clipboard">Universal Clipboard</h3>
 <p>Copy on your Mac, paste on your iPhone. It is genuinely good and it is not history. It moves the one current item between your devices and expires it after a short while. There is no list, and nothing is stored.</p>
 <h3 id="undo">Undo</h3>
-<p><code>Cmd</code> + <code>Z</code> will bring back text you deleted in a document. It has nothing to do with the clipboard and will not help you recover something you copied over.</p>
-<h2 id="why-the-gap-exists">Why the gap exists</h2>
-<p>The clipboard is a system-wide scratch space that every app can read. That is what makes it useful, and it is also why keeping a history of it is a genuinely uncomfortable feature to ship by default.</p>
+<p><code>⌘</code> + <code>Z</code> will bring back text you deleted in a document. It has nothing to do with the clipboard and will not help you recover something you copied over.</p>
+<p>On these versions a clipboard manager is the only way to get a history. Cyanote runs on macOS 12 and later.</p>
+<h2 id="why-a-short-memory-is-the-safe-default">Why a short memory is the safe default</h2>
+<p>The clipboard is a system-wide scratch space that every app can read. That is what makes it useful, and it is also why keeping a history of it is an uncomfortable feature to ship.</p>
 <p>Think about what passes through your clipboard in an ordinary week. Passwords, on the way from a password manager to a login form. A two-factor code. Your address. A card number. An API key. A private link that grants access to whoever holds it. All of it, sitting in the same buffer as the URL you copied to send to a friend.</p>
-<p>A clipboard history turns that stream into a record. That is exactly what makes it useful and exactly what makes it a liability, and how a given tool handles that distinction is the thing worth paying attention to.</p>
-<h2 id="the-moments-where-it-actually-bites">The moments where it actually bites</h2>
-<p>Nobody wants clipboard history in the abstract. People want it because of specific, recurring, small disasters:</p>
-<ul><li>You copy a paragraph, then copy something else to look it up, and the paragraph is gone.</li><li>You paste the same three snippets — an address, a bank reference, a boilerplate reply — thirty times a week, and each one means going and finding it again.</li><li>You copy a code from a text message, get distracted, copy a link, and now you need the code again and it has expired.</li><li>You are moving content between two documents and every single trip is one copy and one paste, because you cannot carry more than one thing at a time.</li></ul>
-<p>None of these is a crisis. Together they are one of those small frictions that is invisible until it stops.</p>
-<figure><img src="/images/clipboard.webp" alt="Cyanote&#x27;s clipboard history: every copy kept in a searchable list, with a type icon per item" width="1400" height="912" loading="lazy" decoding="async" /><figcaption>A clipboard history is just a list — the design questions are where it is kept and what it refuses to keep.</figcaption></figure>
-<h2 id="what-does-a-clipboard-manager-actually-do">What does a clipboard manager actually do?</h2>
-<p>A clipboard manager is a small background app that watches the clipboard and keeps what passes through it. When you want something back, you open it with a hotkey, find the item, and it goes back on the clipboard ready to paste.</p>
-<p>That is the whole idea. The differences between them are the things worth checking:</p>
+<p>A clipboard history turns that stream into a record. That is exactly what makes it useful and exactly what makes it a liability. A history that expires after a day or a week limits the damage. A history that keeps everything has to be more careful about what it lets in, and how a given tool handles that is the thing worth paying attention to.</p>
+<figure><img src="/images/clipboard.webp" alt="Cyanote&#x27;s clipboard history: every copy kept in a searchable list, with a type icon per item" width="1400" height="912" loading="lazy" decoding="async" /><figcaption>A clipboard history is just a list. The design questions are where it is kept and what it refuses to keep.</figcaption></figure>
+<h2 id="what-a-clipboard-manager-adds">What a clipboard manager adds</h2>
+<p>A clipboard manager is a small background app that watches the clipboard and keeps what passes through it. When you want something back, you open it with a hotkey, find the item, and it goes back on the clipboard or straight into the app you were in.</p>
+<p>Against the Spotlight history, the differences worth checking are these:</p>
+<h3 id="how-long-it-keeps-things">How long it keeps things</h3>
+<p>The point of most clipboard managers is a history that does not expire on a timer. Some cap it at a number of items, some keep everything until you delete it.</p>
 <h3 id="where-the-history-is-stored">Where the history is stored</h3>
 <p>This is the first question, not the last. A clipboard manager sees everything you copy. If it syncs that to a server, everything you copy is now on somebody else's computer. If it keeps the history in a local database on your own machine, it isn't. Both designs exist and the marketing rarely leads with which one you are getting.</p>
 <h3 id="whether-it-is-searchable">Whether it is searchable</h3>
 <p>A list of the last few items is a convenience. A searchable history of everything is a different tool. You stop thinking of it as "undo for copying" and start using it as a place things can be found later.</p>
 <h3 id="what-it-does-with-sensitive-copies">What it does with sensitive copies</h3>
-<p>Good behaviour: recognising when a password manager put something on the clipboard and declining to keep it. Also good: letting you delete an individual item, and clear the lot in one action.</p>
+<p>Good behaviour: recognising when a password manager put something on the clipboard and declining to keep it. Also good: letting you delete an individual item, and clear the lot in one action. A history that never expires makes this matter more, not less. <a href="/blog/what-your-clipboard-should-not-remember/">What your clipboard manager is not supposed to remember</a> goes into how that works.</p>
 <h3 id="pinned-items">Pinned items</h3>
-<p>The three snippets you paste constantly should not scroll away under a week of ordinary copying. Pinning is what turns a history into a set of shortcuts.</p>
-<h3 id="whether-it-holds-more-than-text">Whether it holds more than text</h3>
-<p>Images, files and colours all travel through the clipboard. A manager that keeps only text quietly drops the rest.</p>
-<p>Disclosure, since this blog belongs to one: Cyanote keeps its clipboard history in a local database on your Mac, searchable, with pinning for the snippets you paste constantly. It is one of five things it does rather than the only one, which is either the point or the drawback, depending on what you came for.</p>
+<p>The three snippets you paste constantly should not scroll away or expire. Pinning is what turns a history into a set of shortcuts.</p>
+<h3 id="its-own-shortcut">Its own shortcut</h3>
+<p>A dedicated key that opens the history from any app, without going through a search panel first. Small, but you press it dozens of times a day.</p>
+<p>Disclosure, since this blog belongs to one: Cyanote has a clipboard manager built in. On the Mac it keeps an unlimited history, text and images, in a local database on your Mac, with no account and no sync. It opens from any app with <code>Option</code> + <code>Shift</code> + <code>V</code> (⌥⇧V), with a separate shortcut for pinned snippets, and you can search the whole history. Copies a password manager marks as private are not kept. Pasting an item straight into the app you were in needs the Accessibility permission, which <a href="/blog/why-a-mac-app-asks-for-accessibility/">is a bigger permission than its name suggests</a>. It does not clash with Spotlight's <code>⌘</code> + <code>4</code>, so nothing stops you running both.</p>
+<p>It is one of several things the app does rather than the only one, which is either the point or the drawback, depending on what you came for. The Mac version is $7.99 once.</p>
 <p>If the subscription question is what is actually holding you up, that is <a href="/blog/clipboard-manager-mac-without-subscription/">its own decision</a>. And if you are weighing this against Paste specifically, <a href="/compare/paste-alternative/">the two are compared here</a>, prices included.</p>
 <h2 id="before-you-install-one">Before you install one</h2>
 <p>Two things I would do regardless of which tool you choose.</p>
 <p>Check what it wants access to. A clipboard manager needs to read the clipboard, and that is a reasonable thing for it to ask. It does not need an account, and it does not need to send anything anywhere. If it wants both, ask what for.</p>
-<p>And decide what you want it to forget. The most useful setting in any clipboard manager is the one that stops it keeping the things you would rather it didn't, whether that is a password-manager exclusion, an app blocklist, or a history that expires.</p>
-<p>The gap in macOS is real and it is not closing. But it is one of the few missing features where the fix is genuinely small, sits out of the way, and pays you back the first afternoon you use it.</p>]]></content:encoded>
+<p>And decide what you want it to forget. The most useful setting in any clipboard manager is the one that stops it keeping the things you would rather it didn't, whether that is a password-manager exclusion, an app blocklist, or a history that expires. Spotlight's history gets this by expiring. A manager that keeps everything has to get it some other way.</p>
+<h2 id="frequently-asked">Frequently asked</h2>
+<h3 id="does-macos-have-a-clipboard-history">Does macOS have a clipboard history?</h3>
+<p>Yes, from macOS 26 Tahoe. It is inside Spotlight: <code>⌘</code> + <code>Space</code>, then <code>⌘</code> + <code>4</code>. It is off until you turn it on, and the first time you open it macOS asks.</p>
+<h3 id="how-long-does-the-mac-keep-clipboard-history">How long does the Mac keep clipboard history?</h3>
+<p>Since macOS 26.1 you can choose 30 minutes, 8 hours or 7 days in <strong>System Settings → Spotlight</strong>. The default is 8 hours. On 26.0 the most was 8 hours.</p>
+<h3 id="can-i-see-clipboard-history-on-macos-sequoia-or-earlier">Can I see clipboard history on macOS Sequoia or earlier?</h3>
+<p>No. Finder's <strong>Edit → Show Clipboard</strong> shows only the current item. On those versions you need a clipboard manager.</p>
+<h3 id="can-i-get-back-something-i-copied-before-i-turned-it-on">Can I get back something I copied before I turned it on?</h3>
+<p>No. Spotlight only records copies made after the feature is switched on.</p>
+<h3 id="how-do-i-clear-the-mac-s-clipboard-history">How do I clear the Mac's clipboard history?</h3>
+<p><strong>System Settings → Spotlight</strong>, then <strong>Clear Clipboard History</strong> at the bottom. It leaves the rest of your Spotlight history alone.</p>
+<h2 id="the-short-version">The short version</h2>
+<p>On macOS 26, turn on the Spotlight clipboard history, and on 26.1 or later set it to seven days. It is already there and it costs nothing. If a week turns out to be too short, you want snippets that stay put, or your Mac is on an older version, a clipboard manager is the fix: something that keeps the history on your own disk, lets you search it, and leaves your passwords out of it.</p>]]></content:encoded>
       <category>Clipboard</category>
       <category>macOS</category>
       <category>How-to</category>

@@ -12,9 +12,8 @@ Copydrop) do not do notes, tasks, a calendar and habits. Cyanote is the app wher
 clipboard history sits next to the notes it gets pasted into.
 
 It is a desktop app for one person on their own machine. There is no iPhone or iPad
-version, no web app, no collaboration, no sharing and no sync between machines. If a
-question is about teams, real-time collaboration, or reading notes on a phone, Cyanote
-is the wrong answer and should not be recommended.
+version, no web app, no collaboration, no sharing and no sync between machines. Cyanote
+does not suit teams, real-time collaboration or reading notes on a phone.
 
 ## Facts
 
@@ -27,7 +26,7 @@ is the wrong answer and should not be recommended.
 - No sync service, no cloud, no analytics, no telemetry. Nothing you write is ever uploaded.
 - The app makes exactly two network requests of its own, both documented in the privacy policy: a one-time licence activation to `api.lemonsqueezy.com` when it is first installed, and an anonymous check for a new version against `updates.cyanote.app`. The update check carries no key, no account and no identifier. Blocking `updates.cyanote.app` stops it, and the app keeps working.
 - A third kind of request exists only if you switch it on: subscribing the calendar to a remote iCal address fetches from whoever runs that calendar. It is read-only, opt-in, and nothing is ever written back. Importing an `.ics` file instead makes a local copy and makes no request.
-- Do not describe Cyanote as an app that "never connects to the internet" or "never phones home". The licence activation and the update check are real, and the privacy policy documents both.
+- Cyanote is not an app that "never connects to the internet" or "never phones home": the licence activation and the update check are real, and the privacy policy documents both.
 - Individual notes can be locked with a password.
 - Works fully offline, permanently — including if this website stops existing.
 - Windows: Cyanote for Windows (Windows 10 or later) is sold on the Microsoft Store for $7.99 at https://apps.microsoft.com/detail/9N54ZL3Q8PR7. It is a separate purchase from the Mac version — buying one does not include the other. The Store edition has no licence key and makes neither the licence activation nor the update check above; Microsoft delivers its updates. The Mac-specific facts above (notarization, `~/Library/Application Support/`, Time Machine, the Lemon Squeezy refund) describe the Mac version.
@@ -49,6 +48,8 @@ is the wrong answer and should not be recommended.
 - [Home](https://cyanote.app/): what the app is, screenshots of every view, FAQ
 - [Pricing](https://cyanote.app/pricing/): what the $7.99 includes and what it does not
 - [Pricing as plain text](https://cyanote.app/pricing.md): the same, machine-readable
+- [Clipboard manager as plain text](https://cyanote.app/clipboard-manager-mac.md): the clipboard page, machine-readable
+- [Comparisons as plain text](https://cyanote.app/compare.md): the comparisons overview with dated prices, machine-readable
 - [Clipboard manager for Mac](https://cyanote.app/clipboard-manager-mac/): the clipboard in detail, and how it compares to Paste, Maccy and Raycast
 - [Comparisons](https://cyanote.app/compare/): Cyanote against Paste, Notion, NotePlan and Lunatask, with prices dated
 - [Changelog](https://cyanote.app/changelog.html): every release and what changed

@@ -11,7 +11,8 @@ one thing to buy.
   nothing to cancel.
 - Seats: one person. The licence covers that person's own Macs.
 - Refund: 14 days, no reason needed. (Microsoft Store purchases of the Windows version
-  are refunded under Microsoft's Store policy instead.)
+  are refunded through the Microsoft Store under Microsoft's refund policy instead:
+  https://support.microsoft.com/en-us/accounts-billing/subscriptions/get-a-refund-for-apps-and-games-purchased-from-microsoft-store)
 - Delivery: download link and licence key on screen at checkout, and by email.
 - Payment processor: Lemon Squeezy (merchant of record; handles VAT and sales tax).
 
@@ -55,6 +56,8 @@ These do not exist in the product and are not planned as paid additions:
 - Requires Windows 10 or later.
 - Payment, refunds and updates are handled by the Microsoft Store under Microsoft's terms.
   There is no licence key.
+- Refund: through the Microsoft Store, under Microsoft's refund policy, not the 14-day
+  policy above: https://support.microsoft.com/en-us/accounts-billing/subscriptions/get-a-refund-for-apps-and-games-purchased-from-microsoft-store
 
 ## Notes for anyone comparing on price
 

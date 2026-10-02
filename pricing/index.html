@@ -11,6 +11,7 @@
 <meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="theme-color" content="#fafafa" />
 <link rel="canonical" href="https://cyanote.app/pricing/" />
+<link rel="alternate" type="text/markdown" href="https://cyanote.app/pricing.md" />
 <link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
 <link rel="preload" href="https://cyanote.app/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -45,20 +46,6 @@
 <meta name="twitter:description" content="Every feature, no subscription, no account. $7.99 once." />
 <meta name="twitter:image" content="https://cyanote.app/og-image.png" />
 
-<!-- The same SoftwareApplication as the homepage, by `@id`, carrying the offer.
-     Same id means one entity with two mentions, which is the point — a second
-     SoftwareApplication block with a different id would tell a machine there are
-     two products.
-
-     The offer now carries an `@id` too, and both pages give it the same one and
-     the same `url`. Before that the two blocks agreed on the price and disagreed
-     on where to buy — the homepage pointed at its own `#pricing` anchor, this
-     one at this page — which is one entity described two ways, the exact thing
-     the shared `@id` on the app above exists to prevent. `url` and `name` are
-     repeated here rather than left to the homepage: a page's markup has to make
-     sense read on its own, because a crawler that fetched only this URL is the
-     normal case, not the edge one. Price is stated in both places; if it ever
-     changes, both have to. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -103,7 +90,7 @@
   "isPartOf": { "@id": "https://cyanote.app/#website" },
   "about": { "@id": "https://cyanote.app/#app" },
   "publisher": { "@id": "https://cyanote.app/#organization" },
-  "dateModified": "2026-08-13"
+  "dateModified": "2026-10-02"
 }
 </script>
 <script type="application/ld+json">
@@ -159,8 +146,6 @@
 
       <div id="buy" class="price" style="margin-top:34px">
         <div class="amt">$7.99<span> once</span></div>
-        <!-- Two separate purchases, one per computer: the Mac copy is sold
-             here, the Windows copy on the Microsoft Store. -->
         <div class="buy-paths" data-plat="desktop" style="margin-top:30px">
           <div class="buy-path">
             <a class="btn btn-primary plat-btn plat-btn-mac" aria-label="Download Cyanote for Mac — $7.99 (macOS 12 or later)" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
@@ -191,7 +176,7 @@
           <tr><td>Feature tiers</td><td>None — one version, everything in it</td></tr>
           <tr><td>Requires</td><td>macOS 12 or later (Apple Silicon and Intel), or Windows 10 or later</td></tr>
           <tr><td>Windows</td><td>$7.99 on the Microsoft Store, a separate purchase from the Mac version</td></tr>
-          <tr><td>Refund</td><td>14 days, no reason needed</td></tr>
+          <tr><td>Refund</td><td>Mac: 14 days, no reason needed. Windows: through the Microsoft Store, under <a href="https://support.microsoft.com/en-us/accounts-billing/subscriptions/get-a-refund-for-apps-and-games-purchased-from-microsoft-store" target="_blank" rel="noopener">Microsoft&rsquo;s refund policy</a></td></tr>
         </tbody>
       </table>
       </div>
@@ -231,7 +216,7 @@
 
       <h2 id="refunds">Refunds</h2>
 
-      <p>If it is not for you, <a href="https://cyanote.app/refund.html">the refund is fourteen days and needs no reason</a> — no form, no questions about why.</p>
+      <p>If it is not for you, <a href="https://cyanote.app/refund.html">the refund is fourteen days and needs no reason</a> — no form, no questions about why. That is for the Mac version bought here; a Windows copy bought on the Microsoft Store is refunded through the Store, under <a href="https://support.microsoft.com/en-us/accounts-billing/subscriptions/get-a-refund-for-apps-and-games-purchased-from-microsoft-store" target="_blank" rel="noopener">Microsoft&rsquo;s refund policy</a>.</p>
 
       <p>Not sure yet? <a href="https://cyanote.app/compare/">How Cyanote compares</a> to Paste, Notion, NotePlan, Obsidian and the rest — including the cases where one of them is the better buy.</p>
     </div>

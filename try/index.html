@@ -45,8 +45,6 @@
 <meta name="twitter:title" content="Try Cyanote — a demo you can click around" />
 <meta name="twitter:description" content="A live demo of Cyanote's notes, today view, habits, calendar and clipboard manager." />
 <meta name="twitter:image" content="https://cyanote.app/og-image.png" />
-<!-- Same shape as /pricing/: a WebPage pointing at the homepage's WebSite,
-     SoftwareApplication and Organization by @id, plus its breadcrumb. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -104,15 +102,6 @@
       <h1>Have a click around.</h1>
       <p class="lede">This is Cyanote. Nothing you type here is saved — the real thing lives on your Mac.</p>
 
-      <!-- The app, drawn in HTML. Structure and geometry are taken from
-           website/images/note.webp, which is a capture of the real Cyanote
-           running the very seed this demo uses, and the palette is lifted
-           verbatim out of desktop/src/index.css. Anything in here that is
-           aria-hidden is a drawing rather than a control: it is in the picture
-           because the app has it, and it is not clickable because clicking it
-           would promise something this page cannot do. The live controls are
-           the three nav buttons, the note rows, the clipboard button and
-           Reset — every one of which goes somewhere. -->
       <div class="demo-window" id="demo-root">
         <div class="demo-titlebar">
           <span class="demo-lights" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -150,10 +139,6 @@
               </span>
             </div>
 
-            <!-- Three sections, not nine. The six this demo does not build are
-                 absent rather than greyed out: a nav item that does nothing
-                 when clicked is a dead end in the one place a visitor is most
-                 curious about what the app can do. -->
             <nav class="demo-nav" aria-label="Cyanote sections">
               <button type="button" class="demo-navitem" data-view="today" title="Today">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M4.9 8.9l1.4 1.4M2 18h2m16 0h2m-4.3-7.7 1.4-1.4M22 22H2M8 6l4-4 4 4M16 18a4 4 0 0 0-8 0"/></svg>
@@ -193,9 +178,6 @@
               </span>
             </div>
 
-            <!-- The note list. Seeded here with the same five notes demo-seed.js
-                 carries, so the shell is correct before any script runs; Task 4
-                 re-renders it from the store. -->
             <ul class="demo-notelist">
               <li><button type="button" class="demo-note" data-note="note-1" aria-current="true" title="Weekend in Lisbon"><span class="demo-note-icon" aria-hidden="true">✈️</span><span class="demo-note-title">Weekend in Lisbon</span></button></li>
               <li><button type="button" class="demo-note" data-note="note-3" title="Flat inspection — what to fix"><span class="demo-note-icon" aria-hidden="true">🔧</span><span class="demo-note-title">Flat inspection — what to fix</span></button></li>
@@ -209,16 +191,6 @@
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3m0 13v3M2.5 12h3m13 0h3M5.3 5.3l2.1 2.1m9.2 9.2 2.1 2.1m0-13.4-2.1 2.1m-9.2 9.2-2.1 2.1"/></svg>
                 Settings
               </span>
-              <!-- The clipboard manager is a floating overlay in the real app,
-                   summoned by a global hotkey. A web page has no business
-                   claiming a hotkey *globally*, so it gets a button — and it
-                   sits down here with the chrome rather than in the nav,
-                   because it is not a section of the app. demo-clipboard.js
-                   adds `/` and Cmd/Ctrl+Shift+V on top, both of which stand
-                   down unless the focus is already inside this window. -->
-              <!-- aria-expanded is written by the overlay as it opens and
-                   closes; it starts here so the button is never a haspopup
-                   with no state. -->
               <button type="button" id="demo-clip-open" class="demo-clip" title="Clipboard"
                       aria-haspopup="dialog" aria-expanded="false">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8.5" y="2.5" width="7" height="4" rx="1"/><path d="M15.5 4.5H18a2 2 0 0 1 2 2V19a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2h2.5"/></svg>
@@ -238,11 +210,6 @@
               <span class="demo-glyph demo-glyph-trash" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 6h17M9 6V4.2A1.2 1.2 0 0 1 10.2 3h3.6A1.2 1.2 0 0 1 15 4.2V6m3.5 0-.9 13.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8L5.5 6"/></svg></span>
             </div>
 
-            <!-- Shown only when a note is open; demo.js toggles [hidden] and
-                 replaces this tab with a live one whose × is a real button.
-                 The cross below stays a drawing: with no module there is
-                 nothing for it to close, and a dead button is worse than a
-                 glyph that never claimed to be one. -->
             <div class="demo-tabbar" id="demo-tabbar">
               <span class="demo-tab">
                 <span class="demo-tab-icon" aria-hidden="true">✈️</span>
@@ -251,11 +218,6 @@
               </span>
             </div>
 
-            <!-- The pane a render replaces wholesale. What is in it now is the
-                 no-script state: the open note as flat markup, so the window is
-                 a window rather than an empty rectangle for a reader whose
-                 module never arrives, and so the blueprint grid behind it can
-                 be seen. -->
             <div id="demo-pane" class="demo-pane" data-view="notes">
               <div class="demo-sheet">
                 <p class="demo-sheet-icon" aria-hidden="true">✈️</p>
@@ -329,8 +291,6 @@
     <span>© 2026 Cyanote. All rights reserved.</span>
   </div>
 </div></footer>
-<!-- The demo itself. A module, so it is deferred by definition and the DOM it
-     wires up is already parsed; nothing it does touches the rest of the page. -->
 <script type="module" src="/try/demo.js"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
 <script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>

@@ -7,18 +7,12 @@
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <meta name="color-scheme" content="light" />
 <title>Cyanote — Notes, Tasks, Habits &amp; a Clipboard Manager for Mac and Windows</title>
-<!-- Kept under 160 characters. The previous one ran to 221, so Google cut it at
-     "…clipboard manager. Local-first." and the $7.99 — the one fact that makes
-     anyone click — never reached a search result at all. -->
 <meta name="description" content="Notes, to-dos, calendar, habits and a clipboard manager in one Mac and Windows app. $7.99 once, no subscription, no account. Everything stays on your computer." />
 <meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="theme-color" content="#fafafa" />
 <link rel="canonical" href="https://cyanote.app/" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-<!-- Safari/iOS ignores SVG for the home-screen icon, so this one has to be a PNG. -->
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-<!-- The one font file the page needs, fetched in parallel with the stylesheet
-     rather than after it — it is what the headline is set in. -->
 <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="style.css" />
 <script>
@@ -43,7 +37,6 @@
     document.documentElement.classList.add('plat-' + plat);
   })();
 </script>
-<!-- Open Graph (social share cards) -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Cyanote" />
 <meta property="og:url" content="https://cyanote.app/" />
@@ -52,14 +45,11 @@
 <meta property="og:image" content="https://cyanote.app/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<!-- Twitter/X card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Cyanote — Notes, Tasks, Habits &amp; a Clipboard Manager for Mac and Windows" />
 <meta name="twitter:description" content="Local-first, all-in-one app for Mac and Windows. One-time $7.99, yours to keep." />
 <meta name="twitter:image" content="https://cyanote.app/og-image.png" />
 
-<!-- Structured data: helps Google understand the product + show rich results.
-     No aggregateRating is included on purpose — never add fake reviews/ratings. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -129,30 +119,13 @@
 }
 </script>
 
-<!-- The entity the other two blocks belong to, and the reason they all carry an
-     `@id`: without one, every page states a name and leaves a machine to guess
-     that the four mentions of "Cyanote" are one thing. They resolve to this.
-     `sameAs` lists only profiles that exist and are public — the storefront that
-     actually sells the app, and the repository this site is published from.
-     Nothing aspirational goes in this array: a `sameAs` pointing at a page that
-     isn't there is the same lie as a made-up rating, and it fails louder. When
-     Product Hunt / YouTube / LinkedIn go live, they belong here too.
-
-     Both added 2026-09-04, and both were checked for a 200 first. The YouTube
-     entry is the channel, not the video: `sameAs` means "another page about
-     this same entity", and a single video is a work by the entity, not the
-     entity. The handle is still the auto-generated @rabanianos-qw9rn, which is
-     a personal channel hosting the product demo rather than a Cyanote channel
-     — weaker as an identity claim than it should be. If the handle is ever
-     changed to a Cyanote one, change it here too: a `sameAs` pointing at a
-     dead handle is the failure this comment exists to prevent. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://cyanote.app/#organization",
   "name": "Cyanote",
-  "description": "Cyanote is a one-time-purchase Mac app combining notes, to-dos, a calendar, habit tracking and a system-wide clipboard manager, with all data stored locally on the user's own machine.",
+  "description": "Cyanote is a one-time-purchase app for Mac and Windows combining notes, to-dos, a calendar, habit tracking and a system-wide clipboard manager, with all data stored locally on the user's own machine. The Windows version is a separate purchase on the Microsoft Store.",
   "url": "https://cyanote.app/",
   "logo": {
     "@type": "ImageObject",
@@ -166,17 +139,13 @@
     "https://cyanote.lemonsqueezy.com/",
     "https://github.com/deempa/cyanote-site",
     "https://www.producthunt.com/products/cyanote/launches/cyanote",
-    "https://www.youtube.com/@rabanianos-qw9rn"
+    "https://www.youtube.com/@rabanianos-qw9rn",
+    "https://apps.microsoft.com/detail/9N54ZL3Q8PR7",
+    "https://dev.to/lior_cyanote"
   ]
 }
 </script>
 
-<!-- The site itself, as distinct from the company that publishes it and the app
-     it sells. Without this the graph is three unconnected islands: an
-     Organization, a SoftwareApplication, and a set of BlogPostings on other
-     pages that name a publisher nothing here resolves. `publisher` is the join.
-     No SearchAction: the sitelinks searchbox it used to earn was retired, and
-     declaring a search endpoint this site does not have would be a lie. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -184,31 +153,20 @@
   "@id": "https://cyanote.app/#website",
   "name": "Cyanote",
   "url": "https://cyanote.app/",
-  "description": "Cyanote is a macOS app that combines notes, to-dos, a board, a calendar, habit tracking, routines and a system-wide clipboard manager in one app, for a single $7.99 payment with no subscription and no account.",
+  "description": "Cyanote is a Mac and Windows app that combines notes, to-dos, a board, a calendar, habit tracking, routines and a system-wide clipboard manager in one app, for a single $7.99 payment with no subscription and no account. The Windows version is a separate $7.99 purchase on the Microsoft Store.",
   "publisher": { "@id": "https://cyanote.app/#organization" },
   "inLanguage": "en"
 }
 </script>
 
-<!-- This page, as a page. Every other page on the site has one; the landing
-     page was the exception, which left the four blocks above describing a
-     company, a website and a product with nothing saying what *this URL* is or
-     when it last changed. `about` is the join to the product, and `mainEntity`
-     says the page is not merely on the subject of Cyanote but is the page for
-     it — the one to resolve to when something has to pick a single URL.
-
-     `dateModified` is stamped by build.sh from the last commit touching
-     index.html or style.css: the same two files the sitemap calls "/", so the
-     two can never disagree. Not the clock — a date that moves on every build
-     is a date Google learns to ignore. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": "https://cyanote.app/#page",
   "url": "https://cyanote.app/",
-  "name": "Cyanote — notes, tasks, habits and a clipboard manager for Mac",
-  "description": "Cyanote is a one-time-purchase Mac app that keeps notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard manager in one window, with every file stored locally.",
+  "name": "Cyanote — notes, tasks, habits and a clipboard manager for Mac and Windows",
+  "description": "Cyanote is a one-time-purchase app for Mac and Windows that keeps notes, to-dos, a board, a calendar, habits, routines and a system-wide clipboard manager in one window, with every file stored locally. The Windows version is a separate purchase on the Microsoft Store.",
   "inLanguage": "en",
   "isPartOf": { "@id": "https://cyanote.app/#website" },
   "about": { "@id": "https://cyanote.app/#app" },
@@ -225,35 +183,18 @@
 }
 </script>
 
-<!-- The demo above the fold is a real <video>, and until now nothing said so to
-     anything that does not run a browser. The element carries an aria-label for
-     screen readers, but a crawler building a page summary sees a poster image
-     and no indication that the moving picture of the app exists at all — which
-     is the one asset here that shows the product working rather than describing
-     it. `thumbnailUrl` is the poster frame the page already ships, so this costs
-     no extra bytes.
-
-     `uploadDate` is the day the file was committed, not the day of the build:
-     the encode has not changed since, and a date that moves whenever the site
-     is rebuilt is a date worth nothing. `duration` and the dimensions are read
-     off the file itself (19.03s, 900x564) rather than guessed — Google drops a
-     VideoObject whose stated duration disagrees with the media it points at.
-
-     No `embedUrl`: that is for a player page or an iframe, and this is a bare
-     media file played inline. Declaring one that does not exist is the usual
-     way this markup gets ignored. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
   "@id": "https://cyanote.app/#demo-video",
-  "name": "Cyanote in use — ticking off to-dos and writing a note",
-  "description": "A short screen recording of Cyanote on macOS: tasks being ticked off the list, then a note being typed with the slash-command menu open.",
+  "name": "Cyanote in use — notes, clipboard history and to-dos",
+  "description": "A short screen recording of Cyanote on macOS: a heading added to a trip note from the slash-command menu, the clipboard history opened with Option-Shift-V and searched for a flight number that is pasted straight into the note, then every task on the to-do list ticked off.",
   "contentUrl": "https://cyanote.app/demo.mp4",
   "thumbnailUrl": "https://cyanote.app/demo-poster.webp",
   "encodingFormat": "video/mp4",
-  "uploadDate": "2026-08-13",
-  "duration": "PT19S",
+  "uploadDate": "2026-10-02",
+  "duration": "PT23S",
   "width": 900,
   "height": 564,
   "inLanguage": "en",
@@ -301,28 +242,12 @@
 
 <header class="hero">
   <div class="wrap">
-    <!-- Note the space before the <br />. Without it the line break is the only
-         thing between the two words, and a <br> contributes no text node — so
-         `textContent` reads "clipboard managerin one quiet app". Browsers
-         render the break either way, which is what made the old version of this
-         line ("app for<br />everything") look fine for months while every
-         plain-text extractor, and every AI crawler reading one, saw
-         "app foreverything you juggle". -->
     <h1>Notes, tasks and a clipboard <br />manager in one quiet app.</h1>
     <p class="lede">Five subscriptions&rsquo; worth of app, bought once for $7.99. Everything stays on your computer — no account, no sync.</p>
-    <!-- Three calls to action, one per platform; style.css hides the two that
-         don't apply. Only one is ever visible, so only one is ever read out. -->
     <div class="hero-cta" data-plat="mac">
-      <!-- Straight to checkout rather than down to the pricing section: the price
-           is already in the label, so a scroll would only ask the same question
-           again. Same new tab and same placeholder href as the pricing button —
-           build.sh rewrites every copy of it, and swaps them all for the notify
-           button in pre-launch mode. -->
       <a class="btn btn-primary plat-btn plat-btn-mac" aria-label="Download Cyanote for Mac — $7.99 (macOS 12 or later)" data-cta="hero" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
         <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
         <span class="btn-label"><span class="pb-small">macOS 12 or later</span><span class="pb-big">Download for Mac — $7.99</span></span></a>
-      <!-- Windows is sold on the Microsoft Store, so its button goes there.
-           Both buttons share one shape, coloured by platform. -->
       <a class="btn plat-btn plat-btn-win" target="_blank" rel="noopener" href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7" aria-label="Download Cyanote for Windows from the Microsoft Store — $7.99" title="Download Cyanote for Windows from the Microsoft Store — $7.99">
         <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8.6v8.6H3zM12.4 3H21v8.6h-8.4zM3 12.4h8.6V21H3zM12.4 12.4H21V21h-8.4z"/></svg>
         <span class="btn-label"><span class="pb-small">Windows 10 or later</span><span class="pb-big">Download for Windows — $7.99</span></span></a>
@@ -336,63 +261,50 @@
         <span class="btn-label">See what it does</span></a>
     </div>
     <div class="hero-cta" data-plat="mobile">
-      <span class="btn btn-inert">
+      <a class="btn btn-ghost" href="/try/" id="hero-try">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
-        <span class="btn-label">For Mac and Windows computers</span></span>
+        <span class="btn-label">Try the demo</span></a>
       <a class="btn btn-ghost" href="#features">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10.2 8.8 15.5 12l-5.3 3.2Z"/></svg>
         <span class="btn-label">See what it does</span></a>
     </div>
 
-    <!-- Facts, not accolades. The reference badges an award and a review count;
-         Cyanote has neither, and inventing them is not on the table. -->
     <p class="fineprint" data-plat="mac">One-time purchase · macOS 12+ · Windows version on the Microsoft Store</p>
     <p class="fineprint" data-plat="windows">One-time purchase on the Microsoft Store · Windows 10 or later</p>
     <p class="fineprint" data-plat="mobile">Cyanote is a desktop app. Open this page on your Mac or Windows PC to get it.</p>
+
+    <ul class="trust" aria-label="About Cyanote">
+      <li>Made by <a href="about.html">Lior Rabanian</a></li>
+      <li><a href="changelog.html">Version 1.1.0</a>, first released 11 August 2026</li>
+      <li><a href="https://www.producthunt.com/products/cyanote/launches/cyanote" target="_blank" rel="noopener">Launched on Product Hunt</a></li>
+      <li data-plat="mac">Signed and notarized by Apple</li>
+      <li data-plat="windows">Sold on the Microsoft Store</li>
+    </ul>
+    <p class="hero-compare"><a href="/compare/">See how it compares</a> to Paste, Notion, NotePlan and the rest.</p>
   </div>
 
   <div class="mac">
     <div class="mac-lid">
       <span class="mac-cam"></span>
-      <!-- This was an <img> showing a 17 KB still that swapped itself for a 710 KB
-           animated WebP. The swap was the problem: changing the src of the largest
-           image above the fold moves Largest Contentful Paint onto whatever it
-           settles on, so the big file was being timed instead of the still.
-           A video has no such trouble — the browser credits LCP to the poster
-           frame and never to the frames that follow. The same animation is also
-           a third of the size once a real video codec encodes it (~180 KB). -->
-      <!-- One source, not a <source> list. Offering both WebM and MP4 made
-           PageSpeed fetch *both* — 383 KB for a 184 KB animation — and no
-           amount of poking at the play path stopped it. A single src cannot
-           have that problem. MP4/H.264 is the one to keep: every Safari plays
-           it, which matters for a product sold to Mac users, and this encode is smaller
-           than the WebM was anyway. -->
       <span class="mac-screen"><video id="demo-gif" src="demo.mp4" poster="demo-poster.webp"
         width="900" height="564" muted loop playsinline preload="none"
-        aria-label="Cyanote: ticking to-dos off the list, then typing in a note and opening the slash menu"></video></span>
+        aria-label="Cyanote: a note gets a new heading from the slash menu, the clipboard history opens with Option-Shift-V and a search for “flight” pastes a saved flight number into the note, then every to-do is ticked off"></video></span>
     </div>
     <div class="mac-base"></div>
   </div>
 </header>
 
-<!-- ROADMAP-STRIP:start -->
-<!-- ROADMAP-STRIP:end -->
 
 <section id="features">
   <div class="wrap">
     <div class="section-head">
       <h2>One app instead of five.</h2>
       <p class="lede">Five subscriptions, five windows, five places your week ends up.</p>
-      <!-- The one sentence on the page that says plainly what this is, rather
-           than what it feels like. The hero above is written to be read; this is
-           written to be quoted — by a search result, an AI answer, or a person
-           explaining the app to someone else. It survives being lifted out of
-           the page with no surrounding context, which is the whole job. Keep it
-           literal, keep it first-sentence-of-the-body, and keep it true. -->
-      <p class="definition"><b>Cyanote is a one-time-purchase Mac app</b> that combines notes,
+      <p class="definition"><b>Cyanote is a one-time-purchase app for Mac and Windows</b> that combines notes,
         to-dos, a calendar, habit tracking and a system-wide clipboard manager in a single
-        window. Everything is stored locally on your own Mac: there is no account to create,
-        no sync service, and no subscription. It costs $7.99 once and runs on macOS 12 or later.</p>
+        window. Everything is stored locally on your own computer: there is no account to create,
+        no sync service, and no subscription. It costs $7.99 once and runs on macOS 12 or later;
+        the Windows version, for Windows 10 or later, is a separate $7.99 purchase on the Microsoft Store.</p>
     </div>
     <div class="feat">
       <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h11l5 5v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/><path d="M14 4v6h6M7 13h9M7 17h6"/></svg>
@@ -425,7 +337,7 @@
       <div class="kv">
         <div><b>Unlimited</b>history</div>
         <div><b>Pinned</b>snippets</div>
-        <div><b>Never</b>leaves your Mac</div>
+        <div><b>Never</b>leaves your computer</div>
       </div>
       <p class="fineprint"><a href="/clipboard-manager-mac/">More about the clipboard manager</a>, including how it compares to Paste, Maccy and Raycast.</p>
     </div>
@@ -434,8 +346,6 @@
   </div>
 </section>
 
-<!-- Screenshots gallery. Drop real PNGs into website/images/ (see images/README.md).
-     Any missing image auto-hides; the whole section hides if none exist yet. -->
 <section id="screenshots" style="padding-top:0">
   <div class="wrap">
     <div class="section-head">
@@ -467,19 +377,6 @@
 
 <div class="rule"></div>
 
-<!-- Four rows, four links, and the only in-content route from this page to the
-     four highest-intent pages on the site. Before this the landing page linked
-     down to exactly one deep page (the clipboard manager); the comparison pages
-     were reachable only from the footer and from blog posts, which is a strange
-     place to keep the pages people arrive on already intending to switch.
-
-     The last column is the argument and the third is the honest cost, taken
-     from compare/index.html rather than restated from memory — two copies of a
-     competitor's price is two chances to be out of date, so if one moves, both
-     move, and the checked-on date below says how much to trust either. The
-     "better off elsewhere" line is not modesty: the comparison pages each say
-     the same thing at greater length, and a table that only ever concludes
-     "buy Cyanote" would be the one part of this site that argues in bad faith. -->
 <section id="compare-strip">
   <div class="wrap">
     <div class="section-head">
@@ -532,19 +429,10 @@
       <ul>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Every feature — notes, tasks, board, calendar, habits, routines, Pomodoro, clipboard</li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Works offline, stays on your computer</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Fourteen days to change your mind (Mac), no reason needed</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg><span>Fourteen days to change your mind (Mac), no reason needed. Windows copies are refunded through the Microsoft Store, under <a class="price-link" href="https://support.microsoft.com/en-us/accounts-billing/subscriptions/get-a-refund-for-apps-and-games-purchased-from-microsoft-store" target="_blank" rel="noopener">Microsoft&rsquo;s refund policy</a>.</span></li>
       </ul>
-      <!-- data-plat sits on the wrapper, never on the button: build.sh swaps
-           this whole anchor out in pre-launch mode, and an attribute on the
-           anchor would go with it. Two separate purchases, one per computer:
-           the Mac copy is sold here, the Windows copy on the Microsoft Store. -->
       <div class="buy-paths" data-plat="desktop">
         <div class="buy-path">
-                <!-- Opens in a new tab, so the site the buyer came from is still behind
-               them when checkout finishes or when they change their mind. `noopener`
-               because the new tab is a different origin and has no business holding a
-               handle to this one; the referrer is left intact so Lemon Squeezy can
-               still attribute the sale. -->
           <a class="btn btn-primary plat-btn plat-btn-mac" aria-label="Download Cyanote for Mac — $7.99 (macOS 12 or later)" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
             <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
             <span class="btn-label"><span class="pb-small">macOS 12 or later</span><span class="pb-big">Download for Mac — $7.99</span></span></a>
@@ -573,14 +461,6 @@
   <div class="wrap">
     <div class="section-head"><h2>Common questions about Cyanote</h2></div>
     <div class="faq">
-      <!-- These answer at length on purpose. Three sentences was enough for
-           someone already on the page with a card in their hand, and no use at
-           all to someone whose question was answered somewhere else — a search
-           result, an AI answer, a forum reply — because there was nothing here
-           substantial enough to quote. Each answer is now written to stand on
-           its own if it is lifted out of the page whole.
-           The FAQPage block in <head> repeats these word for word; the two are
-           only allowed to disagree by being wrong. -->
       <details open><summary>How do I get it after paying?</summary><p>A download link appears as soon as checkout completes, and the same link arrives by email along with your licence key. Open the disk image, drag Cyanote to your Applications folder, launch it, and paste the key once when it asks. That is the whole setup: there is no account to create, no email address to verify, and no password to choose. The key is checked on that first launch and never again, so the app keeps working on a machine that is offline, on a machine that never sees the internet again, and on the day this website stops existing. If you lose the key it is still in your checkout email, and if you lose the email, one message to support gets it back.</p></details>
       <details><summary>Where is my data stored?</summary><p>On your own Mac, in a single SQLite database file kept under <code>~/Library/Application Support/</code>. There is nowhere else for it to go: Cyanote has no account system, no sync service, no analytics and no telemetry, so nothing you write is uploaded anywhere. The only time the app talks to the network at all is when it checks whether a new version exists. You can move that database file to any folder you like — an external drive, or a folder your own backup tool already watches — and Cyanote will keep using it there. Individual notes can be locked with a password, and a locked note's plaintext is not left behind in freed database pages. Because it is one ordinary file in an ordinary folder, Time Machine already backs your notes up without being told to.</p></details>
       <details><summary>Which computers is it for?</summary><p>Macs running macOS 12 (Monterey) or newer. Cyanote ships as a universal binary, so it runs natively on both Apple Silicon and Intel Macs — no Rosetta, and no choosing between two downloads. It is signed and notarized by Apple, so Gatekeeper opens it without the unidentified-developer warning that unsigned downloads trigger. It is a desktop app: there is no iPhone or iPad version and nothing to log into in a browser. Cyanote is also available for Windows 10 and later, sold on the Microsoft Store for $7.99 as a separate purchase from the Mac version. The Mac version is not on the Mac App Store — it is sold directly, which is part of what makes a one-time price and a no-account design possible.</p></details>
@@ -589,10 +469,6 @@
       <details><summary>How is it different from Notion, Paste or Apple Notes?</summary><p>Against Notion: Cyanote opens instantly, works with the wifi off, needs no account, and includes a clipboard manager — Notion is more powerful, collaborative and cross-platform, and free for one person, so if you work with other people it wins outright. Against Paste and the other Mac clipboard managers: several are better at being a clipboard manager alone and several cost less, but none of them holds your notes, to-dos, calendar and habits in the same window. Against Apple Notes: Cyanote adds tasks, a board, a calendar, habits, routines and clipboard history, and stores everything in one file you can move; Apple Notes is free, syncs to your phone and is already installed. Each of these is argued at length, with prices and with the cases where the other app is the better buy, on the <a href="/compare/">comparison pages</a>.</p></details>
     </div>
     <p style="text-align:center;color:var(--muted);font-size:.93rem;margin-top:26px">
-      <!-- Underlined, not just tinted. This link sits inside muted grey text, and
-           colour alone put only 1.03:1 between the two — invisible as a link to
-           anyone who does not separate those hues. Every other link in running
-           text on this site is underlined; this one was the exception. -->
       Still wondering something? Email <a href="mailto:support@cyanote.app" style="color:var(--accent);text-decoration:underline;text-underline-offset:2px">support@cyanote.app</a>.
     </p>
   </div>
@@ -605,8 +481,6 @@
     <p class="lede" data-plat="windows">$7.99 once, on the Microsoft Store.</p>
     <p class="lede" data-plat="mobile">$7.99 once, on your Mac or Windows PC. No subscription, no account.</p>
     <div class="hero-cta" data-plat="mac">
-      <!-- The last thing on the page, for someone who has read all of it: send
-           them to checkout, not back up to a price they have already seen. -->
       <a class="btn btn-primary plat-btn plat-btn-mac" aria-label="Download Cyanote for Mac — $7.99 (macOS 12 or later)" data-cta="final" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
         <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
         <span class="btn-label"><span class="pb-small">macOS 12 or later</span><span class="pb-big">Download for Mac — $7.99</span></span></a>
@@ -713,6 +587,22 @@
       }
     });
   });
+</script>
+<script>
+  // On a phone the hero's first button is "Try the demo", and the floating
+  // "Try it" sat right under it saying the same thing. The floating one steps
+  // aside while the hero button is on screen and comes back once it scrolls
+  // away — further down, the price card and closing section still show a
+  // phone an inert label, so the floating button is the only way to /try/.
+  // Off a phone the hero button is display:none, never intersects, and nothing
+  // changes. Without IntersectionObserver both buttons simply stay.
+  (function () {
+    var el = document.getElementById('hero-try');
+    if (!el || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (entries) {
+      document.documentElement.classList.toggle('hero-try-on', entries[0].isIntersecting);
+    }).observe(el);
+  })();
 </script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
 <script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
