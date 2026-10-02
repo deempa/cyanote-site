@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>Page not found — Cyanote</title>
+<!-- No canonical, no JSON-LD, no sitemap entry: GitHub Pages serves this file
+     for every missing path, so it must never claim a URL of its own. Every
+     href and src is root-absolute for the same reason — a relative one breaks
+     as soon as the missing path is more than one level deep. -->
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<script>
+  // Same platform check the homepage does, and for the same reason: this page
+  // carries a Buy button, and a Windows machine should never be offered a .dmg.
+  // Inline because an external file would be a round trip before first paint.
+  // If it does not run, no class is set and the Mac layout stands — which is
+  // what the CSS falls back to anyway.
+  (function () {
+    var n = navigator, ua = n.userAgent, uad = n.userAgentData;
+    var platform = (uad && uad.platform) || n.platform || '';
+    var tablet = /iPad/.test(ua) || (/Mac/i.test(platform) && n.maxTouchPoints > 1);
+    var phone = (uad && uad.mobile === true) || /iPhone|iPod|Android/i.test(ua);
+    var plat = (phone || tablet) ? 'mobile'
+             : (/Win/i.test(platform) || /Windows/i.test(ua)) ? 'windows' : 'mac';
+    document.documentElement.classList.add('plat-' + plat);
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="/"><img src="/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <div class="links">
+    <a href="/#features">Features</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/blog/">Blog</a>
+    <a href="/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" title="Menu"><span class="sr-only">Menu</span>
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+
+<!-- The pricing page's layout (blogwrap + .post) rather than the legal pages'
+     .doc: .post is the context whose link styles leave buttons alone, and the
+     buy block below is copied verbatim from /pricing/. -->
+<main id="main" class="blogwrap" style="padding-top:40px;padding-bottom:88px">
+  <header class="blog-head">
+    <h1>This page isn't here.</h1>
+    <p>The link may be old, or the address mistyped.</p>
+  </header>
+
+  <div class="post">
+    <p><a href="/">Go to the homepage</a></p>
+
+    <h2>Popular reading</h2>
+    <ul>
+      <li><a href="/blog/clipboard-history-on-mac/">How to see clipboard history on a Mac</a></li>
+      <li><a href="/blog/notes-app-without-an-account/">A notes app that never asks you to sign up</a></li>
+      <li><a href="/blog/leaving-evernote/">Leaving Evernote, fifteen years later</a></li>
+    </ul>
+
+      <div id="buy" class="price" style="margin-top:34px">
+        <div class="amt">$7.99<span> once</span></div>
+        <!-- Two separate purchases, one per computer: the Mac copy is sold
+             here, the Windows copy on the Microsoft Store. -->
+        <div class="buy-paths" data-plat="desktop" style="margin-top:30px">
+          <div class="buy-path">
+            <a class="btn btn-primary plat-btn plat-btn-mac" aria-label="Download Cyanote for Mac — $7.99 (macOS 12 or later)" target="_blank" rel="noopener" href="https://cyanote.lemonsqueezy.com/checkout/buy/61a2d3e6-2ac6-418d-8616-57209ada2075">
+              <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+              <span class="btn-label"><span class="pb-small">macOS 12 or later</span><span class="pb-big">Download for Mac — $7.99</span></span></a>
+          </div>
+          <div class="buy-path">
+            <a class="btn plat-btn plat-btn-win" target="_blank" rel="noopener" href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7" aria-label="Download Cyanote for Windows from the Microsoft Store — $7.99" title="Download Cyanote for Windows from the Microsoft Store — $7.99">
+              <svg class="glyph-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8.6v8.6H3zM12.4 3H21v8.6h-8.4zM3 12.4h8.6V21H3zM12.4 12.4H21V21h-8.4z"/></svg>
+              <span class="btn-label"><span class="pb-small">Windows 10 or later</span><span class="pb-big">Download for Windows — $7.99</span></span></a>
+          </div>
+        </div>
+        <div data-plat="mobile">
+          <span class="btn btn-inert">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+            <span class="btn-label">For Mac and Windows computers</span></span>
+          <p class="fineprint">Open this page on your Mac or Windows PC to buy — the app runs on a computer, not a phone.</p>
+        </div>
+      </div>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h3>Product</h3><ul>
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h3>Resources</h3><ul>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/terms.html">Terms</a></li>
+      <li><a href="/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h3>Download</h3><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>

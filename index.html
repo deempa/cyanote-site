@@ -4,6 +4,7 @@
 <script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
 <meta name="color-scheme" content="light" />
 <title>Cyanote — Notes, Tasks, Habits &amp; a Clipboard Manager for Mac and Windows</title>
 <!-- Kept under 160 characters. The previous one ran to 221, so Google cut it at
@@ -268,7 +269,7 @@
 
 <nav aria-label="Main"><div class="wrap">
   <a class="brand" href="#"><img src="favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
   <div class="links">
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
@@ -286,7 +287,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg>
       <span class="btn-label">Get Cyanote — $7.99</span></a>
   </div>
-  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+  <label for="nav-toggle" class="nav-toggle-btn" title="Menu"><span class="sr-only">Menu</span>
     <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
   </label>

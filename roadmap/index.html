@@ -4,6 +4,7 @@
 <script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
 <title>Roadmap — Cyanote</title>
 <meta name="description" content="What I am building in Cyanote right now, what has already shipped, and a place to report a bug or ask for a feature." />
 <meta name="robots" content="index,follow" />
@@ -25,13 +26,39 @@
 <meta name="twitter:title" content="Roadmap — Cyanote" />
 <meta name="twitter:description" content="What I am building right now, and what has already shipped." />
 <meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<!-- Same shape as /pricing/: a WebPage pointing at the homepage's WebSite,
+     SoftwareApplication and Organization by @id, plus its breadcrumb. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://cyanote.app/roadmap/#page",
+  "url": "https://cyanote.app/roadmap/",
+  "name": "Roadmap",
+  "description": "What I am building in Cyanote right now, what has already shipped, and a place to report a bug or ask for a feature.",
+  "inLanguage": "en",
+  "isPartOf": { "@id": "https://cyanote.app/#website" },
+  "about": { "@id": "https://cyanote.app/#app" },
+  "publisher": { "@id": "https://cyanote.app/#organization" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Cyanote", "item": "https://cyanote.app/" },
+    { "@type": "ListItem", "position": 2, "name": "Roadmap" }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <nav aria-label="Main"><div class="wrap">
   <a class="brand" href="/"><img src="/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
   <div class="links">
     <a href="/#features">Features</a>
     <a href="/#pricing">Pricing</a>
@@ -44,7 +71,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
       <span class="btn-label">Get Cyanote — $7.99</span></a>
   </div>
-  <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu" title="Menu">
+  <label for="nav-toggle" class="nav-toggle-btn" title="Menu"><span class="sr-only">Menu</span>
     <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
   </label>

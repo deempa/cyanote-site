@@ -4,6 +4,7 @@
 <script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
 <title>Changelog — Cyanote</title>
 <meta name="description" content="Every release of Cyanote for Mac and what changed in it, with the date each version shipped." />
 <meta name="robots" content="index,follow" />
@@ -30,18 +31,23 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <nav aria-label="Main"><div class="wrap">
-  <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <a class="brand" href="/"><img src="favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
   <div class="links">
-    <a href="index.html#features">Features</a>
-    <a href="index.html#pricing">Pricing</a>
+    <a href="/#features">Features</a>
+    <a href="/#pricing">Pricing</a>
     <a href="/blog/">Blog</a>
     <a href="changelog.html" aria-current="page">Changelog</a>
   </div>
   <div class="right">
-    <a class="btn btn-primary btn-sm" data-cta="nav" href="index.html#pricing">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="/#pricing">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
       <span class="btn-label">Get Cyanote — $7.99</span></a>
   </div>
+  <label for="nav-toggle" class="nav-toggle-btn" title="Menu"><span class="sr-only">Menu</span>
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
   <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
     <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
     <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
@@ -143,8 +149,8 @@
       <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
     </div>
     <div><h3>Product</h3><ul>
-      <li><a href="index.html#features">Features</a></li>
-      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
       <li><a href="changelog.html">Changelog</a></li>
     </ul></div>
     <div><h3>Resources</h3><ul>
@@ -157,7 +163,7 @@
       </li>
     </ul></div>
     <div><h3>Download</h3><ul>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="index.html#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="/#pricing">macOS</a></li>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
     </ul></div>
   </div>
