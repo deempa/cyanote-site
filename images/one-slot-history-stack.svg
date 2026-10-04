@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" role="img" aria-labelledby="oss-title oss-desc">
+  <title id="oss-title">One slot, a history, and a stack</title>
+  <desc id="oss-desc">Copy three things in a row: an address, a link and a reference number. The plain Mac clipboard has one slot, so only the reference number is left. A clipboard history keeps all three, newest first, and you pick whichever you want in any order. A paste stack keeps all three in the order you copied them and pastes them out one after another with repeated presses of Command V.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .gone { font-size: 18px; fill: #a3a7af; text-decoration: line-through; }
+    .note { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .row  { fill: #f4f4f5; }
+    .hot  { fill: #e3f1fa; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+
+  <text class="note" x="24" y="40">You copy, in this order:  1. an address   2. a link   3. a reference number</text>
+
+  <!-- One slot -->
+  <rect class="card" x="24" y="64" width="368" height="330" rx="12"/>
+  <rect x="24" y="64" width="368" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="52" y="112">The clipboard on its own</text>
+  <text class="note" x="52" y="140">One slot. Each copy replaces the last.</text>
+  <rect class="row" x="52" y="162" width="312" height="44" rx="6"/>
+  <text class="gone" x="68" y="190">1. the address</text>
+  <rect class="row" x="52" y="214" width="312" height="44" rx="6"/>
+  <text class="gone" x="68" y="242">2. the link</text>
+  <rect class="hot" x="52" y="266" width="312" height="44" rx="6"/>
+  <text class="item" x="68" y="294">3. the reference number</text>
+  <text class="note" x="52" y="346">&#8984;V gives you 3. The other two</text>
+  <text class="note" x="52" y="370">are gone for good.</text>
+
+  <!-- History -->
+  <rect class="card" x="416" y="64" width="368" height="330" rx="12"/>
+  <rect x="416" y="64" width="368" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="444" y="112">A clipboard history</text>
+  <text class="note" x="444" y="140">Every copy kept, newest at the top.</text>
+  <rect class="hot" x="444" y="162" width="312" height="44" rx="6"/>
+  <text class="item" x="460" y="190">3. the reference number</text>
+  <rect class="hot" x="444" y="214" width="312" height="44" rx="6"/>
+  <text class="item" x="460" y="242">2. the link</text>
+  <rect class="hot" x="444" y="266" width="312" height="44" rx="6"/>
+  <text class="item" x="460" y="294">1. the address</text>
+  <text class="note" x="444" y="346">Open the list, pick any one,</text>
+  <text class="note" x="444" y="370">in any order, as often as you like.</text>
+
+  <!-- Stack -->
+  <rect class="card" x="808" y="64" width="368" height="330" rx="12"/>
+  <rect x="808" y="64" width="368" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="836" y="112">A paste stack</text>
+  <text class="note" x="836" y="140">Copies queued in the order you made them.</text>
+  <rect class="hot" x="836" y="162" width="312" height="44" rx="6"/>
+  <text class="item" x="852" y="190">1st &#8984;V &#8594; the address</text>
+  <rect class="hot" x="836" y="214" width="312" height="44" rx="6"/>
+  <text class="item" x="852" y="242">2nd &#8984;V &#8594; the link</text>
+  <rect class="hot" x="836" y="266" width="312" height="44" rx="6"/>
+  <text class="item" x="852" y="294">3rd &#8984;V &#8594; the reference</text>
+  <text class="note" x="836" y="346">Built for filling in a form, one field</text>
+  <text class="note" x="836" y="370">after another. Used up as it goes.</text>
+
+  <text class="foot" x="24" y="440">A history is for getting things back. A stack is for moving a batch, in order, once.</text>
+</svg>
