@@ -30,7 +30,7 @@ does not suit teams, real-time collaboration or reading notes on a phone.
 - Individual notes can be locked with a password.
 - Works fully offline, permanently — including if this website stops existing.
 - Windows: Cyanote for Windows (Windows 10 or later) is sold on the Microsoft Store for $7.99 at https://apps.microsoft.com/detail/9N54ZL3Q8PR7. It is a separate purchase from the Mac version — buying one does not include the other. The Store edition has no licence key and makes neither the licence activation nor the update check above; Microsoft delivers its updates. The Mac-specific facts above (notarization, `~/Library/Application Support/`, Time Machine, the Lemon Squeezy refund) describe the Mac version.
-- Current version: 1.1.0
+- Current version: 1.2.0
 
 ## Features
 
