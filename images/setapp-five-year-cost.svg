@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-labelledby="sa-title sa-desc">
+  <title id="sa-title">Five years of Setapp against buying the same kind of apps directly</title>
+  <desc id="sa-desc">Cumulative cost over five years at prices listed on 5 October 2026, before tax. Three subscription apps bought directly (NotePlan, Ulysses and Paste, all on yearly plans) cost $168.98 a year, reaching $844.90 after five years. Setapp's Mac plan billed yearly costs $107.88 a year, reaching $539.40. Three apps sold once (2Do, BusyCal and CleanShot X) cost $134.98 up front; with CleanShot's optional $19 update renewal every year after the first, the total reaches $210.98 after five years.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .note { font-size: 17px; fill: #71757e; }
+    .axis { font-size: 17px; fill: #71757e; }
+    .grid { stroke: #e6e6e9; stroke-width: 2; }
+    .lbl  { font-size: 18px; font-weight: 600; }
+    .val  { font-size: 17px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="20" width="1152" height="500" rx="12"/>
+  <text class="h" x="56" y="66">Cumulative cost, years one to five</text>
+  <text class="note" x="56" y="94">List prices on 5 October 2026, before tax, held flat. Prices do change: Setapp's went up in June 2026.</text>
+
+  <!-- grid: $0 at y=450, $900 at y=150 (1px = $3) -->
+  <line class="grid" x1="120" y1="450" x2="860" y2="450"/>
+  <line class="grid" x1="120" y1="350" x2="860" y2="350"/>
+  <line class="grid" x1="120" y1="250" x2="860" y2="250"/>
+  <line class="grid" x1="120" y1="150" x2="860" y2="150"/>
+  <text class="axis" x="104" y="456" text-anchor="end">$0</text>
+  <text class="axis" x="104" y="356" text-anchor="end">$300</text>
+  <text class="axis" x="104" y="256" text-anchor="end">$600</text>
+  <text class="axis" x="104" y="156" text-anchor="end">$900</text>
+
+  <text class="axis" x="180" y="482" text-anchor="middle">Year 1</text>
+  <text class="axis" x="340" y="482" text-anchor="middle">Year 2</text>
+  <text class="axis" x="500" y="482" text-anchor="middle">Year 3</text>
+  <text class="axis" x="660" y="482" text-anchor="middle">Year 4</text>
+  <text class="axis" x="820" y="482" text-anchor="middle">Year 5</text>
+
+  <!-- Subscriptions bought directly: 168.98/yr -->
+  <polyline points="180,393.7 340,337.3 500,281.0 660,224.7 820,168.4" fill="none" stroke="#3d3f45" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#3d3f45"><circle cx="180" cy="393.7" r="6"/><circle cx="340" cy="337.3" r="6"/><circle cx="500" cy="281.0" r="6"/><circle cx="660" cy="224.7" r="6"/><circle cx="820" cy="168.4" r="6"/></g>
+
+  <!-- Setapp Mac, yearly: 107.88/yr -->
+  <polyline points="180,414.0 340,378.1 500,342.1 660,306.2 820,270.2" fill="none" stroke="#0e7cc4" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#0e7cc4"><circle cx="180" cy="414.0" r="6"/><circle cx="340" cy="378.1" r="6"/><circle cx="500" cy="342.1" r="6"/><circle cx="660" cy="306.2" r="6"/><circle cx="820" cy="270.2" r="6"/></g>
+
+  <!-- Bought once: 134.98, then +19/yr optional -->
+  <polyline points="180,405.0 340,398.7 500,392.3 660,386.0 820,379.7" fill="none" stroke="#a3a7af" stroke-width="4" stroke-dasharray="10 7" stroke-linejoin="round"/>
+  <g fill="#a3a7af"><circle cx="180" cy="405.0" r="6"/><circle cx="340" cy="398.7" r="6"/><circle cx="500" cy="392.3" r="6"/><circle cx="660" cy="386.0" r="6"/><circle cx="820" cy="379.7" r="6"/></g>
+
+  <!-- end labels -->
+  <text class="lbl" x="890" y="166" fill="#3d3f45">Three subscriptions, direct</text>
+  <text class="val" x="890" y="190">NotePlan, Ulysses, Paste</text>
+  <text class="val" x="890" y="214">$844.90</text>
+
+  <text class="lbl" x="890" y="268" fill="#0e7cc4">Setapp Mac, billed yearly</text>
+  <text class="val" x="890" y="292">$107.88 a year</text>
+  <text class="val" x="890" y="316">$539.40</text>
+
+  <text class="lbl" x="890" y="372" fill="#71757e">Three apps sold once</text>
+  <text class="val" x="890" y="396">2Do, BusyCal, CleanShot X</text>
+  <text class="val" x="890" y="420">$134.98, plus optional</text>
+  <text class="val" x="890" y="444">update renewals · $210.98</text>
+</svg>
