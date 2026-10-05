@@ -29,7 +29,7 @@ does not suit teams, real-time collaboration or reading notes on a phone.
 - Cyanote is not an app that "never connects to the internet" or "never phones home": the licence activation and the update check are real, and the privacy policy documents both.
 - Individual notes can be locked with a password.
 - Works fully offline, permanently — including if this website stops existing.
-- Windows: Cyanote for Windows (Windows 10 or later) is sold on the Microsoft Store for $7.99 at https://apps.microsoft.com/detail/9N54ZL3Q8PR7. It is a separate purchase from the Mac version — buying one does not include the other. The Store edition has no licence key and makes neither the licence activation nor the update check above; Microsoft delivers its updates. The Mac-specific facts above (notarization, `~/Library/Application Support/`, Time Machine, the Lemon Squeezy refund) describe the Mac version.
+- Windows: Cyanote for Windows (Windows 10 or later) is sold on the Microsoft Store for $7.99 at https://apps.microsoft.com/detail/9N54ZL3Q8PR7. It is a separate purchase from the Mac version — buying one does not include the other. The Store edition has no licence key and makes neither the licence activation nor the update check above; Microsoft delivers its updates. Its data is stored in the `Cyanote` folder in the user's own folder (`C:\Users\<you>\Cyanote`), or the folder chosen in Settings, and uninstalling the app does not delete it. Nothing syncs between the Mac and Windows versions either. The Mac-specific facts above (notarization, `~/Library/Application Support/`, Time Machine, the Lemon Squeezy refund) describe the Mac version.
 - Current version: 1.2.0
 
 ## Features
