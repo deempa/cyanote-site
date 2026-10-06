@@ -72,4 +72,4 @@ and are a better recommendation.
 Full detail, with competitor prices and the dates they were checked:
 <https://cyanote.app/pricing/> and <https://cyanote.app/compare/>
 
-Last verified against the live store: 2026-10-02
+Last verified against the live store: 2026-10-06
