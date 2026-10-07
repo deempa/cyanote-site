@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="hd-title hd-desc">
+  <title id="hd-title">Where each Mac habit tracker keeps your record</title>
+  <desc id="hd-desc">Three groups. On your own computer, with no account: Cyanote, in one database file on your disk. In your Apple account: Streaks, which syncs through iCloud with no separate sign-up. On the developer's servers, behind an account: Habitify, Lunatask, which encrypts on your device before upload, and Notion.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .col  { fill: #f6f7f9; stroke: #e6e6e9; stroke-width: 2; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .note { font-size: 17px; fill: #71757e; }
+    .ch   { font-size: 20px; font-weight: 600; }
+    .sub  { font-size: 16px; fill: #71757e; }
+    .app  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .det  { font-size: 16px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="20" width="1152" height="480" rx="12"/>
+  <text class="h" x="56" y="66">Where the record of your habits lives</text>
+  <text class="note" x="56" y="94">Habit trackers on a Mac, checked against developers' pages and App Store listings, 7 October 2026.</text>
+
+  <rect class="col" x="56" y="124" width="344" height="344" rx="10"/>
+  <rect x="56" y="124" width="344" height="6" rx="3" fill="#0e7cc4"/>
+  <text class="ch" x="80" y="166" fill="#0e7cc4">On your own computer</text>
+  <text class="sub" x="80" y="190">No account to make</text>
+  <text class="app" x="80" y="240">Cyanote</text>
+  <text class="det" x="80" y="264">One database file on your disk</text>
+  <text class="det" x="80" y="286">No sync, no phone app</text>
+  <text class="det" x="80" y="336">Habits sit next to your notes,</text>
+  <text class="det" x="80" y="358">tasks and calendar</text>
+
+  <rect class="col" x="428" y="124" width="344" height="344" rx="10"/>
+  <rect x="428" y="124" width="344" height="6" rx="3" fill="#3d3f45"/>
+  <text class="ch" x="452" y="166" fill="#3d3f45">In your Apple account</text>
+  <text class="sub" x="452" y="190">Sync through iCloud, no new sign-up</text>
+  <text class="app" x="452" y="240">Streaks</text>
+  <text class="det" x="452" y="264">Syncs across iPhone, Watch,</text>
+  <text class="det" x="452" y="286">iPad and Mac through iCloud</text>
+  <text class="det" x="452" y="308">Privacy label: crash data only</text>
+
+  <rect class="col" x="800" y="124" width="344" height="344" rx="10"/>
+  <rect x="800" y="124" width="344" height="6" rx="3" fill="#a3a7af"/>
+  <text class="ch" x="824" y="166" fill="#71757e">On the developer's servers</text>
+  <text class="sub" x="824" y="190">An account comes first</text>
+  <text class="app" x="824" y="240">Habitify</text>
+  <text class="det" x="824" y="264">Own sync: Mac, iPhone, Android, web</text>
+  <text class="app" x="824" y="314">Lunatask</text>
+  <text class="det" x="824" y="338">End-to-end encrypted before</text>
+  <text class="det" x="824" y="360">upload, stored in AWS (Virginia)</text>
+  <text class="app" x="824" y="410">Notion</text>
+  <text class="det" x="824" y="434">Your workspace, on Notion's cloud</text>
+</svg>
