@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-labelledby="tc-title tc-desc">
+  <title id="tc-title">What one purchase of each to-do app covers</title>
+  <desc id="tc-desc">Which devices one purchase covers, from each developer's pages and the US App Store on 8 October 2026. Things 3 at $49.99 covers the Mac; iPhone is $9.99 more and iPad $19.99 more; there is no Windows or web app. OmniFocus 4 Standard at $74.99 covers Mac, iPhone and iPad; the web version is a $49.99 a year add-on; no Windows app. GoodTask at $39.99 covers the Mac; iPhone and iPad are a separate purchase; no Windows or web app. Apple Reminders is free on Mac, iPhone and iPad and works on iCloud.com; no Windows app. Cyanote at $7.99 covers the Mac; Windows is a separate $7.99 purchase on the Microsoft Store; there is no iPhone, iPad or web app.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card  { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .h     { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .note  { font-size: 17px; fill: #71757e; }
+    .col   { font-size: 17px; font-weight: 600; fill: #71757e; }
+    .lbl   { font-size: 18px; font-weight: 600; fill: #3d3f45; }
+    .yes   { font-size: 16px; font-weight: 600; fill: #0b649e; }
+    .extra { font-size: 16px; fill: #3d3f45; }
+    .no    { font-size: 16px; fill: #a3a7af; }
+  </style>
+
+  <rect class="card" x="24" y="20" width="1152" height="500" rx="12"/>
+  <text class="h" x="56" y="66">What one purchase covers</text>
+  <text class="note" x="56" y="94">Developers' own pages and the US App Store, 8 October 2026. "+" is a separate purchase on top.</text>
+  <text class="col" x="488" y="134" text-anchor="middle">Mac</text>
+  <text class="col" x="632" y="134" text-anchor="middle">iPhone</text>
+  <text class="col" x="776" y="134" text-anchor="middle">iPad</text>
+  <text class="col" x="920" y="134" text-anchor="middle">Windows</text>
+  <text class="col" x="1064" y="134" text-anchor="middle">Web</text>
+  <text class="lbl" x="56" y="183">Things 3, $49.99</text>
+  <rect x="420" y="158" width="136" height="40" rx="6" fill="#e3f0f9"/>
+  <text class="yes" x="488" y="184" text-anchor="middle">Included</text>
+  <rect x="564" y="158" width="136" height="40" rx="6" fill="#f1f1f3"/>
+  <text class="extra" x="632" y="184" text-anchor="middle">+ $9.99</text>
+  <rect x="708" y="158" width="136" height="40" rx="6" fill="#f1f1f3"/>
+  <text class="extra" x="776" y="184" text-anchor="middle">+ $19.99</text>
+  <rect x="852" y="158" width="136" height="40" rx="6" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="no" x="920" y="184" text-anchor="middle">No app</text>
+  <rect x="996" y="158" width="136" height="40" rx="6" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="no" x="1064" y="184" text-anchor="middle">No app</text>
+  <text class="lbl" x="56" y="247">OmniFocus 4 Standard, $74.99</text>
+  <rect x="420" y="222" width="136" height="40" rx="6" fill="#e3f0f9"/>
+  <text class="yes" x="488" y="248" text-anchor="middle">Included</text>
+  <rect x="564" y="222" width="136" height="40" rx="6" fill="#e3f0f9"/>
+  <text class="yes" x="632" y="248" text-anchor="middle">Included</text>
+  <rect x="708" y="222" width="136" height="40" rx="6" fill="#e3f0f9"/>
+  <text class="yes" x="776" y="248" text-anchor="middle">Included</text>
+  <rect x="852" y="222" width="136" height="40" rx="6" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="no" x="920" y="248" text-anchor="middle">No app</text>
+  <rect x="996" y="222" width="136" height="40" rx="6" fill="#f1f1f3"/>
+  <text class="extra" x="1064" y="248" text-anchor="middle">+ $49.99/yr</text>
+  <text class="lbl" x="56" y="311">GoodTask, $39.99</text>
+  <rect x="420" y="286" width="136" height="40" rx="6" fill="#e3f0f9"/>
+  <text class="yes" x="488" y="312" text-anchor="middle">Included</text>
+  <rect x="564" y="286" width="136" height="40" rx="6" fill="#f1f1f3"/>
+  <text class="extra" x="632" y="312" text-anchor="middle">+ separate</text>
+  <rect x="708" y="286" width="136" height="40" rx="6" fill="#f1f1f3"/>
+  <text class="extra" x="776" y="312" text-anchor="middle">+ separate</text>
+  <rect x="852" y="286" width="136" height="40" rx="6" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="no" x="920" y="312" text-anchor="middle">No app</text>
+  <rect x="996" y="286" width="136" height="40" rx="6" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="no" x="1064" y="312" text-anchor="middle">No app</text>
+  <text class="lbl" x="56" y="375">Apple Reminders, free</text>
+  <rect x="420" y="350" width="136" height="40" rx="6" fill="#e3f0f9"/>
+  <text class="yes" x="488" y="376" text-anchor="middle">Free</text>
+  <rect x="564" y="350" width="136" height="40" rx="6" fill="#e3f0f9"/>
+  <text class="yes" x="632" y="376" text-anchor="middle">Free</text>
+  <rect x="708" y="350" width="136" height="40" rx="6" fill="#e3f0f9"/>
+  <text class="yes" x="776" y="376" text-anchor="middle">Free</text>
+  <rect x="852" y="350" width="136" height="40" rx="6" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="no" x="920" y="376" text-anchor="middle">No app</text>
+  <rect x="996" y="350" width="136" height="40" rx="6" fill="#f1f1f3"/>
+  <text class="extra" x="1064" y="376" text-anchor="middle">iCloud.com</text>
+  <text class="lbl" x="56" y="439">Cyanote, $7.99</text>
+  <rect x="420" y="414" width="136" height="40" rx="6" fill="#e3f0f9"/>
+  <text class="yes" x="488" y="440" text-anchor="middle">Included</text>
+  <rect x="564" y="414" width="136" height="40" rx="6" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="no" x="632" y="440" text-anchor="middle">No app</text>
+  <rect x="708" y="414" width="136" height="40" rx="6" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="no" x="776" y="440" text-anchor="middle">No app</text>
+  <rect x="852" y="414" width="136" height="40" rx="6" fill="#f1f1f3"/>
+  <text class="extra" x="920" y="440" text-anchor="middle">+ $7.99</text>
+  <rect x="996" y="414" width="136" height="40" rx="6" fill="#ffffff" stroke="#e6e6e9" stroke-width="2"/>
+  <text class="no" x="1064" y="440" text-anchor="middle">No app</text>
+  <text class="note" x="56" y="502">Cyanote for Windows is sold on the Microsoft Store and doesn't sync with the Mac app.</text>
+</svg>

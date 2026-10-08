@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-labelledby="td-title td-desc">
+  <title id="td-title">What three years of a to-do app costs on a Mac</title>
+  <desc id="td-desc">Three-year cost for one person on one Mac at list prices on 8 October 2026, before tax. Apple Reminders is free. Cyanote costs $7.99 once, TaskPaper $24.99 once, GoodTask $39.99 once, Things 3 $49.99 once, 2Do $49.99 once, and OmniFocus 4 Standard $74.99 once. TickTick Premium at $49.99 a year comes to $149.97, Todoist Pro at $60 a year comes to $180, and the OmniFocus Subscription at $99.99 a year comes to $299.97.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .note { font-size: 17px; fill: #71757e; }
+    .lbl  { font-size: 18px; font-weight: 600; fill: #3d3f45; }
+    .val  { font-size: 17px; fill: #3d3f45; }
+    .grid { stroke: #e6e6e9; stroke-width: 2; }
+  </style>
+
+  <rect class="card" x="24" y="20" width="1152" height="600" rx="12"/>
+  <text class="h" x="56" y="66">Three years of a to-do app on one Mac, one person</text>
+  <text class="note" x="56" y="94">List prices on 8 October 2026, before tax, held flat. Blue: pay once. Dark: subscription, billed yearly.</text>
+  <line class="grid" x1="400" y1="136" x2="400" y2="570"/>
+  <text class="lbl" x="380" y="168" text-anchor="end">Apple Reminders</text>
+  <rect x="400" y="150" width="4.0" height="26" rx="4" fill="#a3a7af"/>
+  <text class="val" x="418.0" y="169">$0, built in</text>
+  <text class="lbl" x="380" y="210" text-anchor="end">Cyanote</text>
+  <rect x="400" y="192" width="14.4" height="26" rx="4" fill="#0e7cc4"/>
+  <text class="val" x="428.4" y="211">$7.99 once</text>
+  <text class="lbl" x="380" y="252" text-anchor="end">TaskPaper</text>
+  <rect x="400" y="234" width="45.0" height="26" rx="4" fill="#0e7cc4"/>
+  <text class="val" x="459.0" y="253">$24.99 once</text>
+  <text class="lbl" x="380" y="294" text-anchor="end">GoodTask</text>
+  <rect x="400" y="276" width="72.0" height="26" rx="4" fill="#0e7cc4"/>
+  <text class="val" x="486.0" y="295">$39.99 once</text>
+  <text class="lbl" x="380" y="336" text-anchor="end">Things 3</text>
+  <rect x="400" y="318" width="90.0" height="26" rx="4" fill="#0e7cc4"/>
+  <text class="val" x="504.0" y="337">$49.99 once</text>
+  <text class="lbl" x="380" y="378" text-anchor="end">2Do</text>
+  <rect x="400" y="360" width="90.0" height="26" rx="4" fill="#0e7cc4"/>
+  <text class="val" x="504.0" y="379">$49.99 once</text>
+  <text class="lbl" x="380" y="420" text-anchor="end">OmniFocus 4 Standard</text>
+  <rect x="400" y="402" width="135.0" height="26" rx="4" fill="#0e7cc4"/>
+  <text class="val" x="549.0" y="421">$74.99 once</text>
+  <text class="lbl" x="380" y="462" text-anchor="end">TickTick Premium</text>
+  <rect x="400" y="444" width="269.9" height="26" rx="4" fill="#3d3f45"/>
+  <text class="val" x="683.9" y="463">$49.99 a year · $149.97</text>
+  <text class="lbl" x="380" y="504" text-anchor="end">Todoist Pro</text>
+  <rect x="400" y="486" width="324.0" height="26" rx="4" fill="#3d3f45"/>
+  <text class="val" x="738.0" y="505">$60 a year · $180</text>
+  <text class="lbl" x="380" y="546" text-anchor="end">OmniFocus Subscription</text>
+  <rect x="400" y="528" width="539.9" height="26" rx="4" fill="#3d3f45"/>
+  <text class="val" x="953.9" y="547">$99.99 a year · $299.97</text>
+  <text class="note" x="56" y="602">Mac only. Things on iPhone ($9.99) and iPad ($19.99) are separate purchases; OmniFocus 4 covers all Apple devices.</text>
+</svg>
