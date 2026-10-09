@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>Are Apple Notes encrypted? Standard, ADP and locked notes</title>
+<meta name="description" content="Apple Notes are encrypted, but Apple holds the keys by default. What Advanced Data Protection changes, what a locked note adds, and what neither covers." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/are-apple-notes-encrypted/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/are-apple-notes-encrypted/" />
+<meta property="og:title" content="Are Apple Notes encrypted? Standard, ADP and locked notes" />
+<meta property="og:description" content="Apple Notes are encrypted, but Apple holds the keys by default. What Advanced Data Protection changes, what a locked note adds, and what neither covers." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Are Apple Notes encrypted? Standard, ADP and locked notes" />
+<meta name="twitter:description" content="Apple Notes are encrypted, but Apple holds the keys by default. What Advanced Data Protection changes, what a locked note adds, and what neither covers." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Are Apple Notes encrypted? What Apple can and cannot read",
+  "description": "Apple Notes are encrypted, but Apple holds the keys by default. What Advanced Data Protection changes, what a locked note adds, and what neither covers.",
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/are-apple-notes-encrypted/"
+  },
+  "url": "https://cyanote.app/blog/are-apple-notes-encrypted/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/apple-notes-who-can-read.svg",
+      "width": 1200,
+      "height": 624
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Privacy, Notes, macOS",
+  "wordCount": 2344
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Are Apple Notes encrypted? What Apple can and cannot read",
+      "item": "https://cyanote.app/blog/are-apple-notes-encrypted/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-10-09" />
+<meta property="article:modified_time" content="2026-10-09" />
+<meta property="article:author" content="Cyanote" />
+<meta property="article:tag" content="Privacy" />
+<meta property="article:tag" content="Notes" />
+<meta property="article:tag" content="macOS" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" title="Menu"><span class="sr-only">Menu</span>
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<main class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Are Apple Notes encrypted? What Apple can and cannot read</h1>
+      <div class="meta">
+        <span>By Cyanote</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-10-09">9 October 2026</time></span>
+        <span class="dot">·</span>
+        <span>11 min read</span>
+      </div>
+    <ul class="tags"><li>Privacy</li><li>Notes</li><li>macOS</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Yes, Apple Notes are encrypted, but on the default settings Apple holds the keys and can decrypt them. Apple's <a href="https://support.apple.com/en-us/102651">iCloud data security overview</a> lists Notes under Standard Data Protection as encrypted "in transit &amp; on server", with the keys held by Apple. Your notes become end-to-end encrypted, unreadable to Apple, in only two cases. One is turning on Advanced Data Protection for your whole iCloud account. The other is locking an individual note with a password.</p>
+      <p>Only the second, the locked note, also protects it from someone using your Mac while it's unlocked. And a note kept <a href="https://cyanote.app/blog/icloud-notes-explained/">"On My Mac"</a> never reaches Apple at all. Most of the confusion comes from these being four separate answers that people treat as one.</p>
+      <p>I make Cyanote, a notes app that stores everything on your own disk, so I have an obvious angle here. Apple Notes is a good app with strong encryption options. What follows is what each setting actually does, checked against Apple's own documentation on 9 October 2026.</p>
+      <h2 id="the-short-version">The short version</h2>
+      <ul><li><strong>Default iCloud notes are encrypted, but not end-to-end.</strong> Under Standard Data Protection, Apple's <a href="https://support.apple.com/en-us/102651">overview</a> says it "can decrypt your data on your behalf whenever you need it."</li><li><strong>Advanced Data Protection makes iCloud notes end-to-end encrypted.</strong> It is optional and off unless you turn it on. It needs every device on your account updated and a recovery contact or recovery key, and Apple <a href="https://support.apple.com/en-us/122234">no longer offers it to new users in the UK</a>.</li><li><strong>A locked note is end-to-end encrypted under either setting.</strong> It is the only option that also protects the note from someone at your unlocked Mac. Some notes can't be locked: shared notes, notes with tags, Quick Notes, and notes with a PDF, document, audio or video attached.</li><li><strong>"On My Mac" notes are never uploaded,</strong> so Apple's keys don't come into it. On disk, an unlocked note isn't encrypted by Notes itself; FileVault is what encrypts it at rest, if you've turned it on.</li><li><strong>If you forget a separate Notes password, Apple can't recover the notes it locked.</strong> That is what end-to-end encryption means.</li></ul>
+      <h2 id="what-does-encrypted-mean-for-an-icloud-note">What does "encrypted" mean for an iCloud note?</h2>
+      <p>Apple encrypts every iCloud note. What matters is who holds the key. Apple's <a href="https://support.apple.com/en-us/102651">iCloud data security overview</a>, updated January 2026, gives each kind of iCloud data two settings:</p>
+      <div class="table-scroll"><table><thead><tr><th scope="col">Data</th><th scope="col">Standard Data Protection (default)</th><th scope="col">Advanced Data Protection</th></tr></thead><tbody><tr><td>Notes</td><td>In transit and on server; Apple holds the keys</td><td>End-to-end; keys on your trusted devices</td></tr><tr><td>iCloud Backup</td><td>In transit and on server; Apple holds the keys</td><td>End-to-end; keys on your trusted devices</td></tr><tr><td>iCloud Drive</td><td>In transit and on server; Apple holds the keys</td><td>End-to-end; keys on your trusted devices</td></tr></tbody></table></div>
+      <p><em>From Apple's <a href="https://support.apple.com/en-us/102651">iCloud data security overview</a>, retrieved 9 October 2026.</em></p>
+      <p>"In transit and on server" means the note is encrypted on its way to Apple and while it sits in Apple's data centres. That protects it from someone intercepting your connection, and from someone who steals a disk out of a server rack. Because Apple keeps the keys, though, Apple itself can read it. Apple presents this as a feature: it is what lets you lose every device you own, sign in on a new one, and still get your notes back.</p>
+      <p>The same page shows that Apple already end-to-end encrypts some things by default. Under Standard Data Protection, 15 categories get it as of October 2026, including Health data and passwords in iCloud Keychain. Notes is not one of them.</p>
+      <figure><img src="/images/apple-notes-who-can-read.svg" alt="A table of four kinds of note in Apple Notes against three people: Apple on its servers, someone holding your powered-off Mac, and someone using your unlocked Mac" width="1200" height="624" loading="lazy" decoding="async" /><figcaption>Only the locked note holds up against all three. Advanced Data Protection changes the first column and nothing else.</figcaption></figure>
+      <h2 id="what-advanced-data-protection-changes-for-apple-notes">What Advanced Data Protection changes for Apple Notes</h2>
+      <p>Advanced Data Protection moves the Notes keys from Apple to your own devices. Once it is on, Apple's <a href="https://support.apple.com/en-us/102651">overview</a> lists Notes as end-to-end encrypted, with the keys held on your trusted devices. The number of end-to-end encrypted categories goes from 15 to 25, and iCloud Backup and iCloud Drive are among the additions. Apple calls it "an optional setting", so nothing changes unless you go and turn it on.</p>
+      <p>Apple's <a href="https://support.apple.com/en-us/108756">setup page</a> lists what it needs:</p>
+      <ul><li>Two-factor authentication on your Apple Account, and a passcode or password on your devices.</li><li>Every device signed in to that account updated to at least iOS 16.2, iPadOS 16.2, macOS 13.1, watchOS 9.2, tvOS 16.2, HomePod 16.0 or iCloud for Windows 14.1. An old iPad in a drawer can block it.</li><li>A recovery contact or a recovery key. Apple can't reset your access for you any more, so one of those has to be able to.</li><li>It isn't available for Managed Apple Accounts or child accounts.</li></ul>
+      <p>Two catches before you count on it.</p>
+      <p><strong>It doesn't cover everything about a note.</strong> The same overview notes that some metadata stays under Standard Data Protection, including when a note was created, last modified and last viewed. Apple still encrypts that metadata, but it holds the keys. The contents are protected; the timestamps are not end-to-end.</p>
+      <p><strong>It isn't available everywhere.</strong> In February 2025 Apple <a href="https://sixcolors.com/post/2025/02/apple-is-removing-its-advanced-data-protection-feature-in-the-uk/">withdrew the feature in the UK</a>, and its <a href="https://support.apple.com/en-us/122234">support article</a> says Apple "can no longer offer Advanced Data Protection in the United Kingdom to new users." People in the UK who already had it have to turn it off themselves. So if you are in the UK, the default is the only option for an iCloud note you haven't locked.</p>
+      <p>What Advanced Data Protection does not change is your Mac. On your own machine the note is just as readable as before to anyone sitting at it while you are logged in. The protection is about the copy on Apple's servers.</p>
+      <h2 id="what-locking-a-note-does">What locking a note does</h2>
+      <p>Locking a note encrypts it with a password only you know, everywhere it is stored. Apple's <a href="https://support.apple.com/guide/security/secure-features-in-the-notes-app-sec1782bcab1/web">Platform Security guide</a> says locked notes are "end-to-end encrypted using a user-provided passphrase". The note and its supported attachments are encrypted with AES-GCM, and the key is derived from the passphrase with PBKDF2 and SHA-256. That applies whether your account is on Standard or Advanced Data Protection, and to notes stored on your Mac as well as in iCloud.</p>
+      <p>It is the only option that protects a note on your own Mac while you are logged in. If someone borrows your unlocked laptop, the note stays encrypted until they type the password, as long as it has closed again. Notes closes locked notes after a period of inactivity or when you quit it, and the Lock button next to the search field closes them straight away. I go through the three layers involved, the login password, FileVault and the locked note, in <a href="https://cyanote.app/blog/password-protect-notes-on-mac/">how to password-protect a note on your Mac</a>.</p>
+      <p>The limits are in Apple's <a href="https://support.apple.com/guide/notes/lock-your-notes-not28c5f5468/mac">Lock your notes</a> guide, and they rule out more notes than people expect. You can't lock:</p>
+      <ul><li>a note you've shared with other people,</li><li>a note with a video, audio file, PDF or document attached,</li><li>a note with tags,</li><li>a Quick Note.</li></ul>
+      <p>The Platform Security guide makes the same point from the other side: only notes that aren't locked can be shared. So a shared shopping list, or a note with a scanned contract attached, sits outside the strongest protection Apple Notes has.</p>
+      <p>Before you lock anything important, two more details from Apple's documentation:</p>
+      <ul><li><strong>A forgotten password is final.</strong> If you set a separate Notes password, forget it, and can't use Touch ID, Apple's guide says "Apple can't help you regain access". You can use your Mac's login password instead, which most people find easier to remember. For iCloud notes that also needs two-factor authentication and iCloud Keychain.</li><li><strong>Resetting the password only affects new notes.</strong> According to the Platform Security guide, notes you locked before a reset still need the old passphrase. Save it in your password manager the moment you create it.</li></ul>
+      <h2 id="what-about-notes-stored-on-my-mac">What about notes stored "On My Mac"?</h2>
+      <p>If you turn on the "On My Mac" account in Notes, notes in it are stored only on your Mac and never go to iCloud. Apple's keys don't apply to them, because Apple never receives a copy.</p>
+      <p>On disk, those notes live in a database inside <code>~/Library/Group Containers/group.com.apple.notes/</code>. The developer of an open-source forensic parser for that database describes note contents as <a href="https://github.com/threeplanetssoftware/apple_cloud_notes_parser">compressed rather than encrypted</a>, and the tool needs a password only for locked notes. I haven't found an Apple document that says otherwise. On a Mac, an unlocked local note is protected at rest by FileVault, if it's on, the same as everything else in your home folder.</p>
+      <p>That is a reasonable arrangement, and it is how many local apps work, mine included. It does mean FileVault matters more than any notes setting. Apple's <a href="https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac">FileVault guide</a> shows where to check it: System Settings, then Privacy &amp; Security, then FileVault.</p>
+      <figure><img src="/images/apple-notes-where-copies-live.svg" alt="Two panels. An iCloud note exists on your Mac, your iPhone and Apple&#x27;s servers, and the server key is held by Apple unless Advanced Data Protection is on. A local note exists as one file on your own disk, protected by FileVault and by its own password if locked." width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Encryption decides who holds the key to each copy. Keeping a note local removes the server copy entirely.</figcaption></figure>
+      <h2 id="which-setup-should-you-use">Which setup should you use?</h2>
+      <p>Pick the case that matches the note:</p>
+      <ul><li><strong>Ordinary notes you want on your phone.</strong> The default is fine for most people. Apple can technically read them, but the threat model behind that is a legal request or a breach at Apple, not your housemate.</li><li><strong>You'd rather Apple couldn't read any of it.</strong> Turn on Advanced Data Protection if you're outside the UK and every device on your account is up to date. Set up the recovery contact or recovery key first. The one switch covers iCloud Backup and iCloud Drive as well.</li><li><strong>A handful of sensitive notes.</strong> Lock them, whichever iCloud setting you use. Recovery codes, medical details, private details about other people. It's the only setting that also covers your unlocked Mac.</li><li><strong>Notes that should never leave this Mac.</strong> Use an "On My Mac" account, or an app that has no server at all. Turn on FileVault and keep a backup, because nobody else holds a copy.</li></ul>
+      <p>Whichever you pick, count the copies of the note, as in the diagram above, and check who holds the key to each one.</p>
+      <h2 id="where-cyanote-fits">Where Cyanote fits</h2>
+      <p>Cyanote is the last case on that list, built as a whole app rather than a single folder. Your notes, tasks, calendar and clipboard history sit in one database file on your own disk. There is no account, no sync and no server, so there is no copy on anyone else's computer for anyone to hold a key to. I explain the general idea in <a href="https://cyanote.app/blog/what-local-first-means-for-your-notes/">what local-first actually means</a>.</p>
+      <p>Any note can be locked with its own password. The body is encrypted with AES-256-GCM, using a key derived from your password with PBKDF2 and SHA-256, which is the same family of methods Apple uses. The password itself is never stored. The note's title stays readable in the sidebar so you can find it. Like Apple, I can't recover a locked note if you forget its password, because there is nothing on my side to recover it from.</p>
+      <p>Three things Cyanote doesn't do:</p>
+      <ul><li><strong>Unlocked notes are not encrypted separately inside the database.</strong> Like "On My Mac" notes in Apple Notes, they rely on FileVault. Turn it on.</li><li><strong>There is no iPhone app and no sync.</strong> If you need a note on your phone, Apple Notes with Advanced Data Protection is the better choice, and I'd say so if you asked.</li><li><strong>Backups are your job.</strong> A local file has no server copy to restore from. Time Machine covers it, and there is more in <a href="https://cyanote.app/blog/backing-up-local-notes/">how to back up notes that live on your own computer</a>.</li></ul>
+      <p>Cyanote is $7.99 once on the Mac through Lemon Squeezy, with no subscription and no account. Windows is a separate $7.99 purchase on the Microsoft Store; one doesn't unlock the other. Details are on the <a href="https://cyanote.app/pricing/">pricing page</a>.</p>
+      <h2 id="common-questions">Common questions</h2>
+      <h3 id="can-apple-read-my-notes">Can Apple read my notes?</h3>
+      <p>On the default Standard Data Protection, technically yes. Apple holds the keys to iCloud notes and says it can decrypt them on your behalf. With Advanced Data Protection on, or for a locked note under either setting, it can't. Notes in an "On My Mac" account are never sent to Apple.</p>
+      <h3 id="is-apple-notes-end-to-end-encrypted">Is Apple Notes end-to-end encrypted?</h3>
+      <p>Locked notes always are. Other iCloud notes are end-to-end encrypted only if you've turned on Advanced Data Protection for your Apple Account, which is off unless you enable it.</p>
+      <h3 id="does-advanced-data-protection-protect-notes-on-my-mac">Does Advanced Data Protection protect notes on my Mac?</h3>
+      <p>No. It changes who holds the keys to the copy on Apple's servers. Anyone using your unlocked Mac can still open an unlocked note. For that, lock the note, and use FileVault for a Mac that's switched off.</p>
+      <p>If you're weighing whether to move notes out of iCloud altogether, <a href="https://cyanote.app/blog/icloud-notes-explained/">iCloud Notes, explained properly</a> covers how the accounts and folders work, and <a href="https://cyanote.app/blog/when-to-move-off-apple-notes/">when it is actually worth moving off Apple Notes</a> is the honest case for staying put.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/apple-notes-not-syncing/">When Apple Notes will not sync</a><span>You wrote it on the phone and it is not on the Mac. The order to check things in, why none of the causes announce themselves, and how to make it cost less.</span></li><li><a href="https://cyanote.app/blog/pasting-work-data-into-random-websites/">The small text tools you keep pasting work data into</a><span>Everyone has a bookmark for a JSON formatter and a JWT decoder. Few of us think about where that paste goes. Here is the real risk, and the boring fix.</span></li></ul>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h2>Product</h2><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h2>Resources</h2><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h2>Download</h2><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>

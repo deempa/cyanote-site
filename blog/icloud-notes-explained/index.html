@@ -37,7 +37,7 @@
   "headline": "iCloud Notes, explained properly",
   "description": "Where your notes really are, why sync is not a backup, and exactly what happens when storage runs out, you turn iCloud Notes off, or you sign out.",
   "datePublished": "2026-09-18",
-  "dateModified": "2026-09-18",
+  "dateModified": "2026-10-09",
   "author": {
     "@type": "Organization",
     "@id": "https://cyanote.app/#organization",
@@ -82,7 +82,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "macOS, Notes, Backups",
-  "wordCount": 2129
+  "wordCount": 2156
 }
 </script>
 <script type="application/ld+json">
@@ -112,7 +112,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-09-18" />
-<meta property="article:modified_time" content="2026-09-18" />
+<meta property="article:modified_time" content="2026-10-09" />
 <meta property="article:author" content="Cyanote" />
 <meta property="article:tag" content="macOS" />
 <meta property="article:tag" content="Notes" />
@@ -187,7 +187,7 @@
       <h2 id="where-the-data-physically-sits-on-a-mac">Where the data physically sits on a Mac</h2>
       <p>There is a real folder. On this Mac it is here:</p>
       <p><code>~/Library/Group Containers/group.com.apple.notes/</code></p>
-      <p>Inside it is a SQLite database holding your notes, plus folders of media and attachments. The Library folder is hidden, so <code>⇧⌘G</code> in Finder and pasting that path is the fastest route. Depending on your privacy settings, the Terminal or a backup tool may be refused access to it until you grant Full Disk Access — which is macOS protecting it, not a fault.</p>
+      <p>Inside it is a SQLite database holding your notes, plus folders of media and attachments. The Library folder is hidden, so <code>⇧⌘G</code> in Finder and pasting that path is the fastest route. Depending on your privacy settings, the Terminal or a backup tool may be refused access to it until you grant Full Disk Access — which is macOS protecting it, not a fault. Who else can read those notes, on your Mac and on Apple's servers, is a separate question, answered in <a href="https://cyanote.app/blog/are-apple-notes-encrypted/">are Apple Notes encrypted?</a></p>
       <p>Two caveats before you get ideas. The note text in that database is not stored as readable prose, so opening it does not give you your writing back without tooling. And it is a <em>cache of an account</em>, not an archive — which is precisely why its existence is not the reassurance it looks like. I have written at more length about <a href="/blog/where-your-notes-actually-live/">how to find this for any app and what the path is worth once you have it</a>; the short version is that a path you can find is the floor, not the answer.</p>
       <h2 id="what-happens-when-things-change">What happens when things change</h2>
       <p>This is the section people actually search for, so here it is, one situation at a time, with the uncertain parts flagged as uncertain.</p>
