@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="sfc-title sfc-desc">
+  <title id="sfc-title">A screenshot saved as a file, and a screenshot copied to the clipboard</title>
+  <desc id="sfc-desc">Two routes for the same screenshot. Shift Command 4 saves a PNG file to the Desktop, where it stays until you delete it. Control Shift Command 4 puts the picture on the clipboard instead, with no file. You paste it with Command V, but the clipboard holds one item, so the next thing you copy replaces the screenshot. Unless a clipboard history kept it, it is gone.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .key  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #3d3f45; }
+    .gone { font-size: 18px; fill: #a3a7af; text-decoration: line-through; }
+    .note { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .row  { fill: #f4f4f5; }
+    .hot  { fill: #e3f1fa; }
+    .warn { fill: #fdeeee; }
+    .arr  { stroke: #b8bcc4; stroke-width: 2; fill: none; }
+    .foot { font-size: 21px; fill: #3d3f45; }
+  </style>
+  <defs>
+    <marker id="sfc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b8bcc4"/>
+    </marker>
+  </defs>
+
+  <!-- File route -->
+  <rect class="card" x="24" y="24" width="1152" height="200" rx="12"/>
+  <rect x="24" y="24" width="1152" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="52" y="72">Saved as a file</text>
+  <text class="note" x="52" y="98">The default. Slower to use, hard to lose.</text>
+
+  <rect class="row" x="52" y="122" width="250" height="72" rx="8"/>
+  <text class="key" x="72" y="153">&#8679; &#8984; 4</text>
+  <text class="note" x="72" y="179">drag over an area</text>
+  <path class="arr" d="M310 158 H360" marker-end="url(#sfc-a)"/>
+  <rect class="row" x="368" y="122" width="300" height="72" rx="8"/>
+  <text class="item" x="388" y="153">Screenshot ….png</text>
+  <text class="note" x="388" y="179">on the Desktop</text>
+  <path class="arr" d="M676 158 H726" marker-end="url(#sfc-a)"/>
+  <rect class="hot" x="734" y="122" width="414" height="72" rx="8"/>
+  <text class="item" x="754" y="153">Still there next month</text>
+  <text class="note" x="754" y="179">until you delete it</text>
+
+  <!-- Clipboard route -->
+  <rect class="card" x="24" y="248" width="1152" height="200" rx="12"/>
+  <rect x="24" y="248" width="1152" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="52" y="296">Copied to the clipboard</text>
+  <text class="note" x="52" y="322">Add Control. No file, nothing on the Desktop.</text>
+
+  <rect class="hot" x="52" y="346" width="250" height="72" rx="8"/>
+  <text class="key" x="72" y="377">&#8963; &#8679; &#8984; 4</text>
+  <text class="note" x="72" y="403">drag over an area</text>
+  <path class="arr" d="M310 382 H360" marker-end="url(#sfc-a)"/>
+  <rect class="hot" x="368" y="346" width="300" height="72" rx="8"/>
+  <text class="item" x="388" y="377">&#8984;V pastes the picture</text>
+  <text class="note" x="388" y="403">into the app you are in</text>
+  <path class="arr" d="M676 382 H726" marker-end="url(#sfc-a)"/>
+  <rect class="warn" x="734" y="346" width="414" height="72" rx="8"/>
+  <text class="gone" x="754" y="377">the screenshot</text>
+  <text class="note" x="754" y="403">replaced by your next &#8984;C</text>
+
+  <text class="foot" x="24" y="494">The clipboard has one slot. A copied screenshot lasts until you copy anything else.</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="hlcs-title hlcs-desc">
+  <title id="hlcs-title">How long a copied screenshot lasts</title>
+  <desc id="hlcs-desc">Six places a screenshot can wait, from shortest to longest. The plain clipboard keeps it until your next copy. Universal Clipboard offers it to your other devices briefly. Spotlight clipboard history on macOS 26.1 keeps it for 30 minutes, 8 hours or 7 days. Raycast's free plan keeps clipboard history for up to 3 months. A clipboard manager with a fixed-size history, such as Cyanote with 500 items by default, lists it until newer copies push it out or you clear the history, though Cyanote keeps only the latest images at full size and older ones as small previews. A file saved to the Desktop stays until you delete it.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 16px; fill: #71757e; }
+    .val  { font-size: 18px; fill: #3d3f45; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .track{ fill: #f4f4f5; }
+    .low  { fill: #b8bcc4; }
+    .mid  { fill: #7fbde3; }
+    .high { fill: #0e7cc4; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="24" width="1152" height="476" rx="12"/>
+  <text class="h" x="52" y="68">How long a copied screenshot waits for you</text>
+  <text class="sub" x="52" y="94">Shortest at the top. Bars show order, not a time scale.</text>
+
+  <text class="lbl" x="52" y="140">The clipboard alone</text>
+  <text class="sub" x="52" y="162">any macOS</text>
+  <rect class="track" x="420" y="124" width="560" height="28" rx="6"/>
+  <rect class="low"   x="420" y="124" width="40"  height="28" rx="6"/>
+  <text class="val" x="996" y="145">next copy</text>
+
+  <text class="lbl" x="52" y="202">Universal Clipboard</text>
+  <text class="sub" x="52" y="224">to your iPhone or iPad</text>
+  <rect class="track" x="420" y="186" width="560" height="28" rx="6"/>
+  <rect class="low"   x="420" y="186" width="70"  height="28" rx="6"/>
+  <text class="val" x="996" y="207">"briefly"</text>
+
+  <text class="lbl" x="52" y="264">Spotlight history</text>
+  <text class="sub" x="52" y="286">macOS 26.1 and later</text>
+  <rect class="track" x="420" y="248" width="560" height="28" rx="6"/>
+  <rect class="mid"   x="420" y="248" width="200" height="28" rx="6"/>
+  <text class="val" x="996" y="269">up to 7 days</text>
+
+  <text class="lbl" x="52" y="326">Raycast, free plan</text>
+  <text class="sub" x="52" y="348">clipboard history</text>
+  <rect class="track" x="420" y="310" width="560" height="28" rx="6"/>
+  <rect class="mid"   x="420" y="310" width="340" height="28" rx="6"/>
+  <text class="val" x="996" y="331">up to 3 months</text>
+
+  <text class="lbl" x="52" y="388">A count-based history</text>
+  <text class="sub" x="52" y="410">e.g. Cyanote; older images kept small</text>
+  <rect class="track" x="420" y="372" width="560" height="28" rx="6"/>
+  <rect class="high"  x="420" y="372" width="440" height="28" rx="6"/>
+  <text class="val" x="996" y="393">until pushed out</text>
+
+  <text class="lbl" x="52" y="450">A PNG on the Desktop</text>
+  <text class="sub" x="52" y="472">the default</text>
+  <rect class="track" x="420" y="434" width="560" height="28" rx="6"/>
+  <rect class="high"  x="420" y="434" width="560" height="28" rx="6"/>
+  <text class="val" x="996" y="455">until deleted</text>
+
+  <text class="foot" x="24" y="540">Sources: Apple Support; 9to5Mac and Macworld (Nov 2025) on 26.1; raycast.com/pricing. Read 10 Oct 2026.</text>
+</svg>
