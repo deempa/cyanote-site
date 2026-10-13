@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-labelledby="bj-title bj-desc">
+  <title id="bj-title">Where each part of a bullet journal goes on a Mac</title>
+  <desc id="bj-desc">Eight parts of the paper Bullet Journal and their digital equivalent. Rapid logging becomes typed lines with tick boxes. The daily log becomes one note per date. The monthly log becomes a month calendar plus the task list. The future log becomes tasks and events with dates months away. Collections become their own notes, linked together. The habit tracker becomes a habits page. The index becomes search. Migration is marked as the one step to keep manual: an overdue list you go through by hand.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .row  { fill: #f6f7f9; stroke: #e6e6e9; stroke-width: 2; }
+    .keep { fill: #eef6fc; stroke: #0e7cc4; stroke-width: 2; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .note { font-size: 17px; fill: #71757e; }
+    .ch   { font-size: 15px; font-weight: 600; fill: #71757e; letter-spacing: 0.06em; }
+    .app  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .det  { font-size: 17px; fill: #3d3f45; }
+    .acc  { font-size: 17px; font-weight: 600; fill: #0e7cc4; }
+    .arrow { stroke: #a3a7af; stroke-width: 2; fill: none; }
+  </style>
+  <defs>
+    <marker id="bj-head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a3a7af"/>
+    </marker>
+  </defs>
+
+  <rect class="card" x="24" y="20" width="1152" height="680" rx="12"/>
+  <text class="h" x="56" y="66">A paper bullet journal, moved onto a Mac</text>
+  <text class="note" x="56" y="94">Seven parts translate cleanly. One, migration, loses its point if the app does it for you.</text>
+
+  <text class="ch" x="56" y="138">ON PAPER</text>
+  <text class="ch" x="560" y="138">IN A NOTES-AND-TASKS APP</text>
+
+  <rect class="row" x="56" y="152" width="1088" height="58" rx="8"/>
+  <text class="app" x="80" y="188">Rapid logging  •  ○  –</text>
+  <line class="arrow" x1="470" y1="181" x2="540" y2="181" marker-end="url(#bj-head)"/>
+  <text class="det" x="560" y="188">Typed lines: tick boxes for tasks, plain lines for notes</text>
+
+  <rect class="row" x="56" y="220" width="1088" height="58" rx="8"/>
+  <text class="app" x="80" y="256">Daily log</text>
+  <line class="arrow" x1="470" y1="249" x2="540" y2="249" marker-end="url(#bj-head)"/>
+  <text class="det" x="560" y="256">One note per date, opened from that day</text>
+
+  <rect class="row" x="56" y="288" width="1088" height="58" rx="8"/>
+  <text class="app" x="80" y="324">Monthly log</text>
+  <line class="arrow" x1="470" y1="317" x2="540" y2="317" marker-end="url(#bj-head)"/>
+  <text class="det" x="560" y="324">A month calendar, plus the task list grouped by due date</text>
+
+  <rect class="row" x="56" y="356" width="1088" height="58" rx="8"/>
+  <text class="app" x="80" y="392">Future log</text>
+  <line class="arrow" x1="470" y1="385" x2="540" y2="385" marker-end="url(#bj-head)"/>
+  <text class="det" x="560" y="392">Tasks and events dated months ahead; they surface on the day</text>
+
+  <rect class="row" x="56" y="424" width="1088" height="58" rx="8"/>
+  <text class="app" x="80" y="460">Collections</text>
+  <line class="arrow" x1="470" y1="453" x2="540" y2="453" marker-end="url(#bj-head)"/>
+  <text class="det" x="560" y="460">Their own notes, linked to each other and to the daily notes</text>
+
+  <rect class="row" x="56" y="492" width="1088" height="58" rx="8"/>
+  <text class="app" x="80" y="528">Habit tracker spread</text>
+  <line class="arrow" x1="470" y1="521" x2="540" y2="521" marker-end="url(#bj-head)"/>
+  <text class="det" x="560" y="528">A habits page, so nothing gets redrawn each month</text>
+
+  <rect class="row" x="56" y="560" width="1088" height="58" rx="8"/>
+  <text class="app" x="80" y="596">Index</text>
+  <line class="arrow" x1="470" y1="589" x2="540" y2="589" marker-end="url(#bj-head)"/>
+  <text class="det" x="560" y="596">Search across every note</text>
+
+  <rect class="keep" x="56" y="628" width="1088" height="58" rx="8"/>
+  <text class="app" x="80" y="664">Migration</text>
+  <line class="arrow" x1="470" y1="657" x2="540" y2="657" marker-end="url(#bj-head)"/>
+  <text class="acc" x="560" y="664">Keep it manual: go through the overdue list and decide each one</text>
+</svg>
