@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-labelledby="acr-title acr-desc">
+  <title id="acr-title">How long each Mac clipboard history keeps a clip</title>
+  <desc id="acr-desc">Five clipboard histories, from shortest to longest. Spotlight clipboard history on macOS 26.1 keeps clips for 30 minutes, 8 hours or 7 days. Alfred with the Powerpack offers 24 hours, 7 days, 1 month or 3 months. Raycast's free plan keeps 3 months. Raycast Pro has no limit. Cyanote is shown separately because it caps by item count rather than time: 500 by default and up to 1,000, with pinned snippets kept apart.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 16px; fill: #71757e; }
+    .val  { font-size: 18px; fill: #3d3f45; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .track{ fill: #f4f4f5; }
+    .low  { fill: #b8bcc4; }
+    .mid  { fill: #7fbde3; }
+    .high { fill: #0e7cc4; }
+    .foot { font-size: 19px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="24" width="1152" height="414" rx="12"/>
+  <text class="h" x="52" y="68">How long a clip stays in each history, at its longest setting</text>
+  <text class="sub" x="52" y="94">Shortest at the top. Bars show order, not a time scale. Cyanote caps by count, so its row is not ranked.</text>
+
+  <text class="lbl" x="52" y="140">Spotlight history</text>
+  <text class="sub" x="52" y="162">macOS 26.1 and later, free</text>
+  <rect class="track" x="420" y="124" width="560" height="28" rx="6"/>
+  <rect class="low"   x="420" y="124" width="110" height="28" rx="6"/>
+  <text class="val" x="996" y="145">up to 7 days</text>
+
+  <text class="lbl" x="52" y="202">Alfred + Powerpack</text>
+  <text class="sub" x="52" y="224">£34 once</text>
+  <rect class="track" x="420" y="186" width="560" height="28" rx="6"/>
+  <rect class="mid"   x="420" y="186" width="300" height="28" rx="6"/>
+  <text class="val" x="996" y="207">up to 3 months</text>
+
+  <text class="lbl" x="52" y="264">Raycast, free plan</text>
+  <text class="sub" x="52" y="286">free</text>
+  <rect class="track" x="420" y="248" width="560" height="28" rx="6"/>
+  <rect class="mid"   x="420" y="248" width="300" height="28" rx="6"/>
+  <text class="val" x="996" y="269">up to 3 months</text>
+
+  <text class="lbl" x="52" y="326">Raycast Pro</text>
+  <text class="sub" x="52" y="348">$96 a year</text>
+  <rect class="track" x="420" y="310" width="560" height="28" rx="6"/>
+  <rect class="high"  x="420" y="310" width="560" height="28" rx="6"/>
+  <text class="val" x="996" y="331">no time limit</text>
+
+  <text class="lbl" x="52" y="388">Cyanote</text>
+  <text class="sub" x="52" y="410">$7.99 once; capped by count, not ranked</text>
+  <rect class="track" x="420" y="372" width="560" height="28" rx="6"/>
+  <rect class="low"   x="420" y="372" width="300" height="28" rx="6"/>
+  <text class="val" x="996" y="393">1,000 items max</text>
+
+  <text class="foot" x="24" y="478">Sources: alfredapp.com help, raycast.com/pricing, Macworld (Nov 2025) on 26.1. Read 14 Oct 2026.</text>
+</svg>
