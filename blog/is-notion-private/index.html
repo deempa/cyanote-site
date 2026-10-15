@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>Is Notion private? What Notion can see in your pages</title>
+<meta name="description" content="Notion keeps pages private from other users, not from Notion. What its encryption covers, when support and AI providers see a page, and what page lock does." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/is-notion-private/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/is-notion-private/" />
+<meta property="og:title" content="Is Notion private? What Notion can see in your pages" />
+<meta property="og:description" content="Notion keeps pages private from other users, not from Notion. What its encryption covers, when support and AI providers see a page, and what page lock does." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Is Notion private? What Notion can see in your pages" />
+<meta name="twitter:description" content="Notion keeps pages private from other users, not from Notion. What its encryption covers, when support and AI providers see a page, and what page lock does." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Is Notion private? What Notion can see in your workspace",
+  "description": "Notion keeps pages private from other users, not from Notion. What its encryption covers, when support and AI providers see a page, and what page lock does.",
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/is-notion-private/"
+  },
+  "url": "https://cyanote.app/blog/is-notion-private/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/notion-who-can-read.svg",
+      "width": 1200,
+      "height": 664
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Privacy, Notes, Notion",
+  "wordCount": 2589
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Is Notion private? What Notion can see in your workspace",
+      "item": "https://cyanote.app/blog/is-notion-private/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-10-15" />
+<meta property="article:modified_time" content="2026-10-15" />
+<meta property="article:author" content="Cyanote" />
+<meta property="article:tag" content="Privacy" />
+<meta property="article:tag" content="Notes" />
+<meta property="article:tag" content="Notion" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" title="Menu"><span class="sr-only">Menu</span>
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<main class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Is Notion private? What Notion can see in your workspace</h1>
+      <div class="meta">
+        <span>By Cyanote</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-10-15">15 October 2026</time></span>
+        <span class="dot">·</span>
+        <span>12 min read</span>
+      </div>
+    <ul class="tags"><li>Privacy</li><li>Notes</li><li>Notion</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Notion is private from other people, but not from Notion. Your private pages are invisible to other users unless you share them. They are also encrypted on Notion's servers, but by default Notion holds the keys, and it does not claim end-to-end encryption anywhere on its <a href="https://www.notion.com/security">security page</a>. So Notion can technically read a page. Its own documents describe a handful of routes to one: support access you grant, internal access limited to need-to-know, legal and safety requests, Notion AI, and, on a company Enterprise workspace, your employer's workspace owner.</p>
+      <p>I make Cyanote, a notes app that keeps everything on your own disk, so I have an angle. Notion is a well-run service with serious security certifications, and for a lot of work it is the right home. What follows is what Notion's own documentation says, checked on 15 October 2026, and where that leaves a page you would rather nobody else read.</p>
+      <h2 id="the-short-version">The short version</h2>
+      <ul><li><strong>Encrypted, not end-to-end.</strong> Notion's <a href="https://www.notion.com/help/security-and-privacy">help centre</a> says data is encrypted at rest with AES-256 and in transit with TLS 1.2 or greater. By default, Notion holds the keys.</li><li><strong>Support needs your permission.</strong> Support can open your workspace only after you turn on <a href="https://www.notion.com/help/data-access-consent">support access</a>, and that access ends after 28 days by default.</li><li><strong>Legal process is one route you can't switch off.</strong> The <a href="https://www.notion.com/trust/privacy-policy">privacy policy</a> says Notion may disclose information to comply with law enforcement requests and legal process, "such as a court order or subpoena."</li><li><strong>Notion AI can send your pages to outside model providers.</strong> Notion names Anthropic and OpenAI. Outside the Enterprise plan they keep data for up to 30 days, and by default nobody trains on it.</li><li><strong>On an Enterprise workspace, your employer's workspace owner can get at your content.</strong> Including through a search that shows pages marked private.</li><li><strong>Page lock is not a privacy feature.</strong> It stops edits. It doesn't hide or encrypt anything.</li></ul>
+      <h2 id="is-notion-encrypted">Is Notion encrypted?</h2>
+      <p>Yes, but in the way most cloud services are, not the way a password manager is. Notion's <a href="https://www.notion.com/help/security-and-privacy">security and privacy help page</a> says customer data is encrypted on Notion's internal networks and "at rest in Cloud storage, database tables, and backups", using AES-256, and that data in transit uses TLS 1.2 or greater. Backups run at least daily. The <a href="https://www.notion.com/security">security page</a> adds that keys are rotated regularly and lists annual audits including SOC 2 and ISO 27001.</p>
+      <p>That protects a page from someone tapping your connection, and from someone who walks out of a data centre with a disk. It doesn't keep the page from Notion, because the service has to decrypt the page to show it to you in a browser, index it for search, and run AI over it. End-to-end encryption would mean only your devices hold the key. Neither page mentions end-to-end encryption, and the features Notion is built around (search across a workspace, real-time collaboration, AI) are hard to offer without the server reading the content.</p>
+      <p>Enterprise customers get one more lever. The security page lists the ability to "manage encryption keys" among Enterprise controls. That changes who controls the key. Notion doesn't describe it as end-to-end encryption, and the service still has to read pages to search and display them.</p>
+      <p>Compare that with Apple Notes, which lets one note be end-to-end encrypted with its own password. I covered that in my post on <a href="https://cyanote.app/blog/are-apple-notes-encrypted/">whether Apple Notes are encrypted</a>. Notion has no equivalent.</p>
+      <h2 id="can-notion-employees-read-your-pages">Can Notion employees read your pages?</h2>
+      <p>Not routinely. Notion's <a href="https://www.notion.com/help/data-access-consent">data access consent page</a> says support "can only access your account or workspace data to troubleshoot an issue or recover content", and that Notion won't view or change anything without your permission. You grant it yourself:</p>
+      <ul><li><strong>For your account:</strong> Settings, then your name, then Support access.</li><li><strong>For a workspace:</strong> Settings, then Security, then Support access. On Enterprise, each grant and change is recorded in the audit log.</li></ul>
+      <p>Access ends on its own after 28 days by default, and you can turn it off sooner. Internally, the security page describes "least privilege access" that is time-bound and based on need-to-know.</p>
+      <p>The consent setting covers support. It doesn't cover legal requests. The <a href="https://www.notion.com/trust/privacy-policy">privacy policy</a>, last updated 29 September 2025, says Notion may "access, preserve, and disclose any information we store in association with you" when it believes in good faith that doing so is required or appropriate, including to comply with law enforcement or national security requests and legal process. That is standard for any service that holds the keys, and it is the route you can least control. I couldn't find a law enforcement guide or a transparency report with request numbers on notion.com, so I can't tell you how often it happens.</p>
+      <figure><img src="/images/notion-who-can-read.svg" alt="A table of five parties who can reach a private Notion page: other users, Notion support, law enforcement, AI providers and an Enterprise workspace owner, with when each can and what you control" width="1200" height="664" loading="lazy" decoding="async" /><figcaption>Other users are the only row fully in your hands. Every other row depends on settings, legal process or which workspace you write in.</figcaption></figure>
+      <h2 id="what-happens-to-your-pages-when-you-use-notion-ai">What happens to your pages when you use Notion AI?</h2>
+      <p>They can leave Notion for a model provider, for a limited time. Notion's <a href="https://www.notion.com/help/notion-ai-security-practices">AI security practices</a> page says its models are "hosted by Notion as well as by organizations such as Anthropic and OpenAI". So a request may run on a Notion-hosted model or go to an outside provider, and AI answers that search the workspace can draw on more pages than the one you have open. The terms differ by plan:</p>
+      <div class="table-scroll"><table><thead><tr><th scope="col"></th><th scope="col">Outside Enterprise</th><th scope="col">Enterprise</th></tr></thead><tbody><tr><td>Used to train models</td><td>No, by default</td><td>No, by default</td></tr><tr><td>Kept by the LLM provider</td><td>Up to 30 days, then deleted</td><td>Zero data retention</td></tr></tbody></table></div>
+      <p><em>From Notion's <a href="https://www.notion.com/help/notion-ai-security-practices">AI security practices</a>, retrieved 15 October 2026.</em></p>
+      <p>The exact line is "By default, Notion and its AI Subprocessors do not use Customer Data to train any models." That sentence says "by default". The FAQ also lists a workspace setting called "Share data to improve Notion AI", which workspace owners can change, so check it in your workspace's Notion AI settings rather than assuming. According to the <a href="https://www.notion.com/help/notion-ai-faqs">Notion AI FAQ</a>, full Notion AI comes with the Business and Enterprise plans; Free and Plus get a limited trial. So the 30-day retention applies to anyone outside Enterprise, trial users included. Zero retention is only for Enterprise.</p>
+      <p>AI also opens a different kind of risk, one encryption can't help with. In September 2025, security researchers at CodeIntegrity <a href="https://www.codeintegrity.ai/blog/notion">showed</a> that a PDF with hidden white-on-white text could instruct Notion 3.0's AI agent to collect private data from a workspace and send it to an outside address through its web search tool. Simon Willison's <a href="https://simonwillison.net/2025/Sep/19/notion-lethal-trifecta/">write-up</a> explains why it worked: the agent could read private data, read untrusted content, and talk to the internet. <a href="https://the-decoder.com/notion-ai-agents-get-security-update-after-data-leak/">The Decoder reported</a> that Notion responded with better injection detection, approval prompts for suspicious links, and an option for admins to turn off agents' web access entirely. Notion has added defences since, but any assistant that can read your private pages and the internet at the same time gives data a way out. I went through the wider trade in <a href="https://cyanote.app/blog/ai-features-and-private-notes/">AI features in a notes app, and what they cost</a>.</p>
+      <h2 id="can-your-workspace-owner-see-your-private-pages">Can your workspace owner see your private pages?</h2>
+      <p>In a personal workspace, you are the owner, so the question doesn't arise. In a company workspace it depends on the plan, and on the Enterprise plan the answer can be yes. Notion's <a href="https://www.notion.com/help/security-and-privacy">security and privacy page</a> says that in an Enterprise workspace, your content "may be accessed by the workspace's workspace owner".</p>
+      <p>The tool for it is <a href="https://www.notion.com/help/admin-content-search">admin content search</a>, available only on Enterprise. Owners can search the workspace's content. Each result shows whether a page is private, shared internally, shared externally or shared to the web, and owners can change its permissions. Notion's own warning on that page: "Using this feature may provide workspace owners with access to the personal data of workspace members and guests." Enterprise owners also get an <a href="https://www.notion.com/help/audit-log">audit log</a>.</p>
+      <p>So a "private" page in your employer's Enterprise workspace is private from your colleagues, not from your employer. On other plans Notion doesn't give owners a search like this, but it is still the company's workspace. If you keep a journal, job-search notes or health notes in a work workspace, move them to a personal one or out of Notion.</p>
+      <h2 id="does-page-lock-keep-a-page-private">Does page lock keep a page private?</h2>
+      <p>No. Page lock is an editing guard. Notion's <a href="https://www.notion.com/help/lock-pages-and-databases">page lock guide</a> says that once a page is locked, "no one can make changes to the page's content unless they explicitly turn the lock off", and that anyone with full or edit access can turn it off. The guide doesn't mention passwords or encryption. Anyone who could read the page before can still read it.</p>
+      <p>If you came looking for a way to put a password on one Notion page, there isn't one built in. Password-protecting a note is a different feature, and I covered how it works on a Mac in <a href="https://cyanote.app/blog/password-protect-notes-on-mac/">how to password-protect a note on your Mac</a>.</p>
+      <h2 id="where-copies-of-a-notion-page-live">Where copies of a Notion page live</h2>
+      <p>Encryption tells you who holds a key. To know who can read a page, you also need to know where its copies are, and who holds the key to each.</p>
+      <figure><img src="/images/notion-where-copies-live.svg" alt="Five places a Notion page can live: on Notion&#x27;s servers and in its backups with Notion holding the key by default, at an AI provider for up to 30 days if you used Notion AI, on a device where it is available offline, and in any export you made" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>Only the export is fully yours. The offline copy sits on your device but is managed by Notion's app, and on paid plans it downloads by itself.</figcaption></figure>
+      <p><strong>Offline copies.</strong> Notion's desktop and mobile apps can now keep pages offline; the <a href="https://www.notion.com/help/use-pages-offline">offline guide</a> says it isn't available in a browser. On any plan you can download pages one at a time. On paid plans, recently visited and favourite pages download on their own, and databases bring only the first 50 rows of their first view. The guide doesn't say whether the offline copy is encrypted on your device. It is a cache, and the copy on Notion's servers is still the main one.</p>
+      <p><strong>Deleted pages.</strong> Deleting a page doesn't remove it right away. Notion's <a href="https://www.notion.com/help/duplicate-delete-and-restore-content">deletion guide</a> says pages stay in Trash for 30 days by default, and after you empty them from Trash Notion keeps them another 30 days before they become inaccessible. I couldn't find a stated period for how long they stay in backups after that.</p>
+      <p><strong>Exports.</strong> Settings, General, "Export all workspace content" gives you HTML, or Markdown with CSV for databases, plus your uploaded files, as a download link that expires after 7 days, according to the <a href="https://www.notion.com/help/export-your-content">export guide</a>. Pages can also go out as PDF; including subpages in a PDF needs Business or Enterprise. A workspace or teamspace owner can turn exporting off. An export is the only copy where nobody else holds the key, so it is worth making one whatever you decide. I wrote about what survives the trip in <a href="https://cyanote.app/blog/getting-your-notes-out/">getting your notes out</a>.</p>
+      <h2 id="which-notes-belong-in-notion">Which notes belong in Notion?</h2>
+      <p>Decide by what a note would cost you if someone else read it, not by how private it feels:</p>
+      <ul><li><strong>Team docs, project plans, wikis, anything shared.</strong> Notion is a good home. Collaboration needs a server that can read the pages, and for this kind of material that's a fair trade.</li><li><strong>Your own work notes, reading notes, plans.</strong> Fine in a personal workspace. Check that support access is off and skip AI on anything you'd mind leaving for 30 days.</li><li><strong>Anything in your employer's Enterprise workspace that isn't about work.</strong> Move it. Admin content search lets the owner review exactly this kind of page.</li><li><strong>Journals, health notes, notes about other people, recovery codes.</strong> These belong somewhere no server can decrypt: a locked note in Apple Notes, an end-to-end encrypted app, or an app with no server at all. I wrote about keeping <a href="https://cyanote.app/blog/a-private-journal-that-stays-private/">a journal that stays private</a>.</li></ul>
+      <h2 id="where-cyanote-fits">Where Cyanote fits</h2>
+      <p>Cyanote is the last option on that list. Notes, tasks, a calendar and clipboard history live in one database file on your own Mac or PC. There is no account, no sync, no server and no AI features, so there is no copy for anyone else to hold a key to, and no support switch, because I have nothing to look at. Any note can be locked with its own password, which encrypts its body until you type it. The idea behind it is in <a href="https://cyanote.app/blog/what-local-first-means-for-your-notes/">what local-first actually means</a>.</p>
+      <p>Where Notion is better, and it is better at a lot:</p>
+      <ul><li><strong>Collaboration.</strong> Cyanote is for one person. If a page needs comments from three colleagues, it belongs somewhere like Notion.</li><li><strong>Your phone.</strong> Cyanote has no iPhone or Android app.</li><li><strong>Databases.</strong> Notion's relational databases have no real equivalent in a local notes app. I went through what transfers and what doesn't in <a href="https://cyanote.app/blog/a-local-notion-alternative/">what you give up leaving Notion</a>, and the side-by-side is on the <a href="https://cyanote.app/compare/notion-alternative/">Notion alternative page</a>.</li><li><strong>Backups.</strong> Notion backs up for you. With a local file, backups are your job.</li></ul>
+      <p>Cyanote is $7.99 once on the Mac through Lemon Squeezy, with no subscription and no account. Windows is a separate $7.99 purchase on the Microsoft Store, and one doesn't unlock the other. The details are on the <a href="https://cyanote.app/pricing/">pricing page</a>.</p>
+      <h2 id="common-questions">Common questions</h2>
+      <h3 id="can-notion-see-my-private-pages">Can Notion see my private pages?</h3>
+      <p>Technically yes, because by default Notion holds the encryption keys. Support opens your workspace only after you turn on support access. Other internal access is limited to need-to-know, and Notion may disclose data when it believes in good faith that doing so is required or appropriate, including for legal requests. Notion AI may also send page content to an outside model provider such as Anthropic or OpenAI. In an Enterprise workspace, the workspace owner may access your content too.</p>
+      <h3 id="is-notion-end-to-end-encrypted">Is Notion end-to-end encrypted?</h3>
+      <p>No. Notion encrypts data with AES-256 at rest and TLS 1.2 or greater in transit, and by default holds the keys itself. Neither its security page nor its security help page claims end-to-end encryption.</p>
+      <h3 id="is-notion-safe-for-journaling">Is Notion safe for journaling?</h3>
+      <p>From other users and from outsiders, yes, as long as it's in a personal workspace and never shared. Not if you mean nobody but you can read it, because Notion can decrypt it and can be compelled to hand it over. For that, use something end-to-end encrypted or something with no server.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/are-apple-notes-encrypted/">Are Apple Notes encrypted? What Apple can and cannot read</a><span>Apple Notes are encrypted, but Apple holds the keys by default. What Advanced Data Protection changes, what a locked note adds, and what neither covers.</span></li><li><a href="https://cyanote.app/blog/leaving-day-one/">Leaving Day One, when the journal is just notes with dates</a><span>Day One is the best journalling app there is, and leaving is rarely about quality. Who should stay, what the export preserves, and what you give up.</span></li></ul>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h2>Product</h2><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h2>Resources</h2><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h2>Download</h2><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>
