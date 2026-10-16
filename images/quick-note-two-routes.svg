@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="qn-title qn-desc">
+  <title id="qn-title">Where a quick note goes on a Mac: Apple Notes versus Cyanote</title>
+  <desc id="qn-desc">Two routes side by side. Apple's Quick Note starts from Fn-Q, the bottom-right hot corner or Safari's Add to Quick Note, and is saved in the Quick Notes folder in Apple Notes, where it cannot be locked. Cyanote's floating note starts from Shift-Option-N in any app, is saved as a plain-text note with its first line as the title, waits on the Floating notes page, and can then be moved to the top level or under another note.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 18px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="412" rx="12"/>
+  <text class="h" x="52" y="68">The same idea, two routes: where a quick note starts and where it ends up</text>
+
+  <text class="lbl" x="52" y="122">Apple Quick Note</text>
+  <rect class="box" x="52" y="140" width="320" height="86" rx="10"/>
+  <text class="lbl" x="72" y="174">Fn + Q, hot corner</text>
+  <text class="sub" x="72" y="200">or Add to Quick Note in Safari</text>
+  <path class="arr" d="M376 183 H430"/><polygon class="head" points="430,175 446,183 430,191"/>
+  <rect class="box" x="450" y="140" width="330" height="86" rx="10"/>
+  <text class="lbl" x="470" y="174">Quick Notes folder</text>
+  <text class="sub" x="470" y="200">inside Apple Notes</text>
+  <path class="arr" d="M784 183 H838"/><polygon class="head" points="838,175 854,183 838,191"/>
+  <rect class="box" x="858" y="140" width="290" height="86" rx="10"/>
+  <text class="lbl" x="878" y="174">Cannot be locked</text>
+  <text class="sub" x="878" y="200">Apple's own page says so</text>
+
+  <text class="lbl" x="52" y="290">Cyanote floating note</text>
+  <rect class="boxa" x="52" y="308" width="320" height="86" rx="10"/>
+  <text class="lbl" x="72" y="342">⇧⌥N in any app</text>
+  <text class="sub" x="72" y="368">a small window on top, ⌘↩ saves</text>
+  <path class="arr" d="M376 351 H430"/><polygon class="head" points="430,343 446,351 430,359"/>
+  <rect class="boxa" x="450" y="308" width="330" height="86" rx="10"/>
+  <text class="lbl" x="470" y="342">Floating notes page</text>
+  <text class="sub" x="470" y="368">plain text, first line is the title</text>
+  <path class="arr" d="M784 351 H838"/><polygon class="head" points="838,343 854,351 838,359"/>
+  <rect class="boxa" x="858" y="308" width="290" height="86" rx="10"/>
+  <text class="lbl" x="878" y="342">Move to…</text>
+  <text class="sub" x="878" y="368">top level or under a note</text>
+</svg>

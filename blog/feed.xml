@@ -7,12 +7,65 @@
     <atom:link href="https://cyanote.app/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Plain writing about keeping notes, running a week and owning your own data — from the person who builds Cyanote, a local-first app for Mac and Windows you pay for once.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Oct 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 09:00:00 +0000</lastBuildDate>
     <image>
       <url>https://cyanote.app/og-image.png</url>
       <title>The Cyanote blog — notes, tasks and calmer software</title>
       <link>https://cyanote.app/blog/</link>
     </image>
+    <item>
+      <title>Quick Note on Mac: how it works, where notes go, and alternatives</title>
+      <link>https://cyanote.app/blog/quick-note-on-mac/</link>
+      <guid isPermaLink="true">https://cyanote.app/blog/quick-note-on-mac/</guid>
+      <pubDate>Fri, 16 Oct 2026 09:00:00 +0000</pubDate>
+      <description>How to start Apple&#x27;s Quick Note on a Mac with Fn+Q or the hot corner, where the notes end up, what it can&#x27;t do, and when a floating-note shortcut fits better.</description>
+      <content:encoded><![CDATA[<p>Apple's Quick Note is built into macOS. Hold the Fn (Globe) key and press Q, or move the pointer to the bottom-right corner of the screen and click the little note that appears, and a small note window opens over whatever you are doing. What you type is saved in the Quick Notes folder in Apple Notes. For a lot of people that is enough. This post covers how to start it, the settings worth changing, where it stops being the right tool, and what to use when it does.</p>
+<p>I make Cyanote, which has its own version of this idea, so read the comparison parts with that in mind. Where Apple's tool is the better fit I say so.</p>
+<h2 id="the-short-version">The short version</h2>
+<ul><li><strong>Start it with Fn + Q,</strong> or with the default hot corner, bottom-right, per <a href="https://support.apple.com/guide/notes/create-a-quick-note-apdf028f7034/mac">Apple's Quick Note guide</a> and <a href="https://support.apple.com/guide/mac-help/perform-quick-actions-with-hot-corners-mchlp3000/mac">Apple's hot corners page</a>.</li><li><strong>Quick Notes are saved in the Quick Notes folder in Apple Notes,</strong> so they live wherever the rest of your Apple Notes live.</li><li><strong>You can't lock one.</strong> Apple's guide says so in as many words.</li><li><strong>By default it reopens your last Quick Note,</strong> which surprises people who expect a blank page each time. One setting turns that off.</li><li><strong>In Safari it can attach a link or a highlighted passage</strong> to the note, which is the part of Quick Note I would miss most if I left it.</li><li><strong>A floating note in another app is a different trade:</strong> a shortcut that opens a small window on top of anything, saves plain text, and does not decide for you which app's library it lands in.</li></ul>
+<h2 id="how-to-start-a-quick-note">How to start a Quick Note</h2>
+<p>There are three ways, all from Apple's <a href="https://support.apple.com/guide/notes/create-a-quick-note-apdf028f7034/mac">Quick Note guide</a> (checked 16 October 2026):</p>
+<ol><li><strong>The keyboard.</strong> Hold Fn or Globe and press Q.</li><li><strong>The hot corner.</strong> The bottom-right corner is the default. Move the pointer into the corner and a small note thumbnail appears; click it. You can change or remove the corner under System Settings &gt; Desktop &amp; Dock &gt; Hot Corners, and <a href="https://support.apple.com/guide/mac-help/perform-quick-actions-with-hot-corners-mchlp3000/mac">Apple's hot corners page</a> explains how to require a modifier key (Command, Shift, Option or Control) so that a stray cursor does not set it off.</li><li><strong>From Safari.</strong> Use the Share button and choose Add to Quick Note, or Control-click a selection and choose the same item. A link goes into the note, and the selected text is highlighted on the page the next time you visit it.</li></ol>
+<p>Apple's guide covers the feature back to macOS Monterey 12, so any Mac recent enough to run a supported macOS has it.</p>
+<h2 id="two-settings-worth-knowing">Two settings worth knowing</h2>
+<p><strong>It resumes your previous note by default.</strong> If you press Fn + Q expecting an empty page, you instead land at the bottom of whatever you wrote last. Turn off "Always resume to last Quick Note" in Notes &gt; Settings if you want a fresh note every time. Either behaviour is fine. The trouble is only when you assume one and get the other.</p>
+<p><strong>The hot corner is shared with everything else.</strong> Bottom-right is the Quick Note default, so if you already assigned that corner to Mission Control, Lock Screen or anything else, Quick Note will not be there. Check System Settings &gt; Desktop &amp; Dock &gt; Hot Corners before blaming the feature.</p>
+<h2 id="where-the-note-goes-and-why-that-matters">Where the note goes, and why that matters</h2>
+<p>A Quick Note is an ordinary Apple Note that happens to be in the Quick Notes folder. That has good and bad consequences.</p>
+<p>The good: nothing new to learn. If you already keep your notes in Apple Notes, a Quick Note is already searchable with the others, and you can move it into another folder from the Notes window whenever you like.</p>
+<p>The less good:</p>
+<ul><li><strong>They pile up in one folder.</strong> Quick Notes do not file themselves. If you capture a few a day, the folder becomes a second inbox that you have to tidy.</li><li><strong>You can't lock them.</strong> Apple's guide says "You can't lock a Quick Note," so a note you jot down quickly about something private stays readable to anyone who opens Notes on your Mac. If that matters, see <a href="https://cyanote.app/blog/are-apple-notes-encrypted/">what Apple can and cannot read in Apple Notes</a> and <a href="https://cyanote.app/blog/password-protect-notes-on-mac/">how to password-protect a note</a>.</li><li><strong>They come with the account.</strong> Where they are stored and which devices see them depends on how your Notes are set up, which I cover in <a href="https://cyanote.app/blog/icloud-notes-explained/">iCloud Notes, explained</a>.</li></ul>
+<p>None of these is a flaw if Apple Notes is where you keep things. They matter if you wanted a scratch pad and did not want it joined to a library.</p>
+<h2 id="other-quick-ways-to-start-a-note-on-a-mac">Other quick ways to start a note on a Mac</h2>
+<p>Quick Note is not the only built-in route.</p>
+<p><strong>Spotlight.</strong> On macOS Tahoe, Spotlight has a Create Note action: <a href="https://macmost.com/how-to-use-spotlight-actions-in-macos-tahoe.html">MacMost's walkthrough</a> (published 23 September 2025) shows you giving the note a title and choosing a folder in Notes. It is slower than Fn + Q because of those two prompts, but it is the one that lets you choose the folder at the start.</p>
+<p><strong>A launcher.</strong> Raycast has notes of its own, but on its <a href="https://www.raycast.com/pricing">pricing page</a> (read 16 October 2026) the free plan is limited to 5 notes, and unlimited notes need Pro at $10 a month or $96 a year. If you already pay for Raycast, that is fine. As a reason to start paying, it is a lot to ask for a scratch pad.</p>
+<p><strong>A notes app with a global shortcut.</strong> This is what Cyanote does, and it is the next section.</p>
+<h2 id="a-floating-note-in-cyanote">A floating note in Cyanote</h2>
+<p>I added this to Cyanote because I kept losing thoughts in the gap between "I should write that down" and "open the notes app, make a note, name it, and find my place again".</p>
+<p>Press <code>⇧⌥N</code> (Shift + Option + N) from any app and a small window opens on top of whatever you are doing. Type, then press <code>⌘↩</code> to save. Press <code>Esc</code> to hide the window without saving; the text you typed is kept, so it is there when you open the window again. The shortcut can be changed in Settings. On Windows it is <code>Shift+Alt+N</code>, saved with <code>Ctrl+Enter</code>.</p>
+<p>What it saves is a plain-text note, titled with its first line. It does not go into a folder. It goes to a page called <strong>Floating notes</strong>, where it waits until you open it or file it. Filing is a "Move to…" dialog: the top level, or under any of your other notes.</p>
+<figure><img src="https://cyanote.app/images/quick-note-two-routes.svg" alt="Two routes: Apple&#x27;s Quick Note ends in the Quick Notes folder and cannot be locked; Cyanote&#x27;s floating note ends on the Floating notes page and can be moved under a note" width="1200" height="460" loading="lazy" decoding="async" /><figcaption>Both routes end in a place you have to tidy. The difference is which app owns the pile.</figcaption></figure>
+<p>Floating notes shipped in Cyanote 1.2.0 on 4 October 2026. It is a deliberately small feature. It does not clip from Safari, and it will not attach a link to a page the way Apple's does.</p>
+<h2 id="which-one-to-use">Which one to use</h2>
+<p>A rough guide:</p>
+<div class="table-scroll"><table><thead><tr><th scope="col">You want</th><th scope="col">Best fit</th></tr></thead><tbody><tr><td>Your notes already live in Apple Notes</td><td>Quick Note. It is built in and costs nothing</td></tr><tr><td>To save a link or a highlighted passage from Safari</td><td>Quick Note, which does this well</td></tr><tr><td>To choose the folder before you write</td><td>Spotlight's Create Note action</td></tr><tr><td>A scratch pad stored locally, with no account</td><td>A floating note in Cyanote</td></tr><tr><td>A capture shortcut you can choose yourself</td><td>A floating note, whose shortcut is set in Settings</td></tr><tr><td>Private jottings</td><td>Not Quick Note, because it can't be locked</td></tr></tbody></table></div>
+<p>If you are choosing between Apple Notes and another notes app more generally, <a href="https://cyanote.app/blog/free-notes-apps-for-mac/">free notes apps for Mac</a> and <a href="https://cyanote.app/blog/when-to-move-off-apple-notes/">when it is worth moving off Apple Notes</a> go through the decision. If the thing you are capturing is a thought you are not ready to write up, <a href="https://cyanote.app/blog/capture-when-remembering-is-the-hard-part/">where ideas go before you are ready to write them</a> is the more useful read than any shortcut list.</p>
+<h2 id="what-cyanote-costs">What Cyanote costs</h2>
+<p>Cyanote is $7.99 once on the Mac through Lemon Squeezy, with no subscription and no account. Windows is a separate $7.99 purchase on the Microsoft Store, and one doesn't unlock the other. The details are on the <a href="https://cyanote.app/pricing/">pricing page</a>.</p>
+<h2 id="common-questions">Common questions</h2>
+<h3 id="how-do-i-turn-on-quick-note-on-a-mac">How do I turn on Quick Note on a Mac?</h3>
+<p>There is nothing to turn on. Hold Fn and press Q, or move the pointer to the bottom-right corner. If the corner does nothing, someone changed the hot corner under System Settings &gt; Desktop &amp; Dock &gt; Hot Corners.</p>
+<h3 id="where-are-quick-notes-saved">Where are Quick Notes saved?</h3>
+<p>In the Quick Notes folder inside the Notes app, alongside the rest of your Apple Notes.</p>
+<h3 id="can-i-lock-a-quick-note">Can I lock a Quick Note?</h3>
+<p>No. Apple's Quick Note guide says a Quick Note can't be locked.</p>
+<h3 id="why-does-quick-note-open-my-old-note">Why does Quick Note open my old note?</h3>
+<p>It resumes the last Quick Note by default. Turn off "Always resume to last Quick Note" in Notes &gt; Settings to start fresh each time.</p>]]></content:encoded>
+      <category>Notes</category>
+      <category>macOS</category>
+      <category>Capture</category>
+    </item>
     <item>
       <title>Is Notion private? What Notion can see in your workspace</title>
       <link>https://cyanote.app/blog/is-notion-private/</link>
@@ -322,7 +375,8 @@
 <p>Locked notes always are. Other iCloud notes are end-to-end encrypted only if you've turned on Advanced Data Protection for your Apple Account, which is off unless you enable it.</p>
 <h3 id="does-advanced-data-protection-protect-notes-on-my-mac">Does Advanced Data Protection protect notes on my Mac?</h3>
 <p>No. It changes who holds the keys to the copy on Apple's servers. Anyone using your unlocked Mac can still open an unlocked note. For that, lock the note, and use FileVault for a Mac that's switched off.</p>
-<p>If you're weighing whether to move notes out of iCloud altogether, <a href="https://cyanote.app/blog/icloud-notes-explained/">iCloud Notes, explained properly</a> covers how the accounts and folders work, and <a href="https://cyanote.app/blog/when-to-move-off-apple-notes/">when it is actually worth moving off Apple Notes</a> is the honest case for staying put. If you also keep notes in Notion, <a href="https://cyanote.app/blog/is-notion-private/">is Notion private?</a> asks the same questions of it.</p>]]></content:encoded>
+<p>If you're weighing whether to move notes out of iCloud altogether, <a href="https://cyanote.app/blog/icloud-notes-explained/">iCloud Notes, explained properly</a> covers how the accounts and folders work, and <a href="https://cyanote.app/blog/when-to-move-off-apple-notes/">when it is actually worth moving off Apple Notes</a> is the honest case for staying put. If you also keep notes in Notion, <a href="https://cyanote.app/blog/is-notion-private/">is Notion private?</a> asks the same questions of it.</p>
+<p>Quick Notes are Apple Notes that cannot be locked; see <a href="https://cyanote.app/blog/quick-note-on-mac/">Quick Note on Mac</a> for where they are saved.</p>]]></content:encoded>
       <category>Privacy</category>
       <category>Notes</category>
       <category>macOS</category>
@@ -5774,7 +5828,8 @@ APPLE_TEAM_ID            ten characters</code></pre>
 <h2 id="the-honest-version">The honest version</h2>
 <p>I am describing a design pattern, not giving anyone advice about their brain, and there is no software that fixes this. What software can do is remove steps, and since the number of steps is the whole variable, that is not a small contribution.</p>
 <p>The two changes that do the most: <strong>one destination with no decision at capture</strong>, and <strong>one place you go, rather than notifications that come to you.</strong> Almost everything else is optional.</p>
-<p>Cyanote is shaped that way, though not deliberately for this: <code>⌘N</code> and <code>⇧⌘D</code> reach a note in one keystroke, tasks take their date and priority out of the sentence so there is nothing else to fill in, <code>⌥⇧C</code> brings the window up from any app, and Today is one view holding what is scheduled, what is due, which habits are outstanding and which routines have not been run. On Windows the same keys use Ctrl for ⌘ and Alt for ⌥. There is no inbox to process and no filing required. Full-text search across everything is what makes that viable. It opens in under a second from a local database, which is the part that actually decides whether a thought survives the trip.</p>]]></content:encoded>
+<p>Cyanote is shaped that way, though not deliberately for this: <code>⌘N</code> and <code>⇧⌘D</code> reach a note in one keystroke, tasks take their date and priority out of the sentence so there is nothing else to fill in, <code>⌥⇧C</code> brings the window up from any app, and Today is one view holding what is scheduled, what is due, which habits are outstanding and which routines have not been run. On Windows the same keys use Ctrl for ⌘ and Alt for ⌥. There is no inbox to process and no filing required. Full-text search across everything is what makes that viable. It opens in under a second from a local database, which is the part that actually decides whether a thought survives the trip.</p>
+<p>One more way to cut the steps: <a href="https://cyanote.app/blog/quick-note-on-mac/">Quick Note on Mac</a> covers Apple's Fn + Q shortcut and a floating note that opens over any app.</p>]]></content:encoded>
       <category>Method</category>
       <category>Workflow</category>
       <category>Accessibility</category>
