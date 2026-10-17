@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="ee-title ee-desc">
+  <title id="ee-title">What Evernote's Encrypt Selected Text can and cannot lock</title>
+  <desc id="ee-desc">Evernote's Encrypt Selected Text can encrypt text including its formatting and header sizes, dividers, inline checkboxes and links. It cannot encrypt files and images, lists and checklists, tables, web clips, calendar events or tasks. An entire note or notebook cannot be encrypted, and the note title and everything outside the encrypted block stay readable.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .row  { fill: #f6f7f9; }
+    .h    { font-size: 26px; font-weight: 600; fill: #0a0a0b; }
+    .note { font-size: 17px; fill: #71757e; }
+    .okh  { font-size: 20px; font-weight: 600; fill: #0e7cc4; }
+    .noh  { font-size: 20px; font-weight: 600; fill: #b4441f; }
+    .i    { font-size: 18px; fill: #0a0a0b; }
+    .d    { font-size: 15px; fill: #71757e; }
+  </style>
+
+  <rect class="card" x="24" y="20" width="1152" height="480" rx="12"/>
+  <text class="h" x="56" y="66">What Encrypt Selected Text can lock</text>
+  <text class="note" x="56" y="94">From Evernote's help article "Encrypt text in a note", checked 17 October 2026. Mac, Windows and Evernote Web.</text>
+
+  <rect class="row" x="56" y="122" width="532" height="300" rx="10"/>
+  <text class="okh" x="84" y="164">Can be encrypted</text>
+  <text class="i" x="84" y="210">Text, with formatting and header sizes</text>
+  <text class="i" x="84" y="250">Dividers and horizontal rules</text>
+  <text class="i" x="84" y="290">Inline checkboxes</text>
+  <text class="i" x="84" y="330">Links</text>
+  <text class="d" x="84" y="390">AES-128, key from your passphrase.</text>
+  <text class="d" x="84" y="410">Evernote never receives it and can't recover it.</text>
+
+  <rect class="row" x="612" y="122" width="532" height="300" rx="10"/>
+  <text class="noh" x="640" y="164">Cannot be encrypted</text>
+  <text class="i" x="640" y="210">Files and images</text>
+  <text class="i" x="640" y="250">Lists and checklists</text>
+  <text class="i" x="640" y="290">Tables and web clips</text>
+  <text class="i" x="640" y="330">Calendar events and tasks</text>
+  <text class="d" x="640" y="390">Nor a whole note or notebook.</text>
+  <text class="d" x="640" y="410">These stay readable to the service.</text>
+
+  <text class="note" x="56" y="464">The note's title and everything outside the encrypted block stay readable to the service.</text>
+</svg>
