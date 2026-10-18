@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-labelledby="cpf-title cpf-desc">
+  <title id="cpf-title">Which copy and paste fix to try first on a Mac</title>
+  <desc id="cpf-desc">Start by copying a word in TextEdit and pasting it back. If that fails too, the problem is system-wide: restart the pboard process, then quit clipboard managers and keyboard tools, then restart the Mac, then try Safe Mode. If TextEdit works, the problem is with one app or one website: try the Edit menu instead of the shortcut, check whether the field accepts that kind of content, then update or restart that app. Universal Clipboard failing between devices is a separate branch: check Handoff, Bluetooth, Wi-Fi and that both devices use the same Apple Account.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .key  { font-size: 18px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 17px; fill: #3d3f45; }
+    .note { font-size: 16px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .row  { fill: #f4f4f5; }
+    .hot  { fill: #e3f1fa; }
+    .warn { fill: #fdeeee; }
+    .arr  { stroke: #b8bcc4; stroke-width: 2; fill: none; }
+    .foot { font-size: 20px; fill: #3d3f45; }
+  </style>
+  <defs>
+    <marker id="cpf-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b8bcc4"/>
+    </marker>
+  </defs>
+
+  <!-- Start -->
+  <rect class="hot" x="330" y="24" width="540" height="72" rx="10"/>
+  <text class="key" x="600" y="56" text-anchor="middle">Copy a word in TextEdit, paste it back</text>
+  <text class="note" x="600" y="80" text-anchor="middle">a ten-second test that splits the problem in two</text>
+
+  <path class="arr" d="M480 100 V124 H300 V146" marker-end="url(#cpf-a)"/>
+  <path class="arr" d="M720 100 V124 H900 V146" marker-end="url(#cpf-a)"/>
+
+  <!-- Left branch: system-wide -->
+  <rect class="card" x="24" y="154" width="552" height="372" rx="12"/>
+  <rect x="24" y="154" width="552" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="52" y="200">It fails in TextEdit too</text>
+  <text class="note" x="52" y="226">The problem is system-wide. Try in this order:</text>
+  <rect class="row" x="52" y="246" width="496" height="52" rx="8"/>
+  <text class="item" x="72" y="278">1  Restart pboard: killall pboard</text>
+  <rect class="row" x="52" y="308" width="496" height="52" rx="8"/>
+  <text class="item" x="72" y="340">2  Quit clipboard managers and keyboard tools</text>
+  <rect class="row" x="52" y="370" width="496" height="52" rx="8"/>
+  <text class="item" x="72" y="402">3  Restart the Mac</text>
+  <rect class="row" x="52" y="432" width="496" height="52" rx="8"/>
+  <text class="item" x="72" y="464">4  Start up in Safe Mode to test login items</text>
+
+  <!-- Right branch: one app -->
+  <rect class="card" x="624" y="154" width="552" height="372" rx="12"/>
+  <rect x="624" y="154" width="552" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="h" x="652" y="200">TextEdit works</text>
+  <text class="note" x="652" y="226">The problem is one app or one site. Try in this order:</text>
+  <rect class="row" x="652" y="246" width="496" height="52" rx="8"/>
+  <text class="item" x="672" y="278">1  Use Edit &#8594; Copy and Edit &#8594; Paste instead</text>
+  <rect class="row" x="652" y="308" width="496" height="52" rx="8"/>
+  <text class="item" x="672" y="340">2  Check the field accepts that kind of content</text>
+  <rect class="row" x="652" y="370" width="496" height="52" rx="8"/>
+  <text class="item" x="672" y="402">3  Look for a site or app that blocks pasting</text>
+  <rect class="row" x="652" y="432" width="496" height="52" rx="8"/>
+  <text class="item" x="672" y="464">4  Quit and reopen that app, or update it</text>
+
+  <text class="foot" x="24" y="572">Between devices? That is Universal Clipboard: Handoff, Bluetooth, Wi-Fi, same Apple Account.</text>
+</svg>

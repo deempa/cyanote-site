@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="wcb-title wcb-desc">
+  <title id="wcb-title">The four places a copy and paste on a Mac can break</title>
+  <desc id="wcb-desc">A copy travels from the app you copy in, through the system pasteboard, to the app you paste in, sometimes with a helper in between. At the copy step the app may not support copying, or nothing was selected. At the pasteboard step the pboard process can get stuck. At the paste step the field may refuse what is on the clipboard, such as an image in a plain text field or a website that blocks pasting. Helpers such as Universal Clipboard, clipboard managers and keyboard tools can fail, hold Secure Input, or lack Accessibility permission.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .key  { font-size: 18px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 17px; fill: #3d3f45; }
+    .note { font-size: 16px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .row  { fill: #f4f4f5; }
+    .hot  { fill: #e3f1fa; }
+    .warn { fill: #fdeeee; }
+    .arr  { stroke: #b8bcc4; stroke-width: 2; fill: none; }
+    .foot { font-size: 20px; fill: #3d3f45; }
+  </style>
+  <defs>
+    <marker id="wcb-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b8bcc4"/>
+    </marker>
+  </defs>
+
+  <!-- Column 1: copy -->
+  <rect class="card" x="24" y="24" width="270" height="460" rx="12"/>
+  <rect x="24" y="24" width="270" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="note" x="48" y="66">1</text>
+  <text class="h" x="48" y="96">The copy</text>
+  <rect class="hot" x="48" y="116" width="222" height="56" rx="8"/>
+  <text class="key" x="66" y="151">&#8984;C in one app</text>
+  <rect class="warn" x="48" y="190" width="222" height="82" rx="8"/>
+  <text class="item" x="64" y="220">Nothing was selected</text>
+  <text class="note" x="64" y="246">or the key didn&#8217;t register</text>
+  <rect class="warn" x="48" y="288" width="222" height="82" rx="8"/>
+  <text class="item" x="64" y="318">The app won&#8217;t copy</text>
+  <text class="note" x="64" y="344">protected text, a bug</text>
+  <text class="note" x="48" y="410">Test: Edit &#8594; Show</text>
+  <text class="note" x="48" y="434">Clipboard in Finder</text>
+
+  <path class="arr" d="M298 144 H318" marker-end="url(#wcb-a)"/>
+
+  <!-- Column 2: pasteboard -->
+  <rect class="card" x="326" y="24" width="270" height="460" rx="12"/>
+  <rect x="326" y="24" width="270" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="note" x="350" y="66">2</text>
+  <text class="h" x="350" y="96">The pasteboard</text>
+  <rect class="hot" x="350" y="116" width="222" height="56" rx="8"/>
+  <text class="key" x="368" y="151">pboard holds it</text>
+  <rect class="warn" x="350" y="190" width="222" height="82" rx="8"/>
+  <text class="item" x="366" y="220">pboard is stuck</text>
+  <text class="note" x="366" y="246">every app fails at once</text>
+  <rect class="row" x="350" y="288" width="222" height="82" rx="8"/>
+  <text class="item" x="366" y="318">One slot only</text>
+  <text class="note" x="366" y="344">the next copy replaces it</text>
+  <text class="note" x="350" y="410">Fix: killall pboard</text>
+  <text class="note" x="350" y="434">in Terminal</text>
+
+  <path class="arr" d="M600 144 H620" marker-end="url(#wcb-a)"/>
+
+  <!-- Column 3: paste -->
+  <rect class="card" x="628" y="24" width="270" height="460" rx="12"/>
+  <rect x="628" y="24" width="270" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="note" x="652" y="66">3</text>
+  <text class="h" x="652" y="96">The paste</text>
+  <rect class="hot" x="652" y="116" width="222" height="56" rx="8"/>
+  <text class="key" x="670" y="151">&#8984;V in another</text>
+  <rect class="warn" x="652" y="190" width="222" height="82" rx="8"/>
+  <text class="item" x="668" y="220">Wrong kind of data</text>
+  <text class="note" x="668" y="246">an image in a text field</text>
+  <rect class="warn" x="652" y="288" width="222" height="82" rx="8"/>
+  <text class="item" x="668" y="318">The field blocks paste</text>
+  <text class="note" x="668" y="344">some websites do this</text>
+  <text class="note" x="652" y="410">Test: paste into</text>
+  <text class="note" x="652" y="434">TextEdit instead</text>
+
+  <!-- Column 4: helpers -->
+  <rect class="card" x="930" y="24" width="246" height="460" rx="12"/>
+  <rect x="930" y="24" width="246" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="note" x="954" y="66">4</text>
+  <text class="h" x="954" y="96">Anything between</text>
+  <rect class="row" x="954" y="116" width="198" height="56" rx="8"/>
+  <text class="item" x="970" y="151">Helpers and settings</text>
+  <rect class="warn" x="954" y="190" width="198" height="82" rx="8"/>
+  <text class="item" x="970" y="220">Secure Input on</text>
+  <text class="note" x="970" y="246">left on by an app</text>
+  <rect class="warn" x="954" y="288" width="198" height="82" rx="8"/>
+  <text class="item" x="970" y="318">Missing permission</text>
+  <text class="note" x="970" y="344">or Handoff turned off</text>
+  <text class="note" x="954" y="410">Test: quit clipboard</text>
+  <text class="note" x="954" y="434">and keyboard tools</text>
+
+  <text class="foot" x="24" y="528">If every app fails, look at 2 and 4. If one app fails, look at 1 and 3.</text>
+</svg>
