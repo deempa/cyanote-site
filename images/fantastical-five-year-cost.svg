@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="fc-title fc-desc">
+  <title id="fc-title">What five years of a Mac calendar app costs</title>
+  <desc id="fc-desc">Five-year cost for one person at list prices on 19 October 2026, before tax. Apple Calendar, Notion Calendar and Fantastical's free tier cost $0. BusyCal on the Mac App Store yearly plan costs $199.95. Fantastical with Flexibits Premium costs $284.95 billed yearly or $419.40 billed monthly. Flexibits Premium for Families costs $449.95 billed yearly. Morgen's Individual plan costs $900 billed yearly.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .note { font-size: 17px; fill: #71757e; }
+    .lbl  { font-size: 18px; font-weight: 600; fill: #3d3f45; }
+    .val  { font-size: 17px; fill: #3d3f45; }
+    .grid { stroke: #e6e6e9; stroke-width: 2; }
+  </style>
+
+  <rect class="card" x="24" y="20" width="1152" height="480" rx="12"/>
+  <text class="h" x="56" y="66">Five years of a calendar app on a Mac, one person</text>
+  <text class="note" x="56" y="94">List prices on 19 October 2026, before tax, held flat for five years.</text>
+  <line class="grid" x1="400" y1="130" x2="400" y2="470"/>
+
+  <text class="lbl" x="380" y="162" text-anchor="end">Apple, Notion, Fantastical free</text>
+  <rect x="400" y="144" width="4" height="26" rx="4" fill="#a3a7af"/>
+  <text class="val" x="418" y="163">$0</text>
+
+  <text class="lbl" x="380" y="212" text-anchor="end">BusyCal, App Store yearly</text>
+  <rect x="400" y="194" width="155.5" height="26" rx="4" fill="#3d3f45"/>
+  <text class="val" x="569.5" y="213">$199.95 ($39.99 a year)</text>
+
+  <text class="lbl" x="380" y="262" text-anchor="end">Fantastical Premium, yearly</text>
+  <rect x="400" y="244" width="221.6" height="26" rx="4" fill="#0e7cc4"/>
+  <text class="val" x="635.6" y="263">$284.95 ($56.99 a year)</text>
+
+  <text class="lbl" x="380" y="312" text-anchor="end">Fantastical Premium, monthly</text>
+  <rect x="400" y="294" width="326.2" height="26" rx="4" fill="#0e7cc4"/>
+  <text class="val" x="740.2" y="313">$419.40 ($6.99 a month)</text>
+
+  <text class="lbl" x="380" y="362" text-anchor="end">Premium for Families, yearly</text>
+  <rect x="400" y="344" width="350" height="26" rx="4" fill="#0e7cc4"/>
+  <text class="val" x="764" y="363">$449.95 ($89.99 a year, up to 5 people)</text>
+
+  <text class="lbl" x="380" y="412" text-anchor="end">Morgen Individual, yearly</text>
+  <rect x="400" y="394" width="700" height="26" rx="4" fill="#3d3f45"/>
+  <text class="val" x="1090" y="413" text-anchor="end" fill="#ffffff">$900 ($15 a month, billed yearly)</text>
+
+  <text class="note" x="400" y="458">BusyCal is also sold for $49.99 on its own site. Fantastical Premium includes Cardhop.</text>
+</svg>

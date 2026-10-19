@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="fp-title fp-desc">
+  <title id="fp-title">Fantastical: free tier, Premium, or a different app</title>
+  <desc id="fp-desc">Three columns. The free tier covers typing events in plain sentences, full-screen day to year views, tasks from iCloud Reminders, Todoist and Google Tasks, widgets, a 3-day forecast and one calendar set. Premium earns its price if you book meetings with Openings or Proposals, join Zoom, Meet, Teams or Webex calls from the event, invite more than one person, switch calendar sets automatically, or want Apple Watch support and travel-time alerts. A different app fits if you rarely schedule with other people, in which case Apple Calendar is enough, or if you only need to see your week next to your notes, in which case a read-only ICS subscription works.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .h    { font-size: 23px; font-weight: 600; fill: #0a0a0b; }
+    .note { font-size: 17px; fill: #71757e; }
+    .ch   { font-size: 20px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 16px; fill: #71757e; }
+    .it   { font-size: 17px; fill: #3d3f45; }
+  </style>
+
+  <rect class="card" x="24" y="20" width="1152" height="520" rx="12"/>
+  <text class="h" x="56" y="66">Which Fantastical do you need?</text>
+  <text class="note" x="56" y="94">Count only what you would use every week. Features from Flexibits' pricing page, 19 October 2026.</text>
+
+  <rect x="56" y="124" width="344" height="388" rx="10" fill="#f4f5f7"/>
+  <rect x="56" y="124" width="344" height="6" rx="3" fill="#a3a7af"/>
+  <text class="ch" x="80" y="166">The free tier is enough</text>
+  <text class="sub" x="80" y="192">if this is the list</text>
+  <text class="it" x="80" y="234">• Typing events as sentences</text>
+  <text class="it" x="80" y="268">• Day, week, month, quarter, year</text>
+  <text class="it" x="80" y="302">• Reminders, Todoist, Google Tasks</text>
+  <text class="it" x="80" y="336">• Widgets and Live Activities</text>
+  <text class="it" x="80" y="370">• A 3-day weather forecast</text>
+  <text class="it" x="80" y="404">• One calendar set</text>
+  <text class="sub" x="80" y="478">Cost: $0</text>
+
+  <rect x="428" y="124" width="344" height="388" rx="10" fill="#e8f2fa"/>
+  <rect x="428" y="124" width="344" height="6" rx="3" fill="#0e7cc4"/>
+  <text class="ch" x="452" y="166">Premium earns its price</text>
+  <text class="sub" x="452" y="192">if you do these weekly</text>
+  <text class="it" x="452" y="234">• Book meetings: Openings, Proposals</text>
+  <text class="it" x="452" y="268">• Join Zoom, Meet, Teams, Webex</text>
+  <text class="it" x="452" y="302">• Invite more than one person</text>
+  <text class="it" x="452" y="336">• Switch calendar sets by place</text>
+  <text class="it" x="452" y="370">• Travel time, time-to-leave alerts</text>
+  <text class="it" x="452" y="404">• Fantastical on Apple Watch</text>
+  <text class="sub" x="452" y="478">Cost: $56.99 a year</text>
+
+  <rect x="800" y="124" width="344" height="388" rx="10" fill="#f4f5f7"/>
+  <rect x="800" y="124" width="344" height="6" rx="3" fill="#3d3f45"/>
+  <text class="ch" x="824" y="166">A different app fits</text>
+  <text class="sub" x="824" y="192">if this sounds like you</text>
+  <text class="it" x="824" y="234">• You rarely schedule with others:</text>
+  <text class="it" x="840" y="262">Apple Calendar does the job</text>
+  <text class="it" x="824" y="304">• You live in Notion:</text>
+  <text class="it" x="840" y="332">Notion Calendar is free</text>
+  <text class="it" x="824" y="374">• You only need to see your week</text>
+  <text class="it" x="840" y="402">next to notes: an ICS feed</text>
+  <text class="sub" x="824" y="478">Cost: $0 to a one-time app</text>
+</svg>
