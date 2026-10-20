@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>How to clear the clipboard on Mac (all four places)</title>
+<meta name="description" content="To clear the clipboard on a Mac, run pbcopy &lt; /dev/null in Terminal. Then clear Spotlight&#x27;s clipboard history and your clipboard manager, which keep copies." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/clear-clipboard-mac/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/clear-clipboard-mac/" />
+<meta property="og:title" content="How to clear the clipboard on Mac (all four places)" />
+<meta property="og:description" content="To clear the clipboard on a Mac, run pbcopy &lt; /dev/null in Terminal. Then clear Spotlight&#x27;s clipboard history and your clipboard manager, which keep copies." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to clear the clipboard on Mac (all four places)" />
+<meta name="twitter:description" content="To clear the clipboard on a Mac, run pbcopy &lt; /dev/null in Terminal. Then clear Spotlight&#x27;s clipboard history and your clipboard manager, which keep copies." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to clear the clipboard on Mac, and every copy it keeps",
+  "description": "To clear the clipboard on a Mac, run pbcopy \u003c /dev/null in Terminal. Then clear Spotlight's clipboard history and your clipboard manager, which keep copies.",
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/clear-clipboard-mac/"
+  },
+  "url": "https://cyanote.app/blog/clear-clipboard-mac/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/where-a-copy-stays-mac.svg",
+      "width": 1200,
+      "height": 560
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "Clipboard, macOS, Privacy, How-to",
+  "wordCount": 2392
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to clear the clipboard on Mac, and every copy it keeps",
+      "item": "https://cyanote.app/blog/clear-clipboard-mac/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-10-20" />
+<meta property="article:modified_time" content="2026-10-20" />
+<meta property="article:author" content="Cyanote" />
+<meta property="article:tag" content="Clipboard" />
+<meta property="article:tag" content="macOS" />
+<meta property="article:tag" content="Privacy" />
+<meta property="article:tag" content="How-to" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" title="Menu"><span class="sr-only">Menu</span>
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<main class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>How to clear the clipboard on Mac, and every copy it keeps</h1>
+      <div class="meta">
+        <span>By Cyanote</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-10-20">20 October 2026</time></span>
+        <span class="dot">·</span>
+        <span>11 min read</span>
+      </div>
+    <ul class="tags"><li>Clipboard</li><li>macOS</li><li>Privacy</li><li>How-to</li></ul>
+    </header>
+
+    <div class="post">
+      <p>To clear the clipboard on a Mac, open Terminal and run <code>pbcopy &lt; /dev/null</code>. That empties what <code>⌘</code> + <code>V</code> would paste. It doesn't touch the other copies your Mac may be keeping. On macOS 26 Tahoe and later, Spotlight can hold a clipboard history of up to seven days. If you use a clipboard manager, it keeps its own history in its own database. Each one has its own clear command, and you need to run every one that applies.</p>
+      <p>I make Cyanote, a notes app with a clipboard manager built in, so for part of this post I'm describing the kind of tool you may be trying to clear. I'll say where my own app keeps things too.</p>
+      <h2 id="the-short-version">The short version</h2>
+      <ul><li><strong>The clipboard itself:</strong> <code>pbcopy &lt; /dev/null</code> in Terminal empties it. Restarting the Mac also wipes it. Check with <strong>Finder → Edit → Show Clipboard</strong>.</li><li><strong>Spotlight clipboard history (macOS 26 and later):</strong> press <code>⌘</code> + <code>Space</code>, then <code>⌘</code> + <code>4</code>, click the <strong>More</strong> button and choose <strong>Clear History</strong>. Since macOS 26.1 there's also a button in <strong>System Settings → Spotlight</strong>.</li><li><strong>Your iPhone or iPad:</strong> Universal Clipboard only offers a copy to nearby devices briefly. Turn off Handoff if you never use it.</li><li><strong>A clipboard manager:</strong> use its own Clear history command. Emptying the system clipboard leaves its history alone.</li><li><strong>Passwords:</strong> let your password manager clear them for you. 1Password does it after 90 seconds by default.</li></ul>
+      <h2 id="why-clear-the-clipboard-means-more-than-one-thing">Why "clear the clipboard" means more than one thing</h2>
+      <p>The Mac clipboard holds one item at a time. When you copy, the new item replaces the old one. Most guides stop there. On a current Mac, though, the item you copied may also have been saved somewhere else the moment you copied it.</p>
+      <figure><img src="/images/where-a-copy-stays-mac.svg" alt="The four places a copy can still be on a Mac: the system pasteboard, Spotlight clipboard history on macOS 26 and later, nearby devices through Universal Clipboard, and a clipboard manager&#x27;s own history, each with its own way to clear it" width="1200" height="560" loading="lazy" decoding="async" /><figcaption>Emptying the clipboard clears the first card. Spotlight and a clipboard manager keep their own copies until you clear those too.</figcaption></figure>
+      <p>People usually want the clipboard cleared for privacy. You copied a password, a card number or a private message, and you want it gone. If you only empty the pasteboard, the same text can still be sitting one keystroke away in Spotlight or in your clipboard manager.</p>
+      <p>There's a practical reason to bother as well. In September 2025, Microsoft Threat Intelligence described a <a href="https://www.microsoft.com/en-us/security/blog/2025/09/25/xcsset-evolves-again-analyzing-the-latest-updates-to-xcssets-inventory/">new variant of the XCSSET macOS malware</a> with a module that watches the clipboard and swaps cryptocurrency wallet addresses. Their advice was to "always verify that the pasted content matches the intended source." Whatever sits on the clipboard can be read by software running on your Mac, so leave less there.</p>
+      <h2 id="step-1-empty-the-system-clipboard">Step 1: empty the system clipboard</h2>
+      <p>The quickest reliable way is Terminal. Open it from <strong>Applications → Utilities</strong> and type:</p>
+      <pre><code>pbcopy &lt; /dev/null</code></pre>
+      <p>Press <code>Return</code>. <code>pbcopy</code> takes whatever you feed it and puts it on the clipboard, according to its <a href="https://ss64.com/mac/pbcopy.html">manual page</a> (mirrored at ss64). Feeding it <code>/dev/null</code> means feeding it nothing, so the clipboard ends up empty. Macworld gives the same command in its <a href="https://www.macworld.com/article/2682997/master-the-macos-finder-with-these-10-essential-tips-tricks-and-tweaks.html">Finder tips</a> (22 May 2025), noting that otherwise "there isn't an easy way to clear the clipboard."</p>
+      <p>To check it worked, switch to Finder and choose <strong>Edit → Show Clipboard</strong>. The window should be empty. Press <code>⌘</code> + <code>V</code> in a text field and nothing should appear.</p>
+      <p>If you'd rather not open Terminal, you have two other options:</p>
+      <ul><li><strong>Restart the Mac.</strong> Macworld notes the clipboard "gets wiped out every time" you restart.</li><li><strong>Copy something harmless.</strong> Select a single space or a throwaway word and press <code>⌘</code> + <code>C</code>. Strictly, this replaces the clipboard rather than emptying it, but the sensitive item is no longer what pastes. If a clipboard manager or Spotlight history is running, it keeps the old item, so carry on to the next steps.</li></ul>
+      <p>One thing I wouldn't use for this: <code>killall pboard</code>. It's the right fix when <a href="https://cyanote.app/blog/copy-and-paste-not-working-on-mac/">copy and paste stops working</a>, because it restarts the pasteboard service. It can drop what's on the clipboard, but nothing I could find documents that as a way to empty it, so don't rely on it to clear something sensitive.</p>
+      <h2 id="step-2-clear-spotlight-s-clipboard-history">Step 2: clear Spotlight's clipboard history</h2>
+      <p>macOS 26 Tahoe added a clipboard history inside Spotlight. It's off until you allow it. If you never switched it on, skip this step. If you did, it holds your recent copies even after you've emptied the clipboard in step 1.</p>
+      <p>To clear it, following <a href="https://support.apple.com/guide/mac-help/search-your-clipboard-history-mchl40d5b86b/mac">Apple's guide to searching your clipboard history</a>:</p>
+      <ol><li>Press <code>⌘</code> + <code>Space</code> to open Spotlight.</li><li>Press <code>⌘</code> + <code>4</code>, or click the Clipboard button, to show your clipboard history.</li><li>Click the <strong>More</strong> button and choose <strong>Clear History</strong>.</li></ol>
+      <p>macOS 26.1 added a second way. MacRumors <a href="https://www.macrumors.com/2025/11/04/more-spotlight-clipboard-settings-macos-26-1/">reported</a> (4 November 2025) a "Clear Clipboard History" button in <strong>System Settings → Spotlight</strong>. The same update lets you choose how long items are kept: 30 minutes, 8 hours or 7 days. Macworld's <a href="https://www.macworld.com/article/2962021/this-macos-tahoe-26-1-setting-will-eliminate-embarrassing-clipboard-mishaps.html">write-up of the same release</a> describes a <strong>Results from Clipboard</strong> switch there that turns the history off entirely.</p>
+      <p>If you only want one item gone, MacMost's <a href="https://macmost.com/how-to-use-the-spotlight-clipboard-history-in-macos-tahoe.html">guide to the Tahoe clipboard history</a> says you can Control-click it and choose <strong>Delete</strong>. Apple's own page doesn't mention that, so if the option isn't there on your version, clear the whole history instead.</p>
+      <p>Apple's page warns that "sensitive information may appear on the Clipboard." If you copy passwords regularly and use Spotlight's history, the 30-minute setting is a reasonable compromise.</p>
+      <h2 id="step-3-think-about-your-other-devices">Step 3: think about your other devices</h2>
+      <p>Universal Clipboard is the feature that lets you copy on a Mac and paste on your iPhone. Apple's <a href="https://support.apple.com/en-us/102430">Universal Clipboard article</a> says the copied item "is automatically added to the clipboard of your other nearby device", and that "it remains there briefly, or until you replace it by copying something else on either device". It also says Handoff, which Universal Clipboard relies on, is turned on by default.</p>
+      <p>In practice you rarely need to do anything here. Once you've emptied the Mac's clipboard and enough time has passed, the other device stops offering it. If you already pasted it on your iPhone or iPad, though, it's now on that device's own clipboard. Copy something else there to replace it. If you never use Universal Clipboard and would rather your copies stayed on the Mac, turn off Handoff. Apple's <a href="https://support.apple.com/en-us/guide/mac-help/mchl732d3c0a/mac">Handoff guide</a> puts the switch in <strong>System Settings → General → AirDrop &amp; Continuity</strong> (called <strong>AirDrop &amp; Handoff</strong> on some versions), as <strong>Allow Handoff between this Mac and your iCloud devices</strong>. Apple's <a href="https://support.apple.com/guide/mac-help/copy-and-paste-between-devices-mchl70368996/mac">Mac guide to copying between devices</a> lists Handoff as a requirement, so with it off, Universal Clipboard has nothing to work with. Handoff also passes open documents and web pages between devices, so you lose that as well.</p>
+      <h2 id="step-4-clear-your-clipboard-manager">Step 4: clear your clipboard manager</h2>
+      <p>A clipboard manager exists to remember what you copied, so emptying the system clipboard does nothing to it. It's also where a sensitive copy is most likely to stay, because managers keep hundreds of items or weeks of copies. Paste, for example, keeps 30 days by default, according to its help page linked below. Here's where the clear command lives in the common ones, from each app's own documentation, read on 20 October 2026.</p>
+      <div class="table-scroll"><table><thead><tr><th scope="col">App</th><th scope="col">Clear everything</th><th scope="col">Remove one item</th><th scope="col">Source</th></tr></thead><tbody><tr><td>Maccy</td><td><strong>Clear</strong> in its menu, or <code>⌥</code> + <code>⌘</code> + <code>⌫</code>. Pinned items stay unless you hold <code>⌥</code></td><td>Select it, press <code>⌥</code> + <code>⌫</code></td><td><a href="https://github.com/p0deje/Maccy">Maccy README</a></td></tr><tr><td>Alfred</td><td>Type <code>clear</code> in Alfred, then pick the last 5 minutes, 15 minutes or everything</td><td><code>fn</code> + <code>Delete</code> on the item</td><td><a href="https://www.alfredapp.com/help/features/clipboard/">Alfred help</a></td></tr><tr><td>Raycast</td><td><strong>Delete All Entries</strong>, or <strong>Delete Entries…</strong> for the last few minutes or hours</td><td><strong>Delete Entry</strong>, <code>⌘</code> + <code>X</code></td><td><a href="https://manual.raycast.com/clipboard-history">Raycast manual</a></td></tr><tr><td>Paste</td><td><strong>Erase History</strong> in Paste Settings → General. Pinned items and Pinboards stay</td><td>Not covered on that page</td><td><a href="https://pasteapp.io/help/control-history-retention">Paste help</a></td></tr><tr><td>Cyanote</td><td><strong>Clear history…</strong> at the foot of the clipboard window, or in Settings. Pinned snippets stay</td><td><strong>Delete</strong> from the item's menu</td><td><a href="https://cyanote.app/clipboard-manager-mac/">Cyanote</a> (my app)</td></tr></tbody></table></div>
+      <p>Most of these keep pinned items when you clear, so if you once pinned something sensitive, delete it separately. And Alfred and Raycast both let you clear just the last few minutes, which is the fastest fix when the problem is one thing you copied a moment ago. I go into more detail in my posts on <a href="https://cyanote.app/blog/alfred-clipboard-history/">Alfred's clipboard history</a> and on <a href="https://cyanote.app/blog/leaving-maccy/">moving off Maccy</a>.</p>
+      <p>In Cyanote, the clear removes every history entry, images included, after asking you to confirm. It doesn't empty the system clipboard, so run step 1 as well. If you switch the clipboard manager off in Settings, it erases everything it stored: the history, the pinned snippets and your recent searches. Turning it back on starts empty. The history keeps 500 items by default, adjustable from 10 up to 1,000. It lives in a local database on your Mac and is never synced anywhere.</p>
+      <h2 id="make-it-automatic-for-passwords">Make it automatic for passwords</h2>
+      <p>Clearing by hand works for the odd mistake. For passwords, which you copy all the time, let the software do it.</p>
+      <p><strong>Use your password manager's auto-clear.</strong> 1Password's <a href="https://support.1password.com/copy-passwords/">support page on copying passwords</a> says it "automatically removes copied passwords from the clipboard". The setting is called <strong>Remove copied information and authentication codes after 90 seconds</strong>, it's on by default, and it lives in <strong>Settings → Security</strong>. Bitwarden's <a href="https://bitwarden.com/help/product-faqs/">FAQ</a> says to open its preferences and set <strong>Clear clipboard</strong> to "a value other than Never". Check yours isn't set to Never.</p>
+      <p><strong>Check your clipboard manager skips them.</strong> A password manager can label what it copies as private. The convention, published at <a href="https://nspasteboard.org">nspasteboard.org</a>, defines a type for content that "should be treated as confidential" and another for content that "should not be recorded or displayed in a pasteboard history." Maccy's <a href="https://github.com/p0deje/Maccy">README</a> lists both among the types it ignores, and Cyanote skips both too. Alfred's help says it ignores concealed data by default, and Raycast's manual says it excludes passwords and Keychain Access. My post on <a href="https://cyanote.app/blog/what-your-clipboard-should-not-remember/">what a clipboard manager isn't supposed to remember</a> explains the convention and gives a thirty-second test you can run on yours.</p>
+      <p>The convention only works when the app you copy from uses it. A token copied out of Terminal, a code from an email or an address from a spreadsheet carries no label, so your clipboard manager records it like anything else. That's when the clear commands in step 4 earn their keep. Alfred's "last 5 minutes" and Raycast's <strong>Delete Entries…</strong> fit this case well, and in Cyanote I just delete the one entry.</p>
+      <h2 id="what-each-method-actually-clears">What each method actually clears</h2>
+      <div class="table-scroll"><table><thead><tr><th scope="col">What you do</th><th scope="col">Pasteboard</th><th scope="col">Spotlight history</th><th scope="col">Nearby devices</th><th scope="col">Clipboard manager</th></tr></thead><tbody><tr><td><code>pbcopy &lt; /dev/null</code></td><td>Emptied</td><td>Kept</td><td>Expires soon after, unless already pasted there</td><td>Kept</td></tr><tr><td>Copy a space</td><td>Replaced</td><td>Old item kept</td><td>Replaced</td><td>Old item kept</td></tr><tr><td>Restart the Mac</td><td>Emptied</td><td>Kept until cleared or expired</td><td>Expires soon after, unless already pasted there</td><td>Kept</td></tr><tr><td>Spotlight → More → Clear History</td><td>Unchanged</td><td>Cleared</td><td>Unchanged</td><td>Kept</td></tr><tr><td>Manager's Clear history</td><td>Unchanged</td><td>Kept</td><td>Unchanged</td><td>Cleared, pins usually kept</td></tr><tr><td>Password manager auto-clear</td><td>Cleared after its timer</td><td>Not reliably covered</td><td>Expires soon after, unless already pasted there</td><td>Kept, unless it honours the private label</td></tr></tbody></table></div>
+      <p>The Spotlight column is my inference from how Apple describes the feature, as a history kept separately from what's on the clipboard. Apple doesn't spell out what a restart does to it. If it matters, clear it explicitly.</p>
+      <h2 id="if-you-d-rather-keep-a-history-you-control">If you'd rather keep a history you control</h2>
+      <p>A clipboard history is still useful, as long as you know where it lives and how to clear it. Spotlight's version is built in and caps out at seven days, and for many people that's enough. If you want more, look for a manager that skips password-manager copies, has a quick way to delete one entry, and keeps its history on your Mac rather than on someone else's server. I wrote a longer guide to <a href="https://cyanote.app/blog/clipboard-history-on-mac/">clipboard history on a Mac</a> that compares the options.</p>
+      <p>Cyanote is one of them: a searchable clipboard history opened from any app with <code>⌥</code> + <code>⇧</code> + <code>V</code>, kept locally next to your notes and tasks, with no account and no sync. If you need your history on your iPhone too, it isn't the right pick. Paste syncs its history across devices, according to its <a href="https://apps.apple.com/us/app/paste-limitless-clipboard/id967805235">App Store listing</a> (read 20 October 2026), and suits you better. Cyanote for Mac is <a href="https://cyanote.app/pricing/">$7.99 once</a>, with no subscription. The Windows edition is a separate $7.99 purchase on the Microsoft Store. There's more on the <a href="https://cyanote.app/clipboard-manager-mac/">clipboard manager page</a>.</p>
+      <h2 id="the-order-i-d-do-it-in">The order I'd do it in</h2>
+      <p>When I've copied something I shouldn't have, I do three things. I run <code>pbcopy &lt; /dev/null</code>, I delete that one entry from my clipboard history, and if Spotlight's history is on, I clear it. That takes about ten seconds. For passwords, I leave it to the password manager's timer and a clipboard manager that skips them.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/apps-that-do-not-phone-home/">How to tell whether an app phones home</a><span>No telemetry&quot; is a claim, and claims are checkable. Here is how to see exactly what an app on your Mac sends, without trusting anybody&#x27;s privacy page.</span></li><li><a href="https://cyanote.app/blog/copy-screenshot-to-clipboard-mac/">How to copy a screenshot to the clipboard on a Mac</a><span>Add Control to any Mac screenshot shortcut and the picture goes to the clipboard, not the Desktop. How to paste it, save it, and get it back once it&#x27;s gone.</span></li></ul>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h2>Product</h2><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h2>Resources</h2><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h2>Download</h2><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+</body>
+</html>

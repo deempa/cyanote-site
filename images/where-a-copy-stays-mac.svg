@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="wcs-title wcs-desc">
+  <title id="wcs-title">The four places a copy can still be on a Mac</title>
+  <desc id="wcs-desc">After you copy something on a Mac it can be held in up to four places. The system pasteboard holds one item until the next copy; empty it with pbcopy in Terminal. Spotlight clipboard history on macOS 26 and later keeps items for up to seven days if you switched it on; clear it with Clear History in Spotlight or in System Settings, Spotlight. Universal Clipboard offers the item to your nearby iPhone or iPad briefly; it expires on its own, or turn off Handoff. A clipboard manager keeps its own history for as long as its settings say; use its Clear history command.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .key  { font-size: 18px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 17px; fill: #3d3f45; }
+    .note { font-size: 16px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .row  { fill: #f4f4f5; }
+    .hot  { fill: #e3f1fa; }
+    .warn { fill: #fdeeee; }
+    .foot { font-size: 20px; fill: #3d3f45; }
+  </style>
+
+  <!-- Column 1: pasteboard -->
+  <rect class="card" x="24" y="24" width="270" height="460" rx="12"/>
+  <rect x="24" y="24" width="270" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="note" x="48" y="66">1 · every Mac</text>
+  <text class="h" x="48" y="96">The pasteboard</text>
+  <rect class="row" x="48" y="116" width="222" height="82" rx="8"/>
+  <text class="item" x="64" y="146">Holds one item</text>
+  <text class="note" x="64" y="172">until the next copy</text>
+  <rect class="warn" x="48" y="214" width="222" height="82" rx="8"/>
+  <text class="item" x="64" y="244">Other apps can read it</text>
+  <text class="note" x="64" y="270">while it sits there</text>
+  <rect class="hot" x="48" y="312" width="222" height="82" rx="8"/>
+  <text class="key" x="64" y="342">Clear it:</text>
+  <text class="note" x="64" y="368">pbcopy &lt; /dev/null</text>
+  <text class="note" x="48" y="440">Check: Finder &#8594; Edit &#8594;</text>
+  <text class="note" x="48" y="464">Show Clipboard</text>
+
+  <!-- Column 2: Spotlight -->
+  <rect class="card" x="318" y="24" width="270" height="460" rx="12"/>
+  <rect x="318" y="24" width="270" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="note" x="342" y="66">2 · macOS 26 and later</text>
+  <text class="h" x="342" y="96">Spotlight history</text>
+  <rect class="row" x="342" y="116" width="222" height="82" rx="8"/>
+  <text class="item" x="358" y="146">Off until you allow it</text>
+  <text class="note" x="358" y="172">then up to 7 days</text>
+  <rect class="warn" x="342" y="214" width="222" height="82" rx="8"/>
+  <text class="item" x="358" y="244">Survives emptying</text>
+  <text class="note" x="358" y="270">the pasteboard</text>
+  <rect class="hot" x="342" y="312" width="222" height="82" rx="8"/>
+  <text class="key" x="358" y="342">Clear it:</text>
+  <text class="note" x="358" y="368">&#8984;Space &#8594; &#8984;4 &#8594; More</text>
+  <text class="note" x="342" y="440">&#8594; Clear History, or in</text>
+  <text class="note" x="342" y="464">System Settings &#8594; Spotlight</text>
+
+  <!-- Column 3: Universal Clipboard -->
+  <rect class="card" x="612" y="24" width="270" height="460" rx="12"/>
+  <rect x="612" y="24" width="270" height="8" rx="4" fill="#b8bcc4"/>
+  <text class="note" x="636" y="66">3 · with Handoff on</text>
+  <text class="h" x="636" y="96">Nearby devices</text>
+  <rect class="row" x="636" y="116" width="222" height="82" rx="8"/>
+  <text class="item" x="652" y="146">Offered to your</text>
+  <text class="note" x="652" y="172">iPhone or iPad</text>
+  <rect class="row" x="636" y="214" width="222" height="82" rx="8"/>
+  <text class="item" x="652" y="244">Only briefly</text>
+  <text class="note" x="652" y="270">or until the next copy</text>
+  <rect class="hot" x="636" y="312" width="222" height="82" rx="8"/>
+  <text class="key" x="652" y="342">Stop it:</text>
+  <text class="note" x="652" y="368">turn off Handoff</text>
+  <text class="note" x="636" y="440">Universal Clipboard</text>
+  <text class="note" x="636" y="464">rides on Handoff</text>
+
+  <!-- Column 4: clipboard manager -->
+  <rect class="card" x="906" y="24" width="270" height="460" rx="12"/>
+  <rect x="906" y="24" width="270" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="note" x="930" y="66">4 · if you installed one</text>
+  <text class="h" x="930" y="96">Clipboard manager</text>
+  <rect class="row" x="930" y="116" width="222" height="82" rx="8"/>
+  <text class="item" x="946" y="146">Its own database</text>
+  <text class="note" x="946" y="172">kept as long as it says</text>
+  <rect class="warn" x="930" y="214" width="222" height="82" rx="8"/>
+  <text class="item" x="946" y="244">Survives emptying</text>
+  <text class="note" x="946" y="270">the pasteboard</text>
+  <rect class="hot" x="930" y="312" width="222" height="82" rx="8"/>
+  <text class="key" x="946" y="342">Clear it:</text>
+  <text class="note" x="946" y="368">its Clear history command</text>
+  <text class="note" x="930" y="440">Or delete the one</text>
+  <text class="note" x="930" y="464">entry you regret</text>
+
+  <text class="foot" x="24" y="528">Emptying the pasteboard clears 1. Places 2 and 4 keep their own copy until you clear them too.</text>
+</svg>
