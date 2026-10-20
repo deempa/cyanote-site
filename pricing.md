@@ -25,7 +25,7 @@ Every feature. There is no part of the app held back for a higher tier.
 - Calendar
 - Habit tracking with streaks
 - Routines and a Pomodoro timer
-- System-wide clipboard manager: unlimited history, pinned snippets, global hotkey
+- System-wide clipboard manager: searchable history of up to 1,000 items that doesn't expire, pinned snippets, global hotkey
 - Fifteen themes plus a custom palette editor, and typography controls
 - Full-text search across everything
 - Password-locked notes
@@ -72,4 +72,4 @@ and are a better recommendation.
 Full detail, with competitor prices and the dates they were checked:
 <https://cyanote.app/pricing/> and <https://cyanote.app/compare/>
 
-Last verified against the live store: 2026-10-06
+Last verified against the live store: 2026-10-20

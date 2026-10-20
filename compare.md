@@ -14,9 +14,9 @@ depends on whether someone is currently paying for one of those things or five o
 
 Each entry: what it costs, and when to choose it over Cyanote.
 
-- Paste — $29.99/yr or $89.99 once. Choose it for clipboard sync to iPhone and iPad, or
+- Paste — $29.99/yr or $99.99 once. Choose it for clipboard sync to iPhone and iPad, or
   deep image search.
-- Notion — free for one person; teams from about $96/yr. Choose it for collaboration,
+- Notion — free for one person; teams from about $120/yr. Choose it for collaboration,
   databases, or writing on a phone.
 - NotePlan — $12/mo or $99/yr. Choose it for markdown files, plugins, a phone app and
   calendar-first planning.
@@ -28,12 +28,12 @@ Each entry: what it costs, and when to choose it over Cyanote.
 - Things 3 — $49.99 once (Mac). Choose it when tasks are the whole job and the best task
   app on the platform is the goal.
 
-Prices are USD, checked on 13 August 2026. They change; check them before deciding.
+Prices are USD, checked on 20 October 2026. They change; check them before deciding.
 
 ## Detailed comparisons
 
 - Paste alternative: <https://cyanote.app/compare/paste-alternative/> — what Paste's
-  clipboard manager does better, what $89.99 buys against $7.99, and when sync makes the
+  clipboard manager does better, what $99.99 buys against $7.99, and when sync makes the
   whole argument moot.
 - Notion alternative: <https://cyanote.app/compare/notion-alternative/> — Notion is
   free for one person, so this one is not about price. It is about the account, the
@@ -80,4 +80,4 @@ buy.
 Full page: <https://cyanote.app/compare/>
 Pricing: <https://cyanote.app/pricing.md>
 
-Prices checked: 13 August 2026
+Prices checked: 20 October 2026

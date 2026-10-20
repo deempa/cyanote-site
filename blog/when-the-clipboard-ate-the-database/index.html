@@ -37,7 +37,7 @@
   "headline": "When the clipboard ate the database",
   "description": "On a real install the clipboard was 42.8 MB of a 44.8 MB database, and 80 screenshots were all of it. A row limit does not bound bytes. What replaced it.",
   "datePublished": "2026-08-18",
-  "dateModified": "2026-09-07",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "@id": "https://cyanote.app/#organization",
@@ -82,7 +82,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Builder's log, Clipboard, Performance",
-  "wordCount": 1328
+  "wordCount": 1332
 }
 </script>
 <script type="application/ld+json">
@@ -112,7 +112,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-18" />
-<meta property="article:modified_time" content="2026-09-07" />
+<meta property="article:modified_time" content="2026-10-20" />
 <meta property="article:author" content="Cyanote" />
 <meta property="article:tag" content="Builder&#x27;s log" />
 <meta property="article:tag" content="Clipboard" />
@@ -155,6 +155,8 @@
         <span>By Cyanote</span>
         <span class="dot">·</span>
         <span><time datetime="2026-08-18">18 August 2026</time></span>
+      <span class="dot">·</span>
+      <span>Updated <time datetime="2026-10-20">20 October 2026</time></span>
         <span class="dot">·</span>
         <span>6 min read</span>
       </div>
@@ -192,7 +194,7 @@
       <p><strong>State the limit in the unit of the cost.</strong> If what you are protecting is disk, the limit is bytes. A row count is a proxy that holds exactly until one row can be a thousand times bigger than another, which — for anything touching user-supplied media — is immediately.</p>
       <p><strong>Degrade instead of deleting.</strong> The budget could have dropped whole entries. Keeping a lower-fidelity version means the history stays complete and the user never encounters an unexplained hole. People forgive fuzzy. Nobody forgives missing.</p>
       <p><strong>Check what an API gave you, not what you asked for.</strong> WebP that is silently a PNG. A <code>from_bytes</code> call that returns a stub because a build feature was not enabled. Both were caught by verifying the result; neither would have failed loudly on its own.</p>
-      <p>All of this shipped in 1.0.3, where the public note says the clipboard takes up far less space and its list opens faster when it holds screenshots. Both true. The <a href="/clipboard-manager-mac/">clipboard manager page</a> covers what it does; <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">when a free clipboard manager stops being enough</a> covers why you would want unlimited history in the first place, a promise that is only honest if somebody has done this arithmetic.</p>
+      <p>All of this shipped in 1.0.3, where the public note says the clipboard takes up far less space and its list opens faster when it holds screenshots. Both true. The <a href="/clipboard-manager-mac/">clipboard manager page</a> covers what it does; <a href="/blog/when-a-free-clipboard-manager-stops-being-enough/">when a free clipboard manager stops being enough</a> covers why you would want a history that does not expire in the first place, a promise that is only honest if somebody has done this arithmetic.</p>
     </div>
   </article>
 

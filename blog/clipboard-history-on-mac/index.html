@@ -37,7 +37,7 @@
   "headline": "How to see clipboard history on a Mac",
   "description": "macOS 26 added a clipboard history inside Spotlight. How to turn it on, how long it keeps things, what older Macs have instead, and when a manager is worth it.",
   "datePublished": "2026-08-11",
-  "dateModified": "2026-10-02",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "@id": "https://cyanote.app/#organization",
@@ -82,7 +82,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Clipboard, macOS, How-to",
-  "wordCount": 2100
+  "wordCount": 2114
 }
 </script>
 <script type="application/ld+json">
@@ -112,7 +112,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-11" />
-<meta property="article:modified_time" content="2026-10-02" />
+<meta property="article:modified_time" content="2026-10-20" />
 <meta property="article:author" content="Cyanote" />
 <meta property="article:tag" content="Clipboard" />
 <meta property="article:tag" content="macOS" />
@@ -156,7 +156,7 @@
         <span class="dot">·</span>
         <span><time datetime="2026-08-11">11 August 2026</time></span>
       <span class="dot">·</span>
-      <span>Updated <time datetime="2026-10-02">2 October 2026</time></span>
+      <span>Updated <time datetime="2026-10-20">20 October 2026</time></span>
         <span class="dot">·</span>
         <span>10 min read</span>
       </div>
@@ -199,7 +199,7 @@
       <p>The clipboard is a system-wide scratch space that every app can read. That is what makes it useful, and it is also why keeping a history of it is an uncomfortable feature to ship.</p>
       <p>Think about what passes through your clipboard in an ordinary week. Passwords, on the way from a password manager to a login form. A two-factor code. Your address. A card number. An API key. A private link that grants access to whoever holds it. All of it, sitting in the same buffer as the URL you copied to send to a friend.</p>
       <p>A clipboard history turns that stream into a record. That is exactly what makes it useful and exactly what makes it a liability. A history that expires after a day or a week limits the damage. A history that keeps everything has to be more careful about what it lets in, and how a given tool handles that is the thing worth paying attention to.</p>
-      <figure><img src="/images/clipboard.webp" alt="Cyanote&#x27;s clipboard history: every copy kept in a searchable list, with a type icon per item" width="1400" height="912" loading="lazy" decoding="async" /><figcaption>A clipboard history is just a list. The design questions are where it is kept and what it refuses to keep.</figcaption></figure>
+      <figure><img src="/images/clipboard.webp" alt="Cyanote&#x27;s clipboard history: up to 1,000 copies kept in a searchable list, with a type icon per item" width="1400" height="912" loading="lazy" decoding="async" /><figcaption>A clipboard history is just a list. The design questions are where it is kept and what it refuses to keep.</figcaption></figure>
       <h2 id="what-a-clipboard-manager-adds">What a clipboard manager adds</h2>
       <p>A clipboard manager is a small background app that watches the clipboard and keeps what passes through it. When you want something back, you open it with a hotkey, find the item, and it goes back on the clipboard or straight into the app you were in.</p>
       <p>Against the Spotlight history, the differences worth checking are these:</p>
@@ -215,7 +215,7 @@
       <p>The three snippets you paste constantly should not scroll away or expire. Pinning is what turns a history into a set of shortcuts.</p>
       <h3 id="its-own-shortcut">Its own shortcut</h3>
       <p>A dedicated key that opens the history from any app, without going through a search panel first. Small, but you press it dozens of times a day.</p>
-      <p>Disclosure, since this blog belongs to one: Cyanote has a clipboard manager built in. On the Mac it keeps an unlimited history, text and images, in a local database on your Mac, with no account and no sync. It opens from any app with <code>Option</code> + <code>Shift</code> + <code>V</code> (⌥⇧V), with a separate shortcut for pinned snippets, and you can search the whole history. Copies a password manager marks as private are not kept. Pasting an item straight into the app you were in needs the Accessibility permission, which <a href="/blog/why-a-mac-app-asks-for-accessibility/">is a bigger permission than its name suggests</a>. It does not clash with Spotlight's <code>⌘</code> + <code>4</code>, so nothing stops you running both.</p>
+      <p>Disclosure, since this blog belongs to one: Cyanote has a clipboard manager built in. On the Mac it keeps up to 1,000 items of history, 500 by default, with no expiry. Text and images are both kept, in a local database on your Mac, with no account and no sync. It opens from any app with <code>Option</code> + <code>Shift</code> + <code>V</code> (⌥⇧V), with a separate shortcut for pinned snippets, and you can search the whole history. Copies a password manager marks as private are not kept. Pasting an item straight into the app you were in needs the Accessibility permission, which <a href="/blog/why-a-mac-app-asks-for-accessibility/">is a bigger permission than its name suggests</a>. It does not clash with Spotlight's <code>⌘</code> + <code>4</code>, so nothing stops you running both.</p>
       <p>It is one of several things the app does rather than the only one, which is either the point or the drawback, depending on what you came for. The Mac version is $7.99 once.</p>
       <p>If the subscription question is what is actually holding you up, that is <a href="/blog/clipboard-manager-mac-without-subscription/">its own decision</a>. And if you are weighing this against Paste specifically, <a href="/compare/paste-alternative/">the two are compared here</a>, prices included.</p>
       <h2 id="before-you-install-one">Before you install one</h2>

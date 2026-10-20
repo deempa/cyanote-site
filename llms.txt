@@ -39,7 +39,7 @@ does not suit teams, real-time collaboration or reading notes on a phone.
 - Calendar — events, due tasks and habits in one view; imports `.ics` files, and can subscribe read-only to a remote calendar by its secret iCal address
 - Habit tracking with streaks
 - Routines and a Pomodoro timer — timed checklists
-- System-wide clipboard manager — unlimited local history, pinned snippets, one global hotkey, opens over any app
+- System-wide clipboard manager — local history of up to 1,000 items (500 by default) that doesn't expire, pinned snippets, one global hotkey, opens over any app
 - Fifteen built-in themes plus a custom palette editor, and typography controls
 - Instant full-text search across everything
 

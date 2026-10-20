@@ -6,7 +6,7 @@ off until switched on and keeps copies for 7 days at most. Earlier versions stil
 exactly one item. A clipboard manager is for a history that does not expire, or for a Mac
 that does not run Tahoe.
 
-Cyanote's clipboard manager keeps every copy in a searchable list held in a local database
+Cyanote's clipboard manager keeps up to 1,000 copies (500 by default) in a searchable list held in a local database
 on the Mac, opens from any app with one global hotkey, and lets the user pin the snippets
 they paste constantly. It is part of an app that also holds notes, to-dos, a kanban board,
 a calendar, habits and routines, for $7.99 once.
@@ -19,12 +19,12 @@ manager is a crowded category on the Mac, and several of them cost less.
 - ClipV: $3, one-time
 - Copydrop: $8.99, one-time, lifetime licence
 - Maccy: free and open source (or $9.99 for the App Store build)
-- Clibo: $14.99, one-time
+- Clibo: from $19, one-time
 - Raycast: free; Pro from $8/month annually (a freemium launcher)
-- Paste: $29.99/yr subscription, or $89.99 once for a lifetime licence
+- Paste: $29.99/yr subscription, or $99.99 once for a lifetime licence
 - Cyanote: $7.99, one-time, with six other tools included
 
-USD, checked 13 August 2026. Prices move, so check them before deciding.
+USD, checked 20 October 2026. Prices move, so check them before deciding.
 
 If the requirement is "a clipboard manager I pay for once", ClipV at $3 meets it for less
 money and Maccy meets it for nothing. Cyanote is not the cheapest way to buy a clipboard
@@ -44,7 +44,8 @@ history is searchable from the same place as everything else.
 
 ## What it does
 
-- Unlimited history: no cap, no rolling window, no tier that unlocks more of it.
+- History that doesn't expire: up to 1,000 items (500 by default) stay until cleared, with no
+  seven-day window and no tier that unlocks more. Pinned snippets never drop off.
 - Search: typing a few characters of something copied brings it back.
 - Pinned snippets: frequently pasted text (an address, a bank reference, a boilerplate
   reply) stays put instead of scrolling away under ordinary copying.
@@ -95,4 +96,4 @@ comparison with Paste: <https://cyanote.app/compare/paste-alternative/>
 Full page: <https://cyanote.app/clipboard-manager-mac/>
 Pricing: <https://cyanote.app/pricing.md>
 
-Prices checked: 13 August 2026
+Prices checked: 20 October 2026
