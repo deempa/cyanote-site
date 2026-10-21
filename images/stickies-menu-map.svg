@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="sm-title sm-desc">
+  <title id="sm-title">Where each Stickies control lives in the menu bar</title>
+  <desc id="sm-desc">Four menus in Apple's Stickies app. File holds New Note, Import Text, Export Text and Export All to Notes. Colour holds six note colours: yellow, blue, green, pink, purple and grey. Window holds Float on Top, Translucent, Arrange By, Collapse, Collapse All and Use as Default. Edit holds Find, which can search the current note or all notes.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 20px; font-weight: 600; fill: #0a0a0b; }
+    .item { font-size: 18px; fill: #0a0a0b; }
+    .sub  { font-size: 16px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .sw   { stroke: #c9cbd0; stroke-width: 1.5; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl, .item { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .sw   { stroke: #4a4d55; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="472" rx="12"/>
+  <text class="h" x="52" y="68">Stickies, menu by menu: the controls most people never find</text>
+
+  <rect class="box" x="52" y="96" width="262" height="372" rx="10"/>
+  <text class="lbl" x="74" y="132">File</text>
+  <text class="item" x="74" y="176">New Note</text>
+  <text class="item" x="74" y="214">Import Text…</text>
+  <text class="item" x="74" y="252">Export Text…</text>
+  <text class="item" x="74" y="290">Export All to Notes…</text>
+  <text class="sub" x="74" y="336">Export All copies every</text>
+  <text class="sub" x="74" y="358">sticky into Apple Notes,</text>
+  <text class="sub" x="74" y="380">a folder per colour. The</text>
+  <text class="sub" x="74" y="402">originals stay in Stickies.</text>
+
+  <rect class="box" x="332" y="96" width="262" height="372" rx="10"/>
+  <text class="lbl" x="354" y="132">Colour</text>
+  <rect class="sw" x="354" y="158" width="26" height="26" rx="5" fill="#fff59d"/><text class="item" x="392" y="178">Yellow</text>
+  <rect class="sw" x="354" y="196" width="26" height="26" rx="5" fill="#a9d8f5"/><text class="item" x="392" y="216">Blue</text>
+  <rect class="sw" x="354" y="234" width="26" height="26" rx="5" fill="#b9e8a8"/><text class="item" x="392" y="254">Green</text>
+  <rect class="sw" x="354" y="272" width="26" height="26" rx="5" fill="#f8bcd4"/><text class="item" x="392" y="292">Pink</text>
+  <rect class="sw" x="354" y="310" width="26" height="26" rx="5" fill="#d6c2f2"/><text class="item" x="392" y="330">Purple</text>
+  <rect class="sw" x="354" y="348" width="26" height="26" rx="5" fill="#dedfe2"/><text class="item" x="392" y="368">Grey</text>
+  <text class="sub" x="354" y="414">Colour is the only way</text>
+  <text class="sub" x="354" y="436">to group notes in Stickies.</text>
+
+  <rect class="boxa" x="612" y="96" width="282" height="372" rx="10"/>
+  <text class="lbl" x="634" y="132">Window</text>
+  <text class="item" x="634" y="176">Float on Top</text>
+  <text class="item" x="634" y="214">Translucent</text>
+  <text class="item" x="634" y="252">Arrange By</text>
+  <text class="item" x="634" y="290">Collapse, Collapse All</text>
+  <text class="item" x="634" y="328">Use as Default</text>
+  <text class="sub" x="634" y="374">Float on Top keeps a note</text>
+  <text class="sub" x="634" y="396">above other apps' windows.</text>
+  <text class="sub" x="634" y="418">Set it per note, not once.</text>
+
+  <rect class="box" x="912" y="96" width="236" height="372" rx="10"/>
+  <text class="lbl" x="934" y="132">Edit</text>
+  <text class="item" x="934" y="176">Find…</text>
+  <text class="sub" x="934" y="214">Searches the current</text>
+  <text class="sub" x="934" y="236">note or all notes, and</text>
+  <text class="sub" x="934" y="258">can replace text.</text>
+  <text class="sub" x="934" y="304">It lands the cursor in</text>
+  <text class="sub" x="934" y="326">a window. There is no</text>
+  <text class="sub" x="934" y="348">list of results.</text>
+</svg>

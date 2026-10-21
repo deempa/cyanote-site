@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="st-title st-desc">
+  <title id="st-title">Which sticky note to use on a Mac, by what you need it to do</title>
+  <desc id="st-desc">Five needs matched to a tool. A few reminders on screen on this Mac only: Stickies. The same note on your iPhone: Apple Notes, as a desktop widget or a window kept on top. A jot from any app without switching: Quick Note with Fn-Q, or a hotkey app such as Antinote or Tot. Your Windows Sticky Notes on a Mac: onenote.com/stickynotes in a browser. A sticky note that ends up filed beside your tasks and calendar: Cyanote's floating note.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="512" rx="12"/>
+  <text class="h" x="52" y="68">Pick the sticky note by the job, not by the look</text>
+
+  <rect class="box" x="52" y="92" width="520" height="70" rx="10"/>
+  <text class="lbl" x="72" y="122">A few reminders on screen</text>
+  <text class="sub" x="72" y="147">on this Mac only, free, nothing to install</text>
+  <path class="arr" d="M576 127 H640"/><polygon class="head" points="640,119 656,127 640,135"/>
+  <rect class="box" x="660" y="92" width="488" height="70" rx="10"/>
+  <text class="lbl" x="680" y="122">Stickies</text>
+  <text class="sub" x="680" y="147">Window → Float on Top for the one that matters</text>
+
+  <rect class="box" x="52" y="178" width="520" height="70" rx="10"/>
+  <text class="lbl" x="72" y="208">The same note on your iPhone</text>
+  <text class="sub" x="72" y="233">it has to sync through iCloud</text>
+  <path class="arr" d="M576 213 H640"/><polygon class="head" points="640,205 656,213 640,221"/>
+  <rect class="box" x="660" y="178" width="488" height="70" rx="10"/>
+  <text class="lbl" x="680" y="208">Apple Notes</text>
+  <text class="sub" x="680" y="233">a desktop widget, or a window kept on top</text>
+
+  <rect class="box" x="52" y="264" width="520" height="70" rx="10"/>
+  <text class="lbl" x="72" y="294">A jot from any app</text>
+  <text class="sub" x="72" y="319">without switching to another window first</text>
+  <path class="arr" d="M576 299 H640"/><polygon class="head" points="640,291 656,299 640,307"/>
+  <rect class="box" x="660" y="264" width="488" height="70" rx="10"/>
+  <text class="lbl" x="680" y="294">Quick Note (Fn + Q), or a hotkey app</text>
+  <text class="sub" x="680" y="319">such as Antinote or Tot</text>
+
+  <rect class="box" x="52" y="350" width="520" height="70" rx="10"/>
+  <text class="lbl" x="72" y="380">Your Windows Sticky Notes</text>
+  <text class="sub" x="72" y="405">on a Mac, where Microsoft ships no app</text>
+  <path class="arr" d="M576 385 H640"/><polygon class="head" points="640,377 656,385 640,393"/>
+  <rect class="box" x="660" y="350" width="488" height="70" rx="10"/>
+  <text class="lbl" x="680" y="380">onenote.com/stickynotes</text>
+  <text class="sub" x="680" y="405">in a browser, signed in to Microsoft</text>
+
+  <rect class="boxa" x="52" y="436" width="520" height="70" rx="10"/>
+  <text class="lbl" x="72" y="466">A note that gets filed later</text>
+  <text class="sub" x="72" y="491">next to your tasks, calendar and clipboard</text>
+  <path class="arr" d="M576 471 H640"/><polygon class="head" points="640,463 656,471 640,479"/>
+  <rect class="boxa" x="660" y="436" width="488" height="70" rx="10"/>
+  <text class="lbl" x="680" y="466">Cyanote floating note (⇧⌥N)</text>
+  <text class="sub" x="680" y="491">one pinned window, plain text, local only</text>
+</svg>
