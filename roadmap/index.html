@@ -130,13 +130,13 @@
       </div>
 
       <div class="rf-field">
-        <label for="rf-email">Email <span class="rf-hint">— optional, only if you want a reply</span></label>
-        <input id="rf-email" type="email" name="email" autocomplete="email" />
+        <label for="rf-email">Email <span class="rf-hint">— so I can reply or ask a follow-up</span></label>
+        <input id="rf-email" type="email" name="email" autocomplete="email" required />
       </div>
 
       <button class="btn btn-primary" type="submit">Send it</button>
       <p class="rf-status" role="status" aria-live="polite"></p>
-      <p class="rf-fine">No account, no newsletter. If you leave an email it is used
+      <p class="rf-fine">No account, no newsletter. Your email is used only
       to reply to you and nothing else — see the <a href="/privacy.html">privacy policy</a>.</p>
     </form>
   </div>
@@ -163,6 +163,12 @@
       e.preventDefault();
       var body = f.querySelector('#rf-body');
       if (!body.value.trim()) { status.textContent = 'Tell me what happened first.'; body.focus(); return; }
+      var email = f.querySelector('#rf-email');
+      email.value = email.value.trim();
+      if (!email.value || !email.checkValidity()) {
+        status.textContent = email.value ? 'That email does not look right.' : 'Add your email so I can reply.';
+        email.focus(); return;
+      }
       btn.disabled = true; btn.textContent = 'Sending…'; status.textContent = '';
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
