@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="pm-title pm-desc">
+  <title id="pm-title">Which way to paste without formatting on a Mac</title>
+  <desc id="pm-desc">Four situations matched to a method. A one-off paste in a Mac app such as Mail, Notes or Pages: Paste and Match Style, Option-Shift-Command-V. Pasting into Google Docs or Word: the app's own shortcut, Command-Shift-V. Pasting plain text often in the same few apps: a custom App Shortcut in System Settings. Pasting plain text all day, from anywhere: a clipboard tool that pastes plain text, such as Raycast, Maccy or Cyanote.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="512" rx="12"/>
+  <text class="h" x="52" y="68">Pick the method by how often the formatting gets in your way</text>
+
+  <rect class="box" x="52" y="96" width="520" height="90" rx="10"/>
+  <text class="lbl" x="72" y="132">Once in a while, in a Mac app</text>
+  <text class="sub" x="72" y="160">Mail, Notes, Pages, TextEdit</text>
+  <path class="arr" d="M576 141 H640"/><polygon class="head" points="640,133 656,141 640,149"/>
+  <rect class="box" x="660" y="96" width="488" height="90" rx="10"/>
+  <text class="lbl" x="680" y="132">Paste and Match Style</text>
+  <text class="sub" x="680" y="160">&#8997;&#8679;&#8984;V, or Edit menu</text>
+
+  <rect class="box" x="52" y="202" width="520" height="90" rx="10"/>
+  <text class="lbl" x="72" y="238">In Google Docs or Word</text>
+  <text class="sub" x="72" y="266">they use their own command</text>
+  <path class="arr" d="M576 247 H640"/><polygon class="head" points="640,239 656,247 640,255"/>
+  <rect class="box" x="660" y="202" width="488" height="90" rx="10"/>
+  <text class="lbl" x="680" y="238">The app&#8217;s own shortcut</text>
+  <text class="sub" x="680" y="266">&#8984;&#8679;V in both</text>
+
+  <rect class="box" x="52" y="308" width="520" height="90" rx="10"/>
+  <text class="lbl" x="72" y="344">Often, in the same few apps</text>
+  <text class="sub" x="72" y="372">and four keys is too many</text>
+  <path class="arr" d="M576 353 H640"/><polygon class="head" points="640,345 656,353 640,361"/>
+  <rect class="box" x="660" y="308" width="488" height="90" rx="10"/>
+  <text class="lbl" x="680" y="344">A custom App Shortcut</text>
+  <text class="sub" x="680" y="372">System Settings &#8594; Keyboard</text>
+
+  <rect class="boxa" x="52" y="414" width="520" height="90" rx="10"/>
+  <text class="lbl" x="72" y="450">All day, from anywhere</text>
+  <text class="sub" x="72" y="478">browser, PDFs, chat, email</text>
+  <path class="arr" d="M576 459 H640"/><polygon class="head" points="640,451 656,459 640,467"/>
+  <rect class="boxa" x="660" y="414" width="488" height="90" rx="10"/>
+  <text class="lbl" x="680" y="450">A clipboard tool that pastes plain text</text>
+  <text class="sub" x="680" y="478">Raycast, Maccy, Cyanote</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="pf-title pf-desc">
+  <title id="pf-title">Why a paste brings formatting with it</title>
+  <desc id="pf-desc">Copying text from a web page puts several versions of it on the Mac pasteboard at once: a formatted version as HTML, a formatted version as rich text, and plain text. A normal Command-V paste lets the app you paste into take the richest version it understands, so fonts, sizes, colours and links come along. Paste and Match Style, Option-Shift-Command-V, keeps the words and uses the formatting already around the cursor instead.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    .rich { font-size: 21px; font-weight: 700; fill: #b4235a; font-family: Georgia, "Times New Roman", serif; }
+    .plain { font-size: 19px; fill: #0a0a0b; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl, .plain { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+      .rich { fill: #f07aa6; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="512" rx="12"/>
+  <text class="h" x="52" y="68">One copy, several versions. The paste decides which one you get.</text>
+
+  <!-- copy -->
+  <rect class="box" x="52" y="96" width="300" height="410" rx="10"/>
+  <text class="lbl" x="72" y="130">You copy (&#8984;C)</text>
+  <text class="sub" x="72" y="156">a sentence from a web page</text>
+  <text class="rich" x="72" y="214">Big pink serif</text>
+  <text class="rich" x="72" y="244">heading text</text>
+  <text class="sub" x="72" y="300">The page had its own font,</text>
+  <text class="sub" x="72" y="324">size, colour and links.</text>
+
+  <path class="arr" d="M356 300 H392"/><polygon class="head" points="392,292 408,300 392,308"/>
+
+  <!-- pasteboard -->
+  <rect class="box" x="412" y="96" width="330" height="410" rx="10"/>
+  <text class="lbl" x="432" y="130">The pasteboard holds</text>
+  <text class="sub" x="432" y="156">all of these at once</text>
+  <rect class="card" x="432" y="182" width="290" height="70" rx="8"/>
+  <text class="lbl" x="450" y="212">HTML</text>
+  <text class="sub" x="450" y="237">formatting and links</text>
+  <rect class="card" x="432" y="268" width="290" height="70" rx="8"/>
+  <text class="lbl" x="450" y="298">Rich text (RTF)</text>
+  <text class="sub" x="450" y="323">fonts, sizes, colours</text>
+  <rect class="card" x="432" y="354" width="290" height="70" rx="8"/>
+  <text class="lbl" x="450" y="384">Plain text</text>
+  <text class="sub" x="450" y="409">just the words</text>
+
+  <path class="arr" d="M746 217 H782"/><polygon class="head" points="782,209 798,217 782,225"/>
+  <path class="arr" d="M746 389 H782"/><polygon class="head" points="782,381 798,389 782,397"/>
+
+  <!-- results -->
+  <rect class="box" x="802" y="96" width="346" height="196" rx="10"/>
+  <text class="lbl" x="822" y="130">&#8984;V  Paste</text>
+  <text class="sub" x="822" y="156">the app takes the richest version</text>
+  <text class="rich" x="822" y="214">Big pink serif</text>
+  <text class="rich" x="822" y="244">heading text</text>
+  <text class="sub" x="822" y="276">lands in the middle of your email</text>
+
+  <rect class="boxa" x="802" y="310" width="346" height="196" rx="10"/>
+  <text class="lbl" x="822" y="344">&#8997;&#8679;&#8984;V  Paste and Match Style</text>
+  <text class="sub" x="822" y="370">keeps the words, drops the look</text>
+  <text class="plain" x="822" y="424">Big pink serif heading text</text>
+  <text class="sub" x="822" y="456">in the font already around</text>
+  <text class="sub" x="822" y="480">the cursor</text>
+</svg>
