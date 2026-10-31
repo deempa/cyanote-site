@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 756" width="1200" height="756" role="img" aria-labelledby="gk-title gk-desc">
+  <title id="gk-title">Who can reach a private Google Keep note, and when</title>
+  <desc id="gk-desc">Six parties who can reach a private Google Keep note. Other users cannot, unless you share the note. Google's automated systems analyse content to provide features and detect abuse, because Google manages the keys. Gemini reads notes only if you connect it with the Keep Activity setting on, and a subset of Gemini chats is reviewed by people, and reviewed chats are kept for up to three years. On a work account, a Workspace super admin can export Keep data for the organisation. Courts and police can obtain data with valid legal process, and Google generally notifies the user first unless the law forbids it. Anyone who signs in to your Google account can read every note, and 2-Step Verification with a passkey or security key is what you control.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .row  { fill: #f6f7f9; }
+    .h    { font-size: 26px; font-weight: 600; fill: #0a0a0b; }
+    .note { font-size: 17px; fill: #71757e; }
+    .ch   { font-size: 18px; font-weight: 600; fill: #3d3f45; }
+    .rl   { font-size: 20px; font-weight: 600; fill: #0a0a0b; }
+    .ok   { font-size: 18px; font-weight: 600; fill: #0e7cc4; }
+    .no   { font-size: 18px; font-weight: 600; fill: #b4441f; }
+    .mid  { font-size: 18px; font-weight: 600; fill: #3d3f45; }
+    .d    { font-size: 15px; fill: #71757e; }
+  </style>
+
+  <rect class="card" x="24" y="20" width="1152" height="716" rx="12"/>
+  <text class="h" x="56" y="66">Who can reach a private Google Keep note?</text>
+  <text class="note" x="56" y="94">From Google's privacy policy, Gemini and Workspace help pages, checked 31 October 2026.</text>
+
+  <text class="ch" x="80" y="146">Who</text>
+  <text class="ch" x="420" y="146">Can they?</text>
+  <text class="ch" x="760" y="146">What you control</text>
+
+  <rect class="row" x="56" y="166" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="212">Other Keep users</text>
+  <text class="ok" x="420" y="202">No</text>
+  <text class="d" x="420" y="226">unless you share the note</text>
+  <text class="mid" x="760" y="202">Fully yours</text>
+  <text class="d" x="760" y="226">collaborators can edit what you share</text>
+
+  <rect class="row" x="56" y="258" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="296">Google's systems</text>
+  <text class="d" x="80" y="320">automated analysis</text>
+  <text class="no" x="420" y="294">Yes, automatically</text>
+  <text class="d" x="420" y="318">for features, spam and abuse checks</text>
+  <text class="no" x="760" y="294">Nothing</text>
+  <text class="d" x="760" y="318">keys are Google-managed</text>
+
+  <rect class="row" x="56" y="350" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="388">Gemini</text>
+  <text class="d" x="80" y="412">and its human reviewers</text>
+  <text class="mid" x="420" y="388">Only if you connect it</text>
+  <text class="d" x="420" y="412">some chats read by people, kept up to 3 years</text>
+  <text class="mid" x="760" y="388">Keep Activity setting</text>
+  <text class="d" x="760" y="412">Gemini's chat history, not Google Keep</text>
+
+  <rect class="row" x="56" y="442" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="480">Your employer</text>
+  <text class="d" x="80" y="504">on a work account</text>
+  <text class="no" x="420" y="478">Yes, by export</text>
+  <text class="d" x="420" y="502">super admins can export Keep data</text>
+  <text class="mid" x="760" y="478">Which account you use</text>
+  <text class="d" x="760" y="502">keep personal notes off work accounts</text>
+
+  <rect class="row" x="56" y="534" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="580">Courts and police</text>
+  <text class="no" x="420" y="570">Yes, with legal process</text>
+  <text class="d" x="420" y="594">Google usually tells you first</text>
+  <text class="no" x="760" y="570">Nothing</text>
+  <text class="d" x="760" y="594">no end-to-end option for Keep</text>
+
+  <rect class="row" x="56" y="626" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="664">Anyone in your account</text>
+  <text class="d" x="80" y="688">a phished or reused password</text>
+  <text class="no" x="420" y="662">Yes, every note</text>
+  <text class="d" x="420" y="686">Keep has no per-note lock</text>
+  <text class="mid" x="760" y="662">2-Step Verification</text>
+  <text class="d" x="760" y="686">passkey or security key, not SMS</text>
+</svg>
