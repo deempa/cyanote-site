@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-labelledby="tb-title tb-desc">
+  <title id="tb-title">Should you buy Things 3?</title>
+  <desc id="tb-desc">Three columns. Buy it if you manage your own tasks, only use Apple devices, want a simple daily list and will keep it for more than a year. Run the trial first if you have a large Todoist or OmniFocus setup, plan your day on a calendar, send yourself tasks by email or automate with Shortcuts or AppleScript. Skip it if you share lists with other people, attach files or photos to tasks, also use Windows, Android or a web browser, or want a board view.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .h    { font-size: 25px; font-weight: 600; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .row  { font-size: 19px; fill: #3d3f45; }
+    .rule { stroke: #e6e6e9; stroke-width: 2; }
+  </style>
+
+  <rect class="card" x="24" y="20" width="370" height="440" rx="12"/>
+  <rect x="24" y="20" width="370" height="8" rx="4" fill="#0e7cc4"/>
+  <text class="h" x="52" y="76" fill="#0e7cc4">Buy it</text>
+  <text class="sub" x="52" y="104">if this is your week</text>
+  <line class="rule" x1="52" y1="124" x2="366" y2="124"/>
+  <text class="row" x="52" y="166">You manage your own tasks,</text>
+  <text class="row" x="52" y="192">not a team's</text>
+  <text class="row" x="52" y="244">Every device you use is</text>
+  <text class="row" x="52" y="270">made by Apple</text>
+  <text class="row" x="52" y="322">You want a simple daily list,</text>
+  <text class="row" x="52" y="348">not a system to maintain</text>
+  <text class="row" x="52" y="400">You'll keep it for more</text>
+  <text class="row" x="52" y="426">than a year</text>
+
+  <rect class="card" x="415" y="20" width="370" height="440" rx="12"/>
+  <rect x="415" y="20" width="370" height="8" rx="4" fill="#3d3f45"/>
+  <text class="h" x="443" y="76" fill="#3d3f45">Run the trial first</text>
+  <text class="sub" x="443" y="104">15 days on the Mac</text>
+  <line class="rule" x1="443" y1="124" x2="757" y2="124"/>
+  <text class="row" x="443" y="166">You're bringing a large setup</text>
+  <text class="row" x="443" y="192">from Todoist or OmniFocus</text>
+  <text class="row" x="443" y="244">You plan your day on</text>
+  <text class="row" x="443" y="270">a calendar</text>
+  <text class="row" x="443" y="322">You send yourself tasks</text>
+  <text class="row" x="443" y="348">by email</text>
+  <text class="row" x="443" y="400">You automate with Shortcuts</text>
+  <text class="row" x="443" y="426">or AppleScript</text>
+
+  <rect class="card" x="806" y="20" width="370" height="440" rx="12"/>
+  <rect x="806" y="20" width="370" height="8" rx="4" fill="#a3a7af"/>
+  <text class="h" x="834" y="76" fill="#71757e">Skip it</text>
+  <text class="sub" x="834" y="104">it isn't built for these</text>
+  <line class="rule" x1="834" y1="124" x2="1148" y2="124"/>
+  <text class="row" x="834" y="166">You share lists with</text>
+  <text class="row" x="834" y="192">other people</text>
+  <text class="row" x="834" y="244">You attach files or photos</text>
+  <text class="row" x="834" y="270">to tasks</text>
+  <text class="row" x="834" y="322">You also use Windows,</text>
+  <text class="row" x="834" y="348">Android or a web browser</text>
+  <text class="row" x="834" y="400">You want a board view</text>
+  <text class="row" x="834" y="426">with columns</text>
+</svg>
