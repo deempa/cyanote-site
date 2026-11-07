@@ -158,6 +158,8 @@
         <li><strong>Local only.</strong> Written to a database on your Mac. No account, no upload, no sync — not a setting you switch off, but an absence.</li>
       </ul>
 
+      <div data-clipdemo></div>
+
       <h2 id="but-maccy-is-free">"But Maccy is free"</h2>
 
       <p>It is, it is genuinely good, and if a clipboard manager is all you want then it is a reasonable place to stop reading.</p>
@@ -173,6 +175,16 @@
       <p>A clipboard history turns that stream into a record. That is exactly what makes it useful and exactly what makes it a liability, and how a tool handles the distinction is worth checking before you install anything — this one included.</p>
 
       <p>Cyanote's position is the blunt one: the history is a local database on your Mac and there is nowhere else for it to go. No account, no server, no sync. That is the same decision that makes the app $7.99 once rather than monthly, because there is no infrastructure to pay for. <a href="https://cyanote.app/blog/clipboard-history-on-mac/">The longer discussion is here.</a></p>
+
+      <figure class="sp-row" data-spoiler>
+        <div class="sp-card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3M6 11h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1Z"/></svg>
+          <span class="sp-from">Copied from a password manager</span>
+          <span class="sp-mask" aria-hidden="true"></span>
+          <span class="sp-chip">Not recorded</span>
+        </div>
+        <figcaption>A copy marked concealed or transient, which is how password managers flag theirs, never enters the history.</figcaption>
+      </figure>
 
       <h2 id="what-it-does-not-do">What it does not do</h2>
 
@@ -244,5 +256,6 @@
 <script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
 <script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
 <a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+<script src="/components.js" defer></script>
 </body>
 </html>
