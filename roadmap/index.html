@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<script>(function(){var r=document.documentElement;if(Date.now()>=1796111940000)r.setAttribute('data-sale-over','');else try{if(localStorage.getItem("cyanote-sale-hidden-2026-12-01T07:59:00Z"))r.setAttribute('data-sale-hidden','')}catch(e){}})()</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -54,6 +55,7 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<aside class="sale-bar" id="sale-bar" aria-label="Black Friday sale"><p><strong>Black Friday:</strong> Cyanote is $5.99 instead of $7.99, on Mac and Windows&nbsp;&middot; <span class="sale-seg">Mac code <code class="sale-code">BLACKFRIDAY</code><span class="sale-auto" hidden>, applied at checkout</span></span>&nbsp;&middot; <span class="sale-seg">ends <time datetime="2026-12-01T07:59:00Z" title="Ends Monday 30 November, 11:59 pm Pacific time">Mon 30 Nov</time></span><span class="sale-seg sale-left-wrap" hidden>&nbsp;&middot; <span class="sale-left" aria-hidden="true"></span></span></p><button class="sale-x" type="button" aria-label="Hide this notice" title="Hide this notice" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></button></aside>
 <nav aria-label="Main"><div class="wrap">
   <a class="brand" href="/"><img src="/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
   <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
@@ -223,5 +225,6 @@
 <script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
 <a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
 <script src="/components.js" defer></script>
+<script>(function(){var d=document,r=d.documentElement,E=1796111940000,K="cyanote-sale-hidden-2026-12-01T07:59:00Z",P="$5.99",W="$7.99",C="BLACKFRIDAY",bar=d.getElementById('sale-bar'),undo=[],t,i;function off(){clearTimeout(t);if(bar&&bar.parentNode)bar.parentNode.removeChild(bar);while(undo.length)undo.pop()()}if(Date.now()>=E)return off();function txt(n,v){n.nodeValue=v.split(W).join(P);undo.push(function(){n.nodeValue=v})}function att(a,k,v){a.setAttribute(k,v.split(W).join(P));undo.push(function(){a.setAttribute(k,v)})}var b=d.querySelectorAll('a.btn');for(i=0;i<b.length;i++){var a=b[i],w=d.createTreeWalker(a,4),n;while((n=w.nextNode()))if(n.nodeValue.indexOf(W)>-1)txt(n,n.nodeValue);['aria-label','title'].forEach(function(k){var v=a.getAttribute(k);if(v&&v.indexOf(W)>-1)att(a,k,v)})}if(C){var l=d.querySelectorAll('a[href*="lemonsqueezy.com/checkout/buy"]');for(i=0;i<l.length;i++)(function(a,h){try{var u=new URL(h,location.href);u.searchParams.set('checkout[discount_code]',C);a.setAttribute('href',u.href);undo.push(function(){a.setAttribute('href',h)})}catch(e){}})(l[i],l[i].getAttribute('href'))}if(bar){var q=function(s){return bar.querySelector(s)},left=q('.sale-left'),x=q('.sale-x');q('.sale-left-wrap').hidden=false;if(q('.sale-auto'))q('.sale-auto').hidden=false;x.hidden=false;x.addEventListener('click',function(){try{localStorage.setItem(K,'1')}catch(e){}r.setAttribute('data-sale-hidden','')})}function p(v){return(v<10?'0':'')+v}function tick(){clearTimeout(t);var ms=E-Date.now();if(ms<=0)return off();var s=Math.ceil(ms/1000),dd=Math.floor(s/86400);if(left)left.textContent=(dd?dd+'d ':'')+p(Math.floor(s%86400/3600))+':'+p(Math.floor(s%3600/60))+':'+p(s%60)+' left';t=setTimeout(tick,ms%1000||1000)}d.addEventListener('visibilitychange',function(){if(!d.hidden)tick()});tick()})()</script>
 </body>
 </html>
