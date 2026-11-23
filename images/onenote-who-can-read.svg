@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 848" width="1200" height="848" role="img" aria-labelledby="ow-title ow-desc">
+  <title id="ow-title">Who can reach a OneNote notebook, and whether a locked section stops them</title>
+  <desc id="ow-desc">Seven parties. Other OneNote users cannot unless you share the notebook, and they also need a locked section's password. Microsoft's systems process content automatically for search and abuse checks; Microsoft doesn't document how scanning treats a locked section. Microsoft engineers need time-limited approval, and Microsoft says support can't unlock a section. Copilot reads a notebook when you ask it to; how it treats protected sections isn't documented. An employer or school controls a work account; a locked section should protect the words, but the file can still be kept and exported, inferred from general Purview pages. Courts and police can use legal process; the locked file can still be handed over. Anyone in your account can open every notebook, except sections with a separate password.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .row  { fill: #f6f7f9; }
+    .h    { font-size: 26px; font-weight: 600; fill: #0a0a0b; }
+    .note { font-size: 17px; fill: #71757e; }
+    .ch   { font-size: 18px; font-weight: 600; fill: #3d3f45; }
+    .rl   { font-size: 20px; font-weight: 600; fill: #0a0a0b; }
+    .i    { font-size: 18px; fill: #0a0a0b; }
+    .ok   { font-size: 18px; font-weight: 600; fill: #0e7cc4; }
+    .no   { font-size: 18px; font-weight: 600; fill: #b4441f; }
+    .mid  { font-size: 18px; font-weight: 600; fill: #3d3f45; }
+    .d    { font-size: 15px; fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .rl, .i { fill: #f4f4f5; }
+      .note, .d { fill: #a4a8b0; }
+      .ch, .mid { fill: #d4d6db; }
+      .ok { fill: #6db8ea; }
+      .no { fill: #f0906c; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .row  { fill: #202226; }
+    }
+  </style>
+
+  <rect class="card" x="24" y="20" width="1152" height="808" rx="12"/>
+  <text class="h" x="56" y="66">Who can reach a OneNote notebook?</text>
+  <text class="note" x="56" y="94">From Microsoft's privacy, OneDrive, OneNote and Purview pages, checked 23 November 2026.</text>
+  <text class="ch" x="80" y="146">Who</text>
+  <text class="ch" x="400" y="146">Can they?</text>
+  <text class="ch" x="770" y="146">Does a locked section stop them?</text>
+
+  <rect class="row" x="56" y="166" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="213">Other OneNote users</text>
+  <text class="ok" x="400" y="202">No</text>
+  <text class="d" x="400" y="226">unless you share the notebook</text>
+  <text class="ok" x="770" y="202">Yes</text>
+  <text class="d" x="770" y="226">they need the section password too</text>
+
+  <rect class="row" x="56" y="258" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="296">Microsoft's systems</text>
+  <text class="d" x="80" y="320">automated</text>
+  <text class="no" x="400" y="294">Yes, automatically</text>
+  <text class="d" x="400" y="318">search indexing and abuse checks</text>
+  <text class="mid" x="770" y="294">Not documented</text>
+  <text class="d" x="770" y="318">encrypted, but scanning isn't addressed</text>
+
+  <rect class="row" x="56" y="350" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="397">Microsoft engineers</text>
+  <text class="mid" x="400" y="386">Only with approval</text>
+  <text class="d" x="400" y="410">no standing access, time-limited</text>
+  <text class="mid" x="770" y="386">Support can't open it</text>
+  <text class="d" x="770" y="410">Microsoft's claim; engineers aren't named</text>
+
+  <rect class="row" x="56" y="442" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="480">Copilot</text>
+  <text class="d" x="80" y="504">in the Microsoft 365 apps</text>
+  <text class="mid" x="400" y="478">When you ask it to</text>
+  <text class="d" x="400" y="502">only the file you're using or name</text>
+  <text class="mid" x="770" y="478">Not documented</text>
+  <text class="d" x="770" y="502">assume it can read an unlocked one</text>
+
+  <rect class="row" x="56" y="534" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="572">Your employer or school</text>
+  <text class="d" x="80" y="596">on a work account</text>
+  <text class="no" x="400" y="570">Yes</text>
+  <text class="d" x="400" y="594">it controls the account and its files</text>
+  <text class="mid" x="770" y="570">The words, not the file</text>
+  <text class="d" x="770" y="594">inferred: it can be kept and exported</text>
+
+  <rect class="row" x="56" y="626" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="673">Courts and police</text>
+  <text class="no" x="400" y="662">Yes, with legal process</text>
+  <text class="d" x="400" y="686">warrant or equivalent for content</text>
+  <text class="mid" x="770" y="662">The words, not the file</text>
+  <text class="d" x="770" y="686">it can still be handed over</text>
+
+  <rect class="row" x="56" y="718" width="1088" height="80" rx="10"/>
+  <text class="rl" x="80" y="756">Anyone in your account</text>
+  <text class="d" x="80" y="780">a phished or reused password</text>
+  <text class="no" x="400" y="754">Yes, every notebook</text>
+  <text class="d" x="400" y="778">unless the section is locked</text>
+  <text class="ok" x="770" y="754">Yes</text>
+  <text class="d" x="770" y="778">the section password is separate</text>
+</svg>

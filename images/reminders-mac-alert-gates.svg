@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" role="img" aria-labelledby="rg-title rg-desc">
+  <title id="rg-title">Why a reminder alert shows on the iPhone but not the Mac</title>
+  <desc id="rg-desc">Five checks in order. The reminder has a time, or Today Notification is set for all-day reminders. Notifications are allowed for Reminders in System Settings. Desktop is ticked as a notification location. No Focus, mirroring or screen sharing is pausing it. It is not an Urgent alarm, which sounds on the iPhone or iPad only.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .boxw { fill: #fdf3e4; stroke: #e0b565; stroke-width: 2; }
+    .boxr { fill: #fdeceb; stroke: #e3918a; stroke-width: 2; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .boxw { fill: #332612; stroke: #8f6a22; }
+      .boxr { fill: #371a18; stroke: #94463f; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="422" rx="12"/>
+  <text class="h" x="52" y="68">Five gates between a reminder and an alert on your Mac</text>
+  <rect class="box" x="52" y="92" width="380" height="58" rx="10"/>
+  <text class="lbl" x="72" y="128">1. It has a time</text>
+  <path class="arr" d="M440 121 H478"/><polygon class="head" points="478,113 492,121 478,129"/>
+  <text class="sub" x="510" y="127">No time? Set Today Notification in Reminders &#8594; Settings</text>
+  <rect class="box" x="52" y="160" width="380" height="58" rx="10"/>
+  <text class="lbl" x="72" y="196">2. Notifications are allowed</text>
+  <path class="arr" d="M440 189 H478"/><polygon class="head" points="478,181 492,189 478,197"/>
+  <text class="sub" x="510" y="195">System Settings &#8594; Notifications &#8594; Reminders</text>
+  <rect class="box" x="52" y="228" width="380" height="58" rx="10"/>
+  <text class="lbl" x="72" y="264">3. Desktop is ticked</text>
+  <path class="arr" d="M440 257 H478"/><polygon class="head" points="478,249 492,257 478,265"/>
+  <text class="sub" x="510" y="263">Same pane, under Alert Style: Temporary or Persistent</text>
+  <rect class="box" x="52" y="296" width="380" height="58" rx="10"/>
+  <text class="lbl" x="72" y="332">4. Nothing is pausing it</text>
+  <path class="arr" d="M440 325 H478"/><polygon class="head" points="478,317 492,325 478,333"/>
+  <text class="sub" x="510" y="331">No Focus silencing Reminders, and no mirroring or screen sharing</text>
+  <rect class="boxa" x="52" y="364" width="380" height="58" rx="10"/>
+  <text class="lbl" x="72" y="400">5. It isn&#8217;t an Urgent alarm</text>
+  <path class="arr" d="M440 393 H478"/><polygon class="head" points="478,385 492,393 478,401"/>
+  <text class="sub" x="510" y="399">Urgent sounds on the iPhone or iPad, not the Mac</text>
+</svg>

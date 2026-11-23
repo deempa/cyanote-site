@@ -38,7 +38,7 @@
   "headline": "iCloud Notes, explained properly",
   "description": "Where your notes really are, why sync is not a backup, and exactly what happens when storage runs out, you turn iCloud Notes off, or you sign out.",
   "datePublished": "2026-09-18",
-  "dateModified": "2026-10-09",
+  "dateModified": "2026-11-23",
   "author": {
     "@type": "Organization",
     "@id": "https://cyanote.app/#organization",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "macOS, Notes, Backups",
-  "wordCount": 2156
+  "wordCount": 2306
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-09-18" />
-<meta property="article:modified_time" content="2026-10-09" />
+<meta property="article:modified_time" content="2026-11-23" />
 <meta property="article:author" content="Cyanote" />
 <meta property="article:tag" content="macOS" />
 <meta property="article:tag" content="Notes" />
@@ -157,6 +157,8 @@
         <span>By Cyanote</span>
         <span class="dot">·</span>
         <span><time datetime="2026-09-18">18 September 2026</time></span>
+      <span class="dot">·</span>
+      <span>Updated <time datetime="2026-11-23">23 November 2026</time></span>
         <span class="dot">·</span>
         <span>10 min read</span>
       </div>
@@ -171,20 +173,24 @@
       <p>An account that holds your notes, with a copy cached on every device signed in to it, kept in step by sync.</p>
       <p>That is the whole thing, and each part matters. The <em>account</em> is your Apple Account — the notes are associated with an identity, not with a machine. The <em>copy on each device</em> is why Notes opens instantly and works on a plane. The <em>sync</em> is a process that continuously makes every copy match: you type on the Mac, the change goes up, and the iPhone's copy is amended to agree.</p>
       <p>The consequence people miss is that sync has no opinion about whether a change was a good idea. It is a machine for making copies identical. If a copy becomes worse, the others are brought into line with it, promptly and everywhere.</p>
+      <h2 id="do-icloud-notes-take-up-icloud-storage">Do iCloud notes take up iCloud storage?</h2>
+      <p>Yes. Notes in your iCloud account count toward your storage, which starts at 5 GB free. Apple <a href="https://support.apple.com/guide/icloud/check-your-icloud-storage-on-any-device-mm039c13d410/icloud">lists Notes under Documents</a> in the storage bar.</p>
+      <p>To see the figure, open <strong>System Settings → your name → iCloud → Manage</strong> on a Mac, or <strong>Settings → your name → iCloud → Storage</strong> on an iPhone (some versions say <strong>Manage Account Storage</strong>). On My Mac notes and notes in a Gmail or Exchange account aren't stored in iCloud.</p>
+      <p>Don't use <strong>Delete from iCloud</strong> to free space unless you've saved a copy. Apple <a href="https://support.apple.com/guide/mac-help/mh36833/mac">says</a> it removes an app's data from your Mac and every device that syncs with iCloud. Delete large notes one at a time instead.</p>
       <h2 id="the-part-nobody-explains-notes-holds-several-accounts-at-once">The part nobody explains: Notes holds several accounts at once</h2>
       <p>This is the single largest source of confusion about iCloud Notes, and it is almost never stated plainly.</p>
       <p>On a Mac, the Notes app is not a container for your notes. It is a client that can show several separate note accounts side by side. There is iCloud. There is a local-only account called <strong>On My Mac</strong>, which is switched off until you go and enable it in Notes settings. And if you have added a Google, Yahoo, AOL or Exchange account to your Mac, Notes may well be showing that account's notes too, stored on that mail provider's server rather than Apple's.</p>
       <p>A note belongs to exactly one of them. It does not belong to "Notes".</p>
       <figure><img src="/images/icloud-notes-accounts.svg" alt="Notes on a Mac showing an iCloud account, a local On My Mac account and a mail account, with where each one&#x27;s notes actually go" width="1200" height="470" loading="lazy" decoding="async" /><figcaption>A note belongs to one account, and the sidebar is the only place that tells you which.</figcaption></figure>
       <p>Once you see this, most mysteries dissolve. A note written on the Mac that never appears on the iPhone is usually a note that was created in On My Mac. Notes that "vanished" after a Gmail account was removed were Gmail's notes, not Apple's. If a note is genuinely missing rather than misplaced, <a href="/blog/apple-notes-not-syncing/">the troubleshooting is a separate job</a> and worth doing in order.</p>
-      <p>Two details are worth knowing before you start dragging notes between accounts. Apple warns that moving notes or folders between accounts can permanently lose formatting and attachments — sketches in particular may come out as flat images. And the non-iCloud accounts are thinner: collaboration is iCloud-only, and so, importantly, is the safety net described next.</p>
+      <p>Two details are worth knowing before you start dragging notes between accounts. Apple warns that moving notes or folders between accounts can permanently lose formatting and attachments — sketches in particular may come out as flat images. And the non-iCloud accounts are thinner: collaboration is iCloud-only, and mail accounts go without the safety net described further down.</p>
       <h2 id="sync-is-not-a-backup">Sync is not a backup</h2>
       <p>This gets said a lot and usually as a slogan, so here it is concretely.</p>
       <p><strong>A deletion syncs.</strong> Delete a note on your phone on the bus and it is gone from the Mac before you get home. That is sync working exactly as designed.</p>
       <p><strong>Damage syncs.</strong> If a note gets mangled — you paste over it, someone borrows your unlocked Mac — the mangled version is the one that propagates, and there is no version history to walk back through.</p>
       <p><strong>An account problem takes every copy at once.</strong> Every device holds a copy of the same account. Lose access to the account and you have not lost one copy, you have lost the mechanism by which all of them stay reachable.</p>
       <p>The real safety net is Recently Deleted, and it is genuinely useful: a deleted iCloud note goes there, on every device, and Apple's documentation says you have <strong>up to 30 days</strong> to recover it before it is permanently removed. Apple's Notes guide has also mentioned a somewhat longer window — around forty days — before notes go from iCloud's servers, but thirty days is the number to plan against.</p>
-      <p>What it does not cover is the more common failure. Recently Deleted catches deletions. It does not catch a note you overwrote two months ago, it does not catch a folder you emptied out of Recently Deleted as well, and for non-iCloud accounts it does not exist at all — Apple states that in those accounts, deleted notes are removed permanently from every device using the account.</p>
+      <p>What it does not cover is the more common failure. Recently Deleted catches deletions. It does not catch a note you overwrote two months ago, it does not catch a folder you emptied out of Recently Deleted as well, and for mail accounts such as Gmail it does not exist at all — Apple states that in accounts like those, deleted notes are removed permanently from every device using the account. Notes kept On My Mac do have <a href="https://support.apple.com/guide/notes/not5585d71a8/4.13/mac/27">a Recently Deleted folder</a>.</p>
       <p>And there is one fact worth writing on the back of your hand: <strong>notes that sync to iCloud are not included in an iCloud device backup.</strong> Apple's own page on what iCloud backs up says a backup contains the information that does not already sync. So the iPhone backup you have quietly relied on for years does not contain your iCloud notes. It never did. <a href="/blog/backing-up-local-notes/">The wider version of this argument</a> is about layers, and the point of layers is that each one catches something the previous one cannot.</p>
       <h2 id="where-the-data-physically-sits-on-a-mac">Where the data physically sits on a Mac</h2>
       <p>There is a real folder. On this Mac it is here:</p>
@@ -222,7 +228,7 @@
 
   <section class="related">
     <h2>Read next</h2>
-    <ul><li><a href="https://cyanote.app/blog/apple-notes-not-syncing/">When Apple Notes will not sync</a><span>You wrote it on the phone and it is not on the Mac. The order to check things in, why none of the causes announce themselves, and how to make it cost less.</span></li><li><a href="https://cyanote.app/blog/leaving-evernote/">Leaving Evernote, fifteen years later</a><span>The hard part is not choosing where to go. It is that a decade of notes has become a place you live, and the export is the only thing that makes leaving reversible.</span></li></ul>
+    <ul><li><a href="https://cyanote.app/blog/export-apple-notes/">How to export Apple Notes: PDF, Markdown, Word, and all of them at once</a><span>How to export Apple Notes on a Mac as PDF or Markdown, what Apple documents about bulk export, and what each route keeps: folders, images, dates, locked notes.</span></li><li><a href="https://cyanote.app/blog/leaving-evernote/">Leaving Evernote, fifteen years later</a><span>The hard part is not choosing where to go. It is that a decade of notes has become a place you live, and the export is the only thing that makes leaving reversible.</span></li></ul>
   </section>
 </main>
 

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-labelledby="jc-title jc-desc">
+  <title id="jc-title">Three-year cost of journal apps on a Mac</title>
+  <desc id="jc-desc">Apple Journal $0, Obsidian without sync $0, Day One Basic $0 on one device, Cyanote $7.99, Diarium for Mac $14.99, Diarium for Mac and iPhone $29.98, Everlog lifetime $59.99, Obsidian with Sync $144, Day One Silver $149.97, Day One Gold $224.97.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .bar  { fill: #a3a7af; }
+    .bara { fill: #0e7cc4; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .bar  { fill: #5d626b; }
+      .bara { fill: #3f9fdc; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="572" rx="12"/>
+  <text class="h" x="52" y="68">Three years of one person journalling, at list prices</text>
+  <text class="sub" x="52" y="96">US prices before tax, 23 November 2026. One-time prices are paid once.</text>
+  <text class="lbl" x="300" y="145" text-anchor="end">Apple Journal</text>
+  <rect class="bar" x="320" y="124" width="3" height="30" rx="4"/>
+  <text class="sub" x="335" y="145">$0</text>
+  <text class="lbl" x="300" y="191" text-anchor="end">Obsidian, no sync</text>
+  <rect class="bar" x="320" y="170" width="3" height="30" rx="4"/>
+  <text class="sub" x="335" y="191">$0</text>
+  <text class="lbl" x="300" y="237" text-anchor="end">Day One Basic</text>
+  <rect class="bar" x="320" y="216" width="3" height="30" rx="4"/>
+  <text class="sub" x="335" y="237">$0, one device</text>
+  <text class="lbl" x="300" y="283" text-anchor="end">Cyanote, Mac</text>
+  <rect class="bara" x="320" y="262" width="25" height="30" rx="4"/>
+  <text class="sub" x="357" y="283">$7.99</text>
+  <text class="lbl" x="300" y="329" text-anchor="end">Diarium, Mac</text>
+  <rect class="bar" x="320" y="308" width="47" height="30" rx="4"/>
+  <text class="sub" x="379" y="329">$14.99</text>
+  <text class="lbl" x="300" y="375" text-anchor="end">Diarium, Mac + iPhone</text>
+  <rect class="bar" x="320" y="354" width="93" height="30" rx="4"/>
+  <text class="sub" x="425" y="375">$29.98</text>
+  <text class="lbl" x="300" y="421" text-anchor="end">Everlog lifetime</text>
+  <rect class="bar" x="320" y="400" width="187" height="30" rx="4"/>
+  <text class="sub" x="519" y="421">$59.99</text>
+  <text class="lbl" x="300" y="467" text-anchor="end">Obsidian + Sync</text>
+  <rect class="bar" x="320" y="446" width="448" height="30" rx="4"/>
+  <text class="sub" x="780" y="467">$144</text>
+  <text class="lbl" x="300" y="513" text-anchor="end">Day One Silver</text>
+  <rect class="bar" x="320" y="492" width="467" height="30" rx="4"/>
+  <text class="sub" x="799" y="513">$149.97</text>
+  <text class="lbl" x="300" y="559" text-anchor="end">Day One Gold</text>
+  <rect class="bar" x="320" y="538" width="700" height="30" rx="4"/>
+  <text class="sub" x="1032" y="559">$224.97</text>
+
+</svg>

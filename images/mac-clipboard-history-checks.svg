@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="ch-title ch-desc">
+  <title id="ch-title">Six symptoms of Mac clipboard history not working, and the step that fixes each</title>
+  <desc id="ch-desc">Stop at the first line that matches. One, no Clipboard button: you need macOS 26 or later with Results from Clipboard on. Two, Command-Space opens something else: free the shortcut in Keyboard Shortcuts. Three, older items are gone: raise the time limit, up to 7 days. Four, only some copies are missing: passwords, long text and Mail are reported as skipped. Five, empty even for a new copy: update, then Spotlight settings, restart and Safe Mode. Six, listed but will not paste: test it in TextEdit.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="752" rx="12"/>
+  <text class="h" x="52" y="68">Stop at the first line that matches what you see</text>
+  <rect class="boxa" x="52" y="96" width="470" height="84" rx="10"/>
+  <text class="lbl" x="72" y="130">1. No Clipboard button?</text>
+  <text class="sub" x="72" y="158">to the right of Spotlight&#8217;s search field</text>
+  <text class="sub" x="580" y="128" text-anchor="middle">Yes</text>
+  <path class="arr" d="M526 138 H624"/><polygon class="head" points="624,130 640,138 624,146"/>
+  <rect class="boxa" x="644" y="96" width="504" height="84" rx="10"/>
+  <text class="lbl" x="664" y="130">macOS 26 or later, switched on</text>
+  <text class="sub" x="664" y="158">Spotlight settings: Results from Clipboard</text>
+  <path class="arr" d="M287 182 V196"/><polygon class="head" points="279,194 287,206 295,194"/>
+  <rect class="box" x="52" y="208" width="470" height="84" rx="10"/>
+  <text class="lbl" x="72" y="242">2. &#8984;Space opens something else?</text>
+  <text class="sub" x="72" y="270">or nothing happens</text>
+  <text class="sub" x="580" y="240" text-anchor="middle">Yes</text>
+  <path class="arr" d="M526 250 H624"/><polygon class="head" points="624,242 640,250 624,258"/>
+  <rect class="box" x="644" y="208" width="504" height="84" rx="10"/>
+  <text class="lbl" x="664" y="242">Free the shortcut</text>
+  <text class="sub" x="664" y="270">Keyboard Shortcuts: Spotlight, Input Sources</text>
+  <path class="arr" d="M287 294 V308"/><polygon class="head" points="279,306 287,318 295,306"/>
+  <rect class="box" x="52" y="320" width="470" height="84" rx="10"/>
+  <text class="lbl" x="72" y="354">3. Older items gone?</text>
+  <text class="sub" x="72" y="382">newer ones are still listed</text>
+  <text class="sub" x="580" y="352" text-anchor="middle">Yes</text>
+  <path class="arr" d="M526 362 H624"/><polygon class="head" points="624,354 640,362 624,370"/>
+  <rect class="box" x="644" y="320" width="504" height="84" rx="10"/>
+  <text class="lbl" x="664" y="354">Raise the time limit</text>
+  <text class="sub" x="664" y="382">30 minutes, 8 hours or 7 days</text>
+  <path class="arr" d="M287 406 V420"/><polygon class="head" points="279,418 287,430 295,418"/>
+  <rect class="box" x="52" y="432" width="470" height="84" rx="10"/>
+  <text class="lbl" x="72" y="466">4. Only some copies missing?</text>
+  <text class="sub" x="72" y="494">try text, an image and a file</text>
+  <text class="sub" x="580" y="464" text-anchor="middle">Yes</text>
+  <path class="arr" d="M526 474 H624"/><polygon class="head" points="624,466 640,474 624,482"/>
+  <rect class="box" x="644" y="432" width="504" height="84" rx="10"/>
+  <text class="lbl" x="664" y="466">Some copies are skipped</text>
+  <text class="sub" x="664" y="494">passwords, long text, Mail (reported)</text>
+  <path class="arr" d="M287 518 V532"/><polygon class="head" points="279,530 287,542 295,530"/>
+  <rect class="box" x="52" y="544" width="470" height="84" rx="10"/>
+  <text class="lbl" x="72" y="578">5. Empty, even for a new copy?</text>
+  <text class="sub" x="72" y="606">one plain word from TextEdit</text>
+  <text class="sub" x="580" y="576" text-anchor="middle">Yes</text>
+  <path class="arr" d="M526 586 H624"/><polygon class="head" points="624,578 640,586 624,594"/>
+  <rect class="box" x="644" y="544" width="504" height="84" rx="10"/>
+  <text class="lbl" x="664" y="578">Spotlight itself</text>
+  <text class="sub" x="664" y="606">update, Documents, restart, Safe Mode</text>
+  <path class="arr" d="M287 630 V644"/><polygon class="head" points="279,642 287,654 295,642"/>
+  <rect class="box" x="52" y="656" width="470" height="84" rx="10"/>
+  <text class="lbl" x="72" y="690">6. Listed, but won&#8217;t paste?</text>
+  <text class="sub" x="72" y="718">press &#8984;C on the item, then &#8984;V</text>
+  <text class="sub" x="580" y="688" text-anchor="middle">Yes</text>
+  <path class="arr" d="M526 698 H624"/><polygon class="head" points="624,690 640,698 624,706"/>
+  <rect class="box" x="644" y="656" width="504" height="84" rx="10"/>
+  <text class="lbl" x="664" y="690">Test it in TextEdit</text>
+  <text class="sub" x="664" y="718">if it pastes there, the field refused it</text>
+</svg>

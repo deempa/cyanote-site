@@ -39,7 +39,7 @@
   <rect class="col" x="800" y="124" width="344" height="344" rx="10"/>
   <rect x="800" y="124" width="344" height="6" rx="3" fill="#a3a7af"/>
   <text class="ch" x="824" y="166" fill="#71757e">On the developer's servers</text>
-  <text class="sub" x="824" y="190">An account comes first</text>
+  <text class="sub" x="824" y="190">An account is needed to sync</text>
   <text class="app" x="824" y="240">Habitify</text>
   <text class="det" x="824" y="264">Own sync: Mac, iPhone, Android, web</text>
   <text class="app" x="824" y="314">Lunatask</text>

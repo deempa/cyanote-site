@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" width="1200" height="580" role="img" aria-labelledby="wd-title wd-desc">
+  <title id="wd-title">Where Windows habit trackers keep your record</title>
+  <desc id="wd-desc">Three arrangements. Stays on this PC: OpenHabitTracker, Table Habit and Cyanote, where you make the backup. This PC and your own storage: OpenHabitTracker with a Docker image, or Table Habit with WebDAV. The company server: Habitify, TickTick, Everyday, Lunatask, which encrypts before upload, Habitica and Microsoft To Do.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .bar  { fill: #a3a7af; }
+    .bara { fill: #0e7cc4; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .bar  { fill: #5d626b; }
+      .bara { fill: #3f9fdc; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="532" rx="12"/>
+  <text class="h" x="52" y="68">Where a Windows habit tracker keeps your record</text>
+  <rect class="boxa" x="52" y="96" width="390" height="128" rx="10"/>
+  <text class="lbl" x="76" y="152">Stays on this PC</text>
+  <text class="sub" x="76" y="182">no company holds a copy</text>
+  <path class="arr" d="M446 160 H498"/><polygon class="head" points="498,152 514,160 498,168"/>
+  <rect class="boxa" x="518" y="96" width="630" height="128" rx="10"/>
+  <text class="lbl" x="542" y="152">OpenHabitTracker, Table Habit, Cyanote</text>
+  <text class="sub" x="542" y="182">You make the backup. Lose the disk, lose the record.</text>
+  <rect class="box" x="52" y="242" width="390" height="128" rx="10"/>
+  <text class="lbl" x="76" y="298">This PC and your own storage</text>
+  <text class="sub" x="76" y="328">a server or WebDAV you supply</text>
+  <path class="arr" d="M446 306 H498"/><polygon class="head" points="498,298 514,306 498,314"/>
+  <rect class="box" x="518" y="242" width="630" height="128" rx="10"/>
+  <text class="lbl" x="542" y="298">OpenHabitTracker or Table Habit</text>
+  <text class="sub" x="542" y="328">Docker for the first, WebDAV for the second.</text>
+  <rect class="box" x="52" y="388" width="390" height="128" rx="10"/>
+  <text class="lbl" x="76" y="444">The company&#x27;s server</text>
+  <text class="sub" x="76" y="474">an account is needed to sync</text>
+  <path class="arr" d="M446 452 H498"/><polygon class="head" points="498,444 514,452 498,460"/>
+  <rect class="box" x="518" y="388" width="630" height="128" rx="10"/>
+  <text class="lbl" x="542" y="444">Habitify, TickTick, Everyday, Lunatask</text>
+  <text class="sub" x="542" y="474">Also Habitica and To Do. Lunatask encrypts before upload.</text>
+
+</svg>

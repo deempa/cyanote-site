@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-labelledby="ce-title ce-desc">
+  <title id="ce-title">Why a work calendar syncs to the iPhone but not the Mac</title>
+  <desc id="ce-desc">The iPhone reaches Exchange Online through Exchange ActiveSync, which MacRumors reports is not affected. The Mac Calendar app uses Exchange Web Services, which Microsoft began switching off on 1 October 2026 and will shut down on 1 April 2027.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .boxw { fill: #fdf3e4; stroke: #e0b565; stroke-width: 2; }
+    .boxr { fill: #fdeceb; stroke: #e3918a; stroke-width: 2; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .boxw { fill: #332612; stroke: #8f6a22; }
+      .boxr { fill: #371a18; stroke: #94463f; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="352" rx="12"/>
+  <text class="h" x="52" y="68">One work account, two routes into Exchange Online</text>
+  <rect class="box" x="52" y="96" width="270" height="118" rx="10"/>
+  <text class="lbl" x="70" y="130">iPhone and iPad</text>
+  <text class="sub" x="70" y="158">Same work account</text>
+  <text class="sub" x="70" y="186">Same events</text>
+  <path class="arr" d="M326 155 H384"/><polygon class="head" points="384,147 398,155 384,163"/>
+  <rect class="box" x="402" y="96" width="310" height="118" rx="10"/>
+  <text class="lbl" x="420" y="130">Exchange ActiveSync</text>
+  <text class="sub" x="420" y="158">The route this device uses</text>
+  <text class="sub" x="420" y="186">to reach the calendar</text>
+  <path class="arr" d="M716 155 H774"/><polygon class="head" points="774,147 788,155 774,163"/>
+  <rect class="boxa" x="792" y="96" width="356" height="118" rx="10"/>
+  <text class="lbl" x="810" y="130">Still works</text>
+  <text class="sub" x="810" y="158">Not part of this change</text>
+  <text class="sub" x="810" y="186">(per MacRumors)</text>
+  <rect class="box" x="52" y="236" width="270" height="118" rx="10"/>
+  <text class="lbl" x="70" y="270">Mac Calendar app</text>
+  <text class="sub" x="70" y="298">Same work account</text>
+  <text class="sub" x="70" y="326">Same events</text>
+  <path class="arr" d="M326 295 H384"/><polygon class="head" points="384,287 398,295 384,303"/>
+  <rect class="box" x="402" y="236" width="310" height="118" rx="10"/>
+  <text class="lbl" x="420" y="270">Exchange Web Services</text>
+  <text class="sub" x="420" y="298">The route this device uses</text>
+  <text class="sub" x="420" y="326">to reach the calendar</text>
+  <path class="arr" d="M716 295 H774"/><polygon class="head" points="774,287 788,295 774,303"/>
+  <rect class="boxr" x="792" y="236" width="356" height="118" rx="10"/>
+  <text class="lbl" x="810" y="270">Being switched off</text>
+  <text class="sub" x="810" y="298">In phases since 1 Oct 2026,</text>
+  <text class="sub" x="810" y="326">for good on 1 April 2027</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-labelledby="te-title te-desc">
+  <title id="te-title">Which Mac text expander fits</title>
+  <desc id="te-desc">Five situations matched to a tool. Fixed text, mostly Apple apps and an iPhone: the built-in text replacement, included. Dates and forms for nothing, editing a text file: Espanso, free. Already using a launcher: Raycast snippets free, or Alfred Powerpack 40 pounds once. A dedicated Mac app bought once: Typinator Basic, 59.99 dollars. A small team, Windows or mobile: TextExpander Pro, 60 dollars a year per user, up to five users.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="592" rx="12"/>
+  <text class="h" x="52" y="68">Start at the top and stop at the first row that fits</text>
+  <rect class="boxa" x="52" y="96" width="520" height="84" rx="10"/>
+  <text class="lbl" x="72" y="130">Fixed text, mostly Apple apps</text>
+  <text class="sub" x="72" y="158">also synced to your iPhone</text>
+  <path class="arr" d="M576 138 H640"/><polygon class="head" points="640,130 656,138 640,146"/>
+  <rect class="boxa" x="660" y="96" width="488" height="84" rx="10"/>
+  <text class="lbl" x="680" y="130">Mac text replacement</text>
+  <text class="sub" x="680" y="158">included with the Mac</text>
+  <rect class="box" x="52" y="198" width="520" height="84" rx="10"/>
+  <text class="lbl" x="72" y="232">Dates and forms, at no cost</text>
+  <text class="sub" x="72" y="260">and a text file doesn&#8217;t put you off</text>
+  <path class="arr" d="M576 240 H640"/><polygon class="head" points="640,232 656,240 640,248"/>
+  <rect class="box" x="660" y="198" width="488" height="84" rx="10"/>
+  <text class="lbl" x="680" y="232">Espanso</text>
+  <text class="sub" x="680" y="260">free, open source</text>
+  <rect class="box" x="52" y="300" width="520" height="84" rx="10"/>
+  <text class="lbl" x="72" y="334">You already use a launcher</text>
+  <text class="sub" x="72" y="362">so the snippets come with it</text>
+  <path class="arr" d="M576 342 H640"/><polygon class="head" points="640,334 656,342 640,350"/>
+  <rect class="box" x="660" y="300" width="488" height="84" rx="10"/>
+  <text class="lbl" x="680" y="334">Raycast or Alfred 6</text>
+  <text class="sub" x="680" y="362">Raycast free; Alfred Powerpack &#163;40 once</text>
+  <rect class="box" x="52" y="402" width="520" height="84" rx="10"/>
+  <text class="lbl" x="72" y="436">One dedicated Mac app</text>
+  <text class="sub" x="72" y="464">bought once, for private use</text>
+  <path class="arr" d="M576 444 H640"/><polygon class="head" points="640,436 656,444 640,452"/>
+  <rect class="box" x="660" y="402" width="488" height="84" rx="10"/>
+  <text class="lbl" x="680" y="436">Typinator Basic</text>
+  <text class="sub" x="680" y="464">$59.99 once</text>
+  <rect class="box" x="52" y="504" width="520" height="84" rx="10"/>
+  <text class="lbl" x="72" y="538">A small team sharing the wording</text>
+  <text class="sub" x="72" y="566">or Windows and mobile too</text>
+  <path class="arr" d="M576 546 H640"/><polygon class="head" points="640,538 656,546 640,554"/>
+  <rect class="box" x="660" y="504" width="488" height="84" rx="10"/>
+  <text class="lbl" x="680" y="538">TextExpander Pro</text>
+  <text class="sub" x="680" y="566">$60 a year per user, up to five users</text>
+</svg>

@@ -38,7 +38,7 @@
   "headline": "A journal that stays private",
   "description": "You will not write honestly in a document that might be read. Which makes where a journal lives a writing question first, and a security question second.",
   "datePublished": "2026-08-17",
-  "dateModified": "2026-09-26",
+  "dateModified": "2026-11-23",
   "author": {
     "@type": "Organization",
     "@id": "https://cyanote.app/#organization",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Privacy, Writing, Local-first",
-  "wordCount": 1172
+  "wordCount": 1200
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-08-17" />
-<meta property="article:modified_time" content="2026-09-26" />
+<meta property="article:modified_time" content="2026-11-23" />
 <meta property="article:author" content="Cyanote" />
 <meta property="article:tag" content="Privacy" />
 <meta property="article:tag" content="Writing" />
@@ -157,6 +157,8 @@
         <span>By Cyanote</span>
         <span class="dot">·</span>
         <span><time datetime="2026-08-17">17 August 2026</time></span>
+      <span class="dot">·</span>
+      <span>Updated <time datetime="2026-11-23">23 November 2026</time></span>
         <span class="dot">·</span>
         <span>5 min read</span>
       </div>
@@ -181,7 +183,7 @@
       <p>Here is the tension nobody resolves cleanly.</p>
       <p>A journal is the single hardest thing to lose and the single worst thing to have copied. Those pull in opposite directions, and most advice picks one and pretends the other does not exist.</p>
       <p>The arrangement that handles both: <strong>an encrypted backup you control the key to.</strong> An external drive, encrypted, kept somewhere else. Or an encrypted archive of the export, in cloud storage. The storage provider holds a blob they cannot read, which is a genuinely different arrangement from them holding your text.</p>
-      <p>What does not work: putting the journal in a sync service for safety. That is a copy on someone else's infrastructure in readable form, and it undoes the entire arrangement in exchange for convenience.</p>
+      <p>What does not work: putting the journal in a sync service that can read it. Some can't. Apple <a href="https://support.apple.com/en-us/102651">lists</a> its Journal data as end-to-end encrypted, with two-factor authentication on. If a service doesn't say end-to-end, assume it holds a readable copy. I compared the options in <a href="https://cyanote.app/blog/journal-apps-for-mac/">journal apps for Mac</a>.</p>
       <p>If that sounds like too much, the honest minimum is: full-disk encryption on, one encrypted copy on an external drive, updated occasionally. That covers the fire and the theft, which are the realistic losses.</p>
       <figure><img src="/images/note.webp" alt="Any note can be locked with a password and encrypted where it sits — so the private layer and the practical layer can share one app" width="1500" height="938" loading="lazy" decoding="async" /><figcaption>The journal can be locked and the shopping list not. Per-note is the granularity that makes one app workable.</figcaption></figure>
       <h2 id="what-actually-goes-in-one">What actually goes in one</h2>

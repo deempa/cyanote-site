@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('cyanote-theme')==='dark')r.setAttribute('data-theme','dark')}catch(e){}r.setAttribute('data-theme-ready','')})()</script>
+<script>(function(){var r=document.documentElement;if(Date.now()>=1796111940000)r.setAttribute('data-sale-over','');else try{if(localStorage.getItem("cyanote-sale-hidden-2026-12-01T07:59:00Z"))r.setAttribute('data-sale-hidden','')}catch(e){}})()</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>Text replacement on Mac: setup, fixes and where it works</title>
+<meta name="description" content="Text replacement on Mac is a free built-in text expander. How to set it up, which apps ignore it, what to do when it stops working, and when to pay for more." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#fafafa" />
+<meta name="color-scheme" content="light" />
+<link rel="canonical" href="https://cyanote.app/blog/text-replacement-on-mac/" />
+<link rel="icon" href="https://cyanote.app/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="https://cyanote.app/apple-touch-icon.png" />
+<link rel="alternate" type="application/rss+xml" title="Cyanote blog" href="https://cyanote.app/blog/feed.xml" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Cyanote" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://cyanote.app/blog/text-replacement-on-mac/" />
+<meta property="og:title" content="Text replacement on Mac: setup, fixes and where it works" />
+<meta property="og:description" content="Text replacement on Mac is a free built-in text expander. How to set it up, which apps ignore it, what to do when it stops working, and when to pay for more." />
+<meta property="og:image" content="https://cyanote.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cyanote — notes, tasks, calendar, habits and clipboard history in one desktop app" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Text replacement on Mac: setup, fixes and where it works" />
+<meta name="twitter:description" content="Text replacement on Mac is a free built-in text expander. How to set it up, which apps ignore it, what to do when it stops working, and when to pay for more." />
+<meta name="twitter:image" content="https://cyanote.app/og-image.png" />
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Text replacement on a Mac: set it up, fix it, and know where it stops",
+  "description": "Text replacement on Mac is a free built-in text expander. How to set it up, which apps ignore it, what to do when it stops working, and when to pay for more.",
+  "datePublished": "2026-11-23",
+  "dateModified": "2026-11-23",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://cyanote.app/#organization",
+    "name": "Cyanote",
+    "url": "https://cyanote.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyanote.app/blog/text-replacement-on-mac/"
+  },
+  "url": "https://cyanote.app/blog/text-replacement-on-mac/",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/images/mac-text-replacement-where-it-works.svg",
+      "width": 1200,
+      "height": 560
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://cyanote.app/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "The Cyanote blog — notes, tasks and calmer software",
+    "@id": "https://cyanote.app/blog/"
+  },
+  "keywords": "macOS, How-to, Buying advice",
+  "wordCount": 2502
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Cyanote",
+      "item": "https://cyanote.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cyanote.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Text replacement on a Mac: set it up, fix it, and know where it stops",
+      "item": "https://cyanote.app/blog/text-replacement-on-mac/"
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-11-23" />
+<meta property="article:modified_time" content="2026-11-23" />
+<meta property="article:author" content="Cyanote" />
+<meta property="article:tag" content="macOS" />
+<meta property="article:tag" content="How-to" />
+<meta property="article:tag" content="Buying advice" />
+</head>
+<body>
+<a class="skip" href="#post">Skip to the article</a>
+<aside class="sale-bar" id="sale-bar" aria-label="Black Friday sale"><p><strong>Black Friday:</strong> Cyanote is $5.99 instead of $7.99, on Mac and Windows&nbsp;&middot; <span class="sale-seg">Mac code <code class="sale-code">BLACKFRIDAY</code><span class="sale-auto" hidden>, applied at checkout</span></span>&nbsp;&middot; <span class="sale-seg">ends <time datetime="2026-12-01T07:59:00Z" title="Ends Monday 30 November, 11:59 pm Pacific time">Mon 30 Nov</time></span><span class="sale-seg sale-left-wrap" hidden>&nbsp;&middot; <span class="sale-left" aria-hidden="true"></span></span></p><button class="sale-x" type="button" aria-label="Hide this notice" title="Hide this notice" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></button></aside>
+<nav aria-label="Main"><div class="wrap">
+  <a class="brand" href="https://cyanote.app/"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <div class="links">
+    <a href="https://cyanote.app/#features">Features</a>
+    <a href="https://cyanote.app/#pricing">Pricing</a>
+    <a href="https://cyanote.app/blog/" aria-current="page">Blog</a>
+    <a href="https://cyanote.app/changelog.html">Changelog</a>
+  </div>
+  <div class="right">
+    <a class="btn btn-primary btn-sm" data-cta="nav" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </div>
+  <label for="nav-toggle" class="nav-toggle-btn" title="Menu"><span class="sr-only">Menu</span>
+    <svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </label>
+  <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg>
+  </button>
+</div></nav>
+<main class="blogwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="https://cyanote.app/">Cyanote</a><span>/</span><a href="https://cyanote.app/blog/">Blog</a>
+  </nav>
+
+  <article id="post">
+    <header class="blog-head">
+      <h1>Text replacement on a Mac: set it up, fix it, and know where it stops</h1>
+      <div class="meta">
+        <span>By Cyanote</span>
+        <span class="dot">·</span>
+        <span><time datetime="2026-11-23">23 November 2026</time></span>
+        <span class="dot">·</span>
+        <span>11 min read</span>
+      </div>
+    <ul class="tags"><li>macOS</li><li>How-to</li><li>Buying advice</li></ul>
+    </header>
+
+    <div class="post">
+      <p>Text replacement is the text expander built into your Mac. Open <strong>System Settings → Keyboard → Text Replacements</strong>, click the <strong>Add</strong> button and enter a shortcut and its replacement. Type the shortcut, then a space or punctuation, and macOS swaps it in. It's free and can sync to your iPhone. If it doesn't work, look first at <strong>Edit → Substitutions → Text Replacement</strong> in the app you're using.</p>
+      <p>I make Cyanote, which keeps pinned snippets but doesn't expand abbreviations, so it doesn't compete with most of what's below. Everything here about other software comes from the pages I link, read on 23 November 2026, not from side-by-side testing.</p>
+      <h2 id="the-short-version">The short version</h2>
+      <ul><li><strong>Set it up:</strong> <strong>System Settings → Keyboard → Text Replacements</strong>. The steps are the same on macOS 26 and 27.</li><li><strong>Stopped working in one app:</strong> tick <strong>Edit → Substitutions → Text Replacement</strong> there.</li><li><strong>Word and Pages keep lists of their own.</strong> Word doesn't use the Mac's list in the body of a document.</li><li><strong>Chrome and Firefox do support it now.</strong> Guides that say otherwise are out of date.</li><li><strong>Back it up</strong> by dragging the entries to the desktop, and keep that file before you import anything.</li><li><strong>Switch to a text expander</strong> when you need dates, fill-in fields or hundreds of entries. Espanso and Raycast's free plan cover those without paying.</li></ul>
+      <h2 id="how-to-set-up-text-replacement-on-a-mac">How to set up text replacement on a Mac</h2>
+      <p>Apple's <a href="https://support.apple.com/guide/mac-help/replace-text-punctuation-documents-mac-mh35735/mac">guide to replacing text</a> gives the route:</p>
+      <ol><li>Choose <strong>Apple menu → System Settings</strong>, then <strong>Keyboard</strong> in the sidebar.</li><li>Click <strong>Text Replacements</strong>.</li><li>Click the <strong>Add</strong> button. Type the shortcut, then its replacement.</li><li>Click <strong>Add</strong>, then <strong>Done</strong>.</li></ol>
+      <p>In many apps there's a quicker way in: <strong>Edit → Substitutions → Show Substitutions</strong>, then <strong>Text Settings</strong>.</p>
+      <p>The swap happens when the shortcut is followed by <a href="https://tidbits.com/2026/05/04/macos-text-replacement-export-import-works-great-until-it-doesnt/">a space or a punctuation character</a>, as TidBITS explains. So choose shortcuts you'd never type as words. <code>addr</code> is asking for trouble and <code>;addr</code> isn't. MacMost's <a href="https://macmost.com/using-mac-text-replacements.html">tutorial</a> suggests starting them with an exclamation mark for the same reason.</p>
+      <p><strong>Several lines.</strong> Apple's page doesn't mention line breaks. MacMost says you can press <a href="https://macmost.com/10-uses-for-text-replacements-on-a-mac.html"><code>Option</code> + <code>Return</code> for a new line</a> while typing the replacement, or paste in text that already has several lines.</p>
+      <p><strong>How long.</strong> MacMost says any length, even several paragraphs. A user on Apple's forum reported in 2023 that there "seems to be a 2,000 character limit", in a thread now readable only as <a href="http://web.archive.org/web/20261116100428/https://discussions.apple.com/thread/255114552">an archived copy</a>. Apple documents neither, so test a long one before you depend on it.</p>
+      <p><strong>What not to put in it.</strong> Leave out passwords, card numbers and recovery codes. The list exports to a file that Apple says <a href="https://support.apple.com/guide/mac-help/back-up-and-share-text-replacements-on-mac-mchl2a7bd795/mac">you can edit in TextEdit</a>, so treat everything in it as readable.</p>
+      <h2 id="sync-it-to-your-iphone-and-back-it-up">Sync it to your iPhone, and back it up</h2>
+      <p>Apple's <a href="https://support.apple.com/guide/mac-help/back-up-and-share-text-replacements-on-mac-mchl2a7bd795/mac">backup page</a> says iCloud keeps the list the same on your devices. You set up <strong>iCloud Drive</strong> on each one and sign in to the same Apple Account. After that, an entry added on the Mac "automatically works on your other devices (and vice versa)".</p>
+      <p>Sync isn't a backup. If an entry is deleted on one device, expect it to go from the others. The same page documents a proper copy:</p>
+      <ul><li><strong>To export:</strong> in the Text Replacements window, select the entries you want, or <strong>Edit → Select All</strong>, and drag them to the desktop. You get a file called <code>property list.plist</code>.</li><li><strong>To import:</strong> drag that file into the Text Replacements window on the other Mac and click <strong>Done</strong>.</li></ul>
+      <p><strong>Export before you import.</strong> In May 2026, TidBITS's Adam Engst <a href="https://tidbits.com/2026/05/04/macos-text-replacement-export-import-works-great-until-it-doesnt/">tried to import</a> a list of more than 2,700 corrections. He got an unhelpful error about too many entries, and sometimes the whole list came back empty. He never found where "too many" begins. A few dozen entries is a much safer size than a few thousand.</p>
+      <h2 id="where-it-works-and-where-it-doesn-t">Where it works, and where it doesn't</h2>
+      <p>Apps fall into three kinds, and knowing which you're in explains most failures.</p>
+      <figure><img src="/images/mac-text-replacement-where-it-works.svg" alt="Three kinds of app and what each does with Mac text replacements. Apps on Apple&#x27;s own text system, such as TextEdit, Notes and Safari, follow a tick in Edit, Substitutions, Text Replacement. Browsers have their own support: Chrome has the same menu, Firefox works in most fields but has no Substitutions menu, and a website can switch it off. Apps with their own list, such as Word and Google Docs, need the entry added there" width="1200" height="560" loading="lazy" decoding="async" /><figcaption>The same shortcut can work in Notes, work on one website, and do nothing in Word.</figcaption></figure>
+      <div class="table-scroll"><table><thead><tr><th scope="col">Where you're typing</th><th scope="col">Uses the Mac's list?</th><th scope="col">What to know</th><th scope="col">Source</th></tr></thead><tbody><tr><td>TextEdit, Notes, Safari forms</td><td>Yes</td><td>Follows the <strong>Substitutions</strong> tick</td><td><a href="https://macmost.com/using-mac-text-replacements.html">MacMost</a></td></tr><tr><td>Pages</td><td>Yes, plus its own list</td><td>Entries in <strong>Pages → Settings → Auto-Correction</strong> "apply only to Pages"</td><td><a href="https://support.apple.com/guide/pages/replace-text-automatically-tanca15d8a79/mac">Apple</a></td></tr><tr><td>Chrome</td><td>Yes</td><td>Has <strong>Edit → Substitutions → Text Replacement</strong></td><td><a href="https://github.com/chromium/chromium/blob/main/chrome/app/generated_resources.grd">Chromium source</a></td></tr><tr><td>Firefox</td><td>Mostly</td><td>Not in email and URL fields, and no Substitutions menu</td><td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=2020142">Bug 2020142</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1914615">bug 1914615</a></td></tr><tr><td>Password fields</td><td>No</td><td>Excluded in Safari, Chrome and Firefox</td><td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=2020142">Bug 2020142</a></td></tr><tr><td>Word for Mac</td><td>Not in the document</td><td>Use <strong>Word → Preferences → AutoCorrect</strong></td><td><a href="https://support.microsoft.com/en-us/word/turn-autocorrect-on-or-off-in-word">Microsoft</a>, <a href="https://macmost.com/using-mac-text-replacements.html">MacMost</a></td></tr><tr><td>Google Docs</td><td>Has its own list</td><td><strong>Tools → Preferences → Substitutions</strong></td><td><a href="https://support.google.com/docs/answer/12022089">Google</a></td></tr><tr><td>Obsidian</td><td>Reports conflict</td><td>See below</td><td><a href="https://forum.obsidian.md/t/support-os-level-auto-correct-text-correction-in-macos/68567">Obsidian forum</a></td></tr><tr><td>Other Electron apps</td><td>Depends on the app</td><td>Electron offers the menu item, and each developer decides</td><td><a href="https://www.electronjs.org/docs/latest/api/menu-item">Electron docs</a></td></tr></tbody></table></div>
+      <p><strong>Browsers.</strong> You'll still read that Chrome ignores your replacements. The Substitutions menu is in Chromium's code, and a February 2026 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=2020142">Firefox bug report</a> says Safari and Chrome expand them "in all input field types except password." Firefox got there later. Its text substitution work <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1149826">landed in version 130</a> but stayed switched off until support for the <code>autocorrect</code> attribute was on by default.</p>
+      <p>That attribute is why one website works and the next doesn't. A page can set <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocorrect"><code>autocorrect</code> to off</a> on a field, and <a href="https://github.com/chromium/chromium/blob/main/content/app_shim_remote_cocoa/render_widget_host_view_cocoa.mm">Chromium's code</a> then allows no substitutions there. You can't change that from System Settings.</p>
+      <p><strong>Word.</strong> Two people in the <a href="https://talk.tidbits.com/t/tipbits-bring-macos-text-replacements-back-to-life/30276">TidBITS discussion</a> describe it well: one is annoyed that Word doesn't use the Mac's entries, and another finds that they expand in comments but not in the main text.</p>
+      <p><strong>Obsidian.</strong> In 2020 users reported that <a href="https://forum.obsidian.md/t/macos-text-replacement-doesnt-work/1269">nothing happened</a>, and the bug was set aside as coming from Electron. A user in the <a href="https://forum.obsidian.md/t/support-os-level-auto-correct-text-correction-in-macos/68567">feature request</a> <a href="https://forum.obsidian.md/t/support-os-level-auto-correct-text-correction-in-macos/68567?page=3">suggested the built-in list</a> as a workaround in March 2025, which implies it works for some. In July 2026 another published a <a href="https://forum.obsidian.md/t/macos-autocorrect-native-autocorrect-auto-capitalization-double-space-period-text-replacements/116260">community plugin</a> to add it, and says they aren't a developer and built it with an AI tool. Weigh that before installing it.</p>
+      <h2 id="text-replacement-not-working-fix-it-in-this-order">Text replacement not working? Fix it in this order</h2>
+      <p>Start with a control. Type one of your shortcuts in TextEdit, followed by a space.</p>
+      <p><strong>If it works in TextEdit,</strong> the list is fine and the app is the problem:</p>
+      <ol><li><strong>Tick the menu item.</strong> Choose <strong>Edit → Substitutions</strong> and make sure <strong>Text Replacement</strong> has a tick. TidBITS's <a href="https://tidbits.com/2025/02/10/tipbits-bring-macos-text-replacements-back-to-life/">February 2025 tip</a> found this had switched itself off, for reasons nobody could explain, and that turning it off and on again may help even when it looks right. It costs nothing to try.</li><li><strong>Check whether the app has its own list.</strong> If it's Word, Pages or Google Docs, add the entry there as well.</li><li><strong>Try another field or site.</strong> If it only fails in one web form, the page has probably turned it off.</li><li><strong>Quit and reopen the app, then restart the Mac.</strong> One <a href="https://tidbits.com/2025/02/10/tipbits-bring-macos-text-replacements-back-to-life/">TidBITS commenter</a> says a restart fixed it in Safari and FileMaker when the menu hadn't.</li></ol>
+      <p><strong>If it fails in TextEdit too:</strong></p>
+      <ol><li><strong>Check the trigger.</strong> Type a space after it. Look at <strong>Text Replacements</strong> and confirm it's spelt as you think.</li><li><strong>Delete the entry and add it again.</strong> A commenter on <a href="https://macmost.com/using-mac-text-replacements.html">MacMost's tutorial</a> found that edited entries kept producing the old text until they did this.</li><li><strong>Quit other expanders.</strong> Raycast, for one, <a href="https://manual.raycast.com/snippets">skips its own keywords</a> when they clash with the Mac's, "to avoid double insertion", unless you tell it otherwise. Don't define the same shortcut in two places.</li><li><strong>Check sync last.</strong> If entries are missing on one device only, confirm iCloud Drive and the Apple Account on both. <strong>Export the list first.</strong> Some old fixes involve signing out of iCloud or deleting its stored data, and I wouldn't try those without a copy.</li></ol>
+      <p>If your expander is the thing that's dead, and everywhere at once, the cause may be Secure Input. I cover that in <a href="https://cyanote.app/blog/copy-and-paste-not-working-on-mac/">copy and paste not working on a Mac</a>.</p>
+      <h2 id="when-the-built-in-one-isn-t-enough">When the built-in one isn't enough</h2>
+      <p>It inserts fixed text. Raycast's own <a href="https://www.raycast.com/guides/how-to-set-up-text-expansion-on-mac">comparison</a> sums up the gap fairly: plain text only, "no dates, clipboard or cursor placeholders". If you need today's date in an invoice, a name filled in as you go, or the same shortcuts on Windows, look at these. Prices are each vendor's list price on 23 November 2026. Tax may be extra.</p>
+      <div class="table-scroll"><table><thead><tr><th scope="col">Tool</th><th scope="col">Price</th><th scope="col">Three years</th><th scope="col">Dates and fields</th><th scope="col">Sync</th></tr></thead><tbody><tr><td>Mac text replacement</td><td>Included</td><td>$0</td><td>No</td><td>iCloud, to iPhone and iPad</td></tr><tr><td><a href="https://espanso.org/">Espanso</a></td><td>Free, open source (GPL-3)</td><td>$0</td><td><a href="https://espanso.org/docs/matches/basics/">Dates</a>, forms, scripts</td><td><a href="https://espanso.org/docs/sync/">Your own cloud folder</a></td></tr><tr><td><a href="https://www.raycast.com/pricing">Raycast</a> snippets</td><td>Free plan. Pro is $96 a year</td><td>$0, or $288 with Pro</td><td><a href="https://manual.raycast.com/snippets">Yes</a></td><td><a href="https://manual.raycast.com/cloud-sync">Pro only</a></td></tr><tr><td><a href="https://www.alfredapp.com/shop/">Alfred 6</a> Powerpack</td><td>£40 once</td><td>£40</td><td><a href="https://www.alfredapp.com/help/features/snippets/">Yes</a></td><td><a href="https://www.alfredapp.com/help/advanced/sync/">Between Macs</a>, by a file-sync service</td></tr><tr><td><a href="https://ergonis.com/en/typinator/pricing">Typinator</a> Basic</td><td>$59.99 once, private use, Mac only</td><td>$59.99</td><td><a href="https://ergonis.com/en/typinator/features">Yes</a></td><td><a href="https://ergonis.com/en/typinator">iCloud, Dropbox, OneDrive or your own server</a></td></tr><tr><td>Typinator Advanced</td><td>$39.99 a year, Mac and iOS</td><td>$119.97</td><td>Yes</td><td>As above</td></tr><tr><td><a href="https://textexpander.com/pricing">TextExpander</a></td><td>Free for 5 active snippets. Pro is $60 a year per user, for up to 5 users</td><td>$0, or $180 with Pro</td><td>Yes</td><td>Between its Mac, Windows, mobile and Chrome apps</td></tr></tbody></table></div>
+      <p><em>One-time rows assume you stay on the version you buy. Alfred's and Typinator Basic's licences are for the current major version.</em></p>
+      <figure><img src="/images/mac-text-expander-which-one.svg" alt="Which Mac text expander fits. Fixed text in Apple apps and on an iPhone: the built-in text replacement. Dates or fields, free, and happy editing a text file: Espanso. Already use a launcher: Raycast snippets free, or Alfred&#x27;s Powerpack at forty pounds once. Typinator if you want a dedicated Mac app bought once at $59.99. A small team sharing wording, or Windows and mobile: TextExpander Pro at $60 a year per user" width="1200" height="640" loading="lazy" decoding="async" /><figcaption>Start at the top. Most people never need to leave the first row.</figcaption></figure>
+      <p>My reading of it:</p>
+      <ul><li><strong>Up to about twenty fixed phrases, mostly in Apple's apps and browsers:</strong> stay with the built-in one. It costs nothing and the same entries work on your iPhone.</li><li><strong>You want dates and forms for nothing:</strong> Espanso, if editing a text file doesn't put you off. Raycast's free plan if it does.</li><li><strong>You already own a launcher:</strong> use its snippets. Alfred's help says expansion is <a href="https://www.alfredapp.com/help/features/snippets/">off by default</a>, so you have to switch it on. I've compared its <a href="https://cyanote.app/blog/alfred-clipboard-history/">clipboard side</a> and <a href="https://cyanote.app/blog/raycast-clipboard-alternative/">Raycast's</a> separately.</li><li><strong>You'd rather buy one dedicated app:</strong> Typinator Basic, at $59.99.</li><li><strong>A team needs the same wording:</strong> TextExpander is built around sharing. Pro stops at five users. Business, with a shared library for the whole team, is $120 a year each.</li></ul>
+      <h2 id="if-you-can-t-remember-the-abbreviations">If you can't remember the abbreviations</h2>
+      <p>Expansion has one weakness no price fixes. You have to remember the shortcut. For the five things you type daily, you will. For an IBAN you need twice a month, perhaps not.</p>
+      <p>A picker suits those better. You press one key, choose from a list, and it pastes. That's what <a href="https://cyanote.app/clipboard-manager-mac/">Cyanote</a> does: pinned snippets open over whatever app you're in with <code>⌥</code> + <code>⇧</code> + <code>B</code>, and the one you choose is pasted as plain text. It isn't abbreviation expansion. Typing <code>;addr</code> in an email does nothing in Cyanote, and it has no date fields or iPhone app. Because it pastes rather than substitutes, it doesn't rely on an app's Substitutions menu. It needs the Accessibility permission to paste for you.</p>
+      <p>I make it, so weigh that. It's <a href="https://cyanote.app/pricing/">$7.99 once</a> on the Mac, with no account, and the Windows edition is a separate $7.99. If snippets are all you want, the built-in list or Raycast costs nothing. My post on <a href="https://cyanote.app/blog/the-snippets-you-paste-every-week/">the snippets you retype every week</a> covers what's worth keeping in either.</p>
+      <h2 id="questions-people-ask">Questions people ask</h2>
+      <h3 id="is-there-a-free-text-expander-for-mac">Is there a free text expander for Mac?</h3>
+      <p>Yes, several. The built-in one is included, Espanso is free and open source, and snippets are part of Raycast's free plan. TextExpander's free plan holds five active snippets.</p>
+      <h3 id="can-text-replacement-insert-today-s-date">Can text replacement insert today's date?</h3>
+      <p>Not the Mac's own. It inserts the same text each time. Espanso, Raycast, Alfred, Typinator and TextExpander all document date placeholders.</p>
+      <h3 id="how-do-i-turn-text-replacement-off">How do I turn text replacement off?</h3>
+      <p>In one app, untick <strong>Edit → Substitutions → Text Replacement</strong>. To stop a single shortcut everywhere, remove it in <strong>System Settings → Keyboard → Text Replacements</strong>.</p>
+      <h3 id="why-does-it-leave-an-extra-space">Why does it leave an extra space?</h3>
+      <p>Because the space you typed to trigger it stays. MacMost suggests clicking the suggestion that appears, or pressing <code>Down Arrow</code> and <code>Return</code>, which inserts the text without it.</p>
+    </div>
+  </article>
+
+  <aside class="endcta">
+    <h2>Cyanote</h2>
+    <p>Notes, to-dos, a calendar, habits and a clipboard manager in one app, for Mac and Windows.
+    Everything stays on your own computer. $7.99 once, no subscription.</p>
+    <a class="btn btn-primary" data-cta="final" href="https://cyanote.app/#pricing">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22M9.5 16.5h5"/></svg>
+      <span class="btn-label">Get Cyanote — $7.99</span></a>
+  </aside>
+
+  <section class="related">
+    <h2>Read next</h2>
+    <ul><li><a href="https://cyanote.app/blog/calendar-not-syncing-iphone-mac/">Calendar not syncing between iPhone and Mac: a two-minute test</a><span>Calendar not syncing between iPhone and Mac? Check which account holds one event, then whether it reached the website. That tells you which device to fix.</span></li><li><a href="https://cyanote.app/blog/export-apple-notes/">How to export Apple Notes: PDF, Markdown, Word, and all of them at once</a><span>How to export Apple Notes on a Mac as PDF or Markdown, what Apple documents about bulk export, and what each route keeps: folders, images, dates, locked notes.</span></li></ul>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><img src="https://cyanote.app/favicon.svg" alt="" width="26" height="26" /> Cyanote</div>
+      <p style="max-width:26ch">A quiet, local-first app for the things you keep track of.</p>
+    </div>
+    <div><h2>Product</h2><ul>
+      <li><a href="https://cyanote.app/#features">Features</a></li>
+      <li><a href="https://cyanote.app/#pricing">Pricing</a></li>
+      <li><a href="https://cyanote.app/changelog.html">Changelog</a></li>
+    </ul></div>
+    <div><h2>Resources</h2><ul>
+      <li><a href="https://cyanote.app/blog/">Blog</a></li>
+      <li><a href="https://cyanote.app/about.html">About</a></li>
+      <li><a href="https://cyanote.app/privacy.html">Privacy</a></li>
+      <li><a href="https://cyanote.app/terms.html">Terms</a></li>
+      <li><a href="https://cyanote.app/refund.html">Refunds</a></li>
+      <li>
+        <a href="mailto:support@cyanote.app">support@cyanote.app</a>
+      </li>
+    </ul></div>
+    <div><h2>Download</h2><ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="1.6"/><path d="M1 19.5h22"/></svg><a href="https://cyanote.app/#pricing">macOS</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.2 10.5 5v6.4H3Zm0 11.6L10.5 19v-6.3H3Zm8.6 1.4L21 20.5v-7.8h-9.4ZM11.6 4.6 21 3.3v7.7h-9.4Z"/></svg><a href="https://apps.microsoft.com/detail/9N54ZL3Q8PR7">Windows</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Cyanote</span><span>Made with care.</span></div>
+</div></footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "90fc26ca9e794f6c82c145693d7a1624"}'></script>
+<script>(function(){var r=document.documentElement,K='cyanote-theme',b=document.querySelectorAll('.theme-toggle');function dark(){return r.getAttribute('data-theme')==='dark'}function apply(d){if(d)r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');var t=d?'Switch to light mode':'Switch to dark mode';for(var i=0;i<b.length;i++){b[i].setAttribute('aria-label',t);b[i].setAttribute('title',t)}var g=document.querySelectorAll('img[data-dark]');for(var j=0;j<g.length;j++){var e=g[j];if(!e.dataset.light)e.dataset.light=e.getAttribute('src');e.setAttribute('src',d?e.dataset.dark:e.dataset.light)}}apply(dark());for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var d=!dark();try{localStorage.setItem(K,d?"dark":"light")}catch(e){}apply(d)});})()</script>
+<script>(function(){var t=document.getElementById('nav-toggle');if(!t)return;document.addEventListener('keydown',function(e){if(e.key==='Escape')t.checked=false});var l=document.querySelectorAll('nav .links a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){t.checked=false});})()</script>
+<a class="try-fab" href="/try/">Try it <span aria-hidden="true">&rarr;</span></a>
+<script src="/components.js" defer></script>
+<script>(function(){var d=document,r=d.documentElement,E=1796111940000,K="cyanote-sale-hidden-2026-12-01T07:59:00Z",P="$5.99",W="$7.99",C="BLACKFRIDAY",bar=d.getElementById('sale-bar'),undo=[],t,i;function off(){clearTimeout(t);if(bar&&bar.parentNode)bar.parentNode.removeChild(bar);while(undo.length)undo.pop()()}if(Date.now()>=E)return off();function txt(n,v){n.nodeValue=v.split(W).join(P);undo.push(function(){n.nodeValue=v})}function att(a,k,v){a.setAttribute(k,v.split(W).join(P));undo.push(function(){a.setAttribute(k,v)})}var b=d.querySelectorAll('a.btn');for(i=0;i<b.length;i++){var a=b[i],w=d.createTreeWalker(a,4),n;while((n=w.nextNode()))if(n.nodeValue.indexOf(W)>-1)txt(n,n.nodeValue);['aria-label','title'].forEach(function(k){var v=a.getAttribute(k);if(v&&v.indexOf(W)>-1)att(a,k,v)})}if(C){var l=d.querySelectorAll('a[href*="lemonsqueezy.com/checkout/buy"]');for(i=0;i<l.length;i++)(function(a,h){try{var u=new URL(h,location.href);u.searchParams.set('checkout[discount_code]',C);a.setAttribute('href',u.href);undo.push(function(){a.setAttribute('href',h)})}catch(e){}})(l[i],l[i].getAttribute('href'))}if(bar){var q=function(s){return bar.querySelector(s)},left=q('.sale-left'),x=q('.sale-x');q('.sale-left-wrap').hidden=false;if(q('.sale-auto'))q('.sale-auto').hidden=false;x.hidden=false;x.addEventListener('click',function(){try{localStorage.setItem(K,'1')}catch(e){}r.setAttribute('data-sale-hidden','')})}function p(v){return(v<10?'0':'')+v}function tick(){clearTimeout(t);var ms=E-Date.now();if(ms<=0)return off();var s=Math.ceil(ms/1000),dd=Math.floor(s/86400);if(left)left.textContent=(dd?dd+'d ':'')+p(Math.floor(s%86400/3600))+':'+p(Math.floor(s%3600/60))+':'+p(s%60)+' left';t=setTimeout(tick,ms%1000||1000)}d.addEventListener('visibilitychange',function(){if(!d.hidden)tick()});tick()})()</script>
+</body>
+</html>

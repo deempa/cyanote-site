@@ -38,7 +38,7 @@
   "headline": "Copy and paste not working on Mac: what breaks it, and the fix",
   "description": "When copy and paste stops working on a Mac, one ten-second test tells you if it's the system or one app. Then restart pboard, check Secure Input, and more.",
   "datePublished": "2026-10-18",
-  "dateModified": "2026-10-18",
+  "dateModified": "2026-11-23",
   "author": {
     "@type": "Organization",
     "@id": "https://cyanote.app/#organization",
@@ -83,7 +83,7 @@
     "@id": "https://cyanote.app/blog/"
   },
   "keywords": "Clipboard, macOS, How-to",
-  "wordCount": 2672
+  "wordCount": 2836
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +113,7 @@
 }
 </script>
 <meta property="article:published_time" content="2026-10-18" />
-<meta property="article:modified_time" content="2026-10-18" />
+<meta property="article:modified_time" content="2026-11-23" />
 <meta property="article:author" content="Cyanote" />
 <meta property="article:tag" content="Clipboard" />
 <meta property="article:tag" content="macOS" />
@@ -157,8 +157,10 @@
         <span>By Cyanote</span>
         <span class="dot">·</span>
         <span><time datetime="2026-10-18">18 October 2026</time></span>
+      <span class="dot">·</span>
+      <span>Updated <time datetime="2026-11-23">23 November 2026</time></span>
         <span class="dot">·</span>
-        <span>12 min read</span>
+        <span>13 min read</span>
       </div>
     <ul class="tags"><li>Clipboard</li><li>macOS</li><li>How-to</li></ul>
     </header>
@@ -208,6 +210,9 @@
       <p><strong>Check what kind of thing you copied.</strong> <a href="https://cyanote.app/blog/copy-screenshot-to-clipboard-mac/">An image won't paste</a> into a plain-text field such as a Terminal window or a code editor, and a file copied in Finder pastes as a file rather than its contents. Paste into TextEdit to see what's actually on the clipboard. If formatting is the problem, <code>⌥</code> + <code>⇧</code> + <code>⌘</code> + <code>V</code> is <strong>Paste and Match Style</strong>, listed in Apple's <a href="https://support.apple.com/en-us/102650">Mac keyboard shortcuts</a>. Not every app supports it.</p>
       <p><strong>Check whether the site blocks paste.</strong> Some websites stop you pasting into password or confirmation fields. That's deliberate, and nothing on your Mac is broken. It's also discouraged: NIST's digital identity guideline <a href="https://pages.nist.gov/800-63-4/sp800-63b.html">SP 800-63B-4</a> says services "SHOULD permit claimants to use the 'paste' function when entering a password" so password managers work. Your password manager's autofill usually gets around it.</p>
       <p><strong>Restart the app, then update it.</strong> Quit it with <code>⌘</code> + <code>Q</code> rather than just closing the window, and open it again. If it keeps happening in one app after an update, that's a bug for its developer. Send them the steps from your TextEdit test, since it shows the system clipboard was fine.</p>
+      <h2 id="when-it-s-only-microsoft-word">When it's only Microsoft Word</h2>
+      <p>Most of these answers come from volunteers on Microsoft's own forum rather than from its documentation.</p>
+      <ul><li><strong>Copy is greyed out, or you can't select by dragging.</strong> Word has nothing selected. Click at the start, hold <code>⇧</code> and <a href="https://learn.microsoft.com/en-us/answers/questions/5196331/">click at the end</a>, then copy.</li><li><strong>Dragging still won't select.</strong> Save your work and restart the Mac. <a href="https://learn.microsoft.com/en-us/answers/questions/5387559/">One person who asked</a> came back to say a restart was all it took. Then update macOS and Word.</li><li><strong>Word pastes something old.</strong> In <a href="https://techcommunity.microsoft.com/discussions/word/text-will-not-copy-from-other-programs-to-word-mac/4140104">one 2024 report</a>, an ordinary paste gave the last thing copied in Word, while pasting without formatting worked. In Word that's <code>⌘</code> + <code>⇧</code> + <code>V</code>, and it <a href="https://cyanote.app/blog/paste-without-formatting-mac/">drops pictures and turns tables into paragraphs</a>.</li><li><strong>The document is restricted.</strong> Microsoft <a href="https://support.microsoft.com/en-us/topic/94aa8ab1-465e-42d7-a323-d61f911b2d0f">says</a> Read permission doesn't allow copying. Ask whoever sent it for more access.</li></ul>
       <h2 id="when-universal-clipboard-won-t-paste-between-devices">When Universal Clipboard won't paste between devices</h2>
       <p>Copying on your iPhone and pasting on your Mac works through a different path, called Universal Clipboard. Apple's <a href="https://support.apple.com/en-us/102430">Universal Clipboard article</a> lists what it needs: devices near each other, the same Apple Account on both, Bluetooth and Wi-Fi turned on, and Handoff turned on.</p>
       <p>On the Mac, Handoff is in <strong>System Settings → General → AirDrop &amp; Continuity</strong> (called <strong>AirDrop &amp; Handoff</strong> on some versions). Turn on <strong>Allow Handoff between this Mac and your iCloud devices</strong>, per Apple's <a href="https://support.apple.com/en-us/102426">Handoff article</a>. The same article covers where to find the switch on an iPhone or iPad.</p>
@@ -232,7 +237,7 @@
 
   <section class="related">
     <h2>Read next</h2>
-    <ul><li><a href="https://cyanote.app/blog/clear-clipboard-mac/">How to clear the clipboard on Mac, and every copy it keeps</a><span>To clear the clipboard on a Mac, run pbcopy &lt; /dev/null in Terminal. Then clear Spotlight&#x27;s clipboard history and your clipboard manager, which keep copies.</span></li><li><a href="https://cyanote.app/blog/paste-without-formatting-mac/">How to paste without formatting on Mac: the shortcut, and how to make it stick</a><span>To paste without formatting on Mac, press Option-Shift-Command-V. Here’s what it does, the apps that use another shortcut, and how to make plain paste stick.</span></li></ul>
+    <ul><li><a href="https://cyanote.app/blog/clear-clipboard-mac/">How to clear the clipboard on Mac, and every copy it keeps</a><span>To clear the clipboard on a Mac, run pbcopy &lt; /dev/null in Terminal. Then clear Spotlight&#x27;s clipboard history and your clipboard manager, which keep copies.</span></li><li><a href="https://cyanote.app/blog/copy-screenshot-to-clipboard-mac/">How to copy a screenshot to the clipboard on a Mac</a><span>Add Control to any Mac screenshot shortcut and the picture goes to the clipboard, not the Desktop. How to paste it, save it, and get it back once it&#x27;s gone.</span></li></ul>
   </section>
 </main>
 

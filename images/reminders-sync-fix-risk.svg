@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="rr-title rr-desc">
+  <title id="rr-title">Reminders sync fixes, ordered by what they can cost you</title>
+  <desc id="rr-desc">Four columns. Safe, nothing is lost: System Status, same Apple Account, iCloud switch, account headings, All and Completed lists, reopen and restart. Some loss: clear overdue and completed items, press Update if all devices are new enough. Risky, unsynced items may go: print lists first, then switch iCloud Reminders off and on, or sign out. Last resort: restore an archive on iCloud.com, which also rolls calendars back and removes sharing.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .boxw { fill: #fdf3e4; stroke: #e0b565; stroke-width: 2; }
+    .boxr { fill: #fdeceb; stroke: #e3918a; stroke-width: 2; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .boxw { fill: #332612; stroke: #8f6a22; }
+      .boxr { fill: #371a18; stroke: #94463f; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="472" rx="12"/>
+  <text class="h" x="52" y="68">Work left to right, and stop when a new reminder crosses over</text>
+  <rect class="boxa" x="52" y="96" width="262" height="372" rx="10"/>
+  <text class="lbl" x="72" y="134">Safe</text>
+  <text class="sub" x="72" y="176">System Status</text>
+  <text class="sub" x="72" y="210">Same Apple Account</text>
+  <text class="sub" x="72" y="244">iCloud switch is on</text>
+  <text class="sub" x="72" y="278">Account headings</text>
+  <text class="sub" x="72" y="312">All and Completed</text>
+  <text class="sub" x="72" y="346">Reopen, restart</text>
+  <path class="arr" d="M72 416 H294" style="stroke-width:1.5"/>
+  <text class="lbl" style="font-size:18px" x="72" y="448">Nothing is lost</text>
+  <rect class="box" x="330" y="96" width="262" height="372" rx="10"/>
+  <text class="lbl" x="350" y="134">Some loss</text>
+  <text class="sub" x="350" y="176">Clear overdue items</text>
+  <text class="sub" x="350" y="210">Clear completed items</text>
+  <text class="sub" x="350" y="244">Press Update, if all</text>
+  <text class="sub" x="350" y="278">your devices are</text>
+  <text class="sub" x="350" y="312">new enough</text>
+  <path class="arr" d="M350 416 H572" style="stroke-width:1.5"/>
+  <text class="lbl" style="font-size:18px" x="350" y="448">History goes</text>
+  <rect class="boxw" x="608" y="96" width="262" height="372" rx="10"/>
+  <text class="lbl" x="628" y="134">Risky</text>
+  <text class="sub" x="628" y="176">Print lists first</text>
+  <text class="sub" x="628" y="210">Switch iCloud</text>
+  <text class="sub" x="628" y="244">Reminders off and on</text>
+  <text class="sub" x="628" y="278">Sign out of iCloud</text>
+  <path class="arr" d="M628 416 H850" style="stroke-width:1.5"/>
+  <text class="lbl" style="font-size:18px" x="628" y="448">Unsynced items may go</text>
+  <rect class="boxr" x="886" y="96" width="262" height="372" rx="10"/>
+  <text class="lbl" x="906" y="134">Last resort</text>
+  <text class="sub" x="906" y="176">Restore an archive</text>
+  <text class="sub" x="906" y="210">on iCloud.com</text>
+  <text class="sub" x="906" y="244">Calendars go back too</text>
+  <text class="sub" x="906" y="278">All sharing removed</text>
+  <path class="arr" d="M906 416 H1128" style="stroke-width:1.5"/>
+  <text class="lbl" style="font-size:18px" x="906" y="448">Rolls every list back</text>
+</svg>

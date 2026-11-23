@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 534" width="1200" height="534" role="img" aria-labelledby="cw-title cw-desc">
+  <title id="cw-title">Find the failing leg of calendar sync in two minutes</title>
+  <desc id="cw-desc">An event goes from the iPhone to the provider website and then to the Mac. Not on the website: the phone is not sending, so check the default calendar, the iCloud Calendar switch, whether Calendars is on for that account, and provider outages. On the website but not on the Mac: the Mac is not receiving, so check the account, a work Exchange account, Google calendar selection and the refresh interval. Appears on the Mac once every calendar is ticked and you search for it: it synced and was hidden by an unticked calendar, a Focus filter, a time zone setting or hidden all-day events.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .boxw { fill: #fdf3e4; stroke: #e0b565; stroke-width: 2; }
+    .boxr { fill: #fdeceb; stroke: #e3918a; stroke-width: 2; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .boxw { fill: #332612; stroke: #8f6a22; }
+      .boxr { fill: #371a18; stroke: #94463f; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="486" rx="12"/>
+  <text class="h" x="52" y="68">Follow one event: iPhone, then provider, then Mac</text>
+  <rect class="box" x="52" y="96" width="310" height="118" rx="10"/>
+  <text class="lbl" x="70" y="130">iPhone</text>
+  <text class="sub" x="70" y="158">Add &#8220;sync test&#8221;, then read</text>
+  <text class="sub" x="70" y="186">its calendar and account</text>
+  <path class="arr" d="M366 155 H424"/><polygon class="head" points="424,147 438,155 424,163"/>
+  <rect class="boxa" x="442" y="96" width="310" height="118" rx="10"/>
+  <text class="lbl" x="460" y="130">Provider&#8217;s website</text>
+  <text class="sub" x="460" y="158">icloud.com/calendar, Google</text>
+  <text class="sub" x="460" y="186">Calendar, or Outlook</text>
+  <path class="arr" d="M756 155 H814"/><polygon class="head" points="814,147 828,155 814,163"/>
+  <rect class="box" x="832" y="96" width="316" height="118" rx="10"/>
+  <text class="lbl" x="850" y="130">Mac</text>
+  <text class="sub" x="850" y="158">Tick every calendar, then</text>
+  <text class="sub" x="850" y="186">search for &#8220;sync test&#8221;</text>
+  <path class="arr" d="M207 222 V256"/><polygon class="head" points="199,254 207,268 215,254"/>
+  <path class="arr" d="M597 222 V256"/><polygon class="head" points="589,254 597,268 605,254"/>
+  <path class="arr" d="M990 222 V256"/><polygon class="head" points="982,254 990,268 998,254"/>
+  <rect class="boxw" x="52" y="272" width="310" height="212" rx="10"/>
+  <text class="lbl" x="70" y="306">Not on the website?</text>
+  <text class="sub" x="70" y="334">The phone isn&#8217;t sending.</text>
+  <text class="sub" x="70" y="362">Wrong default calendar</text>
+  <text class="sub" x="70" y="390">iCloud Calendar is off</text>
+  <text class="sub" x="70" y="418">Account&#8217;s Calendars is off</text>
+  <text class="sub" x="70" y="446">Provider outage</text>
+  <rect class="boxw" x="442" y="272" width="310" height="212" rx="10"/>
+  <text class="lbl" x="460" y="306">There, but not on the Mac?</text>
+  <text class="sub" x="460" y="334">The Mac isn&#8217;t receiving.</text>
+  <text class="sub" x="460" y="362">Account off on the Mac</text>
+  <text class="sub" x="460" y="390">Work Exchange account</text>
+  <text class="sub" x="460" y="418">Google calendar unticked</text>
+  <text class="sub" x="460" y="446">Refresh interval is long</text>
+  <rect class="boxw" x="832" y="272" width="316" height="212" rx="10"/>
+  <text class="lbl" x="850" y="306">Appears after that?</text>
+  <text class="sub" x="850" y="334">It synced. It was hidden.</text>
+  <text class="sub" x="850" y="362">Calendar unticked</text>
+  <text class="sub" x="850" y="390">A Focus filter</text>
+  <text class="sub" x="850" y="418">Time zone setting</text>
+  <text class="sub" x="850" y="446">All-day events hidden</text>
+</svg>

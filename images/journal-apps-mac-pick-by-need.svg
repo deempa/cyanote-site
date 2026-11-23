@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 666" width="1200" height="666" role="img" aria-labelledby="jn-title jn-desc">
+  <title id="jn-title">Which journal app to pick on a Mac</title>
+  <desc id="jn-desc">Five needs matched to a Mac journal app. Free and private, with the iPhone: Apple Journal. Photos, prompts and every device: Day One Silver. No subscription and many platforms: Diarium Pro. Plain files you own: Obsidian daily notes. A written log beside your tasks, on one Mac: Cyanote.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .bar  { fill: #a3a7af; }
+    .bara { fill: #0e7cc4; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .bar  { fill: #5d626b; }
+      .bara { fill: #3f9fdc; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="618" rx="12"/>
+  <text class="h" x="52" y="68">Pick by the one thing your journal has to do</text>
+  <rect class="boxa" x="52" y="96" width="484" height="90" rx="10"/>
+  <text class="lbl" x="72" y="132">Free, private, on Mac and iPhone</text>
+  <text class="sub" x="72" y="160">you only use Apple devices</text>
+  <path class="arr" d="M540 141 H604"/><polygon class="head" points="604,133 620,141 604,149"/>
+  <rect class="boxa" x="624" y="96" width="524" height="90" rx="10"/>
+  <text class="lbl" x="644" y="132">Apple Journal</text>
+  <text class="sub" x="644" y="160">built in, end-to-end encrypted in iCloud</text>
+  <rect class="box" x="52" y="202" width="484" height="90" rx="10"/>
+  <text class="lbl" x="72" y="238">Photos, prompts, every device</text>
+  <text class="sub" x="72" y="266">Android, Windows or web as well</text>
+  <path class="arr" d="M540 247 H604"/><polygon class="head" points="604,239 620,247 604,255"/>
+  <rect class="box" x="624" y="202" width="524" height="90" rx="10"/>
+  <text class="lbl" x="644" y="238">Day One Silver</text>
+  <text class="sub" x="644" y="266">$49.99 a year</text>
+  <rect class="box" x="52" y="308" width="484" height="90" rx="10"/>
+  <text class="lbl" x="72" y="344">No subscription, many platforms</text>
+  <text class="sub" x="72" y="372">sync through your own cloud</text>
+  <path class="arr" d="M540 353 H604"/><polygon class="head" points="604,345 620,353 604,361"/>
+  <rect class="box" x="624" y="308" width="524" height="90" rx="10"/>
+  <text class="lbl" x="644" y="344">Diarium Pro</text>
+  <text class="sub" x="644" y="372">$14.99 once on Mac, again on iPhone</text>
+  <rect class="box" x="52" y="414" width="484" height="90" rx="10"/>
+  <text class="lbl" x="72" y="450">Plain files you can open anywhere</text>
+  <text class="sub" x="72" y="478">free, with no account</text>
+  <path class="arr" d="M540 459 H604"/><polygon class="head" points="604,451 620,459 604,467"/>
+  <rect class="box" x="624" y="414" width="524" height="90" rx="10"/>
+  <text class="lbl" x="644" y="450">Obsidian daily notes</text>
+  <text class="sub" x="644" y="478">Markdown files in a folder on your Mac</text>
+  <rect class="box" x="52" y="520" width="484" height="90" rx="10"/>
+  <text class="lbl" x="72" y="556">Dated notes beside your tasks</text>
+  <text class="sub" x="72" y="584">one Mac, some notes locked</text>
+  <path class="arr" d="M540 565 H604"/><polygon class="head" points="604,557 620,565 604,573"/>
+  <rect class="box" x="624" y="520" width="524" height="90" rx="10"/>
+  <text class="lbl" x="644" y="556">Cyanote</text>
+  <text class="sub" x="644" y="584">$7.99 once, no phone app</text>
+
+</svg>

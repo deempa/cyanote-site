@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 770" width="1200" height="770" role="img" aria-labelledby="ea-title ea-desc">
+  <title id="ea-title">Which way to export Apple Notes, by where the notes are going</title>
+  <desc id="ea-desc">Seven destinations matched to an export route. A PDF: Export To, then PDF, one note at a time. Plain Markdown files: select a folder's notes and use Export To, then Markdown; exporting many at once is reported rather than documented. Obsidian: the official Importer plugin, which skips locked notes. Word: copy into TextEdit and save as Microsoft Word, or open in Pages and export. Google Docs or Keep: upload the Markdown file to Docs, paste text into Keep. An archive with folders and dates: the Exporter app. No Mac: export one note at a time from an iPhone, or request your data from Apple.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .box  { fill: #f4f4f5; stroke: #e6e6e9; stroke-width: 2; }
+    .boxa { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .arr  { stroke: #71757e; stroke-width: 3; fill: none; }
+    .head { fill: #71757e; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .box  { fill: #202226; stroke: #34363c; }
+      .boxa { fill: #12293a; stroke: #2f77a8; }
+      .arr  { stroke: #a4a8b0; }
+      .head { fill: #a4a8b0; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="722" rx="12"/>
+  <text class="h" x="52" y="68">Pick the export route by where the notes are going</text>
+  <rect class="box" x="52" y="100" width="390" height="76" rx="10"/>
+  <text class="lbl" x="72" y="132">A PDF to print or file</text>
+  <text class="sub" x="72" y="157">a handful of notes</text>
+  <path class="arr" d="M446 138 H500"/><polygon class="head" points="500,130 516,138 500,146"/>
+  <rect class="box" x="520" y="100" width="628" height="76" rx="10"/>
+  <text class="lbl" x="540" y="132">Export To, then PDF</text>
+  <text class="sub" x="540" y="157">one note at a time, as Apple documents it</text>
+  <rect class="boxa" x="52" y="190" width="390" height="76" rx="10"/>
+  <text class="lbl" x="72" y="222">Plain Markdown files</text>
+  <text class="sub" x="72" y="247">for Bear, GitHub or a folder on disk</text>
+  <path class="arr" d="M446 228 H500"/><polygon class="head" points="500,220 516,228 500,236"/>
+  <rect class="boxa" x="520" y="190" width="628" height="76" rx="10"/>
+  <text class="lbl" x="540" y="222">Select a folder&#8217;s notes, Export To, then Markdown</text>
+  <text class="sub" x="540" y="247">many at once is reported, not documented</text>
+  <rect class="box" x="52" y="280" width="390" height="76" rx="10"/>
+  <text class="lbl" x="72" y="312">Obsidian</text>
+  <text class="sub" x="72" y="337">a whole library</text>
+  <path class="arr" d="M446 318 H500"/><polygon class="head" points="500,310 516,318 500,326"/>
+  <rect class="box" x="520" y="280" width="628" height="76" rx="10"/>
+  <text class="lbl" x="540" y="312">Obsidian&#8217;s official Importer plugin</text>
+  <text class="sub" x="540" y="337">keeps tables, drawings and scans; skips locked notes</text>
+  <rect class="box" x="52" y="370" width="390" height="76" rx="10"/>
+  <text class="lbl" x="72" y="402">Word</text>
+  <text class="sub" x="72" y="427">a document to edit or send</text>
+  <path class="arr" d="M446 408 H500"/><polygon class="head" points="500,400 516,408 500,416"/>
+  <rect class="box" x="520" y="370" width="628" height="76" rx="10"/>
+  <text class="lbl" x="540" y="402">Copy into TextEdit, save as Microsoft Word</text>
+  <text class="sub" x="540" y="427">or Open in Pages, then export to Word</text>
+  <rect class="box" x="52" y="460" width="390" height="76" rx="10"/>
+  <text class="lbl" x="72" y="492">Google Docs or Keep</text>
+  <text class="sub" x="72" y="517">a Google account</text>
+  <path class="arr" d="M446 498 H500"/><polygon class="head" points="500,490 516,498 500,506"/>
+  <rect class="box" x="520" y="460" width="628" height="76" rx="10"/>
+  <text class="lbl" x="540" y="492">Docs: upload the exported Markdown file</text>
+  <text class="sub" x="540" y="517">Keep: paste the text; I found no documented import</text>
+  <rect class="boxa" x="52" y="550" width="390" height="76" rx="10"/>
+  <text class="lbl" x="72" y="582">An archive of everything</text>
+  <text class="sub" x="72" y="607">with folders and dates kept</text>
+  <path class="arr" d="M446 588 H500"/><polygon class="head" points="500,580 516,588 500,596"/>
+  <rect class="boxa" x="520" y="550" width="628" height="76" rx="10"/>
+  <text class="lbl" x="540" y="582">Exporter, from the Mac App Store</text>
+  <text class="sub" x="540" y="607">free; writes Markdown or HTML</text>
+  <rect class="box" x="52" y="640" width="390" height="76" rx="10"/>
+  <text class="lbl" x="72" y="672">No Mac to hand</text>
+  <text class="sub" x="72" y="697">iPhone or a browser only</text>
+  <path class="arr" d="M446 678 H500"/><polygon class="head" points="500,670 516,678 500,686"/>
+  <rect class="box" x="520" y="640" width="628" height="76" rx="10"/>
+  <text class="lbl" x="540" y="672">iPhone: Share, then Export as Markdown</text>
+  <text class="sub" x="540" y="697">one at a time, or ask Apple for a copy of your data</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-labelledby="dn-title dn-desc">
+  <title id="dn-title">What can still be recovered after a note is deleted on a Mac, by age</title>
+  <desc id="dn-desc">A timeline from the day of deletion to beyond day 40. An iCloud note sits in Recently Deleted for up to 30 days, then Apple removes it from iCloud at 40 days with no documented way for you to reach it in between. An On My Mac note sits in Recently Deleted for up to 30 days. A Gmail note has no Recently Deleted folder, but Gmail keeps deleted items in Trash for 30 days, and the note may be in All Mail instead. A shared note you do not own never reaches your Recently Deleted folder, and the original link works until the owner stops sharing. Time Machine has hourly copies for 24 hours, daily for a month, then weekly until the disk fills. An overwritten note has undo only.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h    { font-size: 22px; font-weight: 600; fill: #0a0a0b; }
+    .lbl  { font-size: 19px; font-weight: 600; fill: #0a0a0b; }
+    .sub  { font-size: 17px; fill: #71757e; }
+    .in   { font-size: 17px; font-weight: 600; fill: #0a0a0b; }
+    .card { fill: #ffffff; stroke: #e6e6e9; stroke-width: 2; }
+    .yes  { fill: #e8f3fb; stroke: #7fbde3; stroke-width: 2; }
+    .mid  { fill: #f4f4f5; stroke: #b9bcc3; stroke-width: 2; stroke-dasharray: 7 5; }
+    .grid { stroke: #e6e6e9; stroke-width: 2; }
+    @media (prefers-color-scheme: dark) {
+      .h, .lbl, .in { fill: #f4f4f5; }
+      .sub { fill: #a4a8b0; }
+      .card { fill: #16171a; stroke: #2e3036; }
+      .yes  { fill: #12293a; stroke: #2f77a8; }
+      .mid  { fill: #202226; stroke: #5a5e67; }
+      .grid { stroke: #2e3036; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="1152" height="632" rx="12"/>
+  <text class="h" x="52" y="68">What can still come back, by days since you deleted it</text>
+
+  <text class="sub" x="340" y="108" text-anchor="middle">Day 0</text>
+  <text class="sub" x="800" y="108" text-anchor="middle">Day 30</text>
+  <text class="sub" x="952" y="108" text-anchor="middle">Day 40</text>
+  <text class="sub" x="1148" y="108" text-anchor="end">Later</text>
+  <path class="grid" d="M340 122 V574 M800 122 V490 M952 122 V490"/>
+
+  <text class="lbl" x="52" y="157">iCloud note</text>
+  <text class="sub" x="52" y="181">upgraded account</text>
+  <rect class="yes" x="340" y="136" width="460" height="50" rx="8"/>
+  <text class="in" x="358" y="167">Recently Deleted, on every device</text>
+  <rect class="mid" x="800" y="136" width="152" height="50" rx="8"/>
+  <text class="sub" x="876" y="167" text-anchor="middle">Apple only</text>
+
+  <text class="lbl" x="52" y="231">On My Mac note</text>
+  <text class="sub" x="52" y="255">not in iCloud</text>
+  <rect class="yes" x="340" y="210" width="460" height="50" rx="8"/>
+  <text class="in" x="358" y="241">Recently Deleted, on this Mac</text>
+
+  <text class="lbl" x="52" y="305">Gmail note</text>
+  <text class="sub" x="52" y="329">no Recently Deleted folder</text>
+  <rect class="yes" x="340" y="284" width="460" height="50" rx="8"/>
+  <text class="in" x="358" y="315">Gmail&#8217;s Trash; All Mail may keep it longer</text>
+
+  <text class="lbl" x="52" y="379">Someone else&#8217;s note</text>
+  <text class="sub" x="52" y="403">shared, and you removed it</text>
+  <rect class="yes" x="340" y="358" width="808" height="50" rx="8"/>
+  <text class="in" x="358" y="389">Open the original link, until the owner stops sharing</text>
+
+  <text class="lbl" x="52" y="453">Time Machine copy</text>
+  <text class="sub" x="52" y="477">if you back up this Mac</text>
+  <rect class="yes" x="340" y="432" width="460" height="50" rx="8"/>
+  <text class="in" x="358" y="463">Hourly for 24 hours, then daily</text>
+  <rect class="yes" x="800" y="432" width="348" height="50" rx="8"/>
+  <text class="in" x="818" y="463">Weekly, until the disk fills</text>
+
+  <text class="lbl" x="52" y="527">Overwritten note</text>
+  <text class="sub" x="52" y="551">changed, not deleted</text>
+  <rect class="yes" x="340" y="506" width="190" height="50" rx="8"/>
+  <text class="in" x="358" y="537">Undo, right away</text>
+  <text class="sub" x="548" y="537">then only a backup or an export has it</text>
+
+  <text class="sub" x="52" y="606">Solid: a documented place to look. Dashed: still on Apple&#8217;s servers, with no documented way for you to reach it.</text>
+  <text class="sub" x="52" y="632">Blank: no built-in way back. Compiled from Apple and Google support pages, 23 November 2026.</text>
+</svg>
